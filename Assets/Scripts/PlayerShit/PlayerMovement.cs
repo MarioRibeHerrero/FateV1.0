@@ -9,11 +9,13 @@ public class PlayerMovement : MonoBehaviour
     PlayerInput playerInput;
     Rigidbody rb;
     PlayerGroundCheck pGroundCheck;
+    PlayerJump pJump;
+    PlayerHook pHook;
 
-    [SerializeField] float jumpForce;
+    
     [SerializeField] float acceleration, airAcceleration, deceleration, airDeceleration, maxSpeed, fallMultiplier;
     [SerializeField] float gravityScale;
-    public bool isJumping;
+   
 
 
     void Start()
@@ -22,9 +24,10 @@ public class PlayerMovement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
-
+        pJump = GetComponent<PlayerJump>();
+        pHook = GetComponent<PlayerHook>();
         //PlayerInputShit
-        playerInput.actions["Jump"].started += Jump_Started;
+
 
     }
     private Vector2 GetInputs()
@@ -34,23 +37,19 @@ public class PlayerMovement : MonoBehaviour
         return inputs;
     }
 
-    private void Jump_Started(InputAction.CallbackContext obj)
-    {
-        if(pGroundCheck.isPlayerGrounded)
-        {
-            rb.AddForce(Vector3.up * jumpForce * 5, ForceMode.Impulse);
-            isJumping = true;
-        }
 
-    }
 
     // Update is called once per frame
     void Update()
     {
-        GravityScale();
-        Movement();
+        if (!pHook.isHooking)
+        {
+            GravityScale();
+            Movement();
+        }
 
-        Debug.Log(rb.velocity.x);
+
+        //Debug.Log(rb.velocity.x);
     }
 
     private void GravityScale()
@@ -73,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
         if (pGroundCheck.isPlayerGrounded)
         {
             //if the player stops moving we want the drag to be= to the deceleration.
-            if (Mathf.Abs(GetInputs().x) < 0.4 && !isJumping) rb.drag = deceleration;
+            if (Mathf.Abs(GetInputs().x) < 0.4 && !pJump.isJumping) rb.drag = deceleration;
             else rb.drag = 0f;
         }
        

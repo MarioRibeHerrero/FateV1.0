@@ -12,12 +12,18 @@ public class PlayerGroundCheck : MonoBehaviour
         if(Physics.Raycast(groundCheckPos.transform.position, Vector3.down, 0.2f, groundCheckLayerMask))
         {
             isPlayerGrounded = true;
-            Debug.DrawLine(groundCheckPos.transform.position, Vector3.down * 0.2f);
+
+            //Puede hookear otra vez y actualizamos los materiales
+            GetComponent<PlayerHook>().canHookAgain = true;
+            GetComponent<PlayerHook>().HookMaterial();
+
         }
         else
         {
             isPlayerGrounded = false;
-            GetComponent<PlayerMovement>().isJumping = false;
+            GetComponent<PlayerJump>().isJumping = false;
+
+
         }
     }
 }
