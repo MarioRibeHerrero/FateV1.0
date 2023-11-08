@@ -14,37 +14,39 @@ public class PlayerHook : MonoBehaviour
     [SerializeField] Material canHookM, defaultHookM, hookCdM;
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] int hookForce;
-    bool canHook;
-
-
+    bool inRangeOfHook;
+    //la hacemos publica para poder modificarla desde el playerJump
+    public bool canHook;
     public bool isHooking;
     GameObject currentHook;
 
-    //la hacemos publica para poder modificarla desde el playerJump
-    public bool canHookAgain;
+
 
     private void Start()
     {
+        //components
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
 
-
+        //line renderer for hhok
         lineRenderer.enabled = false;
         //PlayerInputShit
         playerInput.actions["Hook"].started += Hook_started;
+        canHook = true;
     }
 
 
     public void HookMaterial()
     {
+        //define el color de si el hook puede ser cogido o no(visual)
         if(currentHook != null)
         {
-            if (canHook)
+            if (inRangeOfHook)
             {
                 currentHook.GetComponent<MeshRenderer>().material = canHookM;
 
-                if (!canHookAgain) currentHook.GetComponent<MeshRenderer>().material = hookCdM;
+                if (!canHook) currentHook.GetComponent<MeshRenderer>().material = hookCdM;
             }
             else currentHook.GetComponent<MeshRenderer>().material = defaultHookM;
         }
@@ -52,31 +54,40 @@ public class PlayerHook : MonoBehaviour
     }
     private void Update()
     {
-        if (currentHook!= null)
+        SetLineRedererPositions();
+    }
+
+    private void SetLineRedererPositions()
+    {
+        if (currentHook != null)
         {
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, currentHook.transform.localPosition);
         }
-
     }
     private void Hook_started(InputAction.CallbackContext obj)
     {
-        if(canHook )
+        if(inRangeOfHook && canHook)
         {
-            
+            //Set vel to 0 so its always safe force
             rb.velocity = Vector3.zero;
+            //enable line renderer
             lineRenderer.enabled = true;
+            //add the force to the hook
             Vector3 forceDirection = currentHook.transform.position - transform.position;
             rb.AddForce(forceDirection.normalized * hookForce, ForceMode.Impulse);
-
+            //remove drag so the drag dosent stop you
             rb.drag = 0f;
             isHooking = true;
-            canHookAgain = false;
+            Invoke("CanHookToFalse", 0.02f);
             HookMaterial();
-
-
-
         }
+    }
+    private void CanHookToFalse()
+    {
+        canHook = false;
+        HookMaterial();
+        Debug.Log("HOLA");
     }
 
     
@@ -86,11 +97,10 @@ public class PlayerHook : MonoBehaviour
         if (other.CompareTag("Hook"))
         {
             currentHook = other.transform.parent.gameObject;
-            canHook = true;
+            inRangeOfHook = true;
 
             HookMaterial();
             //si estas grounded y buelves a entrar en la zona de hook, lo puedes usar otra vez.
-            // other.transform.parent.GetComponent<MeshRenderer>().material = canHookM;
         }
         if (other.CompareTag("HookPoint"))
         {
@@ -104,7 +114,7 @@ public class PlayerHook : MonoBehaviour
     {
         if (other.CompareTag("Hook"))
         {
-            canHook = false;
+            inRangeOfHook = false;
             HookMaterial();
         }
 

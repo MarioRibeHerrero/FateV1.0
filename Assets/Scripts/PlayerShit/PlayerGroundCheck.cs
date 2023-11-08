@@ -9,20 +9,26 @@ public class PlayerGroundCheck : MonoBehaviour
     [SerializeField] LayerMask groundCheckLayerMask;
     void Update()
     {
-        if(Physics.Raycast(groundCheckPos.transform.position, Vector3.down, 0.2f, groundCheckLayerMask))
+        if(Physics.Raycast(groundCheckPos.transform.position, Vector3.down, 0.05f, groundCheckLayerMask))
         {
             isPlayerGrounded = true;
-
+            GetComponent<PlayerJump>().isJumping = false;
             //Puede hookear otra vez y actualizamos los materiales
-            GetComponent<PlayerHook>().canHookAgain = true;
-            GetComponent<PlayerHook>().HookMaterial();
+            if (!GetComponent<PlayerHook>().canHook)
+            {
+                GetComponent<PlayerHook>().canHook = true;
+                GetComponent<PlayerHook>().HookMaterial();
+                
+            }
+            GetComponent<PlayerJump>().cantHoldJump = true;
 
+
+            GetComponent<PlayerJump>().isCoyoteJumping = false;
+            GetComponent<PlayerJump>().isBufferJumping = false;
         }
         else
         {
             isPlayerGrounded = false;
-            GetComponent<PlayerJump>().isJumping = false;
-
 
         }
     }
