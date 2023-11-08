@@ -54,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 gravityVector = new Vector3(0, -gravityScale, 0);
         rb.AddForce(gravityVector, ForceMode.Acceleration);
+        if (rb.velocity.y <= 0) rb.drag = 0f;
     }
     private void Movement()
     {

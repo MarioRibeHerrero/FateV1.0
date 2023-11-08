@@ -870,13 +870,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 2.5
+  secondJumpForce: 10
   maxJumpValue: 0.16
   isHoldingJump: 0
+  holdingJumpButton: 0
   isJumping: 0
+  secondJump: 0
   cantHoldJump: 0
-  coyoteTime: 0.13
+  coyoteTime: 0.2
   isCoyoteJumping: 0
-  jumpBufferTime: 0.05
+  jumpBufferTime: 0.2
+  jumpBufferTimer: 0
   isBufferJumping: 0
 --- !u!1 &410087039
 GameObject:
@@ -1904,7 +1908,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2103085360}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.67, y: 4.42, z: 0.07}
+  m_LocalPosition: {x: -0.67, y: 2.34, z: 0.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

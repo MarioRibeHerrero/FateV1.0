@@ -12,7 +12,7 @@ public class PlayerGroundCheck : MonoBehaviour
         if(Physics.Raycast(groundCheckPos.transform.position, Vector3.down, 0.05f, groundCheckLayerMask))
         {
             isPlayerGrounded = true;
-            GetComponent<PlayerJump>().isJumping = false;
+           
             //Puede hookear otra vez y actualizamos los materiales
             if (!GetComponent<PlayerHook>().canHook)
             {
@@ -21,10 +21,8 @@ public class PlayerGroundCheck : MonoBehaviour
                 
             }
             GetComponent<PlayerJump>().cantHoldJump = true;
-
-
-            GetComponent<PlayerJump>().isCoyoteJumping = false;
-            GetComponent<PlayerJump>().isBufferJumping = false;
+            GetComponent<PlayerJump>().isJumping = false;
+            GetComponent<PlayerJump>().secondJump = true;
         }
         else
         {
