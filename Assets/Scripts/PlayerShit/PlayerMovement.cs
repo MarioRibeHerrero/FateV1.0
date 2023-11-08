@@ -48,8 +48,6 @@ public class PlayerMovement : MonoBehaviour
             Movement();
         }
 
-
-        //Debug.Log(rb.velocity.x);
     }
 
     private void GravityScale()

@@ -25,28 +25,22 @@ public class PlayerJump : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
 
-
+        //Player Input Shit 
         playerInput.actions["Jump"].started += Jump_Started;
         playerInput.actions["Jump"].canceled += Jump_canceled;
     }
 
     private void Jump_canceled(InputAction.CallbackContext obj)
     {
-        
         isHoldingJump = false;
     }
     private void Jump_Started(InputAction.CallbackContext obj)
-    {
-       
+    {   
         if (pGroundCheck.isPlayerGrounded)
         {
-            Debug.Log("GOLA");
             isHoldingJump = true;
             maxJump = maxJumpValue;
         }
-
-
-
     }
     // Update is called once per frame
     void Update()
