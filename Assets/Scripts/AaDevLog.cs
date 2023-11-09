@@ -13,16 +13,25 @@ mañana molaria:
 TODO(En prioridad):
 Limpiar codigo: :)
 Bug Camara: :)
-Hacer sistema de vida solido:
-añadirlo al hud:
-Hacer enemigos basicos:
-Añadir Parry:
+Aa: :)
+Hacer sistema de vida solido: :/
+añadirlo al hud: :(
+Hacer enemigos basicos: :/
+Añadir Parry: :/
 
 ----------------------
 
 Dia2:
-
-
+--
+Mañana
+Añadidos ataques(con cubos)
+vida basica(no hay nada q te quite vida)
+doble salto visual
+arreglado bug camara
+limpiado codigo
+rotaionpersonaje(capsula) arreglado
+--
+Tarde
 
 
 
