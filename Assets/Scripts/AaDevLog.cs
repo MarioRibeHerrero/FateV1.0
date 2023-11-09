@@ -11,11 +11,13 @@ metido el mapa de adrian aunque no se si eso esyaba ya ayer,
 mañana molaria:
 ----------------------
 TODO(En prioridad):
-Limpiar codigo:
+Limpiar codigo: :)
+Bug Camara: :)
 Hacer sistema de vida solido:
 añadirlo al hud:
 Hacer enemigos basicos:
 Añadir Parry:
+
 ----------------------
 
 Dia2:

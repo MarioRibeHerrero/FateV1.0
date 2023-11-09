@@ -12,12 +12,18 @@ public class PlayerJump : MonoBehaviour
     PlayerGroundCheck pGroundCheck;
 
     //local
-    [SerializeField] float jumpForce,secondJumpForce, maxJumpValue;
+    [SerializeField] float jumpForce, maxJumpValue;
     [SerializeField] bool isHoldingJump, holdingJumpButton;
-    float maxJump, maxJumpB;
-    
+    float maxJump;
+
+
+    //secondJump
+    [SerializeField] float secondJumpForce;
+    public bool secondJump;
+    [SerializeField] GameObject wings;
+
     //not so local
-    public bool isJumping, secondJump;
+    public bool isJumping;
     public bool cantHoldJump;
 
     //CoyoteJump
@@ -41,6 +47,7 @@ public class PlayerJump : MonoBehaviour
 
         cantHoldJump = true;
         secondJump = true;
+
     }
 
     private void Jump_canceled(InputAction.CallbackContext obj)
@@ -64,17 +71,24 @@ public class PlayerJump : MonoBehaviour
 
         if (isJumping && secondJump)
         {
-            rb.velocity = new Vector3(rb.velocity.x, 1, rb.velocity.z);
-            rb.AddForce(rb.velocity.x, secondJumpForce * 100, rb.velocity.z);
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             secondJump = false;
+            StartCoroutine(WingsToTrue());
         }
 
     }
+    private IEnumerator WingsToTrue()
+    {
+        wings.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        wings.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
         maxJump -= Time.deltaTime;
-        maxJumpB -= Time.deltaTime;
         Jump();
         CoyoteTimer();
         JumpBuffering();
@@ -117,7 +131,6 @@ public class PlayerJump : MonoBehaviour
         if (rb.velocity.y <= 0 && cantHoldJump)
         {
             cantHoldJump = false;
-           // isHoldingJump = false;
         }
     }
 

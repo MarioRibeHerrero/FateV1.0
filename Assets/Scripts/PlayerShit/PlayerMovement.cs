@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,19 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    //Components
+    //Components of Player
     PlayerInput playerInput;
     Rigidbody rb;
     PlayerGroundCheck pGroundCheck;
     PlayerJump pJump;
     PlayerHook pHook;
 
-    
-    [SerializeField] float acceleration, airAcceleration, deceleration, airDeceleration, maxSpeed, fallMultiplier;
+    //Movement variables
+    [SerializeField] float acceleration, airAcceleration, deceleration, maxSpeed;
     [SerializeField] float gravityScale;
-   
 
+    //public
+    public bool hasStopedMidAir;
 
     void Start()
     {
@@ -26,43 +28,41 @@ public class PlayerMovement : MonoBehaviour
         pGroundCheck = GetComponent<PlayerGroundCheck>();
         pJump = GetComponent<PlayerJump>();
         pHook = GetComponent<PlayerHook>();
-        //PlayerInputShit
 
-
+        //PlayerCanMove
+        GameManager.Instance.CanPlayerMove = true;
     }
-    private Vector2 GetInputs()
+    private Vector2 GetInputsX()
     {
+        //This will get the horizontal movement
         Vector2 inputs;
         inputs = playerInput.actions["XMovement"].ReadValue<Vector2>();
         return inputs;
     }
 
-
-
-    // Update is called once per frame
     void Update()
     {
-        if (!pHook.isHooking)
+        //we activame the moving system if you are not ocupied
+        if (!pHook.isHooking && GameManager.Instance.CanPlayerMove)
         {
             GravityScale();
             Movement();
         }
-
     }
 
     private void GravityScale()
     {
+        //Apply gravity
         Vector3 gravityVector = new Vector3(0, -gravityScale, 0);
         rb.AddForce(gravityVector, ForceMode.Acceleration);
+        //set drag to 0 when falling
         if (rb.velocity.y <= 0) rb.drag = 0f;
     }
     private void Movement()
     {
-        //MOVEMENT
-
-        //we set a movement speed for the grounded player and anotherone for airplayer
-        if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(GetInputs().x * acceleration, 0f));
-        else rb.AddForce(new Vector2(GetInputs().x * airAcceleration, 0f));
+        //we set a movement aceleration for the grounded player and anotherone for airplayer
+        if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(GetInputsX().x * acceleration, 0f));
+        else rb.AddForce(new Vector2(GetInputsX().x * airAcceleration, 0f));
 
         // Since addForce does not limit the speed, we need to limit it.
         if (Mathf.Abs(rb.velocity.x) > maxSpeed) rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
@@ -71,10 +71,14 @@ public class PlayerMovement : MonoBehaviour
         if (pGroundCheck.isPlayerGrounded)
         {
             //if the player stops moving we want the drag to be= to the deceleration.
-            if (Mathf.Abs(GetInputs().x) < 0.4 && !pJump.isJumping) rb.drag = deceleration;
+            if (Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping) rb.drag = deceleration;
             else rb.drag = 0f;
         }
-       
+        if (!hasStopedMidAir && Mathf.Abs(GetInputsX().x) <= 0.4 && !pGroundCheck.isPlayerGrounded)
+        {
+            hasStopedMidAir = true;
+            rb.velocity = new Vector3(0, rb.velocity.y, 0f);
+        }
     }
 
 }
