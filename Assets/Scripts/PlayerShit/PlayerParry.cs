@@ -1,18 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerParry : MonoBehaviour
 {
-    // Start is called before the first frame update
+    PlayerInput playerInput;
+    private Animator anim;
+
     void Start()
     {
-        
+        playerInput = GetComponent<PlayerInput>();
+        playerInput.actions["Parry"].started += PlayerParry_started;
+        anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PlayerParry_started(InputAction.CallbackContext obj)
     {
-        
+        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
+        {
+            anim.SetTrigger("Parry");
+
+        }
     }
+
+
 }

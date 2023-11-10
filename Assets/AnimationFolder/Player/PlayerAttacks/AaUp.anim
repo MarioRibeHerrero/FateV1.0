@@ -324,7 +324,21 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0
-    functionName: AttackingVerticalT
+    functionName: IsOcupiedToTrue
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0
+    functionName: CanRotateToFalse
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.28333333
+    functionName: CanRotateToTrue
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -338,7 +352,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.3
-    functionName: AttackingVerticalF
+    functionName: IsOcupiedToFalse
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

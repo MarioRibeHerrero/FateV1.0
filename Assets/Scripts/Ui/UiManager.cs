@@ -22,5 +22,6 @@ public class UiManager : MonoBehaviour
     public void UpdatePlayerHealthSlider()
     {
         playerHealthSlider.value = GameManager.Instance.playerHealth /100;
+        Debug.Log("asdas");
     }
 }

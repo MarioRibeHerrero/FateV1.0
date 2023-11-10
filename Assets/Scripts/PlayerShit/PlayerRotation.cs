@@ -27,7 +27,8 @@ public class PlayerRotation : MonoBehaviour
     void Update()
     {
         GetRotation();
-        SetRotation();
+        if (GameManager.Instance.canPlayerRotate) SetRotation();
+
     }
 
     private void SetRotation()

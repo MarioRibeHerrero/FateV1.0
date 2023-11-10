@@ -4,33 +4,41 @@ using UnityEngine;
 
 public class PlayerAnimationEvents : MonoBehaviour
 {
-
     private void CanPlayerMoveToFalse()
     {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GameManager.Instance.CanPlayerMove = false;
+        GameManager.Instance.canPlayerMove = false;
     }
     private void CanPlayerMoveToTrue()
     {
-        GameManager.Instance.CanPlayerMove = true;
+        GameManager.Instance.canPlayerMove = true;
 
     }
 
-    private void AttackingHorizontalT()
+    private void IsOcupiedToTrue()
     {
-        GetComponent<Animator>().SetBool("AttackingHorizontal", true);
+        GetComponent<Animator>().SetBool("IsOccupied", true);
+        GameManager.Instance.isOccupied = true;
+
     }
-    private void AttackingHorizontalF()
+    private void IsOcupiedToFalse()
     {
-        GetComponent<Animator>().SetBool("AttackingHorizontal", false);
+        GetComponent<Animator>().SetBool("IsOccupied", false);
+        GameManager.Instance.isOccupied = false;
     }
-    private void AttackingVerticalT()
+    private void CanRotateToTrue()
     {
-        GetComponent<Animator>().SetBool("AttackingVertical", true);
+        GetComponent<Animator>().SetBool("CanRotate", true);
+        GameManager.Instance.canPlayerRotate = true;
     }
-    private void AttackingVerticalF()
+    private void CanRotateToFalse()
     {
-        GetComponent<Animator>().SetBool("AttackingVertical", false);
+        GetComponent<Animator>().SetBool("CanRotate", false);
+        GameManager.Instance.canPlayerRotate = false;
     }
 
+    private void Parry()
+    {
+        GetComponent<PlayerHealth>().TakeDamage(30);
+    }
 }

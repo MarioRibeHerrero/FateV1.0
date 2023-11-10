@@ -161,6 +161,17 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "",
+                    "id": "8d74f8d3-b2cf-4cc0-8079-03c5adaa3486",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Parry",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "Keyboard",
                     "id": "65f65fc0-a0e2-40a2-afeb-a547203abc09",
                     "path": "2DVector",

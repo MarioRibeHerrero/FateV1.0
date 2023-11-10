@@ -28,13 +28,17 @@ public class PlayerAa : MonoBehaviour
 
     private void PlayerAa_started(InputAction.CallbackContext obj)
     {
-        if (GetInputs().y >= upDifference && GetComponent<PlayerGroundCheck>().isPlayerGrounded)
-        {
-            anim.SetTrigger("AaUp");
-        }else if(Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded)
-        {
-            anim.SetTrigger("Aa");
-        }
+
+            if (GetInputs().y >= upDifference && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
+            {
+                anim.SetTrigger("AaUp");
+            }
+            else if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
+            {
+                anim.SetTrigger("Aa");
+            }
+        
+
 
     }
 

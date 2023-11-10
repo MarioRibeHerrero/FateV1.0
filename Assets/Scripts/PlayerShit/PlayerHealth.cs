@@ -8,14 +8,14 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         GameManager.Instance.isPlayerAlive = true;
-        GameManager.Instance.playerHealth = 100f;
     }
 
 
     public void TakeDamage(float damage)
     {
-        GameManager.Instance.playerHealth =- damage;
+        GameManager.Instance.playerHealth -= damage;
         CheckHealth();
+        uiManager.UpdatePlayerHealthSlider();
     }
 
 

@@ -8,9 +8,16 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        //vars
+        canPlayerRotate = true;
+        canPlayerMove = true;
+        isPlayerAlive = true;
+        playerHealth = 100;
+        isOccupied = false;
     }
     //PlayerThings
     public float playerHealth;
     public bool isPlayerAlive;
-    public bool CanPlayerMove;
+    public bool canPlayerMove, canPlayerRotate, isOccupied;
 }

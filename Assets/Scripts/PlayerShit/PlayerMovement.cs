@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
         pHook = GetComponent<PlayerHook>();
 
         //PlayerCanMove
-        GameManager.Instance.CanPlayerMove = true;
+        GameManager.Instance.canPlayerMove = true;
     }
     private Vector2 GetInputsX()
     {
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //we activame the moving system if you are not ocupied
-        if (!pHook.isHooking && GameManager.Instance.CanPlayerMove)
+        if (!pHook.isHooking && GameManager.Instance.canPlayerMove)
         {
             GravityScale();
             Movement();
@@ -74,11 +74,16 @@ public class PlayerMovement : MonoBehaviour
             if (Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping) rb.drag = deceleration;
             else rb.drag = 0f;
         }
-        if (!hasStopedMidAir && Mathf.Abs(GetInputsX().x) <= 0.4 && !pGroundCheck.isPlayerGrounded)
+
+        /*
+         * DARLE UNA VUELTA(si saltas parado y te mueves luego no va, si paras mueves paras y mueves no va, si usas hook no va)
+         * 
+        if (!hasStopedMidAir && Mathf.Abs(GetInputsX().x) <= 0.4 && !pGroundCheck.isPlayerGrounded && !pHook.isHooking)
         {
             hasStopedMidAir = true;
             rb.velocity = new Vector3(0, rb.velocity.y, 0f);
         }
+        */
     }
 
 }
