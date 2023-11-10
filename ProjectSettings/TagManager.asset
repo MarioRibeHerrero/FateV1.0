@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Hook
   - HookPoint
+  - Wings
+  - Parry
   layers:
   - Default
   - TransparentFX
