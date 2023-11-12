@@ -25,11 +25,12 @@ public class BasicEnemyPathing : MonoBehaviour
 
     //attack
     [SerializeField] BasicEnemyAttack attack;
-
+    BasicEnemyState state;
 
 
     void Start()
     {
+        state = transform.root.GetComponent<BasicEnemyState>();
         target = pointA;
         isWaiting = false;
         facingRight = true;
@@ -38,14 +39,11 @@ public class BasicEnemyPathing : MonoBehaviour
 
     void Update()
     {
-
-
-
-        switch(GetComponent<BasicEnemyState>().enemyState)
+        switch(transform.root.GetComponent<BasicEnemyState>().enemyState)
         {
 
             case 1:
-
+                //normal Path
                 if (!isWaiting)
                 {
                     MoveTowardsTarget();
@@ -54,21 +52,36 @@ public class BasicEnemyPathing : MonoBehaviour
                 break;
 
                 case 2:
-                if (!isAttacking)
-                {
-                    float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+                //Follow player
+              
+                 float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
 
-                    if (distanceToPlayer <= attackDistance)
-                    {
-                        attack.Attack();
-                        Debug.Log("GOA");
-                    }
-                    else
-                    {
+                 if (distanceToPlayer <= attackDistance)
+                 {
+                    state.enemyState = 3;
+                    attack.Attack(); 
+                 }
+                 else
+                 {
                 
                         FollowPlayer();
-                    }
+                 }
+                
+                break;
+
+            case 3:
+                //attack
+
+                if(!isAttacking)
+                {
+                    state.enemyState = 2;
                 }
+
+                break;
+            case 4:
+                //attack
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+
                 break;
         }
     }

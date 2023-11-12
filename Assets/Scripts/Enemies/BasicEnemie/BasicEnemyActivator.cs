@@ -9,8 +9,17 @@ public class BasicEnemyActivator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            transform.parent.GetComponent<BasicEnemyState>().enemyState = 2;
-            Destroy(this.gameObject);
+            transform.root.GetComponent<BasicEnemyState>().enemyState = 2;
+            
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            transform.root.GetComponent<BasicEnemyState>().enemyState = 1;
+            
+        }
+    }
+
 }

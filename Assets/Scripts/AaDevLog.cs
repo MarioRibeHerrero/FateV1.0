@@ -21,9 +21,9 @@ Añadir Parry: :/
 
 ----------------------
 
-Dia2:
+Dia2:(09-11-22):
 --
-Mañana
+Hecho por la mañana
 Añadidos ataques(con cubos)
 vida basica(no hay nada q te quite vida)
 doble salto visual
@@ -33,7 +33,13 @@ rotaionpersonaje(capsula) arreglado
 --
 Tarde
 
-
+Dia3:(09-11-22):
+--
+Añadido enegimo pocho
+Lo estoy escribiendo el domingo y ns q hice jaja
+--
+Fin de semana1:
+Añadido nuevo sistema de enemigo un poco mejor,(no programado pero por lo menos esta muy setteado para mañana.
 
 
  */
