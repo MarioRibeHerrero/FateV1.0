@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BasicEnemyPathing : MonoBehaviour
 {
@@ -139,6 +140,9 @@ public class BasicEnemyPathing : MonoBehaviour
         // Calculate the direction towards the player
         Vector3 direction = (new Vector3(player.transform.position.x, transform.position.y, transform.position.z) - transform.position).normalized;
         GetComponent<Rigidbody>().MovePosition(transform.position + direction * followSpeed * Time.deltaTime);
+
+
+
         FacePlayer();
     }
 
@@ -148,6 +152,7 @@ public class BasicEnemyPathing : MonoBehaviour
 
     void MoveTowardsTarget()
     {
+
         float step = chillSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y,transform.position.z), step);
 
@@ -157,22 +162,40 @@ public class BasicEnemyPathing : MonoBehaviour
         }
     }
 
+
+    public void RandomTarget()
+    {
+        int random = Random.Range(1,3);
+
+        if(random == 1)
+        {
+            target = pointA;
+            facingRight = true;
+        }
+        else
+        {
+            target = pointB;
+            facingRight = false;
+        }
+        UpdateLookPos();
+    }
+
     IEnumerator WaitAtPoint()
     {
         isWaiting = true;
         yield return new WaitForSeconds(waitTime);
-        if(facingRight) facingRight = false;
-        else facingRight = true;
-        UpdateLookPos();
+       
         if (target == pointA)
         {
             target = pointB;
+            facingRight = false;
         }
         else
         {
             target = pointA;
+            facingRight = true;
         }
-
+        UpdateLookPos();
         isWaiting = false;
     }
 
