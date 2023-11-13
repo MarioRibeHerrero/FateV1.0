@@ -8,16 +8,18 @@ TagManager:
   - HookPoint
   - Wings
   - Parry
+  - Enemy
+  - BasicEnemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - NoCollisionEnemy
+  - CollisionEnemy
   - 
   - 
   - 
