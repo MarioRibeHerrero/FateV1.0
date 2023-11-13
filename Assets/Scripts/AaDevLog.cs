@@ -41,5 +41,14 @@ Lo estoy escribiendo el domingo y ns q hice jaja
 Fin de semana1:
 Añadido nuevo sistema de enemigo un poco mejor,(no programado pero por lo menos esta muy setteado para mañana.
 
+Dia4:
+Hecho Por la Mañana:
+Enemigo(por pullir obb pero bastante mejor q el del otro dia)
+Parry(funciona la parte del enemigo(lo stunea)) falta meteer que recuperes vida
+Movimiento adicional camara(jostic derecho abajo mueve la camara abajo)
+Metido el mapa y ajustes de pablo
+Ahora me voy a poner con el cambio de sentido(q lo haga mas rapido)(ns si acabare ahora o por la tarde)
+Cambio de sentido terminado
+
 
  */

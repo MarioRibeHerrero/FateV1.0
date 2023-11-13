@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float acceleration, airAcceleration, deceleration, maxSpeed;
     [SerializeField] float gravityScale;
 
+    [SerializeField] bool changingDirection;
+
     //public
     public bool hasStopedMidAir;
 
@@ -60,22 +62,30 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Movement()
     {
+        //check if you are changing direcction
+         changingDirection = (rb.velocity.x < 0 && GetInputsX().x > 0) || (rb.velocity.x > 0 && GetInputsX().x < 0);
+
+
         //we set a movement aceleration for the grounded player and anotherone for airplayer
         if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(GetInputsX().x * acceleration, 0f));
         else rb.AddForce(new Vector2(GetInputsX().x * airAcceleration, 0f));
 
         // Since addForce does not limit the speed, we need to limit it.
         if (Mathf.Abs(rb.velocity.x) > maxSpeed) rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+           
 
         //DRAG
         if (pGroundCheck.isPlayerGrounded)
         {
             //if the player stops moving we want the drag to be= to the deceleration.
-            if (Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping) rb.drag = deceleration;
+            if ((Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping)  || changingDirection) rb.drag = deceleration;
             else rb.drag = 0f;
         }
 
-        /*
+
+
+
+        /* CANCELAR MOVIMIENTO MITAD DEL AIRE
          * DARLE UNA VUELTA(si saltas parado y te mueves luego no va, si paras mueves paras y mueves no va, si usas hook no va)
          * 
         if (!hasStopedMidAir && Mathf.Abs(GetInputsX().x) <= 0.4 && !pGroundCheck.isPlayerGrounded && !pHook.isHooking)
