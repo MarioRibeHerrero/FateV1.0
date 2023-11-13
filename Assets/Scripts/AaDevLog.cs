@@ -49,6 +49,13 @@ Movimiento adicional camara(jostic derecho abajo mueve la camara abajo)
 Metido el mapa y ajustes de pablo
 Ahora me voy a poner con el cambio de sentido(q lo haga mas rapido)(ns si acabare ahora o por la tarde)
 Cambio de sentido terminado
-
+Hecho x la tarde:
+empezado sistema respawn
+solucion pocha de camera boundaries
+investigado mas sobre el enemigo
+----
+hacer mañana:
+DEJAR CLARO TODA LA PROGRAMACION Q VOY A NECESITAR
+si eso terminar respawn.
 
  */

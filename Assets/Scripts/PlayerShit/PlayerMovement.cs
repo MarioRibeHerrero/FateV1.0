@@ -42,9 +42,10 @@ public class PlayerMovement : MonoBehaviour
         return inputs;
     }
 
-    void Update()
+
+
+    private void FixedUpdate()
     {
-        //we activame the moving system if you are not ocupied
         if (!pHook.isHooking && GameManager.Instance.canPlayerMove)
         {
             GravityScale();
