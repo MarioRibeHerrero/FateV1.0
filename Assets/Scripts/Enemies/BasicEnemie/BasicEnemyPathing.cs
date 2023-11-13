@@ -9,6 +9,7 @@ public class BasicEnemyPathing : MonoBehaviour
     [SerializeField] Transform pointB;
     [SerializeField] float chillSpeed = 5f;
     [SerializeField] float waitTime = 1f;
+    private bool canMove;
 
     private Transform target;
     private bool isWaiting;
@@ -24,17 +25,31 @@ public class BasicEnemyPathing : MonoBehaviour
     private bool facingRight;
 
     //attack
-    [SerializeField] BasicEnemyAttack attack;
     BasicEnemyState state;
+    [SerializeField] Transform attackRange;
+    [SerializeField] LayerMask attackLayer;
+    [SerializeField] float timer = 0;
+
+    public bool stunned;
+    //animations
+
+    private Animator anim;
 
 
     void Start()
     {
+
+        //Components from root
+        anim = transform.root.GetComponent<Animator>();
         state = transform.root.GetComponent<BasicEnemyState>();
+
+
         target = pointA;
         isWaiting = false;
         facingRight = true;
         UpdateLookPos();
+
+        
     }
 
     void Update()
@@ -53,19 +68,17 @@ public class BasicEnemyPathing : MonoBehaviour
 
                 case 2:
                 //Follow player
-              
-                 float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+                if(canMove && !stunned) FollowPlayer();
 
-                 if (distanceToPlayer <= attackDistance)
+                //si estas en rango, atacas
+                if (CanAttack() && !stunned)
                  {
+                    anim.SetTrigger("Attack");
+                    isAttacking = true;
                     state.enemyState = 3;
-                    attack.Attack(); 
+
                  }
-                 else
-                 {
-                
-                        FollowPlayer();
-                 }
+
                 
                 break;
 
@@ -78,15 +91,46 @@ public class BasicEnemyPathing : MonoBehaviour
                 }
 
                 break;
-            case 4:
-                //attack
-                GetComponent<Rigidbody>().velocity = Vector3.zero;
-
-                break;
         }
+
+        ControlAttacktimer();
     }
 
 
+
+    private bool CanAttack()
+    {
+        
+        bool canAttack;
+
+        if(Physics.OverlapBox(attackRange.position, new Vector3(0.9f, 0.8f, 0.5f), Quaternion.identity, attackLayer).Length > 0 && timer >= 0.01f)
+        {
+            
+            canAttack = true;
+            timer = 0;
+            return canAttack;
+        }
+        else
+        {
+            canAttack = false;
+            return canAttack;
+        }
+
+        
+    }
+    private void ControlAttacktimer()
+    {
+        if (Physics.OverlapBox(attackRange.position, new Vector3(0.9f, 0.8f, 0.5f), Quaternion.identity, attackLayer).Length > 0)
+        {
+            timer += Time.deltaTime;
+            canMove = false;
+        }
+        else
+        {
+            timer = 0;
+            canMove = true;
+        }
+    }
 
 
 
@@ -94,9 +138,8 @@ public class BasicEnemyPathing : MonoBehaviour
     {
         // Calculate the direction towards the player
         Vector3 direction = (new Vector3(player.transform.position.x, transform.position.y, transform.position.z) - transform.position).normalized;
-
-
         GetComponent<Rigidbody>().MovePosition(transform.position + direction * followSpeed * Time.deltaTime);
+        FacePlayer();
     }
 
 
@@ -138,9 +181,24 @@ public class BasicEnemyPathing : MonoBehaviour
         if(facingRight) transform.rotation = Quaternion.Euler(0, 180, 0);
         else transform.rotation = Quaternion.Euler(0, 0, 0);
     }
+    private void FacePlayer()
+    {
+        if (player.transform.position.x >= transform.position.x)
+        {
+            facingRight = false;
+            UpdateLookPos();
+        }
+        else
+        {
+            facingRight = true;
+            UpdateLookPos();
+        }
 
-
-
+    }
 
 }
+
+
+
+
 
