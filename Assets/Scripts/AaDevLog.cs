@@ -41,7 +41,7 @@ Lo estoy escribiendo el domingo y ns q hice jaja
 Fin de semana1:
 Añadido nuevo sistema de enemigo un poco mejor,(no programado pero por lo menos esta muy setteado para mañana.
 
-Dia4:
+Dia4(13-11-23):
 Hecho Por la Mañana:
 Enemigo(por pullir obb pero bastante mejor q el del otro dia)
 Parry(funciona la parte del enemigo(lo stunea)) falta meteer que recuperes vida
