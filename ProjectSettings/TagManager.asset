@@ -12,6 +12,7 @@ TagManager:
   - BasicEnemy
   - CameraConfiner
   - SpawnPoint
+  - Death
   layers:
   - Default
   - TransparentFX

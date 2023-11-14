@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] UiManager uiManager;
-    [SerializeField] Transform currentSpawnPoint;
+    public Transform currentSpawnPoint;
     [SerializeField] GameObject player;
 
 
@@ -30,7 +30,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(GameManager.Instance.playerHealth <= 0)
         {
-            player.SetActive(false);
+           
             GameManager.Instance.isPlayerAlive = false;
             StartCoroutine(RevivePlayer());
             uiManager.UpdatePlayerHealthSlider();
@@ -41,9 +41,17 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator RevivePlayer()
     {
         yield return new WaitForSeconds(1);
-        player.transform.position = currentSpawnPoint.transform.position;
-        player.SetActive(true);
+        transform.position = currentSpawnPoint.transform.position;
+        
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Death"))
+        {
+            TakeDamage(100);
+        }
     }
 
 }
