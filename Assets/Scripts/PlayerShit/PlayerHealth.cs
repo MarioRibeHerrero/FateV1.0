@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
            
             GameManager.Instance.isPlayerAlive = false;
             StartCoroutine(RevivePlayer());
+            GameManager.Instance.playerHealth = 100f;
             uiManager.UpdatePlayerHealthSlider();
         }
     }

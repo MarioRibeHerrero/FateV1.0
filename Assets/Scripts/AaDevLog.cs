@@ -58,4 +58,11 @@ hacer mañana:
 DEJAR CLARO TODA LA PROGRAMACION Q VOY A NECESITAR
 si eso terminar respawn.
 
+Dia5:
+Añadidas todas las cosas que se me han podido ocurrir al trello
+Terminado respawn con los altares
+solucionado problema rotacion camara al reaparecer.
+investigado sobre camera boundaries, de momento he encontrado una solucion super pocha(mañana preguntar en clase)
+Hcaer mañana:
+Añadir player hit y si tengo tiempo Aa
  */
