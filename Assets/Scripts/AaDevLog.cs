@@ -76,4 +76,12 @@ Añadido q mueras, te hagas invisible y aprarezcas
 
 para hacer por la tarde:
 mejorar enemigo a full y hacer enemigo volador
+
+Tarde:
+Trabajado en mejorar el enemigo:
+quitado RB, ahora se mueve por movetowards, quitado todos los colliders, el enemigo te empuja, pero lo puedes atravesar.
+si caes por encima de el, no te empuja, te relentiza y lo atraviesas. igual q si le saltas, para asi no cortar el salto(blaspgemous)
+No tiene puntos muertos ya(en los q te podias quedar y se quedaba pegando a la nada.)
+el personaje se hace inbulnerable tgemporalmente cunado le golpean
+cambiado el modo de hacer el parry(ahora va por una variable que esta en el gamemanager)
  */

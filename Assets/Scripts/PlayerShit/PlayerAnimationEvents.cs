@@ -40,5 +40,12 @@ public class PlayerAnimationEvents : MonoBehaviour
     private void Parry()
     {
         GetComponent<PlayerHealth>().TakeDamage(30);
+        GameManager.Instance.isPlayerParry = true;
     }
+    private void ParryEnd()
+    {
+        GameManager.Instance.isPlayerParry = false;
+
+    }
+    
 }

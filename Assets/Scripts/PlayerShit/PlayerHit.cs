@@ -2,20 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PlayerHit : MonoBehaviour
 {
-    
 
 
+    [SerializeField] float invulnerabilityTime;
 
-    public void HitPlayer(Vector3 hitPosition,float pushBackForce, float stunTime, float damageTaken)
+    public void HitPlayer(Vector3 hitPosition,float pushBackForce, float stunTime, float damageTaken, bool takingSlow)
     {
+        if (!GameManager.Instance.isPlayerInvulnerable)
+        {
+            if(takingSlow)
+            {
+                StartCoroutine(SlowPlayer());
+            }
 
-        StartCoroutine(StunPlayer(stunTime, hitPosition, pushBackForce));
-        GetComponent<PlayerHealth>().TakeDamage(damageTaken);
+            GameManager.Instance.isPlayerInvulnerable = true;
+            Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
+            StartCoroutine(StunPlayer(stunTime, hitPosition, pushBackForce));
+            GetComponent<PlayerHealth>().TakeDamage(damageTaken);
+        }
     }
 
+
+    private void PlayerToVulnerable()
+    {
+        GameManager.Instance.isPlayerInvulnerable = false;
+    }
 
 
     private void pushPlayer(Vector3 hitPosition, float pushBackForce)
@@ -25,18 +40,10 @@ public class PlayerHit : MonoBehaviour
         // sera menos 1 y lo empujara al otro lado.
         Vector3 pushbackDirection = hitPosition.y == 180 ? new Vector3(1, 0, 0) : new Vector3(-1, 0, 0);
 
-        if (GetComponent<PlayerGroundCheck>().isPlayerGrounded)
-        {
-            GetComponent<Rigidbody>().drag = 7;
+        GetComponent<Rigidbody>().drag = 7;
 
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            GetComponent<Rigidbody>().AddForce(pushbackDirection * pushBackForce, ForceMode.Impulse);
-        }
-        else
-        {
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            GetComponent<Rigidbody>().AddForce(pushbackDirection * pushBackForce / 4, ForceMode.Impulse);
-        }
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().AddForce(pushbackDirection * pushBackForce, ForceMode.Impulse);
     }
 
     private IEnumerator StunPlayer(float stunTime, Vector3 hitPosition, float pushBackForce)
@@ -64,5 +71,13 @@ public class PlayerHit : MonoBehaviour
         GetComponent<PlayerParry>().enabled = true;
         GetComponent<PlayerAa>().enabled = true;
         GetComponent<PlayerHook>().enabled = true;
+    }
+
+    private IEnumerator SlowPlayer()
+    {
+        Vector3 currentVel = GetComponent<Rigidbody>().velocity;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        yield return new WaitForSeconds(0.1f);
+        //GetComponent<Rigidbody>().velocity = currentVel;
     }
 }

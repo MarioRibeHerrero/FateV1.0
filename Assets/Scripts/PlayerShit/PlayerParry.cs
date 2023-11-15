@@ -8,10 +8,16 @@ public class PlayerParry : MonoBehaviour
     PlayerInput playerInput;
     private Animator anim;
 
+    
+
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
+
+
+
         playerInput.actions["Parry"].started += PlayerParry_started;
+
         anim = GetComponent<Animator>();
     }
 
@@ -20,7 +26,7 @@ public class PlayerParry : MonoBehaviour
         if(GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
         {
             anim.SetTrigger("Parry");
-
+           
         }
     }
 

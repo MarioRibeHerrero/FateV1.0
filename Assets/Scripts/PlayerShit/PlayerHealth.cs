@@ -25,7 +25,12 @@ public class PlayerHealth : MonoBehaviour
         uiManager.UpdatePlayerHealthSlider();
     }
 
-
+    public void HealPlayer(float healAmmount)
+    {
+        GameManager.Instance.playerHealth += healAmmount;
+        CheckHealth();
+        uiManager.UpdatePlayerHealthSlider();
+    }
     private void CheckHealth()
     {
         if(GameManager.Instance.playerHealth <= 0)

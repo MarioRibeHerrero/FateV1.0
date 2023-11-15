@@ -18,7 +18,6 @@ public class BasicEnemyPathing : MonoBehaviour
 
     //FollowingPlayer
     [SerializeField] GameObject player;
-    [SerializeField] float followSpeed, attackDistance;
     public bool isAttacking;
 
 
@@ -30,6 +29,7 @@ public class BasicEnemyPathing : MonoBehaviour
     [SerializeField] Transform attackRange;
     [SerializeField] LayerMask attackLayer;
     [SerializeField] float timer = 0;
+    [SerializeField] Vector3 attackRangeVector;
 
     public bool stunned;
     //animations
@@ -98,13 +98,17 @@ public class BasicEnemyPathing : MonoBehaviour
     }
 
 
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(attackRange.position, attackRangeVector);
+    }
     private bool CanAttack()
     {
         
         bool canAttack;
 
-        if(Physics.OverlapBox(attackRange.position, new Vector3(0.9f, 0.8f, 0.5f), Quaternion.identity, attackLayer).Length > 0 && timer >= 0.01f)
+        if(Physics.OverlapBox(attackRange.position, attackRangeVector / 2, Quaternion.identity, attackLayer).Length > 0 && timer >= 0.01f)
         {
             
             canAttack = true;
@@ -121,7 +125,7 @@ public class BasicEnemyPathing : MonoBehaviour
     }
     private void ControlAttacktimer()
     {
-        if (Physics.OverlapBox(attackRange.position, new Vector3(0.9f, 0.8f, 0.5f), Quaternion.identity, attackLayer).Length > 0)
+        if (Physics.OverlapBox(attackRange.position, attackRangeVector / 2, Quaternion.identity, attackLayer).Length > 0)
         {
             timer += Time.deltaTime;
             canMove = false;
@@ -137,10 +141,9 @@ public class BasicEnemyPathing : MonoBehaviour
 
     void FollowPlayer()
     {
-        // Calculate the direction towards the player
-        Vector3 direction = (new Vector3(player.transform.position.x, transform.position.y, transform.position.z) - transform.position).normalized;
-        GetComponent<Rigidbody>().MovePosition(transform.position + direction * followSpeed * Time.deltaTime);
+        Vector3 targetPosition = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
 
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, chillSpeed * Time.deltaTime);
 
 
         FacePlayer();

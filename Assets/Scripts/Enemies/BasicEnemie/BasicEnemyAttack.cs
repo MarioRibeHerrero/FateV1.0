@@ -7,7 +7,7 @@ public class BasicEnemyAttack : MonoBehaviour
 {
 
 
-    [SerializeField] float damageTaken, stunTime, pushBackForce;
+    [SerializeField] float damageTaken, stunTime, pushBackForce, pushBackForceOnCollision, damageTakenOnCollision;
 
 
 
@@ -15,20 +15,28 @@ public class BasicEnemyAttack : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.GetComponent<PlayerHit>().HitPlayer(this.transform.eulerAngles, pushBackForce, stunTime, damageTaken);
+            other.GetComponent<PlayerHit>().HitPlayer(this.transform.eulerAngles, pushBackForce, stunTime, damageTaken, false);
           //  Debug.Log(this.transform.eulerAngles);
         }
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.CompareTag("Player"))
-        {
-            //collision.transform.GetComponent<PlayerHit>().HitPlayer(this.transform.eulerAngles, 50, 1, 10);
 
-            Debug.Log(this.transform.name);
+    public void HitHead(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerHit>().HitPlayer(this.transform.eulerAngles, 0, 0, damageTakenOnCollision, true);
+            //  Debug.Log(this.transform.eulerAngles);
         }
-      
+    }
+
+    public void HitBody(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerHit>().HitPlayer(this.transform.eulerAngles, pushBackForceOnCollision, stunTime, damageTakenOnCollision, false) ;
+            //  Debug.Log(this.transform.eulerAngles);
+        }
     }
 }
