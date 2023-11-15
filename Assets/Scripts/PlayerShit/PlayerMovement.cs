@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Movement variables
     [SerializeField] float acceleration, airAcceleration, deceleration, maxSpeed;
-    [SerializeField] float gravityScale;
+
 
     [SerializeField] bool changingDirection;
 
@@ -48,19 +48,11 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!pHook.isHooking && GameManager.Instance.canPlayerMove)
         {
-            GravityScale();
             Movement();
         }
     }
 
-    private void GravityScale()
-    {
-        //Apply gravity
-        Vector3 gravityVector = new Vector3(0, -gravityScale, 0);
-        rb.AddForce(gravityVector, ForceMode.Acceleration);
-        //set drag to 0 when falling
-        if (rb.velocity.y <= 0) rb.drag = 0f;
-    }
+
     private void Movement()
     {
         //check if you are changing direcction

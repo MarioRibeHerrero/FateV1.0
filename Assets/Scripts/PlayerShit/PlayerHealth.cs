@@ -32,18 +32,47 @@ public class PlayerHealth : MonoBehaviour
         {
            
             GameManager.Instance.isPlayerAlive = false;
+            DesactivateAllPlayerFuntionsAndKill();
             StartCoroutine(RevivePlayer());
-            GameManager.Instance.playerHealth = 100f;
-            uiManager.UpdatePlayerHealthSlider();
+
         }
     }
 
+
+    private void DesactivateAllPlayerFuntionsAndKill()
+    {
+        transform.Find("Body").transform.gameObject.SetActive(false);
+
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<PlayerRotation>().enabled = false;
+        GetComponent<PlayerJump>().enabled = false;
+        GetComponent<PlayerParry>().enabled = false;
+        GetComponent<PlayerAa>().enabled = false;
+        GetComponent<PlayerHook>().enabled = false;
+
+    }
+
+
+    private void ActivateAllPlayerFuntionsAndKill()
+    {
+
+        GetComponent<PlayerMovement>().enabled = true;
+        GetComponent<PlayerRotation>().enabled = true;
+        GetComponent<PlayerJump>().enabled = true;
+        GetComponent<PlayerParry>().enabled = true;
+        GetComponent<PlayerAa>().enabled = true;
+        GetComponent<PlayerHook>().enabled = true;
+
+    }
 
     private IEnumerator RevivePlayer()
     {
         yield return new WaitForSeconds(1);
         transform.position = currentSpawnPoint.transform.position;
-        
+        transform.Find("Body").transform.gameObject.SetActive(true);
+        ActivateAllPlayerFuntionsAndKill();
+        GameManager.Instance.playerHealth = 100f;
+        uiManager.UpdatePlayerHealthSlider();
 
     }
 

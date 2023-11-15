@@ -170,12 +170,12 @@ public class BasicEnemyPathing : MonoBehaviour
         if(random == 1)
         {
             target = pointA;
-            facingRight = true;
+            facingRight = false;
         }
         else
         {
             target = pointB;
-            facingRight = false;
+            facingRight = true;
         }
         UpdateLookPos();
     }
@@ -188,12 +188,12 @@ public class BasicEnemyPathing : MonoBehaviour
         if (target == pointA)
         {
             target = pointB;
-            facingRight = false;
+            facingRight = true;
         }
         else
         {
             target = pointA;
-            facingRight = true;
+            facingRight = false;
         }
         UpdateLookPos();
         isWaiting = false;
@@ -208,12 +208,12 @@ public class BasicEnemyPathing : MonoBehaviour
     {
         if (player.transform.position.x >= transform.position.x)
         {
-            facingRight = false;
+            facingRight = true;
             UpdateLookPos();
         }
         else
         {
-            facingRight = true;
+            facingRight = false;
             UpdateLookPos();
         }
 

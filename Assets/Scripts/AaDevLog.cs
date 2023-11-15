@@ -65,4 +65,15 @@ solucionado problema rotacion camara al reaparecer.
 investigado sobre camera boundaries, de momento he encontrado una solucion super pocha(mañana preguntar en clase)
 Hcaer mañana:
 Añadir player hit y si tengo tiempo Aa
+
+
+Dia6:
+hecho por la mañana:
+Añadido player Hit
+Añadido Aa aereo vertical y horizontal
+añadido sprite temporal del enemigo, hechas animaciones pochas para este enemigo, y mejorado el enemigo(ahora te emppuja bn y toda la pesca)
+Añadido q mueras, te hagas invisible y aprarezcas
+
+para hacer por la tarde:
+mejorar enemigo a full y hacer enemigo volador
  */

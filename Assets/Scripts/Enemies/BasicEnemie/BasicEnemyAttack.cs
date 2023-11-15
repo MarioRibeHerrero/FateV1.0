@@ -1,25 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class BasicEnemyAttack : MonoBehaviour
 {
-    BasicEnemyPathing ePathing;
-    private Animator animator;
-    void Start()
+
+
+    [SerializeField] float damageTaken, stunTime, pushBackForce;
+
+
+
+    public void BasicAttack(Collider other)
     {
-        ePathing = transform.parent.GetComponent<BasicEnemyPathing>();
-        animator = transform.parent.GetComponent<Animator>();
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<PlayerHit>().HitPlayer(this.transform.eulerAngles, pushBackForce, stunTime, damageTaken);
+          //  Debug.Log(this.transform.eulerAngles);
+        }
     }
 
 
-
-    public void Attack()
+    private void OnCollisionEnter(Collision collision)
     {
-        ePathing.isAttacking = true;
-        animator.SetTrigger("Attack");
+        if (collision.transform.CompareTag("Player"))
+        {
+            //collision.transform.GetComponent<PlayerHit>().HitPlayer(this.transform.eulerAngles, 50, 1, 10);
+
+            Debug.Log(this.transform.name);
+        }
+      
     }
-
-
-
 }

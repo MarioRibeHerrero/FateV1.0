@@ -19,5 +19,5 @@ public class GameManager : MonoBehaviour
     //PlayerThings
     public float playerHealth;
     public bool isPlayerAlive;
-    public bool canPlayerMove, canPlayerRotate, isOccupied;
+    public bool canPlayerMove, canPlayerRotate, isOccupied, isPlayerStunned;
 }

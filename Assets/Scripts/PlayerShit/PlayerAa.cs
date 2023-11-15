@@ -37,9 +37,17 @@ public class PlayerAa : MonoBehaviour
             {
                 anim.SetTrigger("Aa");
             }
-        
 
 
+
+        if (GetInputs().y >= upDifference  && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
+        {
+            anim.SetTrigger("AaUpAir");
+        }
+        else if (Mathf.Abs(GetInputs().x) >= 0 && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
+        {
+            anim.SetTrigger("AaAir");
+        }
     }
 
 }
