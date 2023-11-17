@@ -55,7 +55,7 @@ public class BasicEnemyPathing : MonoBehaviour
 
     void Update()
     {
-        switch(transform.root.GetComponent<BasicEnemyState>().enemyState)
+        switch(transform.parent.GetComponent<BasicEnemyState>().enemyState)
         {
 
             case 1:
