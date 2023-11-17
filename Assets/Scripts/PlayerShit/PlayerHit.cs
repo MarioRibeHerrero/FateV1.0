@@ -38,12 +38,38 @@ public class PlayerHit : MonoBehaviour
 
         //multiplicamos 1, x el signo de la rotacion, x lo que si esta miradno a la derecha, 1 lo empujara a la derecha, si esta en la izquierda,
         // sera menos 1 y lo empujara al otro lado.
-        Vector3 pushbackDirection = hitPosition.y == 180 ? new Vector3(1, 0, 0) : new Vector3(-1, 0, 0);
 
-        GetComponent<Rigidbody>().drag = 7;
 
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<Rigidbody>().AddForce(pushbackDirection * pushBackForce, ForceMode.Impulse);
+
+        //Si el enemigo esta mirando a la derecha:
+        if (hitPosition.y == 180)
+        {
+            //si el player mira a derecha se le empuja para atas, y si player mirando izquierda le empuja derecha
+            Vector3 pushbackDirection = GetComponent<PlayerRotation>().isFacingRight ?  new Vector3(-1, 0, 0) : new Vector3(1, 0, 0);
+
+            GetComponent<Rigidbody>().drag = 7;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().AddForce(pushbackDirection * pushBackForce, ForceMode.Impulse);
+        }
+        else
+        {
+            //si el player mira a izquierda se le empuja para atas, y si player mirando derecha le empuja derecha
+            Vector3 pushbackDirection = GetComponent<PlayerRotation>().isFacingRight ? new Vector3(-1, 0, 0) : new Vector3(1, 0, 0);
+
+            GetComponent<Rigidbody>().drag = 7;
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().AddForce(pushbackDirection * pushBackForce, ForceMode.Impulse);
+        }
+
+
+
+
+
+
+
+
+
+
     }
 
     private IEnumerator StunPlayer(float stunTime, Vector3 hitPosition, float pushBackForce)
@@ -58,6 +84,7 @@ public class PlayerHit : MonoBehaviour
         GetComponent<PlayerParry>().enabled = false;
         GetComponent<PlayerAa>().enabled = false;
         GetComponent<PlayerHook>().enabled = false;
+
         pushPlayer(hitPosition, pushBackForce);
 
         yield return new WaitForSeconds(stunTime);

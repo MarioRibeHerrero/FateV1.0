@@ -10,7 +10,7 @@ public class PlayerRotation : MonoBehaviour
     PlayerInput playerInput;
     [SerializeField] private GameObject playerBody;
     //
-    private bool isFacingRight;
+    public bool isFacingRight;
 
     void Start()
     {

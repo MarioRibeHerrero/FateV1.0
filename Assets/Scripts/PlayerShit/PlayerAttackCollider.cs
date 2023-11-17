@@ -10,6 +10,7 @@ public class PlayerAttackCollider : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             other.transform.parent.GetComponent<GenericHealth>().TakeDamage(20);
+            transform.root.GetComponent<PlayerHealth>().HealPlayer(5);
         }
     }
 }

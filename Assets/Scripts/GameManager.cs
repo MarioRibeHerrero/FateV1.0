@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
         canPlayerRotate = true;
         canPlayerMove = true;
         isPlayerAlive = true;
-        playerHealth = 100;
+        playerHealth = 50;
         isOccupied = false;
     }
     //PlayerThings

@@ -75,7 +75,7 @@ añadido sprite temporal del enemigo, hechas animaciones pochas para este enemigo
 Añadido q mueras, te hagas invisible y aprarezcas
 
 para hacer por la tarde:
-mejorar enemigo a full y hacer enemigo volador
+mejorar enemigo a full y hacer enemigo volador si tengo timepo
 
 Tarde:
 Trabajado en mejorar el enemigo:
@@ -84,4 +84,13 @@ si caes por encima de el, no te empuja, te relentiza y lo atraviesas. igual q si
 No tiene puntos muertos ya(en los q te podias quedar y se quedaba pegando a la nada.)
 el personaje se hace inbulnerable tgemporalmente cunado le golpean
 cambiado el modo de hacer el parry(ahora va por una variable que esta en el gamemanager)
+
+
+
+
+
+
+COSAS A TENRE EN CUNETA;
+rafaga aa
+
  */

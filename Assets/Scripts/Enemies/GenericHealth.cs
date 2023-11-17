@@ -7,7 +7,7 @@ public class GenericHealth : MonoBehaviour
     private int health;
     private void Start()
     {
-        health = 100;
+        health = 140;
     }
     public void TakeDamage(int damage)
     {
