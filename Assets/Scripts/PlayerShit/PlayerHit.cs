@@ -32,7 +32,10 @@ public class PlayerHit : MonoBehaviour
         GameManager.Instance.isPlayerInvulnerable = false;
     }
 
-
+    public void Kill()
+    {
+        GetComponent<PlayerHealth>().TakeDamage(100);
+    }
     private void pushPlayer(Vector3 hitPosition, float pushBackForce)
     {
 

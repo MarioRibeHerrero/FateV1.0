@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEnemyAttack : MonoBehaviour
+public class TrapDamage : MonoBehaviour
 {
 
-    [SerializeField] GameObject parent;
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(parent.GetComponent<FlyingEnemyPath>().AttackPlayer(other));
+           GameObject.FindObjectOfType<PlayerHit>().HitPlayer(this.transform.position,0,0,30,true);
         }
     }
+
+
 }
+

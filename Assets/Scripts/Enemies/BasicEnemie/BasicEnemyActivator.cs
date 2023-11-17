@@ -5,11 +5,12 @@ using UnityEngine;
 public class BasicEnemyActivator : MonoBehaviour
 {
     [SerializeField] BasicEnemyPathing ePathing;
+    [SerializeField] GameObject parent;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            transform.root.GetComponent<BasicEnemyState>().enemyState = 2;
+            parent.GetComponent<BasicEnemyState>().enemyState = 2;
             
         }
     }
@@ -17,7 +18,7 @@ public class BasicEnemyActivator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            transform.root.GetComponent<BasicEnemyState>().enemyState = 1;
+            parent.GetComponent<BasicEnemyState>().enemyState = 1;
             ePathing.RandomTarget();
             
         }

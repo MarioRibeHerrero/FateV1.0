@@ -5,59 +5,46 @@ using UnityEngine;
 public class FlyingEnemyPath : MonoBehaviour
 {
     //Pathing
-    [SerializeField] Transform pointA;
-    [SerializeField] Transform pointB;
-    [SerializeField] float chillSpeed = 5f;
-    [SerializeField] float waitTime = 1f;
-    private bool canMove;
+    [SerializeField] float animationTime, waitTime;
+    [SerializeField] float attackForce;
 
+    private Rigidbody rb;
     private Transform target;
-    private bool isWaiting;
+    public int health;
 
     void Start()
     {
-
-        target = pointA;
-        isWaiting = false;
+        rb = GetComponent<Rigidbody>();
+        health = 10;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        //normal Path
-        if (!isWaiting)
-        {
-            MoveTowardsTarget();
-        }
-    }
-    void MoveTowardsTarget()
-    {
 
-        float step = chillSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y, transform.position.z), step);
-
-        if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x, transform.position.y, transform.position.z)) < 0.01f)
-        {
-            StartCoroutine(WaitAtPoint());
-        }
-    }
-
-    IEnumerator WaitAtPoint()
+    public IEnumerator AttackPlayer(Collider player)
     {
-        isWaiting = true;
+        //animacion prep ataque
+        yield return new WaitForSeconds(animationTime);
+
+        //Detectar Personaje
+        target = player.transform;
+
         yield return new WaitForSeconds(waitTime);
+        rb.velocity = Vector3.zero;
+        //add the force to the hook
+        Vector3 forceDirection = target.transform.position - transform.position;
+        rb.AddForce(forceDirection.normalized * attackForce, ForceMode.Impulse);
 
-        if (target == pointA)
+
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        health =- damage;
+
+        if(health < 0)
         {
-            target = pointB;
-           // facingRight = true;
+            Destroy(this);
         }
-        else
-        {
-            target = pointA;
-           // facingRight = false;
-        }
-      //  UpdateLookPos();
-        isWaiting = false;
     }
 }

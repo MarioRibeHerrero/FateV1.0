@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class BasicEnemyPathing : MonoBehaviour
 {
+
+    [SerializeField] GameObject parent;
     //Pathing
     [SerializeField] Transform pointA;
     [SerializeField] Transform pointB;
@@ -41,8 +43,8 @@ public class BasicEnemyPathing : MonoBehaviour
     {
 
         //Components from root
-        anim = transform.root.GetComponent<Animator>();
-        state = transform.root.GetComponent<BasicEnemyState>();
+        anim = parent.GetComponent<Animator>();
+        state = parent.GetComponent<BasicEnemyState>();
 
 
         target = pointA;
@@ -55,7 +57,7 @@ public class BasicEnemyPathing : MonoBehaviour
 
     void Update()
     {
-        switch(transform.root.GetComponent<BasicEnemyState>().enemyState)
+        switch(state.enemyState)
         {
 
             case 1:

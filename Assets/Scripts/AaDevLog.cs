@@ -88,9 +88,59 @@ cambiado el modo de hacer el parry(ahora va por una variable que esta en el game
 
 
 
+Dia7:
+Alargado aa
+añadido enemigo volador(programado movimiento)
+Pensado sistema oleadas, cristal que spawnea enemigos
+Mejorado player hit.
 
+
+
+Dia8:
+
+PECH:
+
+En Fate podemos separar las mecánicas del personaje en dos apartados. Además de las mecánicas básicas de un metroidvania (correr y salto) 
+al final del salto puedes volver a pulsar el botón para realizar un pequeño impulso con el que poder llegar más lejos.
+Además, con el ataque principal recuperas cierta cantidad de vida.
+
+En Fate, las mecanicas se podrian dividir en dos secciones, las habilidades basicas del personaje, como serian los auto ataques,
+el salto el movimiento, o el parry y las habilidades obtenidas por el personaje a lo largo del nivel
+
+Dentro de las mecánicas mas compejas en Fate, podriamos encontrar el parry y el gancho. El parry, es una habilidad que al ser usada, protejera
+al personaje durante un brebe periodo de timepo, en el cual si el personaje es atacado, blockeara y devolvera este ataque,
+stuneando al enemigo atacante. Esta habilidad consumira un % de vida, que sera devuelto en caso de de acertar la habilidad.
+
+Por otro lado, el gancho, te permitira llegar a sitios a los cuales no podrias llegar con la movilidad base del personaje,
+desbloqueando asi, formas de esquivar los ataques de los enemigos, y zonas del mapa.
+
+Finalmente, y un poco menos compleja estaria el doble salto, que como su nombre indica, te permitiria inpulsarte una vez mas durante el salto.
+Esto te permitira tener mayor movilidad, asi como acceder a zones que antes no podias.
+
+
+En cuanto a mecanicas del entorno, podriamos dividirlas tambien en dos secciones, Interactuables por el persoanje, y que que afectan sobre el.
+
+En cuanto a las que afectan sobre el, tenemos las basicas, como el enemigo mele,
+Este, estara patrullando una zona, y una vez te vea, este te perseguira y atacara, sus ataques seran poderosos pero lentos, por lo que usar 
+el parry, sera la mejor opcon para derrotarlo.
+El enemigo volador, Estara fijo en una zona, y cunado te vea, se lanzara a por ti comom un kamikaze, golpeandote o explotando contra el suelo.
+
+En cunato a otras cosas que tendras que tener en cunata durante el nivel, podrian tambien encontrase trampas de pinchos en el suelo.
+
+
+
+------------
+Cambiado enemigo volador, ahora te ve, y se lanza a por ti, explotando tanto si impacta contigo como si impacta con el suelo.
+
+hacer ahora/despues del patio:
+Cambiar funcionamiento parry
 
 COSAS A TENRE EN CUNETA;
 rafaga aa
+Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
+
+modificado el generic health, para que sirva para todos los enemigos.
+añadido que el parry stune al enemigo volador
+
 
  */

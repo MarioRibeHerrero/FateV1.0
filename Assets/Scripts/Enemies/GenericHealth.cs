@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class GenericHealth : MonoBehaviour
 {
-    private int health;
-    private void Start()
-    {
-        health = 140;
-    }
+    [SerializeField] int health;
+    [SerializeField] GameObject parentGo;
     public void TakeDamage(int damage)
     {
         health -= damage;
         CheckHealth();
-        Debug.Log("GOLE");
+      //  Debug.Log("GOLE");
     }
 
 
@@ -21,7 +18,7 @@ public class GenericHealth : MonoBehaviour
     {
         if(health <= 0)
         {
-            Destroy(transform.root.gameObject);
+            Destroy(parentGo);
         }
     }
 }
