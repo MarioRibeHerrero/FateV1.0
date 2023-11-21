@@ -20,4 +20,10 @@ public class GameManager : MonoBehaviour
     public float playerHealth;
     public bool isPlayerAlive;
     public bool canPlayerMove, canPlayerRotate, isOccupied, isPlayerStunned, isPlayerInvulnerable, isPlayerParry;
+
+    //dobleJump
+    public bool canDobleJump;
+
+    //GainedAbilities
+    public bool isDobleJumpUnlocked, isHookUnlocked;
 }

@@ -35,7 +35,7 @@ Transform:
   - {fileID: 8232580497400187679}
   - {fileID: 7547752194307341978}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5700315136782137141
 MonoBehaviour:
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ePathing: {fileID: 3337269124829724668}
+  parent: {fileID: 1838460256380855621}
 --- !u!1 &2779937332397846629
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,6 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761220e6314e8e04bb5dfe5cd6869e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 1838460256380855621}
   pointA: {fileID: 4929916881307486316}
   pointB: {fileID: 3091791023701913426}
   chillSpeed: 3
@@ -469,6 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d868549b9045d5e488c733ec243376fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 3948980473377139987}
+  root: {fileID: 1838460256380855621}
   whatPointAmI: 2
 --- !u!1 &5523609810024663126
 GameObject:
@@ -653,6 +657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d868549b9045d5e488c733ec243376fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 3948980473377139987}
+  root: {fileID: 1838460256380855621}
   whatPointAmI: 1
 --- !u!1 &8103279300605986106
 GameObject:
@@ -720,6 +726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d868549b9045d5e488c733ec243376fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parent: {fileID: 3948980473377139987}
+  root: {fileID: 1838460256380855621}
   whatPointAmI: 0
 --- !u!1 &8183176285992006495
 GameObject:

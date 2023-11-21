@@ -135,6 +135,23 @@ Cambiado enemigo volador, ahora te ve, y se lanza a por ti, explotando tanto si 
 hacer ahora/despues del patio:
 Cambiar funcionamiento parry
 
+Añadido desblockeo de salto, limpiado codigo, comentado codigo y corregido bugs como doble cliuck hace qye sates mas alto,
+añadir ahora que no te deje hacer doble salto con menos de x distancia al suelo.
+
+corregir bug aa hace que saltes menos
+
+
+
+Dia9(21-11-2023):
+Arreglado bug al iniciar la partida
+
+
+
+
+
+
+
+
 COSAS A TENRE EN CUNETA;
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
@@ -142,5 +159,9 @@ Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 modificado el generic health, para que sirva para todos los enemigos.
 añadido que el parry stune al enemigo volador
 
+
+salto y cambio de direccion se sobreescriben
+
+ataque en el suelo y salto se sobreescriben
 
  */
