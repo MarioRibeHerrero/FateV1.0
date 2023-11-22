@@ -12,6 +12,11 @@ public class PlayerGroundCheck : MonoBehaviour
     [SerializeField] LayerMask groundCheckLayerMask;
 
     [SerializeField] float dobleJumpDistance;
+
+    private void Start()
+    {
+        GameManager.Instance.isDobleJumpUnlocked = true;
+    }
     void Update()
     {
         //Raycast q comprueba si estas o no en el suelo(devuelve true if your on ground and false if you are not)
