@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class BasicEnemyHitPoint : MonoBehaviour
 {
-
+    [SerializeField] GameObject parent, root;
     private enum Points
     {
         head,
@@ -24,12 +24,12 @@ public class BasicEnemyHitPoint : MonoBehaviour
                     if (!GameManager.Instance.isPlayerParry)
                     {
 
-                        transform.parent.GetComponent<BasicEnemyAttack>().HitHead(other);
+                        parent.GetComponent<BasicEnemyAttack>().HitHead(other);
 
                     }
                     else
                     {
-                        transform.root.GetComponent<Animator>().SetTrigger("Stunned");
+                        root.GetComponent<Animator>().SetTrigger("Stunned");
                         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(30);
                     }
 
@@ -45,12 +45,12 @@ public class BasicEnemyHitPoint : MonoBehaviour
                         
                         if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGroundCheck>().isPlayerGrounded)
                         {
-                            transform.parent.GetComponent<BasicEnemyAttack>().HitBody(other);
+                            parent.GetComponent<BasicEnemyAttack>().HitBody(other);
                         }else transform.parent.GetComponent<BasicEnemyAttack>().HitHead(other);
                     }
                     else
                     {
-                        transform.root.GetComponent<Animator>().SetTrigger("Stunned");
+                        root.GetComponent<Animator>().SetTrigger("Stunned");
                         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(30);
                     }
                     
@@ -62,12 +62,12 @@ public class BasicEnemyHitPoint : MonoBehaviour
 
                     if (!GameManager.Instance.isPlayerParry)
                     {
-                        transform.parent.GetComponent<BasicEnemyAttack>().BasicAttack(other);
+                        parent.GetComponent<BasicEnemyAttack>().BasicAttack(other);
 
                     }
                     else
                     {
-                        transform.root.GetComponent<Animator>().SetTrigger("Stunned");
+                        root.GetComponent<Animator>().SetTrigger("Stunned");
                         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(30);
                     }
 

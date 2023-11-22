@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         //check if you are changing direcction
-         changingDirection = (rb.velocity.x < 0 && GetInputsX().x > 0) || (rb.velocity.x > 0 && GetInputsX().x < 0);
+         changingDirection = (pGroundCheck.isPlayerGrounded &&( rb.velocity.x < 0 && GetInputsX().x > 0) || (rb.velocity.x > 0 && GetInputsX().x < 0));
 
 
         //we set a movement aceleration for the grounded player and anotherone for airplayer
@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
            
 
         //DRAG
-        if (pGroundCheck.isPlayerGrounded)
+        if (pGroundCheck.isPlayerGrounded && !GetComponent<PlayerJump>().isHoldingJump)
         {
             //if the player stops moving we want the drag to be= to the deceleration.
             if ((Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping)  || changingDirection) rb.drag = deceleration;

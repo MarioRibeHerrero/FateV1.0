@@ -10,6 +10,8 @@ public class PlayerGroundCheck : MonoBehaviour
     [SerializeField] Transform groundCheckPos;
     //Layer del suelo
     [SerializeField] LayerMask groundCheckLayerMask;
+
+    [SerializeField] float dobleJumpDistance;
     void Update()
     {
         //Raycast q comprueba si estas o no en el suelo(devuelve true if your on ground and false if you are not)
@@ -38,5 +40,40 @@ public class PlayerGroundCheck : MonoBehaviour
             isPlayerGrounded = false;
 
         }
+
+
+
+
+
+
+        
+
+
+
+        // PUEDES HACER EL DOBLE SALTO?
+        Ray ray = new Ray(groundCheckPos.transform.position, Vector3.down);
+
+
+        Debug.DrawRay(ray.origin, ray.direction * dobleJumpDistance, Color.red);
+
+
+        // Check if the ray hits something on the Ground layer
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundCheckLayerMask))
+            {
+             // Check if the distance to the ground is greater than the threshold
+             if (hit.distance > dobleJumpDistance)
+             {
+                GameManager.Instance.canDobleJump = true;
+             }
+             else
+             {
+                 GameManager.Instance.canDobleJump = false;
+             }
+
+        }
     }
+
+
+
+
 }

@@ -7,10 +7,6 @@ using UnityEngine.Rendering;
 public class PlayerHit : MonoBehaviour
 {
 
-    private void Start()
-    {
-        HitPlayer(this.transform.position, 0, 0, 0, false);
-    }
     [SerializeField] float invulnerabilityTime;
 
     public void HitPlayer(Vector3 hitPosition,float pushBackForce, float stunTime, float damageTaken, bool takingSlow)

@@ -16,7 +16,7 @@ public class PlayerGravity : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!pHook.isHooking && GameManager.Instance.canPlayerMove)
+        if (!pHook.isHooking)
         {
             GravityScale();
         }
@@ -27,6 +27,8 @@ public class PlayerGravity : MonoBehaviour
         Vector3 gravityVector = new Vector3(0, -gravityScale, 0);
         rb.AddForce(gravityVector, ForceMode.Acceleration);
         //set drag to 0 when falling
-        if (rb.velocity.y <= 0 && !GameManager.Instance.isPlayerStunned) rb.drag = 0f;
+        if (rb.velocity.y < 0 && !GameManager.Instance.isPlayerStunned) rb.drag = 0f;
+
+
     }
 }
