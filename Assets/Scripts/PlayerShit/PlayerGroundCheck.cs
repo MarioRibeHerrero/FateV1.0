@@ -54,7 +54,7 @@ public class PlayerGroundCheck : MonoBehaviour
         Ray ray = new Ray(groundCheckPos.transform.position, Vector3.down);
 
 
-        Debug.DrawRay(ray.origin, ray.direction * 1.6f, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction * dobleJumpDistance, Color.red);
 
 
         // Check if the ray hits something on the Ground layer
@@ -63,7 +63,6 @@ public class PlayerGroundCheck : MonoBehaviour
              // Check if the distance to the ground is greater than the threshold
              if (hit.distance > dobleJumpDistance)
              {
-                Debug.Log(hit.distance);
                 GameManager.Instance.canDobleJump = true;
              }
              else

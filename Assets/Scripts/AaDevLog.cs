@@ -93,7 +93,7 @@ Alargado aa
 añadido enemigo volador(programado movimiento)
 Pensado sistema oleadas, cristal que spawnea enemigos
 Mejorado player hit.
-
+añadido que el parry stune al enemigo volador
 
 
 Dia8:
@@ -135,20 +135,38 @@ Cambiado enemigo volador, ahora te ve, y se lanza a por ti, explotando tanto si 
 hacer ahora/despues del patio:
 Cambiar funcionamiento parry
 
-Añadido desblockeo de salto, limpiado codigo, comentado codigo y corregido bugs como doble cliuck hace qye sates mas alto,
-añadir ahora que no te deje hacer doble salto con menos de x distancia al suelo.
 
-corregir bug aa hace que saltes menos
 
 
 
 Dia9(21-11-2023):
 Arreglado bug al iniciar la partida
 
+Añadido desblockeo de salto, limpiado codigo, comentado codigo y corregido bugs como doble cliuck hace qye sates mas alto,
+añadir ahora que no te deje hacer doble salto con menos de x distancia al suelo.
+
+Añadida zona que desbloquea el salto
+mejorado el salto en general
+
+arreglar salto y cambio de direccion
+
+corregir bug aa hace que saltes menos
+
+Me pase a ayudar con buscar refes el resto del dia
+
+Dia 10(22/11/23):
+
+corregir bug aa hace que saltes menos
+Solucionado bug aa hace q salte mensos.
+
+Corregido bug q si te mueves saltas menos por tema de drag:
+solucionado poniendo drag a 0 cunado saltas(por si diese problemas mas adelantes)
 
 
+salto y cambio de direccion se sobreescriben
+Solucionado cambio de direccion se sobreescriben
 
-
+modificado el generic health, para que sirva para todos los enemigos.
 
 
 
@@ -156,12 +174,11 @@ COSAS A TENRE EN CUNETA;
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 
-modificado el generic health, para que sirva para todos los enemigos.
-añadido que el parry stune al enemigo volador
 
 
-salto y cambio de direccion se sobreescriben
 
-ataque en el suelo y salto se sobreescriben
+
+
+
 
  */

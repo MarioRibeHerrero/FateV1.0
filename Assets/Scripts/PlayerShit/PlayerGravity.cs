@@ -16,7 +16,7 @@ public class PlayerGravity : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (!pHook.isHooking && GameManager.Instance.canPlayerMove)
+        if (!pHook.isHooking)
         {
             GravityScale();
         }

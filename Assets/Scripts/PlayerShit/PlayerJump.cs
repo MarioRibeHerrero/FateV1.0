@@ -13,7 +13,8 @@ public class PlayerJump : MonoBehaviour
 
     //local
     [SerializeField] float jumpForce, maxJumpValue;
-    [SerializeField] bool isHoldingJump, holdingJumpButton;
+    [SerializeField] bool holdingJumpButton;
+    public bool isHoldingJump;
     float maxJump;
 
 
@@ -65,15 +66,16 @@ public class PlayerJump : MonoBehaviour
         if (coyoteTimer > 0)
         {
             isHoldingJump = true;
+            rb.drag = 0;
             maxJump = maxJumpValue;
         }
 
-        //si estas en el aire, no puedes hacer el doble jump, y le das al salto, entras en el jumpbuffer.
-        if(!secondJump || !GameManager.Instance.isDobleJumpUnlocked) isBufferJumping = true;
+        //si estas en el aire, no puedes hacer el doble jump y le das al salto, entras en el jumpbuffer.
+        if(!secondJump || !GameManager.Instance.isDobleJumpUnlocked || !GameManager.Instance.canDobleJump) isBufferJumping = true;
 
 
         //si estas saltando, y aun tienees el doble salto, y lo teines desblockeado, saltas.
-        if (isJumping && secondJump && GameManager.Instance.isDobleJumpUnlocked)
+        if (isJumping && secondJump && GameManager.Instance.isDobleJumpUnlocked && GameManager.Instance.canDobleJump)
         {
             Debug.Log("DobleSalto");
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
@@ -91,12 +93,16 @@ public class PlayerJump : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        maxJump -= Time.deltaTime;
-        Jump();
-        CoyoteTimer();
-        JumpBuffering();
+        if (GameManager.Instance.canPlayerMove)
+        {
+            maxJump -= Time.deltaTime;
+            Jump();
+            CoyoteTimer();
+            JumpBuffering();
+        }
+
     }
 
     private void Jump()
