@@ -26,4 +26,8 @@ public class GameManager : MonoBehaviour
 
     //GainedAbilities
     public bool isDobleJumpUnlocked, isHookUnlocked;
+
+    //RoundRoom
+    public bool inRoundRoom;
+    public int enemiesToKill, enemiesKilled;
 }

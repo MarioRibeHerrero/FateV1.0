@@ -19,9 +19,9 @@ public class BasicEnemyPathing : MonoBehaviour
 
 
     //FollowingPlayer
-    [SerializeField] GameObject player;
+    GameObject player;
     public bool isAttacking;
-
+    
 
 
     private bool facingRight;
@@ -45,7 +45,7 @@ public class BasicEnemyPathing : MonoBehaviour
         //Components from root
         anim = parent.GetComponent<Animator>();
         state = parent.GetComponent<BasicEnemyState>();
-
+        player = GameObject.FindWithTag("Player");
 
         target = pointA;
         isWaiting = false;

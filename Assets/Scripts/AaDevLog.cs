@@ -168,6 +168,11 @@ Solucionado cambio de direccion se sobreescriben
 
 modificado el generic health, para que sirva para todos los enemigos.
 
+Empezado sistema rondas, entras, se cierran las puertas y aparecen una cantidad de enemigos dependiendo de la ronda, en zonas aleatorias.(solo mele)
+Mañana terminarlo del todo:
+Si mueres se reinicia,
+que funcionen las rondas,
+que aparezcan los voladores etc.
 
 
 COSAS A TENRE EN CUNETA;
@@ -176,7 +181,7 @@ Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 
 
 
-
+PREGUNTAR JORGE TEMA OBJECT BOOLING SI TIENE SENTIDO CON QUE LOS ENEMIGOS SEAN TOODS DISTINTOS, o si hay que cambiar los enemigos como funcionan.
 
 
 

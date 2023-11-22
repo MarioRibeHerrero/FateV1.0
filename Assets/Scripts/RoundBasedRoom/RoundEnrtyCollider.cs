@@ -22,6 +22,8 @@ public class RoundEnrtyCollider : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         doorsColsed = true;
         root.GetComponent<Animator>().SetTrigger("CloseDoors");
+        StartCoroutine(root.GetComponent<RoundManager>().UpdateRoundState(1, 2));
+        GameManager.Instance.inRoundRoom = true;
 
     }
 }
