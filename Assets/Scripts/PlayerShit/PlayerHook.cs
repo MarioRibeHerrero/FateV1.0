@@ -6,45 +6,50 @@ using UnityEngine.Rendering;
 
 public class PlayerHook : MonoBehaviour
 {
-    //Components
+    //Components in Player
     PlayerInput playerInput;
     Rigidbody rb;
-    PlayerGroundCheck pGroundCheck;
+    PlayerJump pJump;
     //HookShit
     [SerializeField] Material canHookM, defaultHookM, hookCdM;
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] int hookForce;
-    bool canHook;
-
-
+    private bool inRangeOfHook;
+    private GameObject currentHook;
+    //las hacemos publica para poder modificarla desde el playerJump
+    public bool canHook;
     public bool isHooking;
-    GameObject currentHook;
+    
 
-    //la hacemos publica para poder modificarla desde el playerJump
-    public bool canHookAgain;
+
 
     private void Start()
     {
+        //components
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
-        pGroundCheck = GetComponent<PlayerGroundCheck>();
+        pJump = GetComponent<PlayerJump>();
 
-
+        //line renderer for hhok
         lineRenderer.enabled = false;
         //PlayerInputShit
         playerInput.actions["Hook"].started += Hook_started;
+
+        //we want to set canHook to true at the start, so the player can hook
+        canHook = true;
     }
 
 
     public void HookMaterial()
     {
+        //define el color de si el hook puede ser cogido o no(visual)
         if(currentHook != null)
         {
-            if (canHook)
+            if (inRangeOfHook)
             {
                 currentHook.GetComponent<MeshRenderer>().material = canHookM;
 
-                if (!canHookAgain) currentHook.GetComponent<MeshRenderer>().material = hookCdM;
+                if (!canHook) currentHook.GetComponent<MeshRenderer>().material = hookCdM;
             }
             else currentHook.GetComponent<MeshRenderer>().material = defaultHookM;
         }
@@ -52,31 +57,41 @@ public class PlayerHook : MonoBehaviour
     }
     private void Update()
     {
-        if (currentHook!= null)
+        SetLineRedererPositions();
+    }
+
+    private void SetLineRedererPositions()
+    {
+        if (currentHook != null)
         {
             lineRenderer.SetPosition(0, transform.position);
             lineRenderer.SetPosition(1, currentHook.transform.localPosition);
         }
-
     }
     private void Hook_started(InputAction.CallbackContext obj)
     {
-        if(canHook )
+        if(inRangeOfHook && canHook)
         {
-            
+            //the player cant jump or secondJump after using hook
+            pJump.isJumping = true;
+            pJump.secondJump = false;
+            //Set vel to 0 so its always same force
             rb.velocity = Vector3.zero;
+            //enable line renderer
             lineRenderer.enabled = true;
+            //add the force to the hook
             Vector3 forceDirection = currentHook.transform.position - transform.position;
             rb.AddForce(forceDirection.normalized * hookForce, ForceMode.Impulse);
-
+            //remove drag so the drag dosent stop you
             rb.drag = 0f;
             isHooking = true;
-            canHookAgain = false;
-            HookMaterial();
-
-
-
+            Invoke("CanHookToFalse", 0.02f);
         }
+    }
+    private void CanHookToFalse()
+    {
+        canHook = false;
+        HookMaterial();
     }
 
     
@@ -85,15 +100,17 @@ public class PlayerHook : MonoBehaviour
     {
         if (other.CompareTag("Hook"))
         {
+            //we set the currentHook to the hook we can interact with
             currentHook = other.transform.parent.gameObject;
-            canHook = true;
+            inRangeOfHook = true;
 
+            //We call method so the hooks updates its material to "canInteract"
             HookMaterial();
-            //si estas grounded y buelves a entrar en la zona de hook, lo puedes usar otra vez.
-            // other.transform.parent.GetComponent<MeshRenderer>().material = canHookM;
+            
         }
         if (other.CompareTag("HookPoint"))
         {
+            //when you hit the hook itself, the hook boost is over
             lineRenderer.enabled = false;
             isHooking = false;
         }
@@ -104,21 +121,25 @@ public class PlayerHook : MonoBehaviour
     {
         if (other.CompareTag("Hook"))
         {
-            canHook = false;
+
+            //We call method so the hooks updates its material to "can not interact"
+            inRangeOfHook = false;
             HookMaterial();
         }
 
         if (other.CompareTag("HookPoint"))
         {
+            //esta esta por si le das al gancho cuando ya estas dentro del hook, por lo que no entrarias, solo saldiras
             lineRenderer.enabled = false;
             isHooking = false;
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
+        //if you coliide with anything thta is not the hook or the hook point
         if (isHooking && !collision.gameObject.CompareTag("Hook") && !collision.gameObject.CompareTag("HookPoint"))
         {
-            Debug.Log(collision.gameObject.name);
+           //if hook is canceled you set vel to 0, and set everithyng that we have with the hook to false
             rb.velocity = Vector3.zero;
             lineRenderer.enabled = false;
             isHooking = false;

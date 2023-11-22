@@ -6,16 +6,24 @@ TagManager:
   tags:
   - Hook
   - HookPoint
+  - Wings
+  - Parry
+  - Enemy
+  - BasicEnemy
+  - CameraConfiner
+  - SpawnPoint
+  - Death
+  - Ground
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
-  - 
-  - 
+  - NoCollisionEnemy
+  - CollisionEnemy
   - 
   - 
   - 
