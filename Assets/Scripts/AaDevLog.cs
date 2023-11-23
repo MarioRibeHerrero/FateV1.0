@@ -175,6 +175,16 @@ que funcionen las rondas,
 que aparezcan los voladores etc.
 
 
+
+
+
+Dia11(23/11/23):
+
+trabajado en sistema de oleadas
+
+hacer cunado vuelva:
+cuando muerers no mueren los enemigos
+añadir voladores.
 COSAS A TENRE EN CUNETA;
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)

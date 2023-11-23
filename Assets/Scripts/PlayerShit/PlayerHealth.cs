@@ -6,15 +6,16 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] UiManager uiManager;
     public Transform currentSpawnPoint;
-    [SerializeField] GameObject player;
 
 
-
+    private RoundEnrtyCollider entryCollider;
 
    
     void Start()
     {
         GameManager.Instance.isPlayerAlive = true;
+        entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
+
     }
 
 
@@ -35,7 +36,18 @@ public class PlayerHealth : MonoBehaviour
     {
         if(GameManager.Instance.playerHealth <= 0)
         {
-           
+
+            if (GameManager.Instance.inRoundRoom)
+            {
+
+                //ResetearLaRoom
+                //PONER CUNADO SE ACABE DE VERDAD
+                GameManager.Instance.inRoundRoom = false;
+                entryCollider.gameObject.transform.parent.GetComponent<Animator>().SetTrigger("OpenDoors");
+                entryCollider.doorsColsed = false;
+                //-----------------
+            }
+
             GameManager.Instance.isPlayerAlive = false;
             DesactivateAllPlayerFuntionsAndKill();
             StartCoroutine(RevivePlayer());

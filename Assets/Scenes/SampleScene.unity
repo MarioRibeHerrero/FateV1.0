@@ -2769,8 +2769,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 79.4, y: 57.8, z: -15.9}
+  m_LocalRotation: {x: 0.11886527, y: -0, z: -0, w: 0.99291044}
+  m_LocalPosition: {x: 115.45, y: 19.66, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3784,7 +3784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408919866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 134.8, y: 15.4, z: 0}
+  m_LocalPosition: {x: 115.45, y: 15.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3987,7 +3987,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 1672364684}
   currentSpawnPoint: {fileID: 0}
-  player: {fileID: 0}
 --- !u!95 &408919877
 Animator:
   serializedVersion: 5
@@ -5669,7 +5668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589045123}
   m_LocalRotation: {x: 0.07726208, y: -0.7028731, z: 0.077262096, w: 0.70287305}
-  m_LocalPosition: {x: 144.8, y: 18.73, z: 0.0000011920929}
+  m_LocalPosition: {x: 125.45, y: 18.73, z: 0.0000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9351,6 +9350,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2610d4a9e33352d4e909c55316f4973d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageDealt: 1000
+  healthHealed: 30
 --- !u!54 &1176829854
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11060,7 +11061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537384756}
   m_LocalRotation: {x: 0.11886527, y: -0, z: -0, w: 0.99291044}
-  m_LocalPosition: {x: 134.8, y: 19.66, z: -10}
+  m_LocalPosition: {x: 115.45, y: 19.66, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11679,7 +11680,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 192
+  m_Priority: 0
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
