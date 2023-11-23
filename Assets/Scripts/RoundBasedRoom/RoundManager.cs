@@ -12,43 +12,78 @@ public class RoundManager : MonoBehaviour
     [SerializeField] Transform normalEnemySpawnPoint;
     [SerializeField] GameObject[] meleeEnemies;
 
+
+    //cristal
+    [SerializeField] GameObject cristalPrefab;
+    [SerializeField] Transform cristalSpawnPoint;
+    public bool isCristalDestroyed;
+
+
+
+    List<GameObject> normalEnemyList = new List<GameObject>();
+    public void callCorrutine(int newRound, float waitTime)
+    {
+        //PRUEBA A VER SI NO HACE LA CORRUTINA XQ SE DESTRUYTE EL OBJ
+        StartCoroutine(UpdateRoundState(newRound, waitTime));
+    }
     public IEnumerator UpdateRoundState(int newRound, float waitTime)
     {
+        normalEnemyList.Clear();
         currentRound = newRound;
         yield return new WaitForSeconds(waitTime);
-        switch(newRound)
+
+        if(currentRound == 3)
         {
-            case 0:
-                break;
-            case 1:
-                
-                for(int i = 0; i < newRound+1; i++)
-                {
-                    GameObject currentEnemy = meleeEnemies[Random.Range(0, meleeEnemies.Length)];
-                    if (currentEnemy != lastEnemy || lastEnemy == null)
-                    {
-                        Instantiate(currentEnemy);
-                        lastEnemy = currentEnemy;
-                        //
-                        GameManager.Instance.enemiesKilled = 0;
-                        GameManager.Instance.enemiesToKill = newRound+1;
-                    }
-                    else
-                    {
-                        i--;
-                        break;
-                    }
-                }
+            Instantiate(cristalPrefab, cristalSpawnPoint);
+            GameManager.Instance.enemiesKilled = 0;
+            GameManager.Instance.enemiesToKill = 100;
+        }
+        else
+        {
+            GameManager.Instance.enemiesKilled = 0;
+            GameManager.Instance.enemiesToKill = newRound + 1;
+        }
 
-                break;
-            case 2:
 
-                break;
-            case 3:
 
-                break;
+        //normalEnemySpawner
+        for (int i = 0; i < newRound + 1; i++)
+        {
+            GameObject currentEnemy;
 
+            do
+            {
+                currentEnemy = meleeEnemies[Random.Range(0, meleeEnemies.Length)];
+            } while (normalEnemyList.Contains(currentEnemy));
+
+            Instantiate(currentEnemy);
+            normalEnemyList.Add(currentEnemy);
 
         }
+
+        //FlyingEnemySpawner
+
+        switch (currentRound)
+        {
+            case 0:
+                
+                break;
+            case 1:
+                //spawn2
+                break;
+            case 2:
+                //spawn3
+                break;
+            case 3:
+                //infinite
+                break;
+
+        }
+
+
+
+
+
     }
+
 }

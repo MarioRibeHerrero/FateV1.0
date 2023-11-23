@@ -17,13 +17,14 @@ public class GenericHealth : MonoBehaviour
     {
         health -= damage;
         CheckHealth();
-      //  Debug.Log("GOLE");
+       
     }
 
 
     private void CheckHealth()
     {
-        if(health <= 0)
+        Debug.Log(health);
+        if (health <= 0)
         {
             RoundRoomShit();
             Destroy(parentGo);
@@ -35,9 +36,20 @@ public class GenericHealth : MonoBehaviour
 
     private void RoundRoomShit()
     {
-        if (GameManager.Instance.inRoundRoom && GameManager.Instance.enemiesKilled >= GameManager.Instance.enemiesToKill)
+        if (GameManager.Instance.inRoundRoom)
         {
-            StartCoroutine(roundManager.UpdateRoundState(roundManager.currentRound++, 4));
+
+
+
+            GameManager.Instance.enemiesKilled++;
+            if (GameManager.Instance.enemiesKilled >= GameManager.Instance.enemiesToKill)
+            {
+                int newRound = roundManager.currentRound+ 1;
+
+
+                roundManager.callCorrutine(newRound, 4);
+
+            }
         }
     }
 }
