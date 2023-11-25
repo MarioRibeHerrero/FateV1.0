@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class RoundManager : MonoBehaviour
@@ -8,10 +9,10 @@ public class RoundManager : MonoBehaviour
     
 
     //spaweDifferentEnemies
-    GameObject lastEnemy;
     [SerializeField] Transform normalEnemySpawnPoint;
+    [SerializeField] Transform flyingEnemySpawnPoint;
     [SerializeField] GameObject[] meleeEnemies;
-
+    [SerializeField] GameObject[] flyingEnemies;
 
     //cristal
     [SerializeField] GameObject cristalPrefab;
@@ -21,14 +22,24 @@ public class RoundManager : MonoBehaviour
 
 
     List<GameObject> normalEnemyList = new List<GameObject>();
+    List<GameObject> flyingEnemyList = new List<GameObject>();
+
+
+
+
     public void callCorrutine(int newRound, float waitTime)
     {
         //PRUEBA A VER SI NO HACE LA CORRUTINA XQ SE DESTRUYTE EL OBJ
         StartCoroutine(UpdateRoundState(newRound, waitTime));
     }
+
+
+
     public IEnumerator UpdateRoundState(int newRound, float waitTime)
     {
         normalEnemyList.Clear();
+        flyingEnemyList.Clear();
+
         currentRound = newRound;
         yield return new WaitForSeconds(waitTime);
 
@@ -58,32 +69,66 @@ public class RoundManager : MonoBehaviour
 
             Instantiate(currentEnemy);
             normalEnemyList.Add(currentEnemy);
+            GameManager.Instance.roundRoomEnemies.Add(currentEnemy);
 
         }
 
         //FlyingEnemySpawner
-
+        
         switch (currentRound)
         {
-            case 0:
-                
-                break;
             case 1:
+            case 2:
+                for (int i = 0; i < newRound + 1; i++)
+                {
+                    GameObject currentFlyingEnemy;
+
+                    do
+                    {
+                        currentFlyingEnemy = flyingEnemies[Random.Range(0, flyingEnemies.Length)];
+                    } while (flyingEnemyList.Contains(currentFlyingEnemy));
+
+                    Instantiate(currentFlyingEnemy);
+                    flyingEnemyList.Add(currentFlyingEnemy);
+                    GameManager.Instance.roundRoomEnemies.Add(currentFlyingEnemy);
+
+                }
                 //spawn2
                 break;
-            case 2:
-                //spawn3
-                break;
             case 3:
+
+                for (int i = 0; i < newRound ; i++)
+                {
+                    GameObject currentFlyingEnemy;
+
+                    do
+                    {
+                        currentFlyingEnemy = flyingEnemies[Random.Range(0, flyingEnemies.Length)];
+                    } while (flyingEnemyList.Contains(currentFlyingEnemy));
+
+                    Instantiate(currentFlyingEnemy);
+                    flyingEnemyList.Add(currentFlyingEnemy);
+                    GameManager.Instance.roundRoomEnemies.Add(currentFlyingEnemy);
+
+                }
                 //infinite
                 break;
 
         }
 
+        
+        
 
 
 
 
     }
+
+    private void SpawnNewFlyingEnemy()
+    {
+
+    }
+
+
 
 }

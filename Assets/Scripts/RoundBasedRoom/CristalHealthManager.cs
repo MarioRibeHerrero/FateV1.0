@@ -33,14 +33,16 @@ public class CristalHealthManager : MonoBehaviour
         {
             roundManager.isCristalDestroyed = true;
 
-            //PONER CUNADO SE ACABE DE VERDAD
-            GameManager.Instance.inRoundRoom = false;
-            root.GetComponent<Animator>().SetTrigger("OpenDoors");
-            entryCollider.doorsColsed = false;
-            //-----------------
-
-
+            if(GameManager.Instance.roundRoomEnemies.Count == 0) 
+            {
+                //PONER CUNADO SE ACABE DE VERDAD
+                GameManager.Instance.inRoundRoom = false;
+                root.GetComponent<Animator>().SetTrigger("OpenDoors");
+                entryCollider.doorsColsed = false;
+                //-----------------
+            }
             Destroy(parentGo);
         }
+
     }
 }

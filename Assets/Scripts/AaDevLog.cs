@@ -182,9 +182,24 @@ Dia11(23/11/23):
 
 trabajado en sistema de oleadas
 
-hacer cunado vuelva:
-cuando muerers no mueren los enemigos
+muerte reinicia la sala por completo
+sistema de rondas mejorado para q funcionen con los voladores(no añadidos aun)
+romper el cristal hace que se abran las puertas y superes la sala.
+
+
+
+Dia12(24/11/23):
+
+
+
+
+mañana:
 añadir voladores.
+
+
+
+
+
 COSAS A TENRE EN CUNETA;
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
