@@ -7,6 +7,7 @@ public class GenericHealth : MonoBehaviour
 {
     [SerializeField] int health;
     [SerializeField] GameObject parentGo;
+    [SerializeField] bool wantToRespawn;
 
     private RoundManager roundManager;
     private RoundEnrtyCollider entryCollider;
@@ -50,19 +51,30 @@ public class GenericHealth : MonoBehaviour
 
             if (GameManager.Instance.roundRoomEnemies.Count > 0)
             {
-                // Find the original prefab name without the "(Clone)" suffix
+                
 
                 string prefabName = (this.transform.parent?.name ?? this.transform.name).Replace("(Clone)", "");
 
 
-                // Get a reference to the original prefab GameObject
+                
                 GameObject originalPrefab = GameManager.Instance.roundRoomEnemies.Find(obj => obj.name == prefabName);
                 
-                // Check if the original prefab is in the list before attempting to remove it
+                
                 if (originalPrefab != null && GameManager.Instance.roundRoomEnemies.Contains(originalPrefab))
                 {
                     GameManager.Instance.roundRoomEnemies.Remove(originalPrefab);
+
                 }
+
+                //RESPAWN
+                if (!roundManager.isCristalDestroyed && roundManager.currentRound == 3 && wantToRespawn)
+                {
+
+
+                    roundManager.RespawnEnemyCT(1, originalPrefab);
+                }
+
+
             }
 
 
@@ -85,6 +97,14 @@ public class GenericHealth : MonoBehaviour
             }
 
 
+            //Respawn
+
+
+
+
         }
     }
+
+
+
 }

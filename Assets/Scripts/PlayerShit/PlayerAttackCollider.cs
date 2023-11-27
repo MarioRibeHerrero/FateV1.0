@@ -17,8 +17,12 @@ public class PlayerAttackCollider : MonoBehaviour
 
 
             //si la vida es mas de 100, no le sumes nada
-            if (GameManager.Instance.playerHealth !>= 100) transform.root.GetComponent<PlayerHealth>().HealPlayer(healthHealed);
-
+            transform.root.GetComponent<PlayerHealth>().HealPlayer(healthHealed);
+            if(GameManager.Instance.playerHealth >= 100)
+            {
+                GameManager.Instance.playerHealth = 100;
+            }
+         //   GameObject.FindAnyObjectByType<UiManager>().UpdatePlayerHealthSlider();
         }
 
         if (other.CompareTag("Cristal"))

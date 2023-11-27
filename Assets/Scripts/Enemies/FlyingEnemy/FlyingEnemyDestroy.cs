@@ -19,6 +19,8 @@ public class FlyingEnemyDestroy : MonoBehaviour
             {
                 this.transform.parent.position = other.transform.Find("FlyingEnemyPos").transform.position;
                 transform.parent.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(15);
+
 
             }
             else

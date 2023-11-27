@@ -112,6 +112,8 @@ public class RoundManager : MonoBehaviour
 
                 }
                 //infinite
+
+                
                 break;
 
         }
@@ -123,11 +125,26 @@ public class RoundManager : MonoBehaviour
 
 
     }
-
-    private void SpawnNewFlyingEnemy()
+    //have to use this method, because when i destroy the othre item, the corrutine call gets canceled.
+    public void RespawnEnemyCT(float delay, GameObject originalPrefab)
     {
-
+        StartCoroutine(RespawnEnemy(delay, originalPrefab));
     }
+
+    public IEnumerator RespawnEnemy(float delay, GameObject originalPrefab)
+    {
+        yield return new WaitForSeconds(delay);
+        Debug.Log(originalPrefab);
+        if (flyingEnemyList.Contains(originalPrefab))
+        {
+           
+            Instantiate(originalPrefab);
+            GameManager.Instance.roundRoomEnemies.Add(originalPrefab);
+
+        }
+    }
+
+
 
 
 

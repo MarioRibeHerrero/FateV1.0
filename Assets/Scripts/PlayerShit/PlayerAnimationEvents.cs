@@ -37,15 +37,25 @@ public class PlayerAnimationEvents : MonoBehaviour
         GameManager.Instance.canPlayerRotate = false;
     }
 
+
+    //PARY
+
+    private void CanParryToFalse()
+    {
+        GetComponent<Animator>().SetBool("CanParry", false);
+    }
+    private void CanParryToTrue()
+    {
+        GetComponent<Animator>().SetBool("CanParry", true);
+    }
     private void Parry()
     {
-        GetComponent<PlayerHealth>().TakeDamage(30);
+        GetComponent<PlayerHealth>().TakeDamage(15);
         GameManager.Instance.isPlayerParry = true;
     }
     private void ParryEnd()
     {
         GameManager.Instance.isPlayerParry = false;
-
     }
     
 }

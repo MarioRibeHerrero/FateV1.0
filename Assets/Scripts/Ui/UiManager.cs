@@ -8,16 +8,6 @@ public class UiManager : MonoBehaviour
 {
     [Header("HUD")]
     [SerializeField] Slider playerHealthSlider;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void UpdatePlayerHealthSlider()
     {

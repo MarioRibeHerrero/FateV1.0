@@ -47,7 +47,7 @@ public class PlayerHealth : MonoBehaviour
                 entryCollider.doorsColsed = false;
                 for (int i = GameManager.Instance.roundRoomEnemies.Count - 1; i >= 0; i--)
                 {
-                    Debug.Log(i);
+                  //  Debug.Log(i);
                     Debug.Log(GameManager.Instance.roundRoomEnemies.Count);
 
                     // Get the first GameObject in the list

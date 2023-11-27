@@ -77,7 +77,7 @@ public class PlayerJump : MonoBehaviour
         //si estas saltando, y aun tienees el doble salto, y lo teines desblockeado, saltas.
         if (isJumping && secondJump && GameManager.Instance.isDobleJumpUnlocked && GameManager.Instance.canDobleJump)
         {
-            Debug.Log("DobleSalto");
+          //  Debug.Log("DobleSalto");
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             secondJump = false;

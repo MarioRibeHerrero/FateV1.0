@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   parentGo: {fileID: 4706266850114404213}
+  wantToRespawn: 1
 --- !u!1 &6845336826689017126
 GameObject:
   m_ObjectHideFlags: 0
