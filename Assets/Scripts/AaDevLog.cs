@@ -175,14 +175,47 @@ que funcionen las rondas,
 que aparezcan los voladores etc.
 
 
+
+
+
+Dia11(23/11/23):
+
+trabajado en sistema de oleadas
+
+muerte reinicia la sala por completo
+sistema de rondas mejorado para q funcionen con los voladores(no añadidos aun)
+romper el cristal hace que se abran las puertas y superes la sala.
+
+
+
+Dia12(24/11/23):
+Añadidos enemigos voladores, hecho que funcionen las oleadas con ellos tambien,
+Cambiado sistema de respawn(GameobjList)Preguntar jorge.
+Solucionar errores sistema oleadas.
+
+
+Dia13:
+TodoList Hoy:
+(Creo q esto lo dejo para cunado tenga clase con jorge xd)
+Añadir respawn infinito: hecho
+Actualizar Trello: hecho
+
+--
+Parry ahora no te puede matar
+Parry ahora cancela aa, lo que hace que responda antes.
+Barra de vida se actualiza con todo(golpes,ataques,etc.)
+
+
+
 COSAS A TENRE EN CUNETA;
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
-
+XQ CUNADO LE DAS A ALGO Y NO PUEDES HCARELO EN EL MOMENTO, L HACE AL TERMINAR LA ACCION
 
 
 PREGUNTAR JORGE TEMA OBJECT BOOLING SI TIENE SENTIDO CON QUE LOS ENEMIGOS SEAN TOODS DISTINTOS, o si hay que cambiar los enemigos como funcionan.
-
+PREGUNTAR JOREGE Como de pocho es poner en el gamemanager un public void q actualice el UI, pero este metodo lo que hace es llamar al metodo dentro de uiManager
+Otra opcion seria hacer el gameobject.findgooftype<uimanager> pero ns q es mejor
 
 
 

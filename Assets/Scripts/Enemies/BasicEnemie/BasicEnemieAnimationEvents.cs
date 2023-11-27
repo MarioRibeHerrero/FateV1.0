@@ -30,6 +30,6 @@ public class BasicEnemieAnimationEvents : MonoBehaviour
     public void IsStunnedToFalse()
     {
         ePathing.stunned = false;
-        Debug.Log("GOALdasd");
+      //  Debug.Log("GOALdasd");
     }
 }

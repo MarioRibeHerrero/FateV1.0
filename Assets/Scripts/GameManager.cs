@@ -30,4 +30,5 @@ public class GameManager : MonoBehaviour
     //RoundRoom
     public bool inRoundRoom;
     public int enemiesToKill, enemiesKilled;
+    public List<GameObject> roundRoomEnemies = new List<GameObject>();
 }

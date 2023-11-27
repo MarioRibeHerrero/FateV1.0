@@ -77,7 +77,7 @@ public class PlayerJump : MonoBehaviour
         //si estas saltando, y aun tienees el doble salto, y lo teines desblockeado, saltas.
         if (isJumping && secondJump && GameManager.Instance.isDobleJumpUnlocked && GameManager.Instance.canDobleJump)
         {
-            Debug.Log("DobleSalto");
+          //  Debug.Log("DobleSalto");
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             secondJump = false;
@@ -115,7 +115,7 @@ public class PlayerJump : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             isJumping = true;
 
-            Debug.Log("Tipico");
+           // Debug.Log("Tipico");
         }
 
 
@@ -129,7 +129,7 @@ public class PlayerJump : MonoBehaviour
             if(holdingJumpButton) isHoldingJump = true;
             else
             {
-                Debug.Log("JumpBufferPuqeñeo");
+            //    Debug.Log("JumpBufferPuqeñeo");
                 rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
                 isJumping = true;

@@ -6,7 +6,7 @@ public class RoundEnrtyCollider : MonoBehaviour
 {
     [SerializeField] GameObject root;
 
-    private bool doorsColsed;
+    public bool doorsColsed;
 
     private void OnTriggerEnter(Collider other)
     {
