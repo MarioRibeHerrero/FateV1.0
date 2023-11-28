@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private PlayerHealth playerh;
+
+
+
     public static GameManager Instance;
     private void Awake()
     {
+        playerh = GameObject.FindAnyObjectByType<PlayerHealth>();
+
+
+
         Instance = this;
 
         //vars
@@ -28,8 +36,10 @@ public class GameManager : MonoBehaviour
     //GainedAbilities
     public bool isDobleJumpUnlocked, isHookUnlocked;
 
-    //RoundRoom
-    public bool inRoundRoom;
-    public int enemiesToKill, enemiesKilled;
-    public List<GameObject> roundRoomEnemies = new List<GameObject>();
+
+    public void HealPlayer(int healingAmmount)
+    {
+        playerh.HealPlayer(healingAmmount);
+    }
+
 }

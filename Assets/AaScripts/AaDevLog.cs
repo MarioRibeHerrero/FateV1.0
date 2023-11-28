@@ -224,6 +224,10 @@ no lo es, quitar
 añadidas interfaces de ikilleable, idamageable y healplayer
 x la mañana, empezado a hacer boss, pero me he desviado a hacer interfaces y aplicarlas a los enemigos.
 
+1: Arreglar takedamage de los enemigos
+2: revisar el playerheal
+
+3: 
 a venido jorge, nueva to do list con prioridades:
 cambiar instancias objetos x object polling
 cambiar lista y referencias de la sala de rondas al roundManager
@@ -247,6 +251,8 @@ cambiar lista y referencias de la sala de rondas al roundManager
 
 -----------------------------------------------------------------------------------------------------------------------------------
 COSAS A TENRE EN CUNETA;
+usar awake para buscar variables y start para definir valores
+
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 XQ CUNADO LE DAS A ALGO Y NO PUEDES HCARELO EN EL MOMENTO, L HACE AL TERMINAR LA ACCION

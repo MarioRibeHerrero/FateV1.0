@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class RoundManager : MonoBehaviour
 {
-    public int currentRound;
+    #region Variables
+
+    
     
 
     //spaweDifferentEnemies
@@ -20,14 +22,24 @@ public class RoundManager : MonoBehaviour
     public bool isCristalDestroyed;
 
 
-
+    //list of the enemies spawned
     List<GameObject> normalEnemyList = new List<GameObject>();
     List<GameObject> flyingEnemyList = new List<GameObject>();
 
 
-    #region prueba
+
+    //RoundRoom
+    public int currentRound;
+    public bool inRoundRoom;
+    public List<GameObject> roundRoomEnemies = new List<GameObject>();
+    public int enemiesToKill, enemiesKilled;
+
+
+
 
     #endregion
+
+
     public void callCorrutine(int newRound, float waitTime)
     {
         //PRUEBA A VER SI NO HACE LA CORRUTINA XQ SE DESTRUYTE EL OBJ
@@ -47,13 +59,13 @@ public class RoundManager : MonoBehaviour
         if(currentRound == 3)
         {
             Instantiate(cristalPrefab, cristalSpawnPoint);
-            GameManager.Instance.enemiesKilled = 0;
-            GameManager.Instance.enemiesToKill = 100;
+            enemiesKilled = 0;
+            enemiesToKill = 100;
         }
         else
         {
-            GameManager.Instance.enemiesKilled = 0;
-            GameManager.Instance.enemiesToKill = newRound + 1;
+            enemiesKilled = 0;
+            enemiesToKill = newRound + 1;
         }
 
 
@@ -70,7 +82,7 @@ public class RoundManager : MonoBehaviour
 
             Instantiate(currentEnemy);
             normalEnemyList.Add(currentEnemy);
-            GameManager.Instance.roundRoomEnemies.Add(currentEnemy);
+            roundRoomEnemies.Add(currentEnemy);
 
         }
 
@@ -91,7 +103,7 @@ public class RoundManager : MonoBehaviour
 
                     Instantiate(currentFlyingEnemy);
                     flyingEnemyList.Add(currentFlyingEnemy);
-                    GameManager.Instance.roundRoomEnemies.Add(currentFlyingEnemy);
+                    roundRoomEnemies.Add(currentFlyingEnemy);
 
                 }
                 //spawn2
@@ -109,7 +121,7 @@ public class RoundManager : MonoBehaviour
 
                     Instantiate(currentFlyingEnemy);
                     flyingEnemyList.Add(currentFlyingEnemy);
-                    GameManager.Instance.roundRoomEnemies.Add(currentFlyingEnemy);
+                    roundRoomEnemies.Add(currentFlyingEnemy);
 
                 }
                 //infinite
@@ -140,7 +152,7 @@ public class RoundManager : MonoBehaviour
         {
            
             Instantiate(originalPrefab);
-            GameManager.Instance.roundRoomEnemies.Add(originalPrefab);
+            roundRoomEnemies.Add(originalPrefab);
 
         }
     }

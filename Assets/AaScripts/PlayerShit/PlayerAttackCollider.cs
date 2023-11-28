@@ -14,13 +14,13 @@ public class PlayerAttackCollider : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //TakeDamage
-        var damageable = other.GetComponent<IDamageable<int>>();
+        var damageable = other.transform.parent.GetComponent<IDamageable>();
         if (damageable == null) return;
         damageable.TakeDamage(GameManager.Instance.playerDamage);
 
         //Heal
-        var healPlayer = other.GetComponent<IHealPlayer<int>>();
+        var healPlayer = other.transform.parent.GetComponent<IHealPlayer>();
         if (healPlayer == null) return;
-        healPlayer.HealPlayer(healthHealed);
+        GameManager.Instance.HealPlayer(healthHealed);
     }
 }

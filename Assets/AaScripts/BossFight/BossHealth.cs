@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossHealth : MonoBehaviour, IDamageable<int>
+public class BossHealth : MonoBehaviour, IDamageable
 {
     [Header("BossHealth")]
     [SerializeField] int hitsFirstFace, totalHits;
