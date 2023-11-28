@@ -25,8 +25,9 @@ public class RoundManager : MonoBehaviour
     List<GameObject> flyingEnemyList = new List<GameObject>();
 
 
+    #region prueba
 
-
+    #endregion
     public void callCorrutine(int newRound, float waitTime)
     {
         //PRUEBA A VER SI NO HACE LA CORRUTINA XQ SE DESTRUYTE EL OBJ

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class GenericHealth : MonoBehaviour
+public class GenericHealth : MonoBehaviour, IDamageable<int>, IKilleable
 {
     [SerializeField] int health;
     [SerializeField] GameObject parentGo;
@@ -29,7 +29,7 @@ public class GenericHealth : MonoBehaviour
     }
 
 
-    private void CheckHealth()
+    public void CheckHealth()
     {
        
         if (health <= 0)

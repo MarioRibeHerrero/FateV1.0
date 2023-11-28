@@ -15,7 +15,7 @@ public class PlayerGroundCheck : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance.isDobleJumpUnlocked = true;
+
     }
     void Update()
     {

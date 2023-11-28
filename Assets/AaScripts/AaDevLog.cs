@@ -196,7 +196,6 @@ Solucionar errores sistema oleadas.
 
 Dia13:
 TodoList Hoy:
-(Creo q esto lo dejo para cunado tenga clase con jorge xd)
 Añadir respawn infinito: hecho
 Actualizar Trello: hecho
 
@@ -207,15 +206,60 @@ Barra de vida se actualiza con todo(golpes,ataques,etc.)
 
 
 
+
+
+
+Dia14:
+
+TodoList hacer mañana(o al terminar las prioridades nuevas al hablar con jorge:
+Vida boss: a medias
+effecto hacer daño boss: a medias
+matar boss: otro dia
+entrar en sala boss: otro dia
+meter todo el graybox: otro dia
+
+--preguntar jorge hasta que punto es worth usar interfazes cuando me obliga a hacer el metodo publico--
+no lo es, quitar
+----------
+añadidas interfaces de ikilleable, idamageable y healplayer
+x la mañana, empezado a hacer boss, pero me he desviado a hacer interfaces y aplicarlas a los enemigos.
+
+a venido jorge, nueva to do list con prioridades:
+cambiar instancias objetos x object polling
+cambiar lista y referencias de la sala de rondas al roundManager
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
 COSAS A TENRE EN CUNETA;
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 XQ CUNADO LE DAS A ALGO Y NO PUEDES HCARELO EN EL MOMENTO, L HACE AL TERMINAR LA ACCION
+Añadir regiones y ordenar codigo
 
 
-PREGUNTAR JORGE TEMA OBJECT BOOLING SI TIENE SENTIDO CON QUE LOS ENEMIGOS SEAN TOODS DISTINTOS, o si hay que cambiar los enemigos como funcionan.
+PREGUNTAS:
+
 PREGUNTAR JOREGE Como de pocho es poner en el gamemanager un public void q actualice el UI, pero este metodo lo que hace es llamar al metodo dentro de uiManager
 Otra opcion seria hacer el gameobject.findgooftype<uimanager> pero ns q es mejor
+
+
+
 
 
 
