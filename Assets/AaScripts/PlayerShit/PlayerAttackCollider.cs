@@ -14,7 +14,7 @@ public class PlayerAttackCollider : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //TakeDamage
-        var damageable = other.transform.parent.GetComponent<IDamageable>();
+        var damageable = other.GetComponent<IDamageable>();
         if (damageable == null) return;
         damageable.TakeDamage(GameManager.Instance.playerDamage);
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEnemyPath : MonoBehaviour
+public class FlyingEnemyPath : MonoBehaviour, IReseteable
 {
     //Pathing
     [SerializeField] float animationTime, waitTime;
@@ -21,6 +21,17 @@ public class FlyingEnemyPath : MonoBehaviour
 
 
     bool haveEntered;
+
+
+
+    //ResetShit
+   // [SerializeField] GenericHealth healthGo;
+    
+
+    public void Reset()
+    {
+       // healthGo.health = health;
+    }
 
     void Start()
     {

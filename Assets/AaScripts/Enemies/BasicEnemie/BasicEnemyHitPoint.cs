@@ -13,6 +13,15 @@ public class BasicEnemyHitPoint : MonoBehaviour
         weapon
     }
     [SerializeField] private Points whatPointAmI;
+
+
+
+    public void TakeDamage()
+    {
+
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

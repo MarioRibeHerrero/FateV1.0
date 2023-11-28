@@ -6,7 +6,7 @@ public class FlyingEnemyState : MonoBehaviour
 {
 
     public int enemyState;
-
+    public int health;
     public bool inRangeOfShoot;
 
 

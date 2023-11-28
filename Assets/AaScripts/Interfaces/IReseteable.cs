@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericAttack : MonoBehaviour
+public interface IReseteable
 {
-
+    void Reset();
 }

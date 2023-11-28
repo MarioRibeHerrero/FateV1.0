@@ -226,18 +226,32 @@ no lo es, quitar
 añadidas interfaces de ikilleable, idamageable y healplayer
 x la mañana, empezado a hacer boss, pero me he desviado a hacer interfaces y aplicarlas a los enemigos.
 
-1: Arreglar takedamage de los enemigos
-2: revisar el playerheal
+hacer por la tarde:
+
+1: Arreglar takedamage de los enemigos--Ok
+2: revisar el playerheal--Ok
 
 3: 
 a venido jorge, nueva to do list con prioridades:
-cambiar instancias objetos x object polling
-cambiar lista y referencias de la sala de rondas al roundManager
+cambiar instancias objetos x object polling--Problema, solucinar mañana en clase
+cambiar lista y referencias de la sala de rondas al roundManager--Ok
+
+
+Dejar codigo limpio para mañana poder hacerlo/solucinarlo con jorge--Ok
+quitado trabajo fin de semana q hay q mejorar,
+mejorado enemigos volador y normal.
+añadido instancia de enemigos al entrar en la sala de rondas(inicio de object booling)
 
 
 
+Dia15:
+comentar jorge:
 
 
+Estoy usando algunas interfaces comom ihealplayer solo para saber si curarle, si tener en cuneta nada mas, ns si eso es productivo o no
+
+al usar el idamageable, necesito q tenga el objeto con esa clase un collider, pponer ejemplo del enemigomele.
+sigo teniendo mismo problema de que cunado intento activar los objetos, me lo hace del prefab, no de la instancia.
 
 
 
@@ -259,7 +273,7 @@ rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 XQ CUNADO LE DAS A ALGO Y NO PUEDES HCARELO EN EL MOMENTO, L HACE AL TERMINAR LA ACCION
 Añadir regiones y ordenar codigo
-
+DARLE BUENA VUELTA AL ENEMIGO VOLADOR
 
 PREGUNTAS:
 

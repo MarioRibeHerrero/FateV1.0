@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoundEnrtyCollider : MonoBehaviour
 {
-    [SerializeField] GameObject root;
+    [SerializeField] Animator root;
 
     public bool doorsColsed;
 
@@ -29,8 +29,8 @@ public class RoundEnrtyCollider : MonoBehaviour
 
         yield return new WaitForSeconds(0.4f);
         doorsColsed = true;
-        root.GetComponent<Animator>().SetTrigger("CloseDoors");
-        StartCoroutine(root.GetComponent<RoundManager>().UpdateRoundState(1, 2));
+        root.SetTrigger("CloseDoors");
+        StartCoroutine(roundManager.UpdateRoundState(1, 2));
         roundManager.inRoundRoom = true;
 
     }

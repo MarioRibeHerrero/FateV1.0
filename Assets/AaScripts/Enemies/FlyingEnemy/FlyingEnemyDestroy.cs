@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class FlyingEnemyDestroy : MonoBehaviour
 {
+    private FlyingEnemyHealth healthS;
+    private void Awake()
+    {
+        healthS = GameObject.FindAnyObjectByType<FlyingEnemyHealth>();
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         
         if(other.CompareTag("Ground"))
         {
-            transform.parent.GetComponent<GenericHealth>().TakeDamage(10);
+            healthS.TakeDamage(10);
             
         }
 
@@ -26,7 +33,7 @@ public class FlyingEnemyDestroy : MonoBehaviour
             else
             {
                 other.GetComponent<PlayerHit>().HitPlayer(this.transform.position, 30, 0.5f, 20, false);
-                transform.parent.GetComponent<GenericHealth>().TakeDamage(10);
+                healthS.TakeDamage(10);
 
             }
 
