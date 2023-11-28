@@ -205,6 +205,8 @@ Parry ahora no te puede matar
 Parry ahora cancela aa, lo que hace que responda antes.
 Barra de vida se actualiza con todo(golpes,ataques,etc.)
 
+ordenado carpetas y actualizado el main de todos
+
 
 
 COSAS A TENRE EN CUNETA;
