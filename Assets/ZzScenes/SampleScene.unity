@@ -2770,7 +2770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.11886527, y: -0, z: -0, w: 0.99291044}
-  m_LocalPosition: {x: 30.7, y: 2.1600003, z: -10}
+  m_LocalPosition: {x: 120.2, y: 19.86, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3784,7 +3784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408919866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.7, y: -2.1, z: 0}
+  m_LocalPosition: {x: 120.2, y: 15.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5668,7 +5668,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589045123}
   m_LocalRotation: {x: 0.07726208, y: -0.7028731, z: 0.077262096, w: 0.70287305}
-  m_LocalPosition: {x: 40.7, y: 1.23, z: 0.0000011920929}
+  m_LocalPosition: {x: 130.2, y: 18.93, z: 0.0000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9372,7 +9372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2610d4a9e33352d4e909c55316f4973d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  damageDealt: 50
   healthHealed: 10
 --- !u!54 &1176829854
 Rigidbody:
@@ -11083,7 +11083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537384756}
   m_LocalRotation: {x: 0.11886527, y: -0, z: -0, w: 0.99291044}
-  m_LocalPosition: {x: 30.7, y: 2.1600003, z: -10}
+  m_LocalPosition: {x: 120.2, y: 19.86, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
