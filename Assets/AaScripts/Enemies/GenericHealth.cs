@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class GenericHealth : MonoBehaviour
+public class GenericHealth : MonoBehaviour, IDamageable, IKilleable, IHealPlayer
 {
     [SerializeField] int health;
     [SerializeField] GameObject parentGo;
@@ -29,7 +29,7 @@ public class GenericHealth : MonoBehaviour
     }
 
 
-    private void CheckHealth()
+    public void CheckHealth()
     {
        
         if (health <= 0)
@@ -44,12 +44,12 @@ public class GenericHealth : MonoBehaviour
 
     private void RoundRoomShit()
     {
-        if (GameManager.Instance.inRoundRoom)
+        if (roundManager.inRoundRoom)
         {
 
             
 
-            if (GameManager.Instance.roundRoomEnemies.Count > 0)
+            if (roundManager.roundRoomEnemies.Count > 0)
             {
                 
 
@@ -57,12 +57,12 @@ public class GenericHealth : MonoBehaviour
 
 
                 
-                GameObject originalPrefab = GameManager.Instance.roundRoomEnemies.Find(obj => obj.name == prefabName);
+                GameObject originalPrefab = roundManager.roundRoomEnemies.Find(obj => obj.name == prefabName);
                 
                 
-                if (originalPrefab != null && GameManager.Instance.roundRoomEnemies.Contains(originalPrefab))
+                if (originalPrefab != null && roundManager.roundRoomEnemies.Contains(originalPrefab))
                 {
-                    GameManager.Instance.roundRoomEnemies.Remove(originalPrefab);
+                    roundManager.roundRoomEnemies.Remove(originalPrefab);
 
                 }
 
@@ -78,7 +78,7 @@ public class GenericHealth : MonoBehaviour
             }
 
 
-            if (GameManager.Instance.roundRoomEnemies.Count == 0)
+            if (roundManager.roundRoomEnemies.Count == 0)
             {
                 if (roundManager.currentRound != 3)
                 {
@@ -88,7 +88,7 @@ public class GenericHealth : MonoBehaviour
                 else if(roundManager.isCristalDestroyed)
                 {
                     //PONER CUNADO SE ACABE DE VERDAD
-                    GameManager.Instance.inRoundRoom = false;
+                    roundManager.inRoundRoom = false;
                     root.GetComponent<Animator>().SetTrigger("OpenDoors");
                     entryCollider.doorsColsed = false;
                     //-----------------

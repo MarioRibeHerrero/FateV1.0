@@ -8,6 +8,14 @@ public class RoundEnrtyCollider : MonoBehaviour
 
     public bool doorsColsed;
 
+    private RoundManager roundManager;
+
+    private void Awake()
+    {
+        roundManager = GameObject.FindAnyObjectByType<RoundManager>();
+
+    }
+
     private void OnTriggerEnter(Collider other)
     {
        if(other.CompareTag("Player") && !doorsColsed)
@@ -23,7 +31,7 @@ public class RoundEnrtyCollider : MonoBehaviour
         doorsColsed = true;
         root.GetComponent<Animator>().SetTrigger("CloseDoors");
         StartCoroutine(root.GetComponent<RoundManager>().UpdateRoundState(1, 2));
-        GameManager.Instance.inRoundRoom = true;
+        roundManager.inRoundRoom = true;
 
     }
 }

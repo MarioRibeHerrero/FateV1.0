@@ -6,30 +6,21 @@ public class PlayerAttackCollider : MonoBehaviour
 {
     [SerializeField] int damageDealt;
     [SerializeField] int healthHealed;
+
+    private void Start()
+    {
+        GameManager.Instance.playerDamage = damageDealt;
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
-        {
-            
-            other.transform.parent.GetComponent<GenericHealth>().TakeDamage(damageDealt);
+        //TakeDamage
+        var damageable = other.transform.parent.GetComponent<IDamageable>();
+        if (damageable == null) return;
+        damageable.TakeDamage(GameManager.Instance.playerDamage);
 
-            
-
-
-            //si la vida es mas de 100, no le sumes nada
-            transform.root.GetComponent<PlayerHealth>().HealPlayer(healthHealed);
-            if(GameManager.Instance.playerHealth >= 100)
-            {
-                GameManager.Instance.playerHealth = 100;
-            }
-         //   GameObject.FindAnyObjectByType<UiManager>().UpdatePlayerHealthSlider();
-        }
-
-        if (other.CompareTag("Cristal"))
-        {
-
-            other.transform.GetComponent<CristalHealthManager>().TakeDamage(damageDealt);
-
-        }
+        //Heal
+        var healPlayer = other.transform.parent.GetComponent<IHealPlayer>();
+        if (healPlayer == null) return;
+        GameManager.Instance.HealPlayer(healthHealed);
     }
 }

@@ -11,11 +11,17 @@ public class CristalHealthManager : MonoBehaviour
     private RoundEnrtyCollider entryCollider;
     private GameObject root;
 
-    private void Start()
+    private void Awake()
     {
         root = GameObject.FindAnyObjectByType<RoundManager>().gameObject;
         roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
         entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
+
+    }
+
+    private void Start()
+    {
+
     }
     public void TakeDamage(int damage)
     {
@@ -33,10 +39,10 @@ public class CristalHealthManager : MonoBehaviour
         {
             roundManager.isCristalDestroyed = true;
 
-            if(GameManager.Instance.roundRoomEnemies.Count == 0) 
+            if(roundManager.roundRoomEnemies.Count == 0) 
             {
                 //PONER CUNADO SE ACABE DE VERDAD
-                GameManager.Instance.inRoundRoom = false;
+                roundManager.inRoundRoom = false;
                 root.GetComponent<Animator>().SetTrigger("OpenDoors");
                 entryCollider.doorsColsed = false;
                 //-----------------

@@ -2770,7 +2770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.11886527, y: -0, z: -0, w: 0.99291044}
-  m_LocalPosition: {x: 4.1, y: 3.5600002, z: -10}
+  m_LocalPosition: {x: 120.2, y: 19.86, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3784,7 +3784,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408919866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.1, y: -0.7, z: 0}
+  m_LocalPosition: {x: 120.2, y: 15.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5667,8 +5667,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589045123}
-  m_LocalRotation: {x: 0.07726208, y: -0.7028731, z: 0.07726209, w: 0.70287305}
-  m_LocalPosition: {x: 14.099998, y: 2.6299999, z: 0.0000011920929}
+  m_LocalRotation: {x: 0.07726208, y: -0.7028731, z: 0.077262096, w: 0.70287305}
+  m_LocalPosition: {x: 130.2, y: 18.93, z: 0.0000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5871,13 +5871,10 @@ MonoBehaviour:
   isPlayerStunned: 0
   isPlayerInvulnerable: 0
   isPlayerParry: 0
+  playerDamage: 0
   canDobleJump: 0
   isDobleJumpUnlocked: 0
   isHookUnlocked: 0
-  inRoundRoom: 0
-  enemiesToKill: 0
-  enemiesKilled: 0
-  roundRoomEnemies: []
 --- !u!1 &594149930
 GameObject:
   m_ObjectHideFlags: 0
@@ -7129,7 +7126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0329c7b257e8874db17fe3bc09dd9f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRound: 0
   normalEnemySpawnPoint: {fileID: 1341577189}
   flyingEnemySpawnPoint: {fileID: 0}
   meleeEnemies:
@@ -7145,6 +7141,11 @@ MonoBehaviour:
     type: 3}
   cristalSpawnPoint: {fileID: 891768636}
   isCristalDestroyed: 0
+  currentRound: 0
+  inRoundRoom: 0
+  roundRoomEnemies: []
+  enemiesToKill: 0
+  enemiesKilled: 0
 --- !u!1 &790393483
 GameObject:
   m_ObjectHideFlags: 0
@@ -8223,8 +8224,9 @@ GameObject:
   - component: {fileID: 967831385}
   - component: {fileID: 967831384}
   - component: {fileID: 967831383}
+  - component: {fileID: 967831386}
   m_Layer: 6
-  m_Name: Cube (23)
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8238,12 +8240,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967831381}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.195523, y: 28.84, z: -50.79}
+  m_LocalPosition: {x: 80.10448, y: 54.879997, z: 0.8217201}
   m_LocalScale: {x: 4.7566504, y: 7.1456246, z: 2.1058054}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1105047762}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &967831383
 BoxCollider:
@@ -8316,6 +8318,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967831381}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &967831386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967831381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75102e1ce3141654e921df149ce1196f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitsFirstFace: 9
+  totalHits: 15
+  hitTime: 0.1
 --- !u!1 &981057230
 GameObject:
   m_ObjectHideFlags: 0
@@ -9015,7 +9032,6 @@ Transform:
   - {fileID: 2133151117}
   - {fileID: 2098116532}
   - {fileID: 513375736}
-  - {fileID: 967831382}
   - {fileID: 1489722451}
   - {fileID: 203287851}
   - {fileID: 267717764}
@@ -9356,7 +9372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2610d4a9e33352d4e909c55316f4973d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDealt: 20
+  damageDealt: 50
   healthHealed: 10
 --- !u!54 &1176829854
 Rigidbody:
@@ -11067,7 +11083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537384756}
   m_LocalRotation: {x: 0.11886527, y: -0, z: -0, w: 0.99291044}
-  m_LocalPosition: {x: 4.1, y: 3.5600002, z: -10}
+  m_LocalPosition: {x: 120.2, y: 19.86, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15835,7 +15851,7 @@ Transform:
   m_Children:
   - {fileID: 2096653178}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2115060271
 MonoBehaviour:
