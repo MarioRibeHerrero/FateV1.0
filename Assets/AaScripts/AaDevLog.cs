@@ -235,7 +235,7 @@ hacer por la tarde:
 a venido jorge, nueva to do list con prioridades:
 cambiar instancias objetos x object polling--Problema, solucinar mañana en clase
 cambiar lista y referencias de la sala de rondas al roundManager--Ok
-
+   
 
 Dejar codigo limpio para mañana poder hacerlo/solucinarlo con jorge--Ok
 quitado trabajo fin de semana q hay q mejorar,--Ok
@@ -259,13 +259,14 @@ EntradaALaHabitacion--Ok
 matar boss--Ok
 
 
+
+empezado a trabajar en las oleadas con el nuevo sistema y con el object pooling.
 comentar jorge:
 
 
-Estoy usando algunas interfaces comom ihealplayer solo para saber si curarle, si tener en cuneta nada mas, ns si eso es productivo o no
+Estoy usando algunas interfaces comom ihealplayer solo para saber si curarle, si tener en cuneta nada mas, ns si eso es productivo o no(cambiar por clases vacias)
 
 al usar el idamageable, necesito q tenga el objeto con esa clase un collider, pponer ejemplo del enemigomele.
-sigo teniendo mismo problema de que cunado intento activar los objetos, me lo hace del prefab, no de la instancia.
 
 
 

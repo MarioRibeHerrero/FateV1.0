@@ -30,7 +30,7 @@ public class RoundEnrtyCollider : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         doorsColsed = true;
         root.SetTrigger("CloseDoors");
-        StartCoroutine(roundManager.UpdateRoundState(1, 2));
+        roundManager.CallUpdateRound(1, 2);
         roundManager.inRoundRoom = true;
 
     }

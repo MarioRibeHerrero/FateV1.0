@@ -60,7 +60,7 @@ public class RoundManager : MonoBehaviour
             enemyspawned.SetActive(false);
         }
 
-        foreach (GameObject enemy in flyingEnemies)
+        foreach (GameObject enemy in flyingEnemyList)
         {
             GameObject enemyspawned = Instantiate(enemy);
             
@@ -73,7 +73,7 @@ public class RoundManager : MonoBehaviour
 
     private void ResetRoom()
     {
-        foreach (GameObject enemy in meleeEnemies)
+        foreach (GameObject enemy in normalEnemyList)
         {
             enemy.SetActive(false);
             var reset = enemy.GetComponent<IReseteable>();
@@ -82,7 +82,7 @@ public class RoundManager : MonoBehaviour
 
         }
 
-        foreach (GameObject enemy in flyingEnemies)
+        foreach (GameObject enemy in flyingEnemyList)
         {
             enemy.SetActive(false);
 
@@ -92,9 +92,13 @@ public class RoundManager : MonoBehaviour
         }
     }
 
-    public IEnumerator UpdateRoundState(int newRound, float waitTime)
+    public void CallUpdateRound(int newRound, float waitTime)
     {
-        
+        StartCoroutine(UpdateRoundState(newRound, waitTime));
+    }
+
+    private IEnumerator UpdateRoundState(int newRound, float waitTime)
+    {
 
         currentRound = newRound;
         yield return new WaitForSeconds(waitTime);
@@ -112,8 +116,8 @@ public class RoundManager : MonoBehaviour
             //we spawn it
             do
             {
-                currentEnemy = meleeEnemies[Random.Range(0, meleeEnemies.Length)];
-            } while (currentEnemy.gameObject.activeSelf);
+                currentEnemy = normalEnemyList[Random.Range(0, meleeEnemies.Length)];
+            } while (currentEnemy.activeSelf);
 
             //we reset it
             currentEnemy.SetActive(true);

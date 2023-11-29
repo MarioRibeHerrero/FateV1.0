@@ -5,10 +5,15 @@ using UnityEngine;
 public class BasicEnemyHealth : MonoBehaviour, IDamageable, IHealPlayer
 {
     private BasicEnemyState basicManager;
+    private RoundManager roundManager;
+    [SerializeField] GameObject gameObjectRoot;
 
     private void Awake()
     {
-        basicManager = GameObject.FindAnyObjectByType<BasicEnemyState>();
+        basicManager = gameObjectRoot.GetComponent<BasicEnemyState>();
+
+        roundManager = GameObject.FindAnyObjectByType<RoundManager>();
+        
     }
     public void TakeDamage(int damage)
     {
@@ -21,7 +26,14 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable, IHealPlayer
         if (basicManager.health <= 0)
         {
             //Aqui hacer cosas de object booling
-            basicManager.gameObject.SetActive(false);
+
+            roundManager.roundRoomEnemies.Remove(gameObjectRoot);
+            if(roundManager.roundRoomEnemies.Count <= 0) roundManager.CallUpdateRound(2, 2);
+            basicManager.Reset();
+            gameObjectRoot.SetActive(false);
+
+
+
         }
     }
 }
