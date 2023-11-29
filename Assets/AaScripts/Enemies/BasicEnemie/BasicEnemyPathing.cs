@@ -38,14 +38,17 @@ public class BasicEnemyPathing : MonoBehaviour
 
     private Animator anim;
 
-
-    void Start()
+    private void Awake()
     {
-
         //Components from root
         anim = parent.GetComponent<Animator>();
         state = parent.GetComponent<BasicEnemyState>();
         player = GameObject.FindWithTag("Player");
+
+    }
+    void Start()
+    {
+
 
         target = pointA;
         isWaiting = false;
@@ -62,7 +65,7 @@ public class BasicEnemyPathing : MonoBehaviour
 
             case 1:
                 //normal Path
-                if (!isWaiting)
+                if (!isWaiting && !isAttacking)
                 {
                     MoveTowardsTarget();
                 }
@@ -160,7 +163,10 @@ public class BasicEnemyPathing : MonoBehaviour
 
         float step = chillSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y,transform.position.z), step);
+        //if target is = to point b, faicing right will be true, else, it will be false.
 
+        FaceTarget();
+        UpdateLookPos();
         if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x, transform.position.y, transform.position.z)) < 0.01f)
         {
             StartCoroutine(WaitAtPoint());
@@ -182,9 +188,15 @@ public class BasicEnemyPathing : MonoBehaviour
             target = pointB;
             facingRight = true;
         }
-        UpdateLookPos();
+        
     }
 
+    public IEnumerator WaitFor(int secs)
+    {
+        isWaiting = true;
+        yield return new WaitForSeconds(secs);
+        isWaiting = false;
+    }
     IEnumerator WaitAtPoint()
     {
         isWaiting = true;
@@ -204,10 +216,31 @@ public class BasicEnemyPathing : MonoBehaviour
         isWaiting = false;
     }
 
+
+    private void FaceTarget()
+    {
+        facingRight = target == pointB;
+
+
+        if(target == pointB)
+        {
+            if (transform.position.x > pointB.transform.position.x) facingRight = false;
+            else facingRight = true;
+        }
+        else
+        {
+            if (transform.position.x > pointA.transform.position.x) facingRight = false;
+            else facingRight = true;
+        }
+    }
     private void UpdateLookPos()
     {
-        if(facingRight) transform.rotation = Quaternion.Euler(0, 180, 0);
-        else transform.rotation = Quaternion.Euler(0, 0, 0);
+        if ( !isAttacking)
+        {
+            if (facingRight) transform.rotation = Quaternion.Euler(0, 180, 0);
+            else transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
     }
     private void FacePlayer()
     {

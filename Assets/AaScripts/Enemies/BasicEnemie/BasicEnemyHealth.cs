@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemyHealth : MonoBehaviour, IDamageable
+public class BasicEnemyHealth : MonoBehaviour, IDamageable, IHealPlayer
 {
     private BasicEnemyState basicManager;
 

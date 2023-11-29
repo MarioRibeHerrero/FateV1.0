@@ -20,8 +20,8 @@ public class RoundManager : MonoBehaviour
 
 
     //list of the enemies spawned
-    List<GameObject> normalEnemyList = new List<GameObject>();
-    List<GameObject> flyingEnemyList = new List<GameObject>();
+    [SerializeField] List<GameObject> normalEnemyList = new List<GameObject>();
+    [SerializeField] List<GameObject> flyingEnemyList = new List<GameObject>();
 
 
 
@@ -54,18 +54,18 @@ public class RoundManager : MonoBehaviour
         if (meleeEnemies.Length == 0 && flyingEnemies.Length == 0) return;
         foreach (GameObject enemy in meleeEnemies)
         {
-            Instantiate(enemy);
+            GameObject enemyspawned = Instantiate(enemy);
            
-            normalEnemyList.Add(enemy);
-            enemy.SetActive(false);
+            normalEnemyList.Add(enemyspawned);
+            enemyspawned.SetActive(false);
         }
 
         foreach (GameObject enemy in flyingEnemies)
         {
-            Instantiate(enemy);
+            GameObject enemyspawned = Instantiate(enemy);
             
-            flyingEnemyList.Add(enemy);
-            enemy.SetActive(false);
+            flyingEnemyList.Add(enemyspawned);
+            enemyspawned.SetActive(false);
         }
 
     }
@@ -113,7 +113,6 @@ public class RoundManager : MonoBehaviour
             do
             {
                 currentEnemy = meleeEnemies[Random.Range(0, meleeEnemies.Length)];
-                Debug.Log("KEK·");
             } while (currentEnemy.gameObject.activeSelf);
 
             //we reset it
@@ -126,7 +125,7 @@ public class RoundManager : MonoBehaviour
 
         //FlyingEnemySpawner
 
-
+        /*
         for (int i = 0; i < newRound + 1; i++)
         {
             GameObject currentEnemy;
@@ -145,7 +144,7 @@ public class RoundManager : MonoBehaviour
             roundRoomEnemies.Add(currentEnemy);
 
         }
-
+        */
 
 
     }

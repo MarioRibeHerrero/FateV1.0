@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class PlayerAttackCollider : MonoBehaviour
 {
-    [SerializeField] int damageDealt;
     [SerializeField] int healthHealed;
 
-    private void Start()
-    {
-        GameManager.Instance.playerDamage = damageDealt;
-    }
+  
+
     private void OnTriggerEnter(Collider other)
     {
         //TakeDamage
@@ -19,7 +16,7 @@ public class PlayerAttackCollider : MonoBehaviour
         damageable.TakeDamage(GameManager.Instance.playerDamage);
 
         //Heal
-        var healPlayer = other.transform.parent.GetComponent<IHealPlayer>();
+        var healPlayer = other.GetComponent<IHealPlayer>();
         if (healPlayer == null) return;
         GameManager.Instance.HealPlayer(healthHealed);
     }

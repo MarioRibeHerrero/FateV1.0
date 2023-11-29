@@ -16,13 +16,19 @@ public class GameManager : MonoBehaviour
 
 
         Instance = this;
-
         //vars
         canPlayerRotate = true;
         canPlayerMove = true;
         isPlayerAlive = true;
         playerHealth = 100;
         isOccupied = false;
+
+    }
+
+
+    private void Start()
+    {
+
     }
     //PlayerThings
     public float playerHealth;

@@ -57,5 +57,8 @@ public class PlayerAnimationEvents : MonoBehaviour
     {
         GameManager.Instance.isPlayerParry = false;
     }
-    
+
+
+
+
 }

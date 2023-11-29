@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7477889923477254613}
   - component: {fileID: 6377171827699117269}
   m_Layer: 0
-  m_Name: DashEnemyTOP
+  m_Name: DashEnemyTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 4342176841505965683}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7477889923477254613
 Animator:

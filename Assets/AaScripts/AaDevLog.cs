@@ -238,13 +238,27 @@ cambiar lista y referencias de la sala de rondas al roundManager--Ok
 
 
 Dejar codigo limpio para mañana poder hacerlo/solucinarlo con jorge--Ok
-quitado trabajo fin de semana q hay q mejorar,
-mejorado enemigos volador y normal.
-añadido instancia de enemigos al entrar en la sala de rondas(inicio de object booling)
+quitado trabajo fin de semana q hay q mejorar,--Ok
+mejorado enemigos volador y normal.--Ok
+añadido instancia de enemigos al entrar en la sala de rondas(inicio de object booling)--Ok
 
 
 
 Dia15:
+
+Mejoras enemigo:
+Ahora se espera u poco cuando te sales de su zona, lo que hace q no parezca como q te esta siguiendo todo el rato,--Ok
+si esta atacando no se gira--Ok
+siempre mira donde toca.--Ok
+te empuja hacia afuera siempre--No, casi siempre si, pero ns cuando no lo hace.
+
+BossFight:
+Vida boss--Ok
+effecto hacer daño boss--Ok
+EntradaALaHabitacion--Ok
+matar boss--Ok
+
+
 comentar jorge:
 
 
@@ -257,7 +271,12 @@ sigo teniendo mismo problema de que cunado intento activar los objetos, me lo ha
 
 
 
+-----------------------------------------------------------------------------------------------------------------------------------
+ToDoList:
 
+meter todo el graybox: otro dia
+BarraVidaBoss--
+importarplayer
 
 
 
@@ -279,6 +298,8 @@ PREGUNTAS:
 
 PREGUNTAR JOREGE Como de pocho es poner en el gamemanager un public void q actualice el UI, pero este metodo lo que hace es llamar al metodo dentro de uiManager
 Otra opcion seria hacer el gameobject.findgooftype<uimanager> pero ns q es mejor
+
+por que si setteo en el awake, el daño a 50, luego en el boss, es igual a 0
 
 
 

@@ -20,6 +20,7 @@ public class BasicEnemyActivator : MonoBehaviour
         {
             parent.GetComponent<BasicEnemyState>().enemyState = 1;
             ePathing.RandomTarget();
+            StartCoroutine(ePathing.WaitFor(1));
             
         }
     }
