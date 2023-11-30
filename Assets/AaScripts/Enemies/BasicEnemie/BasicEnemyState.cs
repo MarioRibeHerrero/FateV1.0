@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemyState : MonoBehaviour, IReseteable
+public class BasicEnemyState : MonoBehaviour
 {
     public int enemyState;
     [SerializeField] int healthOnRespawn = 140;
@@ -10,7 +10,16 @@ public class BasicEnemyState : MonoBehaviour, IReseteable
    // [SerializeField] GenericHealth healthGo;
     public int health;
 
-    public void Reset()
+    private void OnEnable()
+    {
+        RoundManager.onResetRoundRoom += Reset;
+    }
+    private void OnDisable()
+    {
+        RoundManager.onResetRoundRoom -= Reset;
+    }
+
+    private void Reset()
     {
         GetComponent<Animator>().SetTrigger("Reset");
         enemyState = 1;

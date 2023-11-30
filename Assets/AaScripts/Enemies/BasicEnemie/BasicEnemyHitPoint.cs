@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -14,8 +16,26 @@ public class BasicEnemyHitPoint : MonoBehaviour
     }
     [SerializeField] private Points whatPointAmI;
 
+    private Vector3 originalTransform;
 
+    private void Start()
+    {
+       // this.transform.position = originalTransform;
+    }
 
+    private void OnEnable()
+    {
+        RoundManager.onResetRoundRoom += ResetWeaponPosition;
+    }
+    private void OnDisable()
+    {
+        RoundManager.onResetRoundRoom -= ResetWeaponPosition;
+    }
+
+    private void ResetWeaponPosition()
+    {
+     //   this.transform.position = originalTransform;
+    }
 
     private void OnTriggerEnter(Collider other)
     {

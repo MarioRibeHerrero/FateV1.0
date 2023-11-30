@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class BasicEnemyPathing : MonoBehaviour
 {
+    private enum EnemyState { moving, attacking, idle}
+
+    [SerializeField] private EnemyState enemyState;
+
+
+
+
 
     [SerializeField] GameObject parent;
     //Pathing
@@ -60,7 +67,32 @@ public class BasicEnemyPathing : MonoBehaviour
 
     void Update()
     {
-        switch(state.enemyState)
+
+        prueba();
+
+    }
+
+    private void EnemyStateManagement()
+    {
+        if ( (enemyState == EnemyState.attacking))
+        {
+            
+        }
+
+        if ((enemyState == EnemyState.moving))
+        {
+
+        }
+        if ((enemyState == EnemyState.idle))
+        {
+
+        }
+    }
+
+    private void prueba()
+    {
+
+        switch (state.enemyState)
         {
 
             case 1:
@@ -72,26 +104,26 @@ public class BasicEnemyPathing : MonoBehaviour
 
                 break;
 
-                case 2:
+            case 2:
                 //Follow player
-                if(canMove && !stunned) FollowPlayer();
+                if (canMove && !stunned) FollowPlayer();
 
                 //si estas en rango, atacas
                 if (CanAttack() && !stunned)
-                 {
+                {
                     anim.SetTrigger("Attack");
                     isAttacking = true;
                     state.enemyState = 3;
 
-                 }
+                }
 
-                
+
                 break;
 
             case 3:
                 //attack
 
-                if(!isAttacking)
+                if (!isAttacking)
                 {
                     state.enemyState = 2;
                 }
@@ -101,7 +133,6 @@ public class BasicEnemyPathing : MonoBehaviour
 
         ControlAttacktimer();
     }
-
 
     private void OnDrawGizmos()
     {

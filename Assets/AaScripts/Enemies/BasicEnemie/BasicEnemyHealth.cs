@@ -29,7 +29,8 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
             roundManager.roundRoomEnemies.Remove(gameObjectRoot);
             if(roundManager.roundRoomEnemies.Count <= 0) roundManager.CallUpdateRound(2, 2);
-            basicManager.Reset();
+            //no se usa xq ahora lo llamo con delagados desde el roundmanager
+            //basicManager.Reset();
             gameObjectRoot.SetActive(false);
 
 

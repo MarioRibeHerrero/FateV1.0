@@ -273,6 +273,10 @@ Estoy usando algunas interfaces comom ihealplayer solo para saber si curarle, si
 XQ CUNADO LE DAS A ALGO Y NO PUEDES HCARELO EN EL MOMENTO, L HACE AL TERMINAR LA ACCION(arreglado x codigo)--Ok
 Solucionar bug deslizar al aparecer(otra vez)(ES LA GRAVEDAD)--Ok
 
+Arreglar problemas con player--Ok(no arreglado cosas, pero como de momento lo dejo un poco mas de lado, me centro mejor en arreglar las salas.
+
+Arreglar sistema salas hoy(para ponerme a modelar mañana.(imposible xd)
+
 
 
 
@@ -281,13 +285,14 @@ Solucionar bug deslizar al aparecer(otra vez)(ES LA GRAVEDAD)--Ok
 
 
 comentar jorge:
+
+
+
+
+cunado desactivo al enemigo, se queda mitad animacion para siempre.(desactivar sprite)
+
+
 SOlucinar aa y parry sobreescriben
-
-Es un problema tener la masa en 1?
-
-cunado desactivo al enemigo, se queda mitad animacion para siempre.
-
-al usar el idamageable, necesito q tenga el objeto con esa clase un collider, pponer ejemplo del enemigomele.
 
 
 
@@ -298,7 +303,7 @@ ToDoList:
 
 meter todo el graybox: otro dia
 BarraVidaBoss--
-importarplayer
+
 
 
 
@@ -308,6 +313,12 @@ importarplayer
 
 -----------------------------------------------------------------------------------------------------------------------------------
 COSAS A TENRE EN CUNETA;
+
+re hacer enemigo mele
+
+Añadir a la sala de rondas, los delegados que se suscriban al metodo restar del roundmanager
+
+
 
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)

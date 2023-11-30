@@ -8,8 +8,8 @@ public class RoundManager : MonoBehaviour
 {
     #region Variables
 
-    
-    
+    public delegate void ResetRoundRoomEnemies();
+    public static ResetRoundRoomEnemies onResetRoundRoom;
 
     //spaweDifferentEnemies
     [SerializeField] GameObject[] meleeEnemies;
@@ -71,25 +71,9 @@ public class RoundManager : MonoBehaviour
     }
 
 
-    private void ResetRoom()
+    public void ResetRoom()
     {
-        foreach (GameObject enemy in normalEnemyList)
-        {
-            enemy.SetActive(false);
-            var reset = enemy.GetComponent<IReseteable>();
-            if (reset == null) return;
-            reset.Reset();
-
-        }
-
-        foreach (GameObject enemy in flyingEnemyList)
-        {
-            enemy.SetActive(false);
-
-            var reset = enemy.GetComponent<IReseteable>();
-            if (reset == null) return;
-            reset.Reset();
-        }
+        onResetRoundRoom();
     }
 
     public void CallUpdateRound(int newRound, float waitTime)
@@ -99,6 +83,7 @@ public class RoundManager : MonoBehaviour
 
     private IEnumerator UpdateRoundState(int newRound, float waitTime)
     {
+        ResetRoom();
 
         currentRound = newRound;
         yield return new WaitForSeconds(waitTime);
@@ -121,7 +106,8 @@ public class RoundManager : MonoBehaviour
 
             //we reset it
             currentEnemy.SetActive(true);
-            currentEnemy.GetComponent<IReseteable>().Reset();
+
+           // currentEnemy.GetComponent<IReseteable>().Reset();
             //add it to the list so we know when to pass round
             roundRoomEnemies.Add(currentEnemy);
 
