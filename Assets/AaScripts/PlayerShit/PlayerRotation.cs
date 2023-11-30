@@ -12,10 +12,15 @@ public class PlayerRotation : MonoBehaviour
     //
     public bool isFacingRight;
 
-    void Start()
+
+    private void Awake()
     {
         //PlayerComponents
         playerInput = GetComponent<PlayerInput>();
+
+    }
+    void Start()
+    {
 
         //vars
         isFacingRight = true;

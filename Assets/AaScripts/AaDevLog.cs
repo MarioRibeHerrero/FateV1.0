@@ -260,11 +260,32 @@ matar boss--Ok
 
 
 
+
+
+
+Dia16:
 empezado a trabajar en las oleadas con el nuevo sistema y con el object pooling.
+intentado arreglar rondas con object pool, preguntar jorge.
+
+
+usar awake para buscar variables y start para definir valores(cambiar todas clases a esto)--Ok
+Estoy usando algunas interfaces comom ihealplayer solo para saber si curarle, si tener en cuneta nada mas, ns si eso es productivo o no(cambiar por clases vacias)--Ok
+XQ CUNADO LE DAS A ALGO Y NO PUEDES HCARELO EN EL MOMENTO, L HACE AL TERMINAR LA ACCION(arreglado x codigo)--Ok
+Solucionar bug deslizar al aparecer(otra vez)(ES LA GRAVEDAD)--Ok
+
+
+
+
+
+
+
+
 comentar jorge:
+SOlucinar aa y parry sobreescriben
 
+Es un problema tener la masa en 1?
 
-Estoy usando algunas interfaces comom ihealplayer solo para saber si curarle, si tener en cuneta nada mas, ns si eso es productivo o no(cambiar por clases vacias)
+cunado desactivo al enemigo, se queda mitad animacion para siempre.
 
 al usar el idamageable, necesito q tenga el objeto con esa clase un collider, pponer ejemplo del enemigomele.
 
@@ -287,11 +308,9 @@ importarplayer
 
 -----------------------------------------------------------------------------------------------------------------------------------
 COSAS A TENRE EN CUNETA;
-usar awake para buscar variables y start para definir valores
 
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
-XQ CUNADO LE DAS A ALGO Y NO PUEDES HCARELO EN EL MOMENTO, L HACE AL TERMINAR LA ACCION
 Añadir regiones y ordenar codigo
 DARLE BUENA VUELTA AL ENEMIGO VOLADOR
 

@@ -8,9 +8,8 @@ public class PlayerParry : MonoBehaviour
     PlayerInput playerInput;
     private Animator anim;
 
-    
 
-    void Start()
+    private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
 
@@ -20,6 +19,7 @@ public class PlayerParry : MonoBehaviour
 
         anim = GetComponent<Animator>();
     }
+
 
     private void PlayerParry_started(InputAction.CallbackContext obj)
     {

@@ -11,7 +11,9 @@ public class PlayerCameraFollow : MonoBehaviour
     private Vector3 centralPosition;
     public float boundarySize;
 
-    void Start()
+
+
+    void Awake()
     {
         
         playerInput = transform.root.GetComponent<PlayerInput>();

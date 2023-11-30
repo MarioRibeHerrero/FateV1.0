@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6570407138284151673}
   - component: {fileID: 7408897927795871214}
   - component: {fileID: 6700619999788256133}
+  - component: {fileID: 6488429930648293774}
   m_Layer: 0
   m_Name: EmpyEnemy
   m_TagString: Enemy
@@ -93,8 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d9c254139aa8c449584506044468af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicManager: {fileID: 7475434539973922016}
-  root: {fileID: 0}
   gameObjectRoot: {fileID: 8501671897598161695}
 --- !u!65 &6700619999788256133
 BoxCollider:
@@ -117,6 +116,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3470192, y: 3.0545864, z: 1}
   m_Center: {x: 0.14642525, y: 0.24342537, z: 0}
+--- !u!114 &6488429930648293774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480836568887887834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad42c3ee97727e438659752c9c8703e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2515830462451161784
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyState: 1
+  healthOnRespawn: 140
   health: 140
 --- !u!95 &4858781626303750674
 Animator:

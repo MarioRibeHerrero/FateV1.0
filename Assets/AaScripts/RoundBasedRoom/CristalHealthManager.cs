@@ -19,15 +19,11 @@ public class CristalHealthManager : MonoBehaviour
 
     }
 
-    private void Start()
-    {
 
-    }
     public void TakeDamage(int damage)
     {
         health -= damage;
         CheckHealth();
-        //  Debug.Log("GOLE");
     }
 
 

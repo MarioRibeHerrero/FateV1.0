@@ -16,11 +16,6 @@ public class BasicEnemyHitPoint : MonoBehaviour
 
 
 
-    public void TakeDamage()
-    {
-
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {

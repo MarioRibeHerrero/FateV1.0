@@ -18,14 +18,21 @@ public class PlayerSpawnPoint : MonoBehaviour
 
     //mats
     [SerializeField] Material currentM, defaultM;
-    private void Start()
+
+    private void Awake()
     {
         //InputActions
         playerInput = GetComponent<PlayerInput>();
-        playerInput.actions["Hook"].started += PlayerSpawnPoint_started;
 
+        playerInput.actions["Hook"].started += PlayerSpawnPoint_started;
         //GettingComponents
         pHealth = GetComponent<PlayerHealth>();
+    }
+    private void Start()
+    {
+
+
+
 
         //vars
         spawnPoint = null;

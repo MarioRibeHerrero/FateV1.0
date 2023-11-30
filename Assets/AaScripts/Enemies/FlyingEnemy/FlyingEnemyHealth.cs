@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class FlyingEnemyHealth : MonoBehaviour, IHealPlayer, IDamageable
+public class FlyingEnemyHealth : MonoBehaviour, IDamageable
 {
     private FlyingEnemyState flyingManager;
 

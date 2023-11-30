@@ -33,9 +33,13 @@ public class FlyingEnemyPath : MonoBehaviour, IReseteable
        // healthGo.health = health;
     }
 
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+    }
+    void Start()
+    {
         health = 10;
 
 

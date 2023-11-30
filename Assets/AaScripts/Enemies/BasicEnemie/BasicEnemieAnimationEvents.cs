@@ -7,7 +7,7 @@ public class BasicEnemieAnimationEvents : MonoBehaviour
     private Animator anim;
     [SerializeField] BasicEnemyPathing ePathing;
 
-    private void Start()
+    private void Awake()
     {
         anim = GetComponent<Animator>();
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossHealth : MonoBehaviour, IDamageable, IHealPlayer
+public class BossHealth : MonoBehaviour, IDamageable
 {
     [SerializeField] BossFightController bFController;
 
@@ -19,6 +19,7 @@ public class BossHealth : MonoBehaviour, IDamageable, IHealPlayer
 
     private int bossHp;
 
+   
     
     void Start()
     {

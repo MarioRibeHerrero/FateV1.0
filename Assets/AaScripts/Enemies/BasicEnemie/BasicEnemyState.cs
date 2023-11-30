@@ -12,6 +12,7 @@ public class BasicEnemyState : MonoBehaviour, IReseteable
 
     public void Reset()
     {
+        GetComponent<Animator>().SetTrigger("Reset");
         enemyState = 1;
         health = healthOnRespawn;
     }

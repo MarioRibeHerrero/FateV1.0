@@ -19,21 +19,25 @@ public class PlayerHook : MonoBehaviour
     //las hacemos publica para poder modificarla desde el playerJump
     public bool canHook;
     public bool isHooking;
-    
 
 
-
-    private void Start()
+    private void Awake()
     {
         //components
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         pJump = GetComponent<PlayerJump>();
+        //PlayerInputShit
+        playerInput.actions["Hook"].started += Hook_started;
+    }
+
+    private void Start()
+    {
+
 
         //line renderer for hhok
         lineRenderer.enabled = false;
-        //PlayerInputShit
-        playerInput.actions["Hook"].started += Hook_started;
+
 
         //we want to set canHook to true at the start, so the player can hook
         canHook = true;

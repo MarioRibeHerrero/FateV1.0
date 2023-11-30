@@ -266,6 +266,7 @@ GameObject:
   - component: {fileID: 7362138758239865335}
   - component: {fileID: 1931699681086153842}
   - component: {fileID: 5244643722313680265}
+  - component: {fileID: 6868186510725374310}
   m_Layer: 9
   m_Name: Collider(Body)
   m_TagString: Enemy
@@ -358,6 +359,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c01c133fff502bd46b7ceeeec6c8a712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6868186510725374310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7148339353760270382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad42c3ee97727e438659752c9c8703e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7499468608129657449
