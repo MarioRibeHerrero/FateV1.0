@@ -4,37 +4,43 @@ using UnityEngine;
 
 public class BasicEnemyHealth : MonoBehaviour, IDamageable
 {
-    private BasicEnemyState basicManager;
+    private MeleeEnemyState state;
     private RoundManager roundManager;
-    [SerializeField] GameObject gameObjectRoot;
 
     private void Awake()
     {
-        basicManager = gameObjectRoot.GetComponent<BasicEnemyState>();
+        state = GetComponent<MeleeEnemyState>();
 
-        roundManager = GameObject.FindAnyObjectByType<RoundManager>();
+        roundManager = FindAnyObjectByType<RoundManager>();
+        
+    }
+
+    private void Start()
+    {
         
     }
     public void TakeDamage(int damage)
     {
-        basicManager.health -= damage;
+        state.health -= damage;
         CheckHealth();
     }
 
     private void CheckHealth()
     {
-        if (basicManager.health <= 0)
+        if (state.health <= 0)
         {
             //Aqui hacer cosas de object booling
 
-            roundManager.roundRoomEnemies.Remove(gameObjectRoot);
-            if(roundManager.roundRoomEnemies.Count <= 0) roundManager.CallUpdateRound(2, 2);
-            //no se usa xq ahora lo llamo con delagados desde el roundmanager
-            //basicManager.Reset();
-            gameObjectRoot.SetActive(false);
+            roundManager.roundRoomEnemies.Remove(gameObject);
+            if (roundManager.roundRoomEnemies.Count <= 0) roundManager.CallUpdateRound(2, 2);
 
+            //no se usa xq ahora lo llamo con delagados desde el roundmanager
+            gameObject.SetActive(false);
 
 
         }
     }
+
+
+
 }

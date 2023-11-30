@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         //DRAG
         if (pGroundCheck.isPlayerGrounded && !GetComponent<PlayerJump>().isHoldingJump)
         {
-            Debug.Log(changingDirection);
+            //Debug.Log(changingDirection);
             //if the player stops moving we want the drag to be= to the deceleration.
             
             if ((Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping)  || changingDirection) rb.drag = deceleration;

@@ -55,7 +55,6 @@ public class RoundManager : MonoBehaviour
         foreach (GameObject enemy in meleeEnemies)
         {
             GameObject enemyspawned = Instantiate(enemy);
-           
             normalEnemyList.Add(enemyspawned);
             enemyspawned.SetActive(false);
         }
@@ -71,21 +70,21 @@ public class RoundManager : MonoBehaviour
     }
 
 
-    public void ResetRoom()
-    {
-        onResetRoundRoom();
-    }
+
 
     public void CallUpdateRound(int newRound, float waitTime)
     {
+        Debug.Log(newRound);
+        Debug.Log(waitTime);
         StartCoroutine(UpdateRoundState(newRound, waitTime));
     }
 
     private IEnumerator UpdateRoundState(int newRound, float waitTime)
     {
-        ResetRoom();
+        
 
         currentRound = newRound;
+
         yield return new WaitForSeconds(waitTime);
 
         if (currentRound == 3)
@@ -105,9 +104,10 @@ public class RoundManager : MonoBehaviour
             } while (currentEnemy.activeSelf);
 
             //we reset it
+            Debug.Log("CO¨ÑA");
             currentEnemy.SetActive(true);
-
-           // currentEnemy.GetComponent<IReseteable>().Reset();
+            currentEnemy.GetComponent<MeleeEnemyState>().CallReset();
+            // currentEnemy.GetComponent<IReseteable>().Reset();
             //add it to the list so we know when to pass round
             roundRoomEnemies.Add(currentEnemy);
 

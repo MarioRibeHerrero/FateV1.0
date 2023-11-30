@@ -275,24 +275,19 @@ Solucionar bug deslizar al aparecer(otra vez)(ES LA GRAVEDAD)--Ok
 
 Arreglar problemas con player--Ok(no arreglado cosas, pero como de momento lo dejo un poco mas de lado, me centro mejor en arreglar las salas.
 
-Arreglar sistema salas hoy(para ponerme a modelar mañana.(imposible xd)
+Arreglar sistema salas hoy(para ponerme a modelar mañana.(imposible xd) imposible mis cojones lest goooo(despuies de como toda la tarde xdd)
+
+cunado desactivo al enemigo, se queda mitad animacion para siempre.(desactivar sprite)--Ok
 
 
+-----
+coña xq esto tiene tela:
+Restructurado enemigo melee por complete, usado scrips antiguos y nuevos, añadido a la lista de prioridades cambiar los scripts antiguos por los nuievos
+ahora las rondas funcionan con el enemigo mele, meter mañana que funcionen tambien con los voladores y el cristal(y toda la pesca)
+
+arreglar mañana seguro el tema del parry
 
 
-
-
-
-
-comentar jorge:
-
-
-
-
-cunado desactivo al enemigo, se queda mitad animacion para siempre.(desactivar sprite)
-
-
-SOlucinar aa y parry sobreescriben
 
 
 
@@ -300,6 +295,26 @@ SOlucinar aa y parry sobreescriben
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
+
+SOlucinar aa y parry sobreescriben
+Restructurado enemigo melee por complete, usado scrips antiguos y nuevos, añadido a la lista de prioridades cambiar los scripts antiguos por los nuievos
+ahora las rondas funcionan con el enemigo mele, meter mañana que funcionen tambien con los voladores y el cristal(y toda la pesca)
+
+arreglar mañana seguro el tema del parry
+
+
+
+
+
+cambiar todos los sccrips del melee por nuevos(hechos la mtad o asi)
+
+revisar cosas sala oleadas y añadir enemigos voladores.
+
+
+rafaga aa
+Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
+Añadir regiones y ordenar codigo
+DARLE BUENA VUELTA AL ENEMIGO VOLADOR
 
 meter todo el graybox: otro dia
 BarraVidaBoss--
@@ -309,28 +324,9 @@ BarraVidaBoss--
 
 
 
-
-
 -----------------------------------------------------------------------------------------------------------------------------------
-COSAS A TENRE EN CUNETA;
+Preguntas;
 
-re hacer enemigo mele
-
-Añadir a la sala de rondas, los delegados que se suscriban al metodo restar del roundmanager
-
-
-
-rafaga aa
-Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
-Añadir regiones y ordenar codigo
-DARLE BUENA VUELTA AL ENEMIGO VOLADOR
-
-PREGUNTAS:
-
-PREGUNTAR JOREGE Como de pocho es poner en el gamemanager un public void q actualice el UI, pero este metodo lo que hace es llamar al metodo dentro de uiManager
-Otra opcion seria hacer el gameobject.findgooftype<uimanager> pero ns q es mejor
-
-por que si setteo en el awake, el daño a 50, luego en el boss, es igual a 0
 
 
 
