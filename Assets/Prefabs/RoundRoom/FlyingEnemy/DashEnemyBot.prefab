@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 994873382601744933}
   - component: {fileID: 8629518384096553437}
   - component: {fileID: 9180600201003598554}
-  - component: {fileID: 8670169246004513890}
   - component: {fileID: 7049646309135100199}
   m_Layer: 9
   m_Name: Collider(Body)
@@ -96,18 +95,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8670169246004513890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2283671466029371783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c01c133fff502bd46b7ceeeec6c8a712, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7049646309135100199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,9 +330,11 @@ MonoBehaviour:
   animationTime: 1
   waitTime: 1
   attackForce: 20
-  health: 10
+  healthOnRestart: 10
   speed: -1
   rayPos: {fileID: 4606931752279454519}
+  state: {fileID: 1092648904607121715}
+  health: {fileID: 4408746687670567065}
 --- !u!54 &6355440702435048307
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -415,6 +404,7 @@ GameObject:
   - component: {fileID: 7410801202230532315}
   - component: {fileID: 3695273543691398501}
   - component: {fileID: 1092648904607121715}
+  - component: {fileID: 4408746687670567065}
   m_Layer: 0
   m_Name: DashEnemyBot
   m_TagString: Untagged
@@ -472,5 +462,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyState: 0
-  health: 0
   inRangeOfShoot: 0
+--- !u!114 &4408746687670567065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563241766076880144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c01c133fff502bd46b7ceeeec6c8a712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0

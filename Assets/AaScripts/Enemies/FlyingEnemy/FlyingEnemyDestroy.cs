@@ -11,13 +11,20 @@ public class FlyingEnemyDestroy : MonoBehaviour
     }
 
 
+    public void TakeDamage(int damage)
+    {
+        healthS.health -= damage;
+        healthS.CheckHealth();
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         
         if(other.CompareTag("Ground"))
         {
-            healthS.TakeDamage(10);
-            
+            TakeDamage(10);
+            Debug.Log("MUERTEPORPARED");
         }
 
         if (other.CompareTag("Player"))
@@ -33,7 +40,7 @@ public class FlyingEnemyDestroy : MonoBehaviour
             else
             {
                 other.GetComponent<PlayerHit>().HitPlayer(this.transform.position, 30, 0.5f, 20, false);
-                healthS.TakeDamage(10);
+                TakeDamage(10);
 
             }
 

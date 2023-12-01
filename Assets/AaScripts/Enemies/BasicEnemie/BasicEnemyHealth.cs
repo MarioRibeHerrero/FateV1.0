@@ -32,7 +32,11 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
             //Aqui hacer cosas de object booling
 
             roundManager.roundRoomEnemies.Remove(gameObject);
-            if (roundManager.roundRoomEnemies.Count <= 0) roundManager.CallUpdateRound(2, 2);
+
+            int newRound;
+            newRound = roundManager.currentRound+1;
+
+            if (roundManager.roundRoomEnemies.Count <= 0) roundManager.CallUpdateRound(newRound, 2);
 
             //no se usa xq ahora lo llamo con delagados desde el roundmanager
             gameObject.SetActive(false);

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class FlyingEnemyPath : MonoBehaviour, IReseteable
+public class FlyingEnemyPath : MonoBehaviour
 {
     //Pathing
     [SerializeField] float animationTime, waitTime;
@@ -10,28 +11,26 @@ public class FlyingEnemyPath : MonoBehaviour, IReseteable
 
     private Rigidbody rb;
     private Transform target;
-    public int health;
+    [SerializeField] int healthOnRestart;
 
 
-
-    private bool canMove;
+    [SerializeField] bool canMove;
     [SerializeField] int speed;
     [SerializeField] Transform rayPos;
 
 
 
     bool haveEntered;
-
+    Vector2 startPos;
 
 
     //ResetShit
-   // [SerializeField] GenericHealth healthGo;
-    
+    // [SerializeField] GenericHealth healthGo;
 
-    public void Reset()
-    {
-       // healthGo.health = health;
-    }
+    [SerializeField] FlyingEnemyState state;
+    [SerializeField] FlyingEnemyHealth health;
+
+
 
     private void Awake()
     {
@@ -40,12 +39,29 @@ public class FlyingEnemyPath : MonoBehaviour, IReseteable
     }
     void Start()
     {
-        health = 10;
-
-
+        health.health = 10;
         canMove = true;
+        startPos = transform.position;
+
     }
 
+    private void OnEnable()
+    {
+        state.onEnemyReset += Reset;
+
+    }
+
+    private void OnDisable()
+    {
+        state.onEnemyReset -= Reset;
+
+    }
+    public void Reset()
+    {
+        canMove = true;
+        health.health = healthOnRestart;
+        rb.velocity = Vector3.zero;
+   }
 
     private void Update()
     {

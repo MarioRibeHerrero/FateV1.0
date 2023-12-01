@@ -10,14 +10,7 @@ public class BasicEnemyState : MonoBehaviour
    // [SerializeField] GenericHealth healthGo;
     public int health;
 
-    private void OnEnable()
-    {
-        RoundManager.onResetRoundRoom += Reset;
-    }
-    private void OnDisable()
-    {
-        RoundManager.onResetRoundRoom -= Reset;
-    }
+
 
     private void Reset()
     {

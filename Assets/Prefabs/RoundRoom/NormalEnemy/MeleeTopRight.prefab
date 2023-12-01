@@ -710,6 +710,7 @@ GameObject:
   - component: {fileID: 6322474388191796758}
   - component: {fileID: 4812077340954697396}
   - component: {fileID: 4051594860682470479}
+  - component: {fileID: 390622493501255241}
   m_Layer: 0
   m_Name: EmpyEnemy
   m_TagString: Enemy
@@ -781,3 +782,15 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 8
+--- !u!114 &390622493501255241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8515984357146985128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad42c3ee97727e438659752c9c8703e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

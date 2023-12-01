@@ -37,7 +37,6 @@ public class MeleeEnemyState : MonoBehaviour
 
     private void qcutre()
     {
-        Debug.Log("HOLA");
         onEnemyReset();
 
     }

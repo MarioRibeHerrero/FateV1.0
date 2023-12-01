@@ -244,7 +244,6 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         if (canAttack)
         {
             animator.SetTrigger("Attack");
-            Debug.Log("KEKEKEK");
             canAttack = false;
         }
 
