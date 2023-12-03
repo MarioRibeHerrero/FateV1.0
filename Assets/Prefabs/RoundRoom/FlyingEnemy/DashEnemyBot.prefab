@@ -331,6 +331,7 @@ MonoBehaviour:
   waitTime: 1
   attackForce: 20
   healthOnRestart: 10
+  canMove: 0
   speed: -1
   rayPos: {fileID: 4606931752279454519}
   state: {fileID: 1092648904607121715}

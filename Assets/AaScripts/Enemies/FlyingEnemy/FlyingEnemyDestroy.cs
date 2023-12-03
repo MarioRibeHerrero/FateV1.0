@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEnemyDestroy : MonoBehaviour
+public class FlyingEnemyDestroy : MonoBehaviour, IDamageable
 {
     private FlyingEnemyHealth healthS;
     private void Awake()
