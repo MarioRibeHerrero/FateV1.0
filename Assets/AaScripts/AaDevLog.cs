@@ -289,7 +289,12 @@ arreglar mañana seguro el tema del parry
 
 
 
+FinDeSemana(Dia17):
+Añadido enemigo volador al sistema de rondas(falta perfeccionar mucho)
+solucionados problemas que habian con el sistema de rondas.
+cambiado un poco el funcionamiento de los scrips del enemigo volador
 
+Resto del fin de semana super chill;
 
 
 
@@ -297,8 +302,6 @@ arreglar mañana seguro el tema del parry
 ToDoList:
 
 SOlucinar aa y parry sobreescriben
-Restructurado enemigo melee por complete, usado scrips antiguos y nuevos, añadido a la lista de prioridades cambiar los scripts antiguos por los nuievos
-ahora las rondas funcionan con el enemigo mele, meter mañana que funcionen tambien con los voladores y el cristal(y toda la pesca)
 
 arreglar mañana seguro el tema del parry
 
