@@ -33,10 +33,7 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
             roundManager.roundRoomEnemies.Remove(gameObject);
 
-            int newRound;
-            newRound = roundManager.currentRound+1;
-
-            if (roundManager.roundRoomEnemies.Count <= 0) roundManager.CallUpdateRound(newRound, 2);
+            RoudRoomShit();
 
             //no se usa xq ahora lo llamo con delagados desde el roundmanager
             gameObject.SetActive(false);
@@ -45,6 +42,30 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
         }
     }
 
+    private void RoudRoomShit()
+    {
 
+        if (roundManager.roundRoomEnemies.Count <= 0)
+        {
+
+            if (roundManager.currentRound == 3)
+            {
+                roundManager.EndRoundRoom();
+
+            }
+            else
+            {
+
+                int newRound;
+                newRound = roundManager.currentRound + 1;
+                roundManager.CallUpdateRound(newRound, 2);
+
+            }
+
+        }
+
+
+
+    }
 
 }

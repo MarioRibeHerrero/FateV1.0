@@ -13,7 +13,6 @@ public class FlyingEnemyHealth : MonoBehaviour
     public int health;
 
 
-    Transform respawnPos;
 
 
     private void Awake()
@@ -29,33 +28,39 @@ public class FlyingEnemyHealth : MonoBehaviour
         if(health <=0)
         {
             roundManager.roundRoomEnemies.Remove(gameObject);
-
-
-            int newRound;
-            newRound = roundManager.currentRound+1;
-
-            if (roundManager.roundRoomEnemies.Count <= 0) roundManager.CallUpdateRound(newRound, 2);
-
-
-
-            if (roundManager.currentRound == 3)
-            {
-                if (!roundManager.isCristalDestroyed)
-                {
-                    roundManager.CallRespawn(this.gameObject, respawnPos);
-                }
-                else
-                {
-
-                    //endRound
-                    roundManager.EndRoundRoom();
-
-                }
-            }
-
-            
-
+            RoudRoomShit();
             flyingManager.gameObject.SetActive(false);
         }
     }
+
+
+    private void RoudRoomShit()
+    {
+
+        if (roundManager.roundRoomEnemies.Count <= 0)
+        {
+
+            if (roundManager.currentRound == 3)
+            {
+                roundManager.EndRoundRoom();
+
+            }else
+            {
+
+                int newRound;
+                newRound = roundManager.currentRound + 1;
+                roundManager.CallUpdateRound(newRound, 2);
+
+            }
+
+        }
+
+
+
+    }
+
+
+
+
+
 }

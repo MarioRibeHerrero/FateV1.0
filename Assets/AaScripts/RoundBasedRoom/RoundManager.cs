@@ -89,11 +89,7 @@ public class RoundManager : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
         currentRound = newRound;
-        Debug.Log(currentRound);
-        if (currentRound == 3)
-        {
-            Instantiate(cristalPrefab);
-        }
+
 
         //normalEnemySpawner
         for (int i = 0; i < newRound + 1; i++)
@@ -117,9 +113,9 @@ public class RoundManager : MonoBehaviour
 
         //FlyingEnemy
 
-        if(currentRound != 3)
+        if(currentRound == 3)
         {
-            for (int i = 0; i < newRound +1 ; i++)
+            for (int i = 0; i < newRound ; i++)
             {
                 GameObject currentEnemy;
 
@@ -139,7 +135,7 @@ public class RoundManager : MonoBehaviour
             }
         }else
         {
-            for (int i = 0; i < newRound ; i++)
+            for (int i = 0; i < newRound + 1; i++)
             {
                 GameObject currentEnemy;
 
@@ -166,19 +162,6 @@ public class RoundManager : MonoBehaviour
     }
 
 
-    public void CallRespawn(GameObject obToRespawn, Transform pos)
-    {
-       // obToRespawn.SetActive(true);
-        obToRespawn.GetComponent<FlyingEnemyState>().onEnemyReset();
-        obToRespawn.transform.position = pos.transform.position;
-        // StartCoroutine(RespawnEnemy(obToRespawn, pos));
-    }
-    private IEnumerator RespawnEnemy(GameObject obToRespawn, Transform pos)
-    {
-        yield return new WaitForSeconds(3f);
-
-
-    }
 
 
     public void EndRoundRoom()
@@ -193,125 +176,3 @@ public class RoundManager : MonoBehaviour
 
 
 }
-#region OldMEthod
-/*
-public void callCorrutine(int newRound, float waitTime)
-{
-    //PRUEBA A VER SI NO HACE LA CORRUTINA XQ SE DESTRUYTE EL OBJ
-    StartCoroutine(UpdateRoundState(newRound, waitTime));
-}
-
-
-
-public IEnumerator UpdateRoundState(int newRound, float waitTime)
-{
-    normalEnemyList.Clear();
-    flyingEnemyList.Clear();
-
-    currentRound = newRound;
-    yield return new WaitForSeconds(waitTime);
-
-    if(currentRound == 3)
-    {
-        Instantiate(cristalPrefab, cristalSpawnPoint);
-        enemiesKilled = 0;
-        enemiesToKill = 100;
-    }
-    else
-    {
-        enemiesKilled = 0;
-        enemiesToKill = newRound + 1;
-    }
-
-
-
-    //normalEnemySpawner
-    for (int i = 0; i < newRound + 1; i++)
-    {
-        GameObject currentEnemy;
-
-        do
-        {
-            currentEnemy = meleeEnemies[Random.Range(0, meleeEnemies.Length)];
-        } while (normalEnemyList.Contains(currentEnemy));
-
-        Instantiate(currentEnemy);
-        normalEnemyList.Add(currentEnemy);
-        roundRoomEnemies.Add(currentEnemy);
-
-    }
-
-    //FlyingEnemySpawner
-
-    switch (currentRound)
-    {
-        case 1:
-        case 2:
-            for (int i = 0; i < newRound + 1; i++)
-            {
-                GameObject currentFlyingEnemy;
-
-                do
-                {
-                    currentFlyingEnemy = flyingEnemies[Random.Range(0, flyingEnemies.Length)];
-                } while (flyingEnemyList.Contains(currentFlyingEnemy));
-
-                Instantiate(currentFlyingEnemy);
-                flyingEnemyList.Add(currentFlyingEnemy);
-                roundRoomEnemies.Add(currentFlyingEnemy);
-
-            }
-            //spawn2
-            break;
-        case 3:
-
-            for (int i = 0; i < newRound ; i++)
-            {
-                GameObject currentFlyingEnemy;
-
-                do
-                {
-                    currentFlyingEnemy = flyingEnemies[Random.Range(0, flyingEnemies.Length)];
-                } while (flyingEnemyList.Contains(currentFlyingEnemy));
-
-                Instantiate(currentFlyingEnemy);
-                flyingEnemyList.Add(currentFlyingEnemy);
-                roundRoomEnemies.Add(currentFlyingEnemy);
-
-            }
-            //infinite
-
-
-            break;
-
-    }
-
-
-
-
-
-
-
-}
-//have to use this method, because when i destroy the othre item, the corrutine call gets canceled.
-public void RespawnEnemyCT(float delay, GameObject originalPrefab)
-{
-    StartCoroutine(RespawnEnemy(delay, originalPrefab));
-}
-
-public IEnumerator RespawnEnemy(float delay, GameObject originalPrefab)
-{
-    yield return new WaitForSeconds(delay);
-    Debug.Log(originalPrefab);
-    if (flyingEnemyList.Contains(originalPrefab))
-    {
-
-        Instantiate(originalPrefab);
-        roundRoomEnemies.Add(originalPrefab);
-
-    }
-}
-
-*/
-
-#endregion

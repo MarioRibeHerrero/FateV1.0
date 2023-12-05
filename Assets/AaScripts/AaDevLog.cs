@@ -298,15 +298,25 @@ Resto del fin de semana super chill;
 
 
 
+
+Dia18(05/12/23):
+
+Quitado temporalmente el spawn infinito de voladores en la sala de rondas, ahora funciona guay sin eso.(perfeccionar enemigos e interacciones con enemigos 
+
+SOlucinar aa y parry sobreescriben y se buggea xd-- parece q Ok
+
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 
-SOlucinar aa y parry sobreescriben
+
 
 arreglar mañana seguro el tema del parry
 
 
-
+Se puede hacer doble salto rapido
 
 
 cambiar todos los sccrips del melee por nuevos(hechos la mtad o asi)

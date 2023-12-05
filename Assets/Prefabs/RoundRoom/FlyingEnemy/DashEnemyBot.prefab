@@ -477,3 +477,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  respawnPosN: 3
