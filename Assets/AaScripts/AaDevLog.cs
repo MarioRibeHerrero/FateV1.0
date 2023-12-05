@@ -305,7 +305,9 @@ Quitado temporalmente el spawn infinito de voladores en la sala de rondas, ahora
 
 SOlucinar aa y parry sobreescriben y se buggea xd-- parece q Ok
 
-
+Attaque del disco boss--ok
+metter sprite boss-Estrutura basica boss--Ok
+attaque pinchos--mitad
 
 
 -----------------------------------------------------------------------------------------------------------------------------------

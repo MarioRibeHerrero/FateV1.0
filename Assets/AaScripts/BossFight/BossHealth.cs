@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossHealth : MonoBehaviour, IDamageable
+public class BossHealth : MonoBehaviour
 {
     [SerializeField] BossFightController bFController;
 
@@ -36,28 +36,8 @@ public class BossHealth : MonoBehaviour, IDamageable
 
 
 
-    public void TakeDamage(int damageTaken)
-    {
-        bFController.bossTotalHealth -= damageTaken;
-        StartCoroutine(HitVisualEffect(hitTime));
 
-        CheckHealth();
-    }
-
-    private IEnumerator HitVisualEffect(float hitTime)
-    {
-        //Aply shader to model(de momento color pocho
-
-
-       // Material currentMat = GetComponent<MeshRenderer>().material;
-        Color color = GetComponent<MeshRenderer>().material.color;
-
-        GetComponent<MeshRenderer>().material.color = Color.white;
-        yield return new WaitForSeconds(hitTime);
-        GetComponent<MeshRenderer>().material.color = color;
-
-    }
-    private void CheckHealth()
+    public void CheckHealth()
     {
         if (bFController.bossTotalHealth <= 0)
         {

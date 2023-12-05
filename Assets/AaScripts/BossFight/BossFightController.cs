@@ -6,6 +6,7 @@ public class BossFightController : MonoBehaviour
 {
     public bool inBossFight, bossFightFinished;
     public int bossTotalHealth;
+    public float hitTime;
 
 
 }
