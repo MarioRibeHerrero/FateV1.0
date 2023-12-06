@@ -196,7 +196,6 @@ Solucionar errores sistema oleadas.
 
 Dia13:
 TodoList Hoy:
-(Creo q esto lo dejo para cunado tenga clase con jorge xd)
 Añadir respawn infinito: hecho
 Actualizar Trello: hecho
 
@@ -205,17 +204,147 @@ Parry ahora no te puede matar
 Parry ahora cancela aa, lo que hace que responda antes.
 Barra de vida se actualiza con todo(golpes,ataques,etc.)
 
+ordenado carpetas y actualizado el main de todos
 
 
-COSAS A TENRE EN CUNETA;
+
+
+
+
+Dia14:
+
+TodoList hacer mañana(o al terminar las prioridades nuevas al hablar con jorge:
+Vida boss: a medias
+effecto hacer daño boss: a medias
+matar boss: otro dia
+entrar en sala boss: otro dia
+meter todo el graybox: otro dia
+
+--preguntar jorge hasta que punto es worth usar interfazes cuando me obliga a hacer el metodo publico--
+no lo es, quitar
+----------
+añadidas interfaces de ikilleable, idamageable y healplayer
+x la mañana, empezado a hacer boss, pero me he desviado a hacer interfaces y aplicarlas a los enemigos.
+
+hacer por la tarde:
+
+1: Arreglar takedamage de los enemigos--Ok
+2: revisar el playerheal--Ok
+
+3: 
+a venido jorge, nueva to do list con prioridades:
+cambiar instancias objetos x object polling--Problema, solucinar mañana en clase
+cambiar lista y referencias de la sala de rondas al roundManager--Ok
+   
+
+Dejar codigo limpio para mañana poder hacerlo/solucinarlo con jorge--Ok
+quitado trabajo fin de semana q hay q mejorar,--Ok
+mejorado enemigos volador y normal.--Ok
+añadido instancia de enemigos al entrar en la sala de rondas(inicio de object booling)--Ok
+
+
+
+Dia15:
+
+Mejoras enemigo:
+Ahora se espera u poco cuando te sales de su zona, lo que hace q no parezca como q te esta siguiendo todo el rato,--Ok
+si esta atacando no se gira--Ok
+siempre mira donde toca.--Ok
+te empuja hacia afuera siempre--No, casi siempre si, pero ns cuando no lo hace.
+
+BossFight:
+Vida boss--Ok
+effecto hacer daño boss--Ok
+EntradaALaHabitacion--Ok
+matar boss--Ok
+
+
+
+
+
+
+Dia16:
+empezado a trabajar en las oleadas con el nuevo sistema y con el object pooling.
+intentado arreglar rondas con object pool, preguntar jorge.
+
+
+usar awake para buscar variables y start para definir valores(cambiar todas clases a esto)--Ok
+Estoy usando algunas interfaces comom ihealplayer solo para saber si curarle, si tener en cuneta nada mas, ns si eso es productivo o no(cambiar por clases vacias)--Ok
+XQ CUNADO LE DAS A ALGO Y NO PUEDES HCARELO EN EL MOMENTO, L HACE AL TERMINAR LA ACCION(arreglado x codigo)--Ok
+Solucionar bug deslizar al aparecer(otra vez)(ES LA GRAVEDAD)--Ok
+
+Arreglar problemas con player--Ok(no arreglado cosas, pero como de momento lo dejo un poco mas de lado, me centro mejor en arreglar las salas.
+
+Arreglar sistema salas hoy(para ponerme a modelar mañana.(imposible xd) imposible mis cojones lest goooo(despuies de como toda la tarde xdd)
+
+cunado desactivo al enemigo, se queda mitad animacion para siempre.(desactivar sprite)--Ok
+
+
+-----
+coña xq esto tiene tela:
+Restructurado enemigo melee por complete, usado scrips antiguos y nuevos, añadido a la lista de prioridades cambiar los scripts antiguos por los nuievos
+ahora las rondas funcionan con el enemigo mele, meter mañana que funcionen tambien con los voladores y el cristal(y toda la pesca)
+
+arreglar mañana seguro el tema del parry
+
+
+
+FinDeSemana(Dia17):
+Añadido enemigo volador al sistema de rondas(falta perfeccionar mucho)
+solucionados problemas que habian con el sistema de rondas.
+cambiado un poco el funcionamiento de los scrips del enemigo volador
+
+Resto del fin de semana super chill;
+
+
+
+
+Dia18(05/12/23):
+
+Quitado temporalmente el spawn infinito de voladores en la sala de rondas, ahora funciona guay sin eso.(perfeccionar enemigos e interacciones con enemigos 
+
+SOlucinar aa y parry sobreescriben y se buggea xd-- parece q Ok
+
+Attaque del disco boss--ok
+metter sprite boss-Estrutura basica boss--Ok
+attaque pinchos--mitad
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+ToDoList:
+
+
+
+arreglar mañana seguro el tema del parry
+
+
+Se puede hacer doble salto rapido
+
+
+cambiar todos los sccrips del melee por nuevos(hechos la mtad o asi)
+
+revisar cosas sala oleadas y añadir enemigos voladores.
+
+
 rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
-XQ CUNADO LE DAS A ALGO Y NO PUEDES HCARELO EN EL MOMENTO, L HACE AL TERMINAR LA ACCION
+Añadir regiones y ordenar codigo
+DARLE BUENA VUELTA AL ENEMIGO VOLADOR
+
+meter todo el graybox: otro dia
+BarraVidaBoss--
 
 
-PREGUNTAR JORGE TEMA OBJECT BOOLING SI TIENE SENTIDO CON QUE LOS ENEMIGOS SEAN TOODS DISTINTOS, o si hay que cambiar los enemigos como funcionan.
-PREGUNTAR JOREGE Como de pocho es poner en el gamemanager un public void q actualice el UI, pero este metodo lo que hace es llamar al metodo dentro de uiManager
-Otra opcion seria hacer el gameobject.findgooftype<uimanager> pero ns q es mejor
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+Preguntas;
+
+
+
+
 
 
 

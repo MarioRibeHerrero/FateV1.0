@@ -8,9 +8,8 @@ public class PlayerParry : MonoBehaviour
     PlayerInput playerInput;
     private Animator anim;
 
-    
 
-    void Start()
+    private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
 
@@ -21,9 +20,10 @@ public class PlayerParry : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+
     private void PlayerParry_started(InputAction.CallbackContext obj)
     {
-        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && GameManager.Instance.playerHealth >= 20)
+        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && GameManager.Instance.playerHealth >= 20 && !GameManager.Instance.isPlayerParry) 
         {
             anim.SetTrigger("Parry");
            

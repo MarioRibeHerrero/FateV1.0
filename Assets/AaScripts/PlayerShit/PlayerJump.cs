@@ -35,7 +35,9 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] float jumpBufferTime;
     [SerializeField] float jumpBufferTimer;
     public bool isBufferJumping;
-    void Start()
+
+
+    private void Awake()
     {
         //Get Components
         playerInput = GetComponent<PlayerInput>();
@@ -45,6 +47,10 @@ public class PlayerJump : MonoBehaviour
         //Player Input Shit 
         playerInput.actions["Jump"].started += Jump_Started;
         playerInput.actions["Jump"].canceled += Jump_canceled;
+    }
+    void Start()
+    {
+
 
         cantHoldJump = true;
         secondJump = true;

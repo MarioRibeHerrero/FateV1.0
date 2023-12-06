@@ -13,9 +13,7 @@ public class PlayerGroundCheck : MonoBehaviour
 
     [SerializeField] float dobleJumpDistance;
 
-    private void Start()
-    {
-    }
+
     void Update()
     {
         //Raycast q comprueba si estas o no en el suelo(devuelve true if your on ground and false if you are not)

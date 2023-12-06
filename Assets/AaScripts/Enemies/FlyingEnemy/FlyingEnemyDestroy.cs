@@ -2,15 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingEnemyDestroy : MonoBehaviour
+public class FlyingEnemyDestroy : MonoBehaviour, IDamageable
 {
+    private FlyingEnemyHealth healthS;
+    private void Awake()
+    {
+        healthS = GameObject.FindAnyObjectByType<FlyingEnemyHealth>();
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        healthS.health -= damage;
+        healthS.CheckHealth();
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         
         if(other.CompareTag("Ground"))
         {
-            transform.parent.GetComponent<GenericHealth>().TakeDamage(10);
-            
+            TakeDamage(10);
+            Debug.Log("MUERTEPORPARED");
         }
 
         if (other.CompareTag("Player"))
@@ -26,7 +40,7 @@ public class FlyingEnemyDestroy : MonoBehaviour
             else
             {
                 other.GetComponent<PlayerHit>().HitPlayer(this.transform.position, 30, 0.5f, 20, false);
-                transform.parent.GetComponent<GenericHealth>().TakeDamage(10);
+                TakeDamage(10);
 
             }
 

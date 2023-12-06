@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class BasicEnemyPathing : MonoBehaviour
 {
 
+
+
+
+
     [SerializeField] GameObject parent;
     //Pathing
     [SerializeField] Transform pointA;
@@ -27,7 +31,6 @@ public class BasicEnemyPathing : MonoBehaviour
     private bool facingRight;
 
     //attack
-    BasicEnemyState state;
     [SerializeField] Transform attackRange;
     [SerializeField] LayerMask attackLayer;
     [SerializeField] float timer = 0;
@@ -39,56 +42,146 @@ public class BasicEnemyPathing : MonoBehaviour
     private Animator anim;
 
 
+
+
+
+
+
+    [SerializeField] MeleeEnemyState stateManager;
+
+
+
+    private void Awake()
+    {
+        //Components from root
+        anim = parent.GetComponent<Animator>();
+        player = GameObject.FindWithTag("Player");
+
+    }
     void Start()
     {
 
-        //Components from root
-        anim = parent.GetComponent<Animator>();
-        state = parent.GetComponent<BasicEnemyState>();
-        player = GameObject.FindWithTag("Player");
 
         target = pointA;
         isWaiting = false;
         facingRight = true;
-        UpdateLookPos();
 
         
     }
 
     void Update()
     {
-        switch(state.enemyState)
+
+        EnemyStateManagement();
+
+    }
+
+    private void EnemyStateManagement()
+    {
+        switch (stateManager.state)
+        {
+            case MeleeEnemyState.MeleeEnemyStateEnum.Pathing:
+
+                if(!isWaiting) MoveTowardsTarget();
+
+                break;
+            case MeleeEnemyState.MeleeEnemyStateEnum.Waiting:
+
+                
+
+                break;
+
+
+        }
+    }
+    void MoveTowardsTarget()
+    {
+
+        float step = chillSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y, transform.position.z), step);
+        //if target is = to point b, faicing right will be true, else, it will be false.
+
+        if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x, transform.position.y, transform.position.z)) < 0.01f)
+        {
+            StartCoroutine(WaitAtPoint());
+        }
+    }
+
+    IEnumerator WaitAtPoint()
+    {
+        isWaiting = true;
+        yield return new WaitForSeconds(waitTime);
+
+        if (target == pointA)
+        {
+            target = pointB;
+            facingRight = true;
+        }
+        else
+        {
+            target = pointA;
+            facingRight = false;
+        }
+        isWaiting = false;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+
+
+
+    private void prueba()
+    {
+
+        switch (state.enemyState)
         {
 
             case 1:
                 //normal Path
-                if (!isWaiting)
+                if (!isWaiting && !isAttacking)
                 {
                     MoveTowardsTarget();
                 }
 
                 break;
 
-                case 2:
+            case 2:
                 //Follow player
-                if(canMove && !stunned) FollowPlayer();
+                if (canMove && !stunned) FollowPlayer();
 
                 //si estas en rango, atacas
                 if (CanAttack() && !stunned)
-                 {
+                {
                     anim.SetTrigger("Attack");
                     isAttacking = true;
                     state.enemyState = 3;
 
-                 }
+                }
 
-                
+
                 break;
 
             case 3:
                 //attack
 
-                if(!isAttacking)
+                if (!isAttacking)
                 {
                     state.enemyState = 2;
                 }
@@ -98,7 +191,6 @@ public class BasicEnemyPathing : MonoBehaviour
 
         ControlAttacktimer();
     }
-
 
     private void OnDrawGizmos()
     {
@@ -155,17 +247,7 @@ public class BasicEnemyPathing : MonoBehaviour
 
 
 
-    void MoveTowardsTarget()
-    {
 
-        float step = chillSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y,transform.position.z), step);
-
-        if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x, transform.position.y, transform.position.z)) < 0.01f)
-        {
-            StartCoroutine(WaitAtPoint());
-        }
-    }
 
 
     public void RandomTarget()
@@ -182,9 +264,15 @@ public class BasicEnemyPathing : MonoBehaviour
             target = pointB;
             facingRight = true;
         }
-        UpdateLookPos();
+        
     }
 
+    public IEnumerator WaitFor(int secs)
+    {
+        isWaiting = true;
+        yield return new WaitForSeconds(secs);
+        isWaiting = false;
+    }
     IEnumerator WaitAtPoint()
     {
         isWaiting = true;
@@ -204,10 +292,31 @@ public class BasicEnemyPathing : MonoBehaviour
         isWaiting = false;
     }
 
+
+    private void FaceTarget()
+    {
+        facingRight = target == pointB;
+
+
+        if(target == pointB)
+        {
+            if (transform.position.x > pointB.transform.position.x) facingRight = false;
+            else facingRight = true;
+        }
+        else
+        {
+            if (transform.position.x > pointA.transform.position.x) facingRight = false;
+            else facingRight = true;
+        }
+    }
     private void UpdateLookPos()
     {
-        if(facingRight) transform.rotation = Quaternion.Euler(0, 180, 0);
-        else transform.rotation = Quaternion.Euler(0, 0, 0);
+        if ( !isAttacking)
+        {
+            if (facingRight) transform.rotation = Quaternion.Euler(0, 180, 0);
+            else transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
     }
     private void FacePlayer()
     {
@@ -223,6 +332,9 @@ public class BasicEnemyPathing : MonoBehaviour
         }
 
     }
+
+
+    */
 
 }
 

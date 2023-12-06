@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FlyingEnemyPath : MonoBehaviour
@@ -10,27 +11,57 @@ public class FlyingEnemyPath : MonoBehaviour
 
     private Rigidbody rb;
     private Transform target;
-    public int health;
+    [SerializeField] int healthOnRestart;
 
 
-
-    private bool canMove;
+    [SerializeField] bool canMove;
     [SerializeField] int speed;
     [SerializeField] Transform rayPos;
 
 
 
     bool haveEntered;
+    Vector2 startPos;
 
-    void Start()
+
+    //ResetShit
+    // [SerializeField] GenericHealth healthGo;
+
+    [SerializeField] FlyingEnemyState state;
+    [SerializeField] FlyingEnemyHealth health;
+
+
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        health = 10;
 
-
+    }
+    void Start()
+    {
+        health.health = 10;
         canMove = true;
+        startPos = transform.position;
+
     }
 
+    private void OnEnable()
+    {
+        state.onEnemyReset += Reset;
+
+    }
+
+    private void OnDisable()
+    {
+        state.onEnemyReset -= Reset;
+
+    }
+    public void Reset()
+    {
+        canMove = true;
+        health.health = healthOnRestart;
+        rb.velocity = Vector3.zero;
+   }
 
     private void Update()
     {

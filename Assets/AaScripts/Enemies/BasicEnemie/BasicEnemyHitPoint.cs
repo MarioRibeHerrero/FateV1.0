@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class BasicEnemyHitPoint : MonoBehaviour
 {
-    [SerializeField] GameObject parent, root;
+    [SerializeField] GameObject  root;
     private enum Points
     {
         head,
@@ -13,6 +15,9 @@ public class BasicEnemyHitPoint : MonoBehaviour
         weapon
     }
     [SerializeField] private Points whatPointAmI;
+
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -24,7 +29,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
                     if (!GameManager.Instance.isPlayerParry)
                     {
 
-                        parent.GetComponent<BasicEnemyAttack>().HitHead(other);
+                        root.GetComponent<BasicEnemyAttack>().HitHead(other);
 
                     }
                     else
@@ -45,8 +50,8 @@ public class BasicEnemyHitPoint : MonoBehaviour
                         
                         if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGroundCheck>().isPlayerGrounded)
                         {
-                            parent.GetComponent<BasicEnemyAttack>().HitBody(other);
-                        }else transform.parent.GetComponent<BasicEnemyAttack>().HitHead(other);
+                            root.GetComponent<BasicEnemyAttack>().HitBody(other);
+                        }else root.GetComponent<BasicEnemyAttack>().HitHead(other);
                     }
                     else
                     {
@@ -62,7 +67,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
 
                     if (!GameManager.Instance.isPlayerParry)
                     {
-                        parent.GetComponent<BasicEnemyAttack>().BasicAttack(other);
+                        root.GetComponent<BasicEnemyAttack>().BasicAttack(other);
 
                     }
                     else

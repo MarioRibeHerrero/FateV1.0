@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class PlayerAnimationEvents : MonoBehaviour
 {
+    private Animator anim;
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
     private void CanPlayerMoveToFalse()
     {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -17,23 +22,23 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     private void IsOcupiedToTrue()
     {
-        GetComponent<Animator>().SetBool("IsOccupied", true);
+        anim.SetBool("IsOccupied", true);
         GameManager.Instance.isOccupied = true;
 
     }
     private void IsOcupiedToFalse()
     {
-        GetComponent<Animator>().SetBool("IsOccupied", false);
+        anim.SetBool("IsOccupied", false);
         GameManager.Instance.isOccupied = false;
     }
     private void CanRotateToTrue()
     {
-        GetComponent<Animator>().SetBool("CanRotate", true);
+        anim.SetBool("CanRotate", true);
         GameManager.Instance.canPlayerRotate = true;
     }
     private void CanRotateToFalse()
     {
-        GetComponent<Animator>().SetBool("CanRotate", false);
+        anim.SetBool("CanRotate", false);
         GameManager.Instance.canPlayerRotate = false;
     }
 
@@ -42,11 +47,11 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     private void CanParryToFalse()
     {
-        GetComponent<Animator>().SetBool("CanParry", false);
+        anim.SetBool("CanParry", false);
     }
     private void CanParryToTrue()
     {
-        GetComponent<Animator>().SetBool("CanParry", true);
+        anim.SetBool("CanParry", true);
     }
     private void Parry()
     {
@@ -57,5 +62,12 @@ public class PlayerAnimationEvents : MonoBehaviour
     {
         GameManager.Instance.isPlayerParry = false;
     }
-    
+
+    private void AaEnd()
+    {
+        anim.SetTrigger("AaEnd");
+    }
+
+
+
 }

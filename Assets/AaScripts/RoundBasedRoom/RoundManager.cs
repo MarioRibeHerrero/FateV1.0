@@ -1,60 +1,94 @@
+using Autodesk.Fbx;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class RoundManager : MonoBehaviour
 {
-    public int currentRound;
-    
+    #region Variables
+
+
 
     //spaweDifferentEnemies
-    [SerializeField] Transform normalEnemySpawnPoint;
-    [SerializeField] Transform flyingEnemySpawnPoint;
     [SerializeField] GameObject[] meleeEnemies;
     [SerializeField] GameObject[] flyingEnemies;
+    [SerializeField] GameObject[] spawnPoints;
+
 
     //cristal
     [SerializeField] GameObject cristalPrefab;
-    [SerializeField] Transform cristalSpawnPoint;
+
+
+    //list of the enemies spawned
+    [SerializeField] List<GameObject> normalEnemyList = new List<GameObject>();
+    [SerializeField] List<GameObject> flyingEnemyList = new List<GameObject>();
+
+
+
+    //RoundRoom
+    public int currentRound;
+    public bool inRoundRoom;
+    public List<GameObject> roundRoomEnemies = new List<GameObject>();
     public bool isCristalDestroyed;
 
 
 
-    List<GameObject> normalEnemyList = new List<GameObject>();
-    List<GameObject> flyingEnemyList = new List<GameObject>();
+
+
+    #endregion
 
 
 
 
-    public void callCorrutine(int newRound, float waitTime)
+
+    #region SpawnManager
+    private void Start()
     {
-        //PRUEBA A VER SI NO HACE LA CORRUTINA XQ SE DESTRUYTE EL OBJ
-        StartCoroutine(UpdateRoundState(newRound, waitTime));
+        CreateEnemyPool();
     }
 
 
 
-    public IEnumerator UpdateRoundState(int newRound, float waitTime)
+    public void CreateEnemyPool()
     {
-        normalEnemyList.Clear();
-        flyingEnemyList.Clear();
+        //instantiate and desactivar enemies
+        if (meleeEnemies.Length == 0 && flyingEnemies.Length == 0) return;
+        foreach (GameObject enemy in meleeEnemies)
+        {
+            GameObject enemyspawned = Instantiate(enemy);
+            normalEnemyList.Add(enemyspawned);
+            enemyspawned.SetActive(false);
+        }
 
-        currentRound = newRound;
+        foreach (GameObject enemy in flyingEnemies)
+        {
+            GameObject enemyspawned = Instantiate(enemy);
+            
+            flyingEnemyList.Add(enemyspawned);
+            enemyspawned.SetActive(false);
+        }
+
+    }
+
+
+
+
+    public void CallUpdateRound(int newRound, float waitTime)
+    {
+
+        StartCoroutine(UpdateRoundState(newRound, waitTime));
+    }
+
+    private IEnumerator UpdateRoundState(int newRound, float waitTime)
+    {
+        
+
+
         yield return new WaitForSeconds(waitTime);
-
-        if(currentRound == 3)
-        {
-            Instantiate(cristalPrefab, cristalSpawnPoint);
-            GameManager.Instance.enemiesKilled = 0;
-            GameManager.Instance.enemiesToKill = 100;
-        }
-        else
-        {
-            GameManager.Instance.enemiesKilled = 0;
-            GameManager.Instance.enemiesToKill = newRound + 1;
-        }
-
+        currentRound = newRound;
 
 
         //normalEnemySpawner
@@ -62,89 +96,82 @@ public class RoundManager : MonoBehaviour
         {
             GameObject currentEnemy;
 
+            //we spawn it
             do
             {
-                currentEnemy = meleeEnemies[Random.Range(0, meleeEnemies.Length)];
-            } while (normalEnemyList.Contains(currentEnemy));
+                currentEnemy = normalEnemyList[Random.Range(0, normalEnemyList.Count)];
+            } while (currentEnemy.activeSelf);
 
-            Instantiate(currentEnemy);
-            normalEnemyList.Add(currentEnemy);
-            GameManager.Instance.roundRoomEnemies.Add(currentEnemy);
+            //we reset it
+            currentEnemy.SetActive(true);
+            currentEnemy.GetComponent<MeleeEnemyState>().CallReset();
+            // currentEnemy.GetComponent<IReseteable>().Reset();
+            //add it to the list so we know when to pass round
+            roundRoomEnemies.Add(currentEnemy);
 
         }
 
-        //FlyingEnemySpawner
-        
-        switch (currentRound)
+        //FlyingEnemy
+
+        if(currentRound == 3)
         {
-            case 1:
-            case 2:
-                for (int i = 0; i < newRound + 1; i++)
+            for (int i = 0; i < newRound ; i++)
+            {
+                GameObject currentEnemy;
+
+                //we spawn it
+                do
                 {
-                    GameObject currentFlyingEnemy;
+                    currentEnemy = flyingEnemyList[Random.Range(0, flyingEnemyList.Count)];
+                } while (currentEnemy.activeSelf);
 
-                    do
-                    {
-                        currentFlyingEnemy = flyingEnemies[Random.Range(0, flyingEnemies.Length)];
-                    } while (flyingEnemyList.Contains(currentFlyingEnemy));
+                //we reset it
+                currentEnemy.SetActive(true);
+                currentEnemy.transform.GetChild(0).transform.position = spawnPoints[i].transform.position;
+                currentEnemy.GetComponent<FlyingEnemyState>().onEnemyReset();
+                //add it to the list so we know when to pass round
+                roundRoomEnemies.Add(currentEnemy);
 
-                    Instantiate(currentFlyingEnemy);
-                    flyingEnemyList.Add(currentFlyingEnemy);
-                    GameManager.Instance.roundRoomEnemies.Add(currentFlyingEnemy);
-
-                }
-                //spawn2
-                break;
-            case 3:
-
-                for (int i = 0; i < newRound ; i++)
-                {
-                    GameObject currentFlyingEnemy;
-
-                    do
-                    {
-                        currentFlyingEnemy = flyingEnemies[Random.Range(0, flyingEnemies.Length)];
-                    } while (flyingEnemyList.Contains(currentFlyingEnemy));
-
-                    Instantiate(currentFlyingEnemy);
-                    flyingEnemyList.Add(currentFlyingEnemy);
-                    GameManager.Instance.roundRoomEnemies.Add(currentFlyingEnemy);
-
-                }
-                //infinite
-
-                
-                break;
-
-        }
-
-        
-        
-
-
-
-
-    }
-    //have to use this method, because when i destroy the othre item, the corrutine call gets canceled.
-    public void RespawnEnemyCT(float delay, GameObject originalPrefab)
-    {
-        StartCoroutine(RespawnEnemy(delay, originalPrefab));
-    }
-
-    public IEnumerator RespawnEnemy(float delay, GameObject originalPrefab)
-    {
-        yield return new WaitForSeconds(delay);
-        Debug.Log(originalPrefab);
-        if (flyingEnemyList.Contains(originalPrefab))
+            }
+        }else
         {
-           
-            Instantiate(originalPrefab);
-            GameManager.Instance.roundRoomEnemies.Add(originalPrefab);
+            for (int i = 0; i < newRound + 1; i++)
+            {
+                GameObject currentEnemy;
 
+                //we spawn it
+                do
+                {
+                    currentEnemy = flyingEnemyList[Random.Range(0, flyingEnemyList.Count)];
+                } while (currentEnemy.activeSelf);
+
+                //we reset it
+                currentEnemy.SetActive(true);
+                currentEnemy.transform.GetChild(0).transform.position = spawnPoints[i].transform.position;
+                currentEnemy.GetComponent<FlyingEnemyState>().onEnemyReset();
+                //add it to the list so we know when to pass round
+                roundRoomEnemies.Add(currentEnemy);
+
+            }
         }
+
+
+
+
+
     }
 
 
+
+
+    public void EndRoundRoom()
+    {
+        Animator animator = GetComponent<Animator>();
+        animator.SetTrigger("OpenDoors");
+        inRoundRoom = false;
+    }
+
+    #endregion
 
 
 
