@@ -26,7 +26,7 @@ TagManager:
   - NoCollisionEnemy
   - CollisionEnemy
   - FlyingEnemy
-  - 
+  - MapRender
   - 
   - 
   - 

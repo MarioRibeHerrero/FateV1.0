@@ -13,8 +13,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
-        roundManager = GameObject.FindAnyObjectByType<RoundManager>();
-        entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
+       // roundManager = GameObject.FindAnyObjectByType<RoundManager>();
+      //  entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
 
     }
 

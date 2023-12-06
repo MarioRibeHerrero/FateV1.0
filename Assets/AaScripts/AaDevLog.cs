@@ -307,7 +307,7 @@ SOlucinar aa y parry sobreescriben y se buggea xd-- parece q Ok
 
 Attaque del disco boss--ok
 metter sprite boss-Estrutura basica boss--Ok
-attaque pinchos--mitad
+attaque pinchos--Ok
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
