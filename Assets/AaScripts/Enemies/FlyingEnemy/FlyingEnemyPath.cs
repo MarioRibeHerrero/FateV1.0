@@ -1,27 +1,32 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FlyingEnemyPath : MonoBehaviour
 {
+    #region Vars
+    private Rigidbody rb;
+    private Transform target;
+    private bool haveEntered;
+    private int speed;
+
+
+
     //Pathing
+    [Header("AttackShit")]
     [SerializeField] float animationTime, waitTime;
     [SerializeField] float attackForce;
 
-    private Rigidbody rb;
-    private Transform target;
+
+    [Header("ResetVariables")]
+
     [SerializeField] int healthOnRestart;
-
-
-    [SerializeField] bool canMove;
-    [SerializeField] int speed;
     [SerializeField] Transform rayPos;
 
+    [Header("PathingVars")]
+    [SerializeField] int publicSpeed;
+    [SerializeField] float rayHitDistance;
 
 
-    bool haveEntered;
-    Vector2 startPos;
 
 
     //ResetShit
@@ -31,82 +36,84 @@ public class FlyingEnemyPath : MonoBehaviour
     [SerializeField] FlyingEnemyHealth health;
 
 
-
+    #endregion
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
     }
     void Start()
     {
         health.health = 10;
-        canMove = true;
-        startPos = transform.position;
+        state.currentState = FlyingEnemyState.States.pathing;
+        speed = -1;
 
     }
 
     private void OnEnable()
     {
         state.onEnemyReset += Reset;
-
     }
 
     private void OnDisable()
     {
         state.onEnemyReset -= Reset;
-
     }
     public void Reset()
     {
-        canMove = true;
+        state.currentState = FlyingEnemyState.States.pathing;
         health.health = healthOnRestart;
         rb.velocity = Vector3.zero;
    }
 
     private void Update()
     {
+        if (state.currentState == FlyingEnemyState.States.pathing)
+        {
+            PathingTurnArround();
+
+        }
+    }
+   
+    private void PathingTurnArround()
+    {
+        transform.Translate(new Vector3(speed * publicSpeed, 0, 0) * Time.deltaTime);
+
+
         RaycastHit hit;
 
-        int layerMask = LayerMask.GetMask("Ground"); // Adjust "Wall" to the actual layer name
+        //when it collides with those layers, it turns arround
+        int layerMask = LayerMask.GetMask("Ground"); 
         int layerMask2 = LayerMask.GetMask("FlyingEnemy");
-        if (Physics.Raycast(rayPos.transform.position, -transform.right, out hit, 5, layerMask) || Physics.Raycast(rayPos.transform.position, -transform.right, out hit, 5, layerMask2) && !haveEntered)
+        if (Physics.Raycast(rayPos.transform.position, -transform.right, out hit, rayHitDistance, layerMask) || Physics.Raycast(rayPos.transform.position, -transform.right, out hit, 5, layerMask2) && !haveEntered)
         {
-            
-            //speed = speed * -1;
+
             haveEntered = true;
             this.transform.eulerAngles = new Vector3(0, -180, 0);
 
 
         }
-        if (Physics.Raycast(rayPos.transform.position, -transform.right, out hit, 5, layerMask) && haveEntered)
+        if (Physics.Raycast(rayPos.transform.position, -transform.right, out hit, rayHitDistance, layerMask) && haveEntered)
         {
 
-           // speed = speed * -1;
+            
             haveEntered = false;
             this.transform.eulerAngles = new Vector3(0, 0, 0);
 
         }
 
 
-        Debug.DrawRay(rayPos.transform.position, -transform.right * 5);
-
     }
-    private void FixedUpdate()
+    private void OnDrawGizmos()
     {
-        if (canMove)
-        {
-            transform.Translate(new Vector3(speed *0.1f,0,0));
-        }
+        //draw the ray so we can see it
+
+        Debug.DrawRay(rayPos.transform.position, -transform.right * rayHitDistance);
+
     }
-
-
-
-
-
 
     public IEnumerator AttackPlayer(Collider player)
     {
-        canMove = false;
+        state.currentState = FlyingEnemyState.States.attacking;
         //animacion prep ataque
         yield return new WaitForSeconds(animationTime);
         //Detectar Personaje

@@ -55,8 +55,6 @@ public class FlyingEnemyHealth : MonoBehaviour
 
         }
 
-
-
     }
 
 
