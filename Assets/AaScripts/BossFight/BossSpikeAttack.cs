@@ -20,6 +20,11 @@ public class BossSpikeAttack : MonoBehaviour
         bossBody.transform.position = spikeAttackPos.transform.position;
         anim.SetTrigger("appear");
 
+        yield return new WaitForSeconds(2);
+        Debug.Log("GOLA");
+        anim.SetTrigger("SpikeAttack");
+
+
 
     }
 

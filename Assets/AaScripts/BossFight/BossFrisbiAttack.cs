@@ -35,6 +35,10 @@ public class BossFrisbiAttack : MonoBehaviour
         AttackPlayer(random);
 
 
+        yield return new WaitForSeconds(3);
+        StartCoroutine(GetComponent<BossSpikeAttack>().SpikeAttack());
+
+
     }
 
 
