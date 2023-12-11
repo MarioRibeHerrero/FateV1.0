@@ -310,6 +310,19 @@ metter sprite boss-Estrutura basica boss--Ok
 attaque pinchos--Ok
 
 
+Puente:
+
+Terminar graybox
+Añadir nuevo sistema camera boundaries
+añadir miniMapa basico
+
+
+Dia19:
+Mejorado nuevo sistema camaras, añadido bloques que delemitan boundaries
+añadida camara de los pasillos(camara estable que te sigue por el pasillo) No implementada en todos los pasillos
+añadida sala grande con scripts modificados para que la camara funcione bien, la transicion sea smooth y no se salga de la sala.
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 
