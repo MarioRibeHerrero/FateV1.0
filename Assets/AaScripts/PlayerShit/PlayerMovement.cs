@@ -65,36 +65,46 @@ public class PlayerMovement : MonoBehaviour
 
 
         //we set a movement aceleration for the grounded player and anotherone for airplayer
-        if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(GetInputsX().x * acceleration, 0f));
-        else rb.AddForce(new Vector2(GetInputsX().x * airAcceleration, 0f));
+
+         if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(GetInputsX().x * acceleration, 0f));
+         else rb.AddForce(new Vector2(GetInputsX().x * airAcceleration, 0f));
+
+
+
 
         // Since addForce does not limit the speed, we need to limit it.
         if (Mathf.Abs(rb.velocity.x) > maxSpeed) rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
            
 
         //DRAG
-        if (pGroundCheck.isPlayerGrounded && !GetComponent<PlayerJump>().isHoldingJump)
+
+
+
+        if (GameManager.Instance.inBridge)
         {
-            //Debug.Log(changingDirection);
-            //if the player stops moving we want the drag to be= to the deceleration.
-            
-            if ((Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping)  || changingDirection) rb.drag = deceleration;
+            if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(-GetInputsX().y * acceleration, 0f));
+            else rb.AddForce(new Vector2(-GetInputsX().y * airAcceleration, 0f));
+
+            if ((Mathf.Abs(-GetInputsX().y) < 0.4 && !pJump.isJumping) && (Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
             else rb.drag = 0f;
-            
+
+
         }
-
-
-
-
-        /* CANCELAR MOVIMIENTO MITAD DEL AIRE
-         * DARLE UNA VUELTA(si saltas parado y te mueves luego no va, si paras mueves paras y mueves no va, si usas hook no va)
-         * 
-        if (!hasStopedMidAir && Mathf.Abs(GetInputsX().x) <= 0.4 && !pGroundCheck.isPlayerGrounded && !pHook.isHooking)
+        else
         {
-            hasStopedMidAir = true;
-            rb.velocity = new Vector3(0, rb.velocity.y, 0f);
+            if (pGroundCheck.isPlayerGrounded && !GetComponent<PlayerJump>().isHoldingJump)
+            {
+                //Debug.Log(changingDirection);
+                //if the player stops moving we want the drag to be= to the deceleration.
+
+                if ((Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
+                else rb.drag = 0f;
+
+            }
         }
-        */
+
+
+
     }
 
 }

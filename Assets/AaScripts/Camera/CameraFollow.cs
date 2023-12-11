@@ -38,26 +38,16 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         targetZoom = cam.m_Lens.Orthographic ? cam.m_Lens.OrthographicSize : cam.m_Lens.FieldOfView;
+        followYPos.x = player.transform.position.x;
+        followYPos.y = player.transform.position.y;
+
 
     }
     void Update()
     {
-        //  CameraFollowUpdate();
         FluidZoom();
-
         RayCasts();
-
-
-
     }
-
-
-
-
-
-
-
-
 
 
     private void RayCasts()

@@ -38,10 +38,25 @@ public class GameManager : MonoBehaviour
     //GainedAbilities
     public bool isDobleJumpUnlocked, isHookUnlocked;
 
+    //camera
+
+    public bool isZoomed;
+    public bool inBridge;
+
 
     public void HealPlayer(int healingAmmount)
     {
         playerh.HealPlayer(healingAmmount);
     }
 
+
+
+    /*
+    Lista de cosas que tendre q retablecer:
+    Gamemanager.iszoomed;
+    
+
+      
+     
+     */
 }

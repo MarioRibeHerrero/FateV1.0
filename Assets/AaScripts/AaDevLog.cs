@@ -322,6 +322,19 @@ Mejorado nuevo sistema camaras, añadido bloques que delemitan boundaries
 añadida camara de los pasillos(camara estable que te sigue por el pasillo) No implementada en todos los pasillos
 añadida sala grande con scripts modificados para que la camara funcione bien, la transicion sea smooth y no se salga de la sala.
 
+quitado todos los colliders de todas las salas.
+añadidos colliders para suelo paredes techo
+añadido tp al final de primer piso que te lleva al segundo
+
+cosas que faltan:
+Añadir boundaries salas 3,4,6--Ok
+meter movimiento puente--Ok
+meter transicion al boss.--Ok
+
+
+Hacer mañana:
+Dejar claras dimensiones salas que ahora mismo no funcionan, ponerme con movimiento del pj
+
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:

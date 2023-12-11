@@ -7,8 +7,6 @@ public class CameraTriggers : MonoBehaviour
 {
     [SerializeField] CinemachineVirtualCamera cam;
 
-    private bool isZoomed;
-
 
     private void Awake()
     {
@@ -23,15 +21,15 @@ public class CameraTriggers : MonoBehaviour
 
     private void ChangeCameraOnEntry()
     {
-        if(!isZoomed)
+        if(!GameManager.Instance.isZoomed)
         {
             cam.GetComponent<CameraFollow>().ZoomOut();
-            isZoomed = true;
+            GameManager.Instance.isZoomed = true;
         }
         else
         {
             cam.GetComponent<CameraFollow>().ZoomIn();
-            isZoomed = false;
+            GameManager.Instance.isZoomed = false;
         }
     }
 
