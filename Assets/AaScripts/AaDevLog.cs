@@ -1,4 +1,6 @@
+#region Primeros15Dias
 /*
+
 Dia0(07-11-22):
 Trabajado en PlayerHook, PlayerGroundCheck, PlayerMovement, PlayerJump
 Ninguna perfeccionada, pero todas mas menos funcionan, tambien creado el proyecto y creado el repositorio en github
@@ -259,7 +261,9 @@ EntradaALaHabitacion--Ok
 matar boss--Ok
 
 
-
+*/
+#endregion
+/*
 
 
 
@@ -339,8 +343,15 @@ Dejar claras dimensiones salas que ahora mismo no funcionan, ponerme con movimie
 
 Dia20:
 
-TodoList Hoy:
-Arreglar bug salto--
+Trabajando en bugs del salto:
+
+te deja hacer 2 saltos si lo haces rapido--Sol
+
+Si mantienes en movimiento vuelve a saltar, quieto no(dejar para mas adelante)
+
+Poner spawnpoints--Ok
+
+Activar Sala rondas--
 
 
 

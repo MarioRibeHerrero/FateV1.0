@@ -74,6 +74,7 @@ public class PlayerJump : MonoBehaviour
             isHoldingJump = true;
             rb.drag = 0;
             maxJump = maxJumpValue;
+            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
         }
 
         //si estas en el aire, no puedes hacer el doble jump y le das al salto, entras en el jumpbuffer.
@@ -121,11 +122,11 @@ public class PlayerJump : MonoBehaviour
         //salto  tipico, te permite saltar mientras estes manteniendo el boton, y no hayas pasado el timepo de salto.
         if (isHoldingJump && maxJump >= 0 )
         {
-            rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+            //rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             isJumping = true;
 
-           // Debug.Log("Tipico");
+           Debug.Log("Tipico");
         }
 
 
@@ -143,7 +144,6 @@ public class PlayerJump : MonoBehaviour
                 maxJump = maxJumpValue;
                 //y ponemos el jumpbuffering a false para poder usarlo otra vez.
                 isBufferJumping = false;
-                Debug.Log(maxJump);
             }
 
 

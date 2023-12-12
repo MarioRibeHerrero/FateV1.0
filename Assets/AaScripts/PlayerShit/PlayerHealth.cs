@@ -13,8 +13,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
-       // roundManager = GameObject.FindAnyObjectByType<RoundManager>();
-      //  entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
+        roundManager = GameObject.FindAnyObjectByType<RoundManager>();
+        entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
 
     }
 
@@ -107,6 +107,7 @@ public class PlayerHealth : MonoBehaviour
         ActivateAllPlayerFuntionsAndKill();
         GameManager.Instance.playerHealth = 100f;
         uiManager.UpdatePlayerHealthSlider();
+        GameManager.Instance.isPlayerAlive = true;
 
     }
 
