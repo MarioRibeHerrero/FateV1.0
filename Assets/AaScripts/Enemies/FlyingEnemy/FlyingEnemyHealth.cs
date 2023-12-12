@@ -22,6 +22,12 @@ public class FlyingEnemyHealth : MonoBehaviour
 
     }
 
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        CheckHealth();
+    }
+
 
     public void CheckHealth()
     {
@@ -37,7 +43,7 @@ public class FlyingEnemyHealth : MonoBehaviour
     private void RoudRoomShit()
     {
 
-        if (roundManager.roundRoomEnemies.Count <= 0)
+        if (roundManager.roundRoomEnemies.Count <= 0 && roundManager.inRoundRoom)
         {
 
             if (roundManager.currentRound == 3)

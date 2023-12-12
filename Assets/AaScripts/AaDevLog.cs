@@ -360,6 +360,9 @@ Mejorar pilares que caen, y hacer que te maten bn--Ok
 Hacer por la tarde:
 Añadir sistema rondas, muerte restablece sala, si superas la sala te vas.
 
+De momento:
+si te mueres se reinicia todo bienm, despues comprobar si hace las rondas bn(sin infinito)--Ok
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------

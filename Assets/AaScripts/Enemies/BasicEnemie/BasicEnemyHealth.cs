@@ -31,7 +31,7 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
         {
             //Aqui hacer cosas de object booling
 
-            roundManager.roundRoomEnemies.Remove(gameObject);
+            
 
             RoudRoomShit();
 
@@ -44,8 +44,8 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
     private void RoudRoomShit()
     {
-
-        if (roundManager.roundRoomEnemies.Count <= 0)
+        roundManager.roundRoomEnemies.Remove(gameObject);
+        if (roundManager.roundRoomEnemies.Count <= 0 && roundManager.inRoundRoom)
         {
 
             if (roundManager.currentRound == 3)

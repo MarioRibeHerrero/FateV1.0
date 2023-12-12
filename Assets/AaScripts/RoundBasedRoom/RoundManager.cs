@@ -1,4 +1,3 @@
-using Autodesk.Fbx;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -148,6 +147,7 @@ public class RoundManager : MonoBehaviour
                 //we reset it
                 currentEnemy.SetActive(true);
                 currentEnemy.transform.GetChild(0).transform.position = spawnPoints[i].transform.position;
+                Debug.Log(spawnPoints[i].name);
                 currentEnemy.GetComponent<FlyingEnemyState>().onEnemyReset();
                 //add it to the list so we know when to pass round
                 roundRoomEnemies.Add(currentEnemy);

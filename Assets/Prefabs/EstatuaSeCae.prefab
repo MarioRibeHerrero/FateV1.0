@@ -33,7 +33,7 @@ Transform:
   - {fileID: 2091070638556533417}
   - {fileID: 206640617212471451}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7047171144770795829
 Animator:
@@ -264,7 +264,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2463217621690955995}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 2bf04d1b6d4c5ee4a8cb903db0897ee1, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

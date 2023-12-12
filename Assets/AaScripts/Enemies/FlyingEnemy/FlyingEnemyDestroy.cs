@@ -31,7 +31,7 @@ public class FlyingEnemyDestroy : MonoBehaviour, IDamageable
     private void OnTriggerEnter(Collider other)
     {
         
-        if(other.CompareTag("Ground"))
+        if(other.gameObject.layer == 8)
         {
             TakeDamage(10);
         }
