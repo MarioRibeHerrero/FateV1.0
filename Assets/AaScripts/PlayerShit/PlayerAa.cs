@@ -21,6 +21,7 @@ public class PlayerAa : MonoBehaviour
 
         playerInput.actions["Aa"].started += PlayerAa_started;
     }
+
     private Vector2 GetInputs()
     {
         //This will get the horizontal movement

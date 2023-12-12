@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class FlyingEnemyDestroy : MonoBehaviour, IDamageable
 {
+
+    [SerializeField] Transform dashPack;
+    [SerializeField] Transform flyingEnemy;
     private FlyingEnemyHealth healthS;
+    private FlyingEnemyState state;
+
     private void Awake()
     {
-        healthS = GameObject.FindAnyObjectByType<FlyingEnemyHealth>();
+
+
+        healthS = dashPack.GetComponent<FlyingEnemyHealth>();
+        state = dashPack.GetComponent<FlyingEnemyState>();
+
+
     }
 
 
@@ -24,7 +34,6 @@ public class FlyingEnemyDestroy : MonoBehaviour, IDamageable
         if(other.CompareTag("Ground"))
         {
             TakeDamage(10);
-            Debug.Log("MUERTEPORPARED");
         }
 
         if (other.CompareTag("Player"))
@@ -32,8 +41,8 @@ public class FlyingEnemyDestroy : MonoBehaviour, IDamageable
             if(GameManager.Instance.isPlayerParry)
             {
                 this.transform.parent.position = other.transform.Find("FlyingEnemyPos").transform.position;
-                transform.parent.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(15);
+                flyingEnemy.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                other.GetComponent<PlayerHealth>().HealPlayer(15);
 
 
             }

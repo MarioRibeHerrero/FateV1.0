@@ -20,7 +20,10 @@ public class PlayerParry : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-
+    private void Start()
+    {
+        
+    }
     private void PlayerParry_started(InputAction.CallbackContext obj)
     {
         if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && GameManager.Instance.playerHealth >= 20 && !GameManager.Instance.isPlayerParry) 

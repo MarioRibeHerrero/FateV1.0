@@ -59,6 +59,20 @@ public class PlayerRotation : MonoBehaviour
             isFacingRight = false;
         }
 
+
+        if(GameManager.Instance.inBridge)
+        {
+            if (-GetInputs().y > 0)
+            {
+                isFacingRight = true;
+            }
+
+            if (-GetInputs().y < 0)
+            {
+                isFacingRight = false;
+            }
+        }
+
     }
     private Vector2 GetInputs()
     {

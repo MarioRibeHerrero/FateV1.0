@@ -64,7 +64,7 @@ public class PlayerSpawnPoint : MonoBehaviour
     {
         if (other.CompareTag("SpawnPoint"))
         {
-            spawnPoint = other.transform.parent.gameObject;
+            spawnPoint = other.gameObject;
         }
     }
 

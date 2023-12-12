@@ -5,7 +5,14 @@ using UnityEngine;
 public class FlyingEnemyState : MonoBehaviour
 {
 
-    public int enemyState;
+
+
+    public enum States
+    {
+        pathing,
+        attacking
+    }
+    public States currentState;
     public bool inRangeOfShoot;
 
 
