@@ -365,28 +365,29 @@ si te mueres se reinicia todo bienm, despues comprobar si hace las rondas bn(sin
 
 
 
+Hacer mañana:
+
+rafaga aa.
+hacer que enemigo volador se mueva.
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 
+DARLE BUENA VUELTA AL ENEMIGO VOLADOR
 
 
 arreglar mañana seguro el tema del parry
 
 
-Se puede hacer doble salto rapido
-
 
 cambiar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 
-revisar cosas sala oleadas y añadir enemigos voladores.
 
 
-rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 Añadir regiones y ordenar codigo
-DARLE BUENA VUELTA AL ENEMIGO VOLADOR
 
-meter todo el graybox: otro dia
 BarraVidaBoss--
 
 
