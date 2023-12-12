@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4e9c215ab34d7844bfd40004a155fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyState: 0
+  currentState: 0
   inRangeOfShoot: 0
 --- !u!114 &7618762394939707726
 MonoBehaviour:
@@ -83,7 +83,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  respawnPosN: 0
 --- !u!1 &1286684350508400993
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +151,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b88885b9b99034a88e44ef4530358d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashPack: {fileID: 3716817387307061589}
+  flyingEnemy: {fileID: 6544510761618693874}
 --- !u!54 &9022531110533880159
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -415,9 +416,9 @@ MonoBehaviour:
   waitTime: 1
   attackForce: 20
   healthOnRestart: 0
-  canMove: 0
-  speed: -1
   rayPos: {fileID: 438952681864012532}
+  publicSpeed: 0
+  rayHitDistance: 0
   state: {fileID: 8496124630610097357}
   health: {fileID: 7618762394939707726}
 --- !u!54 &450752187429775758

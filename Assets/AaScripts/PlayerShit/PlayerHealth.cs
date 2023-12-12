@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
 
     private RoundEnrtyCollider entryCollider;
     private RoundManager roundManager;
+    [SerializeField] CameraFollow camFollow;
+
 
     private void Awake()
     {
@@ -108,6 +110,8 @@ public class PlayerHealth : MonoBehaviour
         GameManager.Instance.playerHealth = 100f;
         uiManager.UpdatePlayerHealthSlider();
         GameManager.Instance.isPlayerAlive = true;
+        camFollow.ZoomIn();
+        GameManager.Instance.isZoomed = false;
 
     }
 

@@ -351,7 +351,14 @@ Si mantienes en movimiento vuelve a saltar, quieto no(dejar para mas adelante)
 
 Poner spawnpoints--Ok
 
-Activar Sala rondas--
+Sala rondas:
+
+hecho animaciones abrir y cerrar puertas--Ok
+
+Mejorar pilares que caen, y hacer que te maten bn--Ok
+
+Hacer por la tarde:
+Añadir sistema rondas, muerte restablece sala, si superas la sala te vas.
 
 
 
