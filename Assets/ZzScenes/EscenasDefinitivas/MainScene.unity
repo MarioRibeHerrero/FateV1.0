@@ -20439,7 +20439,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.056779914, y: -0, z: -0, w: 0.99838674}
-  m_LocalPosition: {x: -20.554, y: -1, z: -9.5}
+  m_LocalPosition: {x: 5.0860004, y: -1, z: -9.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25799,7 +25799,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408919866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.29, y: -4.12, z: 0}
+  m_LocalPosition: {x: 5.27, y: -3.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38204,8 +38204,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589045123}
-  m_LocalRotation: {x: 0.08082493, y: -0.7024723, z: 0.080824934, w: 0.70247227}
-  m_LocalPosition: {x: -10.290002, y: -0.78999996, z: 0.0000011920929}
+  m_LocalRotation: {x: 0.08082492, y: -0.7024723, z: 0.08082493, w: 0.70247227}
+  m_LocalPosition: {x: 15.269999, y: -0.5700002, z: 0.0000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38525,7 +38525,7 @@ MonoBehaviour:
   isPlayerParry: 0
   playerDamage: 20
   canDobleJump: 0
-  isDobleJumpUnlocked: 1
+  isDobleJumpUnlocked: 0
   isHookUnlocked: 0
   isZoomed: 0
   inBridge: 0
@@ -104193,7 +104193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537384756}
   m_LocalRotation: {x: 0.056779914, y: -0, z: -0, w: 0.99838674}
-  m_LocalPosition: {x: -20.554, y: -1, z: -9.5}
+  m_LocalPosition: {x: 5.0860004, y: -1, z: -9.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

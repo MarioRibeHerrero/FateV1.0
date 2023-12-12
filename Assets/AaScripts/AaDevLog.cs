@@ -336,6 +336,14 @@ Hacer mañana:
 Dejar claras dimensiones salas que ahora mismo no funcionan, ponerme con movimiento del pj
 
 
+
+Dia20:
+
+TodoList Hoy:
+Arreglar bug salto--
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 

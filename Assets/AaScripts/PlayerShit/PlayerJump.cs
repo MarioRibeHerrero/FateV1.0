@@ -77,13 +77,17 @@ public class PlayerJump : MonoBehaviour
         }
 
         //si estas en el aire, no puedes hacer el doble jump y le das al salto, entras en el jumpbuffer.
-        if(!secondJump || !GameManager.Instance.isDobleJumpUnlocked || !GameManager.Instance.canDobleJump) isBufferJumping = true;
+        if (!secondJump || !GameManager.Instance.isDobleJumpUnlocked || !GameManager.Instance.canDobleJump) isBufferJumping = true;
 
 
+
+
+
+        //  DOBLE SALTO
         //si estas saltando, y aun tienees el doble salto, y lo teines desblockeado, saltas.
         if (isJumping && secondJump && GameManager.Instance.isDobleJumpUnlocked && GameManager.Instance.canDobleJump)
         {
-          //  Debug.Log("DobleSalto");
+          
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             secondJump = false;
@@ -132,18 +136,17 @@ public class PlayerJump : MonoBehaviour
         {
             //si una vez has cumplido lo anterior, sigues pulsando el boton de saltar, activamos el holding jump para q vuelvas al salto normal, en caso de que no sigas pulsandolo, hace un salto
             //pequeño
-            if(holdingJumpButton) isHoldingJump = true;
-            else
+            if (holdingJumpButton)
             {
-            //    Debug.Log("JumpBufferPuqeñeo");
-                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-                rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
-                isJumping = true;
+                isHoldingJump = true;
+                //hacemos que el valor de salto sea el mismo q el de un salto normlal
+                maxJump = maxJumpValue;
+                //y ponemos el jumpbuffering a false para poder usarlo otra vez.
+                isBufferJumping = false;
+                Debug.Log(maxJump);
             }
-            //hacemos que el valor de salto sea el mismo q el de un salto normlal
-            maxJump = maxJumpValue;
-            //y ponemos el jumpbuffering a false para poder usarlo otra vez.
-            isBufferJumping = false;
+
+
             
         }
         //en caso de que sea menor que cero, no puedes hacerlo y por lo tanto lo ponemos a false.
@@ -177,6 +180,8 @@ public class PlayerJump : MonoBehaviour
 
     private void CoyoteTimer()
     {
+        if (isJumping) coyoteTimer = 0;
+
         if (pGroundCheck.isPlayerGrounded) coyoteTimer = coyoteTime;
         else coyoteTimer -= Time.deltaTime;
     }
