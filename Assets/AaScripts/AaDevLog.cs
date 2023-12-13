@@ -365,10 +365,20 @@ si te mueres se reinicia todo bienm, despues comprobar si hace las rondas bn(sin
 
 
 
-Hacer mañana:
-
+Dia 21:
 rafaga aa.--Ok(de momento)
-hacer que enemigo volador se mueva.
+hacer que enemigo volador se mueva--Ok
+Eliminado enemigo volador--Ok
+Borrar scrips que tienen que ver con enemigo volador--Ok
+Arreglado bug que buffer jump no salta igual si estas quieto que en moviemineto(no lo tenia en mente pero se me ha ocurrido de la nada)
+
+Hacer x la tarde:
+Añadir cristal, que te dispare y atraviese plataformas pero no paredes--
+
+Antes que se me olvide, quiero meter un enevnto de esos, para que las salas como la del boss o la sala de rondas se puedan suscribir cunado el pj entra,
+y si muere que desde el playerHealth lo llame, por lo tanto, el pj simepre que muere llama al evento ese, si no estas en la sala de rondas, no pasa anda,
+si estas, como el script de la sala de rondas habra añadido un metodo que reinicie la sala a ese evento, se reiniciara.lo mismo con la del boss--
+(ahora toca hacerlo xd)
 
 
 -----------------------------------------------------------------------------------------------------------------------------------

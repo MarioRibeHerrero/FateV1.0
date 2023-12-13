@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] CameraFollow camFollow;
 
 
+    
+
     private void Awake()
     {
         roundManager = GameObject.FindAnyObjectByType<RoundManager>();
@@ -43,7 +45,9 @@ public class PlayerHealth : MonoBehaviour
     }
     private void CheckHealth()
     {
-        if(GameManager.Instance.playerHealth <= 0)
+
+        if (GameManager.Instance.playerHealth >= 100) GameManager.Instance.playerHealth = 100f;
+        if (GameManager.Instance.playerHealth <= 0)
         {
 
             if (roundManager.inRoundRoom)
@@ -81,7 +85,6 @@ public class PlayerHealth : MonoBehaviour
                 if (enemy != null)
                 {
                     BasicEnemyHealth basicEnemyHealth = enemy.GetComponent<BasicEnemyHealth>();
-                    FlyingEnemyHealth flyingEnemyHealth = enemy.GetComponent<FlyingEnemyHealth>();
 
                     // Check and apply damage to BasicEnemyHealth
                     if (basicEnemyHealth != null)
@@ -89,11 +92,6 @@ public class PlayerHealth : MonoBehaviour
                         basicEnemyHealth.TakeDamage(1000);
                     }
 
-                    // Check and apply damage to FlyingEnemyHealth
-                    if (flyingEnemyHealth != null)
-                    {
-                        flyingEnemyHealth.TakeDamage(1000);
-                    }
                 }
             }
         }
