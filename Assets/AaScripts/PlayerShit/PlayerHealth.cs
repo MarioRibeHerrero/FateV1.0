@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -10,11 +11,13 @@ public class PlayerHealth : MonoBehaviour
 
     private RoundEnrtyCollider entryCollider;
     private RoundManager roundManager;
+    [SerializeField] CameraFollow camFollow;
+
 
     private void Awake()
     {
-       // roundManager = GameObject.FindAnyObjectByType<RoundManager>();
-      //  entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
+        roundManager = GameObject.FindAnyObjectByType<RoundManager>();
+        entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
 
     }
 
@@ -51,17 +54,8 @@ public class PlayerHealth : MonoBehaviour
                 roundManager.inRoundRoom = false;
                 entryCollider.gameObject.transform.parent.GetComponent<Animator>().SetTrigger("OpenDoors");
                 entryCollider.doorsColsed = false;
-                for (int i = roundManager.roundRoomEnemies.Count - 1; i >= 0; i--)
-                {
 
-                    GameObject enemyToRemove = roundManager.roundRoomEnemies[i];
-
-                    string prefabName = enemyToRemove.name + "(Clone)";
-
-                    roundManager.roundRoomEnemies.RemoveAt(i);
-
-                    Destroy(GameObject.Find(prefabName));
-                }
+                ResetEnemies();
                 //-----------------
             }
 
@@ -71,6 +65,45 @@ public class PlayerHealth : MonoBehaviour
 
         }
     }
+
+
+
+    private void ResetEnemies()
+    {
+        //instantiate and desactivar enemies
+        if (roundManager != null && roundManager.roundRoomEnemies != null)
+        {
+            if (roundManager.roundRoomEnemies.Count == 0) return;
+
+            foreach (GameObject enemy in roundManager.roundRoomEnemies.ToList())
+            {
+                // Check if the enemy object is not null
+                if (enemy != null)
+                {
+                    BasicEnemyHealth basicEnemyHealth = enemy.GetComponent<BasicEnemyHealth>();
+                    FlyingEnemyHealth flyingEnemyHealth = enemy.GetComponent<FlyingEnemyHealth>();
+
+                    // Check and apply damage to BasicEnemyHealth
+                    if (basicEnemyHealth != null)
+                    {
+                        basicEnemyHealth.TakeDamage(1000);
+                    }
+
+                    // Check and apply damage to FlyingEnemyHealth
+                    if (flyingEnemyHealth != null)
+                    {
+                        flyingEnemyHealth.TakeDamage(1000);
+                    }
+                }
+            }
+        }
+
+
+
+
+    }
+
+
 
 
     private void DesactivateAllPlayerFuntionsAndKill()
@@ -107,6 +140,9 @@ public class PlayerHealth : MonoBehaviour
         ActivateAllPlayerFuntionsAndKill();
         GameManager.Instance.playerHealth = 100f;
         uiManager.UpdatePlayerHealthSlider();
+        GameManager.Instance.isPlayerAlive = true;
+        camFollow.ZoomIn();
+        GameManager.Instance.isZoomed = false;
 
     }
 

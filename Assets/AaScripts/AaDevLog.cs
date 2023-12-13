@@ -1,4 +1,6 @@
+#region Primeros15Dias
 /*
+
 Dia0(07-11-22):
 Trabajado en PlayerHook, PlayerGroundCheck, PlayerMovement, PlayerJump
 Ninguna perfeccionada, pero todas mas menos funcionan, tambien creado el proyecto y creado el repositorio en github
@@ -259,7 +261,9 @@ EntradaALaHabitacion--Ok
 matar boss--Ok
 
 
-
+*/
+#endregion
+/*
 
 
 
@@ -336,28 +340,54 @@ Hacer mañana:
 Dejar claras dimensiones salas que ahora mismo no funcionan, ponerme con movimiento del pj
 
 
+
+Dia20:
+
+Trabajando en bugs del salto:
+
+te deja hacer 2 saltos si lo haces rapido--Sol
+
+Si mantienes en movimiento vuelve a saltar, quieto no(dejar para mas adelante)
+
+Poner spawnpoints--Ok
+
+Sala rondas:
+
+hecho animaciones abrir y cerrar puertas--Ok
+
+Mejorar pilares que caen, y hacer que te maten bn--Ok
+
+Hacer por la tarde:
+Añadir sistema rondas, muerte restablece sala, si superas la sala te vas.
+
+De momento:
+si te mueres se reinicia todo bienm, despues comprobar si hace las rondas bn(sin infinito)--Ok
+
+
+
+Hacer mañana:
+
+rafaga aa.--Ok(de momento)
+hacer que enemigo volador se mueva.
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 
+DARLE BUENA VUELTA AL ENEMIGO VOLADOR
 
 
 arreglar mañana seguro el tema del parry
 
 
-Se puede hacer doble salto rapido
-
 
 cambiar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 
-revisar cosas sala oleadas y añadir enemigos voladores.
 
 
-rafaga aa
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 Añadir regiones y ordenar codigo
-DARLE BUENA VUELTA AL ENEMIGO VOLADOR
 
-meter todo el graybox: otro dia
 BarraVidaBoss--
 
 

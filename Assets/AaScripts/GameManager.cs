@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
         isPlayerAlive = true;
         playerHealth = 100;
         isOccupied = false;
+        playerDamage = playerDefaultDamage;
     }
 
 
@@ -30,7 +31,8 @@ public class GameManager : MonoBehaviour
     public float playerHealth;
     public bool isPlayerAlive;
     public bool canPlayerMove, canPlayerRotate, isOccupied, isPlayerStunned, isPlayerInvulnerable, isPlayerParry;
-    public int playerDamage;
+    [HideInInspector] public int playerDamage;
+    public int playerDefaultDamage;
 
     //dobleJump
     public bool canDobleJump;

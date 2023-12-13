@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttackCollider : MonoBehaviour
 {
     [SerializeField] int healthHealed;
-
+    [SerializeField] PlayerAa aaCombo;
   
 
     private void OnTriggerEnter(Collider other)
@@ -14,7 +14,7 @@ public class PlayerAttackCollider : MonoBehaviour
         var damageable = other.GetComponent<IDamageable>();
         if (damageable == null) return;
         damageable.TakeDamage(GameManager.Instance.playerDamage);
-
+        aaCombo.AddToCombo();
         //Heal
         var healPlayer = other.GetComponent<IHealPlayer>();
         if (healPlayer == null) return;

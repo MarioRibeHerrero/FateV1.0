@@ -82,7 +82,7 @@ public class FlyingEnemyPath : MonoBehaviour
         RaycastHit hit;
 
         //when it collides with those layers, it turns arround
-        int layerMask = LayerMask.GetMask("Ground"); 
+        int layerMask = 8; 
         int layerMask2 = LayerMask.GetMask("FlyingEnemy");
         if (Physics.Raycast(rayPos.transform.position, -transform.right, out hit, rayHitDistance, layerMask) || Physics.Raycast(rayPos.transform.position, -transform.right, out hit, 5, layerMask2) && !haveEntered)
         {

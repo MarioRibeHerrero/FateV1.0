@@ -1,5 +1,4 @@
 using Cinemachine;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
@@ -40,10 +39,10 @@ public class CameraFollow : MonoBehaviour
         targetZoom = cam.m_Lens.Orthographic ? cam.m_Lens.OrthographicSize : cam.m_Lens.FieldOfView;
         followYPos.x = player.transform.position.x;
         followYPos.y = player.transform.position.y;
-
+        cam.Follow = null;
 
     }
-    void Update()
+    void LateUpdate()
     {
         FluidZoom();
         RayCasts();
@@ -53,9 +52,10 @@ public class CameraFollow : MonoBehaviour
     private void RayCasts()
     {
 
-
+        
         if (Physics.Raycast(player.transform.position, Vector3.up, yDistanceUp, obstacleLayer) || Physics.Raycast(player.transform.position, -Vector3.up, yDistanceDown, obstacleLayer))
         {
+
         }
         else
         {
@@ -65,6 +65,7 @@ public class CameraFollow : MonoBehaviour
 
         if (Physics.Raycast(player.transform.position, Vector3.right, xDistance, obstacleLayer) || Physics.Raycast(player.transform.position, -Vector3.right, xDistance, obstacleLayer))
         {
+
         }
         else
         {
@@ -72,10 +73,12 @@ public class CameraFollow : MonoBehaviour
 
         }
 
+        if (GameManager.Instance.isPlayerAlive)
+        {
+            Vector3 targetPositionY = new Vector3(followYPos.x + xOffset, followYPos.y + yOffset, transform.position.z);
+            transform.position = Vector3.SmoothDamp(transform.position, targetPositionY, ref velocity, smoothTime);
+        }
 
-
-        Vector3 targetPositionY = new Vector3(followYPos.x + xOffset, followYPos.y + yOffset, transform.position.z);
-        transform.position = Vector3.SmoothDamp(transform.position, targetPositionY, ref velocity, smoothTime);
     }
     private void OnDrawGizmos()
     {
