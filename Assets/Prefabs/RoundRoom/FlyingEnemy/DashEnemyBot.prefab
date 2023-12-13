@@ -334,8 +334,8 @@ MonoBehaviour:
   attackForce: 20
   healthOnRestart: 10
   rayPos: {fileID: 4606931752279454519}
-  publicSpeed: 0
-  rayHitDistance: 0
+  publicSpeed: 3
+  rayHitDistance: 5
   state: {fileID: 1092648904607121715}
   health: {fileID: 4408746687670567065}
 --- !u!54 &6355440702435048307

@@ -125,8 +125,6 @@ public class PlayerJump : MonoBehaviour
             //rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             isJumping = true;
-
-           Debug.Log("Tipico");
         }
 
 

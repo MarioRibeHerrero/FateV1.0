@@ -46,6 +46,7 @@ public class PlayerAa : MonoBehaviour
             if (GetInputs().y >= upDifference && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
             {
                 anim.SetTrigger("AaUp");
+                GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
             }
         AutoAttackCombo();
 
@@ -54,10 +55,12 @@ public class PlayerAa : MonoBehaviour
         if (GetInputs().y >= upDifference  && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
         {
             anim.SetTrigger("AaUpAir");
+            GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
         }
         else if (Mathf.Abs(GetInputs().x) >= 0 && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
         {
             anim.SetTrigger("AaAir");
+            GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
         }
     }
 
@@ -73,6 +76,7 @@ public class PlayerAa : MonoBehaviour
                 {
                     anim.SetInteger("AaCombo", 0);
                     anim.SetTrigger("Aa");
+                    GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
                 }
                 break;
             case 1:
@@ -81,6 +85,9 @@ public class PlayerAa : MonoBehaviour
                     anim.SetInteger("AaCombo", 1);
 
                     anim.SetTrigger("Aa");
+                    GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage + 10;
+
+
                 }
                 break;
             case 2:
@@ -88,19 +95,23 @@ public class PlayerAa : MonoBehaviour
                 {
                     anim.SetInteger("AaCombo", 2);
                     anim.SetTrigger("Aa");
+                    GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage + 30;
+
                 }
                 break;
         }
     }
     public void AddToCombo()
     {
-        if(aaCombo == 2)
+        comboTimer = comboDuration;
+
+        if (aaCombo == 2)
         {
-            aaCombo = -1;
+            aaCombo = 0;
+            return;
         }
 
         aaCombo++;
-        comboTimer = comboDuration;
     }
 
     private void AaComboCounter()

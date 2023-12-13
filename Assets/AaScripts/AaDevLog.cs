@@ -367,7 +367,7 @@ si te mueres se reinicia todo bienm, despues comprobar si hace las rondas bn(sin
 
 Hacer mañana:
 
-rafaga aa.
+rafaga aa.--Ok(de momento)
 hacer que enemigo volador se mueva.
 
 

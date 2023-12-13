@@ -13,8 +13,6 @@ public class RoundManager : MonoBehaviour
 
     //spaweDifferentEnemies
     [SerializeField] GameObject[] meleeEnemies;
-    [SerializeField] GameObject[] flyingEnemies;
-    [SerializeField] GameObject[] spawnPoints;
 
 
     //cristal
@@ -23,7 +21,6 @@ public class RoundManager : MonoBehaviour
 
     //list of the enemies spawned
     [SerializeField] List<GameObject> normalEnemyList = new List<GameObject>();
-    [SerializeField] List<GameObject> flyingEnemyList = new List<GameObject>();
 
 
 
@@ -54,7 +51,7 @@ public class RoundManager : MonoBehaviour
     public void CreateEnemyPool()
     {
         //instantiate and desactivar enemies
-        if (meleeEnemies.Length == 0 && flyingEnemies.Length == 0) return;
+        if (meleeEnemies.Length == 0) return;
         foreach (GameObject enemy in meleeEnemies)
         {
             GameObject enemyspawned = Instantiate(enemy);
@@ -62,13 +59,6 @@ public class RoundManager : MonoBehaviour
             enemyspawned.SetActive(false);
         }
 
-        foreach (GameObject enemy in flyingEnemies)
-        {
-            GameObject enemyspawned = Instantiate(enemy);
-            
-            flyingEnemyList.Add(enemyspawned);
-            enemyspawned.SetActive(false);
-        }
 
     }
 
@@ -110,50 +100,7 @@ public class RoundManager : MonoBehaviour
 
         }
 
-        //FlyingEnemy
-
-        if(currentRound == 3)
-        {
-            for (int i = 0; i < newRound ; i++)
-            {
-                GameObject currentEnemy;
-
-                //we spawn it
-                do
-                {
-                    currentEnemy = flyingEnemyList[Random.Range(0, flyingEnemyList.Count)];
-                } while (currentEnemy.activeSelf);
-
-                //we reset it
-                currentEnemy.SetActive(true);
-                currentEnemy.transform.GetChild(0).transform.position = spawnPoints[i].transform.position;
-                currentEnemy.GetComponent<FlyingEnemyState>().onEnemyReset();
-                //add it to the list so we know when to pass round
-                roundRoomEnemies.Add(currentEnemy);
-
-            }
-        }else
-        {
-            for (int i = 0; i < newRound + 1; i++)
-            {
-                GameObject currentEnemy;
-
-                //we spawn it
-                do
-                {
-                    currentEnemy = flyingEnemyList[Random.Range(0, flyingEnemyList.Count)];
-                } while (currentEnemy.activeSelf);
-
-                //we reset it
-                currentEnemy.SetActive(true);
-                currentEnemy.transform.GetChild(0).transform.position = spawnPoints[i].transform.position;
-                Debug.Log(spawnPoints[i].name);
-                currentEnemy.GetComponent<FlyingEnemyState>().onEnemyReset();
-                //add it to the list so we know when to pass round
-                roundRoomEnemies.Add(currentEnemy);
-
-            }
-        }
+        
 
 
 

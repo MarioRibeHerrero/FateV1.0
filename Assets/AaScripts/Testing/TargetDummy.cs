@@ -6,6 +6,6 @@ public class TargetDummy : MonoBehaviour, IDamageable
 {
     public void TakeDamage(int dmage)
     {
-
+        Debug.Log(dmage);
     }
 }
