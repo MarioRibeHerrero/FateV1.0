@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CristalHealthManager : MonoBehaviour
+public class CristalHealthManager : MonoBehaviour, IDamageable
 {
     [SerializeField] int health;
     [SerializeField] GameObject parentGo;
 
     private RoundManager roundManager;
-    private RoundEnrtyCollider entryCollider;
-    private GameObject root;
 
     private void Awake()
     {
-        root = GameObject.FindAnyObjectByType<RoundManager>().gameObject;
         roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
-        entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
 
     }
 
@@ -35,14 +31,6 @@ public class CristalHealthManager : MonoBehaviour
         {
             roundManager.isCristalDestroyed = true;
 
-            if(roundManager.roundRoomEnemies.Count == 0) 
-            {
-                //PONER CUNADO SE ACABE DE VERDAD
-                roundManager.inRoundRoom = false;
-                root.GetComponent<Animator>().SetTrigger("OpenDoors");
-                entryCollider.doorsColsed = false;
-                //-----------------
-            }
             Destroy(parentGo);
         }
 

@@ -4923,8 +4923,8 @@ GameObject:
   m_Component:
   - component: {fileID: 86473376}
   - component: {fileID: 86473377}
-  m_Layer: 6
-  m_Name: Kek
+  m_Layer: 13
+  m_Name: PlataformasSalaRondas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15746,8 +15746,8 @@ GameObject:
   m_Component:
   - component: {fileID: 269646926}
   - component: {fileID: 269646927}
-  m_Layer: 6
-  m_Name: Kek
+  m_Layer: 13
+  m_Name: PlataformasSalaRondas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20357,7 +20357,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 767
+    m_Bits: 4863
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -20377,7 +20377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0.056779914, y: -0, z: -0, w: 0.99838674}
-  m_LocalPosition: {x: -20.7, y: -0.5899999, z: -10}
+  m_LocalPosition: {x: 129, y: 24.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25777,7 +25777,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408919866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.7, y: -3.1, z: 0}
+  m_LocalPosition: {x: 129, y: 21.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25916,6 +25916,9 @@ MonoBehaviour:
   groundCheckLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  plataformLayerMask:
+    serializedVersion: 2
+    m_Bits: 8192
   dobleJumpDistance: 1.3
 --- !u!114 &408919872
 MonoBehaviour:
@@ -37766,8 +37769,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589045123}
-  m_LocalRotation: {x: 0.080824934, y: -0.7024723, z: 0.080824934, w: 0.70247227}
-  m_LocalPosition: {x: -10.700002, y: 0.23000002, z: 0.0000011920929}
+  m_LocalRotation: {x: 0.08082493, y: -0.7024723, z: 0.080824934, w: 0.70247227}
+  m_LocalPosition: {x: 139, y: 25.23, z: 0.0000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42864,8 +42867,8 @@ GameObject:
   m_Component:
   - component: {fileID: 654232866}
   - component: {fileID: 654232867}
-  m_Layer: 6
-  m_Name: Kek
+  m_Layer: 13
+  m_Name: PlataformasSalaRondas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48922,8 +48925,8 @@ GameObject:
   m_Component:
   - component: {fileID: 741696574}
   - component: {fileID: 741696575}
-  m_Layer: 6
-  m_Name: Kek
+  m_Layer: 13
+  m_Name: PlataformasSalaRondas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71501,8 +71504,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1087712428}
   - component: {fileID: 1087712429}
-  m_Layer: 6
-  m_Name: Kek
+  m_Layer: 13
+  m_Name: PlataformasSalaRondas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79090,8 +79093,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1204206593}
   - component: {fileID: 1204206594}
-  m_Layer: 6
-  m_Name: Kek
+  m_Layer: 13
+  m_Name: PlataformasSalaRondas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84518,38 +84521,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288899825}
   m_Mesh: {fileID: -5495902117074765545, guid: ba63004805a5cbd439dad64e02cbe706, type: 3}
---- !u!1 &1294009491
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1294009492}
-  m_Layer: 0
-  m_Name: Round1Cristal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1294009492
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294009491}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 536403084279647023}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294501116
 GameObject:
   m_ObjectHideFlags: 0
@@ -101599,7 +101570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1516510625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.4, y: -3.7, z: 0}
+  m_LocalPosition: {x: 140.46, y: 20.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -103122,7 +103093,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537384756}
   m_LocalRotation: {x: 0.056779914, y: -0, z: -0, w: 0.99838674}
-  m_LocalPosition: {x: -20.7, y: -0.5899999, z: -10}
+  m_LocalPosition: {x: 129, y: 24.41, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -111164,13 +111135,13 @@ Transform:
   - {fileID: 1190537460}
   - {fileID: 1643478470}
   - {fileID: 329381134}
-  - {fileID: 2063089294}
   - {fileID: 2005890213}
   - {fileID: 780602832}
   - {fileID: 1188289869}
   - {fileID: 335718501}
   - {fileID: 288955671}
   - {fileID: 542706878}
+  - {fileID: 2063089294}
   - {fileID: 2039203302}
   - {fileID: 1204206593}
   - {fileID: 1087712428}
@@ -136347,8 +136318,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2039203302}
   - component: {fileID: 2039203303}
-  m_Layer: 6
-  m_Name: Kek
+  m_Layer: 13
+  m_Name: PlataformasSalaRondas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137989,8 +137960,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2063089294}
   - component: {fileID: 2063089295}
-  m_Layer: 6
-  m_Name: Kek
+  m_Layer: 13
+  m_Name: PlataformasSalaRondas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143230,12 +143201,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4783294808043948712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 135.02, y: 21.77, z: 0}
+  m_LocalPosition: {x: 135.02, y: 20.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1294009492}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &543450652703443925
 Transform:
@@ -143384,6 +143355,8 @@ GameObject:
   - component: {fileID: 4643810138997494055}
   - component: {fileID: 5513366554726369807}
   - component: {fileID: 5102673824218373816}
+  - component: {fileID: 6486898662855413840}
+  - component: {fileID: 6486898662855413839}
   m_Layer: 0
   m_Name: Cristal
   m_TagString: Cristal
@@ -143509,3 +143482,40 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4783294808043948712}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &6486898662855413839
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783294808043948712}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f992b463ed3fff4ea5d5dc7f01be622, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6486898662855413840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4783294808043948712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c4b7553388592429d74846fdae4e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBetwenShoots: 5
+  proyectile: {fileID: 7874191872548733520, guid: a7273c48bfa4fad4a98c5d694b4e6f2a,
+    type: 3}
+  proyectileSpeed: 16
