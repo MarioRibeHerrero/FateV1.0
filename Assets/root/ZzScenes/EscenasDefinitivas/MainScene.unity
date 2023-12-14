@@ -36131,7 +36131,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589045123}
-  m_LocalRotation: {x: 0.08082493, y: -0.7024723, z: 0.08082493, w: 0.70247227}
+  m_LocalRotation: {x: 0.08082492, y: -0.7024723, z: 0.08082493, w: 0.70247227}
   m_LocalPosition: {x: 84.8, y: 17.43, z: 0.0000011920929}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -132866,3 +132866,4 @@ MonoBehaviour:
   proyectile: {fileID: 7874191872548733520, guid: a7273c48bfa4fad4a98c5d694b4e6f2a,
     type: 3}
   proyectileSpeed: 16
+  proyectiles: []
