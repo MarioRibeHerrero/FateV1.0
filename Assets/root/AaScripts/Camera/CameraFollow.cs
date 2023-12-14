@@ -1,11 +1,12 @@
 using Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] Transform player;  
-    [SerializeField] float smoothTime = 0.3f;  
-    [SerializeField] LayerMask obstacleLayer;  
+    [SerializeField] Transform player;
+    [SerializeField] float smoothTime = 0.3f;
+    [SerializeField] LayerMask obstacleLayer;
 
 
     [SerializeField] float xDistance;
@@ -17,7 +18,7 @@ public class CameraFollow : MonoBehaviour
 
 
     [SerializeField] float xOffset, yOffset;
-    private Vector3 velocity = Vector3.zero; 
+    private Vector3 velocity = Vector3.zero;
 
 
 
@@ -29,6 +30,9 @@ public class CameraFollow : MonoBehaviour
 
 
 
+
+    private bool solucionCutre, solucionCutre2;
+    float numero;
     private void Awake()
     {
         cam = GetComponent<CinemachineVirtualCamera>();
@@ -52,7 +56,7 @@ public class CameraFollow : MonoBehaviour
     private void RayCasts()
     {
 
-        
+
         if (Physics.Raycast(player.transform.position, Vector3.up, yDistanceUp, obstacleLayer) || Physics.Raycast(player.transform.position, -Vector3.up, yDistanceDown, obstacleLayer))
         {
 
@@ -65,10 +69,17 @@ public class CameraFollow : MonoBehaviour
 
         if (Physics.Raycast(player.transform.position, Vector3.right, xDistance, obstacleLayer) || Physics.Raycast(player.transform.position, -Vector3.right, xDistance, obstacleLayer))
         {
+            if (solucionCutre)
+            {
+                followYPos.x = numero;
+                solucionCutre2 = true;
+            }
 
         }
         else
         {
+            if (solucionCutre2) solucionCutre = false;
+
             followYPos.x = player.transform.position.x;
 
         }
@@ -77,9 +88,22 @@ public class CameraFollow : MonoBehaviour
         {
             Vector3 targetPositionY = new Vector3(followYPos.x + xOffset, followYPos.y + yOffset, transform.position.z);
             transform.position = Vector3.SmoothDamp(transform.position, targetPositionY, ref velocity, smoothTime);
+
+
+
         }
 
     }
+
+    public void SetCamToPos(float xPos)
+    {
+        numero = xPos;
+        solucionCutre = true;
+        solucionCutre2 = false;
+    }
+
+
+
     private void OnDrawGizmos()
     {
         Debug.DrawRay(player.transform.position, Vector3.right * xDistance, color: Color.green);

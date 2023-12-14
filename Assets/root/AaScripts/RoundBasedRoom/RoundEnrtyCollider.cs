@@ -21,6 +21,7 @@ public class RoundEnrtyCollider : MonoBehaviour
        if(other.CompareTag("Player") && !doorsColsed)
         {
             StartCoroutine(CloseDoors());
+            GameObject.FindAnyObjectByType<CameraFollow>().SetCamToPos(123);
         }
     }
 

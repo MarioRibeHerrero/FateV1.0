@@ -32,7 +32,7 @@ public class RoundManager : MonoBehaviour
     public bool isCristalDestroyed;
 
 
-    private GameObject cristal;
+    [HideInInspector] public GameObject cristal;
 
 
     #endregion

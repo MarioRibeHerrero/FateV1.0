@@ -7,35 +7,26 @@ public class BossReciveDamage : MonoBehaviour, IDamageable
 {
 
     [SerializeField] GameObject rootBoss;
+    private Animator packAnim;
+
     private BossHealth bossHealth;
     private BossFightController bossFController;
     private void Awake()
     {
         bossHealth = rootBoss.GetComponent<BossHealth>();
         bossFController = rootBoss.GetComponent<BossFightController>();
+        packAnim = rootBoss.GetComponent<Animator>();
 
     }
 
 
     public void TakeDamage(int damageTaken)
     {
-        bossFController.bossTotalHealth -= damageTaken;
-        StartCoroutine(HitVisualEffect(bossFController.hitTime));
+        bossFController.bossCurrentHealth -= damageTaken;
+        packAnim.SetTrigger("Hit");
 
         bossHealth.CheckHealth();
     }
 
-    private IEnumerator HitVisualEffect(float hitTime)
-    {
-        //Aply shader to model(de momento color pocho
 
-
-        // Material currentMat = GetComponent<MeshRenderer>().material;
-        Color color = GetComponent<MeshRenderer>().material.color;
-
-        GetComponent<MeshRenderer>().material.color = Color.white;
-        yield return new WaitForSeconds(hitTime);
-        GetComponent<MeshRenderer>().material.color = color;
-
-    }
 }

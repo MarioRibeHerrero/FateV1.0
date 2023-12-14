@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7171894917436490588}
   - component: {fileID: 6250118263744822556}
   - component: {fileID: 7493364892342448796}
-  - component: {fileID: 6700345005179572650}
   m_Layer: 0
   m_Name: Cristal
   m_TagString: Cristal
@@ -141,24 +140,3 @@ MonoBehaviour:
     type: 3}
   proyectileSpeed: 16
   proyectiles: []
---- !u!95 &6700345005179572650
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4319080535652714380}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9f992b463ed3fff4ea5d5dc7f01be622, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0

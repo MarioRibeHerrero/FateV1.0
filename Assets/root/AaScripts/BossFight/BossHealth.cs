@@ -14,9 +14,6 @@ public class BossHealth : MonoBehaviour
     [SerializeField] float hitTime;
 
 
-    [SerializeField] Animator doorAnimator;
-
-
     private int bossHp;
 
    
@@ -29,8 +26,10 @@ public class BossHealth : MonoBehaviour
 
 
         bFController.bossTotalHealth = totalHits * bossHp;
+        bFController.bossCurrentHealth = bFController.bossTotalHealth;
 
-       
+
+
     }
 
 
@@ -39,9 +38,8 @@ public class BossHealth : MonoBehaviour
 
     public void CheckHealth()
     {
-        if (bFController.bossTotalHealth <= 0)
+        if (bFController.bossCurrentHealth <= 0)
         {
-            doorAnimator.SetTrigger("Open");
 
             //Kill
             Destroy(gameObject);
