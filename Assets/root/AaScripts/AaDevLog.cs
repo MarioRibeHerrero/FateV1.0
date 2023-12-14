@@ -381,6 +381,20 @@ si estas, como el script de la sala de rondas habra añadido un metodo que reinic
 (ahora toca hacerlo xd)
 
 
+
+Dia22:
+
+Solucionado y añadido tema nuevas ramas, problemas con ramas, organizacion de carpetas, etc.
+añadido que aparezca el cristal en las rondas--ok
+añadir que para pasar de ronda el cirstal tiene que estar roto--Ok
+
+Hacer por la tarde:
+añadir que al morir se restablezca la sala--
+corregir camara al entrar en sala--
+Empezar boss--
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 
