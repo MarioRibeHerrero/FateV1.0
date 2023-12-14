@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEditor.Rendering;
 using UnityEngine;
 using static System.TimeZoneInfo;
@@ -20,37 +21,49 @@ public class RoundCristal : MonoBehaviour
 
     [SerializeField] int proyectileSpeed;
 
-    private bool shooting;
+    [SerializeField] List<GameObject> proyectiles;
+
     private void Awake()
     {
         player = GameObject.FindObjectOfType<PlayerHealth>().transform;
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
+    private void OnEnable()
+    {
+        CreateProyectilePool();
+    }
 
     private void Update()
     {
        ShootAnim();
     }
+
+    private void CreateProyectilePool()
+    {
+        for (int i = 0; i <= 2; i++)
+        {
+            GameObject go = Instantiate(proyectile);
+            proyectiles.Add(go);
+            go.SetActive(false);
+        }
+    }
+
+    
     private void ShootAnim()
     {
         
-        // Increment the transition timer
         transitionTimer += Time.deltaTime;
 
-        // Calculate the lerp factor (how much of the transition is complete)
         float lerpFactor = Mathf.Clamp01(transitionTimer / timeBetwenShoots);
 
-        // Lerp between the default color and the target color
         Color lerpedColor = Color.Lerp(defaultColor, targetColor, lerpFactor);
 
         meshRenderer.material.color = lerpedColor;
 
         if(lerpFactor == 1)
         {
-            //reiniciamos el "Color"
             transitionTimer = 0f;
-
             Shoot();
         }
     }
@@ -58,19 +71,28 @@ public class RoundCristal : MonoBehaviour
     private void Shoot()
     {
 
-            GameObject instantiatedObject = Instantiate(proyectile, transform.position, Quaternion.identity);
+        if(proyectiles.Count > 0)
+        {
 
-            // Get the Rigidbody component of the instantiated object
-            Rigidbody rb = instantiatedObject.GetComponent<Rigidbody>();
+            int random = Random.Range(0, proyectiles.Count);
 
-            if (rb != null && proyectile != null)
+            if (!proyectiles[random].activeSelf)
             {
-                // Calculate the direction towards the player
-                Vector3 direction = (player.position - instantiatedObject.transform.position).normalized;
+                Rigidbody rb = proyectiles[random].GetComponent<Rigidbody>();
 
-                // Apply force in the direction towards the player
+                proyectiles[random].SetActive(true);
+                proyectiles[random].transform.position = transform.position;
+
+                rb.velocity = Vector3.zero;
+
+
+                Vector3 direction = (player.position - proyectiles[random].transform.position).normalized;
+
                 rb.AddForce(direction * proyectileSpeed, ForceMode.Impulse);
+
             }
+
+        }
         
     }
 

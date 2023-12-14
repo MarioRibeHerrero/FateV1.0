@@ -36,7 +36,7 @@ public class ProyectileDamage : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
 
-        Destroy(gameObject);
+        this.gameObject.SetActive(false);
 
     }
 }
