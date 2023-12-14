@@ -26,10 +26,10 @@ TagManager:
   - NoCollisionEnemy
   - CollisionEnemy
   - FlyingEnemy
-  - 
-  - 
-  - 
-  - 
+  - MapRender
+  - CameraConfiners
+  - CristalProyectile
+  - Plataforms
   - 
   - 
   - 
