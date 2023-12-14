@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/ZzScenes/EscenasDefinitivas/MainScene.unity
+    path: Assets/root/ZzScenes/EscenasDefinitivas/MainScene.unity
     guid: 103e436d79e6595428363083128c445e
   m_configObjects: {}
