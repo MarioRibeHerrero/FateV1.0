@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
     public bool inBridge;
 
 
+    //boss
+    public bool inBelzegorFight;
+
     public void HealPlayer(int healingAmmount)
     {
         playerh.HealPlayer(healingAmmount);

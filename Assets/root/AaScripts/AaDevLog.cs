@@ -1,4 +1,4 @@
-#region Primeros15Dias
+#region Primeros20Dias
 /*
 
 Dia0(07-11-22):
@@ -261,9 +261,6 @@ EntradaALaHabitacion--Ok
 matar boss--Ok
 
 
-*/
-#endregion
-/*
 
 
 
@@ -365,6 +362,15 @@ si te mueres se reinicia todo bienm, despues comprobar si hace las rondas bn(sin
 
 
 
+
+
+
+*/
+#endregion
+/*
+
+
+
 Dia 21:
 rafaga aa.--Ok(de momento)
 hacer que enemigo volador se mueva--Ok
@@ -379,6 +385,28 @@ Antes que se me olvide, quiero meter un enevnto de esos, para que las salas como
 y si muere que desde el playerHealth lo llame, por lo tanto, el pj simepre que muere llama al evento ese, si no estas en la sala de rondas, no pasa anda,
 si estas, como el script de la sala de rondas habra añadido un metodo que reinicie la sala a ese evento, se reiniciara.lo mismo con la del boss--
 (ahora toca hacerlo xd)
+
+
+
+Dia22:
+
+Solucionado y añadido tema nuevas ramas, problemas con ramas, organizacion de carpetas, etc.
+añadido que aparezca el cristal en las rondas--ok
+añadir que para pasar de ronda el cirstal tiene que estar roto--Ok
+
+Hacer por la tarde:
+añadir que al morir se restablezca la sala--Ok
+corregir camara al entrar en sala--(solucionCutreTEMP)--Ok
+
+Solucionar punto PivoteBoss--Ok
+Empezar boss--Ok
+Hacer barra vida pocha--Ok
+
+Hacer mañana:
+Añadir "Final" pocho
+Añdir menus si eso
+Trabajar en el boss
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -401,7 +429,7 @@ Añadir regiones y ordenar codigo
 BarraVidaBoss--
 
 
-
+HAY QUE CAMBIAR CAMARA DE CARA A FUTURO(idea de hacerlo empujando para atras la camarea la distancia del hit del raycast)
 
 
 

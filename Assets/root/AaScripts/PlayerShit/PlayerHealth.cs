@@ -54,12 +54,13 @@ public class PlayerHealth : MonoBehaviour
             {
 
                 //ResetearLaRoom
-                //PONER CUNADO SE ACABE DE VERDAD
                 roundManager.inRoundRoom = false;
                 entryCollider.gameObject.transform.parent.GetComponent<Animator>().SetTrigger("OpenDoors");
                 entryCollider.doorsColsed = false;
 
                 ResetEnemies();
+                ResetCristal();
+
                 //-----------------
             }
 
@@ -71,7 +72,14 @@ public class PlayerHealth : MonoBehaviour
     }
 
 
-
+    private void ResetCristal()
+    {
+        if(!roundManager.isCristalDestroyed)
+        {
+            roundManager.cristal.SetActive(false);
+            roundManager.cristal.GetComponent<RoundCristal>().Reset();
+        }
+    }
     private void ResetEnemies()
     {
         //instantiate and desactivar enemies

@@ -29,7 +29,7 @@ public class RoundCristal : MonoBehaviour
         meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    private void OnEnable()
+    private void Start()
     {
         CreateProyectilePool();
     }
@@ -41,9 +41,10 @@ public class RoundCristal : MonoBehaviour
 
     private void CreateProyectilePool()
     {
-        for (int i = 0; i <= 2; i++)
+        for (int i = 0; i <= 1; i++)
         {
-            GameObject go = Instantiate(proyectile);
+            Debug.Log(i);
+                GameObject go = Instantiate(proyectile);
             proyectiles.Add(go);
             go.SetActive(false);
         }
@@ -66,6 +67,15 @@ public class RoundCristal : MonoBehaviour
             transitionTimer = 0f;
             Shoot();
         }
+    }
+
+
+    public void Reset()
+    {
+        Debug.Log("HELLO");
+        transitionTimer = 0f;
+        GetComponent<CristalHealthManager>().health = 20;
+        
     }
 
     private void Shoot()

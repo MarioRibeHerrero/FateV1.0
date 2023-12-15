@@ -45,8 +45,9 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
     private void RoudRoomShit()
     {
         roundManager.roundRoomEnemies.Remove(gameObject);
-        if (roundManager.roundRoomEnemies.Count <= 0 && roundManager.inRoundRoom)
+        if (roundManager.roundRoomEnemies.Count <= 0 && roundManager.inRoundRoom && roundManager.isCristalDestroyed)
         {
+
 
             if (roundManager.currentRound == 3)
             {
@@ -55,7 +56,6 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
             }
             else
             {
-
                 int newRound;
                 newRound = roundManager.currentRound + 1;
                 roundManager.CallUpdateRound(newRound, 2);
