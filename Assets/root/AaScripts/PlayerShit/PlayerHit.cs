@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -39,11 +40,22 @@ public class PlayerHit : MonoBehaviour
     private void pushPlayer(Vector3 hitPosition, float pushBackForce)
     {
 
+
+        Vector3 direction = transform.position - hitPosition;
+
+        direction.Normalize();
+
+        // Apply force in the opposite direction to push the object away
+        GetComponent<Rigidbody>().drag = 7;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().AddForce(direction * pushBackForce, ForceMode.Impulse);
+        
+
         //multiplicamos 1, x el signo de la rotacion, x lo que si esta miradno a la derecha, 1 lo empujara a la derecha, si esta en la izquierda,
         // sera menos 1 y lo empujara al otro lado.
 
 
-
+        /*
         //Si el enemigo esta mirando a la derecha:
         if (hitPosition.y == 180)
         {
@@ -64,7 +76,7 @@ public class PlayerHit : MonoBehaviour
             GetComponent<Rigidbody>().AddForce(pushbackDirection * pushBackForce, ForceMode.Impulse);
         }
 
-
+        */
 
 
 

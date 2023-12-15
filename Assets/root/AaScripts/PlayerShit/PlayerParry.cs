@@ -26,7 +26,7 @@ public class PlayerParry : MonoBehaviour
     }
     private void PlayerParry_started(InputAction.CallbackContext obj)
     {
-        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && GameManager.Instance.playerHealth >= 20 && !GameManager.Instance.isPlayerParry) 
+        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && GameManager.Instance.playerHealth >= 35 && !GameManager.Instance.isPlayerParry) 
         {
             anim.SetTrigger("Parry");
            

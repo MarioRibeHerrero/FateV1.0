@@ -405,12 +405,17 @@ Hacer barra vida pocha--Ok
 Hacer mañana:
 Añadir "Final" pocho
 Añdir menus si eso
+Creditos: x to skip
 Trabajar en el boss
 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
+
+Enemigo dos tipos de ataque(Rojo)
+
+
 
 DARLE BUENA VUELTA AL ENEMIGO VOLADOR
 
