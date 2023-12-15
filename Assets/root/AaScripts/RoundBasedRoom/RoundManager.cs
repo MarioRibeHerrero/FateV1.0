@@ -17,6 +17,7 @@ public class RoundManager : MonoBehaviour
 
     //cristal
     [SerializeField] GameObject cristalPrefab;
+    [SerializeField] Transform cristalPosRound2, cristalPosRound3;
 
 
     //list of the enemies spawned
@@ -31,7 +32,7 @@ public class RoundManager : MonoBehaviour
     public bool isCristalDestroyed;
 
 
-
+    [HideInInspector] public GameObject cristal;
 
 
     #endregion
@@ -59,6 +60,8 @@ public class RoundManager : MonoBehaviour
             enemyspawned.SetActive(false);
         }
 
+        cristal = Instantiate(cristalPrefab);
+        cristal.SetActive(false);
 
     }
 
@@ -94,10 +97,39 @@ public class RoundManager : MonoBehaviour
             //we reset it
             currentEnemy.SetActive(true);
             currentEnemy.GetComponent<MeleeEnemyState>().CallReset();
-            // currentEnemy.GetComponent<IReseteable>().Reset();
             //add it to the list so we know when to pass round
             roundRoomEnemies.Add(currentEnemy);
 
+        }
+
+        //cristal
+
+        switch (newRound)
+        {
+
+
+            case 1:
+                Debug.Log("KEK0");
+
+                isCristalDestroyed = true;
+                break;
+            case 2:
+                Debug.Log("KEK1");
+
+                cristal.SetActive(true);
+                cristal.transform.position = cristalPosRound2.position;
+                cristal.GetComponent<RoundCristal>().Reset();
+                isCristalDestroyed = false;
+                break;
+
+            case 3:
+                Debug.Log("KEK2");
+
+                cristal.SetActive(true);
+                cristal.transform.position = cristalPosRound3.position;
+                cristal.GetComponent<RoundCristal>().Reset();
+                isCristalDestroyed = false;
+                break;
         }
 
         

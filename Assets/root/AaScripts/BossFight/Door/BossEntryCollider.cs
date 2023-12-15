@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class BossEntryCollider : MonoBehaviour
 {
-    [SerializeField] BossFightController bFController;
+    [SerializeField] Transform pos2;
+
+    [SerializeField] BossUiManager uiManager;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if(!bFController.bossFightFinished) transform.parent.GetComponent<Animator>().SetTrigger("Close");
+
+            TpPlayerIntoBossFight(other);
 
         }
+    }
+
+
+    private void TpPlayerIntoBossFight(Collider other)
+    {
+
+        GameManager.Instance.inBelzegorFight = true;
+        other.transform.position = pos2.transform.position;
+        uiManager.EnableHealth();
     }
 }
