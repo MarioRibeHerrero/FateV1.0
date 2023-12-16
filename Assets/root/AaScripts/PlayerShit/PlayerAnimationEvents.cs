@@ -61,6 +61,7 @@ public class PlayerAnimationEvents : MonoBehaviour
     private void ParryEnd()
     {
         GameManager.Instance.isPlayerParry = false;
+
     }
 
     private void AaEnd()
@@ -68,6 +69,30 @@ public class PlayerAnimationEvents : MonoBehaviour
         anim.SetTrigger("AaEnd");
     }
 
+
+
+
+    private void InStrongAttackToTrue()
+    {
+        GameManager.Instance.inStrongAttack = true;
+    }
+    private void InStrongAttackToFalse()
+    {
+        GameManager.Instance.inStrongAttack = false;
+
+    }
+
+
+
+    private void CancelAllPlayerEvents()
+    {
+        InStrongAttackToFalse();
+        ParryEnd();
+        CanParryToTrue();
+        CanRotateToTrue();
+        IsOcupiedToFalse();
+        CanPlayerMoveToTrue();
+    }
 
 
 }

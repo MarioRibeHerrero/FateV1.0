@@ -56,7 +56,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
                     else
                     {
                         root.GetComponent<Animator>().SetTrigger("Stunned");
-                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(30);
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(15);
                     }
                     
                 
