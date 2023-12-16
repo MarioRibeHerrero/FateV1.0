@@ -24,7 +24,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     //tackingPlayer
     [Header("PlayerTacking")]
     private Transform playerTarget;
-    bool onGround;
+    [SerializeField] bool onGround;
     [SerializeField] Transform onGroundPos;
     [SerializeField] LayerMask walkeableLayers;
 

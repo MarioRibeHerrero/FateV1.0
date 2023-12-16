@@ -437,6 +437,7 @@ Tempo aa--Ok
 Solucionar problema con player hit y desactivar clases.
 
 
+Solucionar bug aa arriba pega abajo antes
 
 MOdo berserk
 

@@ -47,8 +47,13 @@ public class PlayerAa : MonoBehaviour
             {
                 anim.SetTrigger("AaUp");
                 GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
+            Debug.Log("ARRIBA");
             }
-        AutoAttackCombo();
+            else
+            {
+                AutoAttackCombo();
+
+            }
 
 
 
@@ -76,6 +81,8 @@ public class PlayerAa : MonoBehaviour
                 {
                     anim.SetInteger("AaCombo", 0);
                     anim.SetTrigger("Aa");
+                    Debug.Log("COMBO1");
+
                     GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
                 }
                 break;
