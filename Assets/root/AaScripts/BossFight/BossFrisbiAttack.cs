@@ -17,8 +17,11 @@ public class BossFrisbiAttack : MonoBehaviour
 
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            StartCoroutine("FrisbiAttack");
 
-        
+        }
     }
 
     public IEnumerator FrisbiAttack()

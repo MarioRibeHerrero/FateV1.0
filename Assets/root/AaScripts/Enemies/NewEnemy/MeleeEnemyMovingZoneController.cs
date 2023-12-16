@@ -28,7 +28,7 @@ public class MeleeEnemyMovingZoneController : MonoBehaviour
     }
 
 
-    private void FixedUpdate()
+    private void Update()
     {
 
         stateManager.playerInMovingZone = Physics.OverlapBox(this.transform.position, this.transform.localScale / 2, Quaternion.identity, attackLayer).Length > 0;

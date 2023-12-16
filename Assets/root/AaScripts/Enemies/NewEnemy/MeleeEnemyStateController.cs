@@ -1,14 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 {
     #region Variables
-
-    [Header("References")]
     [SerializeField] MeleeEnemyState stateManager;
     [SerializeField] Animator animator;
     [SerializeField] BasicEnemyHealth healthManager;
@@ -22,13 +19,10 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     private Transform target;
 
     //tackingPlayer
-    [Header("PlayerTacking")]
-    private Transform playerTarget;
-    bool onGround;
-    [SerializeField] Transform onGroundPos;
-    [SerializeField] LayerMask walkeableLayers;
 
-    [Header("PlayerAttacking")]
+    private Transform playerTarget;
+
+
     //attackPlayer
     [SerializeField] Transform attackRangePos;
     [HideInInspector] public bool canAttack;
@@ -44,6 +38,8 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
 
     //reset shit
+
+    private Vector3 startingPosition;
     #endregion
 
 
@@ -71,7 +67,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         target = pointA;
         canAttack = true;
         stateManager.onEnemyReset += Reset;
-        patience = 0.3f;
+        startingPosition = transform.position;
     }
 
     void Update()
@@ -96,7 +92,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         {
             case MeleeEnemyState.MeleeEnemyStateEnum.Pathing:
 
-                //MoveTowardsTarget();
+                MoveTowardsTarget();
                 CheckIfPlayerInZone();
                 break;
             case MeleeEnemyState.MeleeEnemyStateEnum.Waiting:
@@ -107,7 +103,6 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
             case MeleeEnemyState.MeleeEnemyStateEnum.Tracking:
 
                 FollowPlayer();
-                CheckForGround();
                 CheckAttack();
                 break;
 
@@ -208,13 +203,9 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     void FollowPlayer()
     {
-        if (onGround)
-        {
-            Vector3 targetPosition = new Vector3(playerTarget.transform.position.x, transform.position.y, transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, enemyMovementSpeed * Time.deltaTime);
-            FacePlayer();
-        }
-
+        Vector3 targetPosition = new Vector3(playerTarget.transform.position.x, transform.position.y, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, enemyMovementSpeed * Time.deltaTime);
+        FacePlayer();
     }
     private void FacePlayer()
     {
@@ -234,38 +225,15 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     }
 
 
-    private void CheckForGround()
-    {
-
-        Quaternion rotation = onGroundPos.rotation;
-        Vector3 direction = rotation * Vector3.down;
-
-        onGround = Physics.Raycast(onGroundPos.position, Vector3.down + direction * 1, walkeableLayers);
-        
-
-    }
-
-
     #endregion
 
     #region Attack
 
-
-    [SerializeField] float patience;
     private void CheckAttack()
     {
 
         inRangeOfAttack = Physics.OverlapBox(attackRangePos.position, attackRangeVector / 2, Quaternion.identity, attackLayer).Length > 0;
-
-        if (Physics.OverlapBox(attackRangePos.position, attackRangeVector / 2, Quaternion.identity, attackLayer).Length > 0)
-        {
-            patience -= Time.deltaTime;
-            enemyMovementSpeed = 0f;
-        }
-        else enemyMovementSpeed = 1f;
-
-
-        if (patience < 0)
+        if (inRangeOfAttack)
         {
             stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Attacking;
         }
@@ -276,7 +244,6 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         if (canAttack)
         {
             animator.SetTrigger("Attack");
-            patience = 0.3f;
             canAttack = false;
         }
 
@@ -288,14 +255,6 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(attackRangePos.position, attackRangeVector);
-
-
-
-        Vector3 startPoint = onGroundPos.position;
-        Quaternion rotation = onGroundPos.rotation;
-        Vector3 direction = rotation * Vector3.down;
-        Vector3 endPoint = startPoint + direction * 1;
-        Gizmos.DrawLine(startPoint, endPoint);
     }
 
     #endregion

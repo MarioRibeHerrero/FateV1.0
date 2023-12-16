@@ -651,7 +651,7 @@ Transform:
   - {fileID: 6363366287036635685}
   - {fileID: 2267310885388693121}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7597515992276736445
 Animator:
@@ -720,7 +720,6 @@ MonoBehaviour:
   pushBackForce: 30
   pushBackForceOnCollision: 30
   damageTakenOnCollision: 10
-  enemyBody: {fileID: 3815215672749122443}
 --- !u!114 &4859920321670750637
 MonoBehaviour:
   m_ObjectHideFlags: 0
