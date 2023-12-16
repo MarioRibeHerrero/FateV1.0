@@ -10,14 +10,13 @@ public class PlayerGroundCheck : MonoBehaviour
     [SerializeField] Transform groundCheckPos;
     //Layer del suelo
     [SerializeField] LayerMask groundCheckLayerMask;
-    [SerializeField] LayerMask plataformLayerMask;
     [SerializeField] float dobleJumpDistance;
 
 
     void Update()
     {
         //Raycast q comprueba si estas o no en el suelo(devuelve true if your on ground and false if you are not)
-        if(Physics.Raycast(groundCheckPos.transform.position, Vector3.down, 0.1f, groundCheckLayerMask) || Physics.Raycast(groundCheckPos.transform.position, Vector3.down, 0.1f, plataformLayerMask))
+        if(Physics.Raycast(groundCheckPos.transform.position, Vector3.down, 0.1f, groundCheckLayerMask))
         {
             isPlayerGrounded = true;
            
@@ -60,7 +59,7 @@ public class PlayerGroundCheck : MonoBehaviour
 
 
         // Check if the ray hits something on the Ground layer
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundCheckLayerMask) || Physics.Raycast(groundCheckPos.transform.position, Vector3.down, 0.1f, plataformLayerMask))
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundCheckLayerMask))
             {
              // Check if the distance to the ground is greater than the threshold
              if (hit.distance > dobleJumpDistance)

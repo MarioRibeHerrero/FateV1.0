@@ -8,7 +8,12 @@ public class UiManager : MonoBehaviour
 {
     [Header("HUD")]
     [SerializeField] Slider playerHealthSlider;
+    [SerializeField] Image parryCd;
 
+    private void FixedUpdate()
+    {
+        
+    }
     public void UpdatePlayerHealthSlider()
     {
         playerHealthSlider.value = GameManager.Instance.playerHealth /100;
