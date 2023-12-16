@@ -8,7 +8,20 @@ public class PlayerHit : MonoBehaviour
 {
 
     [SerializeField] float invulnerabilityTime;
+    private Animator anim;
 
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.K))
+        {
+            HitPlayer(this.transform.position, 20, 1, 20, false);
+        }
+    }
 
 
     public void HitPlayer(Vector3 hitPosition,float pushBackForce, float stunTime, float damageTaken, bool takingSlow)
@@ -18,12 +31,22 @@ public class PlayerHit : MonoBehaviour
             if(takingSlow)
             {
                 StartCoroutine(SlowPlayer());
+                GameManager.Instance.isPlayerInvulnerable = true;
+                Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
+                GetComponent<PlayerHealth>().TakeDamage(damageTaken);
+
+            }
+            else
+            {
+                anim.SetTrigger("PlayerHit");
+
+                GameManager.Instance.isPlayerInvulnerable = true;
+                Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
+                StartCoroutine(StunPlayer(stunTime, hitPosition, pushBackForce));
+                GetComponent<PlayerHealth>().TakeDamage(damageTaken);
             }
 
-            GameManager.Instance.isPlayerInvulnerable = true;
-            Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
-            StartCoroutine(StunPlayer(stunTime, hitPosition, pushBackForce));
-            GetComponent<PlayerHealth>().TakeDamage(damageTaken);
+
         }
     }
 
@@ -32,7 +55,6 @@ public class PlayerHit : MonoBehaviour
     {
         GameManager.Instance.isPlayerInvulnerable = false;
     }
-
     public void Kill()
     {
         GetComponent<PlayerHealth>().TakeDamage(100);
@@ -93,26 +115,26 @@ public class PlayerHit : MonoBehaviour
         GameManager.Instance.isPlayerStunned = true;
         //Cosas q no puede hacer el player mientras este stuneado:
         //Moverse, rotar, atacar, parrear, 
-        GetComponent<PlayerMovement>().enabled = false;
-        GetComponent<PlayerRotation>().enabled = false;
-        GetComponent<PlayerJump>().enabled = false;
-        GetComponent<PlayerParry>().enabled = false;
-        GetComponent<PlayerAa>().enabled = false;
-        GetComponent<PlayerHook>().enabled = false;
+        //abarca tmb el salto
+        GameManager.Instance.canPlayerMove = false;
+        GameManager.Instance.canPlayerRotate = false;
+        //para que no pueda atacar el player ni parrear
+        GameManager.Instance.inStrongAttack = true;
+        GameManager.Instance.isOccupied = true;
+        
 
         pushPlayer(hitPosition, pushBackForce);
 
         yield return new WaitForSeconds(stunTime);
         GameManager.Instance.isPlayerStunned = false;
-
-
-
-        GetComponent<PlayerMovement>().enabled = true;
-        GetComponent<PlayerRotation>().enabled = true;
-        GetComponent<PlayerJump>().enabled = true;
-        GetComponent<PlayerParry>().enabled = true;
-        GetComponent<PlayerAa>().enabled = true;
-        GetComponent<PlayerHook>().enabled = true;
+        //Cosas q no puede hacer el player mientras este stuneado:
+        //Moverse, rotar, atacar, parrear, 
+        //abarca tmb el salto
+        GameManager.Instance.canPlayerMove = true;
+        GameManager.Instance.canPlayerRotate = true;
+        //para que no pueda atacar el player ni parrear
+        GameManager.Instance.inStrongAttack = false;
+        GameManager.Instance.isOccupied = false;
     }
 
     private IEnumerator SlowPlayer()

@@ -8,6 +8,9 @@ public class PlayerParry : MonoBehaviour
     PlayerInput playerInput;
     private Animator anim;
 
+    private bool canParry;
+    [SerializeField] float parryCooldownAmmount;
+    public float parryCooldown;
 
     private void Awake()
     {
@@ -20,13 +23,15 @@ public class PlayerParry : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    private void Start()
+    private void Update()
     {
-        
+        parryCooldown = -Time.deltaTime;
+        Mathf.Clamp(parryCooldown, 0, parryCooldownAmmount);
     }
+
     private void PlayerParry_started(InputAction.CallbackContext obj)
     {
-        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && GameManager.Instance.playerHealth >= 35 && !GameManager.Instance.isPlayerParry) 
+        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && GameManager.Instance.playerHealth >= 35 && !GameManager.Instance.isPlayerParry && !GameManager.Instance.inStrongAttack) 
         {
             anim.SetTrigger("Parry");
            
