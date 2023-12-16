@@ -444,7 +444,7 @@ MOdo berserk
 
 Cambiado layer mask del pj 
 
-
+Hecho nuevo sistema de camaras entero
 
 
 
@@ -481,7 +481,9 @@ HAY QUE CAMBIAR CAMARA DE CARA A FUTURO(idea de hacerlo empujando para atras la 
 -----------------------------------------------------------------------------------------------------------------------------------
 Preguntas;
 
+Problema con cambio de camaras de habitaciones, que pasa si se queda en medio del colider y vuyelve
 
+preguntar si esta bn usado lo del gamemanager currentcam
 
 
 
