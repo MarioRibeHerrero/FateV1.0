@@ -9,4 +9,13 @@ public class BossFightController : MonoBehaviour
     public float hitTime;
 
 
+
+    public delegate void BossAttacks();
+
+    public BossAttacks bossAttacks;
+
+    private void BossFight()
+    {
+
+    }
 }
