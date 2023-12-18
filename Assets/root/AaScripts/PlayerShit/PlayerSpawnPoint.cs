@@ -56,10 +56,15 @@ public class PlayerSpawnPoint : MonoBehaviour
 
 
             lastSpawnPoint = spawnPoint;
+            SetNewCamOnRespawn();
 
         }        
     }
 
+    private void SetNewCamOnRespawn()
+    {
+        GameManager.Instance.RespawnRoom = GameManager.Instance.currentRoom;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("SpawnPoint"))

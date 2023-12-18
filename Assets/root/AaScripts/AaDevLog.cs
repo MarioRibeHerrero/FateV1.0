@@ -446,12 +446,36 @@ Cambiado layer mask del pj
 
 Hecho nuevo sistema de camaras entero
 
+Nuevo sistema TP
+Hacer mañana, mejorar y terminar todo camaras 
+
+
+
+Dia25(18/12/23):
+
+Arreglar respawn con camaras:--Ok
+para hacer eso, he usado los metodos que ya tenia en CameraManager, cuando pones el respawnpoint, pones currentcam as respawnposcam, y luego cunado mueres usando
+el metodo de CameraMangaer, desactivo la currentCam y activo la Respawnposcam, luego pongo currentcam a respawncam
+
+Arreglar gancho feedbackVisual--Ok
+Arreglar slide plataformas sala estatua--Ok
+hacer que tpfuncione bien--Ok
+Añadir unlockCollider--Ok
+Terminar camaras`+ camaraBridge(1.6)--Ok
+Añadir movvimiento en puete--Ok
+Añdir Fade-In/Fate-Out--
+Añadir entrada a boss + empezar bossfight--
+Empezar a trabajar en la bossfight con medidad nuevas--
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 
+BAJAR PARRY a 10
+
 AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
+
+doble salto se puede post parry y dejandote caer de plataforma
 
 Enemigo dos tipos de ataque(Rojo)
 

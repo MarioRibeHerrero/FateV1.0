@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] CameraManager camManager;
+
     [SerializeField] UiManager uiManager;
     public Transform currentSpawnPoint;
 
 
     private RoundEnrtyCollider entryCollider;
     private RoundManager roundManager;
-    [SerializeField] CameraFollow camFollow;
 
 
     
@@ -111,6 +112,9 @@ public class PlayerHealth : MonoBehaviour
 
 
 
+    
+
+
 
     private void DesactivateAllPlayerFuntionsAndKill()
     {
@@ -140,6 +144,7 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator RevivePlayer()
     {
+        SetCameraToRespawnCamera();
         yield return new WaitForSeconds(1);
         transform.position = currentSpawnPoint.transform.position;
         transform.Find("Body").transform.gameObject.SetActive(true);
@@ -158,6 +163,18 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(100);
         }
+    }
+
+
+
+
+
+    private void SetCameraToRespawnCamera()
+    {
+        camManager.SetNewCamera(GameManager.Instance.RespawnRoom);
+        camManager.DisableOldCamera(GameManager.Instance.currentRoom);
+        GameManager.Instance.currentRoom = GameManager.Instance.RespawnRoom;
+
     }
 
 }
