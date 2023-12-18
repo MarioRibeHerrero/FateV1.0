@@ -10,6 +10,7 @@ public class PlayerJump : MonoBehaviour
     PlayerInput playerInput;
     Rigidbody rb;
     PlayerGroundCheck pGroundCheck;
+    PlayerHook pHook;
 
     //local
     [SerializeField] float jumpForce, maxJumpValue;
@@ -43,6 +44,7 @@ public class PlayerJump : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
+        pHook = GetComponent<PlayerHook>();
 
         //Player Input Shit 
         playerInput.actions["Jump"].started += Jump_Started;
@@ -111,6 +113,12 @@ public class PlayerJump : MonoBehaviour
             Jump();
             CoyoteTimer();
             JumpBuffering();
+        }
+
+
+        if (!pHook.isHooking && !pGroundCheck.isPlayerGrounded && Mathf.Approximately(playerInput.actions["XMovement"].ReadValue<Vector2>().x, 0f))
+        {
+            rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
         }
 
     }

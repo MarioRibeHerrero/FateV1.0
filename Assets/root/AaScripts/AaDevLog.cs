@@ -405,14 +405,59 @@ Hacer barra vida pocha--Ok
 Hacer mañana:
 Añadir "Final" pocho
 Añdir menus si eso
+Creditos: x to skip
 Trabajar en el boss
+
+Dia23:
+
+Pedir y apuntar feedback
+Añadido parar en seco al saltar
+nerfeo robo vida
+reducida duracion parry
+
+
+Ahbora no puedes hacer el parry durante Gamemanager.instance.instrongAttack;
+
+
+
+Dia24(16/12/23):
+
+Lista:
+
+Copiar al enemigo de blashphemous:
+Tempos blashphemous:
+estado: quieto,
+si te ve te persigue, te mira, te ataca, duracion ataque: 
+si hay dos, y consigues q se pongan uno encima del otro, se combierten en el mismo enemigo
+Ataca rapido, vuelve y espra un poco para volver a atacar.
+Hit:
+Stun 1 segundo--Ok
+Hit te  quita todas las animaciones--Ok
+Tempo aa--Ok
+Solucionar problema con player hit y desactivar clases.
+
+
+Solucionar bug aa arriba pega abajo antes
+
+MOdo berserk
+
+
+Cambiado layer mask del pj 
+
+Hecho nuevo sistema de camaras entero
 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 
-DARLE BUENA VUELTA AL ENEMIGO VOLADOR
+AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
+
+Enemigo dos tipos de ataque(Rojo)
+
+
+
+Mover cosas player del GameManager al playerManager
 
 
 arreglar mañana seguro el tema del parry
@@ -436,7 +481,9 @@ HAY QUE CAMBIAR CAMARA DE CARA A FUTURO(idea de hacerlo empujando para atras la 
 -----------------------------------------------------------------------------------------------------------------------------------
 Preguntas;
 
+Problema con cambio de camaras de habitaciones, que pasa si se queda en medio del colider y vuyelve
 
+preguntar si esta bn usado lo del gamemanager currentcam
 
 
 

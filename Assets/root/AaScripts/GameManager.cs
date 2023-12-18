@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public bool canPlayerMove, canPlayerRotate, isOccupied, isPlayerStunned, isPlayerInvulnerable, isPlayerParry;
     [HideInInspector] public int playerDamage;
     public int playerDefaultDamage;
-
+    public bool inStrongAttack;
     //dobleJump
     public bool canDobleJump;
 
@@ -48,6 +48,42 @@ public class GameManager : MonoBehaviour
 
     //boss
     public bool inBelzegorFight;
+
+
+    //Rooms
+    public enum Rooms
+    {
+        Room_1_1,
+
+        Room_1_2,
+        Room_1_2_1,
+        Room_1_2_2,
+
+        Room_1_3,
+        Room_1_3_1,
+
+        Room_1_4,
+        Room_1_4_1,
+
+        Room_1_5,
+        Room_1_5_1,
+        Room_1_5_2,
+
+        Room_1_6,
+
+        Room_1_7,
+
+
+    }
+    [Header("RoomTracker")]
+
+    public Rooms currentRoom;
+    public Rooms RespawnRoom;
+
+    private void Update()
+    {
+        Debug.Log(currentRoom);
+    }
 
     public void HealPlayer(int healingAmmount)
     {

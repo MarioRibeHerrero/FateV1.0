@@ -147,7 +147,7 @@ public class PlayerHealth : MonoBehaviour
         GameManager.Instance.playerHealth = 100f;
         uiManager.UpdatePlayerHealthSlider();
         GameManager.Instance.isPlayerAlive = true;
-        camFollow.ZoomIn();
+        //camFollow.ZoomIn();
         GameManager.Instance.isZoomed = false;
 
     }
