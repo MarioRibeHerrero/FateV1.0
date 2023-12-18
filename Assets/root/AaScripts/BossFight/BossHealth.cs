@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossHealth : MonoBehaviour
 {
@@ -40,9 +41,10 @@ public class BossHealth : MonoBehaviour
     {
         if (bFController.bossCurrentHealth <= 0)
         {
-
+            SceneManager.LoadScene(0);
             //Kill
             Destroy(gameObject);
+
         }
     }
 }

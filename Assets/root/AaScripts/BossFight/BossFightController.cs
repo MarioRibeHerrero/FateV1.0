@@ -8,14 +8,35 @@ public class BossFightController : MonoBehaviour
     public float bossTotalHealth, bossCurrentHealth;
     public float hitTime;
 
+    public int timeBetweenAttacks;
 
 
-    public delegate void BossAttacks();
+    private BossSpikeAttack bossSpikeAttack;
+    private BossFrisbiAttack bossFrisbiAttack;
 
-    public BossAttacks bossAttacks;
 
-    private void BossFight()
+    private void Awake()
+    {
+        bossSpikeAttack = GetComponent<BossSpikeAttack>();
+        bossFrisbiAttack = GetComponent<BossFrisbiAttack>();
+    }
+
+    public void GetRandomBossAttack()
     {
 
+        int random = Random.Range(1, 3);
+        
+        switch (random)
+        {
+
+            case 1:
+                StartCoroutine(bossSpikeAttack.SpikeAttack());
+                break;
+
+            case 2:
+                StartCoroutine(bossFrisbiAttack.FrisbiAttack());
+                break;
+
+        }
     }
 }

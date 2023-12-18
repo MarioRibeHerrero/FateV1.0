@@ -5,6 +5,7 @@ using UnityEngine;
 public class BossSpikeAttack : MonoBehaviour
 {
     private Animator anim;
+    private BossFightController fightController;
 
     [SerializeField] Transform spikeAttackPos;
 
@@ -12,6 +13,8 @@ public class BossSpikeAttack : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        fightController = GetComponent<BossFightController>();
+
     }
     public IEnumerator SpikeAttack()
     {
@@ -25,7 +28,8 @@ public class BossSpikeAttack : MonoBehaviour
         anim.SetTrigger("SpikeAttack");
 
 
-
+        yield return new WaitForSeconds(fightController.timeBetweenAttacks);
+        fightController.GetRandomBossAttack();
     }
 
 }

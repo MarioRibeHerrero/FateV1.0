@@ -471,15 +471,38 @@ Añdir Fade-In/Fate-Out--Ok(pero no se usa)
 Implementar sala rondas(espero q no de problemas xd)--OK(habra q ajustarla pero estar esta
 
 
+
+
+Empezar a trabajar en la bossfight con medidad nuevas--Ok
+
+Añadir entrada a boss + empezar bossfight--Ok
+
+Añadidos ataques boss, mas interacciones--Ok
+
+Añadido menu basico para entrar--Ok
+
+añadido delegado en player health para las interacciones(si funciona pasar a otro script)
+
+Hacer mañana:
+Añadir script mencionado arriba,
+añadir atajo
+hacer build
+dar a probar build.
+
+
+Añadir mensaje para suboir
+añadir bajada mitad pasillo
+Añadir coleccionables
+
+
+LISTA INFINITA BUGS:
+
+parry midhook
+
 Gancho bug
 Cristal deja de disparar
 Tp no funciona de arriba a abajo
 enemigo con parry a veces se buggea
-
-
-Empezar a trabajar en la bossfight con medidad nuevas--
-
-Añadir entrada a boss + empezar bossfight--
 
 
 -----------------------------------------------------------------------------------------------------------------------------------

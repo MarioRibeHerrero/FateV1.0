@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoomTracking : MonoBehaviour
@@ -15,9 +16,11 @@ public class RoomTracking : MonoBehaviour
     [Header("Using TP")]
 
     [SerializeField] Transform previusRoomPos, nextRoomPos;
+    [SerializeField] GameObject text;
 
 
     private CameraManager camManager;
+    private GameObject player;
 
 
     private void Awake()
@@ -29,12 +32,23 @@ public class RoomTracking : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            if (usingTp) UsingTp(other);
+            player = other.gameObject;
+            if (usingTp)
+            {
+                text.SetActive(true);
+                PlayerSpawnPoint.onInteract += UsingTp;
+            }
             else UsingColliders();
         }
 
     }
-    
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (usingTp) text.SetActive(false);
+        PlayerSpawnPoint.onInteract -= UsingTp;
+
+    }
 
 
 
@@ -67,9 +81,8 @@ public class RoomTracking : MonoBehaviour
             return;
         }
     }
-    private void UsingTp(Collider other)
+    private void UsingTp()
     {
-        Debug.Log("TP");
         //ENTER
         if (GameManager.Instance.currentRoom == previusRoom)
         {
@@ -81,10 +94,12 @@ public class RoomTracking : MonoBehaviour
             camManager.SetNewCamera(nextRoom);
             camManager.DisableOldCamera(previusRoom);
 
-            other.transform.position = nextRoomPos.position;
+            player.transform.position = nextRoomPos.position;
 
 
             return;
+            Debug.Log("TP");
+
         }
 
         //Exit
@@ -96,10 +111,13 @@ public class RoomTracking : MonoBehaviour
             camManager.SetNewCamera(previusRoom);
             camManager.DisableOldCamera(nextRoom);
 
-            other.transform.position = previusRoomPos.position;
+            player.transform.position = previusRoomPos.position;
 
             return;
         }
+
+        PlayerSpawnPoint.onInteract -= UsingTp;
+
     }
 
 
