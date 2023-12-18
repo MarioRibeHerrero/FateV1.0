@@ -487,11 +487,12 @@ ToDoList:
 
 BAJAR PARRY a 10
 
+PlayerNo Cae en inicio
+
 AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
 
 doble salto se puede post parry y dejandote caer de plataforma
 
-Enemigo dos tipos de ataque(Rojo)
 
 
 
@@ -509,10 +510,7 @@ cambiar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 Añadir regiones y ordenar codigo
 
-BarraVidaBoss--
 
-
-HAY QUE CAMBIAR CAMARA DE CARA A FUTURO(idea de hacerlo empujando para atras la camarea la distancia del hit del raycast)
 
 
 
