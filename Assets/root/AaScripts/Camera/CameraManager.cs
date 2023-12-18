@@ -1,4 +1,5 @@
 using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -78,6 +79,9 @@ public class CameraManager : MonoBehaviour
             case GameManager.Rooms.Room_1_5_1:
                 Room_1_5_1.SetActive(true);
                 break;
+            case GameManager.Rooms.Room_1_5_2:
+                Room_1_5_2.SetActive(true);
+                break;
 
 
 
@@ -140,6 +144,9 @@ public class CameraManager : MonoBehaviour
                 break;
             case GameManager.Rooms.Room_1_5_1:
                 Room_1_5_1.SetActive(false);
+                break;
+            case GameManager.Rooms.Room_1_5_2:
+                Room_1_5_2.SetActive(false);
                 break;
 
 

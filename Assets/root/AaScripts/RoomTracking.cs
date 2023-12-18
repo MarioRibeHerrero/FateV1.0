@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomTracking : MonoBehaviour
 {
     [SerializeField] bool usingTp;
+    [SerializeField] bool toBridge;
 
     [Header("Using colliders")]
     [SerializeField] GameManager.Rooms previusRoom, nextRoom;
@@ -39,17 +40,27 @@ public class RoomTracking : MonoBehaviour
 
     private void UsingColliders()
     {
+        Debug.Log("COLIDERS");
+        //ENTER
         if (GameManager.Instance.currentRoom == previusRoom)
         {
+            if(toBridge) GameManager.Instance.inBridge = true;
+            else Invoke(nameof(InBridgeToFalse), 3f);
+
+
+            
+
             GameManager.Instance.currentRoom = nextRoom;
             camManager.SetNewCamera(nextRoom);
             camManager.DisableOldCamera(previusRoom);
 
             return;
         }
-
+        //Exit
         if (GameManager.Instance.currentRoom == nextRoom)
         {
+            if (toBridge) Invoke(nameof(InBridgeToFalse), 3f);
+
             GameManager.Instance.currentRoom = previusRoom;
             camManager.SetNewCamera(previusRoom);
             camManager.DisableOldCamera(nextRoom);
@@ -58,9 +69,14 @@ public class RoomTracking : MonoBehaviour
     }
     private void UsingTp(Collider other)
     {
-
+        Debug.Log("TP");
+        //ENTER
         if (GameManager.Instance.currentRoom == previusRoom)
         {
+            if (toBridge) GameManager.Instance.inBridge = true;
+            else Invoke(nameof(InBridgeToFalse), 3f);
+
+
             GameManager.Instance.currentRoom = nextRoom;
             camManager.SetNewCamera(nextRoom);
             camManager.DisableOldCamera(previusRoom);
@@ -71,8 +87,11 @@ public class RoomTracking : MonoBehaviour
             return;
         }
 
+        //Exit
         if (GameManager.Instance.currentRoom == nextRoom)
         {
+            if (toBridge) Invoke(nameof(InBridgeToFalse), 3f);
+
             GameManager.Instance.currentRoom = previusRoom;
             camManager.SetNewCamera(previusRoom);
             camManager.DisableOldCamera(nextRoom);
@@ -83,4 +102,10 @@ public class RoomTracking : MonoBehaviour
         }
     }
 
+
+
+    private void InBridgeToFalse()
+    {
+        if (toBridge) GameManager.Instance.inBridge = false;
+    }
 }
