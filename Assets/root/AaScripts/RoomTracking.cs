@@ -45,6 +45,11 @@ public class RoomTracking : MonoBehaviour
         if (GameManager.Instance.currentRoom == previusRoom)
         {
             if(toBridge) GameManager.Instance.inBridge = true;
+            else Invoke(nameof(InBridgeToFalse), 3f);
+
+
+            
+
             GameManager.Instance.currentRoom = nextRoom;
             camManager.SetNewCamera(nextRoom);
             camManager.DisableOldCamera(previusRoom);
@@ -69,6 +74,8 @@ public class RoomTracking : MonoBehaviour
         if (GameManager.Instance.currentRoom == previusRoom)
         {
             if (toBridge) GameManager.Instance.inBridge = true;
+            else Invoke(nameof(InBridgeToFalse), 3f);
+
 
             GameManager.Instance.currentRoom = nextRoom;
             camManager.SetNewCamera(nextRoom);

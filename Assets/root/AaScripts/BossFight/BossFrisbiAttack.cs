@@ -17,7 +17,10 @@ public class BossFrisbiAttack : MonoBehaviour
 
     private void Update()
     {
-
+        if(Input.GetKeyDown(KeyCode.J)) 
+        {
+            StartCoroutine(FrisbiAttack());
+        }
         
     }
 
@@ -33,7 +36,7 @@ public class BossFrisbiAttack : MonoBehaviour
 
 
         yield return new WaitForSeconds(3);
-        StartCoroutine(GetComponent<BossSpikeAttack>().SpikeAttack());
+        //StartCoroutine(GetComponent<BossSpikeAttack>().SpikeAttack());
 
 
     }

@@ -463,9 +463,23 @@ hacer que tpfuncione bien--Ok
 Añadir unlockCollider--Ok
 Terminar camaras`+ camaraBridge(1.6)--Ok
 Añadir movvimiento en puete--Ok
-Añdir Fade-In/Fate-Out--
-Añadir entrada a boss + empezar bossfight--
+
+PostMañanaClase:
+
+Añdir Fade-In/Fate-Out--Ok(pero no se usa)
+
+Implementar sala rondas(espero q no de problemas xd)--OK(habra q ajustarla pero estar esta
+
+
+Gancho bug
+Cristal deja de disparar
+Tp no funciona de arriba a abajo
+enemigo con parry a veces se buggea
+
+
 Empezar a trabajar en la bossfight con medidad nuevas--
+
+Añadir entrada a boss + empezar bossfight--
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
