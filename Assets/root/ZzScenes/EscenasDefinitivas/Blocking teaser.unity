@@ -1645,8 +1645,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198028413}
   m_LocalRotation: {x: 0.005835959, y: 0.70708275, z: -0.70708275, w: -0.005835959}
-  m_LocalPosition: {x: 38.5505, y: 3.68, z: 5.235}
-  m_LocalScale: {x: 18.239918, y: 0.027450925, z: 0.94997877}
+  m_LocalPosition: {x: 42.2288, y: 3.68, z: 5.235}
+  m_LocalScale: {x: 10.889231, y: 0.027450925, z: 0.94997877}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 957640699}
@@ -2304,6 +2304,7 @@ MonoBehaviour:
   bossTotalHealth: 0
   bossCurrentHealth: 0
   hitTime: 0
+  timeBetweenAttacks: 0
 --- !u!114 &321388030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2540,7 +2541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.1, y: -4.872, z: -0.367}
+  m_LocalPosition: {x: -19.98, y: -4.441, z: -0.809}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3168,6 +3169,7 @@ MonoBehaviour:
   nextRoom: 11
   previusRoomPos: {fileID: 0}
   nextRoomPos: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &378255405
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4526,6 +4528,7 @@ MonoBehaviour:
   nextRoom: 9
   previusRoomPos: {fileID: 572394761}
   nextRoomPos: {fileID: 2111174659}
+  text: {fileID: 0}
 --- !u!65 &523706404
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5949,6 +5952,7 @@ MonoBehaviour:
   nextRoom: 6
   previusRoomPos: {fileID: 0}
   nextRoomPos: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &659427164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7383,8 +7387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos2: {fileID: 2014603875}
-  uiManager: {fileID: 28310726}
   camManager: {fileID: 1744956845}
+  bossFight: {fileID: 0}
 --- !u!1 &879549076
 GameObject:
   m_ObjectHideFlags: 0
@@ -7436,6 +7440,7 @@ MonoBehaviour:
   nextRoom: 1
   previusRoomPos: {fileID: 0}
   nextRoomPos: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &879549079
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7772,6 +7777,7 @@ MonoBehaviour:
   nextRoom: 8
   previusRoomPos: {fileID: 0}
   nextRoomPos: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &920703238
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9367,6 +9373,7 @@ MonoBehaviour:
   nextRoom: 7
   previusRoomPos: {fileID: 0}
   nextRoomPos: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1197927112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9439,6 +9446,7 @@ MonoBehaviour:
   nextRoom: 10
   previusRoomPos: {fileID: 0}
   nextRoomPos: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1200619386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11481,6 +11489,7 @@ MonoBehaviour:
   nextRoom: 3
   previusRoomPos: {fileID: 0}
   nextRoomPos: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1496750754
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13611,6 +13620,7 @@ MonoBehaviour:
   nextRoom: 5
   previusRoomPos: {fileID: 0}
   nextRoomPos: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &1966179483
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14561,6 +14571,7 @@ MonoBehaviour:
   nextRoom: 4
   previusRoomPos: {fileID: 0}
   nextRoomPos: {fileID: 0}
+  text: {fileID: 0}
 --- !u!65 &2101110383
 BoxCollider:
   m_ObjectHideFlags: 0
