@@ -19,6 +19,11 @@ public class PlayerSpawnPoint : MonoBehaviour
     //mats
     [SerializeField] Material currentM, defaultM;
 
+
+
+    public delegate void OnInteract();
+    public static OnInteract onInteract;
+
     private void Awake()
     {
         //InputActions
@@ -43,7 +48,12 @@ public class PlayerSpawnPoint : MonoBehaviour
 
     private void PlayerSpawnPoint_started(InputAction.CallbackContext obj)
     {
-        if(spawnPoint != null)
+        if (onInteract != null)
+        {
+            onInteract();
+        }
+
+        if (spawnPoint != null)
         {
             if (spawnPoint  !=  lastSpawnPoint && lastSpawnPoint != null)
             {
@@ -60,6 +70,9 @@ public class PlayerSpawnPoint : MonoBehaviour
 
         }        
     }
+
+
+
 
     private void SetNewCamOnRespawn()
     {

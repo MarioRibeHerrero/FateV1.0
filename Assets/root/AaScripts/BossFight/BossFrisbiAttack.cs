@@ -5,24 +5,17 @@ using UnityEngine;
 public class BossFrisbiAttack : MonoBehaviour
 {
     private Animator anim;
-
+    private BossFightController fightController;
 
     [SerializeField] GameObject bossBody;
     [SerializeField] Transform leftPos, rightPos;
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        fightController = GetComponent<BossFightController>();
     }
 
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.J)) 
-        {
-            StartCoroutine(FrisbiAttack());
-        }
-        
-    }
 
     public IEnumerator FrisbiAttack()
     {
@@ -34,10 +27,8 @@ public class BossFrisbiAttack : MonoBehaviour
         yield return new WaitForSeconds(1);
         AttackPlayer(random);
 
-
-        yield return new WaitForSeconds(3);
-        //StartCoroutine(GetComponent<BossSpikeAttack>().SpikeAttack());
-
+        yield return new WaitForSeconds(fightController.timeBetweenAttacks);
+        fightController.GetRandomBossAttack();
 
     }
 

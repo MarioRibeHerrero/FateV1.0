@@ -471,15 +471,38 @@ Añdir Fade-In/Fate-Out--Ok(pero no se usa)
 Implementar sala rondas(espero q no de problemas xd)--OK(habra q ajustarla pero estar esta
 
 
+
+
+Empezar a trabajar en la bossfight con medidad nuevas--Ok
+
+Añadir entrada a boss + empezar bossfight--Ok
+
+Añadidos ataques boss, mas interacciones--Ok
+
+Añadido menu basico para entrar--Ok
+
+añadido delegado en player health para las interacciones(si funciona pasar a otro script)
+
+Hacer mañana:
+Añadir script mencionado arriba,
+añadir atajo
+hacer build
+dar a probar build.
+
+
+Añadir mensaje para suboir
+añadir bajada mitad pasillo
+Añadir coleccionables
+
+
+LISTA INFINITA BUGS:
+
+parry midhook
+
 Gancho bug
 Cristal deja de disparar
 Tp no funciona de arriba a abajo
 enemigo con parry a veces se buggea
-
-
-Empezar a trabajar en la bossfight con medidad nuevas--
-
-Añadir entrada a boss + empezar bossfight--
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -487,11 +510,12 @@ ToDoList:
 
 BAJAR PARRY a 10
 
+PlayerNo Cae en inicio
+
 AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
 
 doble salto se puede post parry y dejandote caer de plataforma
 
-Enemigo dos tipos de ataque(Rojo)
 
 
 
@@ -509,10 +533,7 @@ cambiar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 Añadir regiones y ordenar codigo
 
-BarraVidaBoss--
 
-
-HAY QUE CAMBIAR CAMARA DE CARA A FUTURO(idea de hacerlo empujando para atras la camarea la distancia del hit del raycast)
 
 
 
