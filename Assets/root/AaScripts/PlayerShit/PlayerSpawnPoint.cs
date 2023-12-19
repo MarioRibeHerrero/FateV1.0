@@ -9,53 +9,29 @@ public class PlayerSpawnPoint : MonoBehaviour
     private GameObject spawnPoint;
     private GameObject lastSpawnPoint;
 
-    //InputActions
-    PlayerInput playerInput;
-
     //components
     PlayerHealth pHealth;
-
 
     //mats
     [SerializeField] Material currentM, defaultM;
 
 
-
-    public delegate void OnInteract();
-    public static OnInteract onInteract;
-
     private void Awake()
     {
-        //InputActions
-        playerInput = GetComponent<PlayerInput>();
-
-        playerInput.actions["Hook"].started += PlayerSpawnPoint_started;
         //GettingComponents
         pHealth = GetComponent<PlayerHealth>();
     }
     private void Start()
     {
-
-
-
-
         //vars
         spawnPoint = null;
         lastSpawnPoint = null;
-
-
     }
-
-    private void PlayerSpawnPoint_started(InputAction.CallbackContext obj)
+    private void SpawnPosShit()
     {
-        if (onInteract != null)
-        {
-            onInteract();
-        }
-
         if (spawnPoint != null)
         {
-            if (spawnPoint  !=  lastSpawnPoint && lastSpawnPoint != null)
+            if (spawnPoint != lastSpawnPoint && lastSpawnPoint != null)
             {
                 lastSpawnPoint.GetComponent<MeshRenderer>().material = defaultM;
             }
@@ -68,10 +44,8 @@ public class PlayerSpawnPoint : MonoBehaviour
             lastSpawnPoint = spawnPoint;
             SetNewCamOnRespawn();
 
-        }        
+        }
     }
-
-
 
 
     private void SetNewCamOnRespawn()
@@ -82,7 +56,9 @@ public class PlayerSpawnPoint : MonoBehaviour
     {
         if (other.CompareTag("SpawnPoint"))
         {
+            Debug.Log("JEJEJ"); 
             spawnPoint = other.gameObject;
+            PlayerInteract.onInteract += SpawnPosShit;
         }
     }
 
@@ -91,6 +67,8 @@ public class PlayerSpawnPoint : MonoBehaviour
         if (other.CompareTag("SpawnPoint"))
         {
             spawnPoint = null;
+            PlayerInteract.onInteract -= SpawnPosShit;
+
         }
     }
 

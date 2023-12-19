@@ -19,11 +19,17 @@ public class BossSpikeAttack : MonoBehaviour
     public IEnumerator SpikeAttack()
     {
         anim.SetTrigger("Disappear");
-        yield return new WaitForSeconds(1);
+
+        if(fightController.inSecondFace) yield return new WaitForSeconds(0.5f);
+        else yield return new WaitForSeconds(1);
+
+
         bossBody.transform.position = spikeAttackPos.transform.position;
         anim.SetTrigger("appear");
 
-        yield return new WaitForSeconds(2);
+        if (fightController.inSecondFace) yield return new WaitForSeconds(0.5f);
+        else yield return new WaitForSeconds(1);
+
         Debug.Log("GOLA");
         anim.SetTrigger("SpikeAttack");
 

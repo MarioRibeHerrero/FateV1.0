@@ -80,11 +80,6 @@ public class GameManager : MonoBehaviour
     public Rooms currentRoom;
     public Rooms RespawnRoom;
 
-    private void Update()
-    {
-        Debug.Log(currentRoom);
-    }
-
     public void HealPlayer(int healingAmmount)
     {
         playerh.HealPlayer(healingAmmount);
