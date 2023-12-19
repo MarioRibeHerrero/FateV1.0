@@ -171,8 +171,9 @@ public class PlayerHealth : MonoBehaviour
 
     private void SetCameraToRespawnCamera()
     {
-        camManager.SetNewCamera(GameManager.Instance.RespawnRoom);
         camManager.DisableOldCamera(GameManager.Instance.currentRoom);
+        camManager.SetNewCamera(GameManager.Instance.RespawnRoom);
+        
         GameManager.Instance.currentRoom = GameManager.Instance.RespawnRoom;
 
     }

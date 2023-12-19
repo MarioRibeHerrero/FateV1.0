@@ -484,9 +484,9 @@ Añadido menu basico para entrar--Ok
 añadido delegado en player health para las interacciones(si funciona pasar a otro script)
 
 Hacer mañana:
-Añadir script mencionado arriba,
-añadir atajo
-hacer build
+Añadir script mencionado arriba,--Ok
+añadir atajo--
+hacer build--
 dar a probar build.
 
 
@@ -540,7 +540,10 @@ Añadir regiones y ordenar codigo
 -----------------------------------------------------------------------------------------------------------------------------------
 Preguntas;
 
-Problema con cambio de camaras de habitaciones, que pasa si se queda en medio del colider y vuyelve
+Problema con cambio de camaras de habitaciones, que pasa si se queda en medio del colider y vuyelve:
+
+Usar ontriggerExit
+-----------------
 
 preguntar si esta bn usado lo del gamemanager currentcam
 

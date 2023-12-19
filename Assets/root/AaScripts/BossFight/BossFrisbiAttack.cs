@@ -20,11 +20,16 @@ public class BossFrisbiAttack : MonoBehaviour
     public IEnumerator FrisbiAttack()
     {
         anim.SetTrigger("Disappear");
-        yield return new WaitForSeconds(1);
-        int random = Random.Range(1, 3);
+
+        if (fightController.inSecondFace) yield return new WaitForSeconds(0.5f);
+        else yield return new WaitForSeconds(1); int random = Random.Range(1, 3);
+
         SetBossToPosition(random);
         anim.SetTrigger("appear");
-        yield return new WaitForSeconds(1);
+
+        if (fightController.inSecondFace) yield return new WaitForSeconds(0.5f);
+        else yield return new WaitForSeconds(1);
+
         AttackPlayer(random);
 
         yield return new WaitForSeconds(fightController.timeBetweenAttacks);

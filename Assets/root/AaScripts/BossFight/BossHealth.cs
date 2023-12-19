@@ -15,18 +15,20 @@ public class BossHealth : MonoBehaviour
     [SerializeField] float hitTime;
 
 
-    private int bossHp;
-
-   
+    private int playerHit;
     
+
+
+
+
     void Start()
     {
 
-        bossHp = GameManager.Instance.playerDamage;
+        playerHit = GameManager.Instance.playerDamage;
 
 
 
-        bFController.bossTotalHealth = totalHits * bossHp;
+        bFController.bossTotalHealth = totalHits * playerHit;
         bFController.bossCurrentHealth = bFController.bossTotalHealth;
 
 
@@ -39,6 +41,12 @@ public class BossHealth : MonoBehaviour
 
     public void CheckHealth()
     {
+        if(bFController.bossCurrentHealth <= hitsFirstFace * playerHit)
+        {
+            //Enter second faece
+            bFController.inSecondFace = true;
+
+        }
         if (bFController.bossCurrentHealth <= 0)
         {
             SceneManager.LoadScene(0);

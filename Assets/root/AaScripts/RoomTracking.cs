@@ -36,7 +36,7 @@ public class RoomTracking : MonoBehaviour
             if (usingTp)
             {
                 text.SetActive(true);
-                PlayerSpawnPoint.onInteract += UsingTp;
+                PlayerInteract.onInteract += UsingTp;
             }
             else UsingColliders();
         }
@@ -46,7 +46,7 @@ public class RoomTracking : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (usingTp) text.SetActive(false);
-        PlayerSpawnPoint.onInteract -= UsingTp;
+        PlayerInteract.onInteract -= UsingTp;
 
     }
 
@@ -116,7 +116,7 @@ public class RoomTracking : MonoBehaviour
             return;
         }
 
-        PlayerSpawnPoint.onInteract -= UsingTp;
+        PlayerInteract.onInteract -= UsingTp;
 
     }
 

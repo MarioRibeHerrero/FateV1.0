@@ -14,7 +14,7 @@ public class BossFightController : MonoBehaviour
     private BossSpikeAttack bossSpikeAttack;
     private BossFrisbiAttack bossFrisbiAttack;
 
-
+    public bool inSecondFace;
     private void Awake()
     {
         bossSpikeAttack = GetComponent<BossSpikeAttack>();
@@ -39,4 +39,9 @@ public class BossFightController : MonoBehaviour
 
         }
     }
+
+
+
+
+
 }

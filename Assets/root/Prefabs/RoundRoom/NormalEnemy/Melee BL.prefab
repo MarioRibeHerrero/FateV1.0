@@ -220,7 +220,7 @@ MonoBehaviour:
   attackLayer:
     serializedVersion: 2
     m_Bits: 8
-  patience: 0.3
+  patience: 0.1
 --- !u!114 &6177310882747230287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +575,7 @@ Transform:
   - {fileID: 670951497454026734}
   - {fileID: 24382616620733065}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3512913615768527164
 Animator:
@@ -611,8 +611,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
-  health: 60
-  healthOnRespawn: 60
+  health: 90
+  healthOnRespawn: 90
   playerInMovingZone: 0
 --- !u!114 &5755310690028575329
 MonoBehaviour:
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e00512260e22ca47b2660e489dfd7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageTaken: 20
+  damageTaken: 12
   stunTime: 1
   pushBackForce: 18
   pushBackForceOnCollision: 30

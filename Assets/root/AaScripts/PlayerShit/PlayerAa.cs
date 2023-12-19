@@ -7,8 +7,6 @@ public class PlayerAa : MonoBehaviour
 {
     PlayerInput playerInput;
 
-    [SerializeField] float upDifference;
-
     private Animator anim;
 
     //aaCombo
@@ -42,27 +40,9 @@ public class PlayerAa : MonoBehaviour
 
     private void PlayerAa_started(InputAction.CallbackContext obj)
     {
+        AutoAttackCombo();
 
-            if (GetInputs().y >= upDifference && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
-            {
-                anim.SetTrigger("AaUp");
-                GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
-            Debug.Log("ARRIBA");
-            }
-            else
-            {
-                AutoAttackCombo();
-
-            }
-
-
-
-        if (GetInputs().y >= upDifference  && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
-        {
-            anim.SetTrigger("AaUpAir");
-            GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
-        }
-        else if (Mathf.Abs(GetInputs().x) >= 0 && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
+        if (Mathf.Abs(GetInputs().x) >= 0 && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
         {
             anim.SetTrigger("AaAir");
             GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
