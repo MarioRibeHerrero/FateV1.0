@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class ShortCutHitteableObj : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject go;
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
+        if (other.CompareTag("PlayerAa"))
+        {
+            go.SetActive(true);
+            Destroy(gameObject);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

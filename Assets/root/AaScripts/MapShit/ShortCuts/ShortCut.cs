@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class ShortCut : MonoBehaviour
 {
-
-    [SerializeField] GameObject plataform;
-    public void UnlockPath()
+    // Start is called before the first frame update
+    void Start()
     {
-        plataform.SetActive(false);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }

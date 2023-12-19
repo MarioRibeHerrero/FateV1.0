@@ -21,6 +21,7 @@ public class ProyectileDamage : MonoBehaviour, IDamageable
             {
 
                 TakeDamage(10);
+                other.GetComponent<PlayerHealth>().HealPlayer(15);
 
             }
             else
