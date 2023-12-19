@@ -82,11 +82,11 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     private void Reset()
     {
+        Debug.Log("KEKE");
         stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
         canAttack = true;
         //transform.position = startingPosition;
         
-        animator.SetTrigger("Reset");
     }
 
 
