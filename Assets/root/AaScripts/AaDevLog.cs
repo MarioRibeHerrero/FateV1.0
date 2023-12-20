@@ -484,10 +484,23 @@ Añadido menu basico para entrar--Ok
 añadido delegado en player health para las interacciones(si funciona pasar a otro script)
 
 Hacer mañana:
+
+
+Dia26(19/12/23):
 Añadir script mencionado arriba,--Ok
-añadir atajo--
+añadir atajo--Ok
+dar a probar build.--Ok
+Arreglar enemigos para usar solo un prefab--Ok
+AñadirAnimacionEntryEnemigo--Ok
+arreglado Tp no funciona de arriba a abajo--Ok
+Añadir interactuarPara tp--Ok
+
+
+
+
+Dia26(20/12/23):
+
 hacer build--
-dar a probar build.
 
 
 Añadir mensaje para suboir
@@ -501,7 +514,6 @@ parry midhook
 
 Gancho bug
 Cristal deja de disparar
-Tp no funciona de arriba a abajo
 enemigo con parry a veces se buggea
 
 
