@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public bool canPlayerMove, canPlayerRotate, isOccupied, isPlayerStunned, isPlayerInvulnerable, isPlayerParry;
     [HideInInspector] public int playerDamage;
     public int playerDefaultDamage;
-
+    public bool inStrongAttack;
     //dobleJump
     public bool canDobleJump;
 
