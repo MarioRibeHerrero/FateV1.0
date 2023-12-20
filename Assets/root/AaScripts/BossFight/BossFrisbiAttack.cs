@@ -5,39 +5,35 @@ using UnityEngine;
 public class BossFrisbiAttack : MonoBehaviour
 {
     private Animator anim;
-
+    private BossFightController fightController;
 
     [SerializeField] GameObject bossBody;
     [SerializeField] Transform leftPos, rightPos;
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        fightController = GetComponent<BossFightController>();
     }
 
 
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            StartCoroutine("FrisbiAttack");
-
-        }
-    }
 
     public IEnumerator FrisbiAttack()
     {
         anim.SetTrigger("Disappear");
-        yield return new WaitForSeconds(1);
-        int random = Random.Range(1, 3);
+
+        if (fightController.inSecondFace) yield return new WaitForSeconds(0.5f);
+        else yield return new WaitForSeconds(1); int random = Random.Range(1, 3);
+
         SetBossToPosition(random);
         anim.SetTrigger("appear");
-        yield return new WaitForSeconds(1);
+
+        if (fightController.inSecondFace) yield return new WaitForSeconds(0.5f);
+        else yield return new WaitForSeconds(1);
+
         AttackPlayer(random);
 
-
-        yield return new WaitForSeconds(3);
-        StartCoroutine(GetComponent<BossSpikeAttack>().SpikeAttack());
-
+        yield return new WaitForSeconds(fightController.timeBetweenAttacks);
+        fightController.GetRandomBossAttack();
 
     }
 

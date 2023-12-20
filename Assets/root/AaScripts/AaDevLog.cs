@@ -405,14 +405,160 @@ Hacer barra vida pocha--Ok
 Hacer mañana:
 Añadir "Final" pocho
 Añdir menus si eso
+Creditos: x to skip
 Trabajar en el boss
 
+Dia23:
+
+Pedir y apuntar feedback
+Añadido parar en seco al saltar
+nerfeo robo vida
+reducida duracion parry
+
+
+Ahbora no puedes hacer el parry durante Gamemanager.instance.instrongAttack;
+
+
+
+Dia24(16/12/23):
+
+Lista:
+
+Copiar al enemigo de blashphemous:
+Tempos blashphemous:
+estado: quieto,
+si te ve te persigue, te mira, te ataca, duracion ataque: 
+si hay dos, y consigues q se pongan uno encima del otro, se combierten en el mismo enemigo
+Ataca rapido, vuelve y espra un poco para volver a atacar.
+Hit:
+Stun 1 segundo--Ok
+Hit te  quita todas las animaciones--Ok
+Tempo aa--Ok
+Solucionar problema con player hit y desactivar clases.
+
+
+Solucionar bug aa arriba pega abajo antes
+
+MOdo berserk
+
+
+Cambiado layer mask del pj 
+
+Hecho nuevo sistema de camaras entero
+
+Nuevo sistema TP
+Hacer mañana, mejorar y terminar todo camaras 
+
+
+
+Dia25(18/12/23):
+
+Arreglar respawn con camaras:--Ok
+para hacer eso, he usado los metodos que ya tenia en CameraManager, cuando pones el respawnpoint, pones currentcam as respawnposcam, y luego cunado mueres usando
+el metodo de CameraMangaer, desactivo la currentCam y activo la Respawnposcam, luego pongo currentcam a respawncam
+
+Arreglar gancho feedbackVisual--Ok
+Arreglar slide plataformas sala estatua--Ok
+hacer que tpfuncione bien--Ok
+Añadir unlockCollider--Ok
+Terminar camaras`+ camaraBridge(1.6)--Ok
+Añadir movvimiento en puete--Ok
+
+PostMañanaClase:
+
+Añdir Fade-In/Fate-Out--Ok(pero no se usa)
+
+Implementar sala rondas(espero q no de problemas xd)--OK(habra q ajustarla pero estar esta
+
+
+
+
+Empezar a trabajar en la bossfight con medidad nuevas--Ok
+
+Añadir entrada a boss + empezar bossfight--Ok
+
+Añadidos ataques boss, mas interacciones--Ok
+
+Añadido menu basico para entrar--Ok
+
+añadido delegado en player health para las interacciones(si funciona pasar a otro script)
+
+Hacer mañana:
+
+
+Dia26(19/12/23):
+Añadir script mencionado arriba,--Ok
+añadir atajo--Ok
+dar a probar build.--Ok
+Arreglar enemigos para usar solo un prefab--Ok
+AñadirAnimacionEntryEnemigo--Ok
+arreglado Tp no funciona de arriba a abajo--Ok
+Añadir interactuarPara tp--Ok
+
+
+
+
+Dia27(20/12/23):
+Arreglado colliders
+añadidas plataformas del gancho + ajustado sus coliders
+añadidos enemigos al mapa
+ajustado tp al boss y al segundo piso
+
+
+probar build y arreglar bugs:
+hacer q trampas se vean--Ok
+añadir algo de sentido a la caida--Ok
+hook te para a mitad--
+subit enemigos --Ok
+CorregirZfight--Ok
+
+
+al llegar a casa:
+terminar menus(solo un mapa a la vez) se abre menu desde el player
+Importar assets lucia
+
+
+Añadir Mnues
+
+
+
+
+
+hacer build--
+
+
+Añadir mensaje para suboir
+añadir bajada mitad pasillo
+Añadir coleccionables
+
+
+LISTA INFINITA BUGS:
+
+parry midhook
+
+Gancho bug
+Cristal deja de disparar
+enemigo con parry a veces se buggea
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 
-DARLE BUENA VUELTA AL ENEMIGO VOLADOR
+Cambiar punete a Action map distinto
+
+
+BAJAR PARRY a 10
+
+PlayerNo Cae en inicio
+
+AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
+
+doble salto se puede post parry y dejandote caer de plataforma
+
+
+
+
+Mover cosas player del GameManager al playerManager
 
 
 arreglar mañana seguro el tema del parry
@@ -426,17 +572,19 @@ cambiar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
 Añadir regiones y ordenar codigo
 
-BarraVidaBoss--
 
-
-HAY QUE CAMBIAR CAMARA DE CARA A FUTURO(idea de hacerlo empujando para atras la camarea la distancia del hit del raycast)
 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 Preguntas;
 
+Problema con cambio de camaras de habitaciones, que pasa si se queda en medio del colider y vuyelve:
 
+Usar ontriggerExit
+-----------------
+
+preguntar si esta bn usado lo del gamemanager currentcam
 
 
 

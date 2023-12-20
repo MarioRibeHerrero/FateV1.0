@@ -9,43 +9,29 @@ public class PlayerSpawnPoint : MonoBehaviour
     private GameObject spawnPoint;
     private GameObject lastSpawnPoint;
 
-    //InputActions
-    PlayerInput playerInput;
-
     //components
     PlayerHealth pHealth;
-
 
     //mats
     [SerializeField] Material currentM, defaultM;
 
+
     private void Awake()
     {
-        //InputActions
-        playerInput = GetComponent<PlayerInput>();
-
-        playerInput.actions["Hook"].started += PlayerSpawnPoint_started;
         //GettingComponents
         pHealth = GetComponent<PlayerHealth>();
     }
     private void Start()
     {
-
-
-
-
         //vars
         spawnPoint = null;
         lastSpawnPoint = null;
-
-
     }
-
-    private void PlayerSpawnPoint_started(InputAction.CallbackContext obj)
+    private void SpawnPosShit()
     {
-        if(spawnPoint != null)
+        if (spawnPoint != null)
         {
-            if (spawnPoint  !=  lastSpawnPoint && lastSpawnPoint != null)
+            if (spawnPoint != lastSpawnPoint && lastSpawnPoint != null)
             {
                 lastSpawnPoint.GetComponent<MeshRenderer>().material = defaultM;
             }
@@ -56,15 +42,22 @@ public class PlayerSpawnPoint : MonoBehaviour
 
 
             lastSpawnPoint = spawnPoint;
+            SetNewCamOnRespawn();
 
-        }        
+        }
     }
 
+
+    private void SetNewCamOnRespawn()
+    {
+        GameManager.Instance.RespawnRoom = GameManager.Instance.currentRoom;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("SpawnPoint"))
         {
             spawnPoint = other.gameObject;
+            PlayerInteract.onInteract += SpawnPosShit;
         }
     }
 
@@ -73,6 +66,8 @@ public class PlayerSpawnPoint : MonoBehaviour
         if (other.CompareTag("SpawnPoint"))
         {
             spawnPoint = null;
+            PlayerInteract.onInteract -= SpawnPosShit;
+
         }
     }
 

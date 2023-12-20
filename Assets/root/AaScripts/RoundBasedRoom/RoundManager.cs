@@ -12,7 +12,11 @@ public class RoundManager : MonoBehaviour
 
 
     //spaweDifferentEnemies
-    [SerializeField] GameObject[] meleeEnemies;
+    [SerializeField] GameObject meleeEnemie;
+    [SerializeField] Transform[] meleeSpawnPos;
+    private Transform lasPos;
+    [SerializeField] List<Transform> usedPositions = new List<Transform>();
+
 
 
     //cristal
@@ -52,10 +56,10 @@ public class RoundManager : MonoBehaviour
     public void CreateEnemyPool()
     {
         //instantiate and desactivar enemies
-        if (meleeEnemies.Length == 0) return;
-        foreach (GameObject enemy in meleeEnemies)
+
+        for (int i = 0; i < 4; i++)
         {
-            GameObject enemyspawned = Instantiate(enemy);
+            GameObject enemyspawned = Instantiate(meleeEnemie);
             normalEnemyList.Add(enemyspawned);
             enemyspawned.SetActive(false);
         }
@@ -81,12 +85,29 @@ public class RoundManager : MonoBehaviour
 
         yield return new WaitForSeconds(waitTime);
         currentRound = newRound;
+        usedPositions.Clear();
 
 
         //normalEnemySpawner
         for (int i = 0; i < newRound + 1; i++)
         {
             GameObject currentEnemy;
+
+            int random;
+
+
+
+            //random = Random.Range(0, meleeSpawnPos.Length);
+
+            do
+            {
+                random = Random.Range(0, meleeSpawnPos.Length);
+            } while (usedPositions.Contains(meleeSpawnPos[random]));
+
+            usedPositions.Add(meleeSpawnPos[random]);
+
+
+
 
             //we spawn it
             do
@@ -97,10 +118,16 @@ public class RoundManager : MonoBehaviour
             //we reset it
             currentEnemy.SetActive(true);
             currentEnemy.GetComponent<MeleeEnemyState>().CallReset();
+            currentEnemy.transform.position = meleeSpawnPos[random].position;
+            currentEnemy.GetComponent<Animator>().SetTrigger("Entry");
+
             //add it to the list so we know when to pass round
             roundRoomEnemies.Add(currentEnemy);
 
         }
+
+
+
 
         //cristal
 
@@ -109,7 +136,6 @@ public class RoundManager : MonoBehaviour
 
 
             case 1:
-                Debug.Log("KEK0");
 
                 isCristalDestroyed = true;
                 break;
