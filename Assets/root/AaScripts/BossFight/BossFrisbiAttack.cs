@@ -65,4 +65,9 @@ public class BossFrisbiAttack : MonoBehaviour
 
         }
     }
+
+    public void Reset()
+    {
+        StopAllCoroutines();
+    }
 }

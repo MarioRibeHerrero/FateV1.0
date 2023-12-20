@@ -65,6 +65,7 @@ public class PlayerHealth : MonoBehaviour
                 //-----------------
             }
 
+            if (GameManager.Instance.inBelzegorFight) GameObject.FindAnyObjectByType<BossHealth>().Reset();
             GameManager.Instance.isPlayerAlive = false;
             DesactivateAllPlayerFuntionsAndKill();
             StartCoroutine(RevivePlayer());

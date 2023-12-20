@@ -36,6 +36,12 @@ public class BossHealth : MonoBehaviour
     }
 
 
+    public void Reset()
+    {
+        GetComponent<BossSpikeAttack>().Reset();
+        GetComponent<BossFrisbiAttack>().Reset();
+        GetComponent<BossUiManager>().DisableHealth();
+    }
 
 
 

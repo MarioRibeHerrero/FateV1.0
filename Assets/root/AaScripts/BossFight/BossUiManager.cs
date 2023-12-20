@@ -34,4 +34,9 @@ public class BossUiManager : MonoBehaviour
         bossHealthGo.SetActive(true);
         InvokeRepeating("UpdateHealth", 0, 0.05f);
     }
+    public void DisableHealth()
+    {
+        bossHealthGo.SetActive(false);
+
+    }
 }

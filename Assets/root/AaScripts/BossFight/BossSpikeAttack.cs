@@ -37,5 +37,9 @@ public class BossSpikeAttack : MonoBehaviour
         yield return new WaitForSeconds(fightController.timeBetweenAttacks);
         fightController.GetRandomBossAttack();
     }
+    public void Reset()
+    {
+        StopAllCoroutines();
+    }
 
 }
