@@ -414,7 +414,7 @@
             "id": "e85893c8-8f73-4f7b-b407-1c1ee48c2d62",
             "actions": [
                 {
-                    "name": "Pause",
+                    "name": "CloseMenu",
                     "type": "Button",
                     "id": "bb41134e-0d04-4daf-8625-ec904b6c2aa5",
                     "expectedControlType": "Button",
@@ -431,7 +431,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause",
+                    "action": "CloseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -442,7 +442,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Pause",
+                    "action": "CloseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
