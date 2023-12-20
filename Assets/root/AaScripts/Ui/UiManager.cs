@@ -70,6 +70,11 @@ public class UiManager : MonoBehaviour
 
     public void SmallBug()
     {
+        playerInput.SwitchCurrentActionMap("PlayerActions");
+
+        hud.SetActive(true);
+        optionsMenu.SetActive(false);
+        Time.timeScale = 1f;
         health.TakeDamage(1000);
     }
 
