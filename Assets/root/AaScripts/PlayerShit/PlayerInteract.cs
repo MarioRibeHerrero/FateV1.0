@@ -23,7 +23,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void PlayerSpawnPoint_started(InputAction.CallbackContext obj)
     {
-        Debug.Log("JUNALSDM");
+        
 
         if (onInteract != null)
         {

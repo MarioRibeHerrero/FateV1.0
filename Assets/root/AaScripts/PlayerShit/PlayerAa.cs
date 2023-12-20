@@ -61,7 +61,6 @@ public class PlayerAa : MonoBehaviour
                 {
                     anim.SetInteger("AaCombo", 0);
                     anim.SetTrigger("Aa");
-                    Debug.Log("COMBO1");
 
                     GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
                 }

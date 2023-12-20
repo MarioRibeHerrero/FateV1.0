@@ -56,7 +56,6 @@ public class PlayerSpawnPoint : MonoBehaviour
     {
         if (other.CompareTag("SpawnPoint"))
         {
-            Debug.Log("JEJEJ"); 
             spawnPoint = other.gameObject;
             PlayerInteract.onInteract += SpawnPosShit;
         }

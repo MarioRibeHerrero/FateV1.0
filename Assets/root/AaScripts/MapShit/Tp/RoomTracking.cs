@@ -54,7 +54,6 @@ public class RoomTracking : MonoBehaviour
 
     private void UsingColliders()
     {
-        Debug.Log("COLIDERS");
         //ENTER
         if (GameManager.Instance.currentRoom == previusRoom)
         {

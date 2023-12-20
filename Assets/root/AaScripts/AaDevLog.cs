@@ -498,7 +498,31 @@ Añadir interactuarPara tp--Ok
 
 
 
-Dia26(20/12/23):
+Dia27(20/12/23):
+Arreglado colliders
+añadidas plataformas del gancho + ajustado sus coliders
+añadidos enemigos al mapa
+ajustado tp al boss y al segundo piso
+
+
+probar build y arreglar bugs:
+hacer q trampas se vean--Ok
+añadir algo de sentido a la caida--Ok
+hook te para a mitad--
+subit enemigos --Ok
+CorregirZfight--Ok
+
+
+al llegar a casa:
+terminar menus(solo un mapa a la vez) se abre menu desde el player
+Importar assets lucia
+
+
+Añadir Mnues
+
+
+
+
 
 hacer build--
 
@@ -519,6 +543,9 @@ enemigo con parry a veces se buggea
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
+
+Cambiar punete a Action map distinto
+
 
 BAJAR PARRY a 10
 

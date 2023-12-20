@@ -59,7 +59,6 @@ public class RoundManager : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            Debug.Log("GHOLA");
             GameObject enemyspawned = Instantiate(meleeEnemie);
             normalEnemyList.Add(enemyspawned);
             enemyspawned.SetActive(false);
@@ -137,7 +136,6 @@ public class RoundManager : MonoBehaviour
 
 
             case 1:
-                Debug.Log("KEK0");
 
                 isCristalDestroyed = true;
                 break;
