@@ -514,14 +514,12 @@ CorregirZfight--Ok
 
 
 al llegar a casa:
-terminar menus(solo un mapa a la vez) se abre menu desde el player
+
 Importar assets lucia
 
 
-Añadir Mnues
 
-
-
+ 
 
 
 hacer build--
