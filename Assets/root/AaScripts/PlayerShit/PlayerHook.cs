@@ -74,7 +74,7 @@ public class PlayerHook : MonoBehaviour
     }
     private void Hook_started(InputAction.CallbackContext obj)
     {
-        if(inRangeOfHook && canHook && !GameManager.Instance.isOccupied)
+        if(inRangeOfHook && canHook)
         {
             //the player cant jump or secondJump after using hook
             pJump.isJumping = true;
