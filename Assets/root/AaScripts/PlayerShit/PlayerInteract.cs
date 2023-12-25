@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInteract : MonoBehaviour
 {
-
+    [SerializeField] UiManager uiManager;
     //InputActions
     PlayerInput playerInput;
 
@@ -18,7 +18,17 @@ public class PlayerInteract : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
 
         playerInput.actions["Hook"].started += PlayerSpawnPoint_started;
+        playerInput.actions["OpenOptions"].started += PlayerInteract_started;
     }
+
+    private void PlayerInteract_started(InputAction.CallbackContext obj)
+    {
+        uiManager.OpenOptionsMenu();
+    }
+
+
+
+    
 
 
     private void PlayerSpawnPoint_started(InputAction.CallbackContext obj)
