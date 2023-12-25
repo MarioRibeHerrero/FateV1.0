@@ -364,13 +364,6 @@ si te mueres se reinicia todo bienm, despues comprobar si hace las rondas bn(sin
 
 
 
-
-*/
-#endregion
-/*
-
-
-
 Dia 21:
 rafaga aa.--Ok(de momento)
 hacer que enemigo volador se mueva--Ok
@@ -523,69 +516,62 @@ Añadir Mnues
 
 
 
-
-hacer build--
-
-
-Añadir mensaje para suboir
-añadir bajada mitad pasillo
-Añadir coleccionables
+*/
+#endregion
+/*
 
 
-LISTA INFINITA BUGS:
 
-parry midhook
 
-Gancho bug
-Cristal deja de disparar
-enemigo con parry a veces se buggea
+---ViajeChina--
+Objetivos:
+limpiar codigo
+resolver dudas y cosas metidas en la todolist
+
+
+
+
+Dia28(Desde el avion xd):
+Arreglar AaDevLog--Ok
+Añadir delegado ondeath para el player--Ok(funcional en RoundManager)
+Borrar Scripts inutiles--
+
+
+
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 
-Cambiar punete a Action map distinto
+-Cambiar punete a Action map distinto
+-Mover cosas player del GameManager al playerManager
+-Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
+-Añadir regiones y ordenar codigo
 
 
-BAJAR PARRY a 10
+-----------------------------------------------------------------------------------------------------------------------------------
 
-PlayerNo Cae en inicio
-
-AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
-
-doble salto se puede post parry y dejandote caer de plataforma
-
-
-
-
-Mover cosas player del GameManager al playerManager
-
-
-arreglar mañana seguro el tema del parry
-
-
-
-cambiar todos los sccrips del melee por nuevos(hechos la mtad o asi)
-
-
-
-Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
-Añadir regiones y ordenar codigo
-
-
+Cosas que hay que hacer:
+-Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
+-Doble salto se deberia poder hacer post parry y dejandote caer de plataforma
+-PlayerNo Cae en inicio
+-Hacer parry instant
+-Arreglar Parry midhook
+-Arreglar bugs gancho(Al hacer parry encima plataorma ya no funciona, si te pegan en mitad problema, etc.)
+-Arreglar enemigo melee a veces con parry a veces se buggea y se queda perma bug.
+-Añadir coleccionables
 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 Preguntas;
-
-Problema con cambio de camaras de habitaciones, que pasa si se queda en medio del colider y vuyelve:
-
+-Para el Ui del parry:
+AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
+-Problema con triggers y pasar entre rondas:
+Problema con cambio de camaras de habitaciones, que pasa si se queda en medio del colider y vuyelve.
+Solucion?
 Usar ontriggerExit
------------------
-
-preguntar si esta bn usado lo del gamemanager currentcam
-
 
 
 

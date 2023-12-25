@@ -23,15 +23,16 @@ public class BossUiManager : MonoBehaviour
     private void UpdateHealth()
     {
         bossHealthImage.fillAmount = bFController.bossCurrentHealth / bFController.bossTotalHealth;
-
-        Debug.Log("numeor uno" + bFController.bossCurrentHealth + "numeor dos" + bFController.bossTotalHealth + "="+  bFController.bossCurrentHealth / bFController.bossTotalHealth);
-
-
-
     }
     public void EnableHealth()
     {
         bossHealthGo.SetActive(true);
         InvokeRepeating("UpdateHealth", 0, 0.05f);
+    }
+
+    public void DisableHealth()
+    {
+        bossHealthGo.SetActive(false);
+        CancelInvoke("UpdateHealth");
     }
 }

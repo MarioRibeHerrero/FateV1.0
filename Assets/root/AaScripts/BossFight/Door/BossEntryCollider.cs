@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class BossEntryCollider : MonoBehaviour
 {
+
+    #region Vars
     [SerializeField] Transform pos2;
     [SerializeField] CameraManager camManager;
 
     [SerializeField] GameObject bossFight;
     private BossUiManager uiManager;
     private BossFightController bossFightController;
-
+    #endregion 
 
     private void Awake()
     {
@@ -21,30 +23,28 @@ public class BossEntryCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
-            TpPlayerIntoBossFight(other);
-
+            if(!bossFightController.inBelzegorFight)
+            {
+                TpPlayerIntoBossFight(other);
+                //StartBossFight
+                bossFightController.StartBossFight();
+            }
         }
     }
 
 
     private void TpPlayerIntoBossFight(Collider other)
     {
+        //CamShit
         camManager.DisableOldCamera(GameManager.Instance.currentRoom);
         GameManager.Instance.currentRoom = GameManager.Rooms.Room_1_7;
         camManager.SetNewCamera(GameManager.Instance.currentRoom);
 
-
-        GameManager.Instance.inBelzegorFight = true;
+        //Tp player
         other.transform.position = pos2.transform.position;
         uiManager.EnableHealth();
-        Invoke(nameof(StartBossFight), 2f);
-    }
-
-
-    private void StartBossFight()
-    {
-        bossFightController.GetRandomBossAttack();
 
     }
+
+
 }

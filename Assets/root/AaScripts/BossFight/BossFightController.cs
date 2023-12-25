@@ -4,28 +4,32 @@ using UnityEngine;
 
 public class BossFightController : MonoBehaviour
 {
-    public bool inBossFight, bossFightFinished;
+    public bool inBelzegorFight, bossFightFinished;
     public float bossTotalHealth, bossCurrentHealth;
     public float hitTime;
-
     public int timeBetweenAttacks;
+    public bool inSecondFace;
 
 
+    //AttackReferences
     private BossSpikeAttack bossSpikeAttack;
     private BossFrisbiAttack bossFrisbiAttack;
+    private BossUiManager bossUiManager;
 
-    public bool inSecondFace;
+    //PlayerReference
+    private PlayerHealth pHealth;
+
     private void Awake()
     {
+        pHealth = GameObject.FindAnyObjectByType<PlayerHealth>();
+
         bossSpikeAttack = GetComponent<BossSpikeAttack>();
         bossFrisbiAttack = GetComponent<BossFrisbiAttack>();
     }
 
     public void GetRandomBossAttack()
     {
-
         int random = Random.Range(1, 3);
-        
         switch (random)
         {
 
@@ -41,7 +45,21 @@ public class BossFightController : MonoBehaviour
     }
 
 
+    public void StartBossFight()
+    {
+        pHealth.onPlayerDeath += ResetBossFight;
+        inBelzegorFight = true;
+        Invoke(nameof(GetRandomBossAttack), 2f);
+    }
 
+    public void ResetBossFight()
+    {
+        StopCoroutine(bossFrisbiAttack.FrisbiAttack());
+        StopCoroutine(bossSpikeAttack.SpikeAttack());
+        bossUiManager.DisableHealth();
 
+        pHealth.onPlayerDeath -= ResetBossFight;
+
+    }
 
 }

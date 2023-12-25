@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BossFrisbiAttack : MonoBehaviour
@@ -31,6 +32,8 @@ public class BossFrisbiAttack : MonoBehaviour
         else yield return new WaitForSeconds(1);
 
         AttackPlayer(random);
+
+        if (!fightController.inBelzegorFight) StopCoroutine(FrisbiAttack());
 
         yield return new WaitForSeconds(fightController.timeBetweenAttacks);
         fightController.GetRandomBossAttack();

@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Accessibility;
 using UnityEngine.UIElements;
 
 public class RoundManager : MonoBehaviour
 {
     #region Variables
 
-
+    private PlayerHealth phealth;
 
     //spaweDifferentEnemies
     [SerializeField] GameObject meleeEnemie;
     [SerializeField] Transform[] meleeSpawnPos;
-    private Transform lasPos;
     [SerializeField] List<Transform> usedPositions = new List<Transform>();
 
 
@@ -33,7 +33,7 @@ public class RoundManager : MonoBehaviour
     public int currentRound;
     public bool inRoundRoom;
     public List<GameObject> roundRoomEnemies = new List<GameObject>();
-    public bool isCristalDestroyed;
+    public bool isCristalDestroyed, areDoorsClosed;
 
 
     [HideInInspector] public GameObject cristal;
@@ -42,10 +42,78 @@ public class RoundManager : MonoBehaviour
     #endregion
 
 
+    public void StartRoundRoom()
+    {
+        phealth.onPlayerDeath += ResetRoundRoom;
+        areDoorsClosed = true;
+        GetComponent<Animator>().SetTrigger("CloseDoors");
+        CallUpdateRound(1, 2);
+        inRoundRoom = true;
+    }
+
+    public void EndRoundRoom()
+    {
+        phealth.onPlayerDeath -= ResetRoundRoom;
+        Animator animator = GetComponent<Animator>();
+        animator.SetTrigger("OpenDoors");
+        inRoundRoom = false;
+    }
+
+    #region RoomReset
+    public void ResetRoundRoom()
+    {
+        //ResetearLaRoom
+        inRoundRoom = false;
+        GetComponent<Animator>().SetTrigger("OpenDoors");
+        areDoorsClosed = false;
+
+        ResetEnemies();
+        ResetCristal();
+    }
+
+    private void ResetCristal()
+    {
+        if (!isCristalDestroyed)
+        {
+            cristal.SetActive(false);
+            cristal.GetComponent<RoundCristal>().Reset();
+        }
+    }
+    private void ResetEnemies()
+    {
+        //instantiate and desactivar enemies
+
+            if (roundRoomEnemies.Count == 0) return;
+
+            foreach (GameObject enemy in roundRoomEnemies.ToArray())
+            {
+                // Check if the enemy object is not null
+                if (enemy != null)
+                {
+                    BasicEnemyHealth basicEnemyHealth = enemy.GetComponent<BasicEnemyHealth>();
+
+                    // Check and apply damage to BasicEnemyHealth
+                    if (basicEnemyHealth != null)
+                    {
+                        basicEnemyHealth.TakeDamage(1000);
+                    }
+
+                }
+            }
+        
 
 
+
+
+    }
+
+    #endregion
 
     #region SpawnManager
+    private void Awake()
+    {
+        phealth = GameObject.FindAnyObjectByType<PlayerHealth>();
+    }
     private void Start()
     {
         CreateEnemyPool();
@@ -74,15 +142,10 @@ public class RoundManager : MonoBehaviour
 
     public void CallUpdateRound(int newRound, float waitTime)
     {
-
         StartCoroutine(UpdateRoundState(newRound, waitTime));
     }
-
     private IEnumerator UpdateRoundState(int newRound, float waitTime)
     {
-        
-
-
         yield return new WaitForSeconds(waitTime);
         currentRound = newRound;
         usedPositions.Clear();
@@ -125,23 +188,13 @@ public class RoundManager : MonoBehaviour
             roundRoomEnemies.Add(currentEnemy);
 
         }
-
-
-
-
-        //cristal
-
+        //Cristal
         switch (newRound)
         {
-
-
             case 1:
-
                 isCristalDestroyed = true;
                 break;
             case 2:
-                Debug.Log("KEK1");
-
                 cristal.SetActive(true);
                 cristal.transform.position = cristalPosRound2.position;
                 cristal.GetComponent<RoundCristal>().Reset();
@@ -149,32 +202,18 @@ public class RoundManager : MonoBehaviour
                 break;
 
             case 3:
-                Debug.Log("KEK2");
-
                 cristal.SetActive(true);
                 cristal.transform.position = cristalPosRound3.position;
                 cristal.GetComponent<RoundCristal>().Reset();
                 isCristalDestroyed = false;
                 break;
         }
-
-        
-
-
-
-
-
     }
 
 
 
 
-    public void EndRoundRoom()
-    {
-        Animator animator = GetComponent<Animator>();
-        animator.SetTrigger("OpenDoors");
-        inRoundRoom = false;
-    }
+
 
     #endregion
 

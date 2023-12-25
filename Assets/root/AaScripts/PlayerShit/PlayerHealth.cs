@@ -5,29 +5,28 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+
+    #region Vars
+
+    public delegate void OnPlayerDeath();
+    public OnPlayerDeath onPlayerDeath;
+
     [SerializeField] CameraManager camManager;
-
     [SerializeField] UiManager uiManager;
-    public Transform currentSpawnPoint;
 
+    public Transform currentSpawnPoint;
 
     private RoundEnrtyCollider entryCollider;
     private RoundManager roundManager;
 
+    #endregion
 
-    
 
     private void Awake()
     {
+        //Finding references
         roundManager = GameObject.FindAnyObjectByType<RoundManager>();
         entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
-
-    }
-
-    void Start()
-    {
-        GameManager.Instance.isPlayerAlive = true;
-
     }
 
 
@@ -37,7 +36,6 @@ public class PlayerHealth : MonoBehaviour
         CheckHealth();
         uiManager.UpdatePlayerHealthSlider();
     }
-
     public void HealPlayer(float healAmmount)
     {
         GameManager.Instance.playerHealth += healAmmount;
@@ -50,20 +48,7 @@ public class PlayerHealth : MonoBehaviour
         if (GameManager.Instance.playerHealth >= 100) GameManager.Instance.playerHealth = 100f;
         if (GameManager.Instance.playerHealth <= 0)
         {
-
-            if (roundManager.inRoundRoom)
-            {
-
-                //ResetearLaRoom
-                roundManager.inRoundRoom = false;
-                entryCollider.gameObject.transform.parent.GetComponent<Animator>().SetTrigger("OpenDoors");
-                entryCollider.doorsColsed = false;
-
-                ResetEnemies();
-                ResetCristal();
-
-                //-----------------
-            }
+            if(onPlayerDeath != null) onPlayerDeath();
 
             GameManager.Instance.isPlayerAlive = false;
             DesactivateAllPlayerFuntionsAndKill();
@@ -72,43 +57,6 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-
-    private void ResetCristal()
-    {
-        if(!roundManager.isCristalDestroyed)
-        {
-            roundManager.cristal.SetActive(false);
-            roundManager.cristal.GetComponent<RoundCristal>().Reset();
-        }
-    }
-    private void ResetEnemies()
-    {
-        //instantiate and desactivar enemies
-        if (roundManager != null && roundManager.roundRoomEnemies != null)
-        {
-            if (roundManager.roundRoomEnemies.Count == 0) return;
-
-            foreach (GameObject enemy in roundManager.roundRoomEnemies.ToList())
-            {
-                // Check if the enemy object is not null
-                if (enemy != null)
-                {
-                    BasicEnemyHealth basicEnemyHealth = enemy.GetComponent<BasicEnemyHealth>();
-
-                    // Check and apply damage to BasicEnemyHealth
-                    if (basicEnemyHealth != null)
-                    {
-                        basicEnemyHealth.TakeDamage(1000);
-                    }
-
-                }
-            }
-        }
-
-
-
-
-    }
 
 
 
@@ -128,7 +76,6 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerHook>().enabled = false;
 
     }
-
 
     private void ActivateAllPlayerFuntionsAndKill()
     {
@@ -164,10 +111,6 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(100);
         }
     }
-
-
-
-
 
     private void SetCameraToRespawnCamera()
     {

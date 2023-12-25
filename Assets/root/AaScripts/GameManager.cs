@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour
     public bool inBridge;
 
 
-    //boss
-    public bool inBelzegorFight;
+ 
 
 
     //Rooms

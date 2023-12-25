@@ -6,8 +6,6 @@ public class RoundEnrtyCollider : MonoBehaviour
 {
     [SerializeField] Animator root;
 
-    public bool doorsColsed;
-
     private RoundManager roundManager;
 
     private void Awake()
@@ -18,7 +16,7 @@ public class RoundEnrtyCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.CompareTag("Player") && !doorsColsed)
+       if(other.CompareTag("Player") && !roundManager.areDoorsClosed)
         {
             StartCoroutine(CloseDoors());
         }
@@ -26,12 +24,7 @@ public class RoundEnrtyCollider : MonoBehaviour
 
     private IEnumerator CloseDoors()
     {
-
         yield return new WaitForSeconds(0.4f);
-        doorsColsed = true;
-        root.SetTrigger("CloseDoors");
-        roundManager.CallUpdateRound(1, 2);
-        roundManager.inRoundRoom = true;
-
+        roundManager.StartRoundRoom();
     }
 }
