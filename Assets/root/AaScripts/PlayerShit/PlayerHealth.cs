@@ -49,7 +49,6 @@ public class PlayerHealth : MonoBehaviour
         if (GameManager.Instance.playerHealth <= 0)
         {
             if(onPlayerDeath != null) onPlayerDeath();
-
             GameManager.Instance.isPlayerAlive = false;
             DesactivateAllPlayerFuntionsAndKill();
             StartCoroutine(RevivePlayer());

@@ -507,14 +507,12 @@ CorregirZfight--Ok
 
 
 al llegar a casa:
-terminar menus(solo un mapa a la vez) se abre menu desde el player
+
 Importar assets lucia
 
 
-Añadir Mnues
 
-
-
+ 
 
 */
 #endregion
@@ -536,7 +534,20 @@ Arreglar AaDevLog--Ok
 Añadir delegado ondeath para el player--Ok(funcional en RoundManager)
 Borrar Scripts inutiles--
 
+Dia29(Muy poco tiempo(25/12/23):
+hacer merge desde el avion--Ok
+corregir problemas merge--Ok
+añadir cosas todolist--Ok
+cosas hechas todolist:
 
+-Cambiar punete a Action map distinto
+me tengo que ir, añadido el mapa de acciones:
+cosas que hacer al volver:
+biorrar los inputs que se ponian al entrar en el puente, añadir que se cambie de mapa al entrar
+creo que ya xd
+
+
+Dia 30:
 
 
 
@@ -548,6 +559,8 @@ ToDoList:
 -Mover cosas player del GameManager al playerManager
 -Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 -Añadir regiones y ordenar codigo
+Añadir delegado ondeath para el player--Ok(funcional en RoundManager)---Comprobar y corregir si va mal en la bossfigt---
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------

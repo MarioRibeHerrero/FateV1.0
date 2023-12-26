@@ -38,7 +38,6 @@ public class BossHealth : MonoBehaviour
 
 
 
-
     public void CheckHealth()
     {
         if(bFController.bossCurrentHealth <= hitsFirstFace * playerHit)
