@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     //camera
 
     public bool isZoomed;
-    public bool inBridge;
+    public bool thirdPersonCam;
 
 
  

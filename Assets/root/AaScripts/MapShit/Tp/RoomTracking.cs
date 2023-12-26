@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class RoomTracking : MonoBehaviour
 {
+    [SerializeField] PlayerInput playerInput;
+
+
     [SerializeField] bool usingTp;
-    [SerializeField] bool toBridge;
+    [SerializeField] bool toThirdPerson;
 
     [Header("Using colliders")]
     [SerializeField] GameManager.Rooms previusRoom, nextRoom;
@@ -57,8 +61,8 @@ public class RoomTracking : MonoBehaviour
         //ENTER
         if (GameManager.Instance.currentRoom == previusRoom)
         {
-            if(toBridge) GameManager.Instance.inBridge = true;
-            else Invoke(nameof(InBridgeToFalse), 3f);
+            if (toThirdPerson) SwitchToThirdPerson();
+            else SwitchToNormal();
 
 
             
@@ -72,7 +76,7 @@ public class RoomTracking : MonoBehaviour
         //Exit
         if (GameManager.Instance.currentRoom == nextRoom)
         {
-            if (toBridge) Invoke(nameof(InBridgeToFalse), 3f);
+            if (toThirdPerson) SwitchToNormal();
 
             GameManager.Instance.currentRoom = previusRoom;
             camManager.SetNewCamera(previusRoom);
@@ -85,7 +89,7 @@ public class RoomTracking : MonoBehaviour
         //ENTER
         if (GameManager.Instance.currentRoom == previusRoom)
         {
-            if (toBridge) GameManager.Instance.inBridge = true;
+            if (toThirdPerson) GameManager.Instance.thirdPersonCam = true;
             else Invoke(nameof(InBridgeToFalse), 3f);
 
 
@@ -104,7 +108,7 @@ public class RoomTracking : MonoBehaviour
         //Exit
         if (GameManager.Instance.currentRoom == nextRoom)
         {
-            if (toBridge) Invoke(nameof(InBridgeToFalse), 3f);
+            if (toThirdPerson) Invoke(nameof(InBridgeToFalse), 3f);
 
             GameManager.Instance.currentRoom = previusRoom;
             camManager.SetNewCamera(previusRoom);
@@ -123,6 +127,25 @@ public class RoomTracking : MonoBehaviour
 
     private void InBridgeToFalse()
     {
-        if (toBridge) GameManager.Instance.inBridge = false;
+        if (toThirdPerson) GameManager.Instance.thirdPersonCam = false;
+    }
+
+    private void SwitchToThirdPerson()
+    {
+        ActivateThirdPersonActionMap();
+        GameManager.Instance.thirdPersonCam = true;
+    }
+    private void SwitchToNormal()
+    {
+        ActivateNormalActionMap();
+        GameManager.Instance.thirdPersonCam = false;
+    }
+    private void ActivateThirdPersonActionMap()
+    {
+        playerInput.SwitchCurrentActionMap("ThirdPersonMovement");
+    }
+    private void ActivateNormalActionMap()
+    {
+        playerInput.SwitchCurrentActionMap("PlayerNormalMovement");
     }
 }

@@ -35,7 +35,7 @@ public class BridgeEntryExit : MonoBehaviour
 
     private void PlayerIntoBridgeMode()
     {
-        GameManager.Instance.inBridge = true;
+        GameManager.Instance.thirdPersonCam = true;
         player.GetComponent<PlayerJump>().enabled = false;
         //CantAA
 
@@ -46,7 +46,7 @@ public class BridgeEntryExit : MonoBehaviour
 
     private void PlayerOutOffBridgeMode()
     {
-        GameManager.Instance.inBridge = false;
+        GameManager.Instance.thirdPersonCam = false;
 
         player.GetComponent<PlayerJump>().enabled = true;
         //CantAA

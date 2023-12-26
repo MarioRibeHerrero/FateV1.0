@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (GameManager.Instance.inBridge)
+        if (GameManager.Instance.thirdPersonCam)
         {
             if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(-GetInputsX().y * acceleration, 0f));
             else rb.AddForce(new Vector2(-GetInputsX().y * airAcceleration, 0f));

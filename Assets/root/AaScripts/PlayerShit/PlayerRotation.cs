@@ -60,7 +60,7 @@ public class PlayerRotation : MonoBehaviour
         }
 
 
-        if(GameManager.Instance.inBridge)
+        if(GameManager.Instance.thirdPersonCam)
         {
             if (-GetInputs().y > 0)
             {
