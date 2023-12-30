@@ -52,6 +52,9 @@ public class RoomTracking : MonoBehaviour
         if (usingTp) text.SetActive(false);
         PlayerInteract.onInteract -= UsingTp;
 
+
+
+
     }
 
 
@@ -89,8 +92,8 @@ public class RoomTracking : MonoBehaviour
         //ENTER
         if (GameManager.Instance.currentRoom == previusRoom)
         {
-            if (toThirdPerson) GameManager.Instance.thirdPersonCam = true;
-            else Invoke(nameof(InBridgeToFalse), 3f);
+            if (toThirdPerson) SwitchToThirdPerson();
+            else SwitchToNormal();
 
 
             GameManager.Instance.currentRoom = nextRoom;
@@ -101,14 +104,13 @@ public class RoomTracking : MonoBehaviour
 
 
             return;
-            Debug.Log("TP");
 
         }
 
         //Exit
         if (GameManager.Instance.currentRoom == nextRoom)
         {
-            if (toThirdPerson) Invoke(nameof(InBridgeToFalse), 3f);
+            if (toThirdPerson) SwitchToNormal();
 
             GameManager.Instance.currentRoom = previusRoom;
             camManager.SetNewCamera(previusRoom);
@@ -125,10 +127,6 @@ public class RoomTracking : MonoBehaviour
 
 
 
-    private void InBridgeToFalse()
-    {
-        if (toThirdPerson) GameManager.Instance.thirdPersonCam = false;
-    }
 
     private void SwitchToThirdPerson()
     {
@@ -147,5 +145,6 @@ public class RoomTracking : MonoBehaviour
     private void ActivateNormalActionMap()
     {
         playerInput.SwitchCurrentActionMap("PlayerNormalMovement");
+        Debug.Log("KEKEKEK");
     }
 }

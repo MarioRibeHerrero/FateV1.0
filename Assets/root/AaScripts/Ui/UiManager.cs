@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -17,11 +18,16 @@ public class UiManager : MonoBehaviour
     [SerializeField] PlayerInput playerInput;
     [SerializeField] PlayerHealth health;
 
+    [SerializeField] GameObject miniMap;
+    private bool isMiniMapOpen;
+
 
     private void Awake()
     {
         //InputActions
         playerInput.actions["CloseMenu"].started += UiManager_started;
+        playerInput.actions["OpenMap"].started += UiInGameManager_started;
+
 
     }
 
@@ -36,11 +42,28 @@ public class UiManager : MonoBehaviour
     }
 
 
+    private void UiInGameManager_started(InputAction.CallbackContext obj)
+    {
+        if (!isMiniMapOpen)
+        {
+            miniMap.SetActive(true);
+            isMiniMapOpen = true;
+
+        }
+        else
+        {
+            miniMap.SetActive(false);
+            isMiniMapOpen = false;
+
+        }
+
+    }
+
 
     public void CloseOptionsMenu()
     {
         Debug.Log("MENU");
-        playerInput.SwitchCurrentActionMap("PlayerActions");
+        playerInput.SwitchCurrentActionMap("PlayerNormalMovement");
 
         hud.SetActive(true);
         optionsMenu.SetActive(false);

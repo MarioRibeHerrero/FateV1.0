@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private PlayerHealth playerh;
-
-
+    public void HealPlayer(int healingAmmount)
+    {
+        playerh.HealPlayer(healingAmmount);
+    }
 
     public static GameManager Instance;
     private void Awake()
@@ -75,23 +77,8 @@ public class GameManager : MonoBehaviour
 
     }
     [Header("RoomTracker")]
-
     public Rooms currentRoom;
     public Rooms RespawnRoom;
 
-    public void HealPlayer(int healingAmmount)
-    {
-        playerh.HealPlayer(healingAmmount);
-    }
 
-
-
-    /*
-    Lista de cosas que tendre q retablecer:
-    Gamemanager.iszoomed;
-    
-
-      
-     
-     */
 }

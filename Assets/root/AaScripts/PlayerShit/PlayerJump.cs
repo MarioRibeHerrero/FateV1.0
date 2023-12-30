@@ -116,7 +116,7 @@ public class PlayerJump : MonoBehaviour
         }
 
 
-        if (!pHook.isHooking && !pGroundCheck.isPlayerGrounded && Mathf.Approximately(playerInput.actions["XMovement"].ReadValue<Vector2>().x, 0f))
+        if (!pHook.isHooking && !pGroundCheck.isPlayerGrounded && Mathf.Approximately(playerInput.actions["Movement"].ReadValue<Vector2>().x, 0f))
         {
             rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
         }

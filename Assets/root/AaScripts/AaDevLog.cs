@@ -547,16 +547,37 @@ biorrar los inputs que se ponian al entrar en el puente, añadir que se cambie de
 creo que ya xd
 
 
-Dia 30:
+Dia 30(26/12/23):
+Terminar cosas cambiar de mapa en el puente,--Ok
+cambiar todas referencias a movimiento tercera persona en lugar de puente--Ok
+arreglar tema minimapa y uimanager duplicado--Ok
+cambiar transicion a bossfight con nuevo mapa--Ok
+arreglar inputs con cambio de nombre del otro mapa--
+---------
+Problema que a surgido, el cambio de escena al boss, se hace con otro script, no con el mismo que el resto de transiciones, 
+la solucion q se me ha ocurrido seria añadir otra boleana para si lleva a bossfight o no, y en caso de activarla que te pida un metodo que añadir para empezar la bossfgiht con un timer.
+ahora oslo me quedan 30 min, y me tendre que ir, a ver si me da timepo.
+puta q me pario otro problema jaja, para el boss no queremos que sea interactuable, queremos que te haga tp sin mas, supongo que por eso no lo he añadido antes,
+SOlucion temporal, te sale texto de desafiar al boss,
+----
+problema que solucionar proximo dia, no te deja interactuar por el cambio de mapa
+añadir lo mencionado del boss
+----
 
 
+Dia31(30/12/23):
+
+-Mover cosas player del GameManager al playerManager
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
+-----------------------------------------------------------------------------------------------------------------------------------
+-Atajo no funciona bien(Arreglar cunado esten bn hechos los pushes del github)
+-Funcionamiento de este boss, te saldra el mensaje de desafiar, y en caso de darle, empezara directamente la bossfiht(hacer cunado github)
+
 
 -Cambiar punete a Action map distinto
--Mover cosas player del GameManager al playerManager
 -Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 -Añadir regiones y ordenar codigo
 Añadir delegado ondeath para el player--Ok(funcional en RoundManager)---Comprobar y corregir si va mal en la bossfigt---
@@ -564,21 +585,48 @@ Añadir delegado ondeath para el player--Ok(funcional en RoundManager)---Comproba
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
+MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
+-----------------------------------------------------------------------------------------------------------------------------------
+
 
 Cosas que hay que hacer:
--Modificar collider Parry(De momento estunnea te pegue por donde te pegue.)
--Doble salto se deberia poder hacer post parry y dejandote caer de plataforma
--PlayerNo Cae en inicio
+-Modificar collider Parry(De momento estunnea te pegue por donde te pegue)
+-Doble salto se deberia poder hacer post hook y dejandote caer de plataforma
 -Hacer parry instant
--Arreglar Parry midhook
--Arreglar bugs gancho(Al hacer parry encima plataorma ya no funciona, si te pegan en mitad problema, etc.)
--Arreglar enemigo melee a veces con parry a veces se buggea y se queda perma bug.
--Añadir coleccionables
+-Cambiar todas referencia hook por interact
+
+BUGS:
+-Player No Cae en inicio
+
+-Arreglar bugs Hook:
+.si haces parry en la plataforma, dejas de estar en la plataforma.
+.si te pegan en mitad se buggea y te quedas ahi volando
+.algunas veces te pasas volado y atraviessas los hooks.
+
+-Bugs enemigo melee:
+.con parry a veces se buggea y se queda perma stun si haces el parry a destiempo(puede ser que comprube si el player esta ispartying, y en caso de estarlo se vuelve a estunear solo,esto se solucionaria con el cambio delcollider al parry)
+.enemigo no detecta si se sale de plataformas o si atrabiesa objetos.
+
+-SOlucionar bug tercera persona, si andas alante y te paras luego paras no te deja seguir
 
 
+Objetivos FIN-JUEGO(cosas que faltan por añadir):
+MiniMapa Funcional
+Menues
+Bossfight
+Coleccionables(opcional)
+Sonidos
 
+
+VFX:
+-temblor al morir
+-
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+PREGUNTAS:
 -----------------------------------------------------------------------------------------------------------------------------------
-Preguntas;
+
 -Para el Ui del parry:
 AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
 -Problema con triggers y pasar entre rondas:

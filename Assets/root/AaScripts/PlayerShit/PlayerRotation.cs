@@ -78,7 +78,7 @@ public class PlayerRotation : MonoBehaviour
     {
         //This will get the horizontal movement
         Vector2 inputs;
-        inputs = playerInput.actions["XMovement"].ReadValue<Vector2>();
+        inputs = playerInput.actions["Movement"].ReadValue<Vector2>();
         return inputs;
     }
 }

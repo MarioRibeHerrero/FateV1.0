@@ -6,7 +6,7 @@
             "id": "a51a7c99-4766-45d2-af4b-420cdc0ed875",
             "actions": [
                 {
-                    "name": "XMovement",
+                    "name": "Movement",
                     "type": "Value",
                     "id": "bef07b90-2e4c-413a-aa0b-3d59fc769ea3",
                     "expectedControlType": "Vector2",
@@ -205,7 +205,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -216,7 +216,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -227,7 +227,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -238,7 +238,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -249,7 +249,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -260,7 +260,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -271,7 +271,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -282,7 +282,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -293,7 +293,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -304,7 +304,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "XMovement",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -423,6 +423,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Hook",
+                    "type": "Button",
+                    "id": "b0a33f42-eed8-4594-932e-05fb0b10f060",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "OpenMap",
                     "type": "Button",
                     "id": "7e3c5841-eb09-4cab-a267-04ee74d069db",
@@ -454,7 +463,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "left",
                     "id": "d970a508-47f0-484a-b977-03cd48bf8f7a",
                     "path": "<Keyboard>/w",
                     "interactions": "",
@@ -465,7 +474,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "right",
                     "id": "0c1b5ca8-7f19-49cd-a26f-10834e5e1378",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -478,7 +487,7 @@
                 {
                     "name": "left",
                     "id": "c1dd4144-535f-4f48-8867-4ca12b197b84",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -489,7 +498,7 @@
                 {
                     "name": "right",
                     "id": "5fa75f17-ba47-4210-9d74-283ea7b1b8a3",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -509,7 +518,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "left",
                     "id": "9b14ac90-c3b9-40a4-bbce-87139cdf4010",
                     "path": "<Gamepad>/leftStick/up",
                     "interactions": "",
@@ -520,7 +529,7 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "right",
                     "id": "d589be8a-8342-42ae-ba69-cdc186b17994",
                     "path": "<Gamepad>/leftStick/down",
                     "interactions": "",
@@ -533,7 +542,7 @@
                 {
                     "name": "left",
                     "id": "eea65412-a50d-420d-a4e5-2b73d4143fd8",
-                    "path": "<Gamepad>/leftStick/up",
+                    "path": "<Gamepad>/leftStick/left",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -544,7 +553,7 @@
                 {
                     "name": "right",
                     "id": "7a097b6d-d069-445d-9336-607c7cf8c408",
-                    "path": "<Gamepad>/leftStick/down",
+                    "path": "<Gamepad>/leftStick/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -593,6 +602,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "OpenOptions",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "831a8484-cf09-4b2b-9d8d-2e8755739c27",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ef017cb0-2871-4f5c-9b04-0b324e093568",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hook",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
