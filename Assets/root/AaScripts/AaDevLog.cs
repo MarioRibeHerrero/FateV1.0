@@ -569,6 +569,18 @@ Dia31(30/12/23):
 
 -Mover cosas player del GameManager al playerManager
 
+he movido el healplayer, y he puesto las referencias de lo que se cura el pj en el player manager
+creo que no hay mas referencias a la cantidad de vida curada en ningun sitio, pero idk
+borrado clases no usadas
+
+Dia32():
+Terminar de mover cosas al player manager:
+TODO ESTO:
+    public bool canPlayerMove, canPlayerRotate, isOccupied, isPlayerStunned, isPlayerInvulnerable, isPlayerParry;
+    [HideInInspector] public int playerDamage;
+    public int playerDefaultDamage;
+    public bool inStrongAttack;
+    //dobleJump
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
@@ -626,6 +638,12 @@ VFX:
 ----------------------------------------------------------------------------------------------------------------------------------
 PREGUNTAS:
 -----------------------------------------------------------------------------------------------------------------------------------
+
+CAMARAS:
+Idea:
+hacer colliders del tamaño de cada habitacion, en los que con el ontriggerEnter cambiaria la variable de currentRoom, y esto, con el Get/Set(preguntar como se haria)
+te actualizaria las camaras que estan y dejan de estar activas. lo mismo a la hora de morir, miraria cual es el currentSpawnPointCam, y te actualizaria las camaras.
+
 
 -Para el Ui del parry:
 AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?

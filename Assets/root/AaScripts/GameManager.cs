@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private PlayerHealth playerh;
-    public void HealPlayer(int healingAmmount)
-    {
-        playerh.HealPlayer(healingAmmount);
-    }
+
 
     public static GameManager Instance;
     private void Awake()
     {
-        playerh = GameObject.FindAnyObjectByType<PlayerHealth>();
-
 
 
         Instance = this;

@@ -16,7 +16,18 @@ public class BasicEnemyHitPoint : MonoBehaviour
     }
     [SerializeField] private Points whatPointAmI;
 
+    private PlayerHealth phealth;
+    private PlayerManager pManager;
+    private void Awake()
+    {
+        phealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        pManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+    }
 
+    private void HealPlayer()
+    {
+        phealth.HealPlayer(pManager.parryHealingAmmount);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -35,7 +46,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
                     else
                     {
                         root.GetComponent<Animator>().SetTrigger("Stunned");
-                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(15);
+                        HealPlayer();
                     }
 
                     break;
@@ -56,11 +67,11 @@ public class BasicEnemyHitPoint : MonoBehaviour
                     else
                     {
                         root.GetComponent<Animator>().SetTrigger("Stunned");
-                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(15);
+                        HealPlayer();
                     }
-                    
-                
-                break;
+
+
+                    break;
 
                 case Points.weapon:
 
@@ -73,13 +84,13 @@ public class BasicEnemyHitPoint : MonoBehaviour
                     else
                     {
                         root.GetComponent<Animator>().SetTrigger("Stunned");
-                        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().HealPlayer(30);
+                        HealPlayer();
                     }
 
 
-                    
-               
-                break;
+
+
+                    break;
             }
         }
 

@@ -18,6 +18,8 @@ public class PlayerAttackCollider : MonoBehaviour
         //Heal
         var healPlayer = other.GetComponent<IHealPlayer>();
         if (healPlayer == null) return;
-        GameManager.Instance.HealPlayer(healthHealed);
+        //Heal for the aa healing ammount;
+        aaCombo.transform.GetComponent<PlayerHealth>().HealPlayer(aaCombo.transform.GetComponent<PlayerManager>().aaHealingAmmount);
+        
     }
 }
