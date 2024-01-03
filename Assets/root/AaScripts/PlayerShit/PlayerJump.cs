@@ -11,6 +11,7 @@ public class PlayerJump : MonoBehaviour
     Rigidbody rb;
     PlayerGroundCheck pGroundCheck;
     PlayerHook pHook;
+    PlayerManager pManager;
 
     //local
     [SerializeField] float jumpForce, maxJumpValue;
@@ -45,6 +46,7 @@ public class PlayerJump : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
         pHook = GetComponent<PlayerHook>();
+        pManager    = GetComponent<PlayerManager>();
 
         //Player Input Shit 
         playerInput.actions["Jump"].started += Jump_Started;
@@ -79,7 +81,7 @@ public class PlayerJump : MonoBehaviour
         }
 
         //si estas en el aire, no puedes hacer el doble jump y le das al salto, entras en el jumpbuffer.
-        if (!secondJump || !GameManager.Instance.isDobleJumpUnlocked || !GameManager.Instance.canDobleJump) isBufferJumping = true;
+        if (!secondJump || !pManager.isDobleJumpUnlocked || !pManager.canDobleJump) isBufferJumping = true;
 
 
 
@@ -87,7 +89,7 @@ public class PlayerJump : MonoBehaviour
 
         //  DOBLE SALTO
         //si estas saltando, y aun tienees el doble salto, y lo teines desblockeado, saltas.
-        if (isJumping && secondJump && GameManager.Instance.isDobleJumpUnlocked && GameManager.Instance.canDobleJump)
+        if (isJumping && secondJump && pManager.isDobleJumpUnlocked && pManager.canDobleJump)
         {
           
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
@@ -107,7 +109,7 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.Instance.canPlayerMove)
+        if (pManager.canPlayerMove)
         {
             maxJump -= Time.deltaTime;
             Jump();

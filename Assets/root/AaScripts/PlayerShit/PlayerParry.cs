@@ -6,16 +6,18 @@ using UnityEngine.InputSystem;
 public class PlayerParry : MonoBehaviour
 {
     PlayerInput playerInput;
-    private Animator anim;
+    PlayerManager pManager;
+    Animator anim;
 
-    private bool canParry;
+
+    //CD no hecho aun
     [SerializeField] float parryCooldownAmmount;
     public float parryCooldown;
 
     private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-
+        pManager = GetComponent<PlayerManager>();
 
 
         playerInput.actions["Parry"].started += PlayerParry_started;
@@ -31,7 +33,7 @@ public class PlayerParry : MonoBehaviour
 
     private void PlayerParry_started(InputAction.CallbackContext obj)
     {
-        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && GameManager.Instance.playerHealth >= 35 && !GameManager.Instance.isPlayerParry && !GameManager.Instance.inStrongAttack) 
+        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && pManager.playerHealth >= 35 && !pManager.isPlayerParry && !pManager.inStrongAttack) 
         {
             anim.SetTrigger("Parry");
            

@@ -13,38 +13,13 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
 
-        //vars
-        canPlayerRotate = true;
-        canPlayerMove = true;
-        isPlayerAlive = true;
-        playerHealth = 100;
-        isOccupied = false;
-        playerDamage = playerDefaultDamage;
     }
 
 
     //PlayerThings
-    public float playerHealth;
-    public bool isPlayerAlive;
-    public bool canPlayerMove, canPlayerRotate, isOccupied, isPlayerStunned, isPlayerInvulnerable, isPlayerParry;
-    [HideInInspector] public int playerDamage;
-    public int playerDefaultDamage;
-    public bool inStrongAttack;
-    //dobleJump
-    public bool canDobleJump;
-
-    //GainedAbilities
-    public bool isDobleJumpUnlocked, isHookUnlocked;
 
     //camera
-
-    public bool isZoomed;
     public bool thirdPersonCam;
-
-
- 
-
-
     //Rooms
     public enum Rooms
     {

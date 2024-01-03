@@ -21,7 +21,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
     private void Awake()
     {
         phealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        pManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
+        pManager = phealth.transform.GetComponent<PlayerManager>();
     }
 
     private void HealPlayer()
@@ -37,7 +37,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
             {
             case Points.head:
 
-                    if (!GameManager.Instance.isPlayerParry)
+                    if (!pManager.isPlayerParry)
                     {
 
                         root.GetComponent<BasicEnemyAttack>().HitHead(other);
@@ -56,7 +56,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
             case Points.body:
 
 
-                    if (!GameManager.Instance.isPlayerParry)
+                    if (!pManager.isPlayerParry)
                     {
                         
                         if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGroundCheck>().isPlayerGrounded)
@@ -76,7 +76,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
                 case Points.weapon:
 
 
-                    if (!GameManager.Instance.isPlayerParry)
+                    if (!pManager.isPlayerParry)
                     {
                         root.GetComponent<BasicEnemyAttack>().BasicAttack(other);
 

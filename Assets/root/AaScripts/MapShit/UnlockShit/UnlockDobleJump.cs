@@ -10,7 +10,7 @@ public class UnlockDobleJump : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.isDobleJumpUnlocked = true;
+            other.GetComponent<PlayerManager>().isDobleJumpUnlocked = true;
         }
     }
 }

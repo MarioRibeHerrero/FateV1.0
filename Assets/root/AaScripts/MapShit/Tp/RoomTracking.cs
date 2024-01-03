@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class RoomTracking : MonoBehaviour
 {
-    [SerializeField] PlayerInput playerInput;
+    PlayerInput playerInput;
 
 
     [SerializeField] bool usingTp;
@@ -30,6 +30,7 @@ public class RoomTracking : MonoBehaviour
     private void Awake()
     {
         camManager = GameObject.FindAnyObjectByType<CameraManager>();
+        playerInput = GameObject.FindAnyObjectByType<PlayerInput>();
     }
     private void OnTriggerEnter(Collider other)
     {

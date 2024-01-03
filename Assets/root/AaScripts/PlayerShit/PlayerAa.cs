@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerAa : MonoBehaviour
 {
     PlayerInput playerInput;
+    PlayerManager pManager;
 
     private Animator anim;
 
@@ -21,6 +22,7 @@ public class PlayerAa : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         anim = GetComponent<Animator>();
+        pManager = GetComponent<PlayerManager>();
 
         playerInput.actions["Aa"].started += PlayerAa_started;
     }
@@ -42,10 +44,10 @@ public class PlayerAa : MonoBehaviour
     {
         AutoAttackCombo();
 
-        if (Mathf.Abs(GetInputs().x) >= 0 && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
+        if (Mathf.Abs(GetInputs().x) >= 0 && !pManager.playerInNormalAttack && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
         {
             anim.SetTrigger("AaAir");
-            GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
+            pManager.playerCurrentDamage = pManager.playerDefaultDamage;
         }
     }
 
@@ -57,31 +59,31 @@ public class PlayerAa : MonoBehaviour
         {
 
             case 0:
-                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
+                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !pManager.playerInNormalAttack)
                 {
                     anim.SetInteger("AaCombo", 0);
                     anim.SetTrigger("Aa");
 
-                    GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
+                    pManager.playerCurrentDamage = pManager.playerDefaultDamage;
                 }
                 break;
             case 1:
-                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
+                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !pManager.playerInNormalAttack)
                 {
                     anim.SetInteger("AaCombo", 1);
 
                     anim.SetTrigger("Aa");
-                    GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage + 10;
+                    pManager.playerCurrentDamage = pManager.playerDefaultDamage + 10;
 
 
                 }
                 break;
             case 2:
-                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
+                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !pManager.playerInNormalAttack)
                 {
                     anim.SetInteger("AaCombo", 2);
                     anim.SetTrigger("Aa");
-                    GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage + 30;
+                    pManager.playerCurrentDamage = pManager.playerDefaultDamage + 30;
 
                 }
                 break;

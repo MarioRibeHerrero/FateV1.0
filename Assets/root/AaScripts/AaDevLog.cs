@@ -573,26 +573,60 @@ he movido el healplayer, y he puesto las referencias de lo que se cura el pj en 
 creo que no hay mas referencias a la cantidad de vida curada en ningun sitio, pero idk
 borrado clases no usadas
 
-Dia32():
+Dia32(31/12/23):
+---------------
+--------------
+
+
 Terminar de mover cosas al player manager:
 TODO ESTO:
     public bool canPlayerMove, canPlayerRotate, isOccupied, isPlayerStunned, isPlayerInvulnerable, isPlayerParry;
     [HideInInspector] public int playerDamage;
-    public int playerDefaultDamage;
     public bool inStrongAttack;
     //dobleJump
+
+cosas movidas(y solucionados errores de referencias al cambiar):
+canPlayerMove--Ok
+canPlayerRotate--Ok
+isOccupied--Ok
+Cambiado isOcupied por plauerInNormalAa, por que cumplian la misma funcion, y este ultimo es mas claro lo que hace. tmb quitado referencia en el roomtracking al playerinput, ahora la busca en el awake.
+isPlayerStunned--Ok
+----------
+IMPORTANTE: quitado esto de el playerGravity, xq ahora mismo no le veo el uso, alomejor luego falla y toca volver a ponerlo
+---------
+
+isPlayerInvulnerable--Ok
+isPlayerParry--Ok
+playerDamage--Ok
+Cambiado por playerCurrentDamage
+PlayerHealth--Ok
+isPlayerAlive--Ok
+inStrongAttack--Ok
+
+canDobleJump--Ok
+Limpiado el playerGrouncheck--Ok
+
+IsdobleJumpUnlocked--Ok
+
+-Cambiar muerte a actionMap q no te deja hacer nada--Ok
+
+Dia33(Repite ese numerito):
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 -Atajo no funciona bien(Arreglar cunado esten bn hechos los pushes del github)
 -Funcionamiento de este boss, te saldra el mensaje de desafiar, y en caso de darle, empezara directamente la bossfiht(hacer cunado github)
+-Cuando Termine mirar cosas guardado partida
 
 
--Cambiar punete a Action map distinto
+
 -Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 -Añadir regiones y ordenar codigo
-Añadir delegado ondeath para el player--Ok(funcional en RoundManager)---Comprobar y corregir si va mal en la bossfigt---
+-Cambiar forma de actualizar la vida(usando el get/Set)
+-Añadir delegado ondeath para el player--Ok(funcional en RoundManager)---Comprobar y corregir si va mal en la bossfigt---
 
 
 
@@ -600,8 +634,17 @@ Añadir delegado ondeath para el player--Ok(funcional en RoundManager)---Comproba
 MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 
+Objetivos FIN-JUEGO(cosas que faltan por añadir):
+MiniMapa Funcional
+Menues
+Bossfight
+Coleccionables(opcional)
+Sonidos
 
 Cosas que hay que hacer:
+
+-Añadir entrada boss
+-Revisar que hacer con el PlayerDefaultDamage
 -Modificar collider Parry(De momento estunnea te pegue por donde te pegue)
 -Doble salto se deberia poder hacer post hook y dejandote caer de plataforma
 -Hacer parry instant
@@ -622,12 +665,6 @@ BUGS:
 -SOlucionar bug tercera persona, si andas alante y te paras luego paras no te deja seguir
 
 
-Objetivos FIN-JUEGO(cosas que faltan por añadir):
-MiniMapa Funcional
-Menues
-Bossfight
-Coleccionables(opcional)
-Sonidos
 
 
 VFX:
@@ -651,6 +688,13 @@ AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry,
 Problema con cambio de camaras de habitaciones, que pasa si se queda en medio del colider y vuyelve.
 Solucion?
 Usar ontriggerExit
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+COSAS HECHAS(ESTA LISTA ES UNA MIERDA XQ AL FINAL NO METERE NADA PERO WENO)
+-----------------------------------------------------------------------------------------------------------------------------------------------
+-Cambiar punete a Action map distinto
+-Cambiar muerte a actionMap q no te deja hacer nada--Ok
 
 
 

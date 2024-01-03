@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class BossHealth : MonoBehaviour
 {
+    private GameObject player;
+    PlayerManager pManager;
+
+
+
     [SerializeField] BossFightController bFController;
 
 
@@ -16,15 +22,19 @@ public class BossHealth : MonoBehaviour
 
 
     private int playerHit;
-    
 
 
+    private void Awake()
+    {
+        player = GameObject.FindObjectOfType<PlayerInput>().gameObject;
+        pManager = player.GetComponent<PlayerManager>();
+    }
 
 
     void Start()
     {
 
-        playerHit = GameManager.Instance.playerDamage;
+        playerHit = pManager.playerCurrentDamage;
 
 
 

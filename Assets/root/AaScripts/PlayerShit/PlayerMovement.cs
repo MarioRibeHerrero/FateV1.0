@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerGroundCheck pGroundCheck;
     PlayerJump pJump;
     PlayerHook pHook;
+    PlayerManager pManager;
 
     //Movement variables
     [SerializeField] float acceleration, airAcceleration, deceleration, maxSpeed;
@@ -31,14 +32,9 @@ public class PlayerMovement : MonoBehaviour
         pGroundCheck = GetComponent<PlayerGroundCheck>();
         pJump = GetComponent<PlayerJump>();
         pHook = GetComponent<PlayerHook>();
+        pManager = GetComponent<PlayerManager>();
     }
-    void Start()
-    {
 
-
-        //PlayerCanMove
-        GameManager.Instance.canPlayerMove = true;
-    }
     private Vector2 GetInputsX()
     {
         //This will get the horizontal movement
@@ -51,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!pHook.isHooking && GameManager.Instance.canPlayerMove)
+        if (!pHook.isHooking && pManager.canPlayerMove)
         {
             Movement();
         }

@@ -17,7 +17,7 @@ public class ProyectileDamage : MonoBehaviour, IDamageable
 
         if (other.CompareTag("Player"))
         {
-            if (GameManager.Instance.isPlayerParry)
+            if (other.GetComponent<PlayerManager>().isPlayerParry)
             {
 
                 TakeDamage(10);

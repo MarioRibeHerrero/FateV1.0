@@ -7,6 +7,7 @@ public class PlayerGravity : MonoBehaviour
     PlayerGroundCheck pGroundCheck;
     Rigidbody rb;
     PlayerHook pHook;
+    PlayerManager pManager;
     [SerializeField] float gravityScale;
 
 
@@ -15,6 +16,7 @@ public class PlayerGravity : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         pHook = GetComponent<PlayerHook>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
+        pManager = GetComponent<PlayerManager>();
     }
 
     private void FixedUpdate()
@@ -32,7 +34,7 @@ public class PlayerGravity : MonoBehaviour
         
 
         //set drag to 0 when falling
-        if (rb.velocity.y < 0 && !GameManager.Instance.isPlayerStunned && !pGroundCheck.isPlayerGrounded)
+        if (rb.velocity.y < 0  && !pGroundCheck.isPlayerGrounded)
         {
             rb.drag = 0f;
         }

@@ -8,6 +8,7 @@ public class PlayerRotation : MonoBehaviour
 
     //PlayerComponets
     PlayerInput playerInput;
+    PlayerManager pManager;
     [SerializeField] private GameObject playerBody;
     //
     public bool isFacingRight;
@@ -17,6 +18,7 @@ public class PlayerRotation : MonoBehaviour
     {
         //PlayerComponents
         playerInput = GetComponent<PlayerInput>();
+        pManager = GetComponent<PlayerManager>();
 
     }
     void Start()
@@ -32,7 +34,7 @@ public class PlayerRotation : MonoBehaviour
     void Update()
     {
         GetRotation();
-        if (GameManager.Instance.canPlayerRotate) SetRotation();
+        if (pManager.canPlayerRotate) SetRotation();
 
     }
 

@@ -16,7 +16,8 @@ public class UiManager : MonoBehaviour
     [SerializeField] Slider playerHealthSlider;
     [SerializeField] Image parryCd;
     [SerializeField] PlayerInput playerInput;
-    [SerializeField] PlayerHealth health;
+    PlayerHealth pHealth;
+    PlayerManager pManager;
 
     [SerializeField] GameObject miniMap;
     private bool isMiniMapOpen;
@@ -29,6 +30,9 @@ public class UiManager : MonoBehaviour
         playerInput.actions["OpenMap"].started += UiInGameManager_started;
 
 
+        pHealth = playerInput.transform.GetComponent<PlayerHealth>();
+        pManager = playerInput.transform.GetComponent<PlayerManager>();
+
     }
 
     private void UiManager_started(InputAction.CallbackContext obj)
@@ -38,7 +42,7 @@ public class UiManager : MonoBehaviour
 
     public void UpdatePlayerHealthSlider()
     {
-        playerHealthSlider.value = GameManager.Instance.playerHealth /100;
+        playerHealthSlider.value = pManager.playerHealth /100;
     }
 
 
@@ -93,7 +97,7 @@ public class UiManager : MonoBehaviour
 
     public void SmallBug()
     {
-        health.TakeDamage(1000);
+        pHealth.TakeDamage(1000);
     }
 
     public void BigBug()

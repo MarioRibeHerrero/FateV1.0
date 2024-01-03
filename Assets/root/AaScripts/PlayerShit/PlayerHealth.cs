@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerHealth : MonoBehaviour
 {
 
     #region Vars
+
+    PlayerManager pManager;
+    PlayerInput pInput;
 
     public delegate void OnPlayerDeath();
     public OnPlayerDeath onPlayerDeath;
@@ -16,40 +20,38 @@ public class PlayerHealth : MonoBehaviour
 
     public Transform currentSpawnPoint;
 
-    private RoundEnrtyCollider entryCollider;
-    private RoundManager roundManager;
 
     #endregion
 
 
     private void Awake()
     {
-        //Finding references
-        roundManager = GameObject.FindAnyObjectByType<RoundManager>();
-        entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
+
+        pManager = GetComponent<PlayerManager>();
+        pInput = GetComponent<PlayerInput>();
     }
 
 
     public void TakeDamage(float damage)
     {
-        GameManager.Instance.playerHealth -= damage;
+        pManager.playerHealth -= damage;
         CheckHealth();
         uiManager.UpdatePlayerHealthSlider();
     }
     public void HealPlayer(float healAmmount)
     {
-        GameManager.Instance.playerHealth += healAmmount;
+        pManager.playerHealth += healAmmount;
         CheckHealth();
         uiManager.UpdatePlayerHealthSlider();
     }
     private void CheckHealth()
     {
 
-        if (GameManager.Instance.playerHealth >= 100) GameManager.Instance.playerHealth = 100f;
-        if (GameManager.Instance.playerHealth <= 0)
+        if (pManager.playerHealth >= 100) pManager.playerHealth = 100f;
+        if (pManager.playerHealth <= 0)
         {
             if(onPlayerDeath != null) onPlayerDeath();
-            GameManager.Instance.isPlayerAlive = false;
+            pManager.isPlayerAlive = false;
             DesactivateAllPlayerFuntionsAndKill();
             StartCoroutine(RevivePlayer());
 
@@ -67,24 +69,16 @@ public class PlayerHealth : MonoBehaviour
     {
         transform.Find("Body").transform.gameObject.SetActive(false);
 
-        GetComponent<PlayerMovement>().enabled = false;
-        GetComponent<PlayerRotation>().enabled = false;
-        GetComponent<PlayerJump>().enabled = false;
-        GetComponent<PlayerParry>().enabled = false;
-        GetComponent<PlayerAa>().enabled = false;
-        GetComponent<PlayerHook>().enabled = false;
+        pInput.SwitchCurrentActionMap("Dead");
+
 
     }
 
     private void ActivateAllPlayerFuntionsAndKill()
     {
 
-        GetComponent<PlayerMovement>().enabled = true;
-        GetComponent<PlayerRotation>().enabled = true;
-        GetComponent<PlayerJump>().enabled = true;
-        GetComponent<PlayerParry>().enabled = true;
-        GetComponent<PlayerAa>().enabled = true;
-        GetComponent<PlayerHook>().enabled = true;
+        pInput.SwitchCurrentActionMap("PlayerNormalMovement");
+
 
     }
 
@@ -95,11 +89,9 @@ public class PlayerHealth : MonoBehaviour
         transform.position = currentSpawnPoint.transform.position;
         transform.Find("Body").transform.gameObject.SetActive(true);
         ActivateAllPlayerFuntionsAndKill();
-        GameManager.Instance.playerHealth = 100f;
+        pManager.playerHealth = 100f;
         uiManager.UpdatePlayerHealthSlider();
-        GameManager.Instance.isPlayerAlive = true;
-        //camFollow.ZoomIn();
-        GameManager.Instance.isZoomed = false;
+        pManager.isPlayerAlive = true;
 
     }
 

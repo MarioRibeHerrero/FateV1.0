@@ -5,42 +5,44 @@ using UnityEngine;
 public class PlayerAnimationEvents : MonoBehaviour
 {
     private Animator anim;
+    PlayerManager pManager;
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        pManager = GetComponent<PlayerManager>();
     }
     private void CanPlayerMoveToFalse()
     {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GameManager.Instance.canPlayerMove = false;
+        pManager.canPlayerMove = false;
     }
     private void CanPlayerMoveToTrue()
     {
-        GameManager.Instance.canPlayerMove = true;
+        pManager.canPlayerMove = true;
 
     }
-
+    private void CanRotateToTrue()
+    {
+        anim.SetBool("CanRotate", true);
+        pManager.canPlayerRotate = true;
+    }
+    private void CanRotateToFalse()
+    {
+        anim.SetBool("CanRotate", false);
+        pManager.canPlayerRotate = false;
+    }
     private void IsOcupiedToTrue()
     {
         anim.SetBool("IsOccupied", true);
-        GameManager.Instance.isOccupied = true;
+        pManager.playerInNormalAttack = true;
 
     }
     private void IsOcupiedToFalse()
     {
         anim.SetBool("IsOccupied", false);
-        GameManager.Instance.isOccupied = false;
+        pManager.playerInNormalAttack = false;
     }
-    private void CanRotateToTrue()
-    {
-        anim.SetBool("CanRotate", true);
-        GameManager.Instance.canPlayerRotate = true;
-    }
-    private void CanRotateToFalse()
-    {
-        anim.SetBool("CanRotate", false);
-        GameManager.Instance.canPlayerRotate = false;
-    }
+
 
 
     //PARY
@@ -56,11 +58,11 @@ public class PlayerAnimationEvents : MonoBehaviour
     private void Parry()
     {
         GetComponent<PlayerHealth>().TakeDamage(15);
-        GameManager.Instance.isPlayerParry = true;
+        pManager.isPlayerParry = true;
     }
     private void ParryEnd()
     {
-        GameManager.Instance.isPlayerParry = false;
+        pManager.isPlayerParry = false;
 
     }
 
@@ -74,11 +76,11 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     private void InStrongAttackToTrue()
     {
-        GameManager.Instance.inStrongAttack = true;
+        pManager.inStrongAttack = true;
     }
     private void InStrongAttackToFalse()
     {
-        GameManager.Instance.inStrongAttack = false;
+        pManager.inStrongAttack = false;
 
     }
 

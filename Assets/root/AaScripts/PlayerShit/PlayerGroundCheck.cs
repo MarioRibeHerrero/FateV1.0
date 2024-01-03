@@ -13,6 +13,20 @@ public class PlayerGroundCheck : MonoBehaviour
     [SerializeField] float dobleJumpDistance;
 
 
+
+    PlayerHook pHook;
+    PlayerJump pJump;
+    PlayerMovement pMovement;
+    PlayerManager pManager;
+
+
+    private void Awake()
+    {
+        pManager = GetComponent<PlayerManager>();
+        pJump = GetComponent<PlayerJump>();
+        pMovement = GetComponent<PlayerMovement>();
+        pHook = GetComponent<PlayerHook>();
+    }
     void Update()
     {
         //Raycast q comprueba si estas o no en el suelo(devuelve true if your on ground and false if you are not)
@@ -21,20 +35,20 @@ public class PlayerGroundCheck : MonoBehaviour
             isPlayerGrounded = true;
            
             //if you already used the hook, and tuch ground, you can use the hook again, and the material is updated
-            if (!GetComponent<PlayerHook>().canHook)
+            if (!pHook.canHook)
             {
-                GetComponent<PlayerHook>().canHook = true;
-                GetComponent<PlayerHook>().HookMaterial();
+                pHook.canHook = true;
+                pHook.HookMaterial();
                 
             }
             //cantholdjump makes you not hold your jump, so when you tuch ground, 
-            GetComponent<PlayerJump>().cantHoldJump = true;
+            pJump.cantHoldJump = true;
             //when you touch ground you are no longer jumping and you can doble jump again
-            GetComponent<PlayerJump>().isJumping = false;
-            GetComponent<PlayerJump>().secondJump = true;
+            pJump.isJumping = false;
+            pJump.secondJump = true;
 
             //Set hasStopedMidAir to false, so he can do it again
-            GetComponent<PlayerMovement>().hasStopedMidAir = false;
+            pMovement.hasStopedMidAir = false;
         }
         else
         {
@@ -64,11 +78,11 @@ public class PlayerGroundCheck : MonoBehaviour
              // Check if the distance to the ground is greater than the threshold
              if (hit.distance > dobleJumpDistance)
              {
-                GameManager.Instance.canDobleJump = true;
+                pManager.canDobleJump = true;
              }
              else
              {
-                 GameManager.Instance.canDobleJump = false;
+                pManager.canDobleJump = false;
              }
 
         }

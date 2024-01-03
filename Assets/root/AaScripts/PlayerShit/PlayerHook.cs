@@ -10,6 +10,7 @@ public class PlayerHook : MonoBehaviour
     PlayerInput playerInput;
     Rigidbody rb;
     PlayerJump pJump;
+    PlayerManager pManager;
     //HookShit
     [SerializeField] Material canHookM, defaultHookM, hookCdM;
     [SerializeField] LineRenderer lineRenderer;
@@ -27,6 +28,7 @@ public class PlayerHook : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         pJump = GetComponent<PlayerJump>();
+        pManager = GetComponent<PlayerManager>();
         //PlayerInputShit
         playerInput.actions["Hook"].started += Hook_started;
     }
@@ -74,7 +76,7 @@ public class PlayerHook : MonoBehaviour
     }
     private void Hook_started(InputAction.CallbackContext obj)
     {
-        if(inRangeOfHook && canHook && !GameManager.Instance.isOccupied)
+        if(inRangeOfHook && canHook && !pManager.playerInNormalAttack)
         {
             //the player cant jump or secondJump after using hook
             pJump.isJumping = true;
