@@ -78,7 +78,10 @@ public class BasicEnemyHitPoint : MonoBehaviour
 
                 if (other.CompareTag("Player"))
                 {
-                    root.GetComponent<BasicEnemyAttack>().BasicAttack(other);
+                    if(root.GetComponent<MeleeEnemyState>().state != MeleeEnemyState.MeleeEnemyStateEnum.Stunned)
+                    {
+                        root.GetComponent<BasicEnemyAttack>().BasicAttack(other);
+                    }
                 }
 
                 break;
