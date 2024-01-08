@@ -146,6 +146,5 @@ public class RoomTracking : MonoBehaviour
     private void ActivateNormalActionMap()
     {
         playerInput.SwitchCurrentActionMap("PlayerNormalMovement");
-        Debug.Log("KEKEKEK");
     }
 }

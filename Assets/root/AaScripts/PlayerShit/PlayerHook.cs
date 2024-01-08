@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -11,6 +12,7 @@ public class PlayerHook : MonoBehaviour
     Rigidbody rb;
     PlayerJump pJump;
     PlayerManager pManager;
+    PlayerRotation pRotation;
     //HookShit
     [SerializeField] Material canHookM, defaultHookM, hookCdM;
     [SerializeField] LineRenderer lineRenderer;
@@ -20,6 +22,7 @@ public class PlayerHook : MonoBehaviour
     //las hacemos publica para poder modificarla desde el playerJump
     public bool canHook;
     public bool isHooking;
+    public bool isFallingFromHook;
 
 
     private void Awake()
@@ -29,6 +32,7 @@ public class PlayerHook : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         pJump = GetComponent<PlayerJump>();
         pManager = GetComponent<PlayerManager>();
+        pRotation = GetComponent<PlayerRotation>();
         //PlayerInputShit
         playerInput.actions["Hook"].started += Hook_started;
     }
@@ -88,9 +92,13 @@ public class PlayerHook : MonoBehaviour
             //add the force to the hook
             Vector3 forceDirection = currentHook.transform.position - transform.position;
             rb.AddForce(forceDirection.normalized * hookForce, ForceMode.Impulse);
+            //Si esta el hook a la derecha, miramos derecha, sno izquierda
+            if (forceDirection.x <= 0) pRotation.isFacingRight = false;
+            else pRotation.isFacingRight = true;
             //remove drag so the drag dosent stop you
             rb.drag = 0f;
             isHooking = true;
+            isFallingFromHook = true;
             Invoke("CanHookToFalse", 0.02f);
         }
     }
@@ -119,6 +127,9 @@ public class PlayerHook : MonoBehaviour
             //when you hit the hook itself, the hook boost is over
             lineRenderer.enabled = false;
             isHooking = false;
+            isFallingFromHook = true;
+            pJump.secondJump = true;
+
         }
 
 
@@ -138,6 +149,8 @@ public class PlayerHook : MonoBehaviour
             //esta esta por si le das al gancho cuando ya estas dentro del hook, por lo que no entrarias, solo saldiras
             lineRenderer.enabled = false;
             isHooking = false;
+            isFallingFromHook = true;
+
         }
     }
     private void OnCollisionEnter(Collision collision)
@@ -149,6 +162,7 @@ public class PlayerHook : MonoBehaviour
             rb.velocity = Vector3.zero;
             lineRenderer.enabled = false;
             isHooking = false;
+            isFallingFromHook = false;
         }
     }
 

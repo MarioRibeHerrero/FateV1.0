@@ -27,6 +27,7 @@ public class PlayerJump : MonoBehaviour
 
     //not so local
     public bool isJumping;
+    public bool isFalling;
     public bool cantHoldJump;
 
     //CoyoteJump
@@ -89,14 +90,15 @@ public class PlayerJump : MonoBehaviour
 
         //  DOBLE SALTO
         //si estas saltando, y aun tienees el doble salto, y lo teines desblockeado, saltas.
-        if (isJumping && secondJump && pManager.isDobleJumpUnlocked && pManager.canDobleJump)
+        
+        if ((isJumping || (isFalling && coyoteTimer < 0)) && secondJump && pManager.isDobleJumpUnlocked && pManager.canDobleJump)
         {
-          
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             secondJump = false;
             StartCoroutine(WingsToTrue());
         }
+        
 
     }
     private IEnumerator WingsToTrue()
@@ -118,10 +120,7 @@ public class PlayerJump : MonoBehaviour
         }
 
 
-        if (!pHook.isHooking && !pGroundCheck.isPlayerGrounded && Mathf.Approximately(playerInput.actions["Movement"].ReadValue<Vector2>().x, 0f))
-        {
-            rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
-        }
+
 
     }
 
@@ -172,6 +171,7 @@ public class PlayerJump : MonoBehaviour
         if (rb.velocity.y <= 0 && cantHoldJump)
         {
             cantHoldJump = false;
+            isFalling = true;
         }
     }
 

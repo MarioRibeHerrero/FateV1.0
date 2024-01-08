@@ -46,9 +46,13 @@ public class PlayerGroundCheck : MonoBehaviour
             //when you touch ground you are no longer jumping and you can doble jump again
             pJump.isJumping = false;
             pJump.secondJump = true;
+            pJump.isFalling = false;
 
             //Set hasStopedMidAir to false, so he can do it again
             pMovement.hasStopedMidAir = false;
+
+
+            pHook.isFallingFromHook = false;
         }
         else
         {

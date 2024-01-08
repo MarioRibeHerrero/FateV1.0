@@ -512,15 +512,6 @@ Importar assets lucia
 
 
 
- 
-
-*/
-#endregion
-/*
-
-
-
-
 ---ViajeChina--
 Objetivos:
 limpiar codigo
@@ -573,10 +564,11 @@ he movido el healplayer, y he puesto las referencias de lo que se cura el pj en 
 creo que no hay mas referencias a la cantidad de vida curada en ningun sitio, pero idk
 borrado clases no usadas
 
-Dia32(PostNavidad):
-Hacer buuild jorge
 --------------
 
+
+
+Dia32(31/12/24):
 
 Terminar de mover cosas al player manager:
 TODO ESTO:
@@ -610,7 +602,48 @@ IsdobleJumpUnlocked--Ok
 
 -Cambiar muerte a actionMap q no te deja hacer nada--Ok
 
+
+
+
+ 
+
+*/
+#endregion
+/*
+
+
+
+
 Dia33(Repite ese numerito):
+Cambiado sistema carpetas environment y creada rama escenario-Ok
+------------
+-Cambiar funcionamiento Hook y hacer q funcione bien
+------------
+-hacer q el pj mire al hook--Ok
+Primera parte(Gancho a traves)
+descatkivar q de deje mitad aire cunado sales--Ok
+doble salto al salir--Ok
+quitado que te pare en medio--Ok
+añadido doble salto al caer y al salir del hook--Ok
+problema, coyote jump hace el doble jump
+sol: Añadido variable de isfalling, puedes hacer doble salto cunado estas cayendo y el coyotetimer ya ha pasado(es decir q no podrias saltar)
+Gancho en pared()
+De momen to vamos a ajustar hooks para que funcione con el otro sistema
+
+
+hacer despues del patio:
+
+-Enemigos spawnean donde quieren--Ok
+Era cosa de una animacion, y de que cambiaba el transform.`pos en lugar del transform.localpos
+Estan en estados que no toca--Ns, de momento no he conseguido q pase
+
+
+
+-Cambiar que parry solo sea hacia delante:
+comprobar xq entra 3 veces, si esta stun no pude hacer da´p
+
+
+
 
 
 
@@ -652,6 +685,10 @@ Cosas que hay que hacer:
 -Cambiar todas referencia hook por interact
 
 BUGS:
+
+
+-doble salto te das con el pilar
+
 -Player No Cae en inicio(de momento np)
 
 -Arreglar bugs Hook:
@@ -664,8 +701,7 @@ BUGS:
 
 -SOlucionar bug tercera persona, si andas alante y te paras luego paras no te deja seguir
 
--bugs camara:
-comprobar que no se sale cunado caes
+
 
 
 
@@ -707,11 +743,15 @@ quedan 4 semanas
 1 semana sol bugs
 -----------------
 Bugs que solucionar:
--Cambiar funcionamiento Hook y hacer q funcione bien.
--Bugs camara
--Cambiar buggs parry(Si hay timepo cambiar a q sea solo hacia delante)
--Doble salto se deberia poder hacer post hook y dejandote caer de plataforma
--Enemigos spawnean donde quieren y estan en estados que no tocan.
+
+-bugs camara:(se deja para preguntar dudas)
+Transiciones funcionan bien--
+IDEA: 
+poner collider en toda la habitacion, y que cunado entres en una, estes en esa hasta que entres en otra o salgas de esa
+comprobar que no se sale cunado caes--
+
+
+
 -Añadir UI parry(circulo)
 ------------------------------
 1 semana meter anims boss y pj

@@ -52,7 +52,13 @@ public class PlayerMovement : MonoBehaviour
             Movement();
         }
     }
-
+    private void Update()
+    {
+        if (!pHook.isFallingFromHook && !pHook.isHooking && !pGroundCheck.isPlayerGrounded && Mathf.Approximately(playerInput.actions["Movement"].ReadValue<Vector2>().x, 0f))
+        {
+            rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+        }
+    }
 
     private void Movement()
     {

@@ -180,8 +180,8 @@ public class RoundManager : MonoBehaviour
 
             //we reset it
             currentEnemy.SetActive(true);
-            currentEnemy.GetComponent<MeleeEnemyState>().CallReset();
             currentEnemy.transform.position = meleeSpawnPos[random].position;
+            currentEnemy.GetComponent<MeleeEnemyState>().CallReset();
             currentEnemy.GetComponent<Animator>().SetTrigger("Entry");
 
             //add it to the list so we know when to pass round

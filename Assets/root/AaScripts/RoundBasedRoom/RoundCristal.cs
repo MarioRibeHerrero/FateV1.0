@@ -43,7 +43,7 @@ public class RoundCristal : MonoBehaviour
     {
         for (int i = 0; i <= 1; i++)
         {
-            Debug.Log(i);
+            
                 GameObject go = Instantiate(proyectile);
             proyectiles.Add(go);
             go.SetActive(false);
@@ -72,7 +72,7 @@ public class RoundCristal : MonoBehaviour
 
     public void Reset()
     {
-        Debug.Log("HELLO");
+        Debug.Log("CristalReset");
         transitionTimer = 0f;
         GetComponent<CristalHealthManager>().health = 20;
         

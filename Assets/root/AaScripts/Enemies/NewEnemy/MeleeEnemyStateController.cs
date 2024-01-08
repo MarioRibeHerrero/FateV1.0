@@ -64,13 +64,15 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         pointA = transform.parent.transform.Find("PathPoints").transform.Find("PointA");
         pointB = transform.parent.transform.Find("PathPoints").transform.Find("PointB");
 
-    }
+        stateManager.onEnemyReset += Reset;
 
+    }
+    
     private void Start()
     {
         target = pointA;
         canAttack = true;
-        stateManager.onEnemyReset += Reset;
+        
         patience = 0.3f;
     }
 
@@ -82,10 +84,9 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     private void Reset()
     {
-        Debug.Log("KEKE");
         stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
         canAttack = true;
-        //transform.position = startingPosition;
+        transform.localPosition = Vector3.zero;
         
     }
 

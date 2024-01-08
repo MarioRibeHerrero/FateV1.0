@@ -8,6 +8,7 @@ using UnityEngine.Rendering;
 public class BasicEnemyHitPoint : MonoBehaviour
 {
     [SerializeField] GameObject  root;
+
     private enum Points
     {
         head,
@@ -31,69 +32,62 @@ public class BasicEnemyHitPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        Debug.Log(this.name + other.name);
+
+
+
+
+
+
+        switch (whatPointAmI)
         {
-            switch (whatPointAmI)
-            {
             case Points.head:
 
-                    if (!pManager.isPlayerParry)
-                    {
+                if (other.CompareTag("Player"))
+                {
+                    root.GetComponent<BasicEnemyAttack>().HitHead(other);
 
-                        root.GetComponent<BasicEnemyAttack>().HitHead(other);
+                }
+                break;
 
-                    }
-                    else
-                    {
-                        root.GetComponent<Animator>().SetTrigger("Stunned");
-                        HealPlayer();
-                    }
 
-                    break;
 
-                
-                
             case Points.body:
 
 
-                    if (!pManager.isPlayerParry)
+
+                if (other.CompareTag("Player"))
+                {
+                    if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGroundCheck>().isPlayerGrounded)
                     {
-                        
-                        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerGroundCheck>().isPlayerGrounded)
-                        {
-                            root.GetComponent<BasicEnemyAttack>().HitBody(other);
-                        }else root.GetComponent<BasicEnemyAttack>().HitHead(other);
+                        root.GetComponent<BasicEnemyAttack>().HitBody(other);
                     }
-                    else
-                    {
-                        root.GetComponent<Animator>().SetTrigger("Stunned");
-                        HealPlayer();
-                    }
+                    else root.GetComponent<BasicEnemyAttack>().HitHead(other);
+                }
 
+                break;
 
-                    break;
+            case Points.weapon:
 
-                case Points.weapon:
+                if (other.CompareTag("Parry"))
+                {
+                    root.GetComponent<Animator>().SetTrigger("Stunned");
+                    HealPlayer();
+                    return;
+                }
 
+                if (other.CompareTag("Player"))
+                {
+                    root.GetComponent<BasicEnemyAttack>().BasicAttack(other);
+                }
 
-                    if (!pManager.isPlayerParry)
-                    {
-                        root.GetComponent<BasicEnemyAttack>().BasicAttack(other);
-
-                    }
-                    else
-                    {
-                        root.GetComponent<Animator>().SetTrigger("Stunned");
-                        HealPlayer();
-                    }
-
+                break;
 
 
 
-                    break;
-            }
+
+
         }
-
 
 
 
