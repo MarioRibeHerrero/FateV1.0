@@ -573,8 +573,8 @@ he movido el healplayer, y he puesto las referencias de lo que se cura el pj en 
 creo que no hay mas referencias a la cantidad de vida curada en ningun sitio, pero idk
 borrado clases no usadas
 
-Dia32(31/12/23):
----------------
+Dia32(PostNavidad):
+Hacer buuild jorge
 --------------
 
 
@@ -635,11 +635,12 @@ MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 
 Objetivos FIN-JUEGO(cosas que faltan por añadir):
-MiniMapa Funcional
+MiniMapa Funcional(Descartado)
 Menues
 Bossfight
-Coleccionables(opcional)
 Sonidos
+Coleccionables(Descartado)
+
 
 Cosas que hay que hacer:
 
@@ -651,7 +652,7 @@ Cosas que hay que hacer:
 -Cambiar todas referencia hook por interact
 
 BUGS:
--Player No Cae en inicio
+-Player No Cae en inicio(de momento np)
 
 -Arreglar bugs Hook:
 .si haces parry en la plataforma, dejas de estar en la plataforma.
@@ -660,9 +661,11 @@ BUGS:
 
 -Bugs enemigo melee:
 .con parry a veces se buggea y se queda perma stun si haces el parry a destiempo(puede ser que comprube si el player esta ispartying, y en caso de estarlo se vuelve a estunear solo,esto se solucionaria con el cambio delcollider al parry)
-.enemigo no detecta si se sale de plataformas o si atrabiesa objetos.
 
 -SOlucionar bug tercera persona, si andas alante y te paras luego paras no te deja seguir
+
+-bugs camara:
+comprobar que no se sale cunado caes
 
 
 
@@ -690,13 +693,77 @@ Solucion?
 Usar ontriggerExit
 
 
------------------------------------------------------------------------------------------------------------------------------------------------
-COSAS HECHAS(ESTA LISTA ES UNA MIERDA XQ AL FINAL NO METERE NADA PERO WENO)
------------------------------------------------------------------------------------------------------------------------------------------------
--Cambiar punete a Action map distinto
--Cambiar muerte a actionMap q no te deja hacer nada--Ok
 
 
+
+
+------------------
+organicacion
+-----------------
+
+quedan 4 semanas
+
+-----------------
+1 semana sol bugs
+-----------------
+Bugs que solucionar:
+-Cambiar funcionamiento Hook y hacer q funcione bien.
+-Bugs camara
+-Cambiar buggs parry(Si hay timepo cambiar a q sea solo hacia delante)
+-Doble salto se deberia poder hacer post hook y dejandote caer de plataforma
+-Enemigos spawnean donde quieren y estan en estados que no tocan.
+-Añadir UI parry(circulo)
+------------------------------
+1 semana meter anims boss y pj
+------------------------------
+-meter animaicones pj, y solucionar bugs que puedan traer
+-meter animaciones boss, hacer los ataques que faltan y terminar la bossfight
+-solucionar bugs, y que la bossfght se sienta muy bien.
+-arreglar sala rondas para que se entienda que tienes el cristal
+-añadir modo berserk(si todo lo anterior esta bien.)
+-------------------------------------
+1 semana cerrar juego y arreglar bugs
+-------------------------------------
+-Añadir menues
+-Añadir todo el sonido
+-Comprobar que tenemos el juego 100% jugable a escepcion de las animaciones del meelee
+-arreglar sala rondas para que se entienda que tienes el cristal
+-añadir modo berserk(si todo lo anterior esta bien.)
+--------------------------------
+1 semana meter animaciones melee
+--------------------------------
+-meter animaciones melee y solucionar bugs que puedan traer
+-asegurarse de que se siente bien el enemigo
+-solucionar bugs del juego
+-arreglar sala rondas para que se entienda que tienes el cristal
+-añadir modo berserk(si todo lo anterior esta bien.)
+
+--------------
+FIN DEL SPRINT(el juego deberia estar terminado a escepcion de los vfx, iluminacion, cinematicas, etc)
+--------------
+primera semana febrero: Lunes 5
+
+
+Segunda y ultima semana: Lunes 12 - Viernes 16
+
+-------------------------
+q significa para el resto(hablnado exclusivamente de lo mio)
+------------------------
+Primera semana:
+trabajo libre
+Segunda semana: Lunes 15
+Animaciones boss y personaje principal y cristal
+Tercera semana: Lunes 22
+Musica
+Sonidos
+Arte 2d
+Cuarta semana Lunes 29
+Animaciones melee
+
+---------------
+Recortes
+---------------
+MiniMapa Funcional(Descartado)
 
 
  */
