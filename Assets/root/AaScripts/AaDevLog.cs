@@ -615,9 +615,14 @@ IsdobleJumpUnlocked--Ok
 
 
 Dia33(Repite ese numerito):
+
+
 Cambiado sistema carpetas environment y creada rama escenario-Ok
+
+
+
 ------------
--Cambiar funcionamiento Hook y hacer q funcione bien
+-Cambiar funcionamiento Hook y hacer q funcione bien--Ok
 ------------
 -hacer q el pj mire al hook--Ok
 Primera parte(Gancho a traves)
@@ -631,6 +636,7 @@ Gancho en pared()
 De momen to vamos a ajustar hooks para que funcione con el otro sistema
 
 
+
 hacer despues del patio:
 
 -Enemigos spawnean donde quieren--Ok
@@ -639,11 +645,17 @@ Estan en estados que no toca--Ns, de momento no he conseguido q pase
 
 
 
--Cambiar que parry solo sea hacia delante:
+-Cambiar que parry solo sea hacia delante--Ok
 comprobar xq entra 3 veces, si esta stun no pude hacer da´p
+esto no acaba de funcionar, ademas el bug de perma stun puede sercausado por esto
+Nuevo sistema, ahora es una caja el ataque, en lugar de la maza en si. si esta el enemigo stun no te puede hacer daño.
 
 
 
+-Arreglar bugs Hook:
+.si haces parry en la plataforma, dejas de estar en la plataforma--Ok
+.si te pegan en mitad se buggea y te quedas ahi volando--Ok
+.algunas veces te pasas volado y atraviessas los hooks--
 
 
 
@@ -661,22 +673,6 @@ ToDoList:
 -Cambiar forma de actualizar la vida(usando el get/Set)
 -Añadir delegado ondeath para el player--Ok(funcional en RoundManager)---Comprobar y corregir si va mal en la bossfigt---
 
-
-
------------------------------------------------------------------------------------------------------------------------------------
-MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
------------------------------------------------------------------------------------------------------------------------------------
-
-Objetivos FIN-JUEGO(cosas que faltan por añadir):
-MiniMapa Funcional(Descartado)
-Menues
-Bossfight
-Sonidos
-Coleccionables(Descartado)
-
-
-Cosas que hay que hacer:
-
 -Añadir entrada boss
 -Revisar que hacer con el PlayerDefaultDamage
 -Modificar collider Parry(De momento estunnea te pegue por donde te pegue)
@@ -684,36 +680,39 @@ Cosas que hay que hacer:
 -Hacer parry instant
 -Cambiar todas referencia hook por interact
 
-BUGS:
-
-
--doble salto te das con el pilar
-
--Player No Cae en inicio(de momento np)
-
--Arreglar bugs Hook:
-.si haces parry en la plataforma, dejas de estar en la plataforma.
-.si te pegan en mitad se buggea y te quedas ahi volando
-.algunas veces te pasas volado y atraviessas los hooks.
-
--Bugs enemigo melee:
-.con parry a veces se buggea y se queda perma stun si haces el parry a destiempo(puede ser que comprube si el player esta ispartying, y en caso de estarlo se vuelve a estunear solo,esto se solucionaria con el cambio delcollider al parry)
-
--SOlucionar bug tercera persona, si andas alante y te paras luego paras no te deja seguir
-
-
-
-
-
-
 VFX:
 -temblor al morir
 -
 
 
+
+-----------------------------------------------------------------------------------------------------------------------------------
+MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
+-----------------------------------------------------------------------------------------------------------------------------------
+BUGS:
+
+
+-doble salto te das con el pilar
+
+
+
+
+-SOlucionar bug tercera persona, si andas alante y te paras luego paras no te deja seguir
+
+
+-Player No Cae en inicio(de momento np)
+
+
+
+
+
+
+
 ----------------------------------------------------------------------------------------------------------------------------------
 PREGUNTAS:
 -----------------------------------------------------------------------------------------------------------------------------------
+
+.algunas veces te pasas volado y atraviessas los hooks--
 
 CAMARAS:
 Idea:
@@ -733,9 +732,18 @@ Usar ontriggerExit
 
 
 
-------------------
-organicacion
------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ORGANIZACION
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Objetivos FIN-JUEGO(cosas que faltan por añadir):
+MiniMapa Funcional(Descartado)
+Menues
+Bossfight
+Sonidos
+Coleccionables(Descartado)
+
+
 
 quedan 4 semanas
 

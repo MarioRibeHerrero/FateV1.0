@@ -16,6 +16,7 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
 
     private void CanAttackToTrue()
     {
+        stateManager.isStunned = false;
         enemyController.canAttack = true;
         if(stateManager.playerInMovingZone)
         {

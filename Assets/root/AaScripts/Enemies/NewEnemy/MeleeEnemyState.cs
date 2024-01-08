@@ -20,6 +20,8 @@ public class MeleeEnemyState : MonoBehaviour
     public float healthOnRespawn;
     public bool playerInMovingZone;
 
+    public bool isStunned;
+
     private void Start()
     {
         onEnemyReset += ResetS;

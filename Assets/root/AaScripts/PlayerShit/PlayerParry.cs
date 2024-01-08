@@ -8,6 +8,7 @@ public class PlayerParry : MonoBehaviour
     PlayerInput playerInput;
     PlayerManager pManager;
     Animator anim;
+    PlayerHealth pHealth;
 
 
     //CD no hecho aun
@@ -18,7 +19,7 @@ public class PlayerParry : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         pManager = GetComponent<PlayerManager>();
-
+        pHealth = GetComponent<PlayerHealth>();
 
         playerInput.actions["Parry"].started += PlayerParry_started;
 
@@ -36,7 +37,8 @@ public class PlayerParry : MonoBehaviour
         if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && pManager.playerHealth >= 35 && !pManager.isPlayerParry && !pManager.inStrongAttack) 
         {
             anim.SetTrigger("Parry");
-           
+            pManager.isPlayerParry = true;
+            pHealth.TakeDamage(pManager.parryHealingAmmount);
         }
     }
 

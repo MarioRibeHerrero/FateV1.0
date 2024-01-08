@@ -167,5 +167,13 @@ public class PlayerHook : MonoBehaviour
     }
 
 
+    public void CancelHook()
+    {
+        //if hook is canceled you set vel to 0, and set everithyng that we have with the hook to false
+        rb.velocity = Vector3.zero;
+        lineRenderer.enabled = false;
+        isHooking = false;
+        isFallingFromHook = false;
+    }
 
 }

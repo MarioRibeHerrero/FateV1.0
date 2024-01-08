@@ -1,14 +1,20 @@
+using Autodesk.Fbx;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.SearchService;
 
 public class BasicEnemyHitPoint : MonoBehaviour
 {
     [SerializeField] GameObject  root;
+    public bool isStunned;
 
+    private MeleeEnemyStateController stateController;
     private enum Points
     {
         head,
@@ -23,6 +29,8 @@ public class BasicEnemyHitPoint : MonoBehaviour
     {
         phealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         pManager = phealth.transform.GetComponent<PlayerManager>();
+
+        stateController = transform.parent.GetComponent<MeleeEnemyStateController>();
     }
 
     private void HealPlayer()
@@ -32,13 +40,6 @@ public class BasicEnemyHitPoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(this.name + other.name);
-
-
-
-
-
-
         switch (whatPointAmI)
         {
             case Points.head:
@@ -69,19 +70,31 @@ public class BasicEnemyHitPoint : MonoBehaviour
 
             case Points.weapon:
 
-                if (other.CompareTag("Parry"))
-                {
-                    root.GetComponent<Animator>().SetTrigger("Stunned");
-                    HealPlayer();
-                    return;
-                }
-
                 if (other.CompareTag("Player"))
                 {
-                    if(root.GetComponent<MeleeEnemyState>().state != MeleeEnemyState.MeleeEnemyStateEnum.Stunned)
+
+                    if (!other.GetComponent<PlayerManager>().isPlayerParry)
                     {
                         root.GetComponent<BasicEnemyAttack>().BasicAttack(other);
                     }
+                    else
+                    {
+                        if (stateController.facingRight && !other.GetComponent<PlayerRotation>().isFacingRight ||
+                            !stateController.facingRight && other.GetComponent<PlayerRotation>().isFacingRight)
+                        {
+                            root.GetComponent<Animator>().SetTrigger("Stunned");
+                            HealPlayer();
+                            root.GetComponent<MeleeEnemyState>().isStunned = true;
+                            return;
+                        }
+                        else
+                        {
+                            root.GetComponent<BasicEnemyAttack>().BasicAttack(other);
+
+                        }
+
+                    }
+
                 }
 
                 break;
@@ -92,9 +105,10 @@ public class BasicEnemyHitPoint : MonoBehaviour
 
         }
 
-
+        
 
 
 
     }
+
 }

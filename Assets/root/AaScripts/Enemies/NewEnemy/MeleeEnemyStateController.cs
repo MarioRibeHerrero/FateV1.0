@@ -14,7 +14,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     [SerializeField] BasicEnemyHealth healthManager;
 
 
-    private bool facingRight;
+    public bool facingRight;
 
     //Pathing
     private Transform pointA;

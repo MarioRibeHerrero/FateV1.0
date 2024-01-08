@@ -10,11 +10,13 @@ public class PlayerHit : MonoBehaviour
     [SerializeField] float invulnerabilityTime;
     private Animator anim;
     PlayerManager pManager;
+    PlayerHook pHook;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         pManager = GetComponent<PlayerManager>();
+        pHook = GetComponent<PlayerHook>();
     }
 
     private void Update()
@@ -88,7 +90,7 @@ public class PlayerHit : MonoBehaviour
         //para que no pueda atacar el player ni parrear
         pManager.inStrongAttack = true;
         pManager.playerInNormalAttack = true;
-        
+        pHook.CancelHook();
 
         pushPlayer(hitPosition, pushBackForce);
 
