@@ -659,6 +659,31 @@ Nuevo sistema, ahora es una caja el ataque, en lugar de la maza en si. si esta e
 
 
 
+
+Dia34:
+
+añadir cosas que añadi en la build de jorge, y he perdido(Cerrar juego(hasta que pueda preguntar a jorge por los problemas))
+
+-Enemigo se sale de las plataformas y atraviesa paredes--Ok
+-parry y proyectiles va mal--Ok
+-Enemigo sale en estado que no toca--Creo que Ok ESTABA MAL(ahora creo que si esta bn)
+
+
+-Cambiar sistema camaras(falta por añadir la camara del boss)
+Añadir esta tarde-->
+
+
+
+desafiar boss, lo matas, te salen los creditos(con un metodo q llamaremos desde la animacion de muerte) te sale una opcion de si quieres seguir juegando, si le das  a que si, te lleva al mapa
+otra vez, pero ahora puedes salir de la sala del boss a otras con normalidad.
+
+
+
+
+Dia35:
+PREGUNTAR JORGE COMO HACER el tema del evento desde fuera
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -691,13 +716,15 @@ MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
 
+-parry no cancela combo aa
 
 -doble salto te das con el pilar
 
-
-
-
 -SOlucionar bug tercera persona, si andas alante y te paras luego paras no te deja seguir
+
+bug hook 
+
+-Aa y teleport no fucionan
 
 
 -Player No Cae en inicio(de momento np)

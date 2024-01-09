@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GridBrushBase;
 
 public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 {
@@ -84,12 +85,18 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     private void Reset()
     {
-        stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
         canAttack = true;
         transform.localPosition = Vector3.zero;
-        
+        stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
+        Debug.Log(stateManager.state);
+        Invoke("Prueba", 1f);
     }
 
+    private void Prueba()
+    {
+        Debug.Log(stateManager.state);
+
+    }
 
     private void EnemyStateManagement()
     {
@@ -209,12 +216,14 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     void FollowPlayer()
     {
-        if (onGround)
+        if(!stateManager.playerInMovingZone) stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
+        if (onGround )
         {
             Vector3 targetPosition = new Vector3(playerTarget.transform.position.x, transform.position.y, transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, enemyMovementSpeed * Time.deltaTime);
-            FacePlayer();
+            
         }
+        FacePlayer();
 
     }
     private void FacePlayer()
@@ -237,13 +246,19 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     private void CheckForGround()
     {
-
-        Quaternion rotation = onGroundPos.rotation;
-        Vector3 direction = rotation * Vector3.down;
-
-        onGround = Physics.Raycast(onGroundPos.position, Vector3.down + direction * 1, walkeableLayers);
         
 
+
+
+        onGround = Physics.Raycast(onGroundPos.position, Vector3.down, 1, walkeableLayers);
+
+        if (onGround)
+        {
+            Quaternion rotation = onGroundPos.transform.rotation;
+            Vector3 direction = rotation * Vector3.right;
+
+            onGround = !Physics.Raycast(onGroundPos.position, direction, 1f, walkeableLayers);
+        }
     }
 
 
@@ -294,9 +309,12 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
         Vector3 startPoint = onGroundPos.position;
         Quaternion rotation = onGroundPos.rotation;
-        Vector3 direction = rotation * Vector3.down;
+        Vector3 direction = Vector3.down ;
         Vector3 endPoint = startPoint + direction * 1;
+        Vector3 endPoint2 = startPoint + rotation * Vector3.right * 1;
+
         Gizmos.DrawLine(startPoint, endPoint);
+        Gizmos.DrawLine(startPoint, endPoint2);
     }
 
     #endregion

@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1346845125184918109}
-  m_LocalRotation: {x: -0, y: -0, z: -0.53394264, w: 0.84552073}
-  m_LocalPosition: {x: -0.44, y: -1.29, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
+  m_LocalPosition: {x: -0.863, y: -0.868, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 670951497454026734}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -64.544}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
 --- !u!1 &1631651804136830283
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +330,7 @@ MonoBehaviour:
   stateManager: {fileID: 5565399449823681868}
   animator: {fileID: 3512913615768527164}
   healthManager: {fileID: 7160698739084502750}
+  facingRight: 0
   onGround: 0
   onGroundPos: {fileID: 7513641065178283339}
   walkeableLayers:
@@ -806,7 +807,7 @@ Transform:
   - {fileID: 24382616620733065}
   - {fileID: 6644064127229462777}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3512913615768527164
 Animator:

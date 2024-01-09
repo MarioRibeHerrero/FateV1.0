@@ -72,7 +72,6 @@ public class RoundCristal : MonoBehaviour
 
     public void Reset()
     {
-        Debug.Log("CristalReset");
         transitionTimer = 0f;
         GetComponent<CristalHealthManager>().health = 20;
         

@@ -38,6 +38,8 @@ public class RoomTracking : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player = other.gameObject;
+
+
             if (usingTp)
             {
                 text.SetActive(true);
@@ -48,6 +50,9 @@ public class RoomTracking : MonoBehaviour
 
     }
 
+
+ 
+
     private void OnTriggerExit(Collider other)
     {
         if (usingTp) text.SetActive(false);
@@ -55,6 +60,23 @@ public class RoomTracking : MonoBehaviour
 
 
 
+
+
+        if(other.transform.position.x < this.transform.position.x)
+        {
+            //esta en la siguiente
+
+            GameManager.Instance.currentRoom = nextRoom;
+            camManager.SetNewCamera(nextRoom);
+            camManager.DisableOldCamera(previusRoom);
+        }
+        else
+        {
+            //esta en la anterior
+            GameManager.Instance.currentRoom = previusRoom;
+            camManager.SetNewCamera(previusRoom);
+            camManager.DisableOldCamera(nextRoom);
+        }
 
     }
 
