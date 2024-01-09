@@ -26,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
+        if (currentSpawnPoint != null) SetPlayerToStartPos();
+        else Debug.LogError("te falta el respawnPoint");
 
         pManager = GetComponent<PlayerManager>();
         pInput = GetComponent<PlayerInput>();
@@ -93,6 +95,17 @@ public class PlayerHealth : MonoBehaviour
         uiManager.UpdatePlayerHealthSlider();
         pManager.isPlayerAlive = true;
 
+    }
+    
+    private void SetPlayerToStartPos()
+    {
+        SetCameraToRespawnCamera();
+        transform.position = currentSpawnPoint.transform.position;
+        transform.Find("Body").transform.gameObject.SetActive(true);
+        ActivateAllPlayerFuntionsAndKill();
+        pManager.playerHealth = 100f;
+        uiManager.UpdatePlayerHealthSlider();
+        pManager.isPlayerAlive = true;
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -25,6 +25,7 @@ public class BossFightController : MonoBehaviour
 
         bossSpikeAttack = GetComponent<BossSpikeAttack>();
         bossFrisbiAttack = GetComponent<BossFrisbiAttack>();
+        bossUiManager = GetComponent<BossUiManager>();
     }
 
     public void GetRandomBossAttack()
@@ -50,13 +51,13 @@ public class BossFightController : MonoBehaviour
         pHealth.onPlayerDeath += ResetBossFight;
         inBelzegorFight = true;
         Invoke(nameof(GetRandomBossAttack), 2f);
+        bossUiManager.EnableHealth();
     }
 
     public void ResetBossFight()
     {
-        StopCoroutine(bossFrisbiAttack.FrisbiAttack());
-        StopCoroutine(bossSpikeAttack.SpikeAttack());
         bossUiManager.DisableHealth();
+        inBelzegorFight = false;
 
         pHealth.onPlayerDeath -= ResetBossFight;
 

@@ -33,7 +33,7 @@ public class BossSpikeAttack : MonoBehaviour
         Debug.Log("GOLA");
         anim.SetTrigger("SpikeAttack");
 
-        if (!fightController.inBelzegorFight) StopCoroutine(SpikeAttack());
+        if (!fightController.inBelzegorFight) yield break;
 
         yield return new WaitForSeconds(fightController.timeBetweenAttacks);
         fightController.GetRandomBossAttack();

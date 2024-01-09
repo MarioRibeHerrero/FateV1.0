@@ -9,6 +9,9 @@ public class PlayerSpawnPoint : MonoBehaviour
     private GameObject spawnPoint;
     private GameObject lastSpawnPoint;
 
+    [SerializeField] GameObject[] allSpawnPoints;
+
+
     //components
     PlayerHealth pHealth;
 
@@ -43,6 +46,10 @@ public class PlayerSpawnPoint : MonoBehaviour
 
             lastSpawnPoint = spawnPoint;
             SetNewCamOnRespawn();
+            pHealth.HealPlayer(100);
+
+
+            SaveSystem.SaveGameManager(GameManager.Instance);
 
         }
     }

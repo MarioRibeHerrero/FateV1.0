@@ -660,7 +660,7 @@ Nuevo sistema, ahora es una caja el ataque, en lugar de la maza en si. si esta e
 
 
 
-Dia34:
+Dia34(09/01/24):
 
 añadir cosas que añadi en la build de jorge, y he perdido(Cerrar juego(hasta que pueda preguntar a jorge por los problemas))
 
@@ -677,32 +677,56 @@ Añadir esta tarde-->
 desafiar boss, lo matas, te salen los creditos(con un metodo q llamaremos desde la animacion de muerte) te sale una opcion de si quieres seguir juegando, si le das  a que si, te lleva al mapa
 otra vez, pero ahora puedes salir de la sala del boss a otras con normalidad.
 
+Hecho todo hasta lo de volver xd
+para eso necesito el sistema de guardado
+fumada
+
+Cosas que guardar a nivel basico:
+ultimo punto de guardado, que el pj reaparezca en la posicion que le toca.
+
+he hecho muchas cosas, pero mini resumen para mañana es que me guardo el valor del floar currentRoom, para esto,
+cunado seteo un nuevo respawnpoint, transformo el valor del enum a float con un switch, y ese es el valor que guardo,
+cunado lo lodeo, lo vuelvo a pasar de float a enum 
+problemas: el spawnpoin ahora mismo no esta vinculado al numero de la room.
+tendria que vincualarlo de alguna forma(ahora no se me ocurre) para asi en el start del spawnpoint, poner la posicion del plahyer al spawnpint.
 
 
 
-Dia35:
-PREGUNTAR JORGE COMO HACER el tema del evento desde fuera
+Dia35(10/01/24):
 
+Planning Mañana:
+
+cosas que hacer hasta tener clase con jorge:
+TODOLIST en orden:
+Preguntas Jorge:
+
+-COMO HACER el tema del evento desde fuera(para la entrada del boss, que le pueda poner con un evento el metodo que inicia la bossfigth;
+
+-sistema de guardado, tema de transformar el enum, y como hacer lo de guardar la posicion de respawn.(no lo he pensado mucho, pero algo del palo de:
+cuando guarde la posicion, que le digo que room es la de currenrespawn point, tengo tanto el transform del respawnpoint como la room, almacenarlos de alguna forma los dos?
+
+
+
+Dia 36(Jueves 11/01/24)
+Solucionar bugs pequeños, actualizar lista todolist con estos bugs.
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
--Atajo no funciona bien(Arreglar cunado esten bn hechos los pushes del github)
--Funcionamiento de este boss, te saldra el mensaje de desafiar, y en caso de darle, empezara directamente la bossfiht(hacer cunado github)
--Cuando Termine mirar cosas guardado partida
+
+-Algunas veces te pasas volado y atraviessas los hooks(solucionar con el physics drawcircle
+
+-Funcionamiento de este boss, te saldra el mensaje de desafiar, y en caso de darle, empezara directamente la bossfiht, creditos, seguir jugando o main menu.
 
 
+
+
+
+NO PRIORITARIO:
 
 -Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 -Añadir regiones y ordenar codigo
 -Cambiar forma de actualizar la vida(usando el get/Set)
--Añadir delegado ondeath para el player--Ok(funcional en RoundManager)---Comprobar y corregir si va mal en la bossfigt---
-
--Añadir entrada boss
--Revisar que hacer con el PlayerDefaultDamage
--Modificar collider Parry(De momento estunnea te pegue por donde te pegue)
--Doble salto se deberia poder hacer post hook y dejandote caer de plataforma
--Hacer parry instant
 -Cambiar todas referencia hook por interact
 
 VFX:
@@ -715,6 +739,9 @@ VFX:
 MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
+
+
+-Si te pegan deslizas infinito
 
 -parry no cancela combo aa
 
@@ -739,20 +766,10 @@ bug hook
 PREGUNTAS:
 -----------------------------------------------------------------------------------------------------------------------------------
 
-.algunas veces te pasas volado y atraviessas los hooks--
-
-CAMARAS:
-Idea:
-hacer colliders del tamaño de cada habitacion, en los que con el ontriggerEnter cambiaria la variable de currentRoom, y esto, con el Get/Set(preguntar como se haria)
-te actualizaria las camaras que estan y dejan de estar activas. lo mismo a la hora de morir, miraria cual es el currentSpawnPointCam, y te actualizaria las camaras.
-
 
 -Para el Ui del parry:
 AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
--Problema con triggers y pasar entre rondas:
-Problema con cambio de camaras de habitaciones, que pasa si se queda en medio del colider y vuyelve.
-Solucion?
-Usar ontriggerExit
+
 
 
 
@@ -779,15 +796,9 @@ quedan 4 semanas
 -----------------
 Bugs que solucionar:
 
--bugs camara:(se deja para preguntar dudas)
 Transiciones funcionan bien--
-IDEA: 
-poner collider en toda la habitacion, y que cunado entres en una, estes en esa hasta que entres en otra o salgas de esa
-comprobar que no se sale cunado caes--
-
-
-
 -Añadir UI parry(circulo)
+
 ------------------------------
 1 semana meter anims boss y pj
 ------------------------------

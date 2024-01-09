@@ -36,6 +36,12 @@ public class PlayerManager : MonoBehaviour
     [Header("Unlockeable Abilities")]
 
     public bool isDobleJumpUnlocked;
+
+    private void Awake()
+    {
+        playerCurrentDamage = playerDefaultDamage;
+
+    }
     private void Start()
     {
         canPlayerMove = true;
@@ -44,7 +50,7 @@ public class PlayerManager : MonoBehaviour
         isPlayerStunned = false;
         isPlayerInvulnerable = false;
         isPlayerParry = false;
-        playerCurrentDamage = playerDefaultDamage;
+        
         inStrongAttack = false;
         playerHealth = 100;
         isPlayerAlive = true;

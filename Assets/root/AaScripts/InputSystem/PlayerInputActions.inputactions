@@ -423,7 +423,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Hook",
+                    "name": "Interact3",
                     "type": "Button",
                     "id": "b0a33f42-eed8-4594-932e-05fb0b10f060",
                     "expectedControlType": "Button",
@@ -612,7 +612,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Hook",
+                    "action": "Interact3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -623,7 +623,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Hook",
+                    "action": "Interact3",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -18,6 +18,8 @@ public class PlayerInteract : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
 
         playerInput.actions["Hook"].started += PlayerSpawnPoint_started;
+        playerInput.actions["Interact3"].started += InteractThirdPerson;
+
         playerInput.actions["OpenOptions"].started += PlayerInteract_started;
     }
 
@@ -29,16 +31,24 @@ public class PlayerInteract : MonoBehaviour
 
 
     
-
-
-    private void PlayerSpawnPoint_started(InputAction.CallbackContext obj)
+    private void InteractThirdPerson(InputAction.CallbackContext obj)
     {
-        
-
+        Debug.Log("JMDAKSJ");
         if (onInteract != null)
         {
             onInteract();
         }
+    }
+
+    private void PlayerSpawnPoint_started(InputAction.CallbackContext obj)
+    {
+
+        Debug.Log("JMDAKSJ");
+        if (onInteract != null)
+        {
+            onInteract();
+        }
+
 
     }
 }

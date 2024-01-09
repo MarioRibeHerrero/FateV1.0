@@ -33,7 +33,7 @@ public class BossFrisbiAttack : MonoBehaviour
 
         AttackPlayer(random);
 
-        if (!fightController.inBelzegorFight) StopCoroutine(FrisbiAttack());
+        if (!fightController.inBelzegorFight) yield break;
 
         yield return new WaitForSeconds(fightController.timeBetweenAttacks);
         fightController.GetRandomBossAttack();
