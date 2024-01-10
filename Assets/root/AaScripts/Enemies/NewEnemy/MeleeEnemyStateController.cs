@@ -88,15 +88,8 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         canAttack = true;
         transform.localPosition = Vector3.zero;
         stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
-        Debug.Log(stateManager.state);
-        Invoke("Prueba", 1f);
     }
 
-    private void Prueba()
-    {
-        Debug.Log(stateManager.state);
-
-    }
 
     private void EnemyStateManagement()
     {

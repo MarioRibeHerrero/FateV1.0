@@ -25,6 +25,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] GameObject Room_1_5_2;
 
     [SerializeField] GameObject Room_1_6;
+    [SerializeField] GameObject Room_1_6_1;
 
     [SerializeField] GameObject Room_1_7;
 
@@ -88,7 +89,9 @@ public class CameraManager : MonoBehaviour
             case GameManager.Rooms.Room_1_6:
                 Room_1_6.SetActive(true);
                 break;
-
+            case GameManager.Rooms.Room_1_6_1:
+                Room_1_6_1.SetActive(true);
+                break;
 
 
             case GameManager.Rooms.Room_1_7:
@@ -153,6 +156,9 @@ public class CameraManager : MonoBehaviour
 
             case GameManager.Rooms.Room_1_6:
                 Room_1_6.SetActive(false);
+                break;
+            case GameManager.Rooms.Room_1_6_1:
+                Room_1_6_1.SetActive(false);
                 break;
 
 

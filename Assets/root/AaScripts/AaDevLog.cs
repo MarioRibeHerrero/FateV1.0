@@ -698,12 +698,34 @@ Planning Mañana:
 
 cosas que hacer hasta tener clase con jorge:
 TODOLIST en orden:
+
+-Algunas veces te pasas volado y atraviessas los hooks(solucionar con el physics drawcircle--Ok
+
+-Funcionamiento de este boss, te saldra el mensaje de desafiar, y en caso de darle, empezara directamente la bossfiht, creditos, seguir jugando o main menu--Ok
+
+Hacer hud creditos, con botones de seguir jugando y exit--Ok
+puedes saltar rapido manteniendo--Ok
+desbloqueas sala al completar bossfight--Ok
+
+metre cosas encuestas en bugs/todolist--
+
+PostPatio:
+
 Preguntas Jorge:
 
--COMO HACER el tema del evento desde fuera(para la entrada del boss, que le pueda poner con un evento el metodo que inicia la bossfigth;
+
+-COMO HACER el tema del evento desde fuera(para la entrada del boss, que le pueda poner con un evento el metodo que inicia la bossfigth--De momento no, hacer con bossManager 
+y herencias cunado se haga en plan bn.
 
 -sistema de guardado, tema de transformar el enum, y como hacer lo de guardar la posicion de respawn.(no lo he pensado mucho, pero algo del palo de:
 cuando guarde la posicion, que le digo que room es la de currenrespawn point, tengo tanto el transform del respawnpoint como la room, almacenarlos de alguna forma los dos?
+
+--------------
+Hacer que sala pasillo, sea normal una vez terminada la bossfight--Ok
+
+-meter animaciones pablo--
+
+meter guardado(new game te cargar posicion normal, load te lleva a punto guardado si tienes.)(esta tarde)
 
 
 
@@ -714,12 +736,12 @@ Solucionar bugs pequeños, actualizar lista todolist con estos bugs.
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
--Algunas veces te pasas volado y atraviessas los hooks(solucionar con el physics drawcircle
-
--Funcionamiento de este boss, te saldra el mensaje de desafiar, y en caso de darle, empezara directamente la bossfiht, creditos, seguir jugando o main menu.
 
 
+-Mirar con pablo hooks y posiciones
 
+
+-Los pinchos siempre salen en la misma posición
 
 
 NO PRIORITARIO:
@@ -729,17 +751,20 @@ NO PRIORITARIO:
 -Cambiar forma de actualizar la vida(usando el get/Set)
 -Cambiar todas referencia hook por interact
 
+
+
+-COMO HACER el tema del evento desde fuera(para la entrada del boss, que le pueda poner con un evento el metodo que inicia la bossfigth--De momento no, hacer con bossManager 
+y herencias cunado se haga en plan bn.
+
 VFX:
 -temblor al morir
 -
-
-
-
 -----------------------------------------------------------------------------------------------------------------------------------
 MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
 
+-Ataacar encima del tp hace que vaya mal
 
 -Si te pegan deslizas infinito
 

@@ -17,6 +17,7 @@ public class BossRoomTracking : MonoBehaviour
 
 
     [SerializeField] BossFightController bFight;
+
     #endregion
     private void Awake()
     {
@@ -89,5 +90,6 @@ public class BossRoomTracking : MonoBehaviour
     private void StartBossFight()
     {
         bFight.StartBossFight();
+        
     }
 }

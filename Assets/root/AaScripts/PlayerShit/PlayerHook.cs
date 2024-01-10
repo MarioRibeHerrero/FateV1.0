@@ -124,9 +124,10 @@ public class PlayerHook : MonoBehaviour
         }
         if (other.CompareTag("HookPoint"))
         {
+            Debug.Log("ENTRA");
             //when you hit the hook itself, the hook boost is over
             lineRenderer.enabled = false;
-            isHooking = false;
+            //isHooking = false;
             isFallingFromHook = true;
             pJump.secondJump = true;
 

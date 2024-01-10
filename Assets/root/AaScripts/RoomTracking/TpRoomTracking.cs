@@ -17,6 +17,9 @@ public class TpRoomTracking : MonoBehaviour
     [SerializeField] Transform prevPos, nextPos;
 
     [SerializeField] bool instant;
+
+
+    public Event startBossfight;
     #endregion
     private void Awake()
     {

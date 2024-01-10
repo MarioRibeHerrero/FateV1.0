@@ -792,6 +792,45 @@
             "id": "ad2f5247-acfc-4af5-b246-e962d77227f9",
             "actions": [],
             "bindings": []
+        },
+        {
+            "name": "Credits",
+            "id": "81aa6133-e820-4f16-b857-9f463a9ed286",
+            "actions": [
+                {
+                    "name": "Skip",
+                    "type": "Button",
+                    "id": "368ecb9d-b60c-414e-9c77-b2a395359113",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "cbebfd75-14e1-403f-8de9-793aa92ed214",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aca2902b-fb74-4e19-a0ab-d436f47a26f0",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Skip",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -33,7 +33,6 @@ public class PlayerInteract : MonoBehaviour
     
     private void InteractThirdPerson(InputAction.CallbackContext obj)
     {
-        Debug.Log("JMDAKSJ");
         if (onInteract != null)
         {
             onInteract();

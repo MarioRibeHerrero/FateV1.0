@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
         Room_1_5_2,
 
         Room_1_6,
+        Room_1_6_1,
 
         Room_1_7,
 
@@ -72,13 +73,12 @@ public class GameManager : MonoBehaviour
         set
         {
             SwitchConvertidor();
-            Debug.Log(respawnPointF);
             respawnRoom = value; 
         }
     }
 
 
-
+    public Vector3 respawnVector;
     public Rooms respawnRoom;
     public Rooms currentRoom;
 

@@ -30,6 +30,7 @@ public class BossFightController : MonoBehaviour
 
     public void GetRandomBossAttack()
     {
+        if (!inBelzegorFight) return;
         int random = Random.Range(1, 3);
         switch (random)
         {

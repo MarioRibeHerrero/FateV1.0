@@ -9,8 +9,6 @@ public class PlayerSpawnPoint : MonoBehaviour
     private GameObject spawnPoint;
     private GameObject lastSpawnPoint;
 
-    [SerializeField] GameObject[] allSpawnPoints;
-
 
     //components
     PlayerHealth pHealth;

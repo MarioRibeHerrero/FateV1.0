@@ -9,7 +9,7 @@ public class BossHealth : MonoBehaviour
     private GameObject player;
     PlayerManager pManager;
 
-
+    
 
     [SerializeField] BossFightController bFController;
 
@@ -24,6 +24,12 @@ public class BossHealth : MonoBehaviour
     private int playerHit;
 
 
+    //END OF BOSSFIGHT
+    [Header("FIN BOSS")]
+
+    [SerializeField] GameObject credits, instantTp, challangeTp;
+    [SerializeField] GameObject room1_6, room1_6_1;
+
     private void Awake()
     {
         player = GameObject.FindObjectOfType<PlayerInput>().gameObject;
@@ -36,7 +42,6 @@ public class BossHealth : MonoBehaviour
 
         playerHit = pManager.playerCurrentDamage;
 
-        Debug.Log(playerHit);
 
         bFController.bossTotalHealth = totalHits * playerHit;
         bFController.bossCurrentHealth = bFController.bossTotalHealth;
@@ -58,8 +63,9 @@ public class BossHealth : MonoBehaviour
         }
         if (bFController.bossCurrentHealth <= 0)
         {
-            
+
             //Kill
+            bFController.inBelzegorFight = false;
             gameObject.SetActive(false);
             Invoke("LoadCredits", 3f);
         }
@@ -69,6 +75,11 @@ public class BossHealth : MonoBehaviour
 
     private void LoadCredits()
     {
-        SceneManager.LoadScene(2);
+        credits.SetActive(true);
+        instantTp.SetActive(true);
+        challangeTp.SetActive(false);
+        //OAODSJLASJDOJAN
+        room1_6.SetActive(false);
+        room1_6_1.SetActive(true);
     }
 }

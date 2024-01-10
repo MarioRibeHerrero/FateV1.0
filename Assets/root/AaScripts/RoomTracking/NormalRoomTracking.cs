@@ -50,7 +50,6 @@ public class NormalRoomTracking : MonoBehaviour
                 GameManager.Instance.currentRoom = nextRoom;
                 camManager.SetNewCamera(nextRoom);
                 camManager.DisableOldCamera(previusRoom);
-                Debug.Log("SI");
             }
             else
             {
@@ -58,7 +57,6 @@ public class NormalRoomTracking : MonoBehaviour
                 GameManager.Instance.currentRoom = previusRoom;
                 camManager.SetNewCamera(previusRoom);
                 camManager.DisableOldCamera(nextRoom);
-                Debug.Log("NO");
 
             }
         }
