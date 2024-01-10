@@ -732,8 +732,12 @@ meter guardado(new game te cargar posicion normal, load te lleva a punto guardad
 
 
 Dia 36(Jueves 11/01/24)
+
+
 Solucionar bugs pequeños, actualizar lista todolist con estos bugs.
 
+
+Meter animaciones pablo si las pasa
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------

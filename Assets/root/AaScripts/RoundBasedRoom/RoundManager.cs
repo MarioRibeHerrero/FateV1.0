@@ -57,6 +57,8 @@ public class RoundManager : MonoBehaviour
         Animator animator = GetComponent<Animator>();
         animator.SetTrigger("OpenDoors");
         inRoundRoom = false;
+        areDoorsClosed = false;
+        GameManager.Instance.roundRoomCompleted = true;
     }
 
     #region RoomReset

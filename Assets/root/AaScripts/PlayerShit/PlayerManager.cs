@@ -24,7 +24,22 @@ public class PlayerManager : MonoBehaviour
     public bool isPlayerParry;
     public bool inStrongAttack;
     public bool isPlayerAlive;
+    public bool CanDobleJump
+    {
+        get
+        {
+            return canDobleJump;
+        }
+
+        set
+        {
+            canDobleJump = value;
+            GameManager.Instance.dobleJump = value;
+        }
+    }
+
     public bool canDobleJump;
+
     public int playerCurrentDamage;
 
 
