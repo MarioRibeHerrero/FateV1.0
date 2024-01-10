@@ -17,8 +17,15 @@ public class MainMenuManager : MonoBehaviour
     {
         eventSystem = EventSystem.current;
     }
+    public void NewMainScene()
+    {
+        GameManager.Instance.isGameLoaded = false;
+
+        SceneManager.LoadScene(1);
+    }
     public void LoadMainScene()
     {
+        GameManager.Instance.isGameLoaded = true;
         SceneManager.LoadScene(1);
     }
 

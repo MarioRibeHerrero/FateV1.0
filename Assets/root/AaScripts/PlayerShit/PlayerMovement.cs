@@ -33,6 +33,10 @@ public class PlayerMovement : MonoBehaviour
         pJump = GetComponent<PlayerJump>();
         pHook = GetComponent<PlayerHook>();
         pManager = GetComponent<PlayerManager>();
+
+
+
+
     }
 
     private Vector2 GetInputsX()
@@ -59,14 +63,6 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
         }
 
-
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-           PlayerData data = SaveSystem.LoadGameManager();
-            Debug.Log(data.respawnPoint);
-
-            GameManager.Instance.RespawnPointF = data.respawnPoint;
-        }
     }
 
     private void Movement()

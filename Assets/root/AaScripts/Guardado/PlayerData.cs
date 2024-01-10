@@ -8,11 +8,19 @@ using Unity.VisualScripting;
 public class PlayerData 
 {
     public float respawnPoint;
+    public float[] respawnPos;
 
 
 
     public PlayerData (GameManager gameManager)
     {
-        respawnPoint = gameManager.respawnPointF;
+        respawnPoint = gameManager.RespawnPointF;
+
+        respawnPos = new float[3];
+
+        respawnPos[0] = gameManager.respawnVector.x;
+        respawnPos[1] = gameManager.respawnVector.y;
+        respawnPos[2] = gameManager.respawnVector.z;
+
     }
 }

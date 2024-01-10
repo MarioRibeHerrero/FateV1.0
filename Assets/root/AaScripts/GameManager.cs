@@ -13,15 +13,18 @@ public class GameManager : MonoBehaviour
 
 
         Instance = this;
+        DontDestroyOnLoad(this);
 
     }
 
+    
+    //Loading Game
 
-    //PlayerThings
+    public bool isGameLoaded;
 
-    //camera
+    //if camera is thirdperson
     public bool thirdPersonCam;
-    //Rooms
+    //Room Enum
     public enum Rooms
     {
         Room_1_1,
@@ -49,10 +52,13 @@ public class GameManager : MonoBehaviour
     }
 
 
+    //para que cunado modifiques estos valores pasen cosas
     public float RespawnPointF
     {
         get
         {
+
+            SwitchConvertidor();
             return respawnPointF;
         }
         set
@@ -60,10 +66,8 @@ public class GameManager : MonoBehaviour
 
             respawnPointF = value;
             SwitchConvertidor2();
-            Debug.Log("HE LLEGADO");
         }
     }
-    public float respawnPointF;
     public Rooms RespawnRoom
     {
         get
@@ -73,79 +77,106 @@ public class GameManager : MonoBehaviour
         set
         {
             SwitchConvertidor();
-            respawnRoom = value; 
+
+            respawnRoom = value;
+            currentRoom = value;
         }
     }
 
-
-    public Vector3 respawnVector;
+    //Info de rooms
     public Rooms respawnRoom;
     public Rooms currentRoom;
 
+    //Valores guardados
+    public float respawnPointF;
+    public Vector3 respawnVector;
 
-
-
-
+    //convertidores para el guardado de en que habitacion respawneas
     private void SwitchConvertidor2()
     {
         switch (respawnPointF)
         {
             case 1.1f:
                 respawnRoom = Rooms.Room_1_1;
+                currentRoom = Rooms.Room_1_1;
                 break;
 
 
             case 1.2f:
                 respawnRoom = Rooms.Room_1_2;
+                currentRoom = Rooms.Room_1_2;
+
 
                 break;
             case 1.21f:
                 respawnRoom = Rooms.Room_1_2_1;
+                currentRoom = Rooms.Room_1_2_1;
+
 
                 break;
             case 1.22f:
                 respawnRoom = Rooms.Room_1_2_2;
+                currentRoom = Rooms.Room_1_2_2;
+
                 break;
 
 
 
             case 1.3f:
                 respawnRoom = Rooms.Room_1_3;
+                currentRoom = Rooms.Room_1_3;
+
                 break;
             case 1.31f:
                 respawnRoom = Rooms.Room_1_3_1;
+                currentRoom = Rooms.Room_1_3_1;
+
                 break;
 
 
             case 1.4f:
                 respawnRoom = Rooms.Room_1_4;
+                currentRoom = Rooms.Room_1_4;
+
                 break;
             case 1.41f:
                 respawnRoom = Rooms.Room_1_4_1;
+                currentRoom = Rooms.Room_1_4_1;
+
                 break;
 
 
 
             case 1.5f:
                 respawnRoom = Rooms.Room_1_5;
+                currentRoom = Rooms.Room_1_5;
+
                 break;
             case 1.51f:
                 respawnRoom = Rooms.Room_1_5_1;
+                currentRoom = Rooms.Room_1_5_1;
+
                 break;
             case 1.52f:
                 respawnRoom = Rooms.Room_1_5_2;
+                currentRoom = Rooms.Room_1_5_2;
+
                 break;
 
 
 
             case 1.6f:
                 respawnRoom = Rooms.Room_1_6;
+                currentRoom = Rooms.Room_1_6;
+
                 break;
 
 
 
             case 1.7f:
                 respawnRoom = Rooms.Room_1_7;
+                currentRoom = Rooms.Room_1_7;
+
                 break;
 
 
@@ -220,4 +251,6 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+
 }

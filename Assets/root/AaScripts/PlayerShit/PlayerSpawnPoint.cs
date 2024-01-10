@@ -47,6 +47,9 @@ public class PlayerSpawnPoint : MonoBehaviour
             pHealth.HealPlayer(100);
 
 
+            //SAVING SHIT
+            GameManager.Instance.respawnVector = transform.position;
+            
             SaveSystem.SaveGameManager(GameManager.Instance);
 
         }

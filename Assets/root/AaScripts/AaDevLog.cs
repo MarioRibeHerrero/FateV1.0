@@ -723,9 +723,11 @@ cuando guarde la posicion, que le digo que room es la de currenrespawn point, te
 --------------
 Hacer que sala pasillo, sea normal una vez terminada la bossfight--Ok
 
--meter animaciones pablo--
 
-meter guardado(new game te cargar posicion normal, load te lleva a punto guardado si tienes.)(esta tarde)
+meter guardado(new game te cargar posicion normal, load te lleva a punto guardado si tienes.)(esta tarde)--Nashe
+
+
+-meter animaciones pablo--(cunado las tenga)
 
 
 
@@ -740,9 +742,11 @@ ToDoList:
 
 -Mirar con pablo hooks y posiciones
 
+Cuando boss:
 
 -Los pinchos siempre salen en la misma posición
 
+-Meter todos los ataques
 
 NO PRIORITARIO:
 
@@ -781,7 +785,7 @@ bug hook
 
 -Player No Cae en inicio(de momento np)
 
-
+-En algunas zonas(salto 1-2 a 1-2-2) el doble salto va raro
 
 
 
