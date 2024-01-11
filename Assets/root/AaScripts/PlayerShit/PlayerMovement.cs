@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     PlayerJump pJump;
     PlayerHook pHook;
     PlayerManager pManager;
+    
 
     //Movement variables
     [SerializeField] float acceleration, airAcceleration, deceleration, maxSpeed;
@@ -23,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     //public
     public bool hasStopedMidAir;
 
-    private Vector2 inputs;
+    public Vector2 inputs;
     private void Awake()
     {
         //Get Components

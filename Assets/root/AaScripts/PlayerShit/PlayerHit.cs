@@ -8,13 +8,13 @@ public class PlayerHit : MonoBehaviour
 {
 
     [SerializeField] float invulnerabilityTime;
-    private Animator anim;
+    private PlayerAnimationManager pAnim;
     PlayerManager pManager;
     PlayerHook pHook;
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        pAnim = GetComponent<PlayerAnimationManager>();
         pManager = GetComponent<PlayerManager>();
         pHook = GetComponent<PlayerHook>();
     }
@@ -42,8 +42,7 @@ public class PlayerHit : MonoBehaviour
             }
             else
             {
-                anim.SetTrigger("PlayerHit");
-
+                pAnim.CallPlayerHit();
                 pManager.isPlayerInvulnerable = true;
                 Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
                 StartCoroutine(StunPlayer(stunTime, hitPosition, pushBackForce));

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerAa : MonoBehaviour
 {
     PlayerInput playerInput;
     PlayerManager pManager;
+    PlayerAnimationManager pAnim;
 
     private Animator anim;
 
@@ -23,6 +25,7 @@ public class PlayerAa : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         anim = GetComponent<Animator>();
         pManager = GetComponent<PlayerManager>();
+        pAnim = GetComponent<PlayerAnimationManager>();
 
         playerInput.actions["Aa"].started += PlayerAa_started;
     }
@@ -46,7 +49,7 @@ public class PlayerAa : MonoBehaviour
 
         if (Mathf.Abs(GetInputs().x) >= 0 && !pManager.playerInNormalAttack && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
         {
-            anim.SetTrigger("AaAir");
+            pAnim.CallAaAir();
             pManager.playerCurrentDamage = pManager.playerDefaultDamage;
         }
     }
@@ -61,8 +64,8 @@ public class PlayerAa : MonoBehaviour
             case 0:
                 if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !pManager.playerInNormalAttack)
                 {
-                    anim.SetInteger("AaCombo", 0);
-                    anim.SetTrigger("Aa");
+                    pAnim.ChangeAaCombo(0);
+                    pAnim.CallAa();
 
                     pManager.playerCurrentDamage = pManager.playerDefaultDamage;
                 }
@@ -70,9 +73,9 @@ public class PlayerAa : MonoBehaviour
             case 1:
                 if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !pManager.playerInNormalAttack)
                 {
-                    anim.SetInteger("AaCombo", 1);
+                    pAnim.ChangeAaCombo(1);
 
-                    anim.SetTrigger("Aa");
+                    pAnim.CallAa();
                     pManager.playerCurrentDamage = pManager.playerDefaultDamage + 10;
 
 
@@ -81,8 +84,8 @@ public class PlayerAa : MonoBehaviour
             case 2:
                 if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !pManager.playerInNormalAttack)
                 {
-                    anim.SetInteger("AaCombo", 2);
-                    anim.SetTrigger("Aa");
+                    pAnim.ChangeAaCombo(2);
+                    pAnim.CallAa();
                     pManager.playerCurrentDamage = pManager.playerDefaultDamage + 30;
 
                 }

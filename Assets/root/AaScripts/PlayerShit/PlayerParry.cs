@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerParry : MonoBehaviour
 {
     PlayerInput playerInput;
     PlayerManager pManager;
-    Animator anim;
-    PlayerHealth pHealth;
-    PlayerAa pAa;
+    PlayerAnimationManager pAnim;
 
 
     //CD no hecho aun
@@ -20,12 +19,10 @@ public class PlayerParry : MonoBehaviour
     {
         playerInput = GetComponent<PlayerInput>();
         pManager = GetComponent<PlayerManager>();
-        pHealth = GetComponent<PlayerHealth>();
-        pAa = GetComponent<PlayerAa>();
 
         playerInput.actions["Parry"].started += PlayerParry_started;
 
-        anim = GetComponent<Animator>();
+        pAnim = GetComponent<PlayerAnimationManager>();
     }
 
     private void Update()
@@ -38,10 +35,9 @@ public class PlayerParry : MonoBehaviour
     {
         if(GetComponent<PlayerGroundCheck>().isPlayerGrounded  && pManager.playerHealth >= 35 && !pManager.isPlayerParry && !pManager.inStrongAttack) 
         {
-            anim.SetTrigger("Parry");
-            pManager.isPlayerParry = true;
-            pHealth.TakeDamage(pManager.parryHealingAmmount);
-            pAa.aaCombo = 0;
+            pAnim.Parry();
+
+
         }
     }
 

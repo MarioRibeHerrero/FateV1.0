@@ -4,6 +4,7 @@ using UnityEditor.Rendering.Universal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerHook : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerHook : MonoBehaviour
     PlayerJump pJump;
     PlayerManager pManager;
     PlayerRotation pRotation;
+    PlayerAnimationManager pAnim;
     //HookShit
     [SerializeField] Material canHookM, defaultHookM, hookCdM;
     [SerializeField] LineRenderer lineRenderer;
@@ -33,6 +35,7 @@ public class PlayerHook : MonoBehaviour
         pJump = GetComponent<PlayerJump>();
         pManager = GetComponent<PlayerManager>();
         pRotation = GetComponent<PlayerRotation>();
+        pAnim = GetComponent<PlayerAnimationManager>();
         //PlayerInputShit
         playerInput.actions["Hook"].started += Hook_started;
     }
@@ -80,7 +83,20 @@ public class PlayerHook : MonoBehaviour
     }
     private void Hook_started(InputAction.CallbackContext obj)
     {
-        if(inRangeOfHook && canHook && !pManager.playerInNormalAttack)
+        if (inRangeOfHook && canHook && !pManager.playerInNormalAttack)
+        {
+            pAnim.CallHookAnim();
+
+            Vector3 forceDirection = currentHook.transform.position - transform.position;
+            if (forceDirection.x <= 0) pRotation.isFacingRight = false;
+            else pRotation.isFacingRight = true;
+        }
+
+    }
+
+    public void CallHook()
+    {
+        if (inRangeOfHook && canHook && !pManager.playerInNormalAttack)
         {
             //the player cant jump or secondJump after using hook
             pJump.isJumping = true;
@@ -102,6 +118,7 @@ public class PlayerHook : MonoBehaviour
             Invoke("CanHookToFalse", 0.02f);
         }
     }
+
     private void CanHookToFalse()
     {
         canHook = false;

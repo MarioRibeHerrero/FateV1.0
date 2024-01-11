@@ -5,15 +5,22 @@ using UnityEngine;
 public class PlayerAnimationEvents : MonoBehaviour
 {
     private Animator anim;
+    [SerializeField] GameObject player;
     PlayerManager pManager;
+    Rigidbody rb;
+    PlayerHealth pHealth;
+    PlayerHook pHook;
     private void Awake()
     {
         anim = GetComponent<Animator>();
-        pManager = GetComponent<PlayerManager>();
+        pManager = player.GetComponent<PlayerManager>();
+        rb = player.GetComponent<Rigidbody>();
+        pHealth = player.GetComponent<PlayerHealth>();
+        pHook = player.GetComponent<PlayerHook>();
     }
     private void CanPlayerMoveToFalse()
     {
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
         pManager.canPlayerMove = false;
     }
     private void CanPlayerMoveToTrue()
@@ -55,11 +62,7 @@ public class PlayerAnimationEvents : MonoBehaviour
     {
         anim.SetBool("CanParry", true);
     }
-    private void Parry()
-    {
-        GetComponent<PlayerHealth>().TakeDamage(15);
-        pManager.isPlayerParry = true;
-    }
+
     private void ParryEnd()
     {
         pManager.isPlayerParry = false;
@@ -96,5 +99,8 @@ public class PlayerAnimationEvents : MonoBehaviour
         CanPlayerMoveToTrue();
     }
 
-
+    private void Hook()
+    {
+        pHook.CallHook();
+    }
 }
