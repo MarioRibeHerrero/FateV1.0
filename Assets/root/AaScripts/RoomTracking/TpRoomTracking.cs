@@ -27,7 +27,8 @@ public class TpRoomTracking : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        player = other.gameObject;
+        if(other.CompareTag("Player")) player = other.gameObject;
+
         if (instant)
         {
             UsingTp();

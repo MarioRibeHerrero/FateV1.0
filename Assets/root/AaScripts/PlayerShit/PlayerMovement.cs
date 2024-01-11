@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     //public
     public bool hasStopedMidAir;
 
-
+    private Vector2 inputs;
     private void Awake()
     {
         //Get Components
@@ -39,13 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private Vector2 GetInputsX()
-    {
-        //This will get the horizontal movement
-        Vector2 inputs;
-        inputs = playerInput.actions["Movement"].ReadValue<Vector2>();
-        return inputs;
-    }
+
 
 
 
@@ -58,7 +52,10 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        if (!pHook.isFallingFromHook && !pHook.isHooking && !pGroundCheck.isPlayerGrounded && Mathf.Approximately(playerInput.actions["Movement"].ReadValue<Vector2>().x, 0f))
+        inputs = playerInput.actions["Movement"].ReadValue<Vector2>();
+
+
+        if (!pHook.isFallingFromHook && !pHook.isHooking && !pGroundCheck.isPlayerGrounded && Mathf.Approximately(inputs.x, 0f))
         {
             rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
         }
@@ -68,13 +65,15 @@ public class PlayerMovement : MonoBehaviour
     private void Movement()
     {
         //check if you are changing direcction
-         changingDirection = (pGroundCheck.isPlayerGrounded &&( rb.velocity.x < 0 && GetInputsX().x > 0) || (rb.velocity.x > 0 && GetInputsX().x < 0));
+
+        if(!GameManager.Instance.thirdPersonCam) changingDirection = pGroundCheck.isPlayerGrounded && (rb.velocity.x < 0 && inputs.x > 0) || (rb.velocity.x > 0 && inputs.x < 0);
+
 
 
         //we set a movement aceleration for the grounded player and anotherone for airplayer
 
-         if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(GetInputsX().x * acceleration, 0f));
-         else rb.AddForce(new Vector2(GetInputsX().x * airAcceleration, 0f));
+        if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(inputs.x * acceleration, 0f));
+         else rb.AddForce(new Vector2(inputs.x * airAcceleration, 0f));
 
 
 
@@ -89,10 +88,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (GameManager.Instance.thirdPersonCam)
         {
-            if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(-GetInputsX().y * acceleration, 0f));
-            else rb.AddForce(new Vector2(-GetInputsX().y * airAcceleration, 0f));
+            if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(-inputs.y * acceleration, 0f));
+            else rb.AddForce(new Vector2(-inputs.y * airAcceleration, 0f));
 
-            if ((Mathf.Abs(-GetInputsX().y) < 0.4 && !pJump.isJumping) && (Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
+            if ((Mathf.Abs(-inputs.y) < 0.4 && !pJump.isJumping) && (Mathf.Abs(inputs.x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
             else rb.drag = 0f;
 
 
@@ -104,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
                 //Debug.Log(changingDirection);
                 //if the player stops moving we want the drag to be= to the deceleration.
 
-                if ((Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
+                if ((Mathf.Abs(inputs.x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
                 else rb.drag = 0f;
 
             }

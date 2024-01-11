@@ -11,7 +11,7 @@ public class PlayerAa : MonoBehaviour
     private Animator anim;
 
     //aaCombo
-    [SerializeField] private int aaCombo;
+    public int aaCombo;
     [SerializeField] private float comboTimer;
     [SerializeField] float comboDuration;
     // Start is called before the first frame update

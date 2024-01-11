@@ -9,6 +9,7 @@ public class PlayerParry : MonoBehaviour
     PlayerManager pManager;
     Animator anim;
     PlayerHealth pHealth;
+    PlayerAa pAa;
 
 
     //CD no hecho aun
@@ -20,6 +21,7 @@ public class PlayerParry : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         pManager = GetComponent<PlayerManager>();
         pHealth = GetComponent<PlayerHealth>();
+        pAa = GetComponent<PlayerAa>();
 
         playerInput.actions["Parry"].started += PlayerParry_started;
 
@@ -39,6 +41,7 @@ public class PlayerParry : MonoBehaviour
             anim.SetTrigger("Parry");
             pManager.isPlayerParry = true;
             pHealth.TakeDamage(pManager.parryHealingAmmount);
+            pAa.aaCombo = 0;
         }
     }
 

@@ -60,7 +60,6 @@ public class BossRoomTracking : MonoBehaviour
 
     private void UsingTp()
     {
-        Debug.Log("OAJFS");
         if (GameManager.Instance.currentRoom == previusRoom)
         {
 

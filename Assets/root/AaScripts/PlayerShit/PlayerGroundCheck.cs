@@ -18,6 +18,7 @@ public class PlayerGroundCheck : MonoBehaviour
     PlayerJump pJump;
     PlayerMovement pMovement;
     PlayerManager pManager;
+    Rigidbody rb;
 
 
     private void Awake()
@@ -26,6 +27,7 @@ public class PlayerGroundCheck : MonoBehaviour
         pJump = GetComponent<PlayerJump>();
         pMovement = GetComponent<PlayerMovement>();
         pHook = GetComponent<PlayerHook>();
+        rb = GetComponent<Rigidbody>();
     }
     void Update()
     {
@@ -53,11 +55,18 @@ public class PlayerGroundCheck : MonoBehaviour
 
 
             pHook.isFallingFromHook = false;
+
+
+
+            if(pManager.isPlayerStunned)
+            {
+                rb.drag = 20; 
+            }
         }
         else
         {
             isPlayerGrounded = false;
-
+            rb.drag = 0f;
         }
 
 
@@ -71,15 +80,11 @@ public class PlayerGroundCheck : MonoBehaviour
 
         // PUEDES HACER EL DOBLE SALTO?
         Ray ray = new Ray(groundCheckPos.transform.position, Vector3.down);
-
-
         Debug.DrawRay(ray.origin, ray.direction * dobleJumpDistance, Color.red);
 
-
-        // Check if the ray hits something on the Ground layer
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, groundCheckLayerMask))
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundCheckLayerMask))
             {
-             // Check if the distance to the ground is greater than the threshold
              if (hit.distance > dobleJumpDistance)
              {
                 pManager.canDobleJump = true;
@@ -90,6 +95,9 @@ public class PlayerGroundCheck : MonoBehaviour
              }
 
         }
+        if(hit.distance == 0) pManager.canDobleJump = true;
+
+
     }
 
 

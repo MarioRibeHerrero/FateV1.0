@@ -734,13 +734,52 @@ meter guardado(new game te cargar posicion normal, load te lleva a punto guardad
 Dia 36(Jueves 11/01/24)
 Solucionar bugs pequeños, actualizar lista todolist con estos bugs.
 
+-Ataacar encima del tp hace que vaya mal--Ok
+
+-Si te pegan deslizas infinito--De momento Ok(no lo he comprobado pero deberia ir bn)
+
+-parry no cancela combo aa--Ok
+
+
+-doble salto te das con el pilar--De no se soluciona
+
+Post Patio
+
+PREGUNTAR JORGE--Ok
+
+-En algunas zonas(salto 1-2 a 1-2-2) el doble salto va raro--Ok
+De momento quitado la distancia al suelo(hit = null)--Ok
+
+-GameManager no funciona en awake--Normal(Ok)
+
+-SOlucionar bug tercera persona, si andas alante y te paras luego paras no te deja seguir-- Movida con 100 llamadas al input--Ok
+cambiar inputs a update--Ok
+varias inputs--Ok
+
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
+-Popups
+
+-TUto inicio parry
+
+-Meter forma guay de obtener doble jump
+
+-Meter Fadein Fadeout
+
+Añadir musica: Meterse en FMOD
+
+
 
 
 -Mirar con pablo hooks y posiciones
+
+
+
 
 Cuando boss:
 
@@ -754,42 +793,17 @@ NO PRIORITARIO:
 -Añadir regiones y ordenar codigo
 -Cambiar forma de actualizar la vida(usando el get/Set)
 -Cambiar todas referencia hook por interact
-
-
-
--COMO HACER el tema del evento desde fuera(para la entrada del boss, que le pueda poner con un evento el metodo que inicia la bossfigth--De momento no, hacer con bossManager 
-y herencias cunado se haga en plan bn.
-
+-hacer tanto boss como enemigos con clases heredadas y metodos como kill comunes
 VFX:
 -temblor al morir
--
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
 
--Ataacar encima del tp hace que vaya mal
-
--Si te pegan deslizas infinito
-
--parry no cancela combo aa
-
--doble salto te das con el pilar
-
--SOlucionar bug tercera persona, si andas alante y te paras luego paras no te deja seguir
-
-bug hook 
-
--Aa y teleport no fucionan
-
-
--Player No Cae en inicio(de momento np)
-
--En algunas zonas(salto 1-2 a 1-2-2) el doble salto va raro
-
-
-
-
+-Player No Cae en inicio(de momento np)--Arreglado con si no estas en el suelo drag = 0--
 
 ----------------------------------------------------------------------------------------------------------------------------------
 PREGUNTAS:

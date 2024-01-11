@@ -17,6 +17,13 @@ public class MainMenuManager : MonoBehaviour
     {
         eventSystem = EventSystem.current;
     }
+
+
+    private void Start()
+    {
+        AudioManager.Instance.PlayMusic(0);
+
+    }
     public void NewMainScene()
     {
         GameManager.Instance.isGameLoaded = false;

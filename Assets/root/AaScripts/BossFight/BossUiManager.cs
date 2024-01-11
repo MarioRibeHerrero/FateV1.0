@@ -24,10 +24,6 @@ public class BossUiManager : MonoBehaviour
     {
         bossHealthImage.fillAmount = bFController.bossCurrentHealth / bFController.bossTotalHealth;
 
-        Debug.Log("numeor uno" + bFController.bossCurrentHealth + "numeor dos" + bFController.bossTotalHealth + "="+  bFController.bossCurrentHealth / bFController.bossTotalHealth);
-
-
-
     }
     public void EnableHealth()
     {

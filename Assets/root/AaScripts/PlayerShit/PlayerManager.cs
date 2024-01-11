@@ -46,10 +46,6 @@ public class PlayerManager : MonoBehaviour
 
 
         //Load shit
-
-    }
-    private void Start()
-    {
         if (GameManager.Instance.isGameLoaded)
         {
             PlayerData data = SaveSystem.LoadGameManager();
@@ -66,11 +62,16 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            this.transform.position = new Vector3(-20.21802f, -4.087304f, 4.163336e-16f);
-            GameManager.Instance.RespawnPointF = 1.1f;
-            camManager.SetNewCamera(GameManager.Instance.currentRoom);
+          //  this.transform.position = new Vector3(-20.21802f, -4.087304f, 4.163336e-16f);
+           // GameManager.Instance.RespawnPointF = 1.1f;
+          //  camManager.SetNewCamera(GameManager.Instance.currentRoom);
 
         }
+
+    }
+    private void Start()
+    {
+
 
 
         canPlayerMove = true;

@@ -76,6 +76,7 @@ public class PlayerHit : MonoBehaviour
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<Rigidbody>().AddForce(direction * pushBackForce, ForceMode.Impulse);
 
+
     }
 
     private IEnumerator StunPlayer(float stunTime, Vector3 hitPosition, float pushBackForce)
