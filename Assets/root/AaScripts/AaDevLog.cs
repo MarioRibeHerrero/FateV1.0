@@ -757,7 +757,7 @@ cambiar inputs a update--Ok
 varias inputs--Ok
 
 
-
+Meter todas animaciones Fate y hacer que funcione con animator nuevo
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
