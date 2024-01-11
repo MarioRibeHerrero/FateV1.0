@@ -16,8 +16,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
     }
+    //TEMP saving shit
 
-    
+    public bool roundRoomCompleted;
+    public bool dobleJump;
+
     //Loading Game
 
     public bool isGameLoaded;
