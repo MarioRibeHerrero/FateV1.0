@@ -789,11 +789,22 @@ añadir fade--Ok
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
-
+-interactuar en primera silla
 
 
 -Hacer aa con variable que si le has dado, que te carge directamente la siguiente animacion (flechas entre animaciones)
 
+-que se pare en el momento de hacer parry
+
+-ajustar camaras
+
+-hook no te deberias poder mover hasta el hook
+
+-solo te deberia empujar izquierda o derecha
+
+-enfocar salida en sala rondas
+
+-laser cristal(mas rapido menos cadencia)
 
 
 
@@ -825,6 +836,9 @@ MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
 
+-si te pegan para arriba vuelas muchisimo
+
+-
 
 ----------------------------------------------------------------------------------------------------------------------------------
 PREGUNTAS:
