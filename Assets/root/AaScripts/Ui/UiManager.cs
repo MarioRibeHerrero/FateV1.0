@@ -21,7 +21,7 @@ public class UiManager : MonoBehaviour
 
     [SerializeField] GameObject miniMap;
     private bool isMiniMapOpen;
-
+    public static Animator anim;
 
     private void Awake()
     {
@@ -33,6 +33,8 @@ public class UiManager : MonoBehaviour
         pHealth = playerInput.transform.GetComponent<PlayerHealth>();
         pManager = playerInput.transform.GetComponent<PlayerManager>();
 
+
+        anim = GetComponent<Animator>();
     }
 
     private void UiManager_started(InputAction.CallbackContext obj)
@@ -103,5 +105,12 @@ public class UiManager : MonoBehaviour
     public void BigBug()
     {
         Application.Quit();
+    }
+
+
+
+    public static void FadeIn()
+    {
+        anim.SetTrigger("Fade");
     }
 }

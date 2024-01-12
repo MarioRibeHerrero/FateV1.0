@@ -831,6 +831,45 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "PopUps",
+            "id": "ff62d6f5-e7ef-4f8f-82b5-48a0054062f6",
+            "actions": [
+                {
+                    "name": "ExitPopUp",
+                    "type": "Button",
+                    "id": "9062c48c-3d05-4f5a-b0dd-29d1a2525d08",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c12e828a-f9e3-4289-ac0d-0cd539a0ff1d",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitPopUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8724b00-1481-408c-b109-fdf56ddd0a37",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitPopUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

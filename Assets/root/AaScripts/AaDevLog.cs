@@ -757,26 +757,48 @@ cambiar inputs a update--Ok
 varias inputs--Ok
 
 
-Meter todas animaciones Fate y hacer que funcione con animator nuevo
+Meter todas animaciones Fate y hacer que funcione con animator nuevo--Ok
+
+Dia 37(12/01/24):
+
+
+-Popups:
+Silla inicio(checPoint)--Ok
+Silla hook--Ok
+Silla rondas--Ok
+Doble Jump--OK
+
+comprobar que va todo--Ok
+arreglar menu pause--Ok
+
+Arreglar hooks--Ok
+
+-TUto inicio parry(Ok(Pocho de momento))
+
+-Meter forma guay de obtener doble jump--Ok(de momento hasta postpro)
+
+-Player No Cae en inicio(de momento np)--Arreglado con si no estas en el suelo drag = 0--Ok
+
+comprobar guardado depsues de mal push github--Ok
+
+-Meter Fadein Fadeout En camaras con TP:
+modificar tiempo de transicion de las camaras con tp--Ok
+añadir fade--Ok
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
--Popups
 
--TUto inicio parry
 
--Meter forma guay de obtener doble jump
 
--Meter Fadein Fadeout
+-Hacer aa con variable que si le has dado, que te carge directamente la siguiente animacion (flechas entre animaciones)
+
+
+
 
 Añadir musica: Meterse en FMOD
 
-
-
-
--Mirar con pablo hooks y posiciones
 
 
 
@@ -803,7 +825,6 @@ MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
 
--Player No Cae en inicio(de momento np)--Arreglado con si no estas en el suelo drag = 0--
 
 ----------------------------------------------------------------------------------------------------------------------------------
 PREGUNTAS:

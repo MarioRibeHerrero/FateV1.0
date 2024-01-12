@@ -34,7 +34,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     [SerializeField] Transform attackRangePos;
     [HideInInspector] public bool canAttack;
     [HideInInspector] public bool hasExitedDuringAttack;
-    private bool inRangeOfAttack;
+    public bool inRangeOfAttack;
 
     //variables tester might want to try
     [Header("VariablesCambiables")]

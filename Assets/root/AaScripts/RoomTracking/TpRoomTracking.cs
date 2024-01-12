@@ -31,7 +31,7 @@ public class TpRoomTracking : MonoBehaviour
 
         if (instant)
         {
-            UsingTp();
+            ApplyFade();
         }
         else
         {
@@ -40,7 +40,7 @@ public class TpRoomTracking : MonoBehaviour
                 
 
                 text.SetActive(true);
-                PlayerInteract.onInteract += UsingTp;
+                PlayerInteract.onInteract += ApplyFade;
 
             }
         }
@@ -63,7 +63,7 @@ public class TpRoomTracking : MonoBehaviour
             if (other.CompareTag("Player"))
             {
                 text.SetActive(false);
-                PlayerInteract.onInteract -= UsingTp;
+                PlayerInteract.onInteract -= ApplyFade;
 
             }
         }
@@ -94,4 +94,13 @@ public class TpRoomTracking : MonoBehaviour
 
         }
     }
+
+
+    private void ApplyFade()
+    {
+        UiManager.FadeIn();
+        Invoke(nameof(UsingTp), 0.30f);
+    }
+
+
 }
