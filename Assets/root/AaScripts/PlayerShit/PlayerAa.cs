@@ -55,21 +55,49 @@ public class PlayerAa : MonoBehaviour
     }
 
 
-
+    
     private void AutoAttackCombo()
     {
+
+
+        if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded )
+        {
+
+            if (!pManager.playerInNormalAttack)
+            {
+                pAnim.ChangeAaCombo(0);
+                pAnim.CallAa();
+
+                pManager.playerCurrentDamage = pManager.playerDefaultDamage;
+
+            }
+            else
+            {
+                pAnim.CallRAa();
+                pAnim.ChangeAaCombo(0);
+
+
+                pAnim.CallAa();
+
+                pManager.playerCurrentDamage = pManager.playerDefaultDamage;
+                
+
+            }
+        }
+
+
+
+
+
         switch (aaCombo)
         {
 
-            case 0:
-                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !pManager.playerInNormalAttack)
-                {
-                    pAnim.ChangeAaCombo(0);
-                    pAnim.CallAa();
 
-                    pManager.playerCurrentDamage = pManager.playerDefaultDamage;
-                }
+            case 0:
+
                 break;
+
+                /*
             case 1:
                 if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !pManager.playerInNormalAttack)
                 {
@@ -90,6 +118,7 @@ public class PlayerAa : MonoBehaviour
 
                 }
                 break;
+                */
         }
     }
     public void AddToCombo()

@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -67,13 +68,15 @@ public class PlayerHit : MonoBehaviour
 
 
         Vector3 direction = transform.position - hitPosition;
-
         direction.Normalize();
+
+        Vector3 newDirection = new Vector3(direction.x,0 , 0f);
+        newDirection.Normalize();
 
         // Apply force in the opposite direction to push the object away
         GetComponent<Rigidbody>().drag = 7;
         GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<Rigidbody>().AddForce(direction * pushBackForce, ForceMode.Impulse);
+        GetComponent<Rigidbody>().AddForce(newDirection * pushBackForce, ForceMode.Impulse);
 
 
     }

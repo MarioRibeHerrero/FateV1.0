@@ -38,10 +38,15 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     //variables tester might want to try
     [Header("VariablesCambiables")]
-    [SerializeField] float enemyMovementSpeed;
+    [SerializeField] float enemyMovementSpeedDefault;
+    private float enemyMovementSpeed;
     [SerializeField] float timeEnemyWaits;
     [SerializeField] Vector3 attackRangeVector;
     [SerializeField] LayerMask attackLayer;
+    [SerializeField] float patienceDefault;
+     float patience;
+
+
 
 
     //reset shit
@@ -67,6 +72,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
         stateManager.onEnemyReset += Reset;
 
+        
     }
     
     private void Start()
@@ -74,7 +80,9 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         target = pointA;
         canAttack = true;
         
-        patience = 0.3f;
+        
+        patience = patienceDefault;
+        enemyMovementSpeed = enemyMovementSpeedDefault;
     }
 
     void Update()
@@ -260,7 +268,6 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     #region Attack
 
 
-    [SerializeField] float patience;
     private void CheckAttack()
     {
 
@@ -271,7 +278,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
             patience -= Time.deltaTime;
             enemyMovementSpeed = 0f;
         }
-        else enemyMovementSpeed = 1f;
+        else enemyMovementSpeed = enemyMovementSpeedDefault;
 
 
         if (patience < 0)
@@ -285,7 +292,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         if (canAttack)
         {
             animator.SetTrigger("Attack");
-            patience = 0.3f;
+            patience = patienceDefault;
             canAttack = false;
         }
 

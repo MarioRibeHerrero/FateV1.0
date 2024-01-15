@@ -9,12 +9,14 @@ public class PopUpController : MonoBehaviour
     [SerializeField] GameObject textToApear, goToHide;
 
 
-    
+    [SerializeField] bool needTutorial;
+    [SerializeField] GameObject tutorial;
     public void ExitPopUp()
     {
         Time.timeScale = 1;
         PlayerInteract.onInteract -= WhenInteract;
         goToHide.SetActive(false);
+        if (needTutorial) tutorial.SetActive(false);
 
     }
     private void LoadPopUp()
@@ -26,7 +28,7 @@ public class PopUpController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
+            if(needTutorial) tutorial.SetActive(true);
             PlayerInteract.onInteract += WhenInteract;
         }
     }
@@ -36,6 +38,7 @@ public class PopUpController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (needTutorial) tutorial.SetActive(false);
 
             PlayerInteract.onInteract -= WhenInteract;
 

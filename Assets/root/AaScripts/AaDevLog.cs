@@ -785,22 +785,54 @@ comprobar guardado depsues de mal push github--Ok
 modificar tiempo de transicion de las camaras con tp--Ok
 añadir fade--Ok
 
+
+
+Dia38(14/01/24):
+-interactuar en primera silla--Ok
+
+-solo te deberia empujar izquierda o derecha--ok
+-ajustar camaras--
+Solucion facil: cunado te cambiar smoth el valor de x offset de la camara actual
+
+
+-Mejorar tuto--
+-que se pare en el momento de hacer parry--
+
+
+Dia39:
+arreglar sistema camaras--Ok
+poner que aa no se pueda mover camara--Ok(de momento)
+
+
+Cambiar tuto--
+el enemigo solo podra:
+te acercas, te ataca(no te puedes girar) le stuneas, se queda ahi para siempre con el texto de atacale( si le intentas atravesar hay una pared)
+lo matas y vuelves al gameplay normal
+Hasta tener feedback--Ok
+
+meter todas animaciones pablo:
+air AA--Ok
+-si te pegan para arriba vuelas muchisimo--Ok
+
+
+AA:
+hacer que si sigues atacando no salga de la animacion
+
+CUNADO TERNGA los dos ataques, que haga lo mismo pero con los dos, es decir, reproduce el primero, luego el segundo y si has vuelto a darle otra vez el primero y otra vez el segundo
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
--interactuar en primera silla
 
 
 -Hacer aa con variable que si le has dado, que te carge directamente la siguiente animacion (flechas entre animaciones)
 
--que se pare en el momento de hacer parry
 
--ajustar camaras
 
 -hook no te deberias poder mover hasta el hook
 
--solo te deberia empujar izquierda o derecha
 
 -enfocar salida en sala rondas
 
@@ -835,8 +867,10 @@ VFX:
 MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
+-hook hace que salgas volando--
 
--si te pegan para arriba vuelas muchisimo
+-si mueres en el enemigo entry, se buggea
+
 
 -
 

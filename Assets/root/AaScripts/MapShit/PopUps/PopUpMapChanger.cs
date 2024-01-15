@@ -10,8 +10,12 @@ public class PopUpMapChanger : MonoBehaviour
 
 
     [SerializeField] PopUpController popUpController;
+
+    private InputActionMap oldMap;
     private void OnEnable()
     {
+        oldMap = playerInput.currentActionMap;
+
         playerInput.SwitchCurrentActionMap("PopUps");
         playerInput.actions["ExitPopUp"].started += PopUpMapChanger_started;
 
@@ -26,7 +30,7 @@ public class PopUpMapChanger : MonoBehaviour
     {
         playerInput.actions["ExitPopUp"].started -= PopUpMapChanger_started;
     
-        playerInput.SwitchCurrentActionMap("PlayerNormalMovement");
+        playerInput.SwitchCurrentActionMap(oldMap.name);
 
     }
 

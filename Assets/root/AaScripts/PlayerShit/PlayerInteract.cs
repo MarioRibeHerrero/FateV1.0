@@ -50,4 +50,17 @@ public class PlayerInteract : MonoBehaviour
 
 
     }
+
+
+    public void SetNewInteract()
+    {
+        playerInput.actions["Hook"].started += PlayerSpawnPoint_started;
+
+    }
+
+    public void RemoveCurrentInteract()
+    {
+        playerInput.actions["Hook"].started -= PlayerSpawnPoint_started;
+
+    }
 }
