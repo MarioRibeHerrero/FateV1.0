@@ -27,7 +27,16 @@ public class ProyectileDamage : MonoBehaviour, IDamageable
             }
             else
             {
-                other.GetComponent<PlayerHit>().HitPlayer(this.transform.position, 30, 0.5f, 20, false);
+                if(other.GetComponent<PlayerGroundCheck>().isPlayerGrounded)
+                {
+                    other.GetComponent<PlayerHit>().HitPlayer(this.transform.position, 30, 0.5f, 20, false);
+
+                }
+                else
+                {
+                    other.GetComponent<PlayerHit>().HitPlayer(this.transform.position, 30, 0.5f, 20, true);
+
+                }
                 TakeDamage(10);
 
             }

@@ -56,13 +56,22 @@ public class RoundCristal : MonoBehaviour
         
         transitionTimer += Time.deltaTime;
 
-        float lerpFactor = Mathf.Clamp01(transitionTimer / timeBetwenShoots);
 
-        Color lerpedColor = Color.Lerp(defaultColor, targetColor, lerpFactor);
 
-        meshRenderer.material.color = lerpedColor;
+        float progression = Mathf.Clamp01(transitionTimer / timeBetwenShoots);
 
-        if(lerpFactor == 1)
+
+        if(progression < 0.33 && progression > 0.66)
+        {
+            //linecast amarillo
+        }
+        if (progression < 0.66 && )
+        {
+            //linecast amarillo
+        }
+
+
+        if (progression == 1)
         {
             transitionTimer = 0f;
             Shoot();

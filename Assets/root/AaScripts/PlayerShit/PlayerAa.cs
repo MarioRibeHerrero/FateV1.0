@@ -73,15 +73,8 @@ public class PlayerAa : MonoBehaviour
             }
             else
             {
-                pAnim.CallRAa();
-                pAnim.ChangeAaCombo(0);
-
-
-                pAnim.CallAa();
-
-                pManager.playerCurrentDamage = pManager.playerDefaultDamage;
                 
-
+                pAnim.RepeatAttack();
             }
         }
 

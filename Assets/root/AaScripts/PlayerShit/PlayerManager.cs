@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
     public bool isPlayerParry;
     public bool inStrongAttack;
     public bool isPlayerAlive;
+    public bool repeatAa;
     public bool CanDobleJump
     {
         get
@@ -64,7 +65,6 @@ public class PlayerManager : MonoBehaviour
         if (GameManager.Instance.isGameLoaded)
         {
             PlayerData data = SaveSystem.LoadGameManager();
-            Debug.Log(data.respawnPoint);
 
             GameManager.Instance.RespawnPointF = data.respawnPoint;
 

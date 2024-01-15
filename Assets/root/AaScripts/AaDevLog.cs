@@ -816,27 +816,35 @@ air AA--Ok
 
 
 AA:
-hacer que si sigues atacando no salga de la animacion
+hacer que si sigues atacando no salga de la animacion--Ok
+con primer ataque--Ok
 
 CUNADO TERNGA los dos ataques, que haga lo mismo pero con los dos, es decir, reproduce el primero, luego el segundo y si has vuelto a darle otra vez el primero y otra vez el segundo
+
+
+proyectil en el aire no te empuja ya--Ok
+
+hook te manda a cuenca--OK
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
+-laser cristal(mas rapido menos cadencia)
 
+--SOlucionar aa
 
-
--Hacer aa con variable que si le has dado, que te carge directamente la siguiente animacion (flechas entre animaciones)
-
-
+-meter guardado preboss
 
 -hook no te deberias poder mover hasta el hook
 
-
 -enfocar salida en sala rondas
 
--laser cristal(mas rapido menos cadencia)
+
+
+
+
 
 
 
@@ -872,7 +880,7 @@ BUGS:
 -si mueres en el enemigo entry, se buggea
 
 
--
+-te puedes subir en el enemy spwawn
 
 ----------------------------------------------------------------------------------------------------------------------------------
 PREGUNTAS:

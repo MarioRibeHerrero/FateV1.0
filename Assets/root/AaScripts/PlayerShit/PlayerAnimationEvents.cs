@@ -71,7 +71,22 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     private void AaEnd()
     {
-        anim.SetTrigger("AaEnd");
+
+        if (pManager.repeatAa)
+        {
+            Debug.Log("tru  ");
+
+            anim.SetTrigger("Aa");
+
+        }
+        else
+        {
+            anim.SetBool("RepeatAttack", false);
+            Debug.Log("false");
+
+        }
+        pManager.repeatAa = false;
+
     }
 
 

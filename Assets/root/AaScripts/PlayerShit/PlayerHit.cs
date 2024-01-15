@@ -12,12 +12,14 @@ public class PlayerHit : MonoBehaviour
     private PlayerAnimationManager pAnim;
     PlayerManager pManager;
     PlayerHook pHook;
+    PlayerGroundCheck pGroundCheck;
 
     private void Awake()
     {
         pAnim = GetComponent<PlayerAnimationManager>();
         pManager = GetComponent<PlayerManager>();
         pHook = GetComponent<PlayerHook>();
+        pGroundCheck = GetComponent<PlayerGroundCheck>();
     }
 
     private void Update()
@@ -33,25 +35,31 @@ public class PlayerHit : MonoBehaviour
     {
         if (!pManager.isPlayerInvulnerable)
         {
-            if(takingSlow)
-            {
-                StartCoroutine(SlowPlayer());
-                pManager.isPlayerInvulnerable = true;
-                Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
-                GetComponent<PlayerHealth>().TakeDamage(damageTaken);
 
+
+                if (takingSlow)
+                {
+                    StartCoroutine(SlowPlayer());
+                    pManager.isPlayerInvulnerable = true;
+                    Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
+                    GetComponent<PlayerHealth>().TakeDamage(damageTaken);
+
+                }
+                else
+                {
+                    pAnim.CallPlayerHit();
+                    pManager.isPlayerInvulnerable = true;
+                    Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
+                    StartCoroutine(StunPlayer(stunTime, hitPosition, pushBackForce));
+                    GetComponent<PlayerHealth>().TakeDamage(damageTaken);
+                }
             }
-            else
-            {
-                pAnim.CallPlayerHit();
-                pManager.isPlayerInvulnerable = true;
-                Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
-                StartCoroutine(StunPlayer(stunTime, hitPosition, pushBackForce));
-                GetComponent<PlayerHealth>().TakeDamage(damageTaken);
-            }
 
 
-        }
+
+
+
+        
     }
 
 
@@ -96,6 +104,7 @@ public class PlayerHit : MonoBehaviour
         pHook.CancelHook();
 
         pushPlayer(hitPosition, pushBackForce);
+        
 
         yield return new WaitForSeconds(stunTime);
         pManager.isPlayerStunned = false;

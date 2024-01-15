@@ -107,7 +107,7 @@ public class PlayerHook : MonoBehaviour
             lineRenderer.enabled = true;
             //add the force to the hook
             Vector3 forceDirection = currentHook.transform.position - transform.position;
-            rb.AddForce(forceDirection.normalized * hookForce, ForceMode.Impulse);
+            rb.AddForce(forceDirection.normalized * hookForce, ForceMode.Force);
             //Si esta el hook a la derecha, miramos derecha, sno izquierda
             if (forceDirection.x <= 0) pRotation.isFacingRight = false;
             else pRotation.isFacingRight = true;

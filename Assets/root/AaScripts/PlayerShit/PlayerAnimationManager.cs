@@ -93,20 +93,13 @@ public class PlayerAnimationManager : MonoBehaviour
         anim.SetTrigger("Aa");
 
     }
-    public bool repeatAttack;
-    public void CallRAa()
+   
+   
+    public void RepeatAttack()
     {
+        pManager.repeatAa = true;
         anim.SetBool("RepeatAttack", true);
-    }
-    
-    public void AaEnd()
-    {
-        if (repeatAttack)
-        {
-            anim.SetTrigger("Aa");
-            repeatAttack = false;
 
-        }
     }
     public void CallAaAir()
     {
