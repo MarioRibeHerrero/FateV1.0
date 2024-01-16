@@ -10,6 +10,7 @@ public class PlayerAnimationEvents : MonoBehaviour
     Rigidbody rb;
     PlayerHealth pHealth;
     PlayerHook pHook;
+    PlayerAa pAa;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -17,6 +18,7 @@ public class PlayerAnimationEvents : MonoBehaviour
         rb = player.GetComponent<Rigidbody>();
         pHealth = player.GetComponent<PlayerHealth>();
         pHook = player.GetComponent<PlayerHook>();
+        pAa = player.GetComponent<PlayerAa>();
     }
     private void CanPlayerMoveToFalse()
     {
@@ -69,46 +71,32 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     }
 
-    private void AaEnd()
+    private void CheckIfGoingToSecondAttack()
     {
-        Debug.Log("END1");
+        pAa.goToSecondAaCheck = true;
+        pAa.goToFirstAaCheck = false;
 
-        pManager.combo = 1;
-        if (pManager.repeatAa)
-        {
+        anim.SetBool("goToSecondAttack", false);
 
-            anim.SetInteger("AaCombo", pManager.combo);
-            Debug.Log(pManager.combo);
-
-            anim.SetTrigger("Aa");
-
-
-
-        }
-
-
-    }
-    private void Aa2End()
-    {
-        Debug.Log("END2");
-
-        pManager.combo = 0;
-        if (pManager.repeatAa)
-        {
-            anim.SetInteger("AaCombo", pManager.combo);
-            anim.SetTrigger("Aa");
-
-
-
-        }
+        //pongo lo del 3ro a false
+        anim.SetBool("goToThirdAttack", false);
 
     }
 
-    private void RepeatToFalse()
+
+    private void CheckIfGoingToFirstAttack()
     {
-        pManager.repeatAa = false;
-        anim.SetBool("RepeatAttack", false);
+
+        pAa.goToFirstAaCheck = true;
+        pAa.goToSecondAaCheck = false;
+
+        anim.SetBool("goToFirstAttack", false);
+
     }
+
+
+
+
 
     private void InStrongAttackToTrue()
     {

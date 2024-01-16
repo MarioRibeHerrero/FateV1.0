@@ -7,11 +7,13 @@ public class PlayerAttackCollider : MonoBehaviour
     [SerializeField] int healthHealed;
     [SerializeField] PlayerAa aaCombo;
     PlayerManager pManager;
+    PlayerAnimationManager pAnim;
 
 
     private void Awake()
     {
         pManager = aaCombo.transform.GetComponent<PlayerManager>();
+        pAnim = aaCombo.transform.GetComponent<PlayerAnimationManager>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +21,7 @@ public class PlayerAttackCollider : MonoBehaviour
         var damageable = other.GetComponent<IDamageable>();
         if (damageable == null) return;
         damageable.TakeDamage(pManager.playerCurrentDamage);
-        aaCombo.AddToCombo();
+        if(aaCombo.goToSecondAaCheck) { pAnim.SetGoingToThirdAttack(); }
         //Heal
         var healPlayer = other.GetComponent<IHealPlayer>();
         if (healPlayer == null) return;

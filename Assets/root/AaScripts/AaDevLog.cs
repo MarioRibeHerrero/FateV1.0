@@ -841,16 +841,19 @@ Meter mapa nuevo--Ok
 por la tarde:
 hacer todolist:
 
+añadir aa que funcione bien--Ok
+cambiado el sistema dde aa por completo(si metiesemos mas adelante el 3cer ataque otra vez, supongo que seria hacer lo mismo
+pero con un comprobador durante el seundo ataque,(el q ya esta) y luego meter otra booleana dentro del animator, q si le has dado a un eneimgo se ponga a true, y si se pone
+a true haces el tercero y sino no(al igual lo ahago ahora q no parece tan complicado xd)
 
-
+Añadir tercer aa--
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
-añadir aa que funcione bien--
 
-poner animacion de hook buena(y walk)--
+poner animacion de hook buena(y walk e idle)--CUNADO LAS TENGA
 
 
 -(Opcional)-Solucinar bugs--

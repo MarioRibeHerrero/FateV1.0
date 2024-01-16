@@ -90,21 +90,39 @@ public class PlayerAnimationManager : MonoBehaviour
         anim.SetTrigger("Parry");
         pManager.isPlayerParry = true;
         pHealth.TakeDamage(pManager.parryHealingAmmount);
-        pAa.aaCombo = 0;
+
+        //añadir linea q resetea aa combo
+
     }
 
     public void CallAa() 
     {
         anim.SetTrigger("Aa");
-
     }
-   
-    public void RepeatAttack()
+
+
+    public void SetGoingToSecondAttack()
     {
-        pManager.repeatAa = true;
-        anim.SetBool("RepeatAttack", true);
+
+        anim.SetBool("goToSecondAttack", true);
+
 
     }
+    public void SetGoingToFirstAttack()
+    {
+
+        anim.SetBool("goToFirstAttack", true);
+
+    }
+    public void SetGoingToThirdAttack()
+    {
+
+        anim.SetBool("goToThirdAttack", true);
+
+    }
+
+
+
     public void CallAaAir()
     {
 
@@ -112,21 +130,6 @@ public class PlayerAnimationManager : MonoBehaviour
 
     }
 
-    public void ChangeAaCombo()
-    {
-
-        if (pManager.combo == 0)
-        {
-            anim.SetInteger("AaCombo", pManager.combo);
-            anim.SetTrigger("Aa");
-
-        }
-        else
-        {
-            anim.SetInteger("AaCombo", pManager.combo);
-            anim.SetTrigger("Aa");
-        }
-    }
 
     public void CallPlayerHit()
     {
