@@ -834,13 +834,13 @@ Importar animaciones nuevas pablo--Ok
 
 -Melee tiene que tardar mas en atacar--OK
 
-Meter mapa nuevo--
 
-añadir aa que funcione bien--
+Meter mapa nuevo--Ok
 
-poner animacion de hook buena--
 
-enemigo melee(19:00h)--
+por la tarde:
+hacer todolist:
+
 
 
 
@@ -848,9 +848,21 @@ enemigo melee(19:00h)--
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
--laser cristal(mas rapido menos cadencia)
+añadir aa que funcione bien--
 
---SOlucionar aa
+poner animacion de hook buena(y walk)--
+
+
+-(Opcional)-Solucinar bugs--
+
+enemigo melee(19:00h)--
+
+Añadir palanca--
+
+
+
+
+-laser cristal(mas rapido menos cadencia)
 
 -meter guardado preboss
 
@@ -892,6 +904,7 @@ VFX:
 MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
+-salto al pilar
 
 -Bug golpe midhook
 
