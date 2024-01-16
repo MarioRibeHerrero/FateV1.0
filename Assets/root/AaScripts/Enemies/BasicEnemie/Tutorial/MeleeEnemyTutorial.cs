@@ -37,12 +37,12 @@ public class MeleeEnemyTutorial : MonoBehaviour
         anim = GetComponent<Animator>();
 
     }
-    private void Start()
+
+    private void OnEnable()
     {
         pInput.SwitchCurrentActionMap("PlayerTutorial");
         playerManager.transform.GetComponent<PlayerInteract>().SetNewInteract();
     }
-
     private void Update()
     {
         CheckForPlayer();

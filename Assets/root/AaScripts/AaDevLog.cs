@@ -846,53 +846,67 @@ cambiado el sistema dde aa por completo(si metiesemos mas adelante el 3cer ataqu
 pero con un comprobador durante el seundo ataque,(el q ya esta) y luego meter otra booleana dentro del animator, q si le has dado a un eneimgo se ponga a true, y si se pone
 a true haces el tercero y sino no(al igual lo ahago ahora q no parece tan complicado xd)
 
-Añadir tercer aa--
+Añadir tercer aa--OK
 
+
+Añadir palanca--Ok
+
+Mejorar tuto--OK
+
+
+-(Opcional)-Solucinar bugs--OK
+
+-hook hace que salgas volando--OK
+
+-Bug golpe midhook--Ok(probar)
+
+-salto al pilar(solucion cutre)
+
+-te puedes subir en el enemy spwawn(solucion cutre)
+
+
+Dia41:
+PREGUNTAR:
+-te puedes subir en el enemy spwawn(solucion cutre)
+
+
+
+preguntar Jorgge:
+-meter guardado preboss
+-Luz al iniciar desde otra escena
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
 
 poner animacion de hook buena(y walk e idle)--CUNADO LAS TENGA
-
-
--(Opcional)-Solucinar bugs--
-
+-hook no te deberias poder mover hasta el hook(mirar si hace falta frenar al pj cunado este la nueva)
 enemigo melee(19:00h)--
 
-Añadir palanca--
 
 
 
 
 -laser cristal(mas rapido menos cadencia)
-
--meter guardado preboss
-
--hook no te deberias poder mover hasta el hook
-
 -enfocar salida en sala rondas
 
-
-
-
-
-
-
-
-Añadir musica: Meterse en FMOD
-
-
-
-
-
-Cuando boss:
-
+-----
+BOSS
+-----
 -Los pinchos siempre salen en la misma posición
 
 -Meter todos los ataques
 
+
+
+
+
+
+
 NO PRIORITARIO:
+
+-Añadir musica y SFX
+
 
 -Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 -Añadir regiones y ordenar codigo
@@ -904,29 +918,17 @@ VFX:
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
-MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
------------------------------------------------------------------------------------------------------------------------------------
 BUGS:
--salto al pilar
+-----------------------------------------------------------------------------------------------------------------------------------
 
--Bug golpe midhook
 
--hook hace que salgas volando--
 
+No prioritario
 -si mueres en el enemigo entry, se buggea
-
-
--te puedes subir en el enemy spwawn
 
 ----------------------------------------------------------------------------------------------------------------------------------
 PREGUNTAS:
 -----------------------------------------------------------------------------------------------------------------------------------
-
-
--Para el Ui del parry:
-AÑADIDO cooldown parry con dos updates, uno en el uimanager, y otro en el parry, seria mejor con una animacion y un ivnoke?
-
-
 
 
 

@@ -34,6 +34,8 @@ public class ProyectileDamage : MonoBehaviour, IDamageable
                 }
                 else
                 {
+                    if (other.GetComponent<PlayerHook>().isHooking) other.GetComponent<PlayerHook>().CancelHook();
+
                     other.GetComponent<PlayerHit>().HitPlayer(this.transform.position, 30, 0.5f, 20, true);
 
                 }
