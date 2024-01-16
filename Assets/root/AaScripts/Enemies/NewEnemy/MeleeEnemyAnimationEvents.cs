@@ -18,6 +18,7 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
     {
         stateManager.isStunned = false;
         enemyController.canAttack = true;
+        enemyController.patience = 0.7f;
         if(stateManager.playerInMovingZone)
         {
             stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Tracking;

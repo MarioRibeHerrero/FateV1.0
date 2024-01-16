@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.Intrinsics;
 using UnityEngine;
 
 public class PlayerAnimationManager : MonoBehaviour
@@ -19,6 +20,10 @@ public class PlayerAnimationManager : MonoBehaviour
     PlayerManager pManager;
     PlayerHealth pHealth;
     PlayerAa pAa;
+
+
+
+
     void Awake()
     {
         pMovement = GetComponent<PlayerMovement>();
@@ -94,7 +99,6 @@ public class PlayerAnimationManager : MonoBehaviour
 
     }
    
-   
     public void RepeatAttack()
     {
         pManager.repeatAa = true;
@@ -103,14 +107,25 @@ public class PlayerAnimationManager : MonoBehaviour
     }
     public void CallAaAir()
     {
+
         anim.SetTrigger("AaAir");
 
     }
 
-    public void ChangeAaCombo(int comboN)
+    public void ChangeAaCombo()
     {
-        anim.SetInteger("AaCombo", comboN);
 
+        if (pManager.combo == 0)
+        {
+            anim.SetInteger("AaCombo", pManager.combo);
+            anim.SetTrigger("Aa");
+
+        }
+        else
+        {
+            anim.SetInteger("AaCombo", pManager.combo);
+            anim.SetTrigger("Aa");
+        }
     }
 
     public void CallPlayerHit()

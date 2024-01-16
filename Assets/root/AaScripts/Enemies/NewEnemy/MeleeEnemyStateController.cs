@@ -44,7 +44,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     [SerializeField] Vector3 attackRangeVector;
     [SerializeField] LayerMask attackLayer;
     [SerializeField] float patienceDefault;
-     float patience;
+    public float patience;
 
 
 
@@ -273,7 +273,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
         inRangeOfAttack = Physics.OverlapBox(attackRangePos.position, attackRangeVector / 2, Quaternion.identity, attackLayer).Length > 0;
 
-        if (Physics.OverlapBox(attackRangePos.position, attackRangeVector / 2, Quaternion.identity, attackLayer).Length > 0)
+        if (inRangeOfAttack)
         {
             patience -= Time.deltaTime;
             enemyMovementSpeed = 0f;

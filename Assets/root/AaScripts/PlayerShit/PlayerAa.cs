@@ -65,16 +65,20 @@ public class PlayerAa : MonoBehaviour
 
             if (!pManager.playerInNormalAttack)
             {
-                pAnim.ChangeAaCombo(0);
-                pAnim.CallAa();
+                pAnim.ChangeAaCombo();
+
+               // pAnim.CallAa();
 
                 pManager.playerCurrentDamage = pManager.playerDefaultDamage;
-
             }
             else
             {
-                
+                pAnim.ChangeAaCombo();
+
                 pAnim.RepeatAttack();
+
+
+
             }
         }
 
@@ -131,7 +135,7 @@ public class PlayerAa : MonoBehaviour
     {
 
         //si el combo es mayor q 0, le restas al timer timepo para que no sea infinito, para que dure el combo, lo unico que hay que hacer es poner el timer otra vez a x
-        if(aaCombo != 0)
+        if(pManager.combo != 0)
         {
             comboTimer -= Time.deltaTime;
         }
@@ -140,7 +144,7 @@ public class PlayerAa : MonoBehaviour
         //si el timer es menor que 0, el combo es 0 a 0
         if(comboTimer <= 0)
         {
-            aaCombo = 0;
+            pManager.combo = 0;
         }
     }
 

@@ -65,10 +65,7 @@ public class RoundCristal : MonoBehaviour
         {
             //linecast amarillo
         }
-        if (progression < 0.66 && )
-        {
-            //linecast amarillo
-        }
+
 
 
         if (progression == 1)

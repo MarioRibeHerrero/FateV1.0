@@ -71,26 +71,44 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     private void AaEnd()
     {
+        Debug.Log("END1");
 
+        pManager.combo = 1;
         if (pManager.repeatAa)
         {
-            Debug.Log("tru  ");
+
+            anim.SetInteger("AaCombo", pManager.combo);
+            Debug.Log(pManager.combo);
 
             anim.SetTrigger("Aa");
 
-        }
-        else
-        {
-            anim.SetBool("RepeatAttack", false);
-            Debug.Log("false");
+
 
         }
-        pManager.repeatAa = false;
+
+
+    }
+    private void Aa2End()
+    {
+        Debug.Log("END2");
+
+        pManager.combo = 0;
+        if (pManager.repeatAa)
+        {
+            anim.SetInteger("AaCombo", pManager.combo);
+            anim.SetTrigger("Aa");
+
+
+
+        }
 
     }
 
-
-
+    private void RepeatToFalse()
+    {
+        pManager.repeatAa = false;
+        anim.SetBool("RepeatAttack", false);
+    }
 
     private void InStrongAttackToTrue()
     {

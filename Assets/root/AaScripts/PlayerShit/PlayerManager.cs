@@ -25,6 +25,11 @@ public class PlayerManager : MonoBehaviour
     public bool inStrongAttack;
     public bool isPlayerAlive;
     public bool repeatAa;
+
+    public int combo;
+
+
+
     public bool CanDobleJump
     {
         get

@@ -828,9 +828,26 @@ hook te manda a cuenca--OK
 
 
 
+
+Dia 40(1/16/24):
+Importar animaciones nuevas pablo--Ok
+
+-Melee tiene que tardar mas en atacar--OK
+
+Meter mapa nuevo--
+
+añadir aa que funcione bien--
+
+poner animacion de hook buena--
+
+enemigo melee(19:00h)--
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
+
 -laser cristal(mas rapido menos cadencia)
 
 --SOlucionar aa
@@ -875,6 +892,9 @@ VFX:
 MAPA MENTAL (Todo lo opcional porbablemnete no sea añadido de momento):
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
+
+-Bug golpe midhook
+
 -hook hace que salgas volando--
 
 -si mueres en el enemigo entry, se buggea

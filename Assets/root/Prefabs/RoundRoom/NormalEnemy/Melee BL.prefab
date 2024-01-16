@@ -339,13 +339,14 @@ MonoBehaviour:
   attackRangePos: {fileID: 1539078240399792779}
   canAttack: 0
   hasExitedDuringAttack: 0
-  enemyMovementSpeed: 3
+  inRangeOfAttack: 0
+  enemyMovementSpeedDefault: 1.5
   timeEnemyWaits: 1
   attackRangeVector: {x: 3.34, y: 2.58, z: 1.6}
   attackLayer:
     serializedVersion: 2
     m_Bits: 8
-  patience: 0.1
+  patienceDefault: 0
 --- !u!114 &6177310882747230287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,7 +808,7 @@ Transform:
   - {fileID: 24382616620733065}
   - {fileID: 6644064127229462777}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3512913615768527164
 Animator:
