@@ -80,6 +80,8 @@ public class PlayerAnimationEvents : MonoBehaviour
 
         //pongo lo del 3ro a false
         anim.SetBool("goToThirdAttack", false);
+        anim.SetBool("hasHitEnemy", false);
+
 
     }
 

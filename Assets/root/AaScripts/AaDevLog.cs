@@ -866,6 +866,15 @@ Mejorar tuto--OK
 
 
 Dia41:
+
+Meter boss bueno
+
+Importar boss
+
+empezar con los ataques.
+
+
+
 PREGUNTAR:
 -te puedes subir en el enemy spwawn(solucion cutre)
 
@@ -878,11 +887,34 @@ preguntar Jorgge:
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
+-Ataques para mañana
+-Patada,
+Pilares,
+Disco
 
-poner animacion de hook buena(y walk e idle)--CUNADO LAS TENGA
+Entrar en bossfight, que empizes bossfight si te matan y vuelves a entrar se reinicia bien.
+
+--Para mañana--
+
+Mañana--
+Meter enemigo melee con animaciones y modelo nuevo,
+solucionar bugs tochos:
+
+
+
+-Le das dos veces al atacar, y te hjace el tocho
+
+-Camara 1-2-1
+
+
+
+-poner animacion de hook buena(y walk e idle)
+
+
+
+
 -hook no te deberias poder mover hasta el hook(mirar si hace falta frenar al pj cunado este la nueva)
-enemigo melee(19:00h)--
-
+enemigo melee-MAñana clase
 
 
 

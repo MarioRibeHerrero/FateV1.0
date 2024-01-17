@@ -5,9 +5,9 @@ using UnityEngine;
 public class TutorialEnemyHealth : MonoBehaviour, IDamageable
 {
 
-
+    [SerializeField] GameObject game;
     public void TakeDamage(int damge)
     {
-        gameObject.SetActive(false);
+        game.SetActive(false);
     }
 }
