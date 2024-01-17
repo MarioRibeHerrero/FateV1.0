@@ -85,6 +85,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
                             root.GetComponent<Animator>().SetTrigger("Stunned");
                             HealPlayer();
                             root.GetComponent<MeleeEnemyState>().isStunned = true;
+                            Debug.Log("EKEKE");
                             return;
                         }
                         else

@@ -6,12 +6,14 @@ using UnityEngine.Rendering;
 public class MeleeEnemyAnimationEvents : MonoBehaviour
 {
     private MeleeEnemyState stateManager;
-
-    [SerializeField] MeleeEnemyStateController enemyController;
+    Animator anim;
+    MeleeEnemyStateController enemyController;
 
     private void Awake()
     {
         stateManager = GetComponent<MeleeEnemyState>();
+        enemyController = GetComponent<MeleeEnemyStateController>();
+        anim = GetComponent<Animator>();
     }
 
     private void CanAttackToTrue()
@@ -34,4 +36,15 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
 
     }
 
+
+    private void SetToInactive()
+    {
+        gameObject.SetActive(false);
+
+    }
+    private void IsDeadToTrue()
+    {
+
+        anim.SetBool("IsDead", true);
+    }
 }

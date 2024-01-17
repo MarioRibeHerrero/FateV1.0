@@ -9,18 +9,14 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 {
     #region Variables
 
-    [Header("References")]
-    [SerializeField] MeleeEnemyState stateManager;
-    [SerializeField] Animator animator;
-    [SerializeField] BasicEnemyHealth healthManager;
+     [Header("References")]
+     MeleeEnemyState stateManager;
+     Animator animator;
+     BasicEnemyHealth healthManager;
 
 
     public bool facingRight;
 
-    //Pathing
-    private Transform pointA;
-    private Transform pointB;
-    private Transform target;
 
     //tackingPlayer
     [Header("PlayerTacking")]
@@ -40,14 +36,10 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     [Header("VariablesCambiables")]
     [SerializeField] float enemyMovementSpeedDefault;
     private float enemyMovementSpeed;
-    [SerializeField] float timeEnemyWaits;
     [SerializeField] Vector3 attackRangeVector;
     [SerializeField] LayerMask attackLayer;
     [SerializeField] float patienceDefault;
     public float patience;
-
-
-    [SerializeField] GameObject newBody;
 
     //reset shit
     #endregion
@@ -66,21 +58,16 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     private void Awake()
     {
         playerTarget = GameObject.FindAnyObjectByType<PlayerGravity>().transform;
-        //Pathing
-       // pointA = transform.parent.transform.Find("PathPoints").transform.Find("PointA");
-       // pointB = transform.parent.transform.Find("PathPoints").transform.Find("PointB");
-
-        stateManager.onEnemyReset += Reset;
-
+        animator = GetComponent<Animator>();
+        healthManager = GetComponent<BasicEnemyHealth>();
+        stateManager = GetComponent<MeleeEnemyState>();
         
     }
     
     private void Start()
     {
-        target = pointA;
+        stateManager.onEnemyReset += Reset;
         canAttack = true;
-        
-        
         patience = patienceDefault;
         enemyMovementSpeed = enemyMovementSpeedDefault;
     }
@@ -94,7 +81,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     private void Reset()
     {
         canAttack = true;
-        newBody.transform.localPosition = Vector3.zero;
+        transform.localPosition = Vector3.zero;
         stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
     }
 
@@ -104,17 +91,12 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         switch (stateManager.state)
         {
             case MeleeEnemyState.MeleeEnemyStateEnum.Pathing:
-
-                //MoveTowardsTarget();
                 CheckIfPlayerInZone();
-                break;
-            case MeleeEnemyState.MeleeEnemyStateEnum.Waiting:
                 break;
             case MeleeEnemyState.MeleeEnemyStateEnum.Attacking:
                 Attack();
                 break;
             case MeleeEnemyState.MeleeEnemyStateEnum.Tracking:
-
                 FollowPlayer();
                 CheckForGround();
                 CheckAttack();
@@ -169,8 +151,8 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         if(!stateManager.playerInMovingZone) stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
         if (onGround )
         {
-            Vector3 targetPosition = new Vector3(playerTarget.transform.position.x, newBody.transform.position.y, newBody.transform.position.z);
-            newBody.transform.position = Vector3.MoveTowards(newBody.transform.position, targetPosition, enemyMovementSpeed * Time.deltaTime);
+            Vector3 targetPosition = new Vector3(playerTarget.transform.position.x, transform.position.y, transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, enemyMovementSpeed * Time.deltaTime);
             
         }
         FacePlayer();
@@ -178,17 +160,17 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     }
     private void FacePlayer()
     {
-        if (playerTarget.transform.position.x >= newBody.transform.position.x)
+        if (playerTarget.transform.position.x >= transform.position.x)
         {
             facingRight = true;
-            if (facingRight) newBody.transform.rotation = Quaternion.Euler(0, 90, 0);
-            else newBody.transform.rotation = Quaternion.Euler(0, -90, 0);
+            if (facingRight) transform.rotation = Quaternion.Euler(0, 90, 0);
+            else transform.rotation = Quaternion.Euler(0, -90, 0);
         }
         else
         {
             facingRight = false;
-            if (facingRight) newBody.transform.rotation = Quaternion.Euler(0, 90, 0);
-            else newBody.transform.rotation = Quaternion.Euler(0, -90, 0);
+            if (facingRight) transform.rotation = Quaternion.Euler(0, 90, 0);
+            else transform.rotation = Quaternion.Euler(0, -90, 0);
         }
 
     }
@@ -197,9 +179,6 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     private void CheckForGround()
     {
         
-
-
-
         onGround = Physics.Raycast(onGroundPos.position, Vector3.down, 1, walkeableLayers);
 
         if (onGround)

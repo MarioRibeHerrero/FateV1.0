@@ -6,24 +6,27 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 {
     private MeleeEnemyState state;
     private RoundManager roundManager;
+    private Animator anim;
 
     private void Awake()
     {
         state = GetComponent<MeleeEnemyState>();
-
+        anim = GetComponent<Animator>();
         roundManager = FindAnyObjectByType<RoundManager>();
         
     }
 
-    private void Start()
-    {
-        
-    }
     public void TakeDamage(int damage)
     {
+
         state.health -= damage;
         CheckHealth();
+        anim.SetTrigger("Hit");
     }
+
+
+
+
 
     private void CheckHealth()
     {
@@ -33,11 +36,10 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
             
 
-            RoudRoomShit();
+            if(roundManager != null) RoudRoomShit();
 
             //no se usa xq ahora lo llamo con delagados desde el roundmanager
-            gameObject.SetActive(false);
-
+            anim.SetTrigger("Die");
 
         }
     }
