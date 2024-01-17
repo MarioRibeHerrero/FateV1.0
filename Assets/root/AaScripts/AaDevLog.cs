@@ -604,16 +604,6 @@ IsdobleJumpUnlocked--Ok
 
 
 
-
- 
-
-*/
-#endregion
-/*
-
-
-
-
 Dia33(Repite ese numerito):
 
 
@@ -864,6 +854,12 @@ Mejorar tuto--OK
 
 -te puedes subir en el enemy spwawn(solucion cutre)
 
+ 
+
+*/
+#endregion
+/*
+
 
 Dia41:
 
@@ -873,21 +869,23 @@ Importar boss
 
 empezar con los ataques.
 
+no he podido hacer los ataques por tema de rootmotion, me espro a pregunarle a jorge mañana.
+
+meter modelo enemigo meelee con animaciones
 
 
-PREGUNTAR:
--te puedes subir en el enemy spwawn(solucion cutre)
+
+Solucionar bugs:
+-Le das dos veces al atacar, y te hjace el tocho
 
 
 
-preguntar Jorgge:
--meter guardado preboss
--Luz al iniciar desde otra escena
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
--Ataques para mañana
+-Ataques para mañana(block ayuda jorege)
 -Patada,
 Pilares,
 Disco
@@ -902,7 +900,7 @@ solucionar bugs tochos:
 
 
 
--Le das dos veces al atacar, y te hjace el tocho
+
 
 -Camara 1-2-1
 
@@ -962,7 +960,14 @@ No prioritario
 PREGUNTAS:
 -----------------------------------------------------------------------------------------------------------------------------------
 
+PREGUNTAR:
+-te puedes subir en el enemy spwawn(solucion cutre)
 
+
+
+preguntar Jorgge:
+-meter guardado preboss
+-Luz al iniciar desde otra escena
 
 
 

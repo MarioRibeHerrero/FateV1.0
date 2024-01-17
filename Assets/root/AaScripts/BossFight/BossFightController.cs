@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BossFightController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BossFightController : MonoBehaviour
     public bool inSecondFace;
 
 
+
+    
     //AttackReferences
     private BossSpikeAttack bossSpikeAttack;
     private BossFrisbiAttack bossFrisbiAttack;
@@ -18,6 +21,16 @@ public class BossFightController : MonoBehaviour
 
     //PlayerReference
     private PlayerHealth pHealth;
+
+
+
+
+    public Vector3 spawnPos;
+    [SerializeField] Transform backPos;
+    [SerializeField] Animator anim;
+    [SerializeField] GameObject body;
+
+    
 
     private void Awake()
     {
@@ -27,32 +40,33 @@ public class BossFightController : MonoBehaviour
         bossFrisbiAttack = GetComponent<BossFrisbiAttack>();
         bossUiManager = GetComponent<BossUiManager>();
     }
+    private void Update()
+    {
 
+    }
     public void GetRandomBossAttack()
     {
         if (!inBelzegorFight) return;
-        int random = Random.Range(1, 3);
+        int random = UnityEngine.Random.Range(1, 3);
+
+
+        DesapearIntoAttack(backPos.position, "RisePilarAttack");
+
         switch (random)
         {
 
             case 1:
-                StartCoroutine(bossSpikeAttack.SpikeAttack());
+
                 break;
 
             case 2:
-                StartCoroutine(bossFrisbiAttack.FrisbiAttack());
+
+                break;
+            case 3:
+               // StartCoroutine(bossSpikeAttack.SpikeAttack());
                 break;
 
         }
-    }
-
-
-    public void StartBossFight()
-    {
-        pHealth.onPlayerDeath += ResetBossFight;
-        inBelzegorFight = true;
-        Invoke(nameof(GetRandomBossAttack), 2f);
-        bossUiManager.EnableHealth();
     }
 
     public void ResetBossFight()
@@ -63,5 +77,25 @@ public class BossFightController : MonoBehaviour
         pHealth.onPlayerDeath -= ResetBossFight;
 
     }
+    public void StartBossFight()
+    {
+        pHealth.onPlayerDeath += ResetBossFight;
+        inBelzegorFight = true;
+        bossUiManager.EnableHealth();
+
+        body.transform.position = backPos.position;
+        Invoke(nameof(GetRandomBossAttack ),2);
+    }
+
+
+    private void DesapearIntoAttack(Vector3 whereToSpawn, string attackAnim)
+    {
+        spawnPos = whereToSpawn;
+
+        anim.SetTrigger("Disappear");
+        body.GetComponent<BossCallAnimationEvents>().animationToCallNext = attackAnim;
+    }
+
+
 
 }

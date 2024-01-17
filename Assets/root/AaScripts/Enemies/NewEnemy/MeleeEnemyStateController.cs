@@ -47,7 +47,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     public float patience;
 
 
-
+    [SerializeField] GameObject newBody;
 
     //reset shit
     #endregion
@@ -67,8 +67,8 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     {
         playerTarget = GameObject.FindAnyObjectByType<PlayerGravity>().transform;
         //Pathing
-        pointA = transform.parent.transform.Find("PathPoints").transform.Find("PointA");
-        pointB = transform.parent.transform.Find("PathPoints").transform.Find("PointB");
+       // pointA = transform.parent.transform.Find("PathPoints").transform.Find("PointA");
+       // pointB = transform.parent.transform.Find("PathPoints").transform.Find("PointB");
 
         stateManager.onEnemyReset += Reset;
 
@@ -94,7 +94,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     private void Reset()
     {
         canAttack = true;
-        transform.localPosition = Vector3.zero;
+        newBody.transform.localPosition = Vector3.zero;
         stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
     }
 
@@ -150,57 +150,6 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     #region Pathing
 
-    void MoveTowardsTarget()
-    {
-
-        float step = enemyMovementSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.transform.position.x, transform.position.y, transform.position.z), step);
-        //if target is = to point b, faicing right will be true, else, it will be false.
-
-        if (Vector3.Distance(transform.position, new Vector3(target.transform.position.x, transform.position.y, transform.position.z)) < 0.01f)
-        {
-            StartCoroutine(WaitAtPoint());
-        }
-        FaceTarget();
-    }
-    IEnumerator WaitAtPoint()
-    {
-        stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Waiting;
-            
-            
-        yield return new WaitForSeconds(timeEnemyWaits);
-
-        if (target == pointA)
-        {
-            target = pointB;
-        }
-        else
-        {
-            target = pointA;
-        }
-
-        if (stateManager.state == MeleeEnemyState.MeleeEnemyStateEnum.Waiting) stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
-
-    }
-    private void FaceTarget()
-    {
-
-        if (target == pointB)
-        {
-            if (transform.position.x > pointB.transform.position.x) facingRight = false;
-            else facingRight = true;
-        }
-        else
-        {
-            if (transform.position.x > pointA.transform.position.x) facingRight = false;
-            else facingRight = true;
-        }
-
-
-        if (facingRight) transform.rotation = Quaternion.Euler(0, 180, 0);
-        else transform.rotation = Quaternion.Euler(0, 0, 0);
-
-    }
 
     private void CheckIfPlayerInZone()
     {
@@ -220,8 +169,8 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         if(!stateManager.playerInMovingZone) stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
         if (onGround )
         {
-            Vector3 targetPosition = new Vector3(playerTarget.transform.position.x, transform.position.y, transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, enemyMovementSpeed * Time.deltaTime);
+            Vector3 targetPosition = new Vector3(playerTarget.transform.position.x, newBody.transform.position.y, newBody.transform.position.z);
+            newBody.transform.position = Vector3.MoveTowards(newBody.transform.position, targetPosition, enemyMovementSpeed * Time.deltaTime);
             
         }
         FacePlayer();
@@ -229,17 +178,17 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     }
     private void FacePlayer()
     {
-        if (playerTarget.transform.position.x >= transform.position.x)
+        if (playerTarget.transform.position.x >= newBody.transform.position.x)
         {
             facingRight = true;
-            if (facingRight) transform.rotation = Quaternion.Euler(0, 180, 0);
-            else transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (facingRight) newBody.transform.rotation = Quaternion.Euler(0, 90, 0);
+            else newBody.transform.rotation = Quaternion.Euler(0, -90, 0);
         }
         else
         {
             facingRight = false;
-            if (facingRight) transform.rotation = Quaternion.Euler(0, 180, 0);
-            else transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (facingRight) newBody.transform.rotation = Quaternion.Euler(0, 90, 0);
+            else newBody.transform.rotation = Quaternion.Euler(0, -90, 0);
         }
 
     }

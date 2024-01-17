@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossSpikeAttack : MonoBehaviour
 {
-    private Animator anim;
+    [SerializeField] Animator anim;
     private BossFightController fightController;
 
     [SerializeField] Transform spikeAttackPos;
@@ -12,9 +12,20 @@ public class BossSpikeAttack : MonoBehaviour
     [SerializeField] GameObject bossBody;
     private void Awake()
     {
-        anim = GetComponent<Animator>();
         fightController = GetComponent<BossFightController>();
 
+    }
+
+    public void Attack()
+    {
+       
+    }
+
+
+
+    private void CallSpikeAttack()
+    {
+        anim.SetTrigger("SpikeAttack");
     }
     public IEnumerator SpikeAttack()
     {

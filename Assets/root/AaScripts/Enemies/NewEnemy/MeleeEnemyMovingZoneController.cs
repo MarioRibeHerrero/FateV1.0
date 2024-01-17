@@ -22,7 +22,7 @@ public class MeleeEnemyMovingZoneController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //if(stateManager.state != MeleeEnemyState.MeleeEnemyStateEnum.Attacking) stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
-            enemyController.WaitFor(1);
+            //enemyController.WaitFor(1);
 
         }
     }

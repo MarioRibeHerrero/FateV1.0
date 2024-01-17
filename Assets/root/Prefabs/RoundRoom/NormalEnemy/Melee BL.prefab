@@ -347,6 +347,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   patienceDefault: 0
+  patience: 0
 --- !u!114 &6177310882747230287
 MonoBehaviour:
   m_ObjectHideFlags: 0
