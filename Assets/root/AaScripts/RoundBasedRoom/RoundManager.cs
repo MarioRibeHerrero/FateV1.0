@@ -148,6 +148,8 @@ public class RoundManager : MonoBehaviour
     }
     private IEnumerator UpdateRoundState(int newRound, float waitTime)
     {
+
+        Debug.Log("CORRUTINA");
         yield return new WaitForSeconds(waitTime);
         currentRound = newRound;
         usedPositions.Clear();
@@ -167,6 +169,7 @@ public class RoundManager : MonoBehaviour
             do
             {
                 random = Random.Range(0, meleeSpawnPos.Length);
+                Debug.Log("BUCLE1 max4");
             } while (usedPositions.Contains(meleeSpawnPos[random]));
 
             usedPositions.Add(meleeSpawnPos[random]);
@@ -178,6 +181,8 @@ public class RoundManager : MonoBehaviour
             do
             {
                 currentEnemy = normalEnemyList[Random.Range(0, normalEnemyList.Count)];
+                Debug.Log("BUCLE2 max4");
+
             } while (currentEnemy.activeSelf);
 
             //we reset it
@@ -210,6 +215,7 @@ public class RoundManager : MonoBehaviour
                 isCristalDestroyed = false;
                 break;
         }
+        Debug.Log("HE LLEGADO");
     }
 
 

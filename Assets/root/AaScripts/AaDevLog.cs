@@ -871,7 +871,7 @@ empezar con los ataques.
 
 no he podido hacer los ataques por tema de rootmotion, me espro a pregunarle a jorge mañana.
 
-meter modelo enemigo meelee con animaciones
+meter modelo enemigo meelee con animaciones--Ok
 
 
 
@@ -879,6 +879,11 @@ Solucionar bugs:
 -Le das dos veces al atacar, y te hjace el tocho
 
 
+
+
+Dia42:
+
+Haccer que las oleadas funcionen con el nuevo enemigo(el tuto tmb)
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -937,7 +942,7 @@ NO PRIORITARIO:
 
 -Añadir musica y SFX
 
-
+-Re hacer el sistema de aa triple, o por lo menos entenderolo
 -Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 -Añadir regiones y ordenar codigo
 -Cambiar forma de actualizar la vida(usando el get/Set)

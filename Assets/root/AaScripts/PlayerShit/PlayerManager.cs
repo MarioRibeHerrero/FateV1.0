@@ -24,8 +24,10 @@ public class PlayerManager : MonoBehaviour
     public bool isPlayerParry;
     public bool inStrongAttack;
     public bool isPlayerAlive;
-    public bool repeatAa;
 
+
+    public bool repeatAa;
+    public bool canGoToThirdAttack;
     public int combo;
 
 

@@ -88,7 +88,7 @@ public class BossFightController : MonoBehaviour
     }
 
 
-    private void DesapearIntoAttack(Vector3 whereToSpawn, string attackAnim)
+    public void DesapearIntoAttack(Vector3 whereToSpawn, string attackAnim)
     {
         spawnPos = whereToSpawn;
 
@@ -99,3 +99,5 @@ public class BossFightController : MonoBehaviour
 
 
 }
+
+

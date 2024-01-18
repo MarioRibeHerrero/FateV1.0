@@ -27,7 +27,7 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
 
 
-
+    public bool isDead;
     private void CheckHealth()
     {
         if (state.health <= 0)
@@ -36,7 +36,7 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
             
 
-            if(roundManager != null) RoudRoomShit();
+            if(!isDead) RoudRoomShit();
 
             //no se usa xq ahora lo llamo con delagados desde el roundmanager
             anim.SetTrigger("Die");
@@ -46,6 +46,7 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
     private void RoudRoomShit()
     {
+        isDead = true;
         roundManager.roundRoomEnemies.Remove(gameObject);
         if (roundManager.roundRoomEnemies.Count <= 0 && roundManager.inRoundRoom && roundManager.isCristalDestroyed)
         {

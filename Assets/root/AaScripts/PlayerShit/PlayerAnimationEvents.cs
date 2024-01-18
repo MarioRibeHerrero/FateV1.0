@@ -80,7 +80,7 @@ public class PlayerAnimationEvents : MonoBehaviour
 
         //pongo lo del 3ro a false
         anim.SetBool("goToThirdAttack", false);
-        anim.SetBool("hasHitEnemy", false);
+
 
 
     }
@@ -91,6 +91,7 @@ public class PlayerAnimationEvents : MonoBehaviour
 
         pAa.goToFirstAaCheck = true;
         pAa.goToSecondAaCheck = false;
+        anim.SetBool("goToSecondAttack", false);
 
         anim.SetBool("goToFirstAttack", false);
 
@@ -107,6 +108,10 @@ public class PlayerAnimationEvents : MonoBehaviour
     private void InStrongAttackToFalse()
     {
         pManager.inStrongAttack = false;
+        pManager.canGoToThirdAttack = false;
+
+        anim.SetBool("goToThirdAttack", false);
+        anim.SetBool("HasHitEnemy", false);
 
     }
 

@@ -120,7 +120,12 @@ public class PlayerAnimationManager : MonoBehaviour
         anim.SetBool("goToThirdAttack", true);
 
     }
+    public void SetHitEnemy()
+    {
 
+        anim.SetBool("HasHitEnemy", true);
+
+    }
 
 
     public void CallAaAir()

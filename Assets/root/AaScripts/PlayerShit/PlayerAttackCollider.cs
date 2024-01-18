@@ -21,7 +21,7 @@ public class PlayerAttackCollider : MonoBehaviour
         var damageable = other.GetComponent<IDamageable>();
         if (damageable == null) return;
         damageable.TakeDamage(pManager.playerCurrentDamage);
-        if(aaCombo.goToSecondAaCheck) { pAnim.SetGoingToThirdAttack(); }
+        if(aaCombo.goToSecondAaCheck) { pAnim.SetHitEnemy(); }
         //Heal
         var healPlayer = other.GetComponent<IHealPlayer>();
         if (healPlayer == null) return;

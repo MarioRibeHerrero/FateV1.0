@@ -81,8 +81,9 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     private void Reset()
     {
         canAttack = true;
-        transform.localPosition = Vector3.zero;
+        //transform.localPosition = Vector3.zero;
         stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
+        healthManager.isDead = false;
     }
 
 
@@ -198,11 +199,14 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     private void CheckAttack()
     {
+        Debug.Log("HOAL");
 
         inRangeOfAttack = Physics.OverlapBox(attackRangePos.position, attackRangeVector / 2, Quaternion.identity, attackLayer).Length > 0;
 
         if (inRangeOfAttack)
         {
+            Debug.Log("SKJNDAODNasoi");
+
             patience -= Time.deltaTime;
             enemyMovementSpeed = 0f;
         }

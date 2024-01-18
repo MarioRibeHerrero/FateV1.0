@@ -25,6 +25,7 @@ public class PlayerAa : MonoBehaviour
     public bool goToSecondAaCheck;
     public bool goToFirstAaCheck;
 
+    private bool goToThirdAttack;
 
     void Awake()
     {
@@ -69,6 +70,14 @@ public class PlayerAa : MonoBehaviour
         if (goToFirstAaCheck)
         {
             pAnim.SetGoingToFirstAttack();
+            if (!goToThirdAttack)
+            {
+                goToThirdAttack = true;
+                return;
+            }
+
+            pAnim.SetGoingToThirdAttack();
+
         }
 
     }

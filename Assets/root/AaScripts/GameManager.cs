@@ -71,6 +71,12 @@ public class GameManager : MonoBehaviour
             SwitchConvertidor2();
         }
     }
+
+
+    public float respawnPointF;
+
+    
+
     public Rooms RespawnRoom
     {
         get
@@ -91,7 +97,7 @@ public class GameManager : MonoBehaviour
     public Rooms currentRoom;
 
     //Valores guardados
-    public float respawnPointF;
+    
     public Vector3 respawnVector;
 
     //convertidores para el guardado de en que habitacion respawneas
