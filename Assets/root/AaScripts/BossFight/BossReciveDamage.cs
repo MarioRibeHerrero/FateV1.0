@@ -1,29 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 
 public class BossReciveDamage : MonoBehaviour, IDamageable
 {
 
-    [SerializeField] GameObject rootBoss;
-    private Animator packAnim;
-
+    [SerializeField] GameObject bossFightController;
+    private Animator attackAnimator;
     private BossHealth bossHealth;
-    private BossFightController bossFController;
+    private BossFightController bossFControllerScript;
+
+    private Animator anim;
     private void Awake()
     {
-        bossHealth = rootBoss.GetComponent<BossHealth>();
-        bossFController = rootBoss.GetComponent<BossFightController>();
-        packAnim = rootBoss.GetComponent<Animator>();
-
+        bossHealth = bossFightController.GetComponent<BossHealth>();
+        bossFControllerScript = bossFightController.GetComponent<BossFightController>();
+        attackAnimator = bossFightController.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
 
     public void TakeDamage(int damageTaken)
     {
-        bossFController.bossCurrentHealth -= damageTaken;
-        packAnim.SetTrigger("Hit");
+        anim.SetTrigger("Hit");
+        bossFControllerScript.bossCurrentHealth -= damageTaken;
+        attackAnimator.SetTrigger("Hit");
 
         bossHealth.CheckHealth();
     }

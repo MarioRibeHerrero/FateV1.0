@@ -880,6 +880,12 @@ Solucionar bugs:
 
 
 
+Cambiado boss fight,
+añadido ataque pilares,
+añadido ataque dash
+
+
+
 
 Dia42:
 

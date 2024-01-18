@@ -11,7 +11,7 @@ public class BossHealth : MonoBehaviour
 
     
 
-    [SerializeField] BossFightController bFController;
+    BossFightController bFController;
 
 
     [Header("BossHealth")]
@@ -34,6 +34,7 @@ public class BossHealth : MonoBehaviour
     {
         player = GameObject.FindObjectOfType<PlayerInput>().gameObject;
         pManager = player.GetComponent<PlayerManager>();
+        bFController = GetComponent<BossFightController>();
     }
 
 
