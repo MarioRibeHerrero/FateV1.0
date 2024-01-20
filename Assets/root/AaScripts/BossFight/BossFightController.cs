@@ -21,9 +21,7 @@ public class BossFightController : MonoBehaviour
     private BossUiManager bossUiManager;
 
     //BossAttackReferences
-    BossPilarAttack bossPilarAttackScript;
-    BossDashAttack bossDashAttackScript;
-    BossBoomerangAttack bossBoomerangAttackScript;
+
 
     //PlayerReference
     private PlayerHealth pHealth;
@@ -44,6 +42,9 @@ public class BossFightController : MonoBehaviour
     [SerializeField] Transform DashRight;
     [SerializeField] Transform DashLeft;
 
+    [SerializeField] Transform midPoint;
+
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.U))
@@ -63,9 +64,6 @@ public class BossFightController : MonoBehaviour
 
         //attacks
 
-        bossPilarAttackScript = GetComponent<BossPilarAttack>();
-        bossDashAttackScript = GetComponent<BossDashAttack>();
-        bossBoomerangAttackScript = GetComponent<BossBoomerangAttack>();
     }
     public void GetRandomBossAttack()
     {
@@ -83,7 +81,7 @@ public class BossFightController : MonoBehaviour
                 //Ponemos posicion a donde queremos
                 DesapearIntoNewPos(backPos.position);
                 //añadimos metodo al evento
-                onApear += bossPilarAttackScript.Attack;
+                onApear += PilarAttack;
                 break;
 
             case 2:
@@ -93,12 +91,12 @@ public class BossFightController : MonoBehaviour
                 {
                     case 1:
                         DesapearIntoNewPos(DashLeft.position);
-                        onApear += bossDashAttackScript.LeftToRightAttack;
+                        onApear += LeftToRightAttack;
 
                         break;
                     case 2:
                         DesapearIntoNewPos(DashRight.position);
-                        onApear += bossDashAttackScript.RightToLeftAttack;
+                        onApear += RightToLeftAttack;
 
                         break;
 
@@ -112,12 +110,31 @@ public class BossFightController : MonoBehaviour
                 {
                     case 1:
                         DesapearIntoNewPos(DashLeft.position);
-                        onApear += bossBoomerangAttackScript.LeftSideAttact;
+                        onApear += LeftSideAttact;
 
                         break;
                     case 2:
                         DesapearIntoNewPos(DashRight.position);
-                        onApear += bossBoomerangAttackScript.RightSideAttact;
+                        onApear += RightSideAttact;
+
+                        break;
+
+                }
+
+                break;
+            case 4:
+                //CASE--->Ataque Combo
+                int randomPos3 = UnityEngine.Random.Range(1, 3);
+                DesapearIntoNewPos(midPoint.position);
+                switch (randomPos3)
+                {
+
+                    case 1:
+                        onApear += RightToLeftCombo;
+
+                        break;
+                    case 2:
+                        onApear += RightToLeftCombo;
 
                         break;
 
@@ -154,7 +171,52 @@ public class BossFightController : MonoBehaviour
     }
 
 
-    
+
+    #region Attacks
+
+
+    //Boomerang
+    public void LeftSideAttact()
+    {
+        bodyAnimator.SetTrigger("LeftSideBoomerang");
+    }
+
+    public void RightSideAttact()
+    {
+        bodyAnimator.SetTrigger("RightSideBoomerang");
+
+    }
+
+
+    //Dash
+    public void LeftToRightAttack()
+    {
+        bodyAnimator.SetTrigger("LeftToRightDash");
+    }
+
+    public void RightToLeftAttack()
+    {
+        bodyAnimator.SetTrigger("RightToLeftDash");
+
+    }
+
+    //Pilar Attack
+
+    public void PilarAttack()
+    {
+        bodyAnimator.SetTrigger("PilarAttack");
+    }
+
+    //Boss Combo Attack
+
+    public void RightToLeftCombo()
+    {
+        bodyAnimator.SetTrigger("RightToLeftComboAttack");
+    }
+
+
+    #endregion
+
 
 }
 

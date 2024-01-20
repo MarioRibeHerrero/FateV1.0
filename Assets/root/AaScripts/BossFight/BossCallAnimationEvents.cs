@@ -61,4 +61,10 @@ public class BossCallAnimationEvents : MonoBehaviour
     {
         attackAnimator.SetTrigger("RightToLeftBoomerang");
     }
+
+
+    private void ComboRightToLeft()
+    {
+        LeanTween.moveLocalX(gameObject, -4.3f, 0.33f);
+    }
 }
