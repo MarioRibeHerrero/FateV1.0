@@ -65,6 +65,6 @@ public class BossCallAnimationEvents : MonoBehaviour
 
     private void ComboRightToLeft()
     {
-        LeanTween.moveLocalX(gameObject, -4.3f, 0.33f);
+        LeanTween.moveLocalX(gameObject, -5.5f, 0.33f);
     }
 }

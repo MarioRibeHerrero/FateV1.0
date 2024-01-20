@@ -69,7 +69,7 @@ public class BossFightController : MonoBehaviour
     {
         if (!inBelzegorFight) return;
         int randomAttack = UnityEngine.Random.Range(1, 4);
-
+        randomAttack = 4;
         Debug.Log(randomAttack);
 
 
