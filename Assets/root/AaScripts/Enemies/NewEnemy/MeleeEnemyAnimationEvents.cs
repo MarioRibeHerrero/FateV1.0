@@ -47,6 +47,4 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
 
         anim.SetBool("IsDead", true);
     }
-
-
 }

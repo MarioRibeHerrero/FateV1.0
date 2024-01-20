@@ -13,7 +13,7 @@ public class MeleeEnemyTutorial : MonoBehaviour
 
 
 
-    [SerializeField] GameObject textTutorial1, textTutorial2;
+    [SerializeField] GameObject textTutorial;
     [SerializeField] GameObject wallTuto;
 
     PlayerInput pInput;
@@ -50,8 +50,7 @@ public class MeleeEnemyTutorial : MonoBehaviour
     public void ResumeTimeScale()
     {
 
-            textTutorial1.SetActive(false);
-      //  textTutorial2(true);
+            textTutorial.SetActive(false);
             Time.timeScale = 1f;
             tutDone = true;
        
@@ -62,7 +61,7 @@ public class MeleeEnemyTutorial : MonoBehaviour
     public void StopTime()
     {
         if (tutDone) return;
-        textTutorial1.SetActive(true);
+        textTutorial.SetActive(true);
         Time.timeScale = 0f;
 
         //

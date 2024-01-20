@@ -92,17 +92,12 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         switch (stateManager.state)
         {
             case MeleeEnemyState.MeleeEnemyStateEnum.Pathing:
-                animator.SetBool("IsMoving", false);
-
                 CheckIfPlayerInZone();
                 break;
             case MeleeEnemyState.MeleeEnemyStateEnum.Attacking:
-                animator.SetBool("IsMoving", false);
-
                 Attack();
                 break;
             case MeleeEnemyState.MeleeEnemyStateEnum.Tracking:
-                animator.SetBool("IsMoving", true);
                 FollowPlayer();
                 CheckForGround();
                 CheckAttack();
@@ -210,7 +205,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
         if (inRangeOfAttack)
         {
-            animator.SetBool("IsMoving", false);
+            Debug.Log("SKJNDAODNasoi");
 
             patience -= Time.deltaTime;
             enemyMovementSpeed = 0f;

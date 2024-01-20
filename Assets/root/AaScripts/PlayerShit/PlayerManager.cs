@@ -84,9 +84,9 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-           this.transform.position = new Vector3(-25.21802f, -4.087304f, 4.163336e-16f);
-           GameManager.Instance.RespawnPointF = 1.1f;
-           camManager.SetNewCamera(GameManager.Instance.currentRoom);
+          // this.transform.position = new Vector3(-25.21802f, -4.087304f, 4.163336e-16f);
+          // GameManager.Instance.RespawnPointF = 1.1f;
+          // camManager.SetNewCamera(GameManager.Instance.currentRoom);
 
         }
 

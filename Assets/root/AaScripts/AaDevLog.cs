@@ -863,62 +863,45 @@ Mejorar tuto--OK
 
 Dia41:
 
-Meter boss bueno--No pude
+Meter boss bueno
 
-Importar boss--No pude
+Importar boss
 
-empezar con los ataques.--No pude
+empezar con los ataques.
 
 no he podido hacer los ataques por tema de rootmotion, me espro a pregunarle a jorge mañana.
 
-meter modelo enemigo meelee con animaciones--Ok(parece poco pero me toco hacer todo el enemigo de 0 xd)
-
-mal dia, no me han salido las cosas :(
+meter modelo enemigo meelee con animaciones--Ok
 
 
-
-
-
-Dia 42:
-
-Haccer que las oleadas funcionen con el nuevo enemigo--Ok
 
 Solucionar bugs:
 -Le das dos veces al atacar, y te hjace el tocho
 
 
-Borrar todas referencias y scritps de la bossfight--Ok
-ataque columnas--Ok
-ataque dash--Ok
-ataque disco--Ok
-Añadir effecto visual de hacer daño--Ok
+
+Cambiado boss fight,
+añadido ataque pilares,
+añadido ataque dash
 
 
-Dia43:
-
-ajustar pilares boss--Ok
-Cambiar collider dhas--Ok
-
--Aniamciones nuevas fate--Ok
-
--Texturas fate--Ok
-
--hacer tutorial--Ok
-
-Mejorar enemigo melee--OK
 
 
-inplementar nuevo mapa--
+Dia42:
 
+Haccer que las oleadas funcionen con el nuevo enemigo(el tuto tmb)
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
-Añadir vaya nueva, con animacion de abrir y cerrar
+-Ataques para mañana(block ayuda jorege)
+-Patada,
+Pilares,
+Disco
 
-
+Entrar en bossfight, que empizes bossfight si te matan y vuelves a entrar se reinicia bien.
 
 --Para mañana--
 
