@@ -5,7 +5,15 @@ using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("LOADSHIT")]
+    //TEMP saving shit
 
+    public bool roundRoomCompleted;
+    public bool dobleJump;
+    public bool shortCutUnlocked;
+
+    [Header("IsGameLoaded")]
+    public bool isGameLoaded;
 
     public static GameManager Instance;
     private void Awake()
@@ -16,14 +24,11 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this);
 
     }
-    //TEMP saving shit
 
-    public bool roundRoomCompleted;
-    public bool dobleJump;
 
     //Loading Game
 
-    public bool isGameLoaded;
+
 
     //if camera is thirdperson
     public bool thirdPersonCam;

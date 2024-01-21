@@ -31,5 +31,6 @@ public class UnlockDobleJump : MonoBehaviour
     {
         pInput.transform.GetComponent<PlayerManager>().isDobleJumpUnlocked = true;
         GameManager.Instance.dobleJump = true;
+        SaveSystem.SaveGameManager(GameManager.Instance);
     }
 }

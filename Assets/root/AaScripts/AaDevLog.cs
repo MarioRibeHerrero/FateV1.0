@@ -908,52 +908,67 @@ Cambiar collider dhas--Ok
 Mejorar enemigo melee--OK
 
 
-inplementar nuevo mapa--
+inplementar nuevo mapa--Ok
+
+
+Arreglar bugs buidl--Ok
+
+añadir atajo y doble salto al guardado--Ok
+
+Arreglar textos--Ok
 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
+-laser cristal(mas rapido menos cadencia)
 
 Añadir vaya nueva, con animacion de abrir y cerrar
 
-
-
---Para mañana--
-
-Mañana--
-Meter enemigo melee con animaciones y modelo nuevo,
-solucionar bugs tochos:
-
-
-
-
-
--Camara 1-2-1
-
-
-
--poner animacion de hook buena(y walk e idle)
-
-
-
-
--hook no te deberias poder mover hasta el hook(mirar si hace falta frenar al pj cunado este la nueva)
-enemigo melee-MAñana clase
-
-
-
-
--laser cristal(mas rapido menos cadencia)
 -enfocar salida en sala rondas
+
+Ajustar plataformas(muy separadas)
+
+-Ajustar camaras
+
+-Añadir sonicods
+
+-Añadir musica
+
+-hacer coleccionable
+
+-----
+
+-centrar pasillo
+
+-asset `para el atajo
+
+-asset para el doble salto
+
+-asset para pilar que cae
+
+-trampas muy grandes
+
+-objeto al que le pegas para desbloquear e atajo
+
+-asset atajo
+
+-Sala oculta(asset coleccionable)
+
 
 -----
 BOSS
 -----
 -Los pinchos siempre salen en la misma posición
 
--Meter todos los ataques
+-Terminar ataque combo
+
+-Añadir combos de ataques y probabilidad de combos
+
+-Añadir inicio del boss
+
+-Añadir muerte con animacion
 
 
 
@@ -988,15 +1003,11 @@ No prioritario
 PREGUNTAS:
 -----------------------------------------------------------------------------------------------------------------------------------
 
-PREGUNTAR:
--te puedes subir en el enemy spwawn(solucion cutre)
 
 
 
-preguntar Jorgge:
--meter guardado preboss
+preguntar Jorge:
 -Luz al iniciar desde otra escena
-
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

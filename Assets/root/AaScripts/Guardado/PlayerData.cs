@@ -9,7 +9,8 @@ public class PlayerData
 {
     public float respawnPoint;
     public float[] respawnPos;
-
+    public bool shortCut;
+    public bool dobleJump;
 
 
     public PlayerData (GameManager gameManager)
@@ -22,5 +23,8 @@ public class PlayerData
         respawnPos[1] = gameManager.respawnVector.y;
         respawnPos[2] = gameManager.respawnVector.z;
 
+        shortCut = gameManager.shortCutUnlocked;
+
+        dobleJump = gameManager.dobleJump;
     }
 }
