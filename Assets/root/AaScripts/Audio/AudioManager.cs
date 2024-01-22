@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
 
 
     //
-    public int volume;
+    public int overallVolume, musicVolume, sfxVolume;
 
 
     private void Awake()
@@ -51,6 +51,6 @@ public class AudioManager : MonoBehaviour
 
     public void EditSfxVolume(float vol)
     {
-        sfxSource.volume = volume;
+        sfxSource.volume = vol;
     }
 }

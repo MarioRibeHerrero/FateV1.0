@@ -255,7 +255,6 @@ public class RoundManager : MonoBehaviour
 
     private void OpenDoors()
     {
-        Debug.Log("JEJEJ");
         for (int i = 0; i < doorAnimators.Length; i++)
         {
             doorAnimators[i].SetTrigger("OpenSlow");

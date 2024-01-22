@@ -970,7 +970,8 @@ exit<--
 --Creditos-->
 
 --Exit-->
-
+--Ok
+--Falta darle funcionalidad a los sonidos
 
 
 

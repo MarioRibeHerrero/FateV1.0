@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+using TMPro;
+
 public class UiManager : MonoBehaviour
 {
     [Header("PauseMenuObjs")]
-    [SerializeField] GameObject hud, optionsMenu, resumeButton;
+    [SerializeField] GameObject hud, pauseMenu, pauseMenuResumeButton, optionsMenu, qualityDrop;
 
     [Header("HUD")]
     [SerializeField] Slider playerHealthSlider;
@@ -18,15 +20,16 @@ public class UiManager : MonoBehaviour
     PlayerHealth pHealth;
     PlayerManager pManager;
 
-    [SerializeField] GameObject miniMap;
-    private bool isMiniMapOpen;
     public static Animator anim;
 
+
+    [Header("OptionsMenu")]
+
+    [SerializeField] TMP_Dropdown qualityDropDown;
     private void Awake()
     {
         //InputActions
         playerInput.actions["CloseMenu"].started += UiManager_started;
-        playerInput.actions["OpenMap"].started += UiInGameManager_started;
 
 
         pHealth = playerInput.transform.GetComponent<PlayerHealth>();
@@ -36,9 +39,11 @@ public class UiManager : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+
+
     private void UiManager_started(InputAction.CallbackContext obj)
     {
-        CloseOptionsMenu();
+        ClosePauseMenu();
     }
 
     public void UpdatePlayerHealthSlider()
@@ -47,45 +52,44 @@ public class UiManager : MonoBehaviour
     }
 
 
-    private void UiInGameManager_started(InputAction.CallbackContext obj)
+
+
+
+    public void ClosePauseMenu()
     {
-        if (!isMiniMapOpen)
-        {
-            miniMap.SetActive(true);
-            isMiniMapOpen = true;
-
-        }
-        else
-        {
-            miniMap.SetActive(false);
-            isMiniMapOpen = false;
-
-        }
-
-    }
-
-
-    public void CloseOptionsMenu()
-    {
-        Debug.Log("MENU");
         playerInput.SwitchCurrentActionMap("PlayerNormalMovement");
 
         hud.SetActive(true);
-        optionsMenu.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void OpenPauseMenu()
+    {
+        playerInput.SwitchCurrentActionMap("Menu");
+
+        EventSystem.current.SetSelectedGameObject(pauseMenuResumeButton);
+        hud.SetActive(false);
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void OpenOptionsMenu()
     {
-        Debug.Log("Player");
-
-
-        playerInput.SwitchCurrentActionMap("Menu");
-
-        EventSystem.current.SetSelectedGameObject(resumeButton);
-        hud.SetActive(false);
         optionsMenu.SetActive(true);
-        Time.timeScale = 0f;
+        pauseMenu.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(qualityDrop);
+
+    }
+    public void CloseOptionsMenu()
+    {
+        optionsMenu.SetActive(false);
+        pauseMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(pauseMenuResumeButton);
+
+
     }
 
 
@@ -94,22 +98,33 @@ public class UiManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-
-
-    public void SmallBug()
-    {
-        pHealth.TakeDamage(1000);
-    }
-
-    public void BigBug()
-    {
-        Application.Quit();
-    }
-
-
-
     public static void FadeIn()
     {
         anim.SetTrigger("Fade");
     }
+
+
+
+    #region Quality
+
+
+    public void AdjustQuality(int number)
+    {
+        QualitySettings.SetQualityLevel(number);
+    }
+
+    public void AdjustOverallVolume(int number)
+    {
+        Debug.Log(number);
+    }
+    public void AdjustSfxVolume(int number)
+    {
+        Debug.Log(number);
+    }
+    public void AdjustMusicVolume(int number)
+    {
+        Debug.Log(number);
+    }
+
+    #endregion
 }

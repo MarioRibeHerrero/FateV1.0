@@ -25,7 +25,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void PlayerInteract_started(InputAction.CallbackContext obj)
     {
-        uiManager.OpenOptionsMenu();
+        uiManager.OpenPauseMenu();
     }
 
 
