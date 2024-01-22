@@ -943,11 +943,36 @@ Hacer despues del patio:
 
 
 
--Meter animaciones nuevas boss--
 
-Terminar boss FIght--
+TAREDE:
+-Añadir Menus:
 
-hacer ataque combo
+menu pause
+--Resume-->
+--Opciones-->
+volumen general
+sonidos 
+musica
+calidad
+exit<--
+--Main Menu-->
+
+--Play-->
+--Load-->
+
+--Options-->
+volumen general
+sonidos 
+musica
+calidad
+exit<--
+
+--Creditos-->
+
+--Exit-->
+
+
+
 
 
 
@@ -957,8 +982,6 @@ ToDoList:
 -Cambiar trampas por nuevas
 
 -laser cristal(mas rapido menos cadencia)
-
-
 
 Ajustar plataformas(muy separadas)
 
@@ -990,6 +1013,13 @@ Ajustar plataformas(muy separadas)
 -----
 BOSS
 -----
+
+-hacer ataque combo
+
+-Meter animaciones nuevas boss--
+
+-Terminar boss FIght--
+
 -Los pinchos siempre salen en la misma posición
 
 -Terminar ataque combo
