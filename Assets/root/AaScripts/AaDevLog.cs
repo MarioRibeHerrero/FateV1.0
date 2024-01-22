@@ -930,9 +930,20 @@ implementar trampa en sala doble salto--
 implementar trampa en sala Oleadas--Ok
 
 Arreglar bug enemigo melee no le puedes pegar--Ok
+AÒadir vaya nueva, con animacion de abrir y cerrar--Ok
+
+Hacer despues del patio:
+
+-enfocar salida en sala rondas--oK
+
+-a—ADIR Palanca con animacion en sala dole salto--Ok
+
+-Arreglar creditos--Ok
 
 
 
+
+-Meter animaciones nuevas boss--
 
 Terminar boss FIght--
 
@@ -947,9 +958,7 @@ ToDoList:
 
 -laser cristal(mas rapido menos cadencia)
 
-AÒadir vaya nueva, con animacion de abrir y cerrar
 
--enfocar salida en sala rondas
 
 Ajustar plataformas(muy separadas)
 

@@ -38,7 +38,9 @@ public class RoundManager : MonoBehaviour
 
     [HideInInspector] public GameObject cristal;
 
+    [Header("Cameras")]
 
+    [SerializeField] GameObject showExitCam;
     #endregion
 
     private void Awake()
@@ -58,9 +60,25 @@ public class RoundManager : MonoBehaviour
     {
         phealth.onPlayerDeath += ResetRoundRoom;
         areDoorsClosed = true;
-        CloseDoors();
+        
         CallUpdateRound(1, 2);
         inRoundRoom = true;
+
+        //EnseñarCamaras
+        StartCoroutine(CamToFalse());
+
+        
+    }
+    private IEnumerator CamToFalse()
+    {
+        yield return new WaitForSeconds(1);
+
+        showExitCam.SetActive(true);
+        yield return new WaitForSeconds(1);
+        CloseDoors();
+        yield return new WaitForSeconds(1);
+
+        showExitCam.SetActive(false);
     }
 
     public void EndRoundRoom()
@@ -78,7 +96,7 @@ public class RoundManager : MonoBehaviour
     {
         //ResetearLaRoom
         inRoundRoom = false;
-        GetComponent<Animator>().SetTrigger("OpenDoors");
+        CloseDoors();
         areDoorsClosed = false;
 
         ResetEnemies();
