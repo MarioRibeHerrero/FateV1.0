@@ -919,9 +919,32 @@ Arreglar textos--Ok
 
 
 
+Dia44:
+
+Añadida trampa nueva, creado animaciones de abrir y cerrar--Ok
+
+Implementar trampa en tutorial--Ok
+
+implementar trampa en sala doble salto--
+
+implementar trampa en sala Oleadas--Ok
+
+Arreglar bug enemigo melee no le puedes pegar--Ok
+
+
+
+
+Terminar boss FIght--
+
+hacer ataque combo
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
+-Cambiar trampas por nuevas
+
 -laser cristal(mas rapido menos cadencia)
 
 Añadir vaya nueva, con animacion de abrir y cerrar
@@ -942,17 +965,15 @@ Ajustar plataformas(muy separadas)
 
 -centrar pasillo
 
--asset `para el atajo
+-asset `para el atajo(Escaleras)
 
--asset para el doble salto
+-asset para el doble salto(Libro que flota en plan pickup o ambon con libro encima)
 
--asset para pilar que cae
+-asset para pilar que cae(Pilar)
 
--trampas muy grandes
+-trampas muy grandes(mas y mas pqueños)
 
--objeto al que le pegas para desbloquear e atajo
-
--asset atajo
+-objeto al que le pegas para desbloquear e atajo(Interactuar con escalera del atajo)
 
 -Sala oculta(asset coleccionable)
 

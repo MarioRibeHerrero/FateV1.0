@@ -41,12 +41,24 @@ public class RoundManager : MonoBehaviour
 
     #endregion
 
+    private void Awake()
+    {
+        phealth = GameObject.FindAnyObjectByType<PlayerHealth>();
+
+        OpenDoors();
+    }
+    private void Start()
+    {
+        CreateEnemyPool();
+    }
+
+
 
     public void StartRoundRoom()
     {
         phealth.onPlayerDeath += ResetRoundRoom;
         areDoorsClosed = true;
-        GetComponent<Animator>().SetTrigger("CloseDoors");
+        CloseDoors();
         CallUpdateRound(1, 2);
         inRoundRoom = true;
     }
@@ -55,7 +67,7 @@ public class RoundManager : MonoBehaviour
     {
         phealth.onPlayerDeath -= ResetRoundRoom;
         Animator animator = GetComponent<Animator>();
-        animator.SetTrigger("OpenDoors");
+        OpenDoors();
         inRoundRoom = false;
         areDoorsClosed = false;
         GameManager.Instance.roundRoomCompleted = true;
@@ -112,14 +124,7 @@ public class RoundManager : MonoBehaviour
     #endregion
 
     #region SpawnManager
-    private void Awake()
-    {
-        phealth = GameObject.FindAnyObjectByType<PlayerHealth>();
-    }
-    private void Start()
-    {
-        CreateEnemyPool();
-    }
+
 
 
 
@@ -225,6 +230,26 @@ public class RoundManager : MonoBehaviour
 
     #endregion
 
+    #region Doors
+    [Header("Doors")]
 
+    [SerializeField] Animator[] doorAnimators;
+
+    private void OpenDoors()
+    {
+        Debug.Log("JEJEJ");
+        for (int i = 0; i < doorAnimators.Length; i++)
+        {
+            doorAnimators[i].SetTrigger("OpenSlow");
+        }
+    }
+    private void CloseDoors()
+    {
+        for (int i = 0; i < doorAnimators.Length; i++)
+        {
+            doorAnimators[i].SetTrigger("Close");
+        }
+    }
+    #endregion
 
 }

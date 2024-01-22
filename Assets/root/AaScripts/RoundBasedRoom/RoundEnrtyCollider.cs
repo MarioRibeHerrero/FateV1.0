@@ -18,13 +18,12 @@ public class RoundEnrtyCollider : MonoBehaviour
     {
        if(other.CompareTag("Player") && !roundManager.areDoorsClosed && !GameManager.Instance.roundRoomCompleted)
         {
-            StartCoroutine(CloseDoors());
+            Invoke(nameof(CloseDoors), 0.4f);
         }
     }
 
-    private IEnumerator CloseDoors()
+    private void CloseDoors()
     {
-        yield return new WaitForSeconds(0.4f);
         roundManager.StartRoundRoom();
     }
 }
