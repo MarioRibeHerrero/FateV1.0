@@ -982,10 +982,29 @@ arreglar bug puertas sala rondas--Ok
 apuntar feedback profesores
 
 Boss:
-añadir stun del aatque(mismo para los dos lados)--
-Stun especifico por lado--
+añadir stun del aatque(mismo para los dos lados)--Ok
+Stun especifico por lado--OK
+pincho especifico por lado--Ok
+árrelgar bug vida--Ok
 
 añadir combos de ataques--
+añadir segunda fase--
+
+Guia primera fase:
+
+combo- CD de 3 ataque, es decir, se empieza a barajar la posibilidad de que salga una vez han pasado 3 ataques.(6to obligatorio)
+Patada- no puede salir tres veces seguidas
+pilares- CD de 3 ataque, es decir, se empieza a barajar la posibilidad de que salga una vez han pasado 3 ataques.
+disco- no puede salir tres veces seguidas
+
+Guia segunda fase:
+
+combo- sale normal
+Patada- salen 40%menos (randmon tange dentro q si sale el 40% llama a otro ataque)
+Pilares-  80% probabilidad de que la animacion de disco llame a otro ataque a mitad(solo con patada o pilar)
+disco- 80% probabilidad de que la animacion de disco llame a otro ataque a mitad(solo con patada o pilar)
+
+
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:

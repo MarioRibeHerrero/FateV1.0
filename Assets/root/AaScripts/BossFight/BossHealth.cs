@@ -38,20 +38,16 @@ public class BossHealth : MonoBehaviour
     }
 
 
-    void Start()
-    {
 
+
+    public void SetHealth()
+    {
         playerHit = pManager.playerCurrentDamage;
 
 
         bFController.bossTotalHealth = totalHits * playerHit;
         bFController.bossCurrentHealth = bFController.bossTotalHealth;
-
-
-
     }
-
-
 
 
     public void CheckHealth()

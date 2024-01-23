@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem.XR;
 
 public class BossFightController : MonoBehaviour
 {
@@ -16,11 +17,15 @@ public class BossFightController : MonoBehaviour
     public OnApear onApear;
 
     public bool stunRight;
+    public int playerPos;
+    public bool playerRight;
 
+    [SerializeField] GameObject spikeParent;
 
 
     //References
     private BossUiManager bossUiManager;
+    private BossHealth bHealth;
 
     //BossAttackReferences
 
@@ -63,16 +68,15 @@ public class BossFightController : MonoBehaviour
         pHealth = GameObject.FindAnyObjectByType<PlayerHealth>();
         bossUiManager = GetComponent<BossUiManager>();
         bodyGameObject = bodyAnimator.transform.gameObject;
-
+        bHealth = GetComponent<BossHealth>();
         //attacks
 
     }
     public void GetRandomBossAttack()
     {
         if (!inBelzegorFight) return;
-        int randomAttack = UnityEngine.Random.Range(1, 4);
+        int randomAttack = UnityEngine.Random.Range(1, 5);
         onApear = null;
-        randomAttack = 4;
 
         switch (randomAttack)
         {
@@ -126,22 +130,19 @@ public class BossFightController : MonoBehaviour
                 break;
             case 4:
                 //CASE--->Ataque Combo
-                int randomPos3 = UnityEngine.Random.Range(1, 3);
                 DesapearIntoNewPos(midPoint.position);
 
-                switch (randomPos3)
+                if (playerRight)
                 {
-
-                    case 1:
-                        onApear += RightToLeftCombo;
-                        stunRight = false;
-                        break;
-                    case 2:
-                        onApear += LeftToRightCombo;
-                        stunRight = true;
-                        break;
-
+                    onApear += LeftToRightCombo;
+                    stunRight = true;
                 }
+                else
+                {
+                    onApear += RightToLeftCombo;
+                    stunRight = false;
+                }
+
 
                 break;
         }
@@ -164,6 +165,10 @@ public class BossFightController : MonoBehaviour
 
         bodyGameObject.transform.position = backPos.position;
         Invoke(nameof(GetRandomBossAttack ),2);
+
+        bHealth.SetHealth();
+
+
     }
 
 
@@ -207,6 +212,8 @@ public class BossFightController : MonoBehaviour
 
     public void PilarAttack()
     {
+        if(playerPos == 1) spikeParent.transform.position = new Vector3(1.22f, spikeParent.transform.position.y,spikeParent.transform.position.z);
+        else spikeParent.transform.position = new Vector3(2.22f, spikeParent.transform.position.y, spikeParent.transform.position.z);
         bodyAnimator.SetTrigger("PilarAttack");
     }
 
