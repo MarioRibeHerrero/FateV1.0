@@ -71,7 +71,24 @@ public class BossCallAnimationEvents : MonoBehaviour
         LeanTween.moveLocalX(gameObject, 4.7f, 0.33f);
     }
 
+    private void CombinedAttackDisk()
+    {
+        if (bFController.inSecondFace)
+        {
+            if (Random.Range(1, 11) <= 2) return;
+            bFController.CallCombinedAttackDisk();
 
+        }
+    }
+    private void CombinedAttackPilar()
+    {
+        if (bFController.inSecondFace)
+        {
+            if (Random.Range(1, 11) <= 2) return;
+            bFController.CallCombinedAttackPilar();
+
+        }
+    }
     public void StunBoss()
     {
         LeanTween.cancel(gameObject);
@@ -88,4 +105,6 @@ public class BossCallAnimationEvents : MonoBehaviour
         }
 
     }
+
+
 }

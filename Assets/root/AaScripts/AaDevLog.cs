@@ -987,23 +987,37 @@ Stun especifico por lado--OK
 pincho especifico por lado--Ok
 árrelgar bug vida--Ok
 
-añadir combos de ataques--
-añadir segunda fase--
 
-Guia primera fase:
+Guia primera fase:--Ok
 
-combo- CD de 3 ataque, es decir, se empieza a barajar la posibilidad de que salga una vez han pasado 3 ataques.(6to obligatorio)
-Patada- no puede salir tres veces seguidas
 pilares- CD de 3 ataque, es decir, se empieza a barajar la posibilidad de que salga una vez han pasado 3 ataques.
+Patada- no puede salir tres veces seguidas
 disco- no puede salir tres veces seguidas
+combo- CD de 3 ataque, es decir, se empieza a barajar la posibilidad de que salga una vez han pasado 3 ataques.(6to obligatorio)
+
+Nashe
+
+
+
 
 Guia segunda fase:
 
 combo- sale normal
 Patada- salen 40%menos (randmon tange dentro q si sale el 40% llama a otro ataque)
-Pilares-  80% probabilidad de que la animacion de disco llame a otro ataque a mitad(solo con patada o pilar)
+Pilares-  80% probabilidad de que la animacion de disco llame a otro ataque a mitad(solo con patada o disco)
 disco- 80% probabilidad de que la animacion de disco llame a otro ataque a mitad(solo con patada o pilar)
 
+
+Para disco y pilares
+se podria hacer con eventos en la animacion, que en caso de estar en la segunda fase, tengan un 80% de posibilidades de llamar a otro ataque y por lo tanto irse.
+Patada:
+si cunado llamas al ataque, el random range sobre 10 que tiene dentro no da numeors del 1-4, llama a otro.
+combo:
+si toca toca xd(25%)
+
+
+añadir combos de ataques--
+añadir segunda fase--
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
