@@ -15,6 +15,8 @@ public class BossFightController : MonoBehaviour
     public delegate void OnApear();
     public OnApear onApear;
 
+    public bool stunRight;
+
 
 
     //References
@@ -69,9 +71,8 @@ public class BossFightController : MonoBehaviour
     {
         if (!inBelzegorFight) return;
         int randomAttack = UnityEngine.Random.Range(1, 4);
+        onApear = null;
         randomAttack = 4;
-        Debug.Log(randomAttack);
-
 
         switch (randomAttack)
         {
@@ -106,6 +107,7 @@ public class BossFightController : MonoBehaviour
             case 3:
                 //CASE--->Ataque Disco
                 int randomPos2 = UnityEngine.Random.Range(1, 3);
+
                 switch (randomPos2)
                 {
                     case 1:
@@ -126,16 +128,17 @@ public class BossFightController : MonoBehaviour
                 //CASE--->Ataque Combo
                 int randomPos3 = UnityEngine.Random.Range(1, 3);
                 DesapearIntoNewPos(midPoint.position);
+
                 switch (randomPos3)
                 {
 
                     case 1:
                         onApear += RightToLeftCombo;
-
+                        stunRight = false;
                         break;
                     case 2:
-                        onApear += RightToLeftCombo;
-
+                        onApear += LeftToRightCombo;
+                        stunRight = true;
                         break;
 
                 }
@@ -213,6 +216,13 @@ public class BossFightController : MonoBehaviour
     {
         bodyAnimator.SetTrigger("RightToLeftComboAttack");
     }
+    public void LeftToRightCombo()
+    {
+        bodyAnimator.SetTrigger("LeftToRightComboAttack");
+    }
+
+
+
 
 
     #endregion

@@ -41,7 +41,6 @@ public class BossCallAnimationEvents : MonoBehaviour
     private void GoAfk()
     {
         this.transform.position = new Vector3(-200,0,0);
-        Debug.Log("KEKEKE");
     }
     private void CallOnApear()
     {
@@ -66,5 +65,27 @@ public class BossCallAnimationEvents : MonoBehaviour
     private void ComboRightToLeft()
     {
         LeanTween.moveLocalX(gameObject, -5.5f, 0.33f);
+    }
+    private void ComboLeftToRIght()
+    {
+        LeanTween.moveLocalX(gameObject, 4.7f, 0.33f);
+    }
+
+
+    public void StunBoss()
+    {
+        LeanTween.cancel(gameObject);
+        if (!bFController.stunRight)
+        {
+            thisAnim.SetTrigger("Stun1");
+            transform.position = new Vector3(transform.position.x + 1.5f, transform.position.y, transform.position.z);
+
+        }
+        else
+        {
+            thisAnim.SetTrigger("Stun2");
+            transform.position = new Vector3(transform.position.x - 1.5f, transform.position.y, transform.position.z);
+        }
+
     }
 }

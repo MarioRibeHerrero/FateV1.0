@@ -975,7 +975,17 @@ exit<--
 
 
 
+Dia45:
 
+meter animaciones nuevas boss--Ok
+arreglar bug puertas sala rondas--Ok
+apuntar feedback profesores
+
+Boss:
+añadir stun del aatque(mismo para los dos lados)--
+Stun especifico por lado--
+
+añadir combos de ataques--
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:

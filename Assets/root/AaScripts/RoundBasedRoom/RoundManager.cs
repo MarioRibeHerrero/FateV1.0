@@ -96,7 +96,7 @@ public class RoundManager : MonoBehaviour
     {
         //ResetearLaRoom
         inRoundRoom = false;
-        CloseDoors();
+        OpenDoors();
         areDoorsClosed = false;
 
         ResetEnemies();

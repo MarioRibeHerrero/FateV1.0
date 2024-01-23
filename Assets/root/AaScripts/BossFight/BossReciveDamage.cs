@@ -22,8 +22,6 @@ public class BossReciveDamage : MonoBehaviour, IDamageable
     {
         anim.SetTrigger("Hit");
         bossFControllerScript.bossCurrentHealth -= damageTaken;
-        attackAnimator.SetTrigger("Hit");
-
         bossHealth.CheckHealth();
     }
 

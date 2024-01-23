@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RoundEnrtyCollider : MonoBehaviour
 {
-    [SerializeField] Animator root;
-
     private RoundManager roundManager;
 
     private void Awake()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CanParryBoss : MonoBehaviour
 {
-    [SerializeField] Animator bodyAnimator;
+    [SerializeField] BossCallAnimationEvents bossAnim;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +17,7 @@ public class CanParryBoss : MonoBehaviour
             }
             else
             {
-                bodyAnimator.SetTrigger("Stun");
+                bossAnim.StunBoss();
                 other.GetComponent<PlayerHealth>().HealPlayer(other.GetComponent<PlayerManager>().parryHealingAmmount);
 
 
