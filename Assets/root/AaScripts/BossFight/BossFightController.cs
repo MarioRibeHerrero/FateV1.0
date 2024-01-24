@@ -97,7 +97,11 @@ public class BossFightController : MonoBehaviour
                     break;
                 case 2:
                     //CASE--->Ataque Dash
-                    if (UnityEngine.Random.Range(1, 11) !<= 4) return;
+                    if (UnityEngine.Random.Range(1, 11) !<= 4)
+                    {
+                        GetRandomBossAttack();
+                        return;
+                    }
 
                     int randomPos = UnityEngine.Random.Range(1, 3);
                     switch (randomPos)
@@ -442,8 +446,8 @@ public class BossFightController : MonoBehaviour
 
     public void PilarAttack()
     {
-        if(playerPos == 1) spikeParent.transform.position = new Vector3(1.22f, spikeParent.transform.position.y,spikeParent.transform.position.z);
-        else spikeParent.transform.position = new Vector3(2.22f, spikeParent.transform.position.y, spikeParent.transform.position.z);
+        if(playerPos == 1) spikeParent.transform.localPosition = new Vector3(1.22f, spikeParent.transform.position.y,spikeParent.transform.position.z);
+        else spikeParent.transform.localPosition = new Vector3(2.22f, spikeParent.transform.position.y, spikeParent.transform.position.z);
         bodyAnimator.SetTrigger("PilarAttack");
 
         //CD
