@@ -34,6 +34,7 @@ public class BossFightController : MonoBehaviour
     //BossBody
     [SerializeField] Animator bodyAnimator;
     GameObject bodyGameObject;
+    Animator anim;
     //attacks
     [Header("Attacks")]
     [SerializeField] GameObject spikeParent;
@@ -62,6 +63,7 @@ public class BossFightController : MonoBehaviour
         bossUiManager = GetComponent<BossUiManager>();
         bodyGameObject = bodyAnimator.transform.gameObject;
         bHealth = GetComponent<BossHealth>();
+        anim = GetComponent<Animator>();
     }
     public void GetRandomBossAttack()
     {
@@ -363,8 +365,8 @@ public class BossFightController : MonoBehaviour
         inBelzegorFight = true;
         pHealth.onPlayerDeath += ResetBossFight;
         bodyGameObject.transform.position = backPos.position;
-        Invoke(nameof(GetRandomBossAttack ),2);
         bHealth.SetHealth();
+        anim.SetTrigger("StartBoosFight");
     }
 
 
@@ -372,6 +374,10 @@ public class BossFightController : MonoBehaviour
     {
         spawnPos = whereToSpawn;
         bodyAnimator.SetTrigger("Disappear");
+    }
+    public void StartBossFightBoss()
+    {
+        bodyAnimator.SetTrigger("StartBossFight");
     }
 
 

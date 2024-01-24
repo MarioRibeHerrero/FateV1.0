@@ -1020,6 +1020,16 @@ añadir combos de ataques--
 añadir segunda fase--
 
 
+
+
+Dia46:
+Metido mapa nuevo--Ok
+Solucionar problemas con z de la sala--OK
+Añadir nuevo walk--Ok
+
+Despues del patiio
+
+arreglar posiciones bossfight--
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
