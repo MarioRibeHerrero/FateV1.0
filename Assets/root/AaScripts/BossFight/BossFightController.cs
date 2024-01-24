@@ -67,6 +67,15 @@ public class BossFightController : MonoBehaviour
     {
         //check if in belzegor fight and if not reutr
         if (!inBelzegorFight) return;
+
+
+        //animation Speed
+
+        if (inSecondFace) bodyAnimator.SetFloat("AfkAnimSpeed", 5);
+        else bodyAnimator.SetFloat("AfkAnimSpeed", 1);
+
+
+
         //get random attack
         int randomAttack = UnityEngine.Random.Range(1, 5);
         //set the onapear to null, so the boss wont call a method we dont want
