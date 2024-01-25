@@ -44,8 +44,8 @@ public class BossFightController : MonoBehaviour
     [SerializeField] Transform DashRight;
     [SerializeField] Transform DashLeft;
     [SerializeField] Transform midPoint;
-
-
+    [SerializeField] Transform comboRight;
+    [SerializeField] Transform comboLeft;
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.U))
@@ -243,14 +243,17 @@ public class BossFightController : MonoBehaviour
 
                 if (!isComboInCD)
                 {
-                    DesapearIntoNewPos(midPoint.position);
                     if (playerRight)
                     {
+                        DesapearIntoNewPos(comboLeft.position);
+
                         onApear += LeftToRightCombo;
                         stunRight = true;
                     }
                     else
                     {
+                        DesapearIntoNewPos(comboRight.position);
+
                         onApear += RightToLeftCombo;
                         stunRight = false;
                     }
@@ -446,9 +449,9 @@ public class BossFightController : MonoBehaviour
 
     public void PilarAttack()
     {
-        if(playerPos == 1) spikeParent.transform.localPosition = new Vector3(1.22f, spikeParent.transform.position.y,spikeParent.transform.position.z);
-        else spikeParent.transform.localPosition = new Vector3(2.22f, spikeParent.transform.position.y, spikeParent.transform.position.z);
-        bodyAnimator.SetTrigger("PilarAttack");
+        if(playerPos == 1) bodyAnimator.SetTrigger("PilarAttackSet1");
+        else bodyAnimator.SetTrigger("PilarAttackSet2");
+
 
         //CD
         DashCDTo0();

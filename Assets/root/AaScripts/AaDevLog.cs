@@ -1029,7 +1029,21 @@ Añadir nuevo walk--Ok
 
 Despues del patiio
 
-arreglar posiciones bossfight--
+arreglar posiciones bossfight--Ok
+arreglar rotacion animaciones boss--Ok
+arreglar bossfight en general xd--OK
+Añadir movimiento cortinas + reverencia--Ok
+
+Solucionar pilares(mas grandes)--Ok
+mover posiciones vcombo--Ok
+
+falta por hacer del boss:
+
+arregar coliders
+ajustar daño y forma de recivir el daño
+revisar en clase y ajustar mas cosas.
+-Terminar boss FIght(animacion muerte)
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -1049,40 +1063,10 @@ Ajustar plataformas(muy separadas)
 
 -----
 
--centrar pasillo
-
--asset `para el atajo(Escaleras)
-
--asset para el doble salto(Libro que flota en plan pickup o ambon con libro encima)
-
--asset para pilar que cae(Pilar)
-
--trampas muy grandes(mas y mas pqueños)
-
--objeto al que le pegas para desbloquear e atajo(Interactuar con escalera del atajo)
-
--Sala oculta(asset coleccionable)
-
 
 -----
 BOSS
 -----
-
--hacer ataque combo
-
--Meter animaciones nuevas boss--
-
--Terminar boss FIght--
-
--Los pinchos siempre salen en la misma posición
-
--Terminar ataque combo
-
--Añadir combos de ataques y probabilidad de combos
-
--Añadir inicio del boss
-
--Añadir muerte con animacion
 
 
 

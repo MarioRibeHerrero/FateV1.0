@@ -19,9 +19,13 @@ public class BossCallAnimationEvents : MonoBehaviour
     public string animationToCallNext;
 
 
-    private void ShowPilarShadow()
+    private void ShowPilarShadow1()
     {
-        attackAnimator.SetTrigger("ShowShadows");
+        attackAnimator.SetTrigger("ShowShadowsSet1");
+    }
+    private void ShowPilarShadow2()
+    {
+        attackAnimator.SetTrigger("ShowShadowsSet2");
     }
 
     private void DashLeftToRight()

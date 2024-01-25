@@ -15,8 +15,15 @@ public class ColliderDetectionScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            bFController.playerPos = pos;
+            bFController.playerPos =2;
             bFController.playerRight = right;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            bFController.playerPos = 1;
         }
     }
 }

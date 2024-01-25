@@ -27,6 +27,31 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+--- !u!1101 &-8730196040960602974
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: PilarAttackSet2
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 99069167756429166}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.2
+  m_TransitionOffset: 0
+  m_ExitTime: 1
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1102 &-7124435095011421675
 AnimatorState:
   serializedVersion: 6
@@ -270,19 +295,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -9027998632201371641}
-    m_Position: {x: 410, y: -120, z: 0}
+    m_Position: {x: 410, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1063369805321918702}
-    m_Position: {x: 410, y: -10, z: 0}
+    m_Position: {x: 410, y: -90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6694970350005975119}
     m_Position: {x: -550, y: 80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1034860344043598431}
-    m_Position: {x: 410, y: -70, z: 0}
+    m_Position: {x: 410, y: -150, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -34604090431193089}
-    m_Position: {x: 410, y: 80, z: 0}
+    m_Position: {x: -80, y: -300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7241364280741899215}
     m_Position: {x: 410, y: 230, z: 0}
@@ -296,9 +321,6 @@ AnimatorStateMachine:
     m_State: {fileID: 146334383755912844}
     m_Position: {x: 280, y: 380, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 2626287918574467087}
-    m_Position: {x: 650, y: 360, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 3194688426538221795}
     m_Position: {x: 170, y: 460, z: 0}
   - serializedVersion: 1
@@ -309,10 +331,13 @@ AnimatorStateMachine:
     m_Position: {x: -20, y: 460, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5029763814298921490}
-    m_Position: {x: -150, y: 340, z: 0}
+    m_Position: {x: -280, y: 320, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4304833882829228442}
     m_Position: {x: -300, y: -70, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 99069167756429166}
+    m_Position: {x: 110, y: -300, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 6261049016498854290}
@@ -326,6 +351,7 @@ AnimatorStateMachine:
   - {fileID: -2749968693916192218}
   - {fileID: -1482646797833913968}
   - {fileID: -197275163844603935}
+  - {fileID: -8730196040960602974}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
@@ -366,7 +392,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PilarAttack
+  m_Name: PilarAttackSet1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -406,7 +432,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: PilarAttack
+  - m_Name: PilarAttackSet1
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: PilarAttackSet2
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -503,6 +535,32 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!1102 &99069167756429166
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PilarAttackSet2
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: b3e8518a265fe2b45a3c728da16305fa, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &146334383755912844
 AnimatorState:
   serializedVersion: 6
@@ -552,32 +610,6 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: d7cacdac4b428624b9973b8e2071e427, type: 2}
   m_Tag: 
   m_SpeedParameter: AfkAnimSpeed
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &2626287918574467087
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LeftToRIghtCombo
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7369c7405e7c7744192a3ce67f0b6531, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
@@ -666,7 +698,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: PilarAttack
+    m_ConditionEvent: PilarAttackSet1
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -34604090431193089}
