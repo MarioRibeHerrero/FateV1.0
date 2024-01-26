@@ -364,6 +364,7 @@ public class BossFightController : MonoBehaviour
         bossUiManager.DisableHealth();
         inBelzegorFight = false;
         pHealth.onPlayerDeath -= ResetBossFight;
+        inSecondFace = false;
 
     }
     public void StartBossFight()

@@ -1060,6 +1060,13 @@ ToDoList
 --Arreglar bug con buggger timer--Ok
 --Añadido todos los sonidos de fate--OK
 --Arreglado bug respawn--OK
+
+
+segunda fase no se reinicia tras muerte--OK
+Enemigo no se le puede pegar--Ok
+
+sala desaparece
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -1110,7 +1117,14 @@ VFX:
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
 -----------------------------------------------------------------------------------------------------------------------------------
+Tp fin juego instant no rula
 
+salto raro animacionº
+animacion stun
+animacion muerte boss
+spam sonido silla
+con doble salto puedes salir y entrar de sala rondas
+parry del reves(no sabemos xq)
 
 
 No prioritario
