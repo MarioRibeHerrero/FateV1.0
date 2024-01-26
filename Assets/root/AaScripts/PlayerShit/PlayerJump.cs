@@ -70,20 +70,22 @@ public class PlayerJump : MonoBehaviour
     }
     private void Jump_Started(InputAction.CallbackContext obj)
     {
-        
+        //si estas en el aire, no puedes hacer el doble jump y le das al salto, entras en el jumpbuffer.
+        if (!pGroundCheck.isPlayerGrounded && !secondJump || !pManager.isDobleJumpUnlocked || !pManager.canDobleJump) isBufferJumping = true;
+
         holdingJumpButton = true;
 
         //si saltas, y el cotote timer es mayor que cero signifdica q estas en  el suelo.
         if (coyoteTimer > 0)
         {
+            isBufferJumping = false;
             AudioManager.Instance.PlayPlayerJump();
             isHoldingJump = true;
             maxJump = maxJumpValue;
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
         }
 
-        //si estas en el aire, no puedes hacer el doble jump y le das al salto, entras en el jumpbuffer.
-        if (!secondJump || !pManager.isDobleJumpUnlocked || !pManager.canDobleJump) isBufferJumping = true;
 
 
 
@@ -94,6 +96,7 @@ public class PlayerJump : MonoBehaviour
         
         if ((isJumping || (isFalling && coyoteTimer < 0)) && secondJump && pManager.isDobleJumpUnlocked && pManager.canDobleJump)
         {
+            AudioManager.Instance.PlayPlayerDobleJump();
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             secondJump = false;
@@ -148,6 +151,9 @@ public class PlayerJump : MonoBehaviour
             //pequeño
             if (holdingJumpButton)
             {
+                Debug.Log("HOLA");
+                //AudioManager.Instance.PlayPlayerJump();
+
                 isHoldingJump = true;
                 //hacemos que el valor de salto sea el mismo q el de un salto normlal
                 maxJump = maxJumpValue;

@@ -31,6 +31,10 @@ public class AudioManager : MonoBehaviour
 
     public void PlayPlayerJump()
     {
-        FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerSounds/PlayerJump");
+    }
+    public void PlayPlayerDobleJump()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerSounds/PlayerDobleJump");
     }
 }

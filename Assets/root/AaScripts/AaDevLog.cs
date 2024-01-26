@@ -1049,10 +1049,18 @@ revisar en clase y ajustar mas cosas.
 Dia47:
 ToDoList
 
+--solucionar problema con carpeta antigua--
+
+
+
+-Añadir sonicods
+--Añadido FMOD--Ok
+--Añadir salto--Ok
+--Doble salto--Ok
+--Arreglar bug con buggger timer--Ok
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
--Añadir sonicods
 
 -Añadir musica
 

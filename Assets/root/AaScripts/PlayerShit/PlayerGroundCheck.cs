@@ -49,6 +49,7 @@ public class PlayerGroundCheck : MonoBehaviour
             pJump.isJumping = false;
             pJump.secondJump = true;
             pJump.isFalling = false;
+            
 
             //Set hasStopedMidAir to false, so he can do it again
             pMovement.hasStopedMidAir = false;
