@@ -32,6 +32,7 @@ public class PlayerSpawnPoint : MonoBehaviour
     {
         if (spawnPoint != null)
         {
+            AudioManager.Instance.PlayPlayerChairSit();
             if (spawnPoint != lastSpawnPoint && lastSpawnPoint != null)
             {
                 lastSpawnPoint.GetComponent<MeshRenderer>().material = defaultM;

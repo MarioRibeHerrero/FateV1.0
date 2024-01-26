@@ -35,7 +35,7 @@ public class PlayerHit : MonoBehaviour
     {
         if (!pManager.isPlayerInvulnerable)
         {
-
+            AudioManager.Instance.PlayPlayerHit();
 
                 if (takingSlow)
                 {

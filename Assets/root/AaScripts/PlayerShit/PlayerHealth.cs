@@ -72,7 +72,7 @@ public class PlayerHealth : MonoBehaviour
         transform.Find("Body").transform.gameObject.SetActive(false);
 
         pInput.SwitchCurrentActionMap("Dead");
-
+        AudioManager.Instance.PlayPlayerDeath();
 
     }
 

@@ -147,4 +147,5 @@ public class PlayerAnimationManager : MonoBehaviour
         anim.SetTrigger("Hook");
 
     }
+    
 }

@@ -34,6 +34,8 @@ public class PlayerGroundCheck : MonoBehaviour
         //Raycast q comprueba si estas o no en el suelo(devuelve true if your on ground and false if you are not)
         if(Physics.Raycast(groundCheckPos.transform.position, Vector3.down, 0.1f, groundCheckLayerMask))
         {
+            if (!isPlayerGrounded) AudioManager.Instance.PlayPlayerLand();
+
             isPlayerGrounded = true;
            
             //if you already used the hook, and tuch ground, you can use the hook again, and the material is updated

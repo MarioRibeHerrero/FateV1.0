@@ -152,7 +152,7 @@ public class PlayerJump : MonoBehaviour
             if (holdingJumpButton)
             {
                 Debug.Log("HOLA");
-                //AudioManager.Instance.PlayPlayerJump();
+                AudioManager.Instance.PlayPlayerJump();
 
                 isHoldingJump = true;
                 //hacemos que el valor de salto sea el mismo q el de un salto normlal

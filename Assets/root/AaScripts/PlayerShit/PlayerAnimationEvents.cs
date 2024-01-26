@@ -131,4 +131,31 @@ public class PlayerAnimationEvents : MonoBehaviour
     {
         pHook.CallHook();
     }
+
+
+
+
+
+
+
+    private void SfxAa1()
+    {
+        AudioManager.Instance.PlayPlayerAa1();
+    }
+    private void SfxAa2()
+    {
+        AudioManager.Instance.PlayPlayerAa2();
+
+    }
+    private void SfxAa3()
+    {
+        AudioManager.Instance.PlayPlayerAa3();
+
+    }
+    private void SfxFootStep()
+    {
+        AudioManager.Instance.PlayPlayerFootStep();
+
+    }
+
 }
