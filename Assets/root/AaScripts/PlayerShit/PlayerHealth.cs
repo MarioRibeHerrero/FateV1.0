@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         if (currentSpawnPoint != null) SetPlayerToStartPos();
-        else Debug.LogWarning("te falta el respawnPoint");
+       // else Debug.LogWarning("te falta el respawnPoint");
 
         pManager = GetComponent<PlayerManager>();
         pInput = GetComponent<PlayerInput>();

@@ -204,7 +204,6 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     private void CheckAttack()
     {
-        Debug.Log("HOAL");
 
         inRangeOfAttack = Physics.OverlapBox(attackRangePos.position, attackRangeVector / 2, Quaternion.identity, attackLayer).Length > 0;
 

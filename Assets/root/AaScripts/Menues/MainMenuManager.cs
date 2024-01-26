@@ -21,8 +21,6 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
-        AudioManager.Instance.PlayMusic(0);
-
     }
     public void NewMainScene()
     {

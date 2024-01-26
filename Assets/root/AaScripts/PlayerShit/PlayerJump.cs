@@ -76,6 +76,7 @@ public class PlayerJump : MonoBehaviour
         //si saltas, y el cotote timer es mayor que cero signifdica q estas en  el suelo.
         if (coyoteTimer > 0)
         {
+            AudioManager.Instance.PlayPlayerJump();
             isHoldingJump = true;
             maxJump = maxJumpValue;
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);

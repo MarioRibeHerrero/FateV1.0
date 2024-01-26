@@ -1044,9 +1044,22 @@ ajustar daño y forma de recivir el daño
 revisar en clase y ajustar mas cosas.
 -Terminar boss FIght(animacion muerte)
 
+
+
+Dia47:
+ToDoList
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
+-Añadir sonicods
+
+-Añadir musica
+
+-Recolocar asset Puerta y comprobar gameplay 1 vez
+
+
+
 -Cambiar trampas por nuevas
 
 -laser cristal(mas rapido menos cadencia)
@@ -1054,10 +1067,6 @@ ToDoList:
 Ajustar plataformas(muy separadas)
 
 -Ajustar camaras
-
--Añadir sonicods
-
--Añadir musica
 
 -hacer coleccionable
 

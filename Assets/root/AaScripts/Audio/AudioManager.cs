@@ -6,15 +6,6 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    [Header("Audio Source References")]
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource sfxSource;
-
-    [Header("Audio Clip Arrays")]
-    public AudioClip[] musiclist;
-    public AudioClip[] sfxlist;
-
-
     //
     public int overallVolume, musicVolume, sfxVolume;
 
@@ -32,25 +23,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayMusic(int musicIndex)
-    {
-        musicSource.clip = musiclist[musicIndex];
-        musicSource.Play();
-    }
 
-    public void PlayerSFX(int sfxIndex)
-    {
-        sfxSource.PlayOneShot(sfxlist[sfxIndex]);
-    }
 
-    public void EditMusicVolume(float vol)
-    {
-        musicSource.volume = vol;
 
-    }
 
-    public void EditSfxVolume(float vol)
+
+
+    public void PlayPlayerJump()
     {
-        sfxSource.volume = vol;
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Jump");
     }
 }
