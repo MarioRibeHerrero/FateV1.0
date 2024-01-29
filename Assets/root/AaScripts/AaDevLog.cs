@@ -10,23 +10,23 @@ Dia1(08-11-22):
 PlayerHook ahora solo se puede usar una vez, coyote jump, jump buffering, y doble salto funciona guay(tocara cambiarlo pero en principio bases solidas)
 Se suponia que iba alimpiar codigo hoy, pero al final no lo he hecho(se ha complicado el tema de el salto)
 metido el mapa de adrian aunque no se si eso esyaba ya ayer,
-mañana molaria:
+maï¿½ana molaria:
 ----------------------
 TODO(En prioridad):
 Limpiar codigo: :)
 Bug Camara: :)
 Aa: :)
 Hacer sistema de vida solido: :/
-añadirlo al hud: :(
+aï¿½adirlo al hud: :(
 Hacer enemigos basicos: :/
-Añadir Parry: :/
+Aï¿½adir Parry: :/
 
 ----------------------
 
 Dia2:(09-11-22):
 --
-Hecho por la mañana
-Añadidos ataques(con cubos)
+Hecho por la maï¿½ana
+Aï¿½adidos ataques(con cubos)
 vida basica(no hay nada q te quite vida)
 doble salto visual
 arreglado bug camara
@@ -37,14 +37,14 @@ Tarde
 
 Dia3:(09-11-22):
 --
-Añadido enegimo pocho
+Aï¿½adido enegimo pocho
 Lo estoy escribiendo el domingo y ns q hice jaja
 --
 Fin de semana1:
-Añadido nuevo sistema de enemigo un poco mejor,(no programado pero por lo menos esta muy setteado para mañana.
+Aï¿½adido nuevo sistema de enemigo un poco mejor,(no programado pero por lo menos esta muy setteado para maï¿½ana.
 
 Dia4(13-11-23):
-Hecho Por la Mañana:
+Hecho Por la Maï¿½ana:
 Enemigo(por pullir obb pero bastante mejor q el del otro dia)
 Parry(funciona la parte del enemigo(lo stunea)) falta meteer que recuperes vida
 Movimiento adicional camara(jostic derecho abajo mueve la camara abajo)
@@ -56,25 +56,25 @@ empezado sistema respawn
 solucion pocha de camera boundaries
 investigado mas sobre el enemigo
 ----
-hacer mañana:
+hacer maï¿½ana:
 DEJAR CLARO TODA LA PROGRAMACION Q VOY A NECESITAR
 si eso terminar respawn.
 
 Dia5:
-Añadidas todas las cosas que se me han podido ocurrir al trello
+Aï¿½adidas todas las cosas que se me han podido ocurrir al trello
 Terminado respawn con los altares
 solucionado problema rotacion camara al reaparecer.
-investigado sobre camera boundaries, de momento he encontrado una solucion super pocha(mañana preguntar en clase)
-Hcaer mañana:
-Añadir player hit y si tengo tiempo Aa
+investigado sobre camera boundaries, de momento he encontrado una solucion super pocha(maï¿½ana preguntar en clase)
+Hcaer maï¿½ana:
+Aï¿½adir player hit y si tengo tiempo Aa
 
 
 Dia6:
-hecho por la mañana:
-Añadido player Hit
-Añadido Aa aereo vertical y horizontal
-añadido sprite temporal del enemigo, hechas animaciones pochas para este enemigo, y mejorado el enemigo(ahora te emppuja bn y toda la pesca)
-Añadido q mueras, te hagas invisible y aprarezcas
+hecho por la maï¿½ana:
+Aï¿½adido player Hit
+Aï¿½adido Aa aereo vertical y horizontal
+aï¿½adido sprite temporal del enemigo, hechas animaciones pochas para este enemigo, y mejorado el enemigo(ahora te emppuja bn y toda la pesca)
+Aï¿½adido q mueras, te hagas invisible y aprarezcas
 
 para hacer por la tarde:
 mejorar enemigo a full y hacer enemigo volador si tengo timepo
@@ -92,24 +92,24 @@ cambiado el modo de hacer el parry(ahora va por una variable que esta en el game
 
 Dia7:
 Alargado aa
-añadido enemigo volador(programado movimiento)
+aï¿½adido enemigo volador(programado movimiento)
 Pensado sistema oleadas, cristal que spawnea enemigos
 Mejorado player hit.
-añadido que el parry stune al enemigo volador
+aï¿½adido que el parry stune al enemigo volador
 
 
 Dia8:
 
 PECH:
 
-En Fate podemos separar las mecánicas del personaje en dos apartados. Además de las mecánicas básicas de un metroidvania (correr y salto) 
-al final del salto puedes volver a pulsar el botón para realizar un pequeño impulso con el que poder llegar más lejos.
-Además, con el ataque principal recuperas cierta cantidad de vida.
+En Fate podemos separar las mecï¿½nicas del personaje en dos apartados. Ademï¿½s de las mecï¿½nicas bï¿½sicas de un metroidvania (correr y salto) 
+al final del salto puedes volver a pulsar el botï¿½n para realizar un pequeï¿½o impulso con el que poder llegar mï¿½s lejos.
+Ademï¿½s, con el ataque principal recuperas cierta cantidad de vida.
 
 En Fate, las mecanicas se podrian dividir en dos secciones, las habilidades basicas del personaje, como serian los auto ataques,
 el salto el movimiento, o el parry y las habilidades obtenidas por el personaje a lo largo del nivel
 
-Dentro de las mecánicas mas compejas en Fate, podriamos encontrar el parry y el gancho. El parry, es una habilidad que al ser usada, protejera
+Dentro de las mecï¿½nicas mas compejas en Fate, podriamos encontrar el parry y el gancho. El parry, es una habilidad que al ser usada, protejera
 al personaje durante un brebe periodo de timepo, en el cual si el personaje es atacado, blockeara y devolvera este ataque,
 stuneando al enemigo atacante. Esta habilidad consumira un % de vida, que sera devuelto en caso de de acertar la habilidad.
 
@@ -144,10 +144,10 @@ Cambiar funcionamiento parry
 Dia9(21-11-2023):
 Arreglado bug al iniciar la partida
 
-Añadido desblockeo de salto, limpiado codigo, comentado codigo y corregido bugs como doble cliuck hace qye sates mas alto,
-añadir ahora que no te deje hacer doble salto con menos de x distancia al suelo.
+Aï¿½adido desblockeo de salto, limpiado codigo, comentado codigo y corregido bugs como doble cliuck hace qye sates mas alto,
+aï¿½adir ahora que no te deje hacer doble salto con menos de x distancia al suelo.
 
-Añadida zona que desbloquea el salto
+Aï¿½adida zona que desbloquea el salto
 mejorado el salto en general
 
 arreglar salto y cambio de direccion
@@ -171,7 +171,7 @@ Solucionado cambio de direccion se sobreescriben
 modificado el generic health, para que sirva para todos los enemigos.
 
 Empezado sistema rondas, entras, se cierran las puertas y aparecen una cantidad de enemigos dependiendo de la ronda, en zonas aleatorias.(solo mele)
-Mañana terminarlo del todo:
+Maï¿½ana terminarlo del todo:
 Si mueres se reinicia,
 que funcionen las rondas,
 que aparezcan los voladores etc.
@@ -185,20 +185,20 @@ Dia11(23/11/23):
 trabajado en sistema de oleadas
 
 muerte reinicia la sala por completo
-sistema de rondas mejorado para q funcionen con los voladores(no añadidos aun)
+sistema de rondas mejorado para q funcionen con los voladores(no aï¿½adidos aun)
 romper el cristal hace que se abran las puertas y superes la sala.
 
 
 
 Dia12(24/11/23):
-Añadidos enemigos voladores, hecho que funcionen las oleadas con ellos tambien,
+Aï¿½adidos enemigos voladores, hecho que funcionen las oleadas con ellos tambien,
 Cambiado sistema de respawn(GameobjList)Preguntar jorge.
 Solucionar errores sistema oleadas.
 
 
 Dia13:
 TodoList Hoy:
-Añadir respawn infinito: hecho
+Aï¿½adir respawn infinito: hecho
 Actualizar Trello: hecho
 
 --
@@ -215,9 +215,9 @@ ordenado carpetas y actualizado el main de todos
 
 Dia14:
 
-TodoList hacer mañana(o al terminar las prioridades nuevas al hablar con jorge:
+TodoList hacer maï¿½ana(o al terminar las prioridades nuevas al hablar con jorge:
 Vida boss: a medias
-effecto hacer daño boss: a medias
+effecto hacer daï¿½o boss: a medias
 matar boss: otro dia
 entrar en sala boss: otro dia
 meter todo el graybox: otro dia
@@ -225,8 +225,8 @@ meter todo el graybox: otro dia
 --preguntar jorge hasta que punto es worth usar interfazes cuando me obliga a hacer el metodo publico--
 no lo es, quitar
 ----------
-añadidas interfaces de ikilleable, idamageable y healplayer
-x la mañana, empezado a hacer boss, pero me he desviado a hacer interfaces y aplicarlas a los enemigos.
+aï¿½adidas interfaces de ikilleable, idamageable y healplayer
+x la maï¿½ana, empezado a hacer boss, pero me he desviado a hacer interfaces y aplicarlas a los enemigos.
 
 hacer por la tarde:
 
@@ -235,14 +235,14 @@ hacer por la tarde:
 
 3: 
 a venido jorge, nueva to do list con prioridades:
-cambiar instancias objetos x object polling--Problema, solucinar mañana en clase
+cambiar instancias objetos x object polling--Problema, solucinar maï¿½ana en clase
 cambiar lista y referencias de la sala de rondas al roundManager--Ok
    
 
-Dejar codigo limpio para mañana poder hacerlo/solucinarlo con jorge--Ok
+Dejar codigo limpio para maï¿½ana poder hacerlo/solucinarlo con jorge--Ok
 quitado trabajo fin de semana q hay q mejorar,--Ok
 mejorado enemigos volador y normal.--Ok
-añadido instancia de enemigos al entrar en la sala de rondas(inicio de object booling)--Ok
+aï¿½adido instancia de enemigos al entrar en la sala de rondas(inicio de object booling)--Ok
 
 
 
@@ -256,7 +256,7 @@ te empuja hacia afuera siempre--No, casi siempre si, pero ns cuando no lo hace.
 
 BossFight:
 Vida boss--Ok
-effecto hacer daño boss--Ok
+effecto hacer daï¿½o boss--Ok
 EntradaALaHabitacion--Ok
 matar boss--Ok
 
@@ -276,22 +276,22 @@ Solucionar bug deslizar al aparecer(otra vez)(ES LA GRAVEDAD)--Ok
 
 Arreglar problemas con player--Ok(no arreglado cosas, pero como de momento lo dejo un poco mas de lado, me centro mejor en arreglar las salas.
 
-Arreglar sistema salas hoy(para ponerme a modelar mañana.(imposible xd) imposible mis cojones lest goooo(despuies de como toda la tarde xdd)
+Arreglar sistema salas hoy(para ponerme a modelar maï¿½ana.(imposible xd) imposible mis cojones lest goooo(despuies de como toda la tarde xdd)
 
 cunado desactivo al enemigo, se queda mitad animacion para siempre.(desactivar sprite)--Ok
 
 
 -----
-coña xq esto tiene tela:
-Restructurado enemigo melee por complete, usado scrips antiguos y nuevos, añadido a la lista de prioridades cambiar los scripts antiguos por los nuievos
-ahora las rondas funcionan con el enemigo mele, meter mañana que funcionen tambien con los voladores y el cristal(y toda la pesca)
+coï¿½a xq esto tiene tela:
+Restructurado enemigo melee por complete, usado scrips antiguos y nuevos, aï¿½adido a la lista de prioridades cambiar los scripts antiguos por los nuievos
+ahora las rondas funcionan con el enemigo mele, meter maï¿½ana que funcionen tambien con los voladores y el cristal(y toda la pesca)
 
-arreglar mañana seguro el tema del parry
+arreglar maï¿½ana seguro el tema del parry
 
 
 
 FinDeSemana(Dia17):
-Añadido enemigo volador al sistema de rondas(falta perfeccionar mucho)
+Aï¿½adido enemigo volador al sistema de rondas(falta perfeccionar mucho)
 solucionados problemas que habian con el sistema de rondas.
 cambiado un poco el funcionamiento de los scrips del enemigo volador
 
@@ -314,26 +314,26 @@ attaque pinchos--Ok
 Puente:
 
 Terminar graybox
-Añadir nuevo sistema camera boundaries
-añadir miniMapa basico
+Aï¿½adir nuevo sistema camera boundaries
+aï¿½adir miniMapa basico
 
 
 Dia19:
-Mejorado nuevo sistema camaras, añadido bloques que delemitan boundaries
-añadida camara de los pasillos(camara estable que te sigue por el pasillo) No implementada en todos los pasillos
-añadida sala grande con scripts modificados para que la camara funcione bien, la transicion sea smooth y no se salga de la sala.
+Mejorado nuevo sistema camaras, aï¿½adido bloques que delemitan boundaries
+aï¿½adida camara de los pasillos(camara estable que te sigue por el pasillo) No implementada en todos los pasillos
+aï¿½adida sala grande con scripts modificados para que la camara funcione bien, la transicion sea smooth y no se salga de la sala.
 
 quitado todos los colliders de todas las salas.
-añadidos colliders para suelo paredes techo
-añadido tp al final de primer piso que te lleva al segundo
+aï¿½adidos colliders para suelo paredes techo
+aï¿½adido tp al final de primer piso que te lleva al segundo
 
 cosas que faltan:
-Añadir boundaries salas 3,4,6--Ok
+Aï¿½adir boundaries salas 3,4,6--Ok
 meter movimiento puente--Ok
 meter transicion al boss.--Ok
 
 
-Hacer mañana:
+Hacer maï¿½ana:
 Dejar claras dimensiones salas que ahora mismo no funcionan, ponerme con movimiento del pj
 
 
@@ -355,7 +355,7 @@ hecho animaciones abrir y cerrar puertas--Ok
 Mejorar pilares que caen, y hacer que te maten bn--Ok
 
 Hacer por la tarde:
-Añadir sistema rondas, muerte restablece sala, si superas la sala te vas.
+Aï¿½adir sistema rondas, muerte restablece sala, si superas la sala te vas.
 
 De momento:
 si te mueres se reinicia todo bienm, despues comprobar si hace las rondas bn(sin infinito)--Ok
@@ -372,39 +372,39 @@ Borrar scrips que tienen que ver con enemigo volador--Ok
 Arreglado bug que buffer jump no salta igual si estas quieto que en moviemineto(no lo tenia en mente pero se me ha ocurrido de la nada)
 
 Hacer x la tarde:
-Añadir cristal, que te dispare y atraviese plataformas pero no paredes--
+Aï¿½adir cristal, que te dispare y atraviese plataformas pero no paredes--
 
 Antes que se me olvide, quiero meter un enevnto de esos, para que las salas como la del boss o la sala de rondas se puedan suscribir cunado el pj entra,
 y si muere que desde el playerHealth lo llame, por lo tanto, el pj simepre que muere llama al evento ese, si no estas en la sala de rondas, no pasa anda,
-si estas, como el script de la sala de rondas habra añadido un metodo que reinicie la sala a ese evento, se reiniciara.lo mismo con la del boss--
+si estas, como el script de la sala de rondas habra aï¿½adido un metodo que reinicie la sala a ese evento, se reiniciara.lo mismo con la del boss--
 (ahora toca hacerlo xd)
 
 
 
 Dia22:
 
-Solucionado y añadido tema nuevas ramas, problemas con ramas, organizacion de carpetas, etc.
-añadido que aparezca el cristal en las rondas--ok
-añadir que para pasar de ronda el cirstal tiene que estar roto--Ok
+Solucionado y aï¿½adido tema nuevas ramas, problemas con ramas, organizacion de carpetas, etc.
+aï¿½adido que aparezca el cristal en las rondas--ok
+aï¿½adir que para pasar de ronda el cirstal tiene que estar roto--Ok
 
 Hacer por la tarde:
-añadir que al morir se restablezca la sala--Ok
+aï¿½adir que al morir se restablezca la sala--Ok
 corregir camara al entrar en sala--(solucionCutreTEMP)--Ok
 
 Solucionar punto PivoteBoss--Ok
 Empezar boss--Ok
 Hacer barra vida pocha--Ok
 
-Hacer mañana:
-Añadir "Final" pocho
-Añdir menus si eso
+Hacer maï¿½ana:
+Aï¿½adir "Final" pocho
+Aï¿½dir menus si eso
 Creditos: x to skip
 Trabajar en el boss
 
 Dia23:
 
 Pedir y apuntar feedback
-Añadido parar en seco al saltar
+Aï¿½adido parar en seco al saltar
 nerfeo robo vida
 reducida duracion parry
 
@@ -440,7 +440,7 @@ Cambiado layer mask del pj
 Hecho nuevo sistema de camaras entero
 
 Nuevo sistema TP
-Hacer mañana, mejorar y terminar todo camaras 
+Hacer maï¿½ana, mejorar y terminar todo camaras 
 
 
 
@@ -453,13 +453,13 @@ el metodo de CameraMangaer, desactivo la currentCam y activo la Respawnposcam, l
 Arreglar gancho feedbackVisual--Ok
 Arreglar slide plataformas sala estatua--Ok
 hacer que tpfuncione bien--Ok
-Añadir unlockCollider--Ok
+Aï¿½adir unlockCollider--Ok
 Terminar camaras`+ camaraBridge(1.6)--Ok
-Añadir movvimiento en puete--Ok
+Aï¿½adir movvimiento en puete--Ok
 
-PostMañanaClase:
+PostMaï¿½anaClase:
 
-Añdir Fade-In/Fate-Out--Ok(pero no se usa)
+Aï¿½dir Fade-In/Fate-Out--Ok(pero no se usa)
 
 Implementar sala rondas(espero q no de problemas xd)--OK(habra q ajustarla pero estar esta
 
@@ -468,39 +468,39 @@ Implementar sala rondas(espero q no de problemas xd)--OK(habra q ajustarla pero 
 
 Empezar a trabajar en la bossfight con medidad nuevas--Ok
 
-Añadir entrada a boss + empezar bossfight--Ok
+Aï¿½adir entrada a boss + empezar bossfight--Ok
 
-Añadidos ataques boss, mas interacciones--Ok
+Aï¿½adidos ataques boss, mas interacciones--Ok
 
-Añadido menu basico para entrar--Ok
+Aï¿½adido menu basico para entrar--Ok
 
-añadido delegado en player health para las interacciones(si funciona pasar a otro script)
+aï¿½adido delegado en player health para las interacciones(si funciona pasar a otro script)
 
-Hacer mañana:
+Hacer maï¿½ana:
 
 
 Dia26(19/12/23):
-Añadir script mencionado arriba,--Ok
-añadir atajo--Ok
+Aï¿½adir script mencionado arriba,--Ok
+aï¿½adir atajo--Ok
 dar a probar build.--Ok
 Arreglar enemigos para usar solo un prefab--Ok
-AñadirAnimacionEntryEnemigo--Ok
+Aï¿½adirAnimacionEntryEnemigo--Ok
 arreglado Tp no funciona de arriba a abajo--Ok
-Añadir interactuarPara tp--Ok
+Aï¿½adir interactuarPara tp--Ok
 
 
 
 
 Dia27(20/12/23):
 Arreglado colliders
-añadidas plataformas del gancho + ajustado sus coliders
-añadidos enemigos al mapa
+aï¿½adidas plataformas del gancho + ajustado sus coliders
+aï¿½adidos enemigos al mapa
 ajustado tp al boss y al segundo piso
 
 
 probar build y arreglar bugs:
 hacer q trampas se vean--Ok
-añadir algo de sentido a la caida--Ok
+aï¿½adir algo de sentido a la caida--Ok
 hook te para a mitad--
 subit enemigos --Ok
 CorregirZfight--Ok
@@ -522,19 +522,19 @@ resolver dudas y cosas metidas en la todolist
 
 Dia28(Desde el avion xd):
 Arreglar AaDevLog--Ok
-Añadir delegado ondeath para el player--Ok(funcional en RoundManager)
+Aï¿½adir delegado ondeath para el player--Ok(funcional en RoundManager)
 Borrar Scripts inutiles--
 
 Dia29(Muy poco tiempo(25/12/23):
 hacer merge desde el avion--Ok
 corregir problemas merge--Ok
-añadir cosas todolist--Ok
+aï¿½adir cosas todolist--Ok
 cosas hechas todolist:
 
 -Cambiar punete a Action map distinto
-me tengo que ir, añadido el mapa de acciones:
+me tengo que ir, aï¿½adido el mapa de acciones:
 cosas que hacer al volver:
-biorrar los inputs que se ponian al entrar en el puente, añadir que se cambie de mapa al entrar
+biorrar los inputs que se ponian al entrar en el puente, aï¿½adir que se cambie de mapa al entrar
 creo que ya xd
 
 
@@ -546,13 +546,13 @@ cambiar transicion a bossfight con nuevo mapa--Ok
 arreglar inputs con cambio de nombre del otro mapa--
 ---------
 Problema que a surgido, el cambio de escena al boss, se hace con otro script, no con el mismo que el resto de transiciones, 
-la solucion q se me ha ocurrido seria añadir otra boleana para si lleva a bossfight o no, y en caso de activarla que te pida un metodo que añadir para empezar la bossfgiht con un timer.
+la solucion q se me ha ocurrido seria aï¿½adir otra boleana para si lleva a bossfight o no, y en caso de activarla que te pida un metodo que aï¿½adir para empezar la bossfgiht con un timer.
 ahora oslo me quedan 30 min, y me tendre que ir, a ver si me da timepo.
-puta q me pario otro problema jaja, para el boss no queremos que sea interactuable, queremos que te haga tp sin mas, supongo que por eso no lo he añadido antes,
+puta q me pario otro problema jaja, para el boss no queremos que sea interactuable, queremos que te haga tp sin mas, supongo que por eso no lo he aï¿½adido antes,
 SOlucion temporal, te sale texto de desafiar al boss,
 ----
 problema que solucionar proximo dia, no te deja interactuar por el cambio de mapa
-añadir lo mencionado del boss
+aï¿½adir lo mencionado del boss
 ----
 
 
@@ -619,9 +619,9 @@ Primera parte(Gancho a traves)
 descatkivar q de deje mitad aire cunado sales--Ok
 doble salto al salir--Ok
 quitado que te pare en medio--Ok
-añadido doble salto al caer y al salir del hook--Ok
+aï¿½adido doble salto al caer y al salir del hook--Ok
 problema, coyote jump hace el doble jump
-sol: Añadido variable de isfalling, puedes hacer doble salto cunado estas cayendo y el coyotetimer ya ha pasado(es decir q no podrias saltar)
+sol: Aï¿½adido variable de isfalling, puedes hacer doble salto cunado estas cayendo y el coyotetimer ya ha pasado(es decir q no podrias saltar)
 Gancho en pared()
 De momen to vamos a ajustar hooks para que funcione con el otro sistema
 
@@ -636,9 +636,9 @@ Estan en estados que no toca--Ns, de momento no he conseguido q pase
 
 
 -Cambiar que parry solo sea hacia delante--Ok
-comprobar xq entra 3 veces, si esta stun no pude hacer da´p
+comprobar xq entra 3 veces, si esta stun no pude hacer daï¿½p
 esto no acaba de funcionar, ademas el bug de perma stun puede sercausado por esto
-Nuevo sistema, ahora es una caja el ataque, en lugar de la maza en si. si esta el enemigo stun no te puede hacer daño.
+Nuevo sistema, ahora es una caja el ataque, en lugar de la maza en si. si esta el enemigo stun no te puede hacer daï¿½o.
 
 
 
@@ -652,15 +652,15 @@ Nuevo sistema, ahora es una caja el ataque, en lugar de la maza en si. si esta e
 
 Dia34(09/01/24):
 
-añadir cosas que añadi en la build de jorge, y he perdido(Cerrar juego(hasta que pueda preguntar a jorge por los problemas))
+aï¿½adir cosas que aï¿½adi en la build de jorge, y he perdido(Cerrar juego(hasta que pueda preguntar a jorge por los problemas))
 
 -Enemigo se sale de las plataformas y atraviesa paredes--Ok
 -parry y proyectiles va mal--Ok
 -Enemigo sale en estado que no toca--Creo que Ok ESTABA MAL(ahora creo que si esta bn)
 
 
--Cambiar sistema camaras(falta por añadir la camara del boss)
-Añadir esta tarde-->
+-Cambiar sistema camaras(falta por aï¿½adir la camara del boss)
+Aï¿½adir esta tarde-->
 
 
 
@@ -674,7 +674,7 @@ fumada
 Cosas que guardar a nivel basico:
 ultimo punto de guardado, que el pj reaparezca en la posicion que le toca.
 
-he hecho muchas cosas, pero mini resumen para mañana es que me guardo el valor del floar currentRoom, para esto,
+he hecho muchas cosas, pero mini resumen para maï¿½ana es que me guardo el valor del floar currentRoom, para esto,
 cunado seteo un nuevo respawnpoint, transformo el valor del enum a float con un switch, y ese es el valor que guardo,
 cunado lo lodeo, lo vuelvo a pasar de float a enum 
 problemas: el spawnpoin ahora mismo no esta vinculado al numero de la room.
@@ -684,7 +684,7 @@ tendria que vincualarlo de alguna forma(ahora no se me ocurre) para asi en el st
 
 Dia35(10/01/24):
 
-Planning Mañana:
+Planning Maï¿½ana:
 
 cosas que hacer hasta tener clase con jorge:
 TODOLIST en orden:
@@ -722,7 +722,7 @@ meter guardado(new game te cargar posicion normal, load te lleva a punto guardad
 
 
 Dia 36(Jueves 11/01/24)
-Solucionar bugs pequeños, actualizar lista todolist con estos bugs.
+Solucionar bugs pequeï¿½os, actualizar lista todolist con estos bugs.
 
 -Ataacar encima del tp hace que vaya mal--Ok
 
@@ -773,7 +773,7 @@ comprobar guardado depsues de mal push github--Ok
 
 -Meter Fadein Fadeout En camaras con TP:
 modificar tiempo de transicion de las camaras con tp--Ok
-añadir fade--Ok
+aï¿½adir fade--Ok
 
 
 
@@ -831,15 +831,15 @@ Meter mapa nuevo--Ok
 por la tarde:
 hacer todolist:
 
-añadir aa que funcione bien--Ok
+aï¿½adir aa que funcione bien--Ok
 cambiado el sistema dde aa por completo(si metiesemos mas adelante el 3cer ataque otra vez, supongo que seria hacer lo mismo
 pero con un comprobador durante el seundo ataque,(el q ya esta) y luego meter otra booleana dentro del animator, q si le has dado a un eneimgo se ponga a true, y si se pone
 a true haces el tercero y sino no(al igual lo ahago ahora q no parece tan complicado xd)
 
-Añadir tercer aa--OK
+Aï¿½adir tercer aa--OK
 
 
-Añadir palanca--Ok
+Aï¿½adir palanca--Ok
 
 Mejorar tuto--OK
 
@@ -869,7 +869,7 @@ Importar boss--No pude
 
 empezar con los ataques.--No pude
 
-no he podido hacer los ataques por tema de rootmotion, me espro a pregunarle a jorge mañana.
+no he podido hacer los ataques por tema de rootmotion, me espro a pregunarle a jorge maï¿½ana.
 
 meter modelo enemigo meelee con animaciones--Ok(parece poco pero me toco hacer todo el enemigo de 0 xd)
 
@@ -891,7 +891,7 @@ Borrar todas referencias y scritps de la bossfight--Ok
 ataque columnas--Ok
 ataque dash--Ok
 ataque disco--Ok
-Añadir effecto visual de hacer daño--Ok
+Aï¿½adir effecto visual de hacer daï¿½o--Ok
 
 
 Dia43:
@@ -913,7 +913,7 @@ inplementar nuevo mapa--Ok
 
 Arreglar bugs buidl--Ok
 
-añadir atajo y doble salto al guardado--Ok
+aï¿½adir atajo y doble salto al guardado--Ok
 
 Arreglar textos--Ok
 
@@ -921,7 +921,7 @@ Arreglar textos--Ok
 
 Dia44:
 
-Añadida trampa nueva, creado animaciones de abrir y cerrar--Ok
+Aï¿½adida trampa nueva, creado animaciones de abrir y cerrar--Ok
 
 Implementar trampa en tutorial--Ok
 
@@ -930,13 +930,13 @@ implementar trampa en sala doble salto--
 implementar trampa en sala Oleadas--Ok
 
 Arreglar bug enemigo melee no le puedes pegar--Ok
-Añadir vaya nueva, con animacion de abrir y cerrar--Ok
+Aï¿½adir vaya nueva, con animacion de abrir y cerrar--Ok
 
 Hacer despues del patio:
 
 -enfocar salida en sala rondas--oK
 
--aÑADIR Palanca con animacion en sala dole salto--Ok
+-aï¿½ADIR Palanca con animacion en sala dole salto--Ok
 
 -Arreglar creditos--Ok
 
@@ -944,8 +944,11 @@ Hacer despues del patio:
 
 
 
+
+
+
 TAREDE:
--Añadir Menus:
+-Aï¿½adir Menus:
 
 menu pause
 --Resume-->
@@ -982,10 +985,10 @@ arreglar bug puertas sala rondas--Ok
 apuntar feedback profesores
 
 Boss:
-añadir stun del aatque(mismo para los dos lados)--Ok
+aï¿½adir stun del aatque(mismo para los dos lados)--Ok
 Stun especifico por lado--OK
 pincho especifico por lado--Ok
-árrelgar bug vida--Ok
+ï¿½rrelgar bug vida--Ok
 
 
 Guia primera fase:--Ok
@@ -1016,8 +1019,8 @@ combo:
 si toca toca xd(25%)
 
 
-añadir combos de ataques--
-añadir segunda fase--
+aï¿½adir combos de ataques--
+aï¿½adir segunda fase--
 
 
 
@@ -1025,14 +1028,14 @@ añadir segunda fase--
 Dia46:
 Metido mapa nuevo--Ok
 Solucionar problemas con z de la sala--OK
-Añadir nuevo walk--Ok
+Aï¿½adir nuevo walk--Ok
 
 Despues del patiio
 
 arreglar posiciones bossfight--Ok
 arreglar rotacion animaciones boss--Ok
 arreglar bossfight en general xd--OK
-Añadir movimiento cortinas + reverencia--Ok
+Aï¿½adir movimiento cortinas + reverencia--Ok
 
 Solucionar pilares(mas grandes)--Ok
 mover posiciones vcombo--Ok
@@ -1040,7 +1043,7 @@ mover posiciones vcombo--Ok
 falta por hacer del boss:
 
 arregar coliders
-ajustar daño y forma de recivir el daño
+ajustar daï¿½o y forma de recivir el daï¿½o
 revisar en clase y ajustar mas cosas.
 -Terminar boss FIght(animacion muerte)
 
@@ -1053,18 +1056,32 @@ ToDoList
 
 
 
--Añadir sonicods
---Añadido FMOD--Ok
---Añadir salto--Ok
+-Aï¿½adir sonicods
+--Aï¿½adido FMOD--Ok
+--Aï¿½adir salto--Ok
 --Doble salto--Ok
 --Arreglar bug con buggger timer--Ok
---Añadido todos los sonidos de fate--OK
+--Aï¿½adido todos los sonidos de fate--OK
 --Arreglado bug respawn--OK
+
+
+segunda fase no se reinicia tras muerte--OK
+Enemigo no se le puede pegar--Ok
+
+
+
+
+Dia48:
+Arreglar problemas fmod y meter proyecti en pc nuevo--Ok
+Aï¿½adir animacion sentar buena--Ok
+sala desaparece-Ok(sol cutre)
+Cambiar animaciones por nuevas--OK
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
--Añadir musica
+-Aï¿½adir musica
 
 -Recolocar asset Puerta y comprobar gameplay 1 vez
 
@@ -1095,11 +1112,11 @@ BOSS
 
 NO PRIORITARIO:
 
--Añadir musica y SFX
+-Aï¿½adir musica y SFX
 
 -Re hacer el sistema de aa triple, o por lo menos entenderolo
 -Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
--Añadir regiones y ordenar codigo
+-Aï¿½adir regiones y ordenar codigo
 -Cambiar forma de actualizar la vida(usando el get/Set)
 -Cambiar todas referencia hook por interact
 -hacer tanto boss como enemigos con clases heredadas y metodos como kill comunes
@@ -1110,7 +1127,14 @@ VFX:
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
 -----------------------------------------------------------------------------------------------------------------------------------
+Tp fin juego instant no rula
 
+salto raro animacionï¿½
+animacion stun
+animacion muerte boss
+spam sonido silla
+con doble salto puedes salir y entrar de sala rondas
+parry del reves(no sabemos xq)
 
 
 No prioritario
@@ -1131,7 +1155,7 @@ preguntar Jorge:
 ORGANIZACION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Objetivos FIN-JUEGO(cosas que faltan por añadir):
+Objetivos FIN-JUEGO(cosas que faltan por aï¿½adir):
 MiniMapa Funcional(Descartado)
 Menues
 Bossfight
@@ -1148,7 +1172,7 @@ quedan 4 semanas
 Bugs que solucionar:
 
 Transiciones funcionan bien--
--Añadir UI parry(circulo)
+-Aï¿½adir UI parry(circulo)
 
 ------------------------------
 1 semana meter anims boss y pj
@@ -1157,15 +1181,15 @@ Transiciones funcionan bien--
 -meter animaciones boss, hacer los ataques que faltan y terminar la bossfight
 -solucionar bugs, y que la bossfght se sienta muy bien.
 -arreglar sala rondas para que se entienda que tienes el cristal
--añadir modo berserk(si todo lo anterior esta bien.)
+-aï¿½adir modo berserk(si todo lo anterior esta bien.)
 -------------------------------------
 1 semana cerrar juego y arreglar bugs
 -------------------------------------
--Añadir menues
--Añadir todo el sonido
+-Aï¿½adir menues
+-Aï¿½adir todo el sonido
 -Comprobar que tenemos el juego 100% jugable a escepcion de las animaciones del meelee
 -arreglar sala rondas para que se entienda que tienes el cristal
--añadir modo berserk(si todo lo anterior esta bien.)
+-aï¿½adir modo berserk(si todo lo anterior esta bien.)
 --------------------------------
 1 semana meter animaciones melee
 --------------------------------
@@ -1173,7 +1197,7 @@ Transiciones funcionan bien--
 -asegurarse de que se siente bien el enemigo
 -solucionar bugs del juego
 -arreglar sala rondas para que se entienda que tienes el cristal
--añadir modo berserk(si todo lo anterior esta bien.)
+-aï¿½adir modo berserk(si todo lo anterior esta bien.)
 
 --------------
 FIN DEL SPRINT(el juego deberia estar terminado a escepcion de los vfx, iluminacion, cinematicas, etc)
