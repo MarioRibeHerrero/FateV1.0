@@ -941,6 +941,10 @@ Hacer despues del patio:
 -Arreglar creditos--Ok
 
 
+Dia45:
+Añadir animacion sentar buena--Ok
+
+
 
 
 
