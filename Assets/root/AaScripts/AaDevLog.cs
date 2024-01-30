@@ -1095,9 +1095,9 @@ problema con transion de la musica, empieza en la "pantalla de carga" pero no ha
 mneter pantalla de carga--Ok
 
 por la tarde:
-terminar de meter musica--
-mter sonidos otra vez--
-Meter volumen sfx y musica--
+mter sonidos otra vez--Ok
+terminar de meter musica--Ok
+Meter volumen sfx y musica--Ok(faltan los menues)
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------

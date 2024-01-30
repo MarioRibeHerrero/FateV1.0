@@ -36,7 +36,7 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
             
 
-            if(!isDead) RoudRoomShit();
+            if(!isDead && roundManager != null) RoudRoomShit();
 
             //no se usa xq ahora lo llamo con delagados desde el roundmanager
             anim.SetTrigger("Die");

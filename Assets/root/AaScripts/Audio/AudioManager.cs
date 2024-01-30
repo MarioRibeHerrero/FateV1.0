@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,8 +8,16 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    //
-    public int overallVolume, musicVolume, sfxVolume;
+    [Range(0, 1)]
+    public float generalVolume;
+    [Range(0,1)]
+    public float musicVolume;
+    [Range(0, 1)]
+    public float sfxVolume;
+
+    private Bus generalBus;
+    private Bus sfxBus;
+    private Bus musicBus;
 
 
     FMOD.Studio.EventInstance mainTheme, preBossLoop, levelTheme, bossLoop, bossEntry;
@@ -25,13 +34,22 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
         //audioReferences
-        mainTheme = FMODUnity.RuntimeManager.CreateInstance("event:/MainTheme");
-        preBossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/LoopPasilloPreBoss");
-        levelTheme = FMODUnity.RuntimeManager.CreateInstance("event:/LevelTheme");
-        bossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/BossLoop");
-        bossEntry = FMODUnity.RuntimeManager.CreateInstance("event:/InicioBoss");
+        mainTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/MainTheme");
+        preBossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/Music/PreBossLoop");
+        levelTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/LevelTheme");
+        bossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossLoop");
+        bossEntry = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossEntry");
 
+        generalBus = RuntimeManager.GetBus("bus:/");
+        musicBus = RuntimeManager.GetBus("bus:/Music");
+        sfxBus = RuntimeManager.GetBus("bus:/Sfx");
+    }
 
+    private void Update()
+    {
+        generalBus.setVolume(generalVolume);
+        sfxBus.setVolume(sfxVolume);
+        musicBus.setVolume(musicVolume);
     }
     private void Start()
     {
@@ -46,6 +64,7 @@ public class AudioManager : MonoBehaviour
     }
     public void LevelIntoPreBoss()
     {
+        Debug.Log("KEKEK");
         levelTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         preBossLoop.start();
 

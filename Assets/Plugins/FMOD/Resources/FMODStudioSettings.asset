@@ -632,6 +632,7 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Music
+  - FateAudios
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264

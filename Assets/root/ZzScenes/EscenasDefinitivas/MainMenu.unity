@@ -2154,6 +2154,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1868950459}
+        m_TargetAssemblyTypeName: LoadingScene, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1178547932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2739,27 +2751,27 @@ PrefabInstance:
     - target: {fileID: 4312503051299393250, guid: c8ad1629168300345b3a2557a9403df7,
         type: 3}
       propertyPath: EventReference.Path
-      value: event:/LoopPasilloPreBoss
+      value: event:/Music/BossEntry
       objectReference: {fileID: 0}
     - target: {fileID: 4312503051299393250, guid: c8ad1629168300345b3a2557a9403df7,
         type: 3}
       propertyPath: EventReference.Guid.Data1
-      value: -1185569692
+      value: 685355751
       objectReference: {fileID: 0}
     - target: {fileID: 4312503051299393250, guid: c8ad1629168300345b3a2557a9403df7,
         type: 3}
       propertyPath: EventReference.Guid.Data2
-      value: 1105276856
+      value: 1189576166
       objectReference: {fileID: 0}
     - target: {fileID: 4312503051299393250, guid: c8ad1629168300345b3a2557a9403df7,
         type: 3}
       propertyPath: EventReference.Guid.Data3
-      value: -740188
+      value: 132825989
       objectReference: {fileID: 0}
     - target: {fileID: 4312503051299393250, guid: c8ad1629168300345b3a2557a9403df7,
         type: 3}
       propertyPath: EventReference.Guid.Data4
-      value: -2056221987
+      value: -1066072576
       objectReference: {fileID: 0}
     - target: {fileID: 4495915388268411343, guid: c8ad1629168300345b3a2557a9403df7,
         type: 3}
@@ -2816,10 +2828,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5568654655055821762, guid: c8ad1629168300345b3a2557a9403df7,
+        type: 3}
+      propertyPath: sfxVolume
+      value: 0.575
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568654655055821762, guid: c8ad1629168300345b3a2557a9403df7,
+        type: 3}
+      propertyPath: musicVolume
+      value: 0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5568654655055821762, guid: c8ad1629168300345b3a2557a9403df7,
+        type: 3}
+      propertyPath: generalVolume
+      value: 0.461
+      objectReference: {fileID: 0}
     - target: {fileID: 6808312482281778395, guid: c8ad1629168300345b3a2557a9403df7,
         type: 3}
       propertyPath: Banks.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6808312482281778395, guid: c8ad1629168300345b3a2557a9403df7,
         type: 3}
@@ -2829,7 +2856,7 @@ PrefabInstance:
     - target: {fileID: 6808312482281778395, guid: c8ad1629168300345b3a2557a9403df7,
         type: 3}
       propertyPath: Banks.Array.data[1]
-      value: Music
+      value: FateAudios
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
