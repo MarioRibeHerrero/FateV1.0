@@ -26,12 +26,13 @@ public class MainMenuManager : MonoBehaviour
     {
         GameManager.Instance.isGameLoaded = false;
 
-        SceneManager.LoadScene(1);
+       // SceneManager.LoadScene(1);
     }
     public void LoadMainScene()
     {
         GameManager.Instance.isGameLoaded = true;
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
+
     }
 
     public void QuitGame()

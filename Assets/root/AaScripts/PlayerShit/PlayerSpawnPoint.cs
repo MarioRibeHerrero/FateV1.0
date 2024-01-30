@@ -15,6 +15,7 @@ public class PlayerSpawnPoint : MonoBehaviour
     PlayerRotation pRotation;
     PlayerInput playerInput;
     PlayerGroundCheck pGroundCheck;
+    PlayerManager pManager;
     [SerializeField] Animator anim;
 
     //mats
@@ -28,6 +29,7 @@ public class PlayerSpawnPoint : MonoBehaviour
         pRotation = GetComponent<PlayerRotation>();
         playerInput = GetComponent<PlayerInput>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
+        pManager = GetComponent<PlayerManager>();
     }
     private void Start()
     {
@@ -37,6 +39,10 @@ public class PlayerSpawnPoint : MonoBehaviour
     }
     private void SpawnPosShit()
     {
+
+        pManager.playerSitting = true;
+
+
         if (!pGroundCheck.isPlayerGrounded) return;
 
         playerInput.SwitchCurrentActionMap("PopUps");

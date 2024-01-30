@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("PlayerStatus")]
 
+    public bool playerSitting;
     public bool canPlayerMove;
     public bool canPlayerRotate;
     public bool playerInNormalAttack;

@@ -68,6 +68,7 @@ public class BossRoomTracking : MonoBehaviour
             camManager.DisableOldCamera(previusRoom);
             player.transform.position = nextPos.position;
             StartBossFight();
+            AudioManager.Instance.PreBossIntoBossEntry();
 
             return;
         }

@@ -161,6 +161,8 @@ public class PlayerAnimationEvents : MonoBehaviour
     private void SfxChairSeat()
     {
         AudioManager.Instance.PlayPlayerChairSit();
+        pManager.playerSitting = false;
+
 
     }
 }

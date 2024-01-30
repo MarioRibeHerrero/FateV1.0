@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,8 @@ public class AudioManager : MonoBehaviour
     public int overallVolume, musicVolume, sfxVolume;
 
 
+    FMOD.Studio.EventInstance mainTheme, preBossLoop, levelTheme, bossLoop, bossEntry;
+
     private void Awake()
     {
         if (Instance == null)
@@ -21,12 +24,61 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        //audioReferences
+        mainTheme = FMODUnity.RuntimeManager.CreateInstance("event:/MainTheme");
+        preBossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/LoopPasilloPreBoss");
+        levelTheme = FMODUnity.RuntimeManager.CreateInstance("event:/LevelTheme");
+        bossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/BossLoop");
+        bossEntry = FMODUnity.RuntimeManager.CreateInstance("event:/InicioBoss");
+
+
+    }
+    private void Start()
+    {
+        mainTheme.start();
     }
 
+    public void MainMenuIntoLevel()
+    {
+        mainTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        levelTheme.start();
 
+    }
+    public void LevelIntoPreBoss()
+    {
+        levelTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        preBossLoop.start();
 
+    }
+    public void PreBossIntoLevel()
+    {
+        preBossLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        levelTheme.start();
 
+    }
+    public void PreBossIntoBossEntry()
+    {
+        preBossLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        bossEntry.start();
+        Invoke(nameof(BossEntryIntoFight), 135);
 
+    }
+    public void BossEntryIntoFight()
+    {
+        mainTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        preBossLoop.start();
+
+    }
+    public void Respawn()
+    {
+        mainTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        preBossLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        levelTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        bossEntry.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        bossLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        levelTheme.start();
+
+    }
 
 
     public void PlayPlayerJump()

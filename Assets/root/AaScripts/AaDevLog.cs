@@ -1067,6 +1067,7 @@ ToDoList
 
 segunda fase no se reinicia tras muerte--OK
 Enemigo no se le puede pegar--Ok
+-SFX--OK
 
 
 
@@ -1077,25 +1078,40 @@ A�adir animacion sentar buena--Ok
 sala desaparece-Ok(sol cutre)
 Cambiar animaciones por nuevas--OK
 
+
+dia 49:
+BUG Silla con popUps--Ok
+
+-Recolocar asset Puerta y comprobar gameplay 1 vez--OK
+
+-hacer que los fmod listeners esten en todas las escenas--Ok
+
+-probar que funciona con la main theme--Ok
+
+-meter fade in fade out en las canciones(main theme, level theme)--OK
+
+-A�adir musica:
+problema con transion de la musica, empieza en la "pantalla de carga" pero no hay pantalla de carga
+mneter pantalla de carga--Ok
+
+por la tarde:
+terminar de meter musica--
+mter sonidos otra vez--
+Meter volumen sfx y musica--
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
-
--A�adir musica
-
--Recolocar asset Puerta y comprobar gameplay 1 vez
+meter barra vida--
 
 
+-termminar boss fight
 
 -Cambiar trampas por nuevas
 
 -laser cristal(mas rapido menos cadencia)
 
-Ajustar plataformas(muy separadas)
-
 -Ajustar camaras
 
--hacer coleccionable
 
 -----
 
@@ -1111,8 +1127,8 @@ BOSS
 
 
 NO PRIORITARIO:
+-hacer coleccionable
 
--A�adir musica y SFX
 
 -Re hacer el sistema de aa triple, o por lo menos entenderolo
 -Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
