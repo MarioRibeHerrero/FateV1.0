@@ -11,7 +11,8 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-       // roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
+       
+           roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
 
     }
 
@@ -21,8 +22,21 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
         health -= damage;
         CheckHealth();
     }
+    public void Reset()
+    {
+        Debug.Log("KRKEKE");
+        health = 20;
+        roundManager.isCristalDestroyed = false;
+        transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 90));
 
+        Invoke(nameof(ResetPos), 0.1f);
+    }
 
+    private void ResetPos()
+    {
+        transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 90));
+
+    }
     private void CheckHealth()
     {
         if (health <= 0)

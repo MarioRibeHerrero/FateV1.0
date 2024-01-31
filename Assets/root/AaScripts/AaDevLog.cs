@@ -1105,19 +1105,18 @@ Dia50:
 Meter nueva barra de vida--OK
 Meter animaciones y modelo de cristal nuevo--Ok
 Programar cristal nuevo--OK
-animarr creistal nueevo--
-Implementar cristal nuevo en rondas--
+animarr creistal nueevo--Ok
+Implementar cristal nuevo en rondas--Ok
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
-meter barra vida--
-
 
 -termminar boss fight
 
 -Cambiar trampas por nuevas
 
--laser cristal(mas rapido menos cadencia)
 
 -Ajustar camaras
 

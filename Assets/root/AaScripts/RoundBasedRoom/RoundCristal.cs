@@ -70,6 +70,8 @@ public class RoundCristal : MonoBehaviour
 
     public void Reset()
     {
+        cristalObj.SetActive(true);
+        cristalObj.GetComponent<CristalHealthManager>().Reset();
         cristalObj.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 90));
 
     }
