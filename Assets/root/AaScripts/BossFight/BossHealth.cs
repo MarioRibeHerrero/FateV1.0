@@ -44,7 +44,7 @@ public class BossHealth : MonoBehaviour
     {
         playerHit = pManager.playerCurrentDamage;
 
-
+        
         bFController.bossTotalHealth = totalHits * playerHit;
         bFController.bossCurrentHealth = bFController.bossTotalHealth;
     }
@@ -66,6 +66,7 @@ public class BossHealth : MonoBehaviour
             gameObject.SetActive(false);
             Invoke("LoadCredits", 3f);
         }
+        
     }
 
 
