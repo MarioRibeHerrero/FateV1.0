@@ -11,7 +11,7 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
+       // roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
 
     }
 

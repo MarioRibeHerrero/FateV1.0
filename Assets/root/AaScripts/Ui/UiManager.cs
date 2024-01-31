@@ -14,7 +14,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] GameObject hud, pauseMenu, pauseMenuResumeButton, optionsMenu, qualityDrop;
 
     [Header("HUD")]
-    [SerializeField] Slider playerHealthSlider;
+    [SerializeField] Image playerHealthSlider;
     [SerializeField] Image parryCd;
     [SerializeField] PlayerInput playerInput;
     PlayerHealth pHealth;
@@ -48,7 +48,7 @@ public class UiManager : MonoBehaviour
 
     public void UpdatePlayerHealthSlider()
     {
-        playerHealthSlider.value = pManager.playerHealth /100;
+        playerHealthSlider.fillAmount = pManager.playerHealth /100;
     }
 
 

@@ -1098,6 +1098,15 @@ por la tarde:
 mter sonidos otra vez--Ok
 terminar de meter musica--Ok
 Meter volumen sfx y musica--Ok(faltan los menues)
+
+
+Dia50:
+
+Meter nueva barra de vida--OK
+Meter animaciones y modelo de cristal nuevo--Ok
+Programar cristal nuevo--OK
+animarr creistal nueevo--
+Implementar cristal nuevo en rondas--
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------

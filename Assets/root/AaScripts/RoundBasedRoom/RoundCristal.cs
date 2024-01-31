@@ -1,114 +1,110 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.NCalc;
-using UnityEditor.Rendering;
 using UnityEngine;
-using static System.TimeZoneInfo;
+using UnityEngine.UIElements;
 
 public class RoundCristal : MonoBehaviour
 {
-    //Color lerp
-    [SerializeField] float timeBetwenShoots = 5f; 
-    private Color defaultColor;
-    private Color targetColor = Color.red;
-    private float transitionTimer = 0f;
 
+    [SerializeField] GameObject cristalObj;
+    [SerializeField] GameObject shootingPoint;
 
-    [SerializeField] GameObject proyectile;
     private Transform player;
+    readonly float rotationSpeed = 5.0f;
+    readonly float delay = 0.5f;
 
-    private MeshRenderer meshRenderer;
+    [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] LineRenderer shoot;
 
-    [SerializeField] int proyectileSpeed;
+    [SerializeField] LayerMask collideLayerMaks;
 
-    [SerializeField] List<GameObject> proyectiles;
+    private Vector3 playerPos;
+
+    private bool aboutToShoot, warkingRayCast;
 
     private void Awake()
     {
         player = GameObject.FindObjectOfType<PlayerHealth>().transform;
-        meshRenderer = GetComponent<MeshRenderer>();
+        cristalObj.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 90));
+
+        lineRenderer.enabled = false;
+        shoot.enabled = false;
     }
 
     private void Start()
     {
-        CreateProyectilePool();
     }
 
     private void Update()
     {
-       ShootAnim();
+        LookAtPlayer();
+
+        if (warkingRayCast)
+        {
+            Ray ray = new Ray(shootingPoint.transform.position, shootingPoint.transform.up);
+
+            RaycastHit hit;
+
+            Physics.Raycast(ray, out hit, Mathf.Infinity, collideLayerMaks);
+            lineRenderer.SetPosition(0, shootingPoint.transform.position);
+            lineRenderer.SetPosition(1, hit.point);
+        }
     }
 
-    private void CreateProyectilePool()
+
+
+    private void LookAtPlayer()
     {
-        for (int i = 0; i <= 1; i++)
+        if (!aboutToShoot)
         {
-            
-                GameObject go = Instantiate(proyectile);
-            proyectiles.Add(go);
-            go.SetActive(false);
+            Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
+            float yRotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime * delay).eulerAngles.y;
+            float xRotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime * delay).eulerAngles.x;
+            float zRotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime * delay).eulerAngles.z;
+
+
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, zRotation);
+            playerPos = transform.rotation  * Vector3.up;
         }
     }
-
-    
-    private void ShootAnim()
-    {
-        
-        transitionTimer += Time.deltaTime;
-
-
-
-        float progression = Mathf.Clamp01(transitionTimer / timeBetwenShoots);
-
-
-        if(progression < 0.33 && progression > 0.66)
-        {
-            //linecast amarillo
-        }
-
-
-
-        if (progression == 1)
-        {
-            transitionTimer = 0f;
-            Shoot();
-        }
-    }
-
 
     public void Reset()
     {
-        transitionTimer = 0f;
-        GetComponent<CristalHealthManager>().health = 20;
-        
-    }
+        cristalObj.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 90));
 
+    }
+    private void EnableWarning()
+    {
+        lineRenderer.enabled = true;
+        warkingRayCast = true;
+    }
+    private void AboutToShoot()
+    {
+        aboutToShoot = true;
+    }
     private void Shoot()
     {
+        lineRenderer.enabled = false;
+        warkingRayCast = false;
 
-        if(proyectiles.Count > 0)
-        {
+        aboutToShoot = false;
+        shoot.enabled = true;
+        Debug.Log("KJSAJHOD");
+        Ray ray = new Ray(shootingPoint.transform.position, shootingPoint.transform.up);
 
-            int random = Random.Range(0, proyectiles.Count);
+        RaycastHit hit;
 
-            if (!proyectiles[random].activeSelf)
-            {
-                Rigidbody rb = proyectiles[random].GetComponent<Rigidbody>();
+        Physics.Raycast(ray, out hit, Mathf.Infinity, collideLayerMaks);
+        shoot.SetPosition(0, shootingPoint.transform.position);
+        shoot.SetPosition(1, hit.point);
+        Debug.Log(hit.collider.name);
+        Invoke(nameof(ShootLineToFalse), 0.2f);
 
-                proyectiles[random].SetActive(true);
-                proyectiles[random].transform.position = transform.position;
-
-                rb.velocity = Vector3.zero;
-
-
-                Vector3 direction = (player.position - proyectiles[random].transform.position).normalized;
-
-                rb.AddForce(direction * proyectileSpeed, ForceMode.Impulse);
-
-            }
-
-        }
-        
     }
 
+    private void ShootLineToFalse()
+    {
+        shoot.enabled = false;
+
+    }
 }
