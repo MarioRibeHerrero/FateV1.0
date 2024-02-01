@@ -104,10 +104,15 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     private void InStrongAttackToTrue()
     {
+        pManager.playerCurrentDamage *= 2;
+
         pManager.inStrongAttack = true;
     }
     private void InStrongAttackToFalse()
     {
+        pManager.playerCurrentDamage = 20;
+
+
         pManager.inStrongAttack = false;
         pManager.canGoToThirdAttack = false;
 

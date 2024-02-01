@@ -22,6 +22,8 @@ public class PlayerSpawnPoint : MonoBehaviour
     [SerializeField] Material currentM, defaultM;
 
 
+    [SerializeField] HitToOpenDoorTutorial tutorial;
+
     private void Awake()
     {
         //GettingComponents
@@ -119,6 +121,9 @@ public class PlayerSpawnPoint : MonoBehaviour
             SaveSystem.SaveGameManager(GameManager.Instance);
 
         }
+
+        //tut
+        if (tutorial != null) tutorial.UnlockDoor();
     }
     private void SetNewCamOnRespawn()
     {

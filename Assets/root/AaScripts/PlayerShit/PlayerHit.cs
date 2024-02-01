@@ -36,8 +36,9 @@ public class PlayerHit : MonoBehaviour
         if (!pManager.isPlayerInvulnerable)
         {
             AudioManager.Instance.PlayPlayerHit();
+            pManager.playerCurrentDamage = 20;
 
-                if (takingSlow)
+            if (takingSlow)
                 {
                     StartCoroutine(SlowPlayer());
                     pManager.isPlayerInvulnerable = true;
@@ -106,7 +107,7 @@ public class PlayerHit : MonoBehaviour
         pushPlayer(hitPosition, pushBackForce);
         
 
-        yield return new WaitForSeconds(stunTime);
+        yield return new WaitForSeconds(stunTime / 3);
         pManager.isPlayerStunned = false;
         //Cosas q no puede hacer el player mientras este stuneado:
         //Moverse, rotar, atacar, parrear, 

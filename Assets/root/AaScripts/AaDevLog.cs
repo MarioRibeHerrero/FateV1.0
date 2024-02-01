@@ -1109,16 +1109,39 @@ animarr creistal nueevo--Ok
 Implementar cristal nuevo en rondas--Ok
 
 
+Dia51:
+arreglar  colliders raycast crsital--Ok
+añadir daño al pj--Ok
+
+arreglar animaciones salto--Oks
+movimiento camra al entrer rondas--Ok
+arreglar instantBoss--Ok
+nuevo stun boss--OK
+
+-puerta se abre al pillar la silla--Ok
+
+
+ajustar ataques boss--OK
+subir daño tercer ataque--Ok
+solucinar posiciones combo--Ok
+
+meter escalera nueva(atajo)--
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
+Arreglar posiciones sillas--
 
--termminar boss fight
+-añadir muerte boss
 
--Cambiar trampas por nuevas
+-termminar boss fight--
+
+-Cambiar trampas por nuevas--
+
+-Ajustar camaras--
+transicionesCamaras--
 
 
--Ajustar camaras
 
 
 -----

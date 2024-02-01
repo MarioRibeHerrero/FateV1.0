@@ -142,14 +142,16 @@ public class BossFightController : MonoBehaviour
                 case 4:
                     //CASE--->Ataque Combo
 
-                    DesapearIntoNewPos(midPoint.position);
                     if (playerRight)
                     {
+                        DesapearIntoNewPos(comboLeft.position);
+
                         onApear += LeftToRightCombo;
                         stunRight = true;
                     }
                     else
                     {
+                        DesapearIntoNewPos(comboRight.position);
                         onApear += RightToLeftCombo;
                         stunRight = false;
                     }

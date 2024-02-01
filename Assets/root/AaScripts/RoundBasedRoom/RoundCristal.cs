@@ -16,11 +16,12 @@ public class RoundCristal : MonoBehaviour
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] LineRenderer shoot;
 
-    [SerializeField] LayerMask collideLayerMaks;
+    [SerializeField] LayerMask warningLayers, rayLayers;
 
     private Vector3 playerPos;
 
     private bool aboutToShoot, warkingRayCast;
+    [SerializeField] float cristalDamage;
 
     private void Awake()
     {
@@ -33,6 +34,7 @@ public class RoundCristal : MonoBehaviour
 
     private void Start()
     {
+
     }
 
     private void Update()
@@ -41,11 +43,12 @@ public class RoundCristal : MonoBehaviour
 
         if (warkingRayCast)
         {
+
             Ray ray = new Ray(shootingPoint.transform.position, shootingPoint.transform.up);
 
             RaycastHit hit;
 
-            Physics.Raycast(ray, out hit, Mathf.Infinity, collideLayerMaks);
+            Physics.Raycast(ray, out hit, Mathf.Infinity, warningLayers);
             lineRenderer.SetPosition(0, shootingPoint.transform.position);
             lineRenderer.SetPosition(1, hit.point);
         }
@@ -83,11 +86,12 @@ public class RoundCristal : MonoBehaviour
     private void AboutToShoot()
     {
         aboutToShoot = true;
+        lineRenderer.enabled = false;
+        warkingRayCast = false;
     }
     private void Shoot()
     {
-        lineRenderer.enabled = false;
-        warkingRayCast = false;
+
 
         aboutToShoot = false;
         shoot.enabled = true;
@@ -95,11 +99,18 @@ public class RoundCristal : MonoBehaviour
         Ray ray = new Ray(shootingPoint.transform.position, shootingPoint.transform.up);
 
         RaycastHit hit;
+        RaycastHit hit2;
 
-        Physics.Raycast(ray, out hit, Mathf.Infinity, collideLayerMaks);
+        Physics.Raycast(ray, out hit, Mathf.Infinity, rayLayers);
+
+
         shoot.SetPosition(0, shootingPoint.transform.position);
         shoot.SetPosition(1, hit.point);
         Debug.Log(hit.collider.name);
+
+        Physics.Raycast(ray, out hit2, Mathf.Infinity, warningLayers);
+        if (hit2.collider.GetComponent<PlayerHit>() != null) hit.collider.GetComponent<PlayerHit>().HitPlayer(new Vector3(0,0,0),0,0,cristalDamage,true);
+
         Invoke(nameof(ShootLineToFalse), 0.2f);
 
     }

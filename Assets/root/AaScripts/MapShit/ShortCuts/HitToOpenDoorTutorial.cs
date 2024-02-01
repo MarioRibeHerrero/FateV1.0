@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Callbacks;
 using UnityEngine;
 
 public class HitToOpenDoorTutorial : MonoBehaviour
 {
     [SerializeField] Animator anim;
 
-
-    private void OnTriggerEnter(Collider other)
+    public void UnlockDoor()
     {
-        if (other.CompareTag("PlayerAa"))
-        {
-            anim.SetTrigger("OpenFast");
-            GetComponent<BoxCollider>().enabled = false;
-        }
+        anim.SetTrigger("OpenSlow");
+
     }
 }

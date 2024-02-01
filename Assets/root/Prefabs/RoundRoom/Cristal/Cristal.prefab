@@ -238,9 +238,12 @@ MonoBehaviour:
   shootingPoint: {fileID: 8287297726013790438}
   lineRenderer: {fileID: 7674494008473288348}
   shoot: {fileID: 7654740432446336139}
-  collideLayerMaks:
+  warningLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 264
+  rayLayers:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!95 &8863067028692639695
 Animator:
   serializedVersion: 5

@@ -13,7 +13,7 @@ public class CanParryBoss : MonoBehaviour
 
             if (!other.GetComponent<PlayerManager>().isPlayerParry)
             {
-                other.GetComponent<PlayerHit>().HitPlayer(this.transform.position, 30, 1, 40, false);
+                other.GetComponent<PlayerHit>().HitPlayer(this.transform.position, 30, 1, 30, false);
             }
             else
             {

@@ -116,7 +116,6 @@ public class PlayerAnimationManager : MonoBehaviour
     }
     public void SetGoingToThirdAttack()
     {
-
         anim.SetBool("goToThirdAttack", true);
 
     }
