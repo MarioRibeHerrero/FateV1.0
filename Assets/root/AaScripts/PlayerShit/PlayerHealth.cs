@@ -88,7 +88,8 @@ public class PlayerHealth : MonoBehaviour
     {
         SetCameraToRespawnCamera();
         yield return new WaitForSeconds(1);
-        transform.position = currentSpawnPoint.transform.position;
+        transform.position =
+            new Vector3(currentSpawnPoint.transform.position.x, currentSpawnPoint.transform.position.y, 0);
         transform.Find("Body").transform.gameObject.SetActive(true);
         ActivateAllPlayerFuntionsAndKill();
         pManager.playerHealth = 100f;

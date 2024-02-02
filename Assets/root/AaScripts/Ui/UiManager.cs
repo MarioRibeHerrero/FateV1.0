@@ -11,11 +11,17 @@ using TMPro;
 public class UiManager : MonoBehaviour
 {
     [Header("PauseMenuObjs")]
-    [SerializeField] GameObject hud, pauseMenu, pauseMenuResumeButton, optionsMenu, qualityDrop;
+    [SerializeField] private GameObject pauseMenu, pauseMenuResumeButton;
+    [Header("OptionsMenuObjs")]
+    [SerializeField] private GameObject optionsMenu, optionsVolume;
+    [Header("VolumeMenuObjs")]
+    [SerializeField] private GameObject volumeMenu, volumeVolumeSlider;
 
-    [Header("HUD")]
+    [SerializeField] private Slider masterSlider, musicSlider, sfxSlider;
+    
+    [Header("HUD")] 
+    [SerializeField] private GameObject hud;
     [SerializeField] Image playerHealthSlider;
-    [SerializeField] Image parryCd;
     [SerializeField] PlayerInput playerInput;
     PlayerHealth pHealth;
     PlayerManager pManager;
@@ -23,9 +29,7 @@ public class UiManager : MonoBehaviour
     public static Animator anim;
 
 
-    [Header("OptionsMenu")]
 
-    [SerializeField] TMP_Dropdown qualityDropDown;
     private void Awake()
     {
         //InputActions
@@ -37,6 +41,12 @@ public class UiManager : MonoBehaviour
 
 
         anim = GetComponent<Animator>();
+        
+        
+        //asdad
+        UpdateSfxSlider();
+        UpdateMasterSlider();
+        UpdateMusiclider();
     }
 
 
@@ -63,7 +73,6 @@ public class UiManager : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
     }
-
     public void OpenPauseMenu()
     {
         playerInput.SwitchCurrentActionMap("Menu");
@@ -79,7 +88,7 @@ public class UiManager : MonoBehaviour
         optionsMenu.SetActive(true);
         pauseMenu.SetActive(false);
 
-        EventSystem.current.SetSelectedGameObject(qualityDrop);
+        EventSystem.current.SetSelectedGameObject(optionsVolume);
 
     }
     public void CloseOptionsMenu()
@@ -93,11 +102,50 @@ public class UiManager : MonoBehaviour
     }
 
 
+    public void OpenVolumeMenu()
+    {
+        volumeMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(volumeVolumeSlider);
+
+    }
+    public void CloseVolumeMenu()
+    {
+        volumeMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+
+        EventSystem.current.SetSelectedGameObject(optionsVolume);
+
+
+    }
+
+    public void UpdateMasterSlider()
+    {
+        if (masterSlider.value == 0) masterSlider.value = AudioManager.Instance.generalVolume;
+        
+        AudioManager.Instance.generalVolume = masterSlider.value;
+    }
+    public void UpdateMusiclider()
+    {
+        if (musicSlider.value == 0) musicSlider.value = AudioManager.Instance.musicVolume;
+        
+        AudioManager.Instance.musicVolume = musicSlider.value;
+    }
+    public void UpdateSfxSlider()
+    {
+        if (sfxSlider.value == 0) sfxSlider.value = AudioManager.Instance.sfxVolume;
+        
+        AudioManager.Instance.sfxVolume = sfxSlider.value;
+    }
+
+    
+    
+    
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
     }
-
     public static void FadeIn()
     {
         anim.SetTrigger("Fade");
@@ -105,26 +153,4 @@ public class UiManager : MonoBehaviour
 
 
 
-    #region Quality
-
-
-    public void AdjustQuality(int number)
-    {
-        QualitySettings.SetQualityLevel(number);
-    }
-
-    public void AdjustOverallVolume(int number)
-    {
-        Debug.Log(number);
-    }
-    public void AdjustSfxVolume(int number)
-    {
-        Debug.Log(number);
-    }
-    public void AdjustMusicVolume(int number)
-    {
-        Debug.Log(number);
-    }
-
-    #endregion
 }

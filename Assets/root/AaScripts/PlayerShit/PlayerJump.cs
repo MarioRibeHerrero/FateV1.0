@@ -148,10 +148,9 @@ public class PlayerJump : MonoBehaviour
         if (isBufferJumping && pGroundCheck.isPlayerGrounded && jumpBufferTimer >= 0) 
         {
             //si una vez has cumplido lo anterior, sigues pulsando el boton de saltar, activamos el holding jump para q vuelvas al salto normal, en caso de que no sigas pulsandolo, hace un salto
-            //pequeño
+            //pequeï¿½o
             if (holdingJumpButton)
             {
-                Debug.Log("HOLA");
                 AudioManager.Instance.PlayPlayerJump();
 
                 isHoldingJump = true;

@@ -46,7 +46,7 @@ public class Credits : MonoBehaviour
 
         if (inCredits)
         {
-            animator.SetFloat("ScrollSpeed", 2.5f);
+            animator.SetFloat("ScrollSpeed", 5f);
         }
     }
 

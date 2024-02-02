@@ -109,7 +109,12 @@ public class RoundCristal : MonoBehaviour
         Debug.Log(hit.collider.name);
 
         Physics.Raycast(ray, out hit2, Mathf.Infinity, warningLayers);
-        if (hit2.collider.GetComponent<PlayerHit>() != null) hit.collider.GetComponent<PlayerHit>().HitPlayer(new Vector3(0,0,0),0,0,cristalDamage,true);
+        if (hit2.collider.GetComponent<PlayerHit>() != null)
+        {
+            Debug.Log(hit2.collider.transform.GetComponent<PlayerHit>());
+            
+            hit2.collider.transform.GetComponent<PlayerHit>().HitPlayer(new Vector3(0,0,0),0,0,cristalDamage,true);
+        }
 
         Invoke(nameof(ShootLineToFalse), 0.2f);
 

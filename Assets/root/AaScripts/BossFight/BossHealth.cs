@@ -62,14 +62,16 @@ public class BossHealth : MonoBehaviour
         {
 
             //Kill
-            bFController.inBelzegorFight = false;
-            gameObject.SetActive(false);
-            Invoke("LoadCredits", 3f);
+            bFController.EndBossFight();
         }
         
     }
 
-
+    public void EndFight()
+    {
+        bFController.inBelzegorFight = false;
+        Invoke("LoadCredits", 9f);
+    }
 
     private void LoadCredits()
     {

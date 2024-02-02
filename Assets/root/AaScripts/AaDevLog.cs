@@ -1127,15 +1127,30 @@ solucinar posiciones combo--Ok
 
 meter escalera nueva(atajo)--
 
+
+
+Dia52:
+
+Arreglar posiciones sillas--Ok
+
+-añadir muerte boss-OK
+   
+
+   
+-Ajustar sillas--oK
+
+
+
+-aJUSTAR Menues--Ok
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
-Arreglar posiciones sillas--
 
--añadir muerte boss
 
 -termminar boss fight--
-
+   
+-implementar rayo laser--
+   
 -Cambiar trampas por nuevas--
 
 -Ajustar camaras--

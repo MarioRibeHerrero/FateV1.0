@@ -92,7 +92,7 @@ public class BossFightController : MonoBehaviour
                     //CASE--->Ataque pilares
                     //Ponemos posicion a donde queremos
                     DesapearIntoNewPos(backPos.position);
-                    //añadimos metodo al evento
+                    //a?adimos metodo al evento
                     onApear += PilarAttack;
                     break;
                 case 2:
@@ -172,7 +172,7 @@ public class BossFightController : MonoBehaviour
                 {
                     //Ponemos posicion a donde queremos
                     DesapearIntoNewPos(backPos.position);
-                    //añadimos metodo al evento
+                    //a?adimos metodo al evento
                     onApear += PilarAttack;
                     isPilarInCD = true;
                     AddTopPilarCD();
@@ -307,7 +307,7 @@ public class BossFightController : MonoBehaviour
 
                 //Ponemos posicion a donde queremos
                 DesapearIntoNewPos(backPos.position);
-                //añadimos metodo al evento
+                //a?adimos metodo al evento
                 onApear += PilarAttack;
                 break;
         }
@@ -379,7 +379,21 @@ public class BossFightController : MonoBehaviour
         anim.SetTrigger("StartBoosFight");
     }
 
+    public void EndBossFight()
+    {
+        DesapearIntoNewPos(backPos.position);
+        onApear += BossDied;
+        Invoke("CloseTelones", 2f);
+    }
 
+    private void CloseTelones()
+    {
+        anim.SetTrigger("EndBossFight");
+    }
+    
+    
+    
+    
     public void DesapearIntoNewPos(Vector3 whereToSpawn)
     {
         spawnPos = whereToSpawn;
@@ -392,6 +406,12 @@ public class BossFightController : MonoBehaviour
 
 
 
+    private void BossDied()
+    {
+        bodyAnimator.SetTrigger("Die");
+        bHealth.EndFight();
+
+    }
     #region Attacks
 
 
