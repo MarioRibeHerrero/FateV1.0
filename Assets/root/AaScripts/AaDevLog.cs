@@ -1164,11 +1164,19 @@ Palanca--Ok
 Arreglar problema popup1-3-1--Ok
 Fate para subir y bajar mapa-OK
 Fade al coger doble salto--OK
-fade al abrir menu--
-   
+
+
+--
+-Meter font definitiva--Ok
+hacer prueba en menu pause--OK
+
+
+
+
 PREGUNTAR DAILY:
 fate desafiar boss---
 fate subir y bajar atajo-
+fade al abrir menu--
 
 
 
