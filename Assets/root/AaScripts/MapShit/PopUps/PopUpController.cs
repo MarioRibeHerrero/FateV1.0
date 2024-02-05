@@ -16,15 +16,18 @@ public class PopUpController : MonoBehaviour
     private bool canvasTutorial;
     public void ExitPopUp()
     {
+        if (textToApear == null) return;
+        Debug.Log("FADE");
         Time.timeScale = 1;
         PlayerInteract.onInteract -= WhenInteract;
         canvasTutorial = true;
-        textToApear.GetComponent<Animator>().SetTrigger("Exit");
         if (needTutorial) tutorial.SetActive(false);
+        textToApear.GetComponent<Animator>().SetTrigger("Exit");
 
     }
     private void LoadPopUp()
     {
+        if (textToApear == null) return;
         Time.timeScale = 0;
         textToApear.SetActive(true);
     }
@@ -33,8 +36,8 @@ public class PopUpController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if(needTutorial) tutorial.SetActive(true);
+
             if(!canvasTutorial)PlayerInteract.onInteract += WhenInteract;
-            
             if(canvasTutorial || !needTutorial) PlayerInteract.onInteract += OnInteractAfterTut;
         }
     }
@@ -59,12 +62,13 @@ public class PopUpController : MonoBehaviour
 
     private void WhenInteract()
     {
+        if (textToApear == null) return;
         LoadPopUp();
     }
 
     private void OnInteractAfterTut()
     {
-        Debug.Log(("JASODJASONFIAUB"));
+        if (textToApear == null) return;
         tutorial.GetComponent<Animator>().SetTrigger("Exit");
 
     }

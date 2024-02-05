@@ -1160,13 +1160,15 @@ arreglar sentado en silla raro--Ak
 
 
 FALTA:
-Fate para subir y bajar mapa-
-Fade al coger doble salto--
-fate subir y bajar atajo-
-fate desafiar boss-
+Palanca--Ok
+Arreglar problema popup1-3-1--Ok
+Fate para subir y bajar mapa-OK
+Fade al coger doble salto--OK
 fade al abrir menu--
    
-   
+PREGUNTAR DAILY:
+fate desafiar boss---
+fate subir y bajar atajo-
 
 
 
@@ -1176,6 +1178,8 @@ fade al abrir menu--
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
+
+
 --Meter textura enemigo Melee
 
 -Ajustar camaras--

@@ -21,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] bool changingDirection;
 
+    [SerializeField] GameObject bodyAnim;
+
     //public
     public bool hasStopedMidAir;
 
@@ -68,8 +70,8 @@ public class PlayerMovement : MonoBehaviour
         //check if you are changing direcction
 
         if(!GameManager.Instance.thirdPersonCam) changingDirection = pGroundCheck.isPlayerGrounded && (rb.velocity.x < 0 && inputs.x > 0) || (rb.velocity.x > 0 && inputs.x < 0);
-
-
+        if (changingDirection) bodyAnim.GetComponent<Animator>().SetTrigger("Turn");
+        Debug.Log(changingDirection);
 
         //we set a movement aceleration for the grounded player and anotherone for airplayer
 

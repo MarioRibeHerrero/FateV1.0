@@ -21,11 +21,7 @@ using System.Collections.Generic;
     
         void Update()
         {
-            if(Input.GetKeyDown (KeyCode.Space))
-            {
-                Debug.Log(("DISOLVER"));
-                StartCoroutine(DissolveCo());
-            }
+
 
 
 
