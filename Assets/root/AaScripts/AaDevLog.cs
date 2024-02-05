@@ -1169,6 +1169,7 @@ Fade al coger doble salto--OK
 --
 -Meter font definitiva--Ok
 hacer prueba en menu pause--OK
+añadido texto y texturas en popups--Ok
 
 
 
