@@ -83,4 +83,22 @@ public class PlayerRotation : MonoBehaviour
         inputs = playerInput.actions["Movement"].ReadValue<Vector2>();
         return inputs;
     }
+
+
+    public void ForceFaceRightLeft(bool faceRight)
+    {
+        if (faceRight)
+        {
+            isFacingRight = true;
+            playerBody.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        }
+        else
+        {
+            isFacingRight = false;
+
+            playerBody.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+        }
+    }
 }

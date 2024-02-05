@@ -6,16 +6,20 @@ using UnityEngine;
 public class PopUpController : MonoBehaviour
 {
 
-    [SerializeField] GameObject textToApear, goToHide;
+    [SerializeField] GameObject textToApear;
 
 
     [SerializeField] bool needTutorial;
     [SerializeField] GameObject tutorial;
+
+
+    private bool canvasTutorial;
     public void ExitPopUp()
     {
         Time.timeScale = 1;
         PlayerInteract.onInteract -= WhenInteract;
-        goToHide.SetActive(false);
+        canvasTutorial = true;
+        textToApear.GetComponent<Animator>().SetTrigger("Exit");
         if (needTutorial) tutorial.SetActive(false);
 
     }
@@ -29,7 +33,9 @@ public class PopUpController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             if(needTutorial) tutorial.SetActive(true);
-            PlayerInteract.onInteract += WhenInteract;
+            if(!canvasTutorial)PlayerInteract.onInteract += WhenInteract;
+            
+            if(canvasTutorial || !needTutorial) PlayerInteract.onInteract += OnInteractAfterTut;
         }
     }
 
@@ -38,9 +44,13 @@ public class PopUpController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (needTutorial) tutorial.SetActive(false);
+            if (needTutorial) tutorial.GetComponent<Animator>().SetTrigger("Exit");
 
-            PlayerInteract.onInteract -= WhenInteract;
+            if(!canvasTutorial)PlayerInteract.onInteract -= WhenInteract;
+            
+            
+            if(canvasTutorial || !needTutorial) PlayerInteract.onInteract -= OnInteractAfterTut;
+
 
 
         }
@@ -50,5 +60,12 @@ public class PopUpController : MonoBehaviour
     private void WhenInteract()
     {
         LoadPopUp();
+    }
+
+    private void OnInteractAfterTut()
+    {
+        Debug.Log(("JASODJASONFIAUB"));
+        tutorial.GetComponent<Animator>().SetTrigger("Exit");
+
     }
 }

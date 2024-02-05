@@ -50,11 +50,12 @@ public class MeleeEnemyTutorial : MonoBehaviour
     public void ResumeTimeScale()
     {
 
-            textTutorial1.SetActive(false);
+            textTutorial1.GetComponent<Animator>().SetTrigger("Exit");
       //  textTutorial2(true);
             Time.timeScale = 1f;
             tutDone = true;
-       
+            pInput.SwitchCurrentActionMap("PlayerNormalMovement");
+
 
     }
 

@@ -11,6 +11,7 @@ public class PlayerAnimationEvents : MonoBehaviour
     PlayerHealth pHealth;
     PlayerHook pHook;
     PlayerAa pAa;
+    private PlayerRotation pRotation;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -19,6 +20,7 @@ public class PlayerAnimationEvents : MonoBehaviour
         pHealth = player.GetComponent<PlayerHealth>();
         pHook = player.GetComponent<PlayerHook>();
         pAa = player.GetComponent<PlayerAa>();
+        pRotation = player.GetComponent<PlayerRotation>();
     }
     private void CanPlayerMoveToFalse()
     {
@@ -171,4 +173,7 @@ public class PlayerAnimationEvents : MonoBehaviour
 
 
     }
+
+
+
 }

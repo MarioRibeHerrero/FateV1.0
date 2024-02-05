@@ -50,30 +50,8 @@ public class PlayerSpawnPoint : MonoBehaviour
         playerInput.SwitchCurrentActionMap("PopUps");
 
         LeanTween.moveLocalX(gameObject, spawnPoint.transform.position.x, 0.5f);
-
-
-        if (pRotation.isFacingRight)
-        {
-            //
-
-            anim.SetTrigger("SitLeft");
-
-            AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
-            foreach (AnimationClip clip in clips)
-            {
-
-                if (clip.name == "Fate_SitLeft")
-                {
-                    Invoke(nameof(SetSpawnPoint), clip.length);
-                    break;
-
-                }
-
-            }
-
-        }
-        else
-        {
+        
+        pRotation.ForceFaceRightLeft(false);
             anim.SetTrigger("SitRight");
 
             AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
@@ -86,7 +64,7 @@ public class PlayerSpawnPoint : MonoBehaviour
                     break;
                 }
             }
-        }
+        
 
 
 

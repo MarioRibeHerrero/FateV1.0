@@ -1132,29 +1132,60 @@ meter escalera nueva(atajo)--
 Dia52:
 
 Arreglar posiciones sillas--Ok
-
 -añadir muerte boss-OK
-   
-
-   
 -Ajustar sillas--oK
-
-
-
 -aJUSTAR Menues--Ok
+
+
+Dia53:
+meter todo arte 2d:
+
+mETER animaciones popups(fade InFadeOut)--Ok
+-meter arte 2d para coger gancho y doble salto--Ok
+meter fade in fade out en el tutorial enemigo melee(Tutorial)--Ok
+-meter arte parry--Ok
+-hacer que animaciones funcionen bn en todas las sillas--Ok
+-Solucionar enemigo desaparece en 2 seg;
+
+-Meter cuadro en menues-Ok
+-Meter barra vida nueva--Ok
+
+meter fade en guia sentarse silla--Ok
+Lo mismo pero para todas--Ok
+popUpDesaparece al sentarse--Ok
+
+
+arreglar sentado en silla raro--Ak
+
+
+
+FALTA:
+Fate para subir y bajar mapa-
+Fade al coger doble salto--
+fate subir y bajar atajo-
+fate desafiar boss-
+fade al abrir menu--
+   
+   
+
+
+
+
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
+--Meter textura enemigo Melee
 
-
--termminar boss fight--
+-Ajustar camaras--
+transicionesCamaras--
+   
    
 -implementar rayo laser--
    
 -Cambiar trampas por nuevas--
 
--Ajustar camaras--
-transicionesCamaras--
 
 
 
