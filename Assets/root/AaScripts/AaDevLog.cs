@@ -1186,19 +1186,20 @@ arreglar colliders sillas con popups--
 -transicionesCamaras:
 muerte fade--OK
 hacer menues--oK
-
+--Meter textura enemigo Melee--ok
+-Delay al sentarse el popup--OK
+-Ajustar colliders--Ok
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
-
+-Montar boss fight guay
    
-   
+-mETER musica nueva--
+-meter sonidos nuevos-
 -implementar rayo laser--
-   
 -Cambiar trampas por nuevas--
 
---Meter textura enemigo Melee
    
 
 
@@ -1218,8 +1219,6 @@ BOSS
 
 NO PRIORITARIO:
 -hacer coleccionable
-
-
 -Re hacer el sistema de aa triple, o por lo menos entenderolo
 -Revisar todos los sccrips del melee por nuevos(hechos la mtad o asi)
 -A�adir regiones y ordenar codigo

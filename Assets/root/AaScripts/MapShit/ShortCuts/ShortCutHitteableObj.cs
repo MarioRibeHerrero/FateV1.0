@@ -20,7 +20,7 @@ public class ShortCutHitteableObj : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("PlayerAa"))
+        if (other.CompareTag("Player"))
         {
             ActivateShortCut();
         }

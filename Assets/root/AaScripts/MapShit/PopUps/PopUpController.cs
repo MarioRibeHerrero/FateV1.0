@@ -64,7 +64,7 @@ public class PopUpController : MonoBehaviour
     private void WhenInteract()
     {
         if (textToApear == null) return;
-        LoadPopUp();
+        Invoke(nameof(LoadPopUp), 1);
     }
 
     private void OnInteractAfterTut()

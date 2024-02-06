@@ -73,6 +73,7 @@ public class TpRoomTracking : MonoBehaviour
 
     private void UsingTp()
     {
+        SaveSystem.SaveGameManager(GameManager.Instance);
 
         if(GameManager.Instance.currentRoom == previusRoom)
         {
