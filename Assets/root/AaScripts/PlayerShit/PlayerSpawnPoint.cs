@@ -53,21 +53,7 @@ public class PlayerSpawnPoint : MonoBehaviour
         
         pRotation.ForceFaceRightLeft(false);
             anim.SetTrigger("SitRight");
-
-            AnimationClip[] clips = anim.runtimeAnimatorController.animationClips;
-
-            foreach (AnimationClip clip in clips)
-            {
-                if (clip.name == "Fate_SitRight")
-                {
-                    Invoke(nameof(SetSpawnPoint), clip.length);
-                    break;
-                }
-            }
-        
-
-
-
+            
     }
 
 

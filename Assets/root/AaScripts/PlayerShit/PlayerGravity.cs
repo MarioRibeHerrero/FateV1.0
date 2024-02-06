@@ -41,4 +41,15 @@ public class PlayerGravity : MonoBehaviour
 
 
     }
+
+    public void StopPlayerMoving()
+    {
+        gravityScale = 0;
+        rb.velocity = Vector3.zero;
+    }
+    public void ReturnPlayerMovement()
+    {
+        gravityScale = 35;
+        
+    }
 }

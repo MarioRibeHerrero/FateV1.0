@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAnimationEvents : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class PlayerAnimationEvents : MonoBehaviour
     PlayerHealth pHealth;
     PlayerHook pHook;
     PlayerAa pAa;
+    private PlayerSpawnPoint playerSpawnPoint;
+    private PlayerInput pInput;
     private PlayerRotation pRotation;
     private void Awake()
     {
@@ -21,6 +24,8 @@ public class PlayerAnimationEvents : MonoBehaviour
         pHook = player.GetComponent<PlayerHook>();
         pAa = player.GetComponent<PlayerAa>();
         pRotation = player.GetComponent<PlayerRotation>();
+        pInput = player.GetComponent<PlayerInput>();
+        playerSpawnPoint = player.GetComponent<PlayerSpawnPoint>();
     }
     private void CanPlayerMoveToFalse()
     {
@@ -169,11 +174,17 @@ public class PlayerAnimationEvents : MonoBehaviour
     private void SfxChairSeat()
     {
         AudioManager.Instance.PlayPlayerChairSit();
-        pManager.playerSitting = false;
 
 
     }
 
+    private void ChairSeatEnd()
+    {
+        playerSpawnPoint.SetSpawnPoint();
+        pInput.SwitchCurrentActionMap("PlayerNormalMovement");
+        pManager.playerSitting = false;
+
+    }
 
 
 }

@@ -23,6 +23,7 @@ public class PopUpController : MonoBehaviour
         canvasTutorial = true;
         if (needTutorial) tutorial.SetActive(false);
         textToApear.GetComponent<Animator>().SetTrigger("Exit");
+        
 
     }
     private void LoadPopUp()

@@ -72,6 +72,7 @@ public class PlayerHealth : MonoBehaviour
         transform.Find("Body").transform.gameObject.SetActive(false);
 
         pInput.SwitchCurrentActionMap("Dead");
+        GetComponent<PlayerGravity>().StopPlayerMoving();
         AudioManager.Instance.PlayPlayerDeath();
 
     }
@@ -87,7 +88,12 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator RevivePlayer()
     {
         SetCameraToRespawnCamera();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.75f);
+        UiManager.FadeIn();
+        yield return new WaitForSeconds(0.25f);
+
+        GetComponent<PlayerGravity>().ReturnPlayerMovement();
+
         transform.position =
             new Vector3(currentSpawnPoint.transform.position.x, currentSpawnPoint.transform.position.y, 0);
         transform.Find("Body").transform.gameObject.SetActive(true);

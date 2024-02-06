@@ -1146,26 +1146,17 @@ meter fade in fade out en el tutorial enemigo melee(Tutorial)--Ok
 -meter arte parry--Ok
 -hacer que animaciones funcionen bn en todas las sillas--Ok
 -Solucionar enemigo desaparece en 2 seg;
-
 -Meter cuadro en menues-Ok
 -Meter barra vida nueva--Ok
-
 meter fade en guia sentarse silla--Ok
 Lo mismo pero para todas--Ok
 popUpDesaparece al sentarse--Ok
-
-
 arreglar sentado en silla raro--Ak
-
-
-
 FALTA:
 Palanca--Ok
 Arreglar problema popup1-3-1--Ok
 Fate para subir y bajar mapa-OK
 Fade al coger doble salto--OK
-
-
 --
 -Meter font definitiva--Ok
 hacer prueba en menu pause--OK
@@ -1180,26 +1171,34 @@ fate subir y bajar atajo-
 fade al abrir menu--
 
 
+Dia54:
 
-
+-bug no se levanta silla-Ok
+-meter map nuevo--Ok
+Ajustar todos los colliders:
+colliders suelo--Ok
+colliders sala rodas--Ok
+Arreglar bug no se abre puerta lobby--Ok
+animaciones puertas sala rondas--ok
+-Arreglar todos colliders--Ok
+arreglar colliders sillas con popups--
+-Ajustar camaras--Ok
+-transicionesCamaras:
+muerte--
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 
-
---Meter textura enemigo Melee
-
--Ajustar camaras--
-transicionesCamaras--
    
    
 -implementar rayo laser--
    
 -Cambiar trampas por nuevas--
 
-
+--Meter textura enemigo Melee
+   
 
 
 

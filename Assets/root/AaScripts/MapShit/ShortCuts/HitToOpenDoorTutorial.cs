@@ -6,6 +6,7 @@ public class HitToOpenDoorTutorial : MonoBehaviour
 
     public void UnlockDoor()
     {
+        Debug.Log("ASDPJA)SDHAS");
         anim.SetTrigger("OpenSlow");
 
     }
