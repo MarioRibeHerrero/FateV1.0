@@ -1184,7 +1184,8 @@ animaciones puertas sala rondas--ok
 arreglar colliders sillas con popups--
 -Ajustar camaras--Ok
 -transicionesCamaras:
-muerte--
+muerte fade--OK
+hacer menues--oK
 
 
 -----------------------------------------------------------------------------------------------------------------------------------

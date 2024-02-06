@@ -67,10 +67,13 @@ public class UiManager : MonoBehaviour
 
     public void ClosePauseMenu()
     {
+        CloseVolumeMenu();
+        CloseOptionsMenu();
         playerInput.SwitchCurrentActionMap("PlayerNormalMovement");
 
         hud.SetActive(true);
         pauseMenu.SetActive(false);
+        
         Time.timeScale = 1f;
     }
     public void OpenPauseMenu()
