@@ -33,9 +33,13 @@ public class DissolvingControllerTut : MonoBehaviour
 
 
     }
-
+    public void Disolve()
+    {
+        StartCoroutine(DissolveCo());
+    }
     IEnumerator DissolveCo()
-    { 
+    {
+        Debug.Log("LLEGA");
     
          if(skinnedMaterials.Length > 0)
         {

@@ -1193,24 +1193,33 @@ hacer menues--oK
 
 Dia55:
 Boss (1)
-Columjs durame menos
-Combo más dificil segunda fasev
-Q se vaya 0.33 seg antes la patada(primera fase) 
-Columnas mas rápidas segunda fase
-Columnas(3 seg normal 2 seg segunda) 
+Columjs durame menos(primera fase)--Ok
+
+Combo más dificil:
+hacer que llegue mas lejos-Ok
+segunda fase mas rapido--Ok(stun dura menos)
+
+Q se vaya 0.33 seg antes la patada(primera fase)--Ok
+
+Columnas mas rápidas segunda fase--Ok
+Columnas(3 seg normal 2 seg segunda) --OK(mas menos)
+quitado opcion que pilares no combinen en segunda fase.
+
+Small Fixes:
+añadir disolve--
+Enemigo muere lento tuto--
+Cristal--
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
-Enemigo muere lento tuto 1
 Boton tuto 1
-Trampa lenta 2
-Curar al sentarte en lugar de luego  3
+Trampa lenta 2(esperamos a trampa nueva)
 Ganchos 2
-Cristal 1
 Transiciones fall y jump 1
 Animaciónes ataque 1 y 2(. 3
 Transiciones huook jump.   2
+Curar al sentarte en lugar de luego 3
 
 
 

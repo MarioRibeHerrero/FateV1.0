@@ -8,8 +8,12 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
     private RoundManager roundManager;
     private Animator anim;
 
+
+    DissolvingControllerTut disolveEffect;
+
     private void Awake()
     {
+        disolveEffect = GetComponent<DissolvingControllerTut>();
         state = GetComponent<MeleeEnemyState>();
         anim = GetComponent<Animator>();
         roundManager = FindAnyObjectByType<RoundManager>();
@@ -40,6 +44,10 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
             //no se usa xq ahora lo llamo con delagados desde el roundmanager
             anim.SetTrigger("Die");
+            GetComponent<Animator>().enabled = false;
+            GetComponent<BoxCollider>().enabled = false;
+            disolveEffect.Disolve();
+
 
         }
     }
