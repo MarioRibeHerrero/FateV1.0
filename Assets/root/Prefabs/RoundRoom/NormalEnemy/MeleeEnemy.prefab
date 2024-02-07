@@ -5854,7 +5854,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4980824673156418372}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 82e7094064b467442bdfc13abdd54316, type: 2}
   m_CullingMode: 0
@@ -5946,6 +5946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0d9c254139aa8c449584506044468af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skinnedMesh: {fileID: 3767630018832833440}
   isDead: 0
 --- !u!114 &2247623789954187919
 MonoBehaviour:
@@ -6001,7 +6002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMesh: {fileID: 3767630018832833440}
-  dissolveRate: 0.0125
+  dissolveRate: 0.0255
   refreshRate: 0.025
 --- !u!1 &5185930383588319971
 GameObject:

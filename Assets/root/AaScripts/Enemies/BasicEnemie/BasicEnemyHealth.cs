@@ -11,22 +11,24 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
     DissolvingControllerTut disolveEffect;
 
+
+
+    [SerializeField] SkinnedMeshRenderer skinnedMesh;
+    private Material[] skinnedMaterials;
+    private Color[] originalColors;
+
     private void Awake()
     {
         disolveEffect = GetComponent<DissolvingControllerTut>();
         state = GetComponent<MeleeEnemyState>();
         anim = GetComponent<Animator>();
         roundManager = FindAnyObjectByType<RoundManager>();
-        
+
+
+
     }
 
-    public void TakeDamage(int damage)
-    {
 
-        state.health -= damage;
-        CheckHealth();
-        anim.SetTrigger("Hit");
-    }
 
 
 
@@ -44,8 +46,6 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
             //no se usa xq ahora lo llamo con delagados desde el roundmanager
             anim.SetTrigger("Die");
-            GetComponent<Animator>().enabled = false;
-            GetComponent<BoxCollider>().enabled = false;
             disolveEffect.Disolve();
 
 
@@ -77,6 +77,30 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
 
 
 
+    }
+    public void TakeDamage(int damage)
+    {
+
+        state.health -= damage;
+        CheckHealth();
+    }
+
+    private IEnumerator HitAnim()
+    {
+        // Set the material colors to the flash color
+        for (int i = 0; i < skinnedMaterials.Length; i++)
+        {
+            skinnedMaterials[i].color = Color.white;
+        }
+
+        // Wait for the duration of the flash
+        yield return new WaitForSeconds(0.15f);
+
+        // Revert the material colors back to the original colors
+        for (int i = 0; i < skinnedMaterials.Length; i++)
+        {
+            skinnedMaterials[i].color = originalColors[i];
+        }
     }
 
 }

@@ -13,6 +13,8 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
      MeleeEnemyState stateManager;
      Animator animator;
      BasicEnemyHealth healthManager;
+    DissolvingControllerTut disolveEffect;
+
 
 
     public bool facingRight;
@@ -61,7 +63,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         animator = GetComponent<Animator>();
         healthManager = GetComponent<BasicEnemyHealth>();
         stateManager = GetComponent<MeleeEnemyState>();
-        
+        disolveEffect = GetComponent<DissolvingControllerTut>();
     }
     
     private void Start()
@@ -84,6 +86,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
         //transform.localPosition = Vector3.zero;
         stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
         healthManager.isDead = false;
+        disolveEffect.Reset();
     }
 
 

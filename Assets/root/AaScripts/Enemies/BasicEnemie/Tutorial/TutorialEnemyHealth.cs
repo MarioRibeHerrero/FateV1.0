@@ -6,10 +6,11 @@ public class TutorialEnemyHealth : MonoBehaviour, IDamageable
 {
 
     [SerializeField] GameObject game;
+    [SerializeField] int health;
     public void TakeDamage(int damge)
     {
-        Invoke("TurnOff",2f);
-
+        health -= damge;
+        if (health < 0) TurnOff();
     }
 
     private void TurnOff()

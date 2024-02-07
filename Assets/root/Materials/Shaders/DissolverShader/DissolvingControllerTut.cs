@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class DissolvingControllerTut : MonoBehaviour
 {
 
 
     public SkinnedMeshRenderer skinnedMesh;
-    public float dissolveRate = 0.0125f;
+    public float dissolveRate = 0.0255f;
     public float refreshRate = 0.025f;
 
     private Material[] skinnedMaterials; 
@@ -19,19 +20,13 @@ public class DissolvingControllerTut : MonoBehaviour
             skinnedMaterials = skinnedMesh.materials;
     }
 
-    
-    void Update()
+
+    public void Reset()
     {
-        if(Input.GetKeyDown (KeyCode.Space))
+        for (int i = 0; i < skinnedMaterials.Length; i++)
         {
-            StartCoroutine(DissolveCo());
+            skinnedMaterials[i].SetFloat("_DissolveAmount", 0);
         }
-
-
-
-
-
-
     }
     public void Disolve()
     {
@@ -39,8 +34,6 @@ public class DissolvingControllerTut : MonoBehaviour
     }
     IEnumerator DissolveCo()
     {
-        Debug.Log("LLEGA");
-    
          if(skinnedMaterials.Length > 0)
         {
             float counter = 0;

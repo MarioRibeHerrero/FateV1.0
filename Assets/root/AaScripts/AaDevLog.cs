@@ -1206,20 +1206,31 @@ Columnas(3 seg normal 2 seg segunda) --OK(mas menos)
 quitado opcion que pilares no combinen en segunda fase.
 
 Small Fixes:
-añadir disolve--
+añadir disolve--OK(small mis cojones)
+añadir hit(el antiguo noi funciona con el disolve)--
+Transiciones fall y jump 1--OK
+arreglar bug ataque se queda pillado--OK
+Agregar reset al disolve para sala rondas--Ok
+Cristal se sale del eje z--OK
+Funciona medio raro a veces pero weno de momento sirve
+
+meter sliders nuevos--Ok
+
+Trampa lenta 2(esperamos a trampa nueva)--Okw
+
+
+
+
 Enemigo muere lento tuto--
-Cristal--
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 Boton tuto 1
-Trampa lenta 2(esperamos a trampa nueva)
 Ganchos 2
-Transiciones fall y jump 1
-Animaciónes ataque 1 y 2(. 3
 Transiciones huook jump.   2
 Curar al sentarte en lugar de luego 3
+Animaciónes ataque 1 y 2() 3
 
 
 
