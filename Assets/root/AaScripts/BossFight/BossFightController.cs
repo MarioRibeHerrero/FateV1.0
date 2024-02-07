@@ -46,17 +46,7 @@ public class BossFightController : MonoBehaviour
     [SerializeField] Transform midPoint;
     [SerializeField] Transform comboRight;
     [SerializeField] Transform comboLeft;
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.U))
-        {
-            StartBossFight();
-        }
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            ResetBossFight();
-        }
-    }
+
     private void Awake()
     {
         pHealth = GameObject.FindAnyObjectByType<PlayerHealth>();
@@ -73,8 +63,21 @@ public class BossFightController : MonoBehaviour
 
         //animation Speed
 
-        if (inSecondFace) bodyAnimator.SetFloat("AfkAnimSpeed", 5);
-        else bodyAnimator.SetFloat("AfkAnimSpeed", 1);
+        if (inSecondFace)
+        {
+            bodyAnimator.SetFloat("AfkAnimSpeed", 5);
+            bodyAnimator.SetFloat("SecondFaceStun", 2.5f);
+            anim.SetFloat("PilarSpeed", 1.5f);
+
+
+        }
+        else
+        {
+            bodyAnimator.SetFloat("AfkAnimSpeed", 1);
+            bodyAnimator.SetFloat("SecondFaceStun", 1);
+            anim.SetFloat("PilarSpeed", 1);
+
+        }
 
 
 

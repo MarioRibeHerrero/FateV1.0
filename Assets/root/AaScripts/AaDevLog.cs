@@ -1190,10 +1190,31 @@ hacer menues--oK
 -Delay al sentarse el popup--OK
 -Ajustar colliders--Ok
 
+
+Dia55:
+Boss (1)
+Columjs durame menos
+Combo más dificil segunda fasev
+Q se vaya 0.33 seg antes la patada(primera fase) 
+Columnas mas rápidas segunda fase
+Columnas(3 seg normal 2 seg segunda) 
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
--Montar boss fight guay
+Enemigo muere lento tuto 1
+Boton tuto 1
+Trampa lenta 2
+Curar al sentarte en lugar de luego  3
+Ganchos 2
+Cristal 1
+Transiciones fall y jump 1
+Animaciónes ataque 1 y 2(. 3
+Transiciones huook jump.   2
+
+
+
+Meter textura boss
    
 -mETER musica nueva--
 -meter sonidos nuevos-
