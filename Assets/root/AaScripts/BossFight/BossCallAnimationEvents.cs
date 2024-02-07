@@ -88,7 +88,7 @@ public class BossCallAnimationEvents : MonoBehaviour
     {
         if (bFController.inSecondFace)
         {
-            if (Random.Range(1, 11) <= 2) return;
+            //if (Random.Range(1, 11) <= 2) return;
             bFController.CallCombinedAttackPilar();
 
         }
