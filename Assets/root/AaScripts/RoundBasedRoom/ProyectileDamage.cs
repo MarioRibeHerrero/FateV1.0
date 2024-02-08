@@ -22,7 +22,7 @@ public class ProyectileDamage : MonoBehaviour, IDamageable
 
                 TakeDamage(10);
                 //healFor the parry ammount
-                other.GetComponent<PlayerHealth>().HealPlayer(other.GetComponent<PlayerManager>().parryHealingAmmount);
+                other.GetComponent<PlayerHealth>().HealParryPlayer(other.GetComponent<PlayerManager>().parryHealingAmmount);
 
             }
             else

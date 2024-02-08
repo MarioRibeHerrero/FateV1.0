@@ -15,6 +15,12 @@ public class PlayerAnimationEvents : MonoBehaviour
     private PlayerSpawnPoint playerSpawnPoint;
     private PlayerInput pInput;
     private PlayerRotation pRotation;
+
+
+
+    [Header("PARTICLE SYSTEM")]
+
+    [SerializeField] ParticleSystem aa1, aa2;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -153,10 +159,12 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     private void SfxAa1()
     {
+        aa1.Play();
         AudioManager.Instance.PlayPlayerAa1();
     }
     private void SfxAa2()
     {
+        aa2.Play();
         AudioManager.Instance.PlayPlayerAa2();
 
     }

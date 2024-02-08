@@ -34,7 +34,7 @@ public class BasicEnemyHitPoint : MonoBehaviour
 
     private void HealPlayer()
     {
-        phealth.HealPlayer(pManager.parryHealingAmmount);
+        phealth.HealParryPlayer(pManager.parryHealingAmmount);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -36,11 +36,9 @@ public class AudioManager : MonoBehaviour
         //audioReferences
         secondPhaseBossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossFight/SecondPhase");
         bossEntry = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossFight/BossLoop");
-        
-        mainTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game/MainTheme");
-        
         preBossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossFight/PreBossLoop");
-        
+
+        mainTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game/MainTheme");
         levelTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game/LevelTheme");
 
 

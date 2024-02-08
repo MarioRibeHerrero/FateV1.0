@@ -125,7 +125,6 @@ public class BossFightController : MonoBehaviour
                         case 2:
                             DesapearIntoNewPos(DashRight.position);
                             onApear += RightToLeftAttack;
-
                             break;
 
                     }
@@ -152,19 +151,23 @@ public class BossFightController : MonoBehaviour
                     break;
                 case 4:
                     //CASE--->Ataque Combo
-
-                    if (playerRight)
+                    if (!isComboInCD)
                     {
-                        DesapearIntoNewPos(comboLeft.position);
+                        if (playerRight)
+                        {
+                            DesapearIntoNewPos(comboLeft.position);
 
-                        onApear += LeftToRightCombo;
-                        stunRight = true;
-                    }
-                    else
-                    {
-                        DesapearIntoNewPos(comboRight.position);
-                        onApear += RightToLeftCombo;
-                        stunRight = false;
+                            onApear += LeftToRightCombo;
+                            stunRight = true;
+                        }
+                        else
+                        {
+                            DesapearIntoNewPos(comboRight.position);
+                            onApear += RightToLeftCombo;
+                            stunRight = false;
+                        }
+                        isComboInCD = true;
+                        AddToComboCD();
                     }
                     break;
             }

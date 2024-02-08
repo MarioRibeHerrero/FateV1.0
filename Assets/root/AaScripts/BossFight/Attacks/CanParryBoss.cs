@@ -18,7 +18,7 @@ public class CanParryBoss : MonoBehaviour
             else
             {
                 bossAnim.StunBoss();
-                other.GetComponent<PlayerHealth>().HealPlayer(other.GetComponent<PlayerManager>().parryHealingAmmount);
+                other.GetComponent<PlayerHealth>().HealParryPlayer(other.GetComponent<PlayerManager>().parryHealingAmmount);
 
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
 
     public Transform currentSpawnPoint;
 
+    [SerializeField] VisualEffect parry;
 
     #endregion
 
@@ -37,6 +39,13 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         pManager.playerHealth -= damage;
+        CheckHealth();
+        uiManager.UpdatePlayerHealthSlider();
+    }
+    public void HealParryPlayer(float healAmmount)
+    {
+        parry.Play();
+        pManager.playerHealth += healAmmount;
         CheckHealth();
         uiManager.UpdatePlayerHealthSlider();
     }

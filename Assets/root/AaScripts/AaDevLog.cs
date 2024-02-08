@@ -1229,15 +1229,33 @@ Dia56:
 arreglar enemy hit--Ok
 arrerglar pj se desliza--Ok(transicion del jump al run)
 
+agregar canciones nuevas a fmod--Ok
+
+agregar e investigar como hacer loops e inciios de canciones--OK
+
+agregar canciones a unity en cada sitio--Ok
+
+agregar vfz aa1 y aa2--Ok
+
+agregar vfx parry--Ok
+
+problemas bossfight:
+
+hitbox Coliders Ataques--OK
+
+hace tres veces seguidas la rafaga--Ok(creoxd)
+
+AA no se repite bn--Ok
+
+Cristal no te mira segunda ronda--
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 Boton tuto 1
 Ganchos 2
-Transiciones huook jump.   2
+
 Curar al sentarte en lugar de luego 3
-Animaciónes ataque 1 y 2() 3
 
 
 
@@ -1280,14 +1298,10 @@ VFX:
 -----------------------------------------------------------------------------------------------------------------------------------
 BUGS:
 -----------------------------------------------------------------------------------------------------------------------------------
-Tp fin juego instant no rula
 
-salto raro animacion�
-animacion stun
-animacion muerte boss
-spam sonido silla
+Si estas muy cerca del enemigo no le pega(ns cunado pero no me va)
+
 con doble salto puedes salir y entrar de sala rondas
-parry del reves(no sabemos xq)
 
 
 No prioritario

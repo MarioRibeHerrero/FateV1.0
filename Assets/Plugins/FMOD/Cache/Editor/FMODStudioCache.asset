@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9135797827881189842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerAa1
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerAa1
+  Guid:
+    Data1: 218129559
+    Data2: 1184731506
+    Data3: 376366777
+    Data4: 211465679
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-9025190405875959445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18,6 +45,33 @@ MonoBehaviour:
   lastModified: 638418603858691962
   FileSizes: []
   Exists: 1
+--- !u!114 &-9019931206664675356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Game/LevelTheme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game/LevelTheme
+  Guid:
+    Data1: -1269906103
+    Data2: 1285160774
+    Data3: 192801928
+    Data4: -1005499991
+  Banks:
+  - {fileID: -6795047650526813909}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8993737828566457266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,7 +91,7 @@ MonoBehaviour:
     Data3: -1443177045
     Data4: 1096359675
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -263,6 +317,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
+--- !u!114 &-7382563508743714190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerJump
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerJump
+  Guid:
+    Data1: 1774057856
+    Data2: 1311857694
+    Data3: -565616473
+    Data4: -708110253
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7016118330809046686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +390,24 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 1564
+  Exists: 1
+--- !u!114 &-6795047650526813909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Banks/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638430229082122704
+  FileSizes: []
   Exists: 1
 --- !u!114 &-6764826946726452816
 MonoBehaviour:
@@ -379,11 +478,38 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.strings.bank
   Name: Music.strings
   StudioPath: bank:/Music.strings
-  lastModified: 638429939772665077
+  lastModified: 638430151013487108
   FileSizes:
   - Name: 
     Value: 1596
   Exists: 1
+--- !u!114 &-6248654767139443647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/BossFight/SecondPhase
+  m_EditorClassIdentifier: 
+  Path: event:/Music/BossFight/SecondPhase
+  Guid:
+    Data1: -1009238383
+    Data2: 1314565440
+    Data3: 2082723987
+    Data4: -1963602146
+  Banks:
+  - {fileID: -6795047650526813909}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5898439548734944178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +526,26 @@ MonoBehaviour:
   Name: FateAudio.strings
   StudioPath: bank:/FateAudio.strings
   lastModified: 638429936760385018
+  FileSizes:
+  - Name: 
+    Value: 1596
+  Exists: 1
+--- !u!114 &-5788169840640080654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FateAudio.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Banks/Desktop/FateAudio.strings.bank
+  Name: FateAudio.strings
+  StudioPath: bank:/FateAudio.strings
+  lastModified: 638430151013127121
   FileSizes:
   - Name: 
     Value: 1596
@@ -478,6 +624,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5008140234533290508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Banks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638430229077319654
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-4964444936236743536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +687,87 @@ MonoBehaviour:
   lastModified: 638422869162127761
   FileSizes: []
   Exists: 1
+--- !u!114 &-4400334026306752011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/BossFight/PreBossLoop
+  m_EditorClassIdentifier: 
+  Path: event:/Music/BossFight/PreBossLoop
+  Guid:
+    Data1: -323335858
+    Data2: 1241413886
+    Data3: -484769874
+    Data4: 51959961
+  Banks:
+  - {fileID: 589003426104084654}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7000
+--- !u!114 &-4352725643777385890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerChairSit
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerChairSit
+  Guid:
+    Data1: -906207412
+    Data2: 1294621184
+    Data3: 1449386408
+    Data4: 546480249
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4140101059399013698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/FootStep
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/FootStep
+  Guid:
+    Data1: 1712261353
+    Data2: 1199525040
+    Data3: -12901751
+    Data4: -208008640
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-3956020763964378470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,6 +849,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
+--- !u!114 &-3628103867729938036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Banks/Desktop/Music.strings.bank
+  Name: Music.strings
+  StudioPath: bank:/Music.strings
+  lastModified: 638430229082152719
+  FileSizes:
+  - Name: 
+    Value: 1694
+  Exists: 1
 --- !u!114 &-3390237635065176799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +997,33 @@ MonoBehaviour:
   - Name: 
     Value: 754
   Exists: 1
+--- !u!114 &-2823361023578154135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Game/MainTheme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game/MainTheme
+  Guid:
+    Data1: -1079751862
+    Data2: 1145220598
+    Data3: 1008449436
+    Data4: -1207698003
+  Banks:
+  - {fileID: 589003426104084654}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 174000
 --- !u!114 &-2600676579480205622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,6 +1044,33 @@ MonoBehaviour:
     Data4: 1096359675
   Banks:
   - {fileID: -7679355413193027752}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2491399693465751109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerDeath
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerDeath
+  Guid:
+    Data1: -1859288253
+    Data2: 1240909110
+    Data3: 1378049452
+    Data4: 157487481
+  Banks:
+  - {fileID: 6974524457593886624}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -805,7 +1124,7 @@ MonoBehaviour:
     Data3: 1286254985
     Data4: -535618555
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -833,6 +1152,33 @@ MonoBehaviour:
   - Name: 
     Value: 1564
   Exists: 1
+--- !u!114 &-2130771517973412506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerLand
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerLand
+  Guid:
+    Data1: -14269581
+    Data2: 1224532918
+    Data3: 226330251
+    Data4: 575361006
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2081218023536071436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -860,6 +1206,24 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2049768440810176048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FateAudio.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Banks/Desktop/FateAudio.bank
+  Name: FateAudio
+  StudioPath: bank:/FateAudio
+  lastModified: 638430151013097180
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-2042461191469637535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,7 +1261,7 @@ MonoBehaviour:
     Data3: -2110137184
     Data4: 1456576731
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1067,6 +1431,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-339062894478128392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerHit
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerHit
+  Guid:
+    Data1: -1024287686
+    Data2: 1262274039
+    Data3: -1496987228
+    Data4: -1828588873
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-290652812911998190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,34 +1498,38 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -6604209654589990294}
-  - {fileID: 589003426104084654}
-  - {fileID: -5898439548734944178}
-  - {fileID: 1055820177312406421}
+  - {fileID: 3049454718987111326}
+  - {fileID: -3628103867729938036}
+  - {fileID: 6974524457593886624}
+  - {fileID: -6795047650526813909}
+  - {fileID: 8489196592115179770}
+  - {fileID: -5008140234533290508}
   EditorEvents:
-  - {fileID: 8417774946524415665}
-  - {fileID: -1808192207814984286}
-  - {fileID: -2351115993190542611}
-  - {fileID: 2483604875124067591}
-  - {fileID: 1911116334800416563}
-  - {fileID: 5273046738002133156}
-  - {fileID: 43149319740508602}
-  - {fileID: -8993737828566457266}
-  - {fileID: 6947553192432393163}
-  - {fileID: 4380419062354336282}
-  - {fileID: -6737711487394356477}
-  - {fileID: 5234564150828689202}
-  - {fileID: 6138040659599780166}
-  - {fileID: -3390237635065176799}
-  - {fileID: -3733935243230983424}
+  - {fileID: -2130771517973412506}
+  - {fileID: 9011968349821209529}
+  - {fileID: -4352725643777385890}
+  - {fileID: 7516359226517119346}
+  - {fileID: 7686361960098399020}
+  - {fileID: -2491399693465751109}
+  - {fileID: -339062894478128392}
+  - {fileID: -4140101059399013698}
+  - {fileID: -7382563508743714190}
+  - {fileID: -9135797827881189842}
+  - {fileID: 5944177872815699438}
+  - {fileID: 6991595181153284369}
+  - {fileID: -9019931206664675356}
+  - {fileID: 5993653173998543487}
+  - {fileID: -6248654767139443647}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 589003426104084654}
-  - {fileID: 1055820177312406421}
+  - {fileID: 6974524457593886624}
+  - {fileID: -6795047650526813909}
+  - {fileID: -5008140234533290508}
   StringsBanks:
-  - {fileID: -6604209654589990294}
-  - {fileID: -5898439548734944178}
-  cacheTime: 638429939772665077
+  - {fileID: 3049454718987111326}
+  - {fileID: -3628103867729938036}
+  - {fileID: 8489196592115179770}
+  cacheTime: 638430229082152719
   cacheVersion: 131616
 --- !u!114 &43149319740508602
 MonoBehaviour:
@@ -1155,7 +1550,7 @@ MonoBehaviour:
     Data3: 958789765
     Data4: 1536829615
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1259,7 +1654,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638429939772665077
+  lastModified: 638430151013467139
   FileSizes: []
   Exists: 1
 --- !u!114 &661181340412273272
@@ -1352,6 +1747,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1423270673152646909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/BossFight/BossLoop
+  m_EditorClassIdentifier: 
+  Path: event:/Music/BossFight/BossLoop
+  Guid:
+    Data1: -851374928
+    Data2: 1144141245
+    Data3: -940283205
+    Data4: 1612650695
+  Banks:
+  - {fileID: 589003426104084654}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 31714
 --- !u!114 &1428907965318465343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,7 +1820,7 @@ MonoBehaviour:
     Data3: -1505442417
     Data4: 207211286
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1452,7 +1874,7 @@ MonoBehaviour:
     Data3: -1482238577
     Data4: 1754929704
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1478,6 +1900,53 @@ MonoBehaviour:
   lastModified: 638422063152153791
   FileSizes: []
   Exists: 1
+--- !u!114 &3049454718987111326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FateAudio.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Banks/Desktop/FateAudio.strings.bank
+  Name: FateAudio.strings
+  StudioPath: bank:/FateAudio.strings
+  lastModified: 638430229081942353
+  FileSizes:
+  - Name: 
+    Value: 1694
+  Exists: 1
+--- !u!114 &3146393912654005116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Game/LevelTheme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game/LevelTheme
+  Guid:
+    Data1: 1615868691
+    Data2: 1234993240
+    Data3: -1013178196
+    Data4: -648605713
+  Banks:
+  - {fileID: 589003426104084654}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 122769
 --- !u!114 &3321890592700904303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1569,7 +2038,7 @@ MonoBehaviour:
     Data3: -1749337927
     Data4: -1952695853
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1705,7 +2174,7 @@ MonoBehaviour:
     Data3: 1990458803
     Data4: -214742587
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1740,6 +2209,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5944177872815699438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Game/MainTheme
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Game/MainTheme
+  Guid:
+    Data1: 1710023704
+    Data2: 1140067412
+    Data3: 864710317
+    Data4: 724687013
+  Banks:
+  - {fileID: -6795047650526813909}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5946191276919430986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,6 +2257,33 @@ MonoBehaviour:
   Banks:
   - {fileID: 3481588790083191998}
   IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5993653173998543487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/BossFight/PreBossLoop
+  m_EditorClassIdentifier: 
+  Path: event:/Music/BossFight/PreBossLoop
+  Guid:
+    Data1: 971496332
+    Data2: 1305188198
+    Data3: -1518500470
+    Data4: 1667647130
+  Banks:
+  - {fileID: -6795047650526813909}
+  IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters: []
@@ -1887,9 +2410,54 @@ MonoBehaviour:
     Data3: -706164807
     Data4: 105989892
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6974524457593886624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/FateAudio.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Banks/Desktop/FateAudio.bank
+  Name: FateAudio
+  StudioPath: bank:/FateAudio
+  lastModified: 638430229081902337
+  FileSizes: []
+  Exists: 1
+--- !u!114 &6991595181153284369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/BossFight/BossLoop
+  m_EditorClassIdentifier: 
+  Path: event:/Music/BossFight/BossLoop
+  Guid:
+    Data1: -632850888
+    Data2: 1096256206
+    Data3: -651350647
+    Data4: -56521671
+  Banks:
+  - {fileID: -6795047650526813909}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -1913,6 +2481,33 @@ MonoBehaviour:
   lastModified: 638418582173882398
   FileSizes: []
   Exists: 1
+--- !u!114 &7516359226517119346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerA2
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerA2
+  Guid:
+    Data1: -829964869
+    Data2: 1166514246
+    Data3: -1106318192
+    Data4: -102297824
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7524619210209203346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1933,6 +2528,33 @@ MonoBehaviour:
   - Name: 
     Value: 1564
   Exists: 1
+--- !u!114 &7686361960098399020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerAa3
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerAa3
+  Guid:
+    Data1: 1520225278
+    Data2: 1174260049
+    Data3: 1201264040
+    Data4: -800517103
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7730445853963814707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1987,6 +2609,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8064890649796477310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/BossFight/SecondPhase
+  m_EditorClassIdentifier: 
+  Path: event:/Music/BossFight/SecondPhase
+  Guid:
+    Data1: 797775604
+    Data2: 1097695288
+    Data3: 1809757831
+    Data4: -1056100986
+  Banks:
+  - {fileID: 589003426104084654}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 62714
 --- !u!114 &8417774946524415665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2006,7 +2655,7 @@ MonoBehaviour:
     Data3: 492349313
     Data4: -1588172671
   Banks:
-  - {fileID: 1055820177312406421}
+  - {fileID: -2049768440810176048}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2014,6 +2663,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8489196592115179770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Banks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638430229077369653
+  FileSizes:
+  - Name: 
+    Value: 1694
+  Exists: 1
 --- !u!114 &8723706906416896265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,3 +2728,30 @@ MonoBehaviour:
   lastModified: 638422869161361706
   FileSizes: []
   Exists: 1
+--- !u!114 &9011968349821209529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerDobleJump
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerDobleJump
+  Guid:
+    Data1: 941084174
+    Data2: 1252049129
+    Data3: -1677347662
+    Data4: 1056393252
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0

@@ -14,9 +14,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: HasHitEnemy
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: goToThirdAttack
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1066525006845369767}
   m_Solo: 0
