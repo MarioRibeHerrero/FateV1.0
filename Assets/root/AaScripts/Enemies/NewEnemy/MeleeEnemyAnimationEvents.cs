@@ -49,4 +49,14 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
     }
 
 
+    private void VelTo0()
+    {
+        enemyController.enemyMovementSpeed = 0f;
+    }
+    private void VelNotTo0()
+    {
+        enemyController.enemyMovementSpeed = enemyController.enemyMovementSpeedDefault;
+
+    }
+
 }

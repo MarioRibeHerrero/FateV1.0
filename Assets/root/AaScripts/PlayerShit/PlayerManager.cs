@@ -69,6 +69,8 @@ public class PlayerManager : MonoBehaviour
         playerCurrentDamage = playerDefaultDamage;
 
         //Load shit
+        AudioManager.Instance.StopAllMusic();
+        AudioManager.Instance.LevelTheme();
         if (GameManager.Instance.isGameLoaded)
         {
             PlayerData data = SaveSystem.LoadGameManager();

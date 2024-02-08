@@ -17,15 +17,17 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
     private Material[] skinnedMaterials;
     private Color[] originalColors;
 
+    [SerializeField] private Material whiteMat;
+
     private void Awake()
     {
         disolveEffect = GetComponent<DissolvingControllerTut>();
         state = GetComponent<MeleeEnemyState>();
         anim = GetComponent<Animator>();
         roundManager = FindAnyObjectByType<RoundManager>();
-
-
-
+        
+        
+        
     }
 
 
@@ -80,27 +82,18 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
     }
     public void TakeDamage(int damage)
     {
-
+        StartCoroutine(HitAnim());
+            
         state.health -= damage;
         CheckHealth();
     }
 
     private IEnumerator HitAnim()
     {
-        // Set the material colors to the flash color
-        for (int i = 0; i < skinnedMaterials.Length; i++)
-        {
-            skinnedMaterials[i].color = Color.white;
-        }
-
-        // Wait for the duration of the flash
-        yield return new WaitForSeconds(0.15f);
-
-        // Revert the material colors back to the original colors
-        for (int i = 0; i < skinnedMaterials.Length; i++)
-        {
-            skinnedMaterials[i].color = originalColors[i];
-        }
+        Material mat = skinnedMesh.material;
+        skinnedMesh.material = whiteMat;
+        yield return new WaitForSeconds(0.1f);
+        skinnedMesh.material = mat;
     }
 
 }

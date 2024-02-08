@@ -111,4 +111,14 @@ public class BossCallAnimationEvents : MonoBehaviour
     }
 
 
+    private void SfxSecondPhase()
+    {
+        AudioManager.Instance.SecondPhaseTransition();
+    }
+
+    private void SfxStartPhase()
+    {
+        AudioManager.Instance.FristPhaseBossFight();
+    }
+
 }

@@ -36,8 +36,8 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
 
     //variables tester might want to try
     [Header("VariablesCambiables")]
-    [SerializeField] float enemyMovementSpeedDefault;
-    private float enemyMovementSpeed;
+    public float enemyMovementSpeedDefault;
+    public float enemyMovementSpeed;
     [SerializeField] Vector3 attackRangeVector;
     [SerializeField] LayerMask attackLayer;
     [SerializeField] float patienceDefault;

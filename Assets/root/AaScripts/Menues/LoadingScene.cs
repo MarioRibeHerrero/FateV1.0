@@ -28,7 +28,7 @@ public class LoadingScene : MonoBehaviour
             if(proggres >= 0.5)
             {
                 Debug.Log("JSAKODJHDPOSAHJN");
-                 AudioManager.Instance.MainMenuIntoLevel();
+                 //AudioManager.Instance.MainMenuIntoLevel();
             }
             yield return null;
 

@@ -15,7 +15,6 @@ public class CallMusicOnSwitchRoom : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("COÑA===??");
         if (inverse)
         {
             if (other.transform.position.x < this.transform.position.x)
@@ -24,11 +23,13 @@ public class CallMusicOnSwitchRoom : MonoBehaviour
                 MethodInfo methodInfo = AudioManager.Instance.GetType().GetMethod(AfterMusic);
                 if (methodInfo != null)
                 {
+                    Debug.Log("JJEJEJE");
+                    AudioManager.Instance.StopAllMusic();
                     methodInfo.Invoke(AudioManager.Instance, null);
                 }
                 else
                 {
-                    Console.WriteLine($"Method '{AfterMusic}' not found");
+                    Debug.LogError($"Method '{AfterMusic}' not found");
                 }
 
             }
@@ -40,6 +41,7 @@ public class CallMusicOnSwitchRoom : MonoBehaviour
                 MethodInfo methodInfo = AudioManager.Instance.GetType().GetMethod(BeforeMusic);
                 if (methodInfo != null)
                 {
+                    AudioManager.Instance.StopAllMusic();
                     methodInfo.Invoke(AudioManager.Instance, null);
                 }
                 else
@@ -57,6 +59,8 @@ public class CallMusicOnSwitchRoom : MonoBehaviour
                 MethodInfo methodInfo = AudioManager.Instance.GetType().GetMethod(AfterMusic);
                 if (methodInfo != null)
                 {
+                    AudioManager.Instance.StopAllMusic();
+
                     methodInfo.Invoke(AudioManager.Instance, null);
                 }
                 else
@@ -72,6 +76,8 @@ public class CallMusicOnSwitchRoom : MonoBehaviour
                 MethodInfo methodInfo = AudioManager.Instance.GetType().GetMethod(BeforeMusic);
                 if (methodInfo != null)
                 {
+                    AudioManager.Instance.StopAllMusic();
+
                     methodInfo.Invoke(AudioManager.Instance, null);
                 }
                 else

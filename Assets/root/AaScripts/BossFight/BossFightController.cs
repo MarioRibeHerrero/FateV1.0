@@ -15,7 +15,7 @@ public class BossFightController : MonoBehaviour
     [HideInInspector] public bool stunRight;
     [HideInInspector] public int playerPos;
     [HideInInspector] public bool playerRight;
-    [HideInInspector] public bool inSecondFace;
+     public bool inSecondFace;
     [HideInInspector] public bool inBelzegorFight, bossFightFinished;
     //Cooldown
     [SerializeField] int comboCD;
@@ -25,6 +25,7 @@ public class BossFightController : MonoBehaviour
     int dashCD;
     int boomerangCD;
 
+    private bool hasStartedSecondPhase;
 
     //References
     private BossUiManager bossUiManager;
@@ -88,6 +89,13 @@ public class BossFightController : MonoBehaviour
 
         if(inSecondFace)
         {
+            if (!hasStartedSecondPhase)
+            {
+                DesapearIntoNewPos(backPos.position);
+                onApear += TransitionToSecondPashe;
+                hasStartedSecondPhase = true;
+                return;
+            }
             Debug.Log("HOLA");
             switch (randomAttack)
             {
@@ -283,6 +291,8 @@ public class BossFightController : MonoBehaviour
     }
     public void CallCombinedAttackDisk()
     {
+        if(!inBelzegorFight) return;
+
         int randomAttack = UnityEngine.Random.Range(1, 3);
 
         switch(randomAttack)
@@ -317,6 +327,8 @@ public class BossFightController : MonoBehaviour
     }
     public void CallCombinedAttackPilar()
     {
+        if(!inBelzegorFight) return;
+
         int randomAttack = UnityEngine.Random.Range(1, 3);
 
         switch (randomAttack)
@@ -370,6 +382,7 @@ public class BossFightController : MonoBehaviour
         inBelzegorFight = false;
         pHealth.onPlayerDeath -= ResetBossFight;
         inSecondFace = false;
+        hasStartedSecondPhase = false;
 
     }
     public void StartBossFight()
@@ -389,6 +402,12 @@ public class BossFightController : MonoBehaviour
         Invoke("CloseTelones", 2f);
     }
 
+
+    public void TransitionToSecondPashe()
+    {
+        bodyAnimator.SetTrigger("SecondPhase");
+
+    }
     private void CloseTelones()
     {
         anim.SetTrigger("EndBossFight");

@@ -1221,7 +1221,14 @@ Trampa lenta 2(esperamos a trampa nueva)--Okw
 
 
 
-Enemigo muere lento tuto--
+Enemigo muere lento tuto--Ok
+
+
+Dia56:
+
+arreglar enemy hit--Ok
+arrerglar pj se desliza--Ok(transicion del jump al run)
+
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:

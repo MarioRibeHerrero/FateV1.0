@@ -101,7 +101,10 @@ public class PlayerHealth : MonoBehaviour
         pManager.playerHealth = 100f;
         uiManager.UpdatePlayerHealthSlider();
         pManager.isPlayerAlive = true;
-        AudioManager.Instance.Respawn();
+        
+        //music
+        AudioManager.Instance.StopAllMusic();
+        AudioManager.Instance.LevelTheme();
 
     }
     

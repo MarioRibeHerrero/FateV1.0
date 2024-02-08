@@ -12,6 +12,7 @@ public class PopUpController : MonoBehaviour
     [SerializeField] bool needTutorial;
     [SerializeField] GameObject tutorial;
 
+    [SerializeField] private bool popUpInstant;
 
     private bool canvasTutorial;
     public void ExitPopUp()
@@ -64,7 +65,15 @@ public class PopUpController : MonoBehaviour
     private void WhenInteract()
     {
         if (textToApear == null) return;
-        Invoke(nameof(LoadPopUp), 1);
+
+        if (popUpInstant)
+        {
+            LoadPopUp();
+        }
+        else
+        {
+            Invoke(nameof(LoadPopUp), 1);
+        }
     }
 
     private void OnInteractAfterTut()

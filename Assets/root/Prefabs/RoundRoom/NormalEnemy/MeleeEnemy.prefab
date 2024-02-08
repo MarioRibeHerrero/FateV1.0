@@ -5947,6 +5947,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMesh: {fileID: 3767630018832833440}
+  whiteMat: {fileID: -4562851943291867605, guid: 319a5675ffb29c94c80d0f4d687c2158,
+    type: 3}
   isDead: 0
 --- !u!114 &2247623789954187919
 MonoBehaviour:
@@ -6002,7 +6004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMesh: {fileID: 3767630018832833440}
-  dissolveRate: 0.0255
+  dissolveRate: 0.03
   refreshRate: 0.025
 --- !u!1 &5185930383588319971
 GameObject:

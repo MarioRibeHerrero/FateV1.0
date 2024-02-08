@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
     private Bus musicBus;
 
 
-    FMOD.Studio.EventInstance mainTheme, preBossLoop, levelTheme, bossLoop, bossEntry;
+    FMOD.Studio.EventInstance mainTheme, preBossLoop, levelTheme, secondPhaseBossLoop, bossEntry;
 
     private void Awake()
     {
@@ -34,11 +34,15 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
         //audioReferences
-        mainTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/MainTheme");
-        preBossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/Music/PreBossLoop");
-        levelTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/LevelTheme");
-        bossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossLoop");
-        bossEntry = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossEntry");
+        secondPhaseBossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossFight/SecondPhase");
+        bossEntry = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossFight/BossLoop");
+        
+        mainTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game/MainTheme");
+        
+        preBossLoop = FMODUnity.RuntimeManager.CreateInstance("event:/Music/BossFight/PreBossLoop");
+        
+        levelTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game/LevelTheme");
+
 
         generalBus = RuntimeManager.GetBus("bus:/");
         musicBus = RuntimeManager.GetBus("bus:/Music");
@@ -56,46 +60,51 @@ public class AudioManager : MonoBehaviour
         mainTheme.start();
     }
 
-    public void MainMenuIntoLevel()
+    public void MainMenuIntoLevel1()
     {
         mainTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         levelTheme.start();
 
     }
-    public void LevelIntoPreBoss()
+    public void LevelTheme()
     {
-        Debug.Log("KEKEK");
-        levelTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        preBossLoop.start();
-
+        StopAllMusic();
+        levelTheme.start();
     }
     public void PreBossIntoLevel()
     {
-        preBossLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        StopAllMusic();
         levelTheme.start();
 
     }
-    public void PreBossIntoBossEntry()
+    public void LevelIntoPreBoos()
     {
-        preBossLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        bossEntry.start();
-        Invoke(nameof(BossEntryIntoFight), 135);
-
-    }
-    public void BossEntryIntoFight()
-    {
-        mainTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        StopAllMusic();
         preBossLoop.start();
 
     }
-    public void Respawn()
+    public void FristPhaseBossFight()
+    {
+        StopAllMusic();
+        bossEntry.start();
+    }
+    
+    public void SecondPhaseTransition()
+    {
+        StopAllMusic();
+        secondPhaseBossLoop.start();
+
+    }
+    
+    
+    
+    public void StopAllMusic()
     {
         mainTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         preBossLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         levelTheme.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         bossEntry.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        bossLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        levelTheme.start();
+        secondPhaseBossLoop.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
     }
 
