@@ -24,6 +24,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] float secondJumpForce;
     public bool secondJump;
     [SerializeField] GameObject wings;
+    [SerializeField] private ParticleSystem dobleJumpFvx;
 
     //not so local
     public bool isJumping;
@@ -101,8 +102,15 @@ public class PlayerJump : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             secondJump = false;
             StartCoroutine(WingsToTrue());
+            Invoke("Fvx", 0f);
         }
         
+
+    }
+
+    private void Fvx()
+    {
+        dobleJumpFvx.Play();
 
     }
     private IEnumerator WingsToTrue()

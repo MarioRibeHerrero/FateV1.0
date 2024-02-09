@@ -1247,7 +1247,15 @@ hace tres veces seguidas la rafaga--Ok(creoxd)
 
 AA no se repite bn--Ok
 
-Cristal no te mira segunda ronda--
+
+
+
+Dia 57:
+meter daily ayer--
+
+Cristal no te mira segunda ronda--SolucionCutre   
+hacer que musica funcione(ptra vez xd)--Ok
+arreglar bug melee--OK
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:

@@ -26,7 +26,7 @@ public class RoundCristal : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindObjectOfType<PlayerHealth>().transform;
-        cristalObj.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 90));
+        //cristalObj.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
 
         lineRenderer.enabled = false;
         shoot.enabled = false;
@@ -61,18 +61,17 @@ public class RoundCristal : MonoBehaviour
         if (!aboutToShoot)
         {
             Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
-            float yRotation = -90;
             float xRotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime * delay).eulerAngles.x;
-            float zRotation = 0;
 
+            if (player.position.x - transform.position.x < 0) transform.rotation = Quaternion.Euler(xRotation, -90, transform.rotation.z);
+            else transform.rotation = Quaternion.Euler(xRotation, -270, transform.rotation.z);
 
-            transform.rotation = Quaternion.Euler(xRotation, yRotation, zRotation);
-            playerPos = transform.rotation  * Vector3.up;
         }
     }
 
     public void Reset()
     {
+        aboutToShoot = false;
         cristalObj.SetActive(true);
         cristalObj.GetComponent<CristalHealthManager>().Reset();
         cristalObj.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 90));

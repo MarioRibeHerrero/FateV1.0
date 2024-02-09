@@ -59,19 +59,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/Game/LevelTheme
   Guid:
-    Data1: -1269906103
-    Data2: 1285160774
-    Data3: 192801928
-    Data4: -1005499991
+    Data1: 970803364
+    Data2: 1323532691
+    Data3: 2008608410
+    Data4: 101227890
   Banks:
   - {fileID: -6795047650526813909}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 122769
 --- !u!114 &-8993737828566457266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638430229082122704
+  lastModified: 638430674840280269
   FileSizes: []
   Exists: 1
 --- !u!114 &-6764826946726452816
@@ -497,19 +497,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/BossFight/SecondPhase
   Guid:
-    Data1: -1009238383
-    Data2: 1314565440
-    Data3: 2082723987
-    Data4: -1963602146
+    Data1: 1561062811
+    Data2: 1162291119
+    Data3: -1120359793
+    Data4: -76248199
   Banks:
   - {fileID: -6795047650526813909}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 62714
 --- !u!114 &-5898439548734944178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +639,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638430229077319654
+  lastModified: 638430668655560015
   FileSizes: []
   Exists: 1
 --- !u!114 &-4964444936236743536
@@ -864,7 +864,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.strings.bank
   Name: Music.strings
   StudioPath: bank:/Music.strings
-  lastModified: 638430229082152719
+  lastModified: 638430674840320269
   FileSizes:
   - Name: 
     Value: 1694
@@ -1529,7 +1529,7 @@ MonoBehaviour:
   - {fileID: 3049454718987111326}
   - {fileID: -3628103867729938036}
   - {fileID: 8489196592115179770}
-  cacheTime: 638430229082152719
+  cacheTime: 638430674840320269
   cacheVersion: 131616
 --- !u!114 &43149319740508602
 MonoBehaviour:
@@ -1915,7 +1915,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.strings.bank
   Name: FateAudio.strings
   StudioPath: bank:/FateAudio.strings
-  lastModified: 638430229081942353
+  lastModified: 638430668655520015
   FileSizes:
   - Name: 
     Value: 1694
@@ -2277,19 +2277,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/BossFight/PreBossLoop
   Guid:
-    Data1: 971496332
-    Data2: 1305188198
-    Data3: -1518500470
-    Data4: 1667647130
+    Data1: -565518281
+    Data2: 1083639761
+    Data3: 1758544300
+    Data4: 1205096404
   Banks:
   - {fileID: -6795047650526813909}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 13714
 --- !u!114 &6138040659599780166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2433,7 +2433,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.bank
   Name: FateAudio
   StudioPath: bank:/FateAudio
-  lastModified: 638430229081902337
+  lastModified: 638430668655520015
   FileSizes: []
   Exists: 1
 --- !u!114 &6991595181153284369
@@ -2450,19 +2450,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/BossFight/BossLoop
   Guid:
-    Data1: -632850888
-    Data2: 1096256206
-    Data3: -651350647
-    Data4: -56521671
+    Data1: -1695273379
+    Data2: 1308938147
+    Data3: -120205637
+    Data4: 1145271446
   Banks:
   - {fileID: -6795047650526813909}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 31714
 --- !u!114 &7154092261391525486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2678,7 +2678,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638430229077369653
+  lastModified: 638430668655560015
   FileSizes:
   - Name: 
     Value: 1694

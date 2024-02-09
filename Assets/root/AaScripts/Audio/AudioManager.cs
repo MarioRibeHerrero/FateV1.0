@@ -3,6 +3,7 @@ using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Debug = FMOD.Debug;
 
 public class AudioManager : MonoBehaviour
 {
@@ -66,6 +67,7 @@ public class AudioManager : MonoBehaviour
     }
     public void LevelTheme()
     {
+        UnityEngine.Debug.Log("SONIDO");
         StopAllMusic();
         levelTheme.start();
     }

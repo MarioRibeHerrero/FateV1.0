@@ -25,7 +25,7 @@ public class PlayerHook : MonoBehaviour
     public bool canHook;
     public bool isHooking;
     public bool isFallingFromHook;
-
+    [SerializeField] private Transform hookPoint;
 
     private void Awake()
     {
@@ -77,7 +77,7 @@ public class PlayerHook : MonoBehaviour
     {
         if (currentHook != null)
         {
-            lineRenderer.SetPosition(0, transform.position);
+            lineRenderer.SetPosition(0, hookPoint.transform.position);
             lineRenderer.SetPosition(1, currentHook.transform.localPosition);
         }
     }
