@@ -63,8 +63,13 @@ public class RoundCristal : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
             float xRotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime * delay).eulerAngles.x;
 
-            if (player.position.x - transform.position.x < 0) transform.rotation = Quaternion.Euler(xRotation, -90, transform.rotation.z);
-            else transform.rotation = Quaternion.Euler(xRotation, -270, transform.rotation.z);
+            Quaternion tY;
+            if (player.position.x - transform.position.x < 0) tY = Quaternion.Euler(xRotation, -90, transform.rotation.z);
+            else tY = Quaternion.Euler(xRotation, -270, transform.rotation.z);
+
+            float yRotation = Quaternion.Lerp(transform.rotation, tY, rotationSpeed * Time.deltaTime * delay).eulerAngles.y;
+
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, transform.rotation.z);
 
         }
     }

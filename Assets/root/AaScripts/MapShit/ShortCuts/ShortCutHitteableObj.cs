@@ -15,6 +15,7 @@ public class ShortCutHitteableObj : MonoBehaviour
         go.SetActive(true);
         GameManager.Instance.shortCutUnlocked = true;
         Destroy(gameObject);
+        SaveSystem.SaveGameManager(GameManager.Instance);
     }
 
 

@@ -856,10 +856,6 @@ Mejorar tuto--OK
 
  
 
-*/
-#endregion
-/*
-
 
 Dia41:
 
@@ -1248,6 +1244,10 @@ hace tres veces seguidas la rafaga--Ok(creoxd)
 AA no se repite bn--Ok
 
 
+*/
+#endregion
+/*
+
 
 
 Dia 57:
@@ -1257,29 +1257,38 @@ Cristal no te mira segunda ronda--SolucionCutre
 hacer que musica funcione(ptra vez xd)--Ok
 arreglar bug melee--OK
 
+
+Dia58:
+
+
+Corregir cristal(solucion que funciona pero no es perfecta)(pero no dara problemas)--Ok
+PopUp instantaneo doble salto_--Ok(opcioi para q todos lo sean)
+Si estas muy cerca del enemigo no le pega(ns cunado pero no me va)-Ok
+con doble salto puedes salir y entrar de sala rondas--OK
+palanca sala te sigue saliendo el popup cunado la usas--Ok
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
-Boton tuto 1
-Ganchos 2
-
-Curar al sentarte en lugar de luego 3
-
-
-
-Meter textura boss
-   
--mETER musica nueva--
+Cambiar ganchos--
+añadir camera shake--
+Cambiar Tutorial por uno con enemigo nuevo--
+----------------
+DEPENDO DE GENTE:
+----------------
+-Lugar dode obtienes doble salto
+-Boton tuto--
 -meter sonidos nuevos-
 -implementar rayo laser--
+-Animaicon entry boss--
+   
+CUANDO TENGA EL MAPA NUEVO:
+Meter textura boss
 -Cambiar trampas por nuevas--
 
-   
 
 
 
------
-
+Curar al sentarte en lugar de luego 3
 
 -----
 BOSS
@@ -1307,10 +1316,6 @@ VFX:
 BUGS:
 -----------------------------------------------------------------------------------------------------------------------------------
 
-Si estas muy cerca del enemigo no le pega(ns cunado pero no me va)
-
-con doble salto puedes salir y entrar de sala rondas
-
 
 No prioritario
 -si mueres en el enemigo entry, se buggea
@@ -1319,87 +1324,9 @@ No prioritario
 PREGUNTAS:
 -----------------------------------------------------------------------------------------------------------------------------------
 
-
-
-
-preguntar Jorge:
--Luz al iniciar desde otra escena
-
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ORGANIZACION
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-Objetivos FIN-JUEGO(cosas que faltan por a�adir):
-MiniMapa Funcional(Descartado)
-Menues
-Bossfight
-Sonidos
-Coleccionables(Descartado)
-
-
-
-quedan 4 semanas
-
------------------
-1 semana sol bugs
------------------
-Bugs que solucionar:
-
-Transiciones funcionan bien--
--A�adir UI parry(circulo)
-
-------------------------------
-1 semana meter anims boss y pj
-------------------------------
--meter animaicones pj, y solucionar bugs que puedan traer
--meter animaciones boss, hacer los ataques que faltan y terminar la bossfight
--solucionar bugs, y que la bossfght se sienta muy bien.
--arreglar sala rondas para que se entienda que tienes el cristal
--a�adir modo berserk(si todo lo anterior esta bien.)
--------------------------------------
-1 semana cerrar juego y arreglar bugs
--------------------------------------
--A�adir menues
--A�adir todo el sonido
--Comprobar que tenemos el juego 100% jugable a escepcion de las animaciones del meelee
--arreglar sala rondas para que se entienda que tienes el cristal
--a�adir modo berserk(si todo lo anterior esta bien.)
---------------------------------
-1 semana meter animaciones melee
---------------------------------
--meter animaciones melee y solucionar bugs que puedan traer
--asegurarse de que se siente bien el enemigo
--solucionar bugs del juego
--arreglar sala rondas para que se entienda que tienes el cristal
--a�adir modo berserk(si todo lo anterior esta bien.)
-
---------------
-FIN DEL SPRINT(el juego deberia estar terminado a escepcion de los vfx, iluminacion, cinematicas, etc)
---------------
-primera semana febrero: Lunes 5
-
-
-Segunda y ultima semana: Lunes 12 - Viernes 16
-
--------------------------
-q significa para el resto(hablnado exclusivamente de lo mio)
-------------------------
-Primera semana:
-trabajo libre
-Segunda semana: Lunes 15
-Animaciones boss y personaje principal y cristal
-Tercera semana: Lunes 22
-Musica
-Sonidos
-Arte 2d
-Cuarta semana Lunes 29
-Animaciones melee
-
----------------
-Recortes
----------------
-MiniMapa Funcional(Descartado)
 
 
  */

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.XR.Oculus.Input;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class PopUpController : MonoBehaviour
 {
@@ -13,7 +14,6 @@ public class PopUpController : MonoBehaviour
     [SerializeField] GameObject tutorial;
 
     [SerializeField] private bool popUpInstant;
-
     private bool canvasTutorial;
     public void ExitPopUp()
     {
@@ -37,7 +37,11 @@ public class PopUpController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if(needTutorial) tutorial.SetActive(true);
+            if (needTutorial)
+            {
+                tutorial.SetActive(true);
+                PlayerInteract.onInteract += InteractOnTutorial;
+            }
 
             if(!canvasTutorial)PlayerInteract.onInteract += WhenInteract;
             if(canvasTutorial || !needTutorial) PlayerInteract.onInteract += OnInteractAfterTut;
@@ -49,15 +53,18 @@ public class PopUpController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (needTutorial) tutorial.GetComponent<Animator>().SetTrigger("Exit");
+            if (needTutorial)
+            {
+                tutorial.GetComponent<Animator>().SetTrigger("Exit");
+                PlayerInteract.onInteract -= InteractOnTutorial;
 
-            if(!canvasTutorial)PlayerInteract.onInteract -= WhenInteract;
-            
-            
+            }
+
+
+
+
+            if (!canvasTutorial)PlayerInteract.onInteract -= WhenInteract;
             if(canvasTutorial || !needTutorial) PlayerInteract.onInteract -= OnInteractAfterTut;
-
-
-
         }
     }
 
@@ -81,5 +88,11 @@ public class PopUpController : MonoBehaviour
         if (textToApear == null) return;
         tutorial.GetComponent<Animator>().SetTrigger("Exit");
 
+    }
+
+
+    private void InteractOnTutorial()
+    {
+        tutorial.SetActive(false);
     }
 }
