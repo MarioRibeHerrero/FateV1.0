@@ -1280,6 +1280,7 @@ DEPENDO DE GENTE:
 -meter sonidos nuevos-
 -implementar rayo laser--
 -Animaicon entry boss--
+-meter modelo hook(vfx de cunado lo puedes coger)
    
 CUANDO TENGA EL MAPA NUEVO:
 Meter textura boss
