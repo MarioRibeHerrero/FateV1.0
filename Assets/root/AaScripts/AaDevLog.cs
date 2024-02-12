@@ -1277,12 +1277,14 @@ meter prefab mapa nuevo--Ok
 cambiar cubo por atril nuevo--Ok
 
 plataforma nueva(que se mueva y q haga hijo al pj)--Ok
+
+Cambiar Tutorial por uno con enemigo nuevo--
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
 Cambiar ganchos--
 añadir camera shake--
-Cambiar Tutorial por uno con enemigo nuevo--
 ----------------
 DEPENDO DE GENTE:
 ----------------
