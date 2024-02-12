@@ -1278,7 +1278,11 @@ cambiar cubo por atril nuevo--Ok
 
 plataforma nueva(que se mueva y q haga hijo al pj)--Ok
 
-Cambiar Tutorial por uno con enemigo nuevo--
+Cambiar Tutorial con textura nueva--OK
+
+añadir nuevas posicones hook--Ok
+
+añadir slash al boss--OK
 
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:

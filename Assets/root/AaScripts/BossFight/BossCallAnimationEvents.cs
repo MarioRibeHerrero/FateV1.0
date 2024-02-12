@@ -120,5 +120,14 @@ public class BossCallAnimationEvents : MonoBehaviour
     {
         AudioManager.Instance.FristPhaseBossFight();
     }
+    [SerializeField] ParticleSystem slash1, slash2;
+    private void FvxSlash1()
+    {
+        slash1.Play();
+    }
+    private void FvxSlash2()
+    {
+        slash2.Play();
 
+    }
 }
