@@ -1266,6 +1266,17 @@ PopUp instantaneo doble salto_--Ok(opcioi para q todos lo sean)
 Si estas muy cerca del enemigo no le pega(ns cunado pero no me va)-Ok
 con doble salto puedes salir y entrar de sala rondas--OK
 palanca sala te sigue saliendo el popup cunado la usas--Ok
+
+
+
+
+Dia59:
+
+meter prefab mapa nuevo--Ok
+
+cambiar cubo por atril nuevo--Ok
+
+plataforma nueva(que se mueva y q haga hijo al pj)--Ok
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
