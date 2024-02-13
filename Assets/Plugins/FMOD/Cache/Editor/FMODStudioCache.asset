@@ -460,7 +460,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638434161709643942
+  lastModified: 638434281320719754
   FileSizes: []
   Exists: 1
 --- !u!114 &-6764826946726452816
@@ -590,7 +590,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 62714
+  Length: 61807
 --- !u!114 &-5898439548734944178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,7 +945,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.strings.bank
   Name: Music.strings
   StudioPath: bank:/Music.strings
-  lastModified: 638434161709703758
+  lastModified: 638434281320739683
   FileSizes:
   - Name: 
     Value: 2070
@@ -1618,7 +1618,7 @@ MonoBehaviour:
   - {fileID: 3049454718987111326}
   - {fileID: -3628103867729938036}
   - {fileID: 8489196592115179770}
-  cacheTime: 638434161709703758
+  cacheTime: 638434281320739683
   cacheVersion: 131616
 --- !u!114 &43149319740508602
 MonoBehaviour:
@@ -2085,7 +2085,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.strings.bank
   Name: FateAudio.strings
   StudioPath: bank:/FateAudio.strings
-  lastModified: 638434161708505502
+  lastModified: 638434278918075629
   FileSizes:
   - Name: 
     Value: 2070
@@ -2428,11 +2428,11 @@ MonoBehaviour:
   - {fileID: -6795047650526813909}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 17739
+  Length: 16695
 --- !u!114 &5946191276919430986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2630,7 +2630,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.bank
   Name: FateAudio
   StudioPath: bank:/FateAudio
-  lastModified: 638434161708450550
+  lastModified: 638434278918045693
   FileSizes: []
   Exists: 1
 --- !u!114 &6991595181153284369
@@ -2659,7 +2659,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 31714
+  Length: 38596
 --- !u!114 &7154092261391525486
 MonoBehaviour:
   m_ObjectHideFlags: 0

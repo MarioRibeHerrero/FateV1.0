@@ -116,10 +116,6 @@ public class BossCallAnimationEvents : MonoBehaviour
         AudioManager.Instance.SecondPhaseTransition();
     }
 
-    private void SfxStartPhase()
-    {
-        AudioManager.Instance.FristPhaseBossFight();
-    }
     [SerializeField] ParticleSystem slash1, slash2;
     private void FvxSlash1()
     {

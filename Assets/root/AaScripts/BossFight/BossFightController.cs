@@ -451,6 +451,12 @@ public class BossFightController : MonoBehaviour
         bHealth.EndFight();
 
     }
+
+
+    private void SfxStartPhase()
+    {
+        AudioManager.Instance.FristPhaseBossFight();
+    }
     #region Attacks
 
 

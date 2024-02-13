@@ -47,7 +47,10 @@ public class RoundManager : MonoBehaviour
     {
         phealth = GameObject.FindAnyObjectByType<PlayerHealth>();
 
-        OpenDoors();
+        for (int i = 0; i < doorAnimators.Length; i++)
+        {
+            doorAnimators[i].SetTrigger("OpenSlow");
+        }
     }
     private void Start()
     {
@@ -255,6 +258,8 @@ public class RoundManager : MonoBehaviour
 
     private void OpenDoors()
     {
+        AudioManager.Instance.PlayOpenMetalDoor();
+
         for (int i = 0; i < doorAnimators.Length; i++)
         {
             doorAnimators[i].SetTrigger("OpenSlow");
@@ -262,6 +267,8 @@ public class RoundManager : MonoBehaviour
     }
     private void CloseDoors()
     {
+        AudioManager.Instance.PlayOpenMetalDoor();
+
         for (int i = 0; i < doorAnimators.Length; i++)
         {
             doorAnimators[i].SetTrigger("Close");

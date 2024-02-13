@@ -1291,6 +1291,8 @@ añadir slash al boss--OK
 --AÑadir que hayan interactuables de solo una vez(palanca/doble salto)--Ok
 
 
+meter asset lore--Ok
+sonido puertas sala rondas--
 
 
 Dia60:
@@ -1311,11 +1313,12 @@ añadir lore en sala secreta--Ok
 
 
 despues del patio:
+-meter nueva vida boss--Ok
+confiner camara lore--Ok
+
+
 sonidos menues
-confiner camara lore
-meter asset lore
 mirar que hacer
-sonido puertas sala rondas-
 
 
 -----------------------------------------------------------------------------------------------------------------------------------

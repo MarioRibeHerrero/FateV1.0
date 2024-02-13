@@ -22,6 +22,7 @@ public class RoundEnrtyCollider : MonoBehaviour
 
     private void CloseDoors()
     {
+        AudioManager.Instance.PlayOpenLock();
         roundManager.StartRoundRoom();
     }
 }
