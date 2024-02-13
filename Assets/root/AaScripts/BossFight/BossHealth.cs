@@ -69,12 +69,13 @@ public class BossHealth : MonoBehaviour
 
     public void EndFight()
     {
-        bFController.inBelzegorFight = false;
         Invoke("LoadCredits", 9f);
     }
 
     private void LoadCredits()
     {
+        this.transform.Find("Boss").gameObject.SetActive(false);
+
         credits.SetActive(true);
         instantTp.SetActive(true);
         challangeTp.SetActive(false);

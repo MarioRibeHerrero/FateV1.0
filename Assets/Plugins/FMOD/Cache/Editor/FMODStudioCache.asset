@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-9050383794872710959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerStairs
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerStairs
+  Guid:
+    Data1: 869136093
+    Data2: 1259617516
+    Data3: 79078791
+    Data4: 615203191
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &-9025190405875959445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +279,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-7793641989052102347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/LowHp
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/LowHp
+  Guid:
+    Data1: -344866611
+    Data2: 1247516726
+    Data3: 996006308
+    Data4: -1144395855
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6820
 --- !u!114 &-7679355413193027752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +460,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638433399147458214
+  lastModified: 638434161709643942
   FileSizes: []
   Exists: 1
 --- !u!114 &-6764826946726452816
@@ -483,6 +537,33 @@ MonoBehaviour:
   - Name: 
     Value: 1596
   Exists: 1
+--- !u!114 &-6417616460421459837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerHook
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerHook
+  Guid:
+    Data1: 1430783915
+    Data2: 1287046209
+    Data3: -1559953535
+    Data4: -1857533303
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6248654767139443647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +720,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638433399146963826
+  lastModified: 638434161708725268
   FileSizes: []
   Exists: 1
 --- !u!114 &-4964444936236743536
@@ -864,10 +945,10 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.strings.bank
   Name: Music.strings
   StudioPath: bank:/Music.strings
-  lastModified: 638433399147479101
+  lastModified: 638434161709703758
   FileSizes:
   - Name: 
-    Value: 1694
+    Value: 2070
   Exists: 1
 --- !u!114 &-3390237635065176799
 MonoBehaviour:
@@ -1520,6 +1601,14 @@ MonoBehaviour:
   - {fileID: -9019931206664675356}
   - {fileID: 5993653173998543487}
   - {fileID: -6248654767139443647}
+  - {fileID: 8060661943831259176}
+  - {fileID: -6417616460421459837}
+  - {fileID: -7793641989052102347}
+  - {fileID: 1487755533485883655}
+  - {fileID: 1956601722351679294}
+  - {fileID: -9050383794872710959}
+  - {fileID: 3910656034272515873}
+  - {fileID: 1846821128303231623}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6974524457593886624}
@@ -1529,7 +1618,7 @@ MonoBehaviour:
   - {fileID: 3049454718987111326}
   - {fileID: -3628103867729938036}
   - {fileID: 8489196592115179770}
-  cacheTime: 638433399147479101
+  cacheTime: 638434161709703758
   cacheVersion: 131616
 --- !u!114 &43149319740508602
 MonoBehaviour:
@@ -1801,6 +1890,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1487755533485883655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MapSounds/DoorLock
+  m_EditorClassIdentifier: 
+  Path: event:/MapSounds/DoorLock
+  Guid:
+    Data1: 1615574786
+    Data2: 1264508477
+    Data3: -135350878
+    Data4: -831011781
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1846821128303231623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MeleeEnemy/MeleeEnemyHit
+  m_EditorClassIdentifier: 
+  Path: event:/MeleeEnemy/MeleeEnemyHit
+  Guid:
+    Data1: -1272348699
+    Data2: 1307944596
+    Data3: -1314967634
+    Data4: -1002303004
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1911116334800416563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1821,6 +1964,33 @@ MonoBehaviour:
     Data4: 207211286
   Banks:
   - {fileID: -2049768440810176048}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1956601722351679294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MapSounds/OpenMetalDoor
+  m_EditorClassIdentifier: 
+  Path: event:/MapSounds/OpenMetalDoor
+  Guid:
+    Data1: 2135178505
+    Data2: 1082265074
+    Data3: 1731487402
+    Data4: -543763256
+  Banks:
+  - {fileID: 6974524457593886624}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1915,10 +2085,10 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.strings.bank
   Name: FateAudio.strings
   StudioPath: bank:/FateAudio.strings
-  lastModified: 638433399146953863
+  lastModified: 638434161708505502
   FileSizes:
   - Name: 
-    Value: 1694
+    Value: 2070
   Exists: 1
 --- !u!114 &3146393912654005116
 MonoBehaviour:
@@ -2012,6 +2182,33 @@ MonoBehaviour:
     Data4: 1096359675
   Banks:
   - {fileID: 8975436816964870941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3910656034272515873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MapSounds/OpenBossDoor
+  m_EditorClassIdentifier: 
+  Path: event:/MapSounds/OpenBossDoor
+  Guid:
+    Data1: 1111370211
+    Data2: 1260174158
+    Data3: -296174200
+    Data4: 585138361
+  Banks:
+  - {fileID: 6974524457593886624}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2223,19 +2420,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/Game/MainTheme
   Guid:
-    Data1: 1710023704
-    Data2: 1140067412
-    Data3: 864710317
-    Data4: 724687013
+    Data1: -125307630
+    Data2: 1225889811
+    Data3: -1964639850
+    Data4: 622810950
   Banks:
   - {fileID: -6795047650526813909}
-  IsStream: 0
-  Is3D: 1
+  IsStream: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 17739
 --- !u!114 &5946191276919430986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2433,7 +2630,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.bank
   Name: FateAudio
   StudioPath: bank:/FateAudio
-  lastModified: 638433399146934068
+  lastModified: 638434161708450550
   FileSizes: []
   Exists: 1
 --- !u!114 &6991595181153284369
@@ -2609,6 +2806,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8060661943831259176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/PlayerParry
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/PlayerParry
+  Guid:
+    Data1: 1067963286
+    Data2: 1256803931
+    Data3: 143310482
+    Data4: 1131880485
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8064890649796477310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2678,10 +2902,10 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638433399146973801
+  lastModified: 638434161708764809
   FileSizes:
   - Name: 
-    Value: 1694
+    Value: 2070
   Exists: 1
 --- !u!114 &8723706906416896265
 MonoBehaviour:

@@ -23,7 +23,6 @@ public class CallMusicOnSwitchRoom : MonoBehaviour
                 MethodInfo methodInfo = AudioManager.Instance.GetType().GetMethod(AfterMusic);
                 if (methodInfo != null)
                 {
-                    Debug.Log("JJEJEJE");
                     AudioManager.Instance.StopAllMusic();
                     methodInfo.Invoke(AudioManager.Instance, null);
                 }

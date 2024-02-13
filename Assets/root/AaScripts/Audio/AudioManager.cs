@@ -67,7 +67,6 @@ public class AudioManager : MonoBehaviour
     }
     public void LevelTheme()
     {
-        UnityEngine.Debug.Log("SONIDO");
         StopAllMusic();
         levelTheme.start();
     }
@@ -129,6 +128,24 @@ public class AudioManager : MonoBehaviour
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerSounds/PlayerAa3");
     }
+
+    public void PlayPlayerParry()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerSounds/PlayerParry");
+
+    }
+
+    public void PlayPlayerHook()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerSounds/PlayerHook");
+
+    }
+
+    public void PlayPlayerStairs()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerSounds/PlayerStairs");
+
+    }
     public void PlayPlayerFootStep()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerSounds/FootStep");
@@ -148,6 +165,36 @@ public class AudioManager : MonoBehaviour
     public void PlayPlayerDeath()
     {
         FMODUnity.RuntimeManager.PlayOneShot("event:/PlayerSounds/PlayerDeath");
+
+    }
+
+
+
+
+
+
+    public void PlayOpenMetalDoor()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MapSounds/OpenMetalDoor");
+
+    }
+    public void PlayOpenBossDoor()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MapSounds/OpenBossDoor");
+    }
+    public void PlayOpenLock()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MapSounds/DoorLock");
+
+    }
+
+
+
+
+
+    public void PlayEnemyHit()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MeleeEnemy/MeleeEnemyHit");
 
     }
 }

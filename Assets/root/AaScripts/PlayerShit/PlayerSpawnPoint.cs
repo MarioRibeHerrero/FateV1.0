@@ -23,6 +23,7 @@ public class PlayerSpawnPoint : MonoBehaviour
 
 
     [SerializeField] HitToOpenDoorTutorial tutorial;
+    bool tutorialB;
 
     private void Awake()
     {
@@ -59,7 +60,6 @@ public class PlayerSpawnPoint : MonoBehaviour
 
     public void SetSpawnPoint()
     {
-        Debug.Log("AKKAK");
         playerInput.SwitchCurrentActionMap("PlayerNormalMovement");
 
         if (spawnPoint != null)
@@ -87,7 +87,11 @@ public class PlayerSpawnPoint : MonoBehaviour
         }
 
         //tut
-        if (tutorial != null) tutorial.UnlockDoor();
+        if (tutorial != null && !tutorialB)
+        {
+            tutorial.UnlockDoor();
+            tutorialB = true;
+        }
     }
     private void SetNewCamOnRespawn()
     {

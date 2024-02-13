@@ -15,7 +15,6 @@ public class PopUpMapChanger : MonoBehaviour
     private void OnEnable()
     {
         oldMap = playerInput.currentActionMap;
-        Debug.Log(oldMap);
         playerInput.SwitchCurrentActionMap("PopUps");
         playerInput.actions["ExitPopUp"].started += PopUpMapChanger_started;
 

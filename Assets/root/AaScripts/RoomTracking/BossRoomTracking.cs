@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BossRoomTracking : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class BossRoomTracking : MonoBehaviour
 
 
                 text.SetActive(true);
-                PlayerInteract.onInteract += UsingTp;
+                PlayerInteract.onInteract += ApplyFade;
 
             }
         
@@ -50,7 +51,7 @@ public class BossRoomTracking : MonoBehaviour
             if (other.CompareTag("Player"))
             {
                 text.SetActive(false);
-                PlayerInteract.onInteract -= UsingTp;
+                PlayerInteract.onInteract -= ApplyFade;
 
             }
         
@@ -67,7 +68,6 @@ public class BossRoomTracking : MonoBehaviour
             camManager.SetNewCamera(nextRoom);
             camManager.DisableOldCamera(previusRoom);
             player.transform.position = nextPos.position;
-            StartBossFight();
 
             return;
         }
@@ -83,8 +83,20 @@ public class BossRoomTracking : MonoBehaviour
 
         }
     }
+    private void ApplyFade()
+    {
+        AudioManager.Instance.PlayOpenBossDoor();
+        player.GetComponent<PlayerInput>().SwitchCurrentActionMap("Dead");
+        UiManager.FadeIn();
+        Invoke(nameof(UsingTp), 0.30f);
+        Invoke(nameof(NormalActionMap), 1.5f);
+    }
 
-
+    private void NormalActionMap()
+    {
+        player.GetComponent<PlayerInput>().SwitchCurrentActionMap("PlayerNormalMovement");
+        StartBossFight();
+    }
 
     private void StartBossFight()
     {

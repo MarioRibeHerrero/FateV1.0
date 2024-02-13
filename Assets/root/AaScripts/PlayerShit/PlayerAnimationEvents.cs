@@ -173,6 +173,23 @@ public class PlayerAnimationEvents : MonoBehaviour
         AudioManager.Instance.PlayPlayerAa3();
 
     }
+
+    private void SfxParry()
+    {
+        AudioManager.Instance.PlayPlayerParry();
+
+    }
+    private void SfxStairs()
+    {
+        AudioManager.Instance.PlayPlayerStairs();
+
+    }
+    private void SfxHook()
+    {
+        AudioManager.Instance.PlayPlayerHook();
+
+    }
+
     private void SfxFootStep()
     {
         AudioManager.Instance.PlayPlayerFootStep();

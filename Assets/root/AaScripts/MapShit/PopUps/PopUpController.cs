@@ -7,6 +7,9 @@ using UnityEngine.Rendering;
 public class PopUpController : MonoBehaviour
 {
 
+    [SerializeField] bool disapearAfterOneUse;
+    bool hasBeenUsed;
+
     [SerializeField] GameObject textToApear;
 
 
@@ -18,7 +21,6 @@ public class PopUpController : MonoBehaviour
     public void ExitPopUp()
     {
         if (textToApear == null) return;
-        Debug.Log("FADE");
         Time.timeScale = 1;
         PlayerInteract.onInteract -= WhenInteract;
         canvasTutorial = true;
@@ -37,11 +39,26 @@ public class PopUpController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (needTutorial)
+
+            if (disapearAfterOneUse)
             {
-                tutorial.SetActive(true);
-                PlayerInteract.onInteract += InteractOnTutorial;
+                if (needTutorial && !hasBeenUsed)
+                {
+                    hasBeenUsed = true;
+                    tutorial.SetActive(true);
+                    PlayerInteract.onInteract += InteractOnTutorial;
+                }
             }
+            else
+            {
+                if (needTutorial && !hasBeenUsed)
+                {
+                    tutorial.SetActive(true);
+                    PlayerInteract.onInteract += InteractOnTutorial;
+                }
+            }
+
+
 
             if(!canvasTutorial)PlayerInteract.onInteract += WhenInteract;
             if(canvasTutorial || !needTutorial) PlayerInteract.onInteract += OnInteractAfterTut;

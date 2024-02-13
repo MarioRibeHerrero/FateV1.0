@@ -82,6 +82,7 @@ public class BasicEnemyHealth : MonoBehaviour, IDamageable
     }
     public void TakeDamage(int damage)
     {
+        AudioManager.Instance.PlayEnemyHit();
         StartCoroutine(HitAnim());
             
         state.health -= damage;

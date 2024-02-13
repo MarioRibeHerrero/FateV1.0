@@ -16,6 +16,8 @@ public class BossFightController : MonoBehaviour
     [HideInInspector] public int playerPos;
     [HideInInspector] public bool playerRight;
      public bool inSecondFace;
+
+    private bool firstAttack;
     [HideInInspector] public bool inBelzegorFight, bossFightFinished;
     //Cooldown
     [SerializeField] int comboCD;
@@ -55,6 +57,10 @@ public class BossFightController : MonoBehaviour
         bodyGameObject = bodyAnimator.transform.gameObject;
         bHealth = GetComponent<BossHealth>();
         anim = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+        firstAttack = true;
     }
     public void GetRandomBossAttack()
     {
@@ -174,7 +180,7 @@ public class BossFightController : MonoBehaviour
             return;
         }
 
-
+        if(firstAttack) { randomAttack = 1; firstAttack = false; }
         switch (randomAttack)
         {
             case 1:
@@ -386,7 +392,7 @@ public class BossFightController : MonoBehaviour
         pHealth.onPlayerDeath -= ResetBossFight;
         inSecondFace = false;
         hasStartedSecondPhase = false;
-
+        firstAttack = true;
     }
     public void StartBossFight()
     {
@@ -400,6 +406,14 @@ public class BossFightController : MonoBehaviour
 
     public void EndBossFight()
     {
+        //reset it
+        bossUiManager.DisableHealth();
+        inBelzegorFight = false;
+        pHealth.onPlayerDeath -= ResetBossFight;
+        inSecondFace = false;
+        hasStartedSecondPhase = false;
+        firstAttack = true;
+
         DesapearIntoNewPos(backPos.position);
         onApear += BossDied;
         Invoke("CloseTelones", 2f);

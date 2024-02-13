@@ -44,7 +44,10 @@ public class PlayerHealth : MonoBehaviour
     }
     public void HealParryPlayer(float healAmmount)
     {
+        //PostPro
         parry.Play();
+        AudioManager.Instance.PlayPlayerParry();
+
         pManager.playerHealth += healAmmount;
         CheckHealth();
         uiManager.UpdatePlayerHealthSlider();

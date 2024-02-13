@@ -6,7 +6,15 @@ public class HitToOpenDoorTutorial : MonoBehaviour
 
     public void UnlockDoor()
     {
-        Debug.Log("ASDPJA)SDHAS");
+        AudioManager.Instance.PlayOpenLock();
+        Invoke(nameof(OpenDoor), 0.75f);
+    }
+
+
+    private void OpenDoor()
+    {
+        AudioManager.Instance.PlayOpenMetalDoor();
+
         anim.SetTrigger("OpenSlow");
 
     }

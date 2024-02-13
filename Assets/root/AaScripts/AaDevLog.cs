@@ -1284,6 +1284,40 @@ añadir nuevas posicones hook--Ok
 
 añadir slash al boss--OK
 
+--Añadir animacion entry bossfightr--Ok
+
+-añadir que no te puiedas mover en los tps--Ok
+
+--AÑadir que hayan interactuables de solo una vez(palanca/doble salto)--Ok
+
+
+
+
+Dia60:
+
+meter sonidos actuales--OK
+todos los del personaje
+hit enemigo melee
+abrir puertas
+
+
+arreglar bossfight--OK
+
+arreglar bug no puedes moverte al subir--Ok
+añadir cambio de camara al darle a palanca--Ok
+
+arreglar collider de roundroom--OK  
+añadir lore en sala secreta--Ok
+
+
+despues del patio:
+sonidos menues
+confiner camara lore
+meter asset lore
+mirar que hacer
+sonido puertas sala rondas-
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -1296,7 +1330,6 @@ DEPENDO DE GENTE:
 -Boton tuto--
 -meter sonidos nuevos-
 -implementar rayo laser--
--Animaicon entry boss--
 -meter modelo hook(vfx de cunado lo puedes coger)
    
 CUANDO TENGA EL MAPA NUEVO:

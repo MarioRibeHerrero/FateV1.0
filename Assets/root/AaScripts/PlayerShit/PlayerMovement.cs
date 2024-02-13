@@ -67,9 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
-        //check if you are changing direcction
 
-        if(!GameManager.Instance.thirdPersonCam) changingDirection = pGroundCheck.isPlayerGrounded && (rb.velocity.x < 0 && inputs.x > 0) || (rb.velocity.x > 0 && inputs.x < 0);
 
         //we set a movement aceleration for the grounded player and anotherone for airplayer
 
@@ -110,7 +108,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        //check if you are changing direcction
 
+        if (!GameManager.Instance.thirdPersonCam) changingDirection = pGroundCheck.isPlayerGrounded && (rb.velocity.x < 0 && inputs.x > 0) || (rb.velocity.x > 0 && inputs.x < 0);
+
+        if (changingDirection)
+        {
+            bodyAnim.GetComponent<Animator>().SetTrigger("Turn");
+        }
 
     }
 

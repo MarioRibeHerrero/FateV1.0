@@ -42,7 +42,6 @@ public class PlayerInteract : MonoBehaviour
     private void PlayerSpawnPoint_started(InputAction.CallbackContext obj)
     {
 
-        Debug.Log("JMDAKSJ");
         if (onInteract != null)
         {
             onInteract();
