@@ -190,6 +190,14 @@ public class AudioManager : MonoBehaviour
 
 
 
+    public void MenuSfx()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MapSounds/MenuSfx");
+
+    }
+
+
+
 
 
     public void PlayEnemyHit()

@@ -1317,7 +1317,14 @@ despues del patio:
 confiner camara lore--Ok
 
 
-sonidos menues
+
+Añadir menu incio por completo--Ok
+sonidos menues--Ok
+corregir scroll menu in game--
+añadir sonido menus in game--
+
+
+
 mirar que hacer
 
 

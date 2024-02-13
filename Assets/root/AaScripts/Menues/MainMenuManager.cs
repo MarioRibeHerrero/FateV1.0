@@ -3,24 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
-    [SerializeField] GameObject credits, mainMenu;
-
-    [SerializeField] GameObject creditsExit, mainMenuPlay;
 
 
-    private EventSystem eventSystem;
+    [SerializeField] private Slider masterSlider, musicSlider, sfxSlider;
+
 
     private void Awake()
     {
-        eventSystem = EventSystem.current;
+
+        //asdad
+
     }
 
 
-    private void Start()
+    private void OnEnable()
     {
+        UpdateSfxSlider();
+        UpdateMasterSlider();
+        UpdateMusiclider();
     }
     public void NewMainScene()
     {
@@ -39,20 +43,23 @@ public class MainMenuManager : MonoBehaviour
     {
         Application.Quit();
     }
-
-
-    public void OpenCredits()
+    public void UpdateMasterSlider()
     {
-        mainMenu.SetActive(false);
-        credits.SetActive(true);
-        eventSystem.SetSelectedGameObject(creditsExit);
+        if (masterSlider.value == 0) masterSlider.value = AudioManager.Instance.generalVolume;
+
+        AudioManager.Instance.generalVolume = masterSlider.value;
+    }
+    public void UpdateMusiclider()
+    {
+        if (musicSlider.value == 0) musicSlider.value = AudioManager.Instance.musicVolume;
+
+        AudioManager.Instance.musicVolume = musicSlider.value;
+    }
+    public void UpdateSfxSlider()
+    {
+        if (sfxSlider.value == 0) sfxSlider.value = AudioManager.Instance.sfxVolume;
+
+        AudioManager.Instance.sfxVolume = sfxSlider.value;
     }
 
-    public void GoBackToMainMenu()
-    {
-        credits.SetActive(false);
-        mainMenu.SetActive(true);
-        eventSystem.SetSelectedGameObject(mainMenuPlay);
-
-    }
 }

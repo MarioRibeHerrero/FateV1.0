@@ -155,5 +155,8 @@ public class UiManager : MonoBehaviour
     }
 
 
-
+    public void PlayMenuSfx()
+    {
+        AudioManager.Instance.MenuSfx();
+    }
 }

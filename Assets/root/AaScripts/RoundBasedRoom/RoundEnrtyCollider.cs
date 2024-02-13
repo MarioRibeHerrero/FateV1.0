@@ -16,7 +16,7 @@ public class RoundEnrtyCollider : MonoBehaviour
     {
        if(other.CompareTag("Player") && !roundManager.areDoorsClosed && !GameManager.Instance.roundRoomCompleted)
         {
-            Invoke(nameof(CloseDoors), 0.4f);
+            Invoke(nameof(CloseDoors), 0f);
         }
     }
 

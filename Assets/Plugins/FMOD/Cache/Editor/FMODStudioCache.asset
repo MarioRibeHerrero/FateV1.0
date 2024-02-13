@@ -126,6 +126,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8821989283782355632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MapSounds/MenuSfx
+  m_EditorClassIdentifier: 
+  Path: event:/MapSounds/MenuSfx
+  Guid:
+    Data1: 1418053835
+    Data2: 1082444006
+    Data3: -941330515
+    Data4: -1864855223
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8779613598730612337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +487,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638434281320719754
+  lastModified: 638434506438248140
   FileSizes: []
   Exists: 1
 --- !u!114 &-6764826946726452816
@@ -720,7 +747,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638434161708725268
+  lastModified: 638434506437443041
   FileSizes: []
   Exists: 1
 --- !u!114 &-4964444936236743536
@@ -945,10 +972,10 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.strings.bank
   Name: Music.strings
   StudioPath: bank:/Music.strings
-  lastModified: 638434281320739683
+  lastModified: 638434506438288097
   FileSizes:
   - Name: 
-    Value: 2070
+    Value: 2108
   Exists: 1
 --- !u!114 &-3390237635065176799
 MonoBehaviour:
@@ -1609,6 +1636,7 @@ MonoBehaviour:
   - {fileID: -9050383794872710959}
   - {fileID: 3910656034272515873}
   - {fileID: 1846821128303231623}
+  - {fileID: -8821989283782355632}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6974524457593886624}
@@ -1618,7 +1646,7 @@ MonoBehaviour:
   - {fileID: 3049454718987111326}
   - {fileID: -3628103867729938036}
   - {fileID: 8489196592115179770}
-  cacheTime: 638434281320739683
+  cacheTime: 638434506438288097
   cacheVersion: 131616
 --- !u!114 &43149319740508602
 MonoBehaviour:
@@ -2085,10 +2113,10 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.strings.bank
   Name: FateAudio.strings
   StudioPath: bank:/FateAudio.strings
-  lastModified: 638434278918075629
+  lastModified: 638434506437153971
   FileSizes:
   - Name: 
-    Value: 2070
+    Value: 2108
   Exists: 1
 --- !u!114 &3146393912654005116
 MonoBehaviour:
@@ -2630,7 +2658,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.bank
   Name: FateAudio
   StudioPath: bank:/FateAudio
-  lastModified: 638434278918045693
+  lastModified: 638434506437061270
   FileSizes: []
   Exists: 1
 --- !u!114 &6991595181153284369
@@ -2902,10 +2930,10 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638434161708764809
+  lastModified: 638434506437492905
   FileSizes:
   - Name: 
-    Value: 2070
+    Value: 2108
   Exists: 1
 --- !u!114 &8723706906416896265
 MonoBehaviour:
