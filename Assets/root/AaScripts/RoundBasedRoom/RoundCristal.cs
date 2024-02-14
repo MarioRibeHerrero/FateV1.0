@@ -113,6 +113,7 @@ public class RoundCristal : MonoBehaviour
         shoot.SetPosition(0, shootingPoint.transform.position);
         shoot.SetPosition(1, hit.point);
         shootPointEffect.gameObject.transform.position = hit.point;
+        shootPointEffect.transform.localScale = Vector3.one;
         shootPointEffect.Play();
         Debug.Log(hit.collider.name);
 
@@ -132,5 +133,15 @@ public class RoundCristal : MonoBehaviour
     {
         shoot.enabled = false;
 
+    }
+
+
+
+    public void Explote()
+    {
+        shootPointEffect.gameObject.transform.position = transform.position;
+        shootPointEffect.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+
+        shootPointEffect.Play();
     }
 }

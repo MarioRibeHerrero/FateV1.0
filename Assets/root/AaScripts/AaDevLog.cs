@@ -1342,15 +1342,15 @@ meter line renderer ferran--Ok
 
 meter disolves cristal + todos los del enemigo melee--Ok
 
-añadir disolve cristal--
-añadir splash cristal.--
+añadir disolve cristal--Ok
+añadir splash cristal.--OK
 
 
+meter low hp vfx--
 
 añadir camera shake--
 
 
-meter low hp vfx--
 
 Line renderer
 disolve cara y hacha y crstal

@@ -943,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 107e8e7c8f11e424588a83f3c2412876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dissolveRate: 0.0255
+  dissolveRate: 0.07
   refreshRate: 0.025
   skinnedMaterials:
   - {fileID: -876546973899608171, guid: eace0a1f2b310d541a952c326381ef3a, type: 3}

@@ -43,8 +43,9 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
         if (health <= 0)
         {
             roundManager.isCristalDestroyed = true;
+            parentGo.GetComponent<RoundCristal>().Explote();
             disolve.Disolve();
-            Invoke(nameof(SetInactive), 0.9f);
+            Invoke(nameof(SetInactive), 0.4f);
         }
 
         if (roundManager.roundRoomEnemies.Count <= 0 && roundManager.inRoundRoom && roundManager.isCristalDestroyed)
