@@ -8,10 +8,10 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
     [SerializeField] GameObject parentGo;
 
     private RoundManager roundManager;
-    private DissolvingControllerTut disolve;
+    private CristalDisolve disolve;
     private void Awake()
     {
-        disolve = GetComponent<DissolvingControllerTut>();
+        disolve = GetComponent<CristalDisolve>();
             roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
 
     }
