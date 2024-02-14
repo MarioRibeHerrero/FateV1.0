@@ -1354,6 +1354,9 @@ Añadir vfx rojo a ataque enemigo y ataque--Ok
 
 Melee mas rapido, trampa menos xd--Ok
 
+Cambiar ganchos--OK
+
+
 añadir camera shake--
 
 
@@ -1361,14 +1364,12 @@ añadir camera shake--
 -----------------------------------------------------------------------------------------------------------------------------------
 ToDoList:
 -----------------------------------------------------------------------------------------------------------------------------------
-Cambiar ganchos--
 añadir camera shake--
 ----------------
 DEPENDO DE GENTE:
 ----------------
 -Boton tuto--
 -meter sonidos nuevos-
--meter modelo hook(vfx de cunado lo puedes coger)
    
 CUANDO TENGA EL MAPA NUEVO:
 Meter textura boss

@@ -63,7 +63,9 @@ public class UiManager : MonoBehaviour
         playerHealthSlider.fillAmount = pManager.playerHealth /100;
 
         //HitAnim
-        if(pManager.playerHealth <= 40)
+
+
+        if(pManager.playerHealth <= 40 && pManager.playerHealth > 0)
         {
 
             if(pManager.playerHealth <= 20)
