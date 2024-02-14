@@ -95,6 +95,11 @@ public class BossCallAnimationEvents : MonoBehaviour
     }
     public void StunBoss()
     {
+        comboRight.Stop();
+        comboLeft.Stop();
+
+
+
         LeanTween.cancel(gameObject);
         if (!bFController.stunRight)
         {
@@ -124,6 +129,18 @@ public class BossCallAnimationEvents : MonoBehaviour
     private void FvxSlash2()
     {
         slash2.Play();
+
+    }
+
+    [SerializeField] ParticleSystem comboRight, comboLeft;
+    private void FvxSlashCombo1()
+    {
+        comboRight.Play();
+
+    }
+    private void FvxSlashCombo2()
+    {
+        comboLeft.Play();
 
     }
 }

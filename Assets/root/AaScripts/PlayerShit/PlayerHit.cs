@@ -13,7 +13,7 @@ public class PlayerHit : MonoBehaviour
     PlayerManager pManager;
     PlayerHook pHook;
     PlayerGroundCheck pGroundCheck;
-
+    [SerializeField] Animator hudAnim;
     private void Awake()
     {
         pAnim = GetComponent<PlayerAnimationManager>();
@@ -33,8 +33,10 @@ public class PlayerHit : MonoBehaviour
 
     public void HitPlayer(Vector3 hitPosition,float pushBackForce, float stunTime, float damageTaken, bool takingSlow)
     {
+
         if (!pManager.isPlayerInvulnerable)
         {
+            hudAnim.SetTrigger("HudHit");
             AudioManager.Instance.PlayPlayerHit();
             pManager.playerCurrentDamage = 20;
 

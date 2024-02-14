@@ -9,6 +9,9 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
     Animator anim;
     MeleeEnemyStateController enemyController;
 
+
+    [SerializeField] ParticleSystem pSystem;
+
     private void Awake()
     {
         stateManager = GetComponent<MeleeEnemyState>();
@@ -20,7 +23,7 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
     {
         stateManager.isStunned = false;
         enemyController.canAttack = true;
-        enemyController.patience = 0.7f;
+        enemyController.patience = enemyController.patienceDefault;
         if(stateManager.playerInMovingZone)
         {
             stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Tracking;
@@ -32,6 +35,7 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
 
     private void StunEnemy()
     {
+        pSystem.Stop();
         stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Stunned;
 
     }
@@ -59,4 +63,9 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
 
     }
 
+
+    private void AaParticleSystem()
+    {
+        pSystem.Play();
+    }
 }

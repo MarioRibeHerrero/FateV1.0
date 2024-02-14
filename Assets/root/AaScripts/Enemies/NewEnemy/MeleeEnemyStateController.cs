@@ -40,7 +40,7 @@ public class MeleeEnemyStateController : MonoBehaviour, IDamageable
     public float enemyMovementSpeed;
     [SerializeField] Vector3 attackRangeVector;
     [SerializeField] LayerMask attackLayer;
-    [SerializeField] float patienceDefault;
+    public float patienceDefault;
     public float patience;
 
     //reset shit

@@ -20,7 +20,7 @@ public class MainMenuManager : MonoBehaviour
     }
 
 
-    private void OnEnable()
+    public void UpdateSliders()
     {
         UpdateSfxSlider();
         UpdateMasterSlider();

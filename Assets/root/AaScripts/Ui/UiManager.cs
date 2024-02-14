@@ -28,7 +28,9 @@ public class UiManager : MonoBehaviour
 
     public static Animator anim;
 
+    [Header("Health")]
 
+    [SerializeField] Animator hpHud;
 
     private void Awake()
     {
@@ -59,6 +61,30 @@ public class UiManager : MonoBehaviour
     public void UpdatePlayerHealthSlider()
     {
         playerHealthSlider.fillAmount = pManager.playerHealth /100;
+
+        //HitAnim
+        if(pManager.playerHealth <= 40)
+        {
+
+            if(pManager.playerHealth <= 20)
+            {
+                hpHud.SetBool("HudLowHp1", false);
+                hpHud.SetBool("HudLowHp2", true);
+                return;
+            }
+            hpHud.SetBool("HudLowHp1", true);
+            hpHud.SetBool("HudLowHp2", false);
+
+        }
+        else
+        {
+            hpHud.SetBool("HudLowHp1", false);
+            hpHud.SetBool("HudLowHp2", false);
+        }
+
+
+
+
     }
 
 

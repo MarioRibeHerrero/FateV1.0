@@ -84,7 +84,7 @@ public class PlayerAnimationManager : MonoBehaviour
         }
     }
 
-
+    
     public void Parry()
     {
         anim.SetTrigger("Parry");

@@ -1346,14 +1346,15 @@ añadir disolve cristal--Ok
 añadir splash cristal.--OK
 
 
-meter low hp vfx--
+meter low hp vfx--Ok
+
+vfx coger gancho--Ok
+
+Añadir vfx rojo a ataque enemigo y ataque--Ok
+
+Melee mas rapido, trampa menos xd--Ok
 
 añadir camera shake--
-
-
-
-Line renderer
-disolve cara y hacha y crstal
 
 
 
@@ -1365,10 +1366,8 @@ añadir camera shake--
 ----------------
 DEPENDO DE GENTE:
 ----------------
--Lugar dode obtienes doble salto
 -Boton tuto--
 -meter sonidos nuevos-
--implementar rayo laser--
 -meter modelo hook(vfx de cunado lo puedes coger)
    
 CUANDO TENGA EL MAPA NUEVO:
@@ -1379,6 +1378,11 @@ Meter textura boss
 
 
 Curar al sentarte en lugar de luego 3
+----------------
+Cosas delegar:
+----------------
+Distribucion huds
+
 
 -----
 BOSS
