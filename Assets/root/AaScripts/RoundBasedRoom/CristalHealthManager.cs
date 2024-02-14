@@ -8,11 +8,11 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
     [SerializeField] GameObject parentGo;
 
     private RoundManager roundManager;
-
+    private DissolvingControllerTut disolve;
     private void Awake()
     {
-       
-           roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
+        disolve = GetComponent<DissolvingControllerTut>();
+            roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
 
     }
 
@@ -30,6 +30,7 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
         transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 90));
 
         Invoke(nameof(ResetPos), 0.1f);
+        disolve.Reset();
     }
 
     private void ResetPos()
@@ -42,7 +43,8 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
         if (health <= 0)
         {
             roundManager.isCristalDestroyed = true;
-            gameObject.SetActive(false);
+            disolve.Disolve();
+            Invoke(nameof(SetInactive), 0.9f);
         }
 
         if (roundManager.roundRoomEnemies.Count <= 0 && roundManager.inRoundRoom && roundManager.isCristalDestroyed)
@@ -64,6 +66,13 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
 
         }
 
+
+    }
+
+
+    private void SetInactive()
+    {
+        gameObject.SetActive(false);
 
     }
 }

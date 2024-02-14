@@ -44,7 +44,6 @@ public class PopUpController : MonoBehaviour
             {
                 if (needTutorial && !hasBeenUsed)
                 {
-                    hasBeenUsed = true;
                     tutorial.SetActive(true);
                     PlayerInteract.onInteract += InteractOnTutorial;
                 }
@@ -110,6 +109,8 @@ public class PopUpController : MonoBehaviour
 
     private void InteractOnTutorial()
     {
+        hasBeenUsed = true;
+
         tutorial.SetActive(false);
     }
 }

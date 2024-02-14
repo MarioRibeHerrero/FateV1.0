@@ -1562,7 +1562,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -876546973899608171, guid: 8d86e475f83b4894c8cc96bc9aae66a1, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5844,7 +5844,7 @@ Transform:
   - {fileID: 4583828230044075209}
   - {fileID: 4997935307466963084}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!95 &5938993039154901379
 Animator:
@@ -5973,6 +5973,7 @@ MonoBehaviour:
   hasExitedDuringAttack: 0
   inRangeOfAttack: 0
   enemyMovementSpeedDefault: 1.5
+  enemyMovementSpeed: 0
   attackRangeVector: {x: 4.31, y: 3.22, z: 1}
   attackLayer:
     serializedVersion: 2
@@ -6004,6 +6005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMesh: {fileID: 3767630018832833440}
+  hacha: {fileID: 7415793065956163563}
   dissolveRate: 0.03
   refreshRate: 0.025
 --- !u!1 &5185930383588319971
@@ -9381,7 +9383,7 @@ SkinnedMeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: -876546973899608171, guid: abe351e514ea2c3428964ee5654a7c10, type: 3}
-  - {fileID: 2100000, guid: cd3456bd341518e198f5765bd13c497b, type: 2}
+  - {fileID: -876546973899608171, guid: 5233174cfa542874eb965f2e6d0d8f85, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

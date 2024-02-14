@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.VFX;
 
 public class RoundCristal : MonoBehaviour
 {
 
     [SerializeField] GameObject cristalObj;
+    [SerializeField] VisualEffect shootPointEffect;
     [SerializeField] GameObject shootingPoint;
 
     private Transform player;
@@ -110,6 +112,8 @@ public class RoundCristal : MonoBehaviour
 
         shoot.SetPosition(0, shootingPoint.transform.position);
         shoot.SetPosition(1, hit.point);
+        shootPointEffect.gameObject.transform.position = hit.point;
+        shootPointEffect.Play();
         Debug.Log(hit.collider.name);
 
         Physics.Raycast(ray, out hit2, Mathf.Infinity, warningLayers);

@@ -1320,12 +1320,41 @@ confiner camara lore--Ok
 
 Añadir menu incio por completo--Ok
 sonidos menues--Ok
-corregir scroll menu in game--
-añadir sonido menus in game--
+añadir sonido menus in game--Ok
 
 
 
 mirar que hacer
+
+
+
+Dia61:
+agregar 
+arreglar vfx enemigo--OK
+corregir scroll menu in game--Ok
+meter nueva animacion transicion boss--Ok
+añadir trampas nuevas adrian--Ok
+añadir programacion a trampas--Ok
+arreglar boton salir popups--Ok
+añadir arte 2d tuto aa--Ok
+
+meter line renderer ferran--Ok
+
+meter disolves cristal + todos los del enemigo melee--Ok
+
+añadir disolve cristal--
+añadir splash cristal.--
+
+
+
+añadir camera shake--
+
+
+meter low hp vfx--
+
+Line renderer
+disolve cara y hacha y crstal
+
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
