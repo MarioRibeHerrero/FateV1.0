@@ -944,7 +944,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinnedMesh: {fileID: 0}
-  hacha: {fileID: 0}
   dissolveRate: 0.0255
   refreshRate: 0.025
   skinnedMaterials:

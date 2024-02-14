@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
+using System;
 
 public class DissolvingControllerTut : MonoBehaviour
 {
 
 
     public SkinnedMeshRenderer skinnedMesh;
+    public SkinnedMeshRenderer hacha;
+
     public float dissolveRate = 0.0255f;
     public float refreshRate = 0.025f;
 
@@ -15,9 +18,16 @@ public class DissolvingControllerTut : MonoBehaviour
     
     void Start()
     {
+        if (skinnedMesh != null && hacha != null)
+        {
+            // Combine materials from both SkinnedMeshRenderers into one array
+            skinnedMaterials = new Material[skinnedMesh.materials.Length + hacha.materials.Length];
+            Array.Copy(skinnedMesh.materials, skinnedMaterials, skinnedMesh.materials.Length);
+            Array.Copy(hacha.materials, 0, skinnedMaterials, skinnedMesh.materials.Length, hacha.materials.Length);
 
-        if (skinnedMesh != null)
-            skinnedMaterials = skinnedMesh.materials;
+            // Assign the combined materials array to skinnedMesh
+            //skinnedMesh.materials = skinnedMaterials;
+        }
     }
 
 
