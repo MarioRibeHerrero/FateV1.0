@@ -147,4 +147,9 @@ public class RoundCristal : MonoBehaviour
 
         shootPointEffect.Play();
     }
+    private void SfxShoot()
+    {
+        AudioManager.Instance.PlayCristalShook();
+
+    }
 }

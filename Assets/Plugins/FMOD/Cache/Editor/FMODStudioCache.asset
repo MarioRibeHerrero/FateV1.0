@@ -332,7 +332,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6820
+  Length: 14989
 --- !u!114 &-7679355413193027752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -487,7 +487,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638435389750898414
+  lastModified: 638436286894991959
   FileSizes: []
   Exists: 1
 --- !u!114 &-6764826946726452816
@@ -658,6 +658,60 @@ MonoBehaviour:
   - Name: 
     Value: 1596
   Exists: 1
+--- !u!114 &-5745410316702940036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss/BossDash
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BossDash
+  Guid:
+    Data1: 204240522
+    Data2: 1075836830
+    Data3: 1542556071
+    Data4: -390276563
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1038
+--- !u!114 &-5316635563260896989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerSounds/ParryAir
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerSounds/ParryAir
+  Guid:
+    Data1: 419246423
+    Data2: 1320625503
+    Data3: 249884093
+    Data4: 2026086640
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5291129351869635920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -747,7 +801,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638435389750459503
+  lastModified: 638436286882624938
   FileSizes: []
   Exists: 1
 --- !u!114 &-4964444936236743536
@@ -972,10 +1026,10 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.strings.bank
   Name: Music.strings
   StudioPath: bank:/Music.strings
-  lastModified: 638435389750908386
+  lastModified: 638436286895002107
   FileSizes:
   - Name: 
-    Value: 2108
+    Value: 2590
   Exists: 1
 --- !u!114 &-3390237635065176799
 MonoBehaviour:
@@ -1105,6 +1159,33 @@ MonoBehaviour:
   - Name: 
     Value: 754
   Exists: 1
+--- !u!114 &-2824194317546042086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss/BossComboAttack3
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BossComboAttack3
+  Guid:
+    Data1: 815754784
+    Data2: 1322116370
+    Data3: 308962707
+    Data4: 939374152
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2823361023578154135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1377,6 +1458,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1759139397910278352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss/Boomerang
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/Boomerang
+  Guid:
+    Data1: -484182177
+    Data2: 1297093044
+    Data3: -1809059966
+    Data4: -894463016
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1600
 --- !u!114 &-1515995750744262817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1637,6 +1745,16 @@ MonoBehaviour:
   - {fileID: 3910656034272515873}
   - {fileID: 1846821128303231623}
   - {fileID: -8821989283782355632}
+  - {fileID: 8475690735286326565}
+  - {fileID: 6578569811249627863}
+  - {fileID: 1497706576979433827}
+  - {fileID: -2824194317546042086}
+  - {fileID: 6123020057960465073}
+  - {fileID: 6749589922133421435}
+  - {fileID: -5316635563260896989}
+  - {fileID: -1759139397910278352}
+  - {fileID: 8319799746533360116}
+  - {fileID: -5745410316702940036}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6974524457593886624}
@@ -1646,7 +1764,7 @@ MonoBehaviour:
   - {fileID: 3049454718987111326}
   - {fileID: -3628103867729938036}
   - {fileID: 8489196592115179770}
-  cacheTime: 638435389750908386
+  cacheTime: 638436292591567647
   cacheVersion: 131616
 --- !u!114 &43149319740508602
 MonoBehaviour:
@@ -1945,6 +2063,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1497706576979433827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss/BossComboAttack1&2
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BossComboAttack1&2
+  Guid:
+    Data1: -1782027488
+    Data2: 1265760681
+    Data3: -2065254755
+    Data4: -266831551
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 660
 --- !u!114 &1846821128303231623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,10 +2258,10 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.strings.bank
   Name: FateAudio.strings
   StudioPath: bank:/FateAudio.strings
-  lastModified: 638435389750439554
+  lastModified: 638436292591567647
   FileSizes:
   - Name: 
-    Value: 2108
+    Value: 2590
   Exists: 1
 --- !u!114 &3146393912654005116
 MonoBehaviour:
@@ -2515,6 +2660,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 13714
+--- !u!114 &6123020057960465073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MeleeEnemy/Attack
+  m_EditorClassIdentifier: 
+  Path: event:/MeleeEnemy/Attack
+  Guid:
+    Data1: -1981887414
+    Data2: 1322003540
+    Data3: -1878332258
+    Data4: -857817248
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6138040659599780166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2569,6 +2741,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 170742
+--- !u!114 &6578569811249627863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cristal/Die
+  m_EditorClassIdentifier: 
+  Path: event:/Cristal/Die
+  Guid:
+    Data1: 1615305238
+    Data2: 1135977590
+    Data3: 1277655967
+    Data4: -846855234
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6749589922133421435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MapSounds/StatueFall
+  m_EditorClassIdentifier: 
+  Path: event:/MapSounds/StatueFall
+  Guid:
+    Data1: 530054228
+    Data2: 1193675254
+    Data3: 468639387
+    Data4: -1399928224
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2464
 --- !u!114 &6864019070874142005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2658,7 +2884,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.bank
   Name: FateAudio
   StudioPath: bank:/FateAudio
-  lastModified: 638435389750419608
+  lastModified: 638436292591542640
   FileSizes: []
   Exists: 1
 --- !u!114 &6991595181153284369
@@ -2888,6 +3114,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 62714
+--- !u!114 &8319799746533360116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Boss/BelzegorLaugh
+  m_EditorClassIdentifier: 
+  Path: event:/Boss/BelzegorLaugh
+  Guid:
+    Data1: -1845807252
+    Data2: 1079676300
+    Data3: -1000936308
+    Data4: -816761333
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8417774946524415665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2915,6 +3168,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8475690735286326565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cristal/Attack
+  m_EditorClassIdentifier: 
+  Path: event:/Cristal/Attack
+  Guid:
+    Data1: -654130674
+    Data2: 1324323246
+    Data3: -404405085
+    Data4: 2101312725
+  Banks:
+  - {fileID: 6974524457593886624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8489196592115179770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2930,10 +3210,10 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638435389750479450
+  lastModified: 638436286882637991
   FileSizes:
   - Name: 
-    Value: 2108
+    Value: 2590
   Exists: 1
 --- !u!114 &8723706906416896265
 MonoBehaviour:
