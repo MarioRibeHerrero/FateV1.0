@@ -14,7 +14,9 @@ public class RoundEnrtyCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.CompareTag("Player") && !roundManager.areDoorsClosed && !GameManager.Instance.roundRoomCompleted)
+        Debug.Log("RoundRoom");
+
+        if (other.CompareTag("Player") && !roundManager.areDoorsClosed && !GameManager.Instance.roundRoomCompleted)
         {
             Invoke(nameof(CloseDoors), 0f);
         }

@@ -70,16 +70,20 @@ public class UiManager : MonoBehaviour
 
             if(pManager.playerHealth <= 20)
             {
+                AudioManager.Instance.StartPlayerLowHp();
                 hpHud.SetBool("HudLowHp1", false);
                 hpHud.SetBool("HudLowHp2", true);
                 return;
             }
             hpHud.SetBool("HudLowHp1", true);
             hpHud.SetBool("HudLowHp2", false);
+            AudioManager.Instance.StopPlayerLowHp();
 
         }
         else
         {
+            AudioManager.Instance.StopPlayerLowHp();
+
             hpHud.SetBool("HudLowHp1", false);
             hpHud.SetBool("HudLowHp2", false);
         }

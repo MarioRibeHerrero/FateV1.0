@@ -68,4 +68,9 @@ public class MeleeEnemyAnimationEvents : MonoBehaviour
     {
         pSystem.Play();
     }
+
+    private void SfxAttack()
+    {
+        AudioManager.Instance.PlayEnemyAttack();
+    }
 }

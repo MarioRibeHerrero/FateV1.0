@@ -143,4 +143,28 @@ public class BossCallAnimationEvents : MonoBehaviour
         comboLeft.Play();
 
     }
+
+
+    private void SvxSlashCombo1()
+    {
+        AudioManager.Instance.PlayBossAttack12();
+    }
+    private void SvxSlashCombo2()
+    {
+        AudioManager.Instance.PlayBossAttack3();
+
+    }
+    private void SfxDash()
+    {
+        AudioManager.Instance.PlayBossDash();
+
+    }
+
+
+
+
+
+
+
+
 }

@@ -42,6 +42,7 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
     {
         if (health <= 0)
         {
+            AudioManager.Instance.PlayCristalDie();
             roundManager.isCristalDestroyed = true;
             parentGo.GetComponent<RoundCristal>().Explote();
             disolve.Disolve();

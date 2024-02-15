@@ -344,6 +344,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 6.1833334
+    functionName: Shoot
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 6.233333
     functionName: AboutToShoot
     data: 
@@ -351,8 +358,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 6.6
-    functionName: Shoot
+  - time: 6.4666667
+    functionName: SfxShoot
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

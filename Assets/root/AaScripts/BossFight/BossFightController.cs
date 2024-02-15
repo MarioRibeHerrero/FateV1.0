@@ -457,6 +457,16 @@ public class BossFightController : MonoBehaviour
     {
         AudioManager.Instance.FristPhaseBossFight();
     }
+
+    private void SfxStartBoomerang()
+    {
+        AudioManager.Instance.StartBoomerang();
+
+    }
+    private void SfxStopBoomerang()
+    {
+        AudioManager.Instance.StopBoomerang();
+    }
     #region Attacks
 
 

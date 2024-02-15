@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     private Bus musicBus;
 
 
-    FMOD.Studio.EventInstance mainTheme, preBossLoop, levelTheme, secondPhaseBossLoop, bossEntry, fateLowHp;
+    FMOD.Studio.EventInstance mainTheme, preBossLoop, levelTheme, secondPhaseBossLoop, bossEntry, fateLowHp, bossBoomerang;
 
     private void Awake()
     {
@@ -45,6 +45,7 @@ public class AudioManager : MonoBehaviour
         levelTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game/LevelTheme");
 
         fateLowHp = FMODUnity.RuntimeManager.CreateInstance("event:/PlayerSounds/LowHp");
+        bossBoomerang = FMODUnity.RuntimeManager.CreateInstance("event:/Boss/boomerang");
 
         generalBus = RuntimeManager.GetBus("bus:/");
         musicBus = RuntimeManager.GetBus("bus:/Music");
@@ -258,6 +259,14 @@ public class AudioManager : MonoBehaviour
     public void StopPlayerLowHp()
     {
         fateLowHp.stop((FMOD.Studio.STOP_MODE.ALLOWFADEOUT));
+    }
+    public void StartBoomerang()
+    {
+        bossBoomerang.start();
+    }
+    public void StopBoomerang()
+    {
+        bossBoomerang.stop((FMOD.Studio.STOP_MODE.ALLOWFADEOUT));
     }
 
 }
