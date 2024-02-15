@@ -1357,7 +1357,10 @@ Melee mas rapido, trampa menos xd--Ok
 Cambiar ganchos--OK
 
 
-añadir camera shake--
+-añadir camera shake--
+
+
+Dia61:
 
 1- camaras zzz(lucia)
 2- texturas boss--Ok

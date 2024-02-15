@@ -20,7 +20,7 @@ public class PlayerAnimationEvents : MonoBehaviour
 
     [Header("PARTICLE SYSTEM")]
 
-    [SerializeField] ParticleSystem aa1, aa2;
+    [SerializeField] ParticleSystem aa1, aa2, aa3, aaAir;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -171,6 +171,15 @@ public class PlayerAnimationEvents : MonoBehaviour
     private void SfxAa3()
     {
         AudioManager.Instance.PlayPlayerAa3();
+        aa3.Play();
+
+    }
+
+    private void VisualAaAir()
+    {
+        AudioManager.Instance.PlayPlayerAa1();
+
+        aaAir.Play();
 
     }
 

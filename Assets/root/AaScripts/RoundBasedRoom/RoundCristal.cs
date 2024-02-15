@@ -24,9 +24,12 @@ public class RoundCristal : MonoBehaviour
 
     private bool aboutToShoot, warkingRayCast;
     [SerializeField] float cristalDamage;
+    private RoundManager roundManager;
 
     private void Awake()
     {
+        roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
+
         player = GameObject.FindObjectOfType<PlayerHealth>().transform;
         //cristalObj.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
 
@@ -43,7 +46,7 @@ public class RoundCristal : MonoBehaviour
     {
         LookAtPlayer();
 
-        if (warkingRayCast)
+        if (warkingRayCast && !roundManager.isCristalDestroyed)
         {
 
             Ray ray = new Ray(shootingPoint.transform.position, shootingPoint.transform.up);

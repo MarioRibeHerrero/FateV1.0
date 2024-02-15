@@ -95,7 +95,7 @@ public class PopUpController : MonoBehaviour
         }
         else
         {
-            Invoke(nameof(LoadPopUp), 1);
+            Invoke(nameof(LoadPopUp), 1.80f);
         }
     }
 

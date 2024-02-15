@@ -5,18 +5,17 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+
 public class MainMenuManager : MonoBehaviour
 {
 
 
     [SerializeField] private Slider masterSlider, musicSlider, sfxSlider;
 
-
-    private void Awake()
+    [SerializeField] GameObject playButton;
+    private void Start()
     {
-
-        //asdad
-
+        EventSystem.current.SetSelectedGameObject(playButton);
     }
 
 

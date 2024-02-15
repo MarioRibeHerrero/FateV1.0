@@ -20,15 +20,6 @@ using UnityEngine.UIElements;
 
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                ShakeCamera(3, 1);
-
-            }
-        }
-
         public void ShakeCamera(float intensity, float time)
         {
             

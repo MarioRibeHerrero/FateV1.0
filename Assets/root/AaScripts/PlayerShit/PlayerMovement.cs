@@ -21,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] bool changingDirection;
 
-    [SerializeField] GameObject bodyAnim;
+    [SerializeField] GameObject bodyObj;
+    Animator bodyAnim;
 
     //public
     public bool hasStopedMidAir;
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         pJump = GetComponent<PlayerJump>();
         pHook = GetComponent<PlayerHook>();
         pManager = GetComponent<PlayerManager>();
-
+        bodyAnim = bodyObj.GetComponent<Animator>();
 
 
 
@@ -67,7 +68,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement()
     {
-
+        //animator move
+        bool state;
+        state = Mathf.Abs(inputs.x) > 0;
+        bodyAnim.SetBool("MoveInput",state);
 
         //we set a movement aceleration for the grounded player and anotherone for airplayer
 
@@ -114,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (changingDirection)
         {
-            bodyAnim.GetComponent<Animator>().SetTrigger("Turn");
+            bodyObj.GetComponent<Animator>().SetTrigger("Turn");
         }
 
     }
