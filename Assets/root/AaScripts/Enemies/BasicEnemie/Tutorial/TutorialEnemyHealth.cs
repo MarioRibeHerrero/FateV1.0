@@ -13,6 +13,7 @@ public class TutorialEnemyHealth : MonoBehaviour, IDamageable
         health -= damge;
         if (health < 0 && !isDead)
         {
+            AudioManager.Instance.PlayEnemyHit();
             GetComponent<Animator>().SetTrigger("Die");
             GetComponent<DissolvingControllerTut>().Disolve();
         }

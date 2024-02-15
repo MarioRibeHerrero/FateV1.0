@@ -50,6 +50,7 @@ public class MeleeEnemyTutorial : MonoBehaviour
     public void ResumeTimeScale()
     {
 
+        AudioManager.Instance.PlayPlayerParry();
             textTutorial1.GetComponent<Animator>().SetTrigger("Exit");
       //  textTutorial2(true);
             Time.timeScale = 1f;
