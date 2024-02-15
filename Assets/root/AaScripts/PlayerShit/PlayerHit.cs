@@ -36,6 +36,8 @@ public class PlayerHit : MonoBehaviour
 
         if (!pManager.isPlayerInvulnerable)
         {
+
+            CameraShakes.instance.ShakeCamera(2, 0.1f);
             hudAnim.SetTrigger("HudHit");
             AudioManager.Instance.PlayPlayerHit();
             pManager.playerCurrentDamage = 20;
