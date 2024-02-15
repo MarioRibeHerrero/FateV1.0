@@ -7140,6 +7140,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5890429573758848712, guid: acf70ceb3ef165d2d93cc2211b481991,
+        type: 3}
+      propertyPath: isGameLoaded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5890429573758848712, guid: acf70ceb3ef165d2d93cc2211b481991,
+        type: 3}
+      propertyPath: roundRoomCompleted
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6287916264609663531, guid: acf70ceb3ef165d2d93cc2211b481991,
         type: 3}
       propertyPath: m_FirstSelected
