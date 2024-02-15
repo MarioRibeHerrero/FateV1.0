@@ -99,9 +99,11 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator RevivePlayer()
     {
-        SetCameraToRespawnCamera();
         yield return new WaitForSeconds(0.75f);
         UiManager.FadeIn();
+        yield return new WaitForSeconds(0.2f);
+        SetCameraToRespawnCamera();
+
         yield return new WaitForSeconds(0.25f);
 
         GetComponent<PlayerGravity>().ReturnPlayerMovement();

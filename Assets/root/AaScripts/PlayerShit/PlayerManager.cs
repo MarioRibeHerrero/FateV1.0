@@ -67,7 +67,7 @@ public class PlayerManager : MonoBehaviour
     private void Awake()
     {
         playerCurrentDamage = playerDefaultDamage;
-
+        AudioManager.Instance.LevelTheme();
         //Load shit
 
         if (GameManager.Instance.isGameLoaded)
