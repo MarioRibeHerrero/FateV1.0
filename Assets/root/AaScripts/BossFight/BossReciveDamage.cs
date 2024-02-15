@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class BossReciveDamage : MonoBehaviour, IDamageable
@@ -21,18 +20,10 @@ public class BossReciveDamage : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damageTaken)
     {
-        StartCoroutine(SlowTime());
         anim.SetTrigger("Hit");
         bossFControllerScript.bossCurrentHealth -= damageTaken;
         bossHealth.CheckHealth();
     }
 
-    private IEnumerator SlowTime()
-    {
-        Time.timeScale = 0.3f;
-        yield return new WaitForSeconds(0.05f);
-        Time.timeScale = 1f;
-
-    }
 
 }

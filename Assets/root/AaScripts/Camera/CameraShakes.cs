@@ -31,11 +31,11 @@ using UnityEngine.UIElements;
                 if (noise != null)
                 {
                     noise.m_AmplitudeGain = intensity;
-                    StartCoroutine(ResetCameraShake(time));                }
+                    StartCoroutine(ResetCameraShake(1));                }
             }
         }   
 
-        public IEnumerator ResetCameraShake(float time)
+        public IEnumerator ResetCameraShake(int time)
         {
             yield return new WaitForSeconds(time);
             CinemachineVirtualCamera vCam = GetComponent<CinemachineBrain>().ActiveVirtualCamera.VirtualCameraGameObject.GetComponent<CinemachineVirtualCamera>();
