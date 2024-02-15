@@ -22,18 +22,10 @@ public class PlayerHit : MonoBehaviour
         pGroundCheck = GetComponent<PlayerGroundCheck>();
     }
 
-    private void Update()
-    {
-        if(Input.GetKeyUp(KeyCode.K))
-        {
-            HitPlayer(this.transform.position, 20, 1, 20, false);
-        }
-    }
-
 
     public void HitPlayer(Vector3 hitPosition,float pushBackForce, float stunTime, float damageTaken, bool takingSlow)
     {
-
+        if (GameManager.Instance.godMode) return;
         if (!pManager.isPlayerInvulnerable)
         {
             pHook.CancelHook();

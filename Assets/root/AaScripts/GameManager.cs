@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [Header("IsGameLoaded")]
     public bool isGameLoaded;
 
+    public bool godMode;
+
     public static GameManager Instance;
     private void Awake()
     {

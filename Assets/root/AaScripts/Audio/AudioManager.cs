@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     private Bus musicBus;
 
 
-    FMOD.Studio.EventInstance mainTheme, preBossLoop, levelTheme, secondPhaseBossLoop, bossEntry;
+    FMOD.Studio.EventInstance mainTheme, preBossLoop, levelTheme, secondPhaseBossLoop, bossEntry, fateLowHp;
 
     private void Awake()
     {
@@ -44,6 +44,7 @@ public class AudioManager : MonoBehaviour
         mainTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game/MainTheme");
         levelTheme = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game/LevelTheme");
 
+        fateLowHp = FMODUnity.RuntimeManager.CreateInstance("event:/PlayerSounds/LowHp");
 
         generalBus = RuntimeManager.GetBus("bus:/");
         musicBus = RuntimeManager.GetBus("bus:/Music");
@@ -207,4 +208,56 @@ public class AudioManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot("event:/MeleeEnemy/MeleeEnemyHit");
 
     }
+    public void PlayEnemyAttack()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MeleeEnemy/Attack");
+
+    }
+
+    public void PlayStatueFall()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/MapSounds/StatueFall");
+
+    }
+
+    public void PlayCristalDie()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Cristal/Die");
+
+    }
+    public void PlayCristalShook()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Cristal/Attack");
+
+    }
+    public void PlayBossBoomerang()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Boss/boomerang");
+
+    }
+    public void PlayBossAttack12()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Boss/BossComboAttack1&2");
+
+    }
+    public void PlayBossAttack3()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Boss/BossComboAttack3");
+
+    }
+    public void PlayBossDash()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Boss/BossDash");
+
+    }
+
+    public void StartPlayerLowHp()
+    {
+        fateLowHp.start();
+    }
+    public void StopPlayerLowHp()
+    {
+        fateLowHp.stop((FMOD.Studio.STOP_MODE.ALLOWFADEOUT));
+    }
+
 }
