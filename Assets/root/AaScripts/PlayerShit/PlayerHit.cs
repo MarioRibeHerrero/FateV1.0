@@ -36,7 +36,7 @@ public class PlayerHit : MonoBehaviour
 
         if (!pManager.isPlayerInvulnerable)
         {
-
+            pHook.CancelHook();
             CameraShakes.instance.ShakeCamera(2, 0.1f);
             hudAnim.SetTrigger("HudHit");
             AudioManager.Instance.PlayPlayerHit();

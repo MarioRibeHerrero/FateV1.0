@@ -21,7 +21,6 @@ public class BossReciveDamage : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damageTaken)
     {
-        StartCoroutine(SlowTime());
         anim.SetTrigger("Hit");
         bossFControllerScript.bossCurrentHealth -= damageTaken;
         bossHealth.CheckHealth();

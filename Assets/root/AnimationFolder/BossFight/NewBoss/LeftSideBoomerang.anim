@@ -40212,7 +40212,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.0666667
+  - time: 1
     functionName: CallNewAttack
     data: 
     objectReferenceParameter: {fileID: 0}
