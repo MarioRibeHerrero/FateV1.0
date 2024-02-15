@@ -15,7 +15,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject playButton;
     private void Start()
     {
-        EventSystem.current.SetSelectedGameObject(playButton);
+        Debug.Log("LODEA");
     }
 
 
