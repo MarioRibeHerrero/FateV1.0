@@ -1361,7 +1361,19 @@ añadir camera shake--
 
 1- camaras zzz(lucia)
 2- texturas boss--Ok
-3- animaciones fate--
+3- animaciones fate:
+walk--
+aa1
+aa2(1 frame ams
+aa3(7 frames mas
+aaAir(3 menos
+
+transiciones aa a run IMPORTANT
+
+
+
+
+
 4- camera shake, rever, slowmo (feedback player)
 5- focos escenario boss detrás (extra GOD) y (que siga a fate)
 6- sfx
