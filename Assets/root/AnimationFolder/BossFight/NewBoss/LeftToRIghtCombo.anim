@@ -9820,7 +9820,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1.1
-        value: {x: 0, y: 204.189, z: 0}
+        value: {x: -2.202, y: 349.37, z: 180.69}
         inSlope: {x: Infinity, y: Infinity, z: Infinity}
         outSlope: {x: Infinity, y: Infinity, z: Infinity}
         tangentMode: 0
@@ -87129,7 +87129,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.1
-        value: 0
+        value: -2.202
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -87168,7 +87168,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.1
-        value: 204.189
+        value: 349.37
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -87207,7 +87207,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.1
-        value: 0
+        value: 180.69
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -117557,6 +117557,13 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.6
+    functionName: SvxSlashCombo1
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.6
     functionName: FvxSlash2
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -117565,6 +117572,13 @@ AnimationClip:
     messageOptions: 0
   - time: 1.1
     functionName: FvxSlash2
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.1
+    functionName: SvxSlashCombo1
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -117579,6 +117593,13 @@ AnimationClip:
     messageOptions: 0
   - time: 1.8
     functionName: FvxSlashCombo1
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.8
+    functionName: SvxSlashCombo2
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

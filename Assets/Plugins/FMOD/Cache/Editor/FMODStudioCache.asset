@@ -487,7 +487,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638436360526207227
+  lastModified: 638436286894991959
   FileSizes: []
   Exists: 1
 --- !u!114 &-6764826946726452816
@@ -801,7 +801,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638435389750459503
+  lastModified: 638436286882624938
   FileSizes: []
   Exists: 1
 --- !u!114 &-4964444936236743536
@@ -1026,7 +1026,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Music.strings.bank
   Name: Music.strings
   StudioPath: bank:/Music.strings
-  lastModified: 638436360526217276
+  lastModified: 638436286895002107
   FileSizes:
   - Name: 
     Value: 2590
@@ -1764,7 +1764,7 @@ MonoBehaviour:
   - {fileID: 3049454718987111326}
   - {fileID: -3628103867729938036}
   - {fileID: 8489196592115179770}
-  cacheTime: 638436360526217276
+  cacheTime: 638436467086293153
   cacheVersion: 131616
 --- !u!114 &43149319740508602
 MonoBehaviour:
@@ -2258,7 +2258,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.strings.bank
   Name: FateAudio.strings
   StudioPath: bank:/FateAudio.strings
-  lastModified: 638436360525987537
+  lastModified: 638436467086293153
   FileSizes:
   - Name: 
     Value: 2590
@@ -2884,7 +2884,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/FateAudio.bank
   Name: FateAudio
   StudioPath: bank:/FateAudio
-  lastModified: 638436360525977563
+  lastModified: 638436467086242961
   FileSizes: []
   Exists: 1
 --- !u!114 &6991595181153284369
@@ -3210,7 +3210,7 @@ MonoBehaviour:
   Path: Assets/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638436360525997509
+  lastModified: 638436286882637991
   FileSizes:
   - Name: 
     Value: 2590

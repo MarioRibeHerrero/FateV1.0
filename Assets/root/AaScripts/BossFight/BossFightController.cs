@@ -175,6 +175,10 @@ public class BossFightController : MonoBehaviour
                         isComboInCD = true;
                         AddToComboCD();
                     }
+                    else
+                    {
+                        GetRandomBossAttack();
+                    }
                     break;
             }
             return;

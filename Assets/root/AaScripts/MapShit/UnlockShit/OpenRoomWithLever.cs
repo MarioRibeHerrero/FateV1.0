@@ -38,7 +38,7 @@ public class OpenRoomWithLever : MonoBehaviour
     {
 
         AudioManager.Instance.PlayOpenLock();
-        Invoke(nameof(OpenDoorD), 0.75f);
+        Invoke(nameof(OpenDoorD), 1.2f);
     }
 
 

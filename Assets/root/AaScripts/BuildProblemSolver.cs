@@ -28,7 +28,16 @@ public class BuildProblemSolver : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F9))
         {
             //GodMode
-            GameManager.Instance.godMode = true;
+            if (GameManager.Instance.godMode)
+            {
+                GameManager.Instance.godMode = false;
+
+            }
+            else
+            {
+                GameManager.Instance.godMode = true;
+
+            }
         }
         if (Input.GetKeyDown(KeyCode.F8))
         {

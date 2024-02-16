@@ -59,7 +59,7 @@ public class Credits : MonoBehaviour
     public void InCreditsToFalse()
     {
         inCredits = false;
-        EventSystem.current.SetSelectedGameObject(play);
+        SceneManager.LoadScene(0);
 
     }
 

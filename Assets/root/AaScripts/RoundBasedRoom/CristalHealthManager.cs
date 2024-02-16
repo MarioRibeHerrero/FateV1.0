@@ -42,11 +42,11 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
     {
         if (health <= 0)
         {
+            Invoke(nameof(SetInactive), 0.4f);
             AudioManager.Instance.PlayCristalDie();
             roundManager.isCristalDestroyed = true;
             parentGo.GetComponent<RoundCristal>().Explote();
             disolve.Disolve();
-            Invoke(nameof(SetInactive), 0.4f);
         }
 
         if (roundManager.roundRoomEnemies.Count <= 0 && roundManager.inRoundRoom && roundManager.isCristalDestroyed)
@@ -74,7 +74,8 @@ public class CristalHealthManager : MonoBehaviour, IDamageable
 
     private void SetInactive()
     {
-        gameObject.SetActive(false);
+        Debug.Log("LLEGAHASTAIANACT");
+        parentGo.gameObject.SetActive(false);
 
     }
 }

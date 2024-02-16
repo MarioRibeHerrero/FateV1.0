@@ -14,7 +14,6 @@ public class TpRoomTracking : MonoBehaviour
     private CameraManager camManager;
     private GameObject player;
 
-    [SerializeField] GameObject text;
     [SerializeField] Transform prevPos, nextPos;
 
     [SerializeField] bool instant;
@@ -40,7 +39,6 @@ public class TpRoomTracking : MonoBehaviour
             {
                 
 
-                text.SetActive(true);
                 PlayerInteract.onInteract += ApplyFade;
 
             }
@@ -63,7 +61,6 @@ public class TpRoomTracking : MonoBehaviour
 
             if (other.CompareTag("Player"))
             {
-                text.SetActive(false);
                 PlayerInteract.onInteract -= ApplyFade;
 
             }

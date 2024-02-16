@@ -344,22 +344,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 6.1833334
-    functionName: Shoot
+  - time: 5.9
+    functionName: SfxShoot
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 6.233333
+  - time: 6.25
     functionName: AboutToShoot
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 6.4666667
-    functionName: SfxShoot
+  - time: 6.6
+    functionName: Shoot
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
