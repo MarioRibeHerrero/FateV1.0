@@ -9,43 +9,62 @@ public class PlayerSpawnPoint : MonoBehaviour
     private GameObject spawnPoint;
     private GameObject lastSpawnPoint;
 
-    //InputActions
-    PlayerInput playerInput;
 
     //components
     PlayerHealth pHealth;
-
+    PlayerRotation pRotation;
+    PlayerInput playerInput;
+    PlayerGroundCheck pGroundCheck;
+    PlayerManager pManager;
+    [SerializeField] Animator anim;
 
     //mats
     [SerializeField] Material currentM, defaultM;
 
+
+    [SerializeField] HitToOpenDoorTutorial tutorial;
+    bool tutorialB;
+
     private void Awake()
     {
-        //InputActions
-        playerInput = GetComponent<PlayerInput>();
-
-        playerInput.actions["Hook"].started += PlayerSpawnPoint_started;
         //GettingComponents
         pHealth = GetComponent<PlayerHealth>();
+        pRotation = GetComponent<PlayerRotation>();
+        playerInput = GetComponent<PlayerInput>();
+        pGroundCheck = GetComponent<PlayerGroundCheck>();
+        pManager = GetComponent<PlayerManager>();
     }
     private void Start()
     {
-
-
-
-
         //vars
         spawnPoint = null;
         lastSpawnPoint = null;
+    }
+    private void SpawnPosShit()
+    {
+
+        pManager.playerSitting = true;
 
 
+        if (!pGroundCheck.isPlayerGrounded) return;
+
+        playerInput.SwitchCurrentActionMap("PopUps");
+
+        LeanTween.moveLocalX(gameObject, spawnPoint.transform.position.x, 0.5f);
+        
+        pRotation.ForceFaceRightLeft(false);
+            anim.SetTrigger("SitRight");
+            
     }
 
-    private void PlayerSpawnPoint_started(InputAction.CallbackContext obj)
+
+    public void SetSpawnPoint()
     {
-        if(spawnPoint != null)
+        playerInput.SwitchCurrentActionMap("PlayerNormalMovement");
+
+        if (spawnPoint != null)
         {
-            if (spawnPoint  !=  lastSpawnPoint && lastSpawnPoint != null)
+            if (spawnPoint != lastSpawnPoint && lastSpawnPoint != null)
             {
                 lastSpawnPoint.GetComponent<MeshRenderer>().material = defaultM;
             }
@@ -56,15 +75,34 @@ public class PlayerSpawnPoint : MonoBehaviour
 
 
             lastSpawnPoint = spawnPoint;
+            SetNewCamOnRespawn();
+            pHealth.HealPlayer(100);
 
-        }        
+
+            //SAVING SHIT
+            GameManager.Instance.respawnVector = transform.position;
+
+            SaveSystem.SaveGameManager(GameManager.Instance);
+
+        }
+
+        //tut
+        if (tutorial != null && !tutorialB)
+        {
+            tutorial.UnlockDoor();
+            tutorialB = true;
+        }
     }
-
+    private void SetNewCamOnRespawn()
+    {
+        GameManager.Instance.RespawnRoom = GameManager.Instance.currentRoom;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("SpawnPoint"))
         {
             spawnPoint = other.gameObject;
+            PlayerInteract.onInteract += SpawnPosShit;
         }
     }
 
@@ -73,6 +111,8 @@ public class PlayerSpawnPoint : MonoBehaviour
         if (other.CompareTag("SpawnPoint"))
         {
             spawnPoint = null;
+            PlayerInteract.onInteract -= SpawnPosShit;
+
         }
     }
 

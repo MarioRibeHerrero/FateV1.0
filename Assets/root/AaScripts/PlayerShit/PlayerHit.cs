@@ -1,5 +1,7 @@
+
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -7,31 +9,61 @@ public class PlayerHit : MonoBehaviour
 {
 
     [SerializeField] float invulnerabilityTime;
-
+    private PlayerAnimationManager pAnim;
+    PlayerManager pManager;
+    PlayerHook pHook;
+    PlayerGroundCheck pGroundCheck;
+    [SerializeField] Animator hudAnim;
+    private void Awake()
+    {
+        pAnim = GetComponent<PlayerAnimationManager>();
+        pManager = GetComponent<PlayerManager>();
+        pHook = GetComponent<PlayerHook>();
+        pGroundCheck = GetComponent<PlayerGroundCheck>();
+    }
 
 
     public void HitPlayer(Vector3 hitPosition,float pushBackForce, float stunTime, float damageTaken, bool takingSlow)
     {
-        if (!GameManager.Instance.isPlayerInvulnerable)
+        if (GameManager.Instance.godMode) return;
+        if (!pManager.isPlayerInvulnerable)
         {
-            if(takingSlow)
-            {
-                StartCoroutine(SlowPlayer());
+            pHook.CancelHook();
+            CameraShakes.instance.ShakeCamera(2, 0.1f);
+            hudAnim.SetTrigger("HudHit");
+            AudioManager.Instance.PlayPlayerHit();
+            pManager.playerCurrentDamage = 20;
+
+            if (takingSlow)
+                {
+                    StartCoroutine(SlowPlayer());
+                    pManager.isPlayerInvulnerable = true;
+                    Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
+                    GetComponent<PlayerHealth>().TakeDamage(damageTaken);
+
+                }
+                else
+                {
+                    pAnim.CallPlayerHit();
+                    pManager.isPlayerInvulnerable = true;
+                    Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
+                    StartCoroutine(StunPlayer(stunTime, hitPosition, pushBackForce));
+                    GetComponent<PlayerHealth>().TakeDamage(damageTaken);
+                }
             }
 
-            GameManager.Instance.isPlayerInvulnerable = true;
-            Invoke(nameof(PlayerToVulnerable), stunTime + invulnerabilityTime);
-            StartCoroutine(StunPlayer(stunTime, hitPosition, pushBackForce));
-            GetComponent<PlayerHealth>().TakeDamage(damageTaken);
-        }
+
+
+
+
+        
     }
 
 
     private void PlayerToVulnerable()
     {
-        GameManager.Instance.isPlayerInvulnerable = false;
+        pManager.isPlayerInvulnerable = false;
     }
-
     public void Kill()
     {
         GetComponent<PlayerHealth>().TakeDamage(100);
@@ -39,38 +71,17 @@ public class PlayerHit : MonoBehaviour
     private void pushPlayer(Vector3 hitPosition, float pushBackForce)
     {
 
-        //multiplicamos 1, x el signo de la rotacion, x lo que si esta miradno a la derecha, 1 lo empujara a la derecha, si esta en la izquierda,
-        // sera menos 1 y lo empujara al otro lado.
 
+        Vector3 direction = transform.position - hitPosition;
+        direction.Normalize();
 
+        Vector3 newDirection = new Vector3(direction.x,0 , 0f);
+        newDirection.Normalize();
 
-        //Si el enemigo esta mirando a la derecha:
-        if (hitPosition.y == 180)
-        {
-            //si el player mira a derecha se le empuja para atas, y si player mirando izquierda le empuja derecha
-            Vector3 pushbackDirection = GetComponent<PlayerRotation>().isFacingRight ?  new Vector3(-1, 0, 0) : new Vector3(1, 0, 0);
-
-            GetComponent<Rigidbody>().drag = 7;
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            GetComponent<Rigidbody>().AddForce(pushbackDirection * pushBackForce, ForceMode.Impulse);
-        }
-        else
-        {
-            //si el player mira a izquierda se le empuja para atas, y si player mirando derecha le empuja derecha
-            Vector3 pushbackDirection = GetComponent<PlayerRotation>().isFacingRight ? new Vector3(-1, 0, 0) : new Vector3(1, 0, 0);
-
-            GetComponent<Rigidbody>().drag = 7;
-            GetComponent<Rigidbody>().velocity = Vector3.zero;
-            GetComponent<Rigidbody>().AddForce(pushbackDirection * pushBackForce, ForceMode.Impulse);
-        }
-
-
-
-
-
-
-
-
+        // Apply force in the opposite direction to push the object away
+        GetComponent<Rigidbody>().drag = 7;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().AddForce(newDirection * pushBackForce, ForceMode.Impulse);
 
 
     }
@@ -78,29 +89,30 @@ public class PlayerHit : MonoBehaviour
     private IEnumerator StunPlayer(float stunTime, Vector3 hitPosition, float pushBackForce)
     {
         
-        GameManager.Instance.isPlayerStunned = true;
+        pManager.isPlayerStunned = true;
         //Cosas q no puede hacer el player mientras este stuneado:
         //Moverse, rotar, atacar, parrear, 
-        GetComponent<PlayerMovement>().enabled = false;
-        GetComponent<PlayerRotation>().enabled = false;
-        GetComponent<PlayerJump>().enabled = false;
-        GetComponent<PlayerParry>().enabled = false;
-        GetComponent<PlayerAa>().enabled = false;
-        GetComponent<PlayerHook>().enabled = false;
+        //abarca tmb el salto
+        pManager.canPlayerMove = false;
+        pManager.canPlayerRotate = false;
+        //para que no pueda atacar el player ni parrear
+        pManager.inStrongAttack = true;
+        pManager.playerInNormalAttack = true;
+        pHook.CancelHook();
 
         pushPlayer(hitPosition, pushBackForce);
+        
 
-        yield return new WaitForSeconds(stunTime);
-        GameManager.Instance.isPlayerStunned = false;
-
-
-
-        GetComponent<PlayerMovement>().enabled = true;
-        GetComponent<PlayerRotation>().enabled = true;
-        GetComponent<PlayerJump>().enabled = true;
-        GetComponent<PlayerParry>().enabled = true;
-        GetComponent<PlayerAa>().enabled = true;
-        GetComponent<PlayerHook>().enabled = true;
+        yield return new WaitForSeconds(stunTime / 3);
+        pManager.isPlayerStunned = false;
+        //Cosas q no puede hacer el player mientras este stuneado:
+        //Moverse, rotar, atacar, parrear, 
+        //abarca tmb el salto
+        pManager.canPlayerMove = true;
+        pManager.canPlayerRotate = true;
+        //para que no pueda atacar el player ni parrear
+        pManager.inStrongAttack = false;
+        pManager.playerInNormalAttack = false;
     }
 
     private IEnumerator SlowPlayer()

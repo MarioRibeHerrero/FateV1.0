@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/root/ZzScenes/EscenasDefinitivas/MainMenu.unity
+    guid: 59ea522cf2dbae04c8aad041f795516f
+  - enabled: 1
     path: Assets/root/ZzScenes/EscenasDefinitivas/MainScene.unity
     guid: 103e436d79e6595428363083128c445e
+  - enabled: 0
+    path: Assets/root/ZzScenes/EscenasDefinitivas/Creditos.unity
+    guid: db15b2583e4ca3a4dbbdbc160a837389
   m_configObjects: {}

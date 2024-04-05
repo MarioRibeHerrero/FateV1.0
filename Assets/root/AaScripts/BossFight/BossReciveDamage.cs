@@ -1,41 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 
 public class BossReciveDamage : MonoBehaviour, IDamageable
 {
 
-    [SerializeField] GameObject rootBoss;
+    [SerializeField] GameObject bossFightController;
+    private Animator attackAnimator;
     private BossHealth bossHealth;
-    private BossFightController bossFController;
+    private BossFightController bossFControllerScript;
+
+    private Animator anim;
     private void Awake()
     {
-        bossHealth = rootBoss.GetComponent<BossHealth>();
-        bossFController = rootBoss.GetComponent<BossFightController>();
-
+        bossHealth = bossFightController.GetComponent<BossHealth>();
+        bossFControllerScript = bossFightController.GetComponent<BossFightController>();
+        attackAnimator = bossFightController.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
 
     public void TakeDamage(int damageTaken)
     {
-        bossFController.bossTotalHealth -= damageTaken;
-        StartCoroutine(HitVisualEffect(bossFController.hitTime));
-
+        anim.SetTrigger("Hit");
+        bossFControllerScript.bossCurrentHealth -= damageTaken;
         bossHealth.CheckHealth();
     }
 
-    private IEnumerator HitVisualEffect(float hitTime)
+    private IEnumerator SlowTime()
     {
-        //Aply shader to model(de momento color pocho
-
-
-        // Material currentMat = GetComponent<MeshRenderer>().material;
-        Color color = GetComponent<MeshRenderer>().material.color;
-
-        GetComponent<MeshRenderer>().material.color = Color.white;
-        yield return new WaitForSeconds(hitTime);
-        GetComponent<MeshRenderer>().material.color = color;
+        Time.timeScale = 0.3f;
+        yield return new WaitForSeconds(0.05f);
+        Time.timeScale = 1f;
 
     }
+
 }

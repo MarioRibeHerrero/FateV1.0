@@ -22,13 +22,13 @@ public class MeleeEnemyMovingZoneController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //if(stateManager.state != MeleeEnemyState.MeleeEnemyStateEnum.Attacking) stateManager.state = MeleeEnemyState.MeleeEnemyStateEnum.Pathing;
-            enemyController.WaitFor(1);
+            //enemyController.WaitFor(1);
 
         }
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
 
         stateManager.playerInMovingZone = Physics.OverlapBox(this.transform.position, this.transform.localScale / 2, Quaternion.identity, attackLayer).Length > 0;

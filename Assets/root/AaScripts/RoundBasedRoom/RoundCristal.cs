@@ -1,99 +1,156 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.NCalc;
-using UnityEditor.Rendering;
 using UnityEngine;
-using static System.TimeZoneInfo;
+using UnityEngine.UIElements;
+using UnityEngine.VFX;
 
 public class RoundCristal : MonoBehaviour
 {
-    //Color lerp
-    [SerializeField] float timeBetwenShoots = 5f; 
-    private Color defaultColor;
-    private Color targetColor = Color.red;
-    private float transitionTimer = 0f;
 
+    [SerializeField] GameObject cristalObj;
+    [SerializeField] VisualEffect shootPointEffect;
+    [SerializeField] GameObject shootingPoint;
 
-    [SerializeField] GameObject proyectile;
     private Transform player;
+    readonly float rotationSpeed = 5.0f;
+    readonly float delay = 0.5f;
 
-    private MeshRenderer meshRenderer;
+    [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] LineRenderer shoot;
 
-    [SerializeField] int proyectileSpeed;
+    [SerializeField] LayerMask warningLayers, rayLayers;
 
-    [SerializeField] List<GameObject> proyectiles;
+    private Vector3 playerPos;
+
+    private bool aboutToShoot, warkingRayCast;
+    [SerializeField] float cristalDamage;
+    private RoundManager roundManager;
 
     private void Awake()
     {
+        roundManager = GameObject.FindAnyObjectByType<RoundManager>().GetComponent<RoundManager>();
+
         player = GameObject.FindObjectOfType<PlayerHealth>().transform;
-        meshRenderer = GetComponent<MeshRenderer>();
+        //cristalObj.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 90));
+
+        lineRenderer.enabled = false;
+        shoot.enabled = false;
     }
 
-    private void OnEnable()
+    private void Start()
     {
-        CreateProyectilePool();
+
     }
 
     private void Update()
     {
-       ShootAnim();
-    }
+        LookAtPlayer();
 
-    private void CreateProyectilePool()
-    {
-        for (int i = 0; i <= 2; i++)
+        if (warkingRayCast && !roundManager.isCristalDestroyed)
         {
-            GameObject go = Instantiate(proyectile);
-            proyectiles.Add(go);
-            go.SetActive(false);
+
+            Ray ray = new Ray(shootingPoint.transform.position, shootingPoint.transform.up);
+
+            RaycastHit hit;
+
+            Physics.Raycast(ray, out hit, Mathf.Infinity, warningLayers);
+            lineRenderer.SetPosition(0, shootingPoint.transform.position);
+            lineRenderer.SetPosition(1, hit.point);
         }
     }
 
-    
-    private void ShootAnim()
+
+
+    private void LookAtPlayer()
     {
-        
-        transitionTimer += Time.deltaTime;
-
-        float lerpFactor = Mathf.Clamp01(transitionTimer / timeBetwenShoots);
-
-        Color lerpedColor = Color.Lerp(defaultColor, targetColor, lerpFactor);
-
-        meshRenderer.material.color = lerpedColor;
-
-        if(lerpFactor == 1)
+        if (!aboutToShoot)
         {
-            transitionTimer = 0f;
-            Shoot();
+            Debug.Log("LookingAtPlayer");
+            Quaternion targetRotation = Quaternion.LookRotation(player.position - transform.position);
+            float xRotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime * delay).eulerAngles.x;
+
+            Quaternion tY;
+            if (player.position.x - transform.position.x < 0) tY = Quaternion.Euler(xRotation, -90, transform.rotation.z);
+            else tY = Quaternion.Euler(xRotation, -270, transform.rotation.z);
+
+            float yRotation = Quaternion.Lerp(transform.rotation, tY, rotationSpeed * Time.deltaTime * delay).eulerAngles.y;
+
+            transform.rotation = Quaternion.Euler(xRotation, yRotation, transform.rotation.z);
+
         }
     }
 
+    public void Reset()
+    {
+        aboutToShoot = false;
+        cristalObj.SetActive(true);
+        cristalObj.GetComponent<CristalHealthManager>().Reset();
+        cristalObj.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 90));
+
+    }
+    private void EnableWarning()
+    {
+        lineRenderer.enabled = true;
+        warkingRayCast = true;
+    }
+    private void AboutToShoot()
+    {
+        aboutToShoot = true;
+        lineRenderer.enabled = false;
+        warkingRayCast = false;
+    }
     private void Shoot()
     {
 
-        if(proyectiles.Count > 0)
+
+        aboutToShoot = false;
+        shoot.enabled = true;
+        Debug.Log("KJSAJHOD");
+        Ray ray = new Ray(shootingPoint.transform.position, shootingPoint.transform.up);
+
+        RaycastHit hit;
+        RaycastHit hit2;
+
+        Physics.Raycast(ray, out hit, Mathf.Infinity, rayLayers);
+
+
+        shoot.SetPosition(0, shootingPoint.transform.position);
+        shoot.SetPosition(1, hit.point);
+        shootPointEffect.gameObject.transform.position = hit.point;
+        shootPointEffect.transform.localScale = Vector3.one;
+        shootPointEffect.Play();
+        Debug.Log(hit.collider.name);
+
+        Physics.Raycast(ray, out hit2, Mathf.Infinity, warningLayers);
+        if (hit2.collider.GetComponent<PlayerHit>() != null)
         {
-
-            int random = Random.Range(0, proyectiles.Count);
-
-            if (!proyectiles[random].activeSelf)
-            {
-                Rigidbody rb = proyectiles[random].GetComponent<Rigidbody>();
-
-                proyectiles[random].SetActive(true);
-                proyectiles[random].transform.position = transform.position;
-
-                rb.velocity = Vector3.zero;
-
-
-                Vector3 direction = (player.position - proyectiles[random].transform.position).normalized;
-
-                rb.AddForce(direction * proyectileSpeed, ForceMode.Impulse);
-
-            }
-
+            Debug.Log(hit2.collider.transform.GetComponent<PlayerHit>());
+            
+            hit2.collider.transform.GetComponent<PlayerHit>().HitPlayer(new Vector3(0,0,0),0,0,cristalDamage,true);
         }
-        
+
+        Invoke(nameof(ShootLineToFalse), 0.2f);
+
     }
 
+    private void ShootLineToFalse()
+    {
+        shoot.enabled = false;
+
+    }
+
+
+
+    public void Explote()
+    {
+        shootPointEffect.gameObject.transform.position = transform.position;
+        shootPointEffect.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+
+        shootPointEffect.Play();
+    }
+    private void SfxShoot()
+    {
+        AudioManager.Instance.PlayCristalShook();
+
+    }
 }

@@ -2,34 +2,39 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.Rendering.DebugUI;
 
 public class PlayerAa : MonoBehaviour
 {
     PlayerInput playerInput;
-
-    [SerializeField] float upDifference;
+    PlayerManager pManager;
+    PlayerAnimationManager pAnim;
 
     private Animator anim;
 
     //aaCombo
-    [SerializeField] private int aaCombo;
     [SerializeField] private float comboTimer;
     [SerializeField] float comboDuration;
     // Start is called before the first frame update
 
 
-    
+
+
+    //Round of 2 Aa
+
+    public bool goToSecondAaCheck;
+    public bool goToFirstAaCheck;
+
+    private bool goToThirdAttack;
+
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         anim = GetComponent<Animator>();
+        pManager = GetComponent<PlayerManager>();
+        pAnim = GetComponent<PlayerAnimationManager>();
 
         playerInput.actions["Aa"].started += PlayerAa_started;
-    }
-
-    private void Update()
-    {
-        AaComboCounter();
     }
 
     private Vector2 GetInputs()
@@ -42,93 +47,40 @@ public class PlayerAa : MonoBehaviour
 
     private void PlayerAa_started(InputAction.CallbackContext obj)
     {
+        if(GetComponent<PlayerGroundCheck>().isPlayerGrounded)AutoAttackCombo();
 
-            if (GetInputs().y >= upDifference && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
-            {
-                anim.SetTrigger("AaUp");
-                GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
-            }
-        AutoAttackCombo();
-
-
-
-        if (GetInputs().y >= upDifference  && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
+        if (Mathf.Abs(GetInputs().x) >= 0 && !pManager.playerInNormalAttack && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
         {
-            anim.SetTrigger("AaUpAir");
-            GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
-        }
-        else if (Mathf.Abs(GetInputs().x) >= 0 && !GameManager.Instance.isOccupied && !GetComponent<PlayerGroundCheck>().isPlayerGrounded)
-        {
-            anim.SetTrigger("AaAir");
-            GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
+            pAnim.CallAaAir();
+            pManager.playerCurrentDamage = pManager.playerDefaultDamage;
         }
     }
 
 
-
+    
     private void AutoAttackCombo()
     {
-        switch (aaCombo)
+        if(!pManager.playerInNormalAttack) pAnim.CallAa();
+
+        if (goToSecondAaCheck)
         {
-
-            case 0:
-                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
-                {
-                    anim.SetInteger("AaCombo", 0);
-                    anim.SetTrigger("Aa");
-                    GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage;
-                }
-                break;
-            case 1:
-                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
-                {
-                    anim.SetInteger("AaCombo", 1);
-
-                    anim.SetTrigger("Aa");
-                    GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage + 10;
-
-
-                }
-                break;
-            case 2:
-                if (Mathf.Abs(GetInputs().x) >= 0 && GetComponent<PlayerGroundCheck>().isPlayerGrounded && !GameManager.Instance.isOccupied)
-                {
-                    anim.SetInteger("AaCombo", 2);
-                    anim.SetTrigger("Aa");
-                    GameManager.Instance.playerDamage = GameManager.Instance.playerDefaultDamage + 30;
-
-                }
-                break;
-        }
-    }
-    public void AddToCombo()
-    {
-        comboTimer = comboDuration;
-
-        if (aaCombo == 2)
-        {
-            aaCombo = 0;
-            return;
+            pAnim.SetGoingToSecondAttack();
         }
 
-        aaCombo++;
+        if (goToFirstAaCheck)
+        {
+            pAnim.SetGoingToFirstAttack();
+            if (!goToThirdAttack)
+            {
+                goToThirdAttack = true;
+                return;
+            }
+
+            pAnim.SetGoingToThirdAttack();
+
+        }
+
     }
 
-    private void AaComboCounter()
-    {
-
-        //si el combo es mayor q 0, le restas al timer timepo para que no sea infinito, para que dure el combo, lo unico que hay que hacer es poner el timer otra vez a x
-        if(aaCombo != 0)
-        {
-            comboTimer -= Time.deltaTime;
-        }
-
-
-        //si el timer es menor que 0, el combo es 0 a 0
-        if(comboTimer <= 0)
-        {
-            aaCombo = 0;
-        }
-    }
 
 }

@@ -8,22 +8,49 @@ public class StatueTrigger : MonoBehaviour
 
     public bool hasFallen;
     private bool canFallAgain;
+
+
+    [SerializeField] bool range;
     private void Start()
     {
         canFallAgain = true;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && canFallAgain)
+
+        if (range)
         {
-            parent.GetComponent<Animator>().SetTrigger("Fall");
-            Invoke(nameof(hasfal), 1f);
-            canFallAgain=false;
+            if (other.CompareTag("Player") && !hasFallen)
+            {
+                parent.GetComponent<Animator>().SetBool("PlayerClose", true);
+
+            }
+        }
+        else
+        {
+            if (other.CompareTag("Player") && canFallAgain)
+            {
+                parent.GetComponent<Animator>().SetTrigger("Fall");
+                Invoke(nameof(HasFallen), 1f);
+                canFallAgain = false;
+            }
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (range)
+        {
+            if (other.CompareTag("Player") && !hasFallen)
+            {
+                parent.GetComponent<Animator>().SetBool("PlayerClose", false);
+
+            }
         }
     }
 
-
-    private void hasfal()
+    private void HasFallen()
     {
         hasFallen = true;
     }

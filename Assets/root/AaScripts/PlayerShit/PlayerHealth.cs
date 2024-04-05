@@ -2,68 +2,70 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 
 public class PlayerHealth : MonoBehaviour
 {
+
+    #region Vars
+
+    PlayerManager pManager;
+    PlayerInput pInput;
+
+    public delegate void OnPlayerDeath();
+    public OnPlayerDeath onPlayerDeath;
+
+    [SerializeField] CameraManager camManager;
     [SerializeField] UiManager uiManager;
+
     public Transform currentSpawnPoint;
 
+    [SerializeField] VisualEffect parry;
 
-    private RoundEnrtyCollider entryCollider;
-    private RoundManager roundManager;
-    [SerializeField] CameraFollow camFollow;
+    #endregion
 
-
-    
 
     private void Awake()
     {
-        roundManager = GameObject.FindAnyObjectByType<RoundManager>();
-        entryCollider = GameObject.FindAnyObjectByType<RoundEnrtyCollider>().GetComponent<RoundEnrtyCollider>();
+        if (currentSpawnPoint != null) SetPlayerToStartPos();
+       // else Debug.LogWarning("te falta el respawnPoint");
 
-    }
-
-    void Start()
-    {
-        GameManager.Instance.isPlayerAlive = true;
-
+        pManager = GetComponent<PlayerManager>();
+        pInput = GetComponent<PlayerInput>();
     }
 
 
     public void TakeDamage(float damage)
     {
-        GameManager.Instance.playerHealth -= damage;
+        pManager.playerHealth -= damage;
         CheckHealth();
         uiManager.UpdatePlayerHealthSlider();
     }
+    public void HealParryPlayer(float healAmmount)
+    {
+        //PostPro
+        parry.Play();
+        AudioManager.Instance.PlayPlayerParry();
 
+        pManager.playerHealth += healAmmount;
+        CheckHealth();
+        uiManager.UpdatePlayerHealthSlider();
+    }
     public void HealPlayer(float healAmmount)
     {
-        GameManager.Instance.playerHealth += healAmmount;
+        pManager.playerHealth += healAmmount;
         CheckHealth();
         uiManager.UpdatePlayerHealthSlider();
     }
     private void CheckHealth()
     {
 
-        if (GameManager.Instance.playerHealth >= 100) GameManager.Instance.playerHealth = 100f;
-        if (GameManager.Instance.playerHealth <= 0)
+        if (pManager.playerHealth >= 100) pManager.playerHealth = 100f;
+        if (pManager.playerHealth <= 0)
         {
-
-            if (roundManager.inRoundRoom)
-            {
-
-                //ResetearLaRoom
-                //PONER CUNADO SE ACABE DE VERDAD
-                roundManager.inRoundRoom = false;
-                entryCollider.gameObject.transform.parent.GetComponent<Animator>().SetTrigger("OpenDoors");
-                entryCollider.doorsColsed = false;
-
-                ResetEnemies();
-                //-----------------
-            }
-
-            GameManager.Instance.isPlayerAlive = false;
+            if(onPlayerDeath != null) onPlayerDeath();
+            pManager.isPlayerAlive = false;
             DesactivateAllPlayerFuntionsAndKill();
             StartCoroutine(RevivePlayer());
 
@@ -72,35 +74,8 @@ public class PlayerHealth : MonoBehaviour
 
 
 
-    private void ResetEnemies()
-    {
-        //instantiate and desactivar enemies
-        if (roundManager != null && roundManager.roundRoomEnemies != null)
-        {
-            if (roundManager.roundRoomEnemies.Count == 0) return;
 
-            foreach (GameObject enemy in roundManager.roundRoomEnemies.ToList())
-            {
-                // Check if the enemy object is not null
-                if (enemy != null)
-                {
-                    BasicEnemyHealth basicEnemyHealth = enemy.GetComponent<BasicEnemyHealth>();
-
-                    // Check and apply damage to BasicEnemyHealth
-                    if (basicEnemyHealth != null)
-                    {
-                        basicEnemyHealth.TakeDamage(1000);
-                    }
-
-                }
-            }
-        }
-
-
-
-
-    }
-
+    
 
 
 
@@ -108,40 +83,54 @@ public class PlayerHealth : MonoBehaviour
     {
         transform.Find("Body").transform.gameObject.SetActive(false);
 
-        GetComponent<PlayerMovement>().enabled = false;
-        GetComponent<PlayerRotation>().enabled = false;
-        GetComponent<PlayerJump>().enabled = false;
-        GetComponent<PlayerParry>().enabled = false;
-        GetComponent<PlayerAa>().enabled = false;
-        GetComponent<PlayerHook>().enabled = false;
+        pInput.SwitchCurrentActionMap("Dead");
+        GetComponent<PlayerGravity>().StopPlayerMoving();
+        AudioManager.Instance.PlayPlayerDeath();
 
     }
-
 
     private void ActivateAllPlayerFuntionsAndKill()
     {
 
-        GetComponent<PlayerMovement>().enabled = true;
-        GetComponent<PlayerRotation>().enabled = true;
-        GetComponent<PlayerJump>().enabled = true;
-        GetComponent<PlayerParry>().enabled = true;
-        GetComponent<PlayerAa>().enabled = true;
-        GetComponent<PlayerHook>().enabled = true;
+        pInput.SwitchCurrentActionMap("PlayerNormalMovement");
+
 
     }
 
     private IEnumerator RevivePlayer()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.75f);
+        UiManager.FadeIn();
+        yield return new WaitForSeconds(0.2f);
+        SetCameraToRespawnCamera();
+
+        yield return new WaitForSeconds(0.25f);
+
+        GetComponent<PlayerGravity>().ReturnPlayerMovement();
+
+        transform.position =
+            new Vector3(currentSpawnPoint.transform.position.x, currentSpawnPoint.transform.position.y, 0);
+        transform.Find("Body").transform.gameObject.SetActive(true);
+        ActivateAllPlayerFuntionsAndKill();
+        pManager.playerHealth = 100f;
+        uiManager.UpdatePlayerHealthSlider();
+        pManager.isPlayerAlive = true;
+        
+        //music
+        AudioManager.Instance.StopAllMusic();
+        AudioManager.Instance.LevelTheme();
+
+    }
+    
+    private void SetPlayerToStartPos()
+    {
+        SetCameraToRespawnCamera();
         transform.position = currentSpawnPoint.transform.position;
         transform.Find("Body").transform.gameObject.SetActive(true);
         ActivateAllPlayerFuntionsAndKill();
-        GameManager.Instance.playerHealth = 100f;
+        pManager.playerHealth = 100f;
         uiManager.UpdatePlayerHealthSlider();
-        GameManager.Instance.isPlayerAlive = true;
-        camFollow.ZoomIn();
-        GameManager.Instance.isZoomed = false;
-
+        pManager.isPlayerAlive = true;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -150,6 +139,15 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(100);
         }
+    }
+
+    private void SetCameraToRespawnCamera()
+    {
+        camManager.DisableOldCamera(GameManager.Instance.currentRoom);
+        camManager.SetNewCamera(GameManager.Instance.RespawnRoom);
+        
+        GameManager.Instance.currentRoom = GameManager.Instance.RespawnRoom;
+
     }
 
 }

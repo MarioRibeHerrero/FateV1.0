@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     PlayerGroundCheck pGroundCheck;
     PlayerJump pJump;
     PlayerHook pHook;
+    PlayerManager pManager;
+    
 
     //Movement variables
     [SerializeField] float acceleration, airAcceleration, deceleration, maxSpeed;
@@ -19,10 +21,13 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] bool changingDirection;
 
+    [SerializeField] GameObject bodyObj;
+    Animator bodyAnim;
+
     //public
     public bool hasStopedMidAir;
 
-
+    public Vector2 inputs;
     private void Awake()
     {
         //Get Components
@@ -31,43 +36,47 @@ public class PlayerMovement : MonoBehaviour
         pGroundCheck = GetComponent<PlayerGroundCheck>();
         pJump = GetComponent<PlayerJump>();
         pHook = GetComponent<PlayerHook>();
-    }
-    void Start()
-    {
+        pManager = GetComponent<PlayerManager>();
+        bodyAnim = bodyObj.GetComponent<Animator>();
 
 
-        //PlayerCanMove
-        GameManager.Instance.canPlayerMove = true;
+
     }
-    private Vector2 GetInputsX()
-    {
-        //This will get the horizontal movement
-        Vector2 inputs;
-        inputs = playerInput.actions["XMovement"].ReadValue<Vector2>();
-        return inputs;
-    }
+
+
 
 
 
     private void FixedUpdate()
     {
-        if (!pHook.isHooking && GameManager.Instance.canPlayerMove)
+        if (!pHook.isHooking && pManager.canPlayerMove)
         {
             Movement();
         }
     }
+    private void Update()
+    {
+        inputs = playerInput.actions["Movement"].ReadValue<Vector2>();
 
+
+        if (!pHook.isFallingFromHook && !pHook.isHooking && !pGroundCheck.isPlayerGrounded && Mathf.Approximately(inputs.x, 0f))
+        {
+            rb.velocity = new Vector3(0f, rb.velocity.y, 0f);
+        }
+
+    }
 
     private void Movement()
     {
-        //check if you are changing direcction
-         changingDirection = (pGroundCheck.isPlayerGrounded &&( rb.velocity.x < 0 && GetInputsX().x > 0) || (rb.velocity.x > 0 && GetInputsX().x < 0));
-
+        //animator move
+        bool state;
+        state = Mathf.Abs(inputs.x) > 0;
+        bodyAnim.SetBool("MoveInput",state);
 
         //we set a movement aceleration for the grounded player and anotherone for airplayer
 
-         if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(GetInputsX().x * acceleration, 0f));
-         else rb.AddForce(new Vector2(GetInputsX().x * airAcceleration, 0f));
+        if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(inputs.x * acceleration, 0f));
+         else rb.AddForce(new Vector2(inputs.x * airAcceleration, 0f));
 
 
 
@@ -80,12 +89,12 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (GameManager.Instance.inBridge)
+        if (GameManager.Instance.thirdPersonCam)
         {
-            if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(-GetInputsX().y * acceleration, 0f));
-            else rb.AddForce(new Vector2(-GetInputsX().y * airAcceleration, 0f));
+            if (pGroundCheck.isPlayerGrounded) rb.AddForce(new Vector2(-inputs.y * acceleration, 0f));
+            else rb.AddForce(new Vector2(-inputs.y * airAcceleration, 0f));
 
-            if ((Mathf.Abs(-GetInputsX().y) < 0.4 && !pJump.isJumping) && (Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
+            if ((Mathf.Abs(-inputs.y) < 0.4 && !pJump.isJumping) && (Mathf.Abs(inputs.x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
             else rb.drag = 0f;
 
 
@@ -97,13 +106,20 @@ public class PlayerMovement : MonoBehaviour
                 //Debug.Log(changingDirection);
                 //if the player stops moving we want the drag to be= to the deceleration.
 
-                if ((Mathf.Abs(GetInputsX().x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
+                if ((Mathf.Abs(inputs.x) < 0.4 && !pJump.isJumping) || changingDirection) rb.drag = deceleration;
                 else rb.drag = 0f;
 
             }
         }
 
+        //check if you are changing direcction
 
+        if (!GameManager.Instance.thirdPersonCam) changingDirection = pGroundCheck.isPlayerGrounded && (rb.velocity.x < 0 && inputs.x > 0) || (rb.velocity.x > 0 && inputs.x < 0);
+
+        if (changingDirection)
+        {
+            bodyObj.GetComponent<Animator>().SetTrigger("Turn");
+        }
 
     }
 

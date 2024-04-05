@@ -8,6 +8,7 @@ public class PlayerRotation : MonoBehaviour
 
     //PlayerComponets
     PlayerInput playerInput;
+    PlayerManager pManager;
     [SerializeField] private GameObject playerBody;
     //
     public bool isFacingRight;
@@ -17,6 +18,7 @@ public class PlayerRotation : MonoBehaviour
     {
         //PlayerComponents
         playerInput = GetComponent<PlayerInput>();
+        pManager = GetComponent<PlayerManager>();
 
     }
     void Start()
@@ -32,7 +34,7 @@ public class PlayerRotation : MonoBehaviour
     void Update()
     {
         GetRotation();
-        if (GameManager.Instance.canPlayerRotate) SetRotation();
+        if (pManager.canPlayerRotate) SetRotation();
 
     }
 
@@ -60,7 +62,7 @@ public class PlayerRotation : MonoBehaviour
         }
 
 
-        if(GameManager.Instance.inBridge)
+        if(GameManager.Instance.thirdPersonCam)
         {
             if (-GetInputs().y > 0)
             {
@@ -78,7 +80,25 @@ public class PlayerRotation : MonoBehaviour
     {
         //This will get the horizontal movement
         Vector2 inputs;
-        inputs = playerInput.actions["XMovement"].ReadValue<Vector2>();
+        inputs = playerInput.actions["Movement"].ReadValue<Vector2>();
         return inputs;
+    }
+
+
+    public void ForceFaceRightLeft(bool faceRight)
+    {
+        if (faceRight)
+        {
+            isFacingRight = true;
+            playerBody.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+        }
+        else
+        {
+            isFacingRight = false;
+
+            playerBody.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+        }
     }
 }

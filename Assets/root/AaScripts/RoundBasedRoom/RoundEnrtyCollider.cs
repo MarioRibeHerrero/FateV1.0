@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class RoundEnrtyCollider : MonoBehaviour
 {
-    [SerializeField] Animator root;
-
-    public bool doorsColsed;
-
     private RoundManager roundManager;
 
     private void Awake()
@@ -18,20 +14,18 @@ public class RoundEnrtyCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       if(other.CompareTag("Player") && !doorsColsed)
+        Debug.Log("RoundRoom");
+        Debug.Log(!roundManager.areDoorsClosed);
+        Debug.Log(!GameManager.Instance.roundRoomCompleted);
+        if (other.CompareTag("Player") && !roundManager.areDoorsClosed && !GameManager.Instance.roundRoomCompleted)
         {
-            StartCoroutine(CloseDoors());
+            Invoke(nameof(CloseDoors), 0f);
         }
     }
 
-    private IEnumerator CloseDoors()
+    private void CloseDoors()
     {
-
-        yield return new WaitForSeconds(0.4f);
-        doorsColsed = true;
-        root.SetTrigger("CloseDoors");
-        roundManager.CallUpdateRound(1, 2);
-        roundManager.inRoundRoom = true;
-
+        AudioManager.Instance.PlayOpenLock();
+        roundManager.StartRoundRoom();
     }
 }

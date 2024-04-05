@@ -10,6 +10,8 @@ public class PlayerJump : MonoBehaviour
     PlayerInput playerInput;
     Rigidbody rb;
     PlayerGroundCheck pGroundCheck;
+    PlayerHook pHook;
+    PlayerManager pManager;
 
     //local
     [SerializeField] float jumpForce, maxJumpValue;
@@ -22,9 +24,11 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] float secondJumpForce;
     public bool secondJump;
     [SerializeField] GameObject wings;
+    [SerializeField] private ParticleSystem dobleJumpFvx;
 
     //not so local
     public bool isJumping;
+    public bool isFalling;
     public bool cantHoldJump;
 
     //CoyoteJump
@@ -43,6 +47,8 @@ public class PlayerJump : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         pGroundCheck = GetComponent<PlayerGroundCheck>();
+        pHook = GetComponent<PlayerHook>();
+        pManager    = GetComponent<PlayerManager>();
 
         //Player Input Shit 
         playerInput.actions["Jump"].started += Jump_Started;
@@ -65,19 +71,22 @@ public class PlayerJump : MonoBehaviour
     }
     private void Jump_Started(InputAction.CallbackContext obj)
     {
-        
+        //si estas en el aire, no puedes hacer el doble jump y le das al salto, entras en el jumpbuffer.
+        if (!pGroundCheck.isPlayerGrounded && !secondJump || !pManager.isDobleJumpUnlocked || !pManager.canDobleJump) isBufferJumping = true;
+
         holdingJumpButton = true;
 
         //si saltas, y el cotote timer es mayor que cero signifdica q estas en  el suelo.
         if (coyoteTimer > 0)
         {
+            isBufferJumping = false;
+            AudioManager.Instance.PlayPlayerJump();
             isHoldingJump = true;
             maxJump = maxJumpValue;
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+
         }
 
-        //si estas en el aire, no puedes hacer el doble jump y le das al salto, entras en el jumpbuffer.
-        if (!secondJump || !GameManager.Instance.isDobleJumpUnlocked || !GameManager.Instance.canDobleJump) isBufferJumping = true;
 
 
 
@@ -85,14 +94,23 @@ public class PlayerJump : MonoBehaviour
 
         //  DOBLE SALTO
         //si estas saltando, y aun tienees el doble salto, y lo teines desblockeado, saltas.
-        if (isJumping && secondJump && GameManager.Instance.isDobleJumpUnlocked && GameManager.Instance.canDobleJump)
+        
+        if ((isJumping || (isFalling && coyoteTimer < 0)) && secondJump && pManager.isDobleJumpUnlocked && pManager.canDobleJump)
         {
-          
+            AudioManager.Instance.PlayPlayerDobleJump();
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity = new Vector3(rb.velocity.x, jumpForce * 5, rb.velocity.z);
             secondJump = false;
             StartCoroutine(WingsToTrue());
+            Invoke("Fvx", 0f);
         }
+        
+
+    }
+
+    private void Fvx()
+    {
+        dobleJumpFvx.Play();
 
     }
     private IEnumerator WingsToTrue()
@@ -105,13 +123,16 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.Instance.canPlayerMove)
+        if (pManager.canPlayerMove)
         {
             maxJump -= Time.deltaTime;
             Jump();
             CoyoteTimer();
             JumpBuffering();
         }
+
+
+
 
     }
 
@@ -135,9 +156,11 @@ public class PlayerJump : MonoBehaviour
         if (isBufferJumping && pGroundCheck.isPlayerGrounded && jumpBufferTimer >= 0) 
         {
             //si una vez has cumplido lo anterior, sigues pulsando el boton de saltar, activamos el holding jump para q vuelvas al salto normal, en caso de que no sigas pulsandolo, hace un salto
-            //pequeño
+            //pequeï¿½o
             if (holdingJumpButton)
             {
+                AudioManager.Instance.PlayPlayerJump();
+
                 isHoldingJump = true;
                 //hacemos que el valor de salto sea el mismo q el de un salto normlal
                 maxJump = maxJumpValue;
@@ -162,6 +185,7 @@ public class PlayerJump : MonoBehaviour
         if (rb.velocity.y <= 0 && cantHoldJump)
         {
             cantHoldJump = false;
+            isFalling = true;
         }
     }
 
