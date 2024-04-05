@@ -1,6 +1,0 @@
-{79ab3ac6-193d-4ca1-b669-1ea677e582cd} bank:/Music
-{e1b61a12-6846-00e3-3020-945886168455} bank:/Music.strings
-{2494914d-b112-4a77-9e81-732353d9df28} bus:/
-{52be4a68-60aa-4196-a42e-1ddfabb8f4aa} bus:/Reverb
-{b955a464-2fb8-41e1-a4b4-f4ffdd8a7085} event:/LoopPasilloPreBoss
-{f3ba7be9-523b-49b0-93a3-7f6559c3fba6} event:/MainTheme
